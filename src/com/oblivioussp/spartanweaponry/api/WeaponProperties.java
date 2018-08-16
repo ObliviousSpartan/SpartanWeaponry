@@ -1,0 +1,58 @@
+package com.oblivioussp.spartanweaponry.api;
+
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyDamageAbsorb;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyExtraDamage;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyKnockback;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyNausea;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyTwoHanded;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyVersatile;
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyWithMagnitude;
+
+public class WeaponProperties 
+{
+	// Weapon Property Types
+	public static final String PROPERTY_TYPE_THROWABLE = "throwable",
+								PROPERTY_TYPE_BLOCKING = "blocking",
+								PROPERTY_TYPE_TWO_HANDED = "two_handed",
+								PROPERTY_TYPE_EXTRA_DAMAGE = "extra_damage",
+								PROPERTY_TYPE_EXTRA_DAMAGE_CHEST = "extra_damage_chest",
+								PROPERTY_TYPE_EXTRA_DAMAGE_RIDING = "extra_damage_riding",
+								PROPERTY_TYPE_EXTRA_DAMAGE_THROWN = "extra_damage_thrown",
+								PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED = "extra_damage_unarmoured",
+								PROPERTY_TYPE_EXTRA_DAMAGE_UNDEAD = "extra_damage_undead",
+								PROPERTY_TYPE_DAMAGE_ABSORB = "damage_absorb",
+								PROPERTY_TYPE_REACH = "reach",
+								PROPERTY_TYPE_SWEEP_DAMAGE = "sweep_damage",
+								PROPERTY_TYPE_KNOCKBACK = "knockback",
+								PROPERTY_TYPE_NAUSEA = "nausea",
+								PROPERTY_TYPE_ARMOUR_PIERCING = "armour_piercing",
+								PROPERTY_TYPE_SHIELD_BREACH = "shield_breach",
+								PROPERTY_TYPE_VERSATILE = "versatile",
+								PROPERTY_TYPE_QUICK_STRIKE = "quick_strike";
+	
+	// Weapon Properties
+	public static final WeaponProperty THROWABLE = new WeaponProperty(PROPERTY_TYPE_THROWABLE, SpartanWeaponryAPI.ModID);
+	public static final WeaponProperty TWO_HANDED_1 = new WeaponPropertyTwoHanded(PROPERTY_TYPE_TWO_HANDED, SpartanWeaponryAPI.ModID, 1, 2.0f);
+	public static final WeaponProperty TWO_HANDED_2 = new WeaponPropertyTwoHanded(PROPERTY_TYPE_TWO_HANDED, SpartanWeaponryAPI.ModID, 2, 3.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_2_CHEST = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_CHEST, SpartanWeaponryAPI.ModID, 2.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_2_RIDING = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_RIDING, SpartanWeaponryAPI.ModID, 2.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_2_THROWN = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_THROWN, SpartanWeaponryAPI.ModID, 2.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_3_THROWN = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_THROWN, SpartanWeaponryAPI.ModID, 3.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_3_NO_ARMOUR = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED, SpartanWeaponryAPI.ModID, 3.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_50P_UNDEAD = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_UNDEAD, SpartanWeaponryAPI.ModID, 1.5f);
+	public static final WeaponProperty DAMAGE_ABSORB_25 = new WeaponPropertyDamageAbsorb(PROPERTY_TYPE_DAMAGE_ABSORB, SpartanWeaponryAPI.ModID, 0.25f);
+	public static final WeaponProperty REACH_1 = new WeaponProperty(PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 1, 5.5f);
+	public static final WeaponProperty REACH_2 = new WeaponProperty(PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 2, 7.0f);
+	public static final WeaponProperty SWEEP_DAMAGE = new WeaponProperty(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID);
+	public static final WeaponProperty KNOCKBACK = new WeaponPropertyKnockback(PROPERTY_TYPE_KNOCKBACK, SpartanWeaponryAPI.ModID);
+	public static final WeaponProperty NAUSEA = new WeaponPropertyNausea(PROPERTY_TYPE_NAUSEA, SpartanWeaponryAPI.ModID, 5.0f);
+	public static final WeaponProperty ARMOUR_PIERCING_50 = new WeaponPropertyWithMagnitude(PROPERTY_TYPE_ARMOUR_PIERCING, SpartanWeaponryAPI.ModID, 50.0f);
+	public static final WeaponProperty SHIELD_BREACH = new WeaponProperty(PROPERTY_TYPE_SHIELD_BREACH, SpartanWeaponryAPI.ModID);
+	public static final WeaponProperty VERSATILE = new WeaponPropertyVersatile(PROPERTY_TYPE_VERSATILE, SpartanWeaponryAPI.ModID);
+	public static final WeaponProperty QUICK_STRIKE = new WeaponProperty(PROPERTY_TYPE_QUICK_STRIKE, SpartanWeaponryAPI.ModID);
+	/**
+	 * NOTE: This Weapon Property is experimental. If it's added to any new weapon, it will not work!
+	 */
+	public static final WeaponProperty BLOCKING = new WeaponProperty(PROPERTY_TYPE_BLOCKING, SpartanWeaponryAPI.ModID);
+}
