@@ -15,7 +15,11 @@ public class SpartanWeaponryAPI
 	 * Use this to access internal methods for the mod. NOTE: DO NOT OVERRIDE THIS AS YOU WILL BREAK THE ENTIRE API! YOU HAVE BEEN WARNED!!!
 	 */
 	public static IInternalMethodHandler internalHandler = new DummyInternalMethodHandler();
+
 	
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	// Weapon Creation functions
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	
 	/**
 	 * Creates a new dagger, using the specified material and adds new Weapon Properties to it. Gives the new item the registry name of "item.[modId].dagger_[material.unlocName]". The caller is responsible for registering the weapon item, model and recipe
@@ -295,6 +299,10 @@ public class SpartanWeaponryAPI
 		return internalHandler.addMace(material, modId, damage, tab, properties);
 	}
 	
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	// Registration functions
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	
 	/**
 	 * Registers the Item to use the Spartan Weaponry colour handler. This means that the second and third layers of the item model will use the tint primary/secondary respective colours provided by the ToolMaterialEx.
 	 * Remember to call this method during the Item Registry or the FMLInitialization Event!
@@ -307,9 +315,20 @@ public class SpartanWeaponryAPI
 			internalHandler.registerColourHandler(item, material);
 	}
 	
-	
-	/*public static Item createCustomWeapon(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	/**
+	 * Registers the Item to use SpartanWeaponry's registration of models.
+	 * @param item The Item to register
+	 * @param modId The mod ID for the mod calling this
+	 * @param modelName The model name, e.g. "daggerEnderium" for the item model in "assets/[ModID]/models/item/daggerEnderium.json"
+	 */
+	public static void registerItemModelRender(Item item, String modId, String modelName)
 	{
-		
-	}*/
+		internalHandler.registerItemModelRender(item, modId, modelName);
+	}
+	
+	
+	public static void registerItemModelRender(Item item)
+	{
+		internalHandler.registerItemModelRender(item);
+	}
 }

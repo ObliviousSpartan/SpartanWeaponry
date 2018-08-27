@@ -13,25 +13,10 @@ import net.minecraft.item.Item;
  *
  */
 public class DummyInternalMethodHandler implements IInternalMethodHandler 
-{
-
-	@Override
-	public String translateString(String key, String type, String modId) 
-	{
-		return null;
-	}
-
-	@Override
-	public String translateFormattedString(String key, String type, String modId, Object... parameters) 
-	{
-		return null;
-	}
-
-	@Override
-	public boolean hasTranslateKey(String key, String type, String modId) 
-	{
-		return false;
-	}
+{	
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	// Weapon Creation functions
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	
 	@Override
 	public Item addDagger(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties) 
@@ -169,7 +154,40 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	{
 		return null;
 	}
+	
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	// Registration functions
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 	@Override
 	public void registerColourHandler(Item item, ToolMaterialEx material) {}
+
+	@Override
+	public void registerItemModelRender(Item item, String modId, String modelName) {}
+
+	@Override
+	public void registerItemModelRender(Item item) {}
+	
+	
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	// Translation functions
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+	@Override
+	public String translateString(String key, String type, String modId) 
+	{
+		return null;
+	}
+
+	@Override
+	public String translateFormattedString(String key, String type, String modId, Object... parameters) 
+	{
+		return null;
+	}
+
+	@Override
+	public boolean hasTranslateKey(String key, String type, String modId) 
+	{
+		return false;
+	}
 }

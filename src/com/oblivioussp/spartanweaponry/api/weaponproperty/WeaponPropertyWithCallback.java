@@ -5,7 +5,6 @@ import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 /**
@@ -41,7 +40,7 @@ public class WeaponPropertyWithCallback extends WeaponProperty implements IPrope
 		return this;
 	}
 
-	@Override
+	/*@Override
 	public float modifyDamageDealt(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker,
 			EntityLivingBase victim) 
 	{
@@ -53,7 +52,7 @@ public class WeaponPropertyWithCallback extends WeaponProperty implements IPrope
 			EntityLivingBase victim) 
 	{
 		return baseDamage;
-	}
+	}*/
 
 	@Override
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {}

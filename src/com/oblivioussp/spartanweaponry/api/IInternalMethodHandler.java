@@ -6,14 +6,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 /**
- * Basic Internal method handler interface. Internal use only!
+ * Basic Internal method handler interface. Do NOT create your own version of this. It is required for the API to work!
  * @author ObliviousSpartan
  *
  */
 public interface IInternalMethodHandler 
-{
+{	
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-	// Adding weapons functions
+	// Weapon Creation functions
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	
 	/**
@@ -236,6 +236,11 @@ public interface IInternalMethodHandler
 	 */
 	public abstract Item addMace(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
 	
+
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	// Registration functions
+	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+	
 	/**
 	 * Registers the Item to use the Spartan Weaponry colour handler. This means that the second and third layers of the item model will use the tint primary/secondary respective colours provided by the ToolMaterialEx.
 	 * Use this method when you register your items. Spartan Weaponry will load them during the init phase
@@ -243,6 +248,17 @@ public interface IInternalMethodHandler
 	 * @param material The tool material to use for this. Contains the colours for the materials within.
 	 */
 	public abstract void registerColourHandler(Item item, ToolMaterialEx material);
+	
+	/**
+	 * Registers the Item to use SpartanWeaponry's registration of models.
+	 * @param item The Item to register
+	 * @param modId The mod ID for the mod calling this
+	 * @param modelName The model name, e.g. "daggerEnderium" for the item model in "assets/[ModID]/models/item/daggerEnderium.json"
+	 */
+	public abstract void registerItemModelRender(Item item, String modId, String modelName);
+	
+	
+	public abstract void registerItemModelRender(Item item);
 	
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	// Translation functions
