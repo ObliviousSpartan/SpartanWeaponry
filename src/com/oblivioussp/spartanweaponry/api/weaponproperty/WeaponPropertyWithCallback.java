@@ -40,20 +40,6 @@ public class WeaponPropertyWithCallback extends WeaponProperty implements IPrope
 		return this;
 	}
 
-	/*@Override
-	public float modifyDamageDealt(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker,
-			EntityLivingBase victim) 
-	{
-		return baseDamage;
-	}
-
-	@Override
-	public float modifyDamageTaken(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker,
-			EntityLivingBase victim) 
-	{
-		return baseDamage;
-	}*/
-
 	@Override
 	public void onItemUpdate(ToolMaterialEx material, ItemStack stack, World world, EntityLivingBase entity, int itemSlot, boolean isSelected) {}
 

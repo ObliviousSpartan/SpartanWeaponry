@@ -4,6 +4,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
 public class SpartanWeaponryAPI 
 {
@@ -316,19 +317,60 @@ public class SpartanWeaponryAPI
 	}
 	
 	/**
+	 * @deprecated No longer works at all. Use the following method and it's variants {@link #addItemModelToRegistry(Item)}, {@link #addItemModelToRegistry(Item, ResourceLocation)} or {@link #registerItemModelRender(Item, String, String)} instead.
 	 * Registers the Item to use SpartanWeaponry's registration of models.
 	 * @param item The Item to register
 	 * @param modId The mod ID for the mod calling this
 	 * @param modelName The model name, e.g. "daggerEnderium" for the item model in "assets/[ModID]/models/item/daggerEnderium.json"
 	 */
+	@Deprecated
 	public static void registerItemModelRender(Item item, String modId, String modelName)
 	{
 		internalHandler.registerItemModelRender(item, modId, modelName);
 	}
 	
-	
+	/**
+	 * @deprecated No longer works at all. Use the following method and it's variants {@link #addItemModelToRegistry(Item)}, {@link #addItemModelToRegistry(Item, ResourceLocation)} or {@link #registerItemModelRender(Item, String, String)} instead.
+	 * Registers the Item to use SpartanWeaponry's registration of models.
+	 * @param item The Item to register
+	 */
+	@Deprecated
 	public static void registerItemModelRender(Item item)
 	{
 		internalHandler.registerItemModelRender(item);
 	}
+	
+	/**
+	 * Adds the item and its item Model to Spartan Weaponry's internal model registry, set to be registered when Spartan Weaponry registers its models. 
+	 * Uses the item's registry name as the model location. Use this method as soon as you create your items. Spartan Weaponry will load them during its ModelRegistry event (before init phase?)
+	 * @param item The item to register the model for.
+	 */
+	public static void addItemModelToRegistry(Item item)
+	{
+		internalHandler.addItemModelToRegistry(item);
+	}
+	
+	/**
+	 * Adds the item and its item Model to Spartan Weaponry's internal model registry, set to be registered when Spartan Weaponry registers its models. 
+	 * Use this method as soon as you create your items. Spartan Weaponry will load them during its ModelRegistry event (before init phase?)
+	 * @param item The item to register the model for.
+	 * @param modelLocation The ResourceLocation to look for the model file
+	 */
+	public static void addItemModelToRegistry(Item item, ResourceLocation modelLocation)
+	{
+		internalHandler.addItemModelToRegistry(item, modelLocation);
+	}
+	
+	/**
+	 * Adds the item and its item Model to Spartan Weaponry's internal model registry, set to be registered when Spartan Weaponry registers its models. 
+	 * Use this method as soon as you create your items. Spartan Weaponry will load them during its ModelRegistry event (before init phase?)
+	 * @param item The item to register the model for.
+	 * @param modId Your addon mod's Mod ID/domain
+	 * @param modelLocation The path to look for the model file
+	 */
+	public static void addItemModelToRegistry(Item item, String modId, String modelLocation)
+	{
+		internalHandler.addItemModelToRegistry(item, modId, modelLocation);
+	}
+	
 }

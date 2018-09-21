@@ -6,6 +6,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
 /**
  * Dummy internal method handler. Will be replaced with a working version on preInit() on loading SpartanWeaponry. Make sure you either set your addon to load after SpartanWeaponry or you may experience crashes.
@@ -163,10 +164,13 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	public void registerColourHandler(Item item, ToolMaterialEx material) {}
 
 	@Override
-	public void registerItemModelRender(Item item, String modId, String modelName) {}
+	public void addItemModelToRegistry(Item item) {}
 
 	@Override
-	public void registerItemModelRender(Item item) {}
+	public void addItemModelToRegistry(Item item, ResourceLocation modelLocation) {}
+
+	@Override
+	public void addItemModelToRegistry(Item item, String modId, String modelLocation) {}
 	
 	
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

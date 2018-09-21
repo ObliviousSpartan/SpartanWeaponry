@@ -4,6 +4,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
 /**
  * Basic Internal method handler interface. Do NOT create your own version of this. It is required for the API to work!
@@ -242,7 +243,7 @@ public interface IInternalMethodHandler
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	
 	/**
-	 * Registers the Item to use the Spartan Weaponry colour handler. This means that the second and third layers of the item model will use the tint primary/secondary respective colours provided by the ToolMaterialEx.
+	 * Registers the Item to use the Spartan Weaponry colour handler. This means that the second and third layers of the item model will use the tint primary/secondary respective colours provided by the {@link ToolMaterialEx}.
 	 * Use this method when you register your items. Spartan Weaponry will load them during the init phase
 	 * @param item The Item to register
 	 * @param material The tool material to use for this. Contains the colours for the materials within.
@@ -250,15 +251,48 @@ public interface IInternalMethodHandler
 	public abstract void registerColourHandler(Item item, ToolMaterialEx material);
 	
 	/**
+	 * @deprecated No longer works at all. Use the following method and it's variants {@link #addItemModelToRegistry(Item)}, {@link #addItemModelToRegistry(Item, ResourceLocation)} or {@link #registerItemModelRender(Item, String, String)} instead.
 	 * Registers the Item to use SpartanWeaponry's registration of models.
 	 * @param item The Item to register
 	 * @param modId The mod ID for the mod calling this
 	 * @param modelName The model name, e.g. "daggerEnderium" for the item model in "assets/[ModID]/models/item/daggerEnderium.json"
 	 */
-	public abstract void registerItemModelRender(Item item, String modId, String modelName);
+	@Deprecated
+	public default void registerItemModelRender(Item item, String modId, String modelName) {}
 	
+	/**
+	 * @deprecated No longer works at all. Use the following method and it's variants {@link #addItemModelToRegistry(Item)}, {@link #addItemModelToRegistry(Item, ResourceLocation)} or {@link #registerItemModelRender(Item, String, String)} instead.
+	 * Registers the Item to use SpartanWeaponry's registration of models.
+	 * @param item The Item to register
+	 * @param modId The mod ID for the mod calling this
+	 * @param modelName The model name, e.g. "daggerEnderium" for the item model in "assets/[ModID]/models/item/daggerEnderium.json"
+	 */
+	@Deprecated
+	public default void registerItemModelRender(Item item) {}
 	
-	public abstract void registerItemModelRender(Item item);
+	/**
+	 * Adds the item and its item Model to Spartan Weaponry's internal model registry, set to be registered when Spartan Weaponry registers its models. 
+	 * Uses the item's registry name as the model location. Use this method as soon as you create your items. Spartan Weaponry will load them during its ModelRegistry event (before init phase?)
+	 * @param item The item to register the model for.
+	 */
+	public abstract void addItemModelToRegistry(Item item);
+	
+	/**
+	 * Adds the item and its item Model to Spartan Weaponry's internal model registry, set to be registered when Spartan Weaponry registers its models. 
+	 * Use this method as soon as you create your items. Spartan Weaponry will load them during its ModelRegistry event (before init phase?)
+	 * @param item The item to register the model for.
+	 * @param modelLocation The ResourceLocation to look for the model file
+	 */
+	public abstract void addItemModelToRegistry(Item item, ResourceLocation modelLocation);
+	
+	/**
+	 * Adds the item and its item Model to Spartan Weaponry's internal model registry, set to be registered when Spartan Weaponry registers its models. 
+	 * Use this method as soon as you create your items. Spartan Weaponry will load them during its ModelRegistry event (before init phase?)
+	 * @param item The item to register the model for.
+	 * @param modId Your addon mod's Mod ID/domain
+	 * @param modelLocation The path to look for the model file
+	 */
+	public abstract void addItemModelToRegistry(Item item, String modId, String modelLocation);
 	
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	// Translation functions
