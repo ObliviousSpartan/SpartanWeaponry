@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
-import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -25,7 +24,7 @@ public class WeaponPropertyNausea extends WeaponPropertyWithCallback
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip)
 	{
-		tooltip.add(TextFormatting.ITALIC + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, magnitude));
+		tooltip.add(TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, magnitude));
 	}
 	
 	@Override
@@ -33,8 +32,7 @@ public class WeaponPropertyNausea extends WeaponPropertyWithCallback
 	{
 		if(target.getItemStackFromSlot(EntityEquipmentSlot.HEAD).isEmpty())
 		{
-			target.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, (int)WeaponProperties.NAUSEA.getMagnitude() * 20, 1));
-			//target.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 40, 1));
+			target.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, (int)(getMagnitude() * 20.0f), 1));
 		}
 	}
 

@@ -20,84 +20,73 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	
 	@Override
-	public Item addDagger(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties) 
+	public Item addDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addLongsword(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addLongsword(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addKatana(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addKatana(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addSaber(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addSaber(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addRapier(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addRapier(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addGreatsword(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties)
+	public Item addGreatsword(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addHammer(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addHammer(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addWarhammer(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties)
+	public Item addWarhammer(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addSpear(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addSpear(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addHalberd(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addHalberd(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addPike(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addPike(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addLance(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addLance(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
@@ -115,43 +104,49 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	}
 
 	@Override
-	public Item addThrowingKnife(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addThrowingKnife(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addThrowingAxe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addThrowingAxe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addJavelin(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addJavelin(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addBoomerang(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addBoomerang(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addBattleaxe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties)
+	public Item addBattleaxe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addMace(ToolMaterialEx material, String modId, float damage, CreativeTabs tab,
-			WeaponProperty... properties) 
+	public Item addMace(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
+	{
+		return null;
+	}
+
+	@Override
+	public Item addGlaive(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
+	{
+		return null;
+	}
+
+	@Override
+	public Item addQuarterstaff(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;
 	}

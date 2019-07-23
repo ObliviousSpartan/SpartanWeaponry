@@ -23,14 +23,18 @@ public class WeaponPropertyTwoHanded extends WeaponPropertyWithCallback
 		//WeaponHelper.inflictTwoHandedEffect(entity, stack, MathHelper.floor(magnitude));
 		ItemStack mainHand = entity.getHeldItemMainhand();
 		ItemStack offHand = entity.getHeldItemOffhand();
+		PotionEffect effect = entity.getActivePotionEffect(MobEffects.MINING_FATIGUE);
 		
 		// If the weapon is equipped in the main-hand and anything else is equipped in the off-hand, give mining fatigue
-		if(ItemStack.areItemsEqualIgnoreDurability(stack, mainHand) && !offHand.isEmpty())
+		if(isSelected && ItemStack.areItemsEqualIgnoreDurability(stack, mainHand) && !offHand.isEmpty())
 		{
 			// Apply Mining Fatigue as often as needed.
-			PotionEffect effect = entity.getActivePotionEffect(MobEffects.MINING_FATIGUE);
 			if(effect == null || effect.getDuration() <= 1)
 				entity.addPotionEffect(new PotionEffect(MobEffects.MINING_FATIGUE, 20, MathHelper.floor(magnitude), false, false));
+		}
+		else if(effect != null && effect.getDuration() <= 0)
+		{
+			entity.removePotionEffect(MobEffects.MINING_FATIGUE);
 		}
 	}
 }

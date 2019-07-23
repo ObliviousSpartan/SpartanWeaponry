@@ -22,7 +22,7 @@ public class WeaponPropertyDamageAbsorb extends WeaponPropertyWithCallback
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip)
 	{
-		tooltip.add(TextFormatting.ITALIC + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, magnitude * 100.0f));
+		tooltip.add(TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, magnitude * 100.0f));
 	}
 
 	@Override

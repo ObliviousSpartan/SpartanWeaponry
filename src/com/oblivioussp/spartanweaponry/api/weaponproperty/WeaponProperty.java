@@ -92,6 +92,6 @@ public class WeaponProperty
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip)
 	{
-		tooltip.add(/*TextFormatting.AQUA +*/ TextFormatting.ITALIC +  SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId));
+		tooltip.add(/*TextFormatting.AQUA +*/ TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId));
 	}
 }

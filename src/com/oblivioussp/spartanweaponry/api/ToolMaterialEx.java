@@ -1,5 +1,10 @@
 package com.oblivioussp.spartanweaponry.api;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -14,14 +19,18 @@ public class ToolMaterialEx
 	public static final ToolMaterialEx IRON = new ToolMaterialEx("iron", ToolMaterial.IRON, "ingotIron");
 	public static final ToolMaterialEx GOLD = new ToolMaterialEx("gold", ToolMaterial.GOLD, "ingotGold");
 	public static final ToolMaterialEx DIAMOND = new ToolMaterialEx("diamond", ToolMaterial.DIAMOND, "gemDiamond");
+	// TODO: Possibly change the leather material to make it look better.
 	public static final ToolMaterialEx LEATHER = new ToolMaterialEx("leather", EnumHelper.addToolMaterial("sw_leather", 0, 128, 2.0f, 0.0f, 5).setRepairItem(new ItemStack(Items.LEATHER)), "leather");
 	
 	protected ToolMaterial material;
 	protected String unlocName;
-	protected String modId;
+	protected String modId = SpartanWeaponryAPI.ModID;
 	protected String repairOreDict;
+	protected float baseDamage;
 	protected int colourPrimary = 0x7F7F7F,
 				colourSecondary = 0xFFFFFF;
+	
+	protected List<WeaponProperty> properties = new ArrayList<WeaponProperty>();
 	
 	/**
 	 * Automatically generates a Tool Material on construction. Also generates a unlocalized name in the form [ModID]:[name]
@@ -33,26 +42,54 @@ public class ToolMaterialEx
 	
 	public ToolMaterialEx(String unlocalizedName, String repairMaterialOreDict, String externalModId, int primaryColour, int secondaryColour, int harvestLevel, int maxUses, float efficiency, float baseDamage, int enchantability)
 	{
-		unlocName = unlocalizedName;
-		repairOreDict = repairMaterialOreDict;
-		colourPrimary = primaryColour;
-		colourSecondary = secondaryColour;
-		modId = externalModId;
-		material = EnumHelper.addToolMaterial(externalModId + ":" + unlocalizedName, harvestLevel, maxUses, efficiency, baseDamage, enchantability);
+		this.unlocName = unlocalizedName;
+		this.repairOreDict = repairMaterialOreDict;
+		this.colourPrimary = primaryColour;
+		this.colourSecondary = secondaryColour;
+		this.modId = externalModId;
+		this.baseDamage = baseDamage;
+		this.material = EnumHelper.addToolMaterial(externalModId + ":" + unlocalizedName, harvestLevel, maxUses, efficiency, baseDamage, enchantability);
+	}
+	
+	public ToolMaterialEx(String unlocalizedName, String repairMaterialOreDict, String externalModId, int primaryColour, int secondaryColour, int harvestLevel, int maxUses, float efficiency, float baseDamage, int enchantability, WeaponProperty... weaponProperties)
+	{
+		this(unlocalizedName, repairMaterialOreDict, externalModId, primaryColour, secondaryColour, harvestLevel, maxUses, efficiency, baseDamage, enchantability);
+		for(WeaponProperty property : weaponProperties)
+		{
+			properties.add(property);
+		}
+	}
+	
+	public ToolMaterialEx(String unlocalizedName, ToolMaterial toolMaterial, String repairMaterialOreDict, String externalModId, float baseDamage, WeaponProperty... weaponProperties)
+	{
+		this(unlocalizedName, toolMaterial, repairMaterialOreDict, externalModId, baseDamage);
+		for(WeaponProperty property : weaponProperties)
+		{
+			properties.add(property);
+		}
+	}
+	
+	public ToolMaterialEx(String unlocalizedName, ToolMaterial toolMaterial, String repairMaterialOreDict, String externalModId, float baseDamage)
+	{
+		this(unlocalizedName, toolMaterial, repairMaterialOreDict, externalModId);
+		this.baseDamage = baseDamage;
 	}
 	
 	public ToolMaterialEx(String unlocalizedName, ToolMaterial toolMaterial, String repairMaterialOreDict, String externalModId)
 	{
 		this(unlocalizedName, toolMaterial, repairMaterialOreDict);
-		modId = externalModId;
+		this.modId = externalModId;
 	}
 	
 	protected ToolMaterialEx(String unlocalizedName, ToolMaterial toolMaterialBase, String repairMaterialOreDict)
 	{
-		unlocName = unlocalizedName;
-		material = toolMaterialBase;
-		repairOreDict = repairMaterialOreDict;
+		this.unlocName = unlocalizedName;
+		this.material = toolMaterialBase;
+		this.repairOreDict = repairMaterialOreDict;
+		this.baseDamage = toolMaterialBase.getAttackDamage();
 	}
+	
+	
 	
 	public ToolMaterial getMaterial()
 	{
@@ -117,7 +154,7 @@ public class ToolMaterialEx
 	
 	public float getAttackDamage()
 	{
-		return material.getAttackDamage();
+		return baseDamage;
 	}
 	
 	public int getHarvestLevel()
@@ -128,5 +165,68 @@ public class ToolMaterialEx
 	public int getEnchantability()
 	{
 		return material.getEnchantability();
+	}
+	
+	/**
+	 * Queries if the material has any Weapon Properties
+	 * @return true if any Weapon Property bonus exists on this material; false otherwise.
+	 */
+	public boolean hasAnyWeaponProperty()
+	{
+		return !properties.isEmpty();
+	}
+	
+	/**
+	 * Queries if the material already has the specified Weapon Property
+	 * @param prop The Weapon Property to check for
+	 * @return true if the Weapon Property exists on this material; false otherwise.
+	 */
+	public boolean hasWeaponProperty(WeaponProperty prop)
+	{
+		return properties.contains(prop);
+	}
+	
+	/**
+	 * Retrieves the first Weapon Property with the specified property type. Any other matches will be ignored.
+	 * @param type The Weapon Property type to check for
+	 * @return The first Weapon Property that matches; null otherwise
+	 */
+	public WeaponProperty getFirstWeaponPropertyWithType(String type)
+	{
+		for(WeaponProperty property : properties)
+		{
+			if(property.getType() == type)
+				return property;
+		}
+		return null;
+	}
+	
+	/**
+	 * Retrieves all Weapon Properties in this weapon with the specified property type.
+	 * @param type The Weapon Property type to check for
+	 * @return A list of Weapon Properties that matches; null otherwise
+	 */
+	public List<WeaponProperty> getAllWeaponPropertiesWithType(String type)
+	{
+		List<WeaponProperty> result = new ArrayList<WeaponProperty>();
+		
+		for(WeaponProperty property : properties)
+		{
+			if(property.getType() == type)
+				result.add(property);
+		}
+		
+		if(result.isEmpty())
+			return null;
+		return result;
+	}
+	
+	/**
+	 * Returns a list of all the Weapon Properties in the current weapon
+	 * @return
+	 */
+	public List<WeaponProperty> getAllWeaponProperties()
+	{
+		return properties;
 	}
 }

@@ -11,6 +11,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 
 public class WeaponPropertyExtraDamage extends WeaponPropertyWithCallback
@@ -23,7 +24,7 @@ public class WeaponPropertyExtraDamage extends WeaponPropertyWithCallback
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) 
 	{
-		tooltip.add(TextFormatting.ITALIC + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, (magnitude - 1.0f) * 100.0f));
+		tooltip.add(TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, MathHelper.floor((magnitude - 1.0f) * 100.0f)));
 	}
 
 	@Override

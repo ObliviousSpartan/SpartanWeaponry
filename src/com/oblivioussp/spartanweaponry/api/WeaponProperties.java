@@ -44,7 +44,8 @@ public class WeaponProperties
 	public static final WeaponProperty DAMAGE_ABSORB_25 = new WeaponPropertyDamageAbsorb(PROPERTY_TYPE_DAMAGE_ABSORB, SpartanWeaponryAPI.ModID, 0.25f);
 	public static final WeaponProperty REACH_1 = new WeaponProperty(PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 1, 5.5f);
 	public static final WeaponProperty REACH_2 = new WeaponProperty(PROPERTY_TYPE_REACH, SpartanWeaponryAPI.ModID, 2, 7.0f);
-	public static final WeaponProperty SWEEP_DAMAGE = new WeaponProperty(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID);
+	public static final WeaponProperty SWEEP_DAMAGE_FULL = new WeaponPropertyWithMagnitude(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID, 2, 100.0f);
+	public static final WeaponProperty SWEEP_DAMAGE_HALF = new WeaponPropertyWithMagnitude(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID, 1, 50.0f);
 	public static final WeaponProperty KNOCKBACK = new WeaponPropertyKnockback(PROPERTY_TYPE_KNOCKBACK, SpartanWeaponryAPI.ModID);
 	public static final WeaponProperty NAUSEA = new WeaponPropertyNausea(PROPERTY_TYPE_NAUSEA, SpartanWeaponryAPI.ModID, 5.0f);
 	public static final WeaponProperty ARMOUR_PIERCING_50 = new WeaponPropertyWithMagnitude(PROPERTY_TYPE_ARMOUR_PIERCING, SpartanWeaponryAPI.ModID, 50.0f);

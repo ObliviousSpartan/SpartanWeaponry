@@ -1,5 +1,6 @@
 package com.oblivioussp.spartanweaponry.api;
 
+@Deprecated
 public class DamageHelper 
 {
 	// Note: These methods are designed to convert the base damage of weapons
@@ -12,6 +13,8 @@ public class DamageHelper
 	//		Rapier dmg			= 2.5f + (baseDamage * 0.5f)
 	//		Greatsword dmg		= 6.0f + (baseDamage * 2.0f)
 	//	etc.
+
+	@Deprecated
 	public enum WeaponType
 	{
 		DAGGER,
@@ -32,9 +35,12 @@ public class DamageHelper
 		BOOMERANG,
 		BATTLEAXE,
 		MACE,
+		GLAIVE,
+		QUARTERSTAFF,
 		PARRYING_DAGGER
 	};
-	
+
+	@Deprecated
 	public static float getDamage(WeaponType type, float baseDamage)
 	{
 		switch(type)
@@ -75,6 +81,10 @@ public class DamageHelper
 			return 5.0f + (baseDamage * 2.0f);
 		case MACE:
 			return 4.0f + baseDamage;
+		case GLAIVE:
+			return 4.0f + baseDamage;
+		case QUARTERSTAFF:
+			return 1.5f + baseDamage;
 		case PARRYING_DAGGER:
 			return 2.0f + (baseDamage * 0.5f);
 		default:

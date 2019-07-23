@@ -14,11 +14,16 @@ public class WeaponPropertyWithMagnitude extends WeaponProperty
 	{
 		super(propType, propModId, propMagnitude);
 	}
+	
+	public WeaponPropertyWithMagnitude(String propType, String propModId, int propLevel, float propMagnitude) 
+	{
+		super(propType, propModId, propLevel, propMagnitude);
+	}
 
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip)
 	{
-		tooltip.add(TextFormatting.ITALIC + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, magnitude));
+		tooltip.add(TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, magnitude));
 	}
 
 }

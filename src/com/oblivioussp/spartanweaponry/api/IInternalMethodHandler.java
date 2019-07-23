@@ -18,142 +18,322 @@ public interface IInternalMethodHandler
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addDagger(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Dagger item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Dagger item
 	 */
-	public abstract Item addDagger(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addDagger(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addDagger(material, modId, tab, properties);
+	}
+	
+	/**
+	 * Creates a Dagger item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Dagger item
+	 */
+	public abstract Item addDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+	
+	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addLongsword(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
+	 * Creates a Longsword item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Longsword item
+	 */
+	@Deprecated
+	public default Item addLongsword(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addLongsword(material, modId, tab, properties);
+	}
 	
 	/**
 	 * Creates a Longsword item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Longsword item
 	 */
-	public abstract Item addLongsword(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	public abstract Item addLongsword(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addKatana(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Katana item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Katana item
 	 */
-	public abstract Item addKatana(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addKatana(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addKatana(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Katana item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Katana item
+	 */
+	public abstract Item addKatana(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+	
+	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addSaber(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
+	 * Creates a Saber item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Saber item
+	 */
+	@Deprecated
+	public default Item addSaber(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addSaber(material, modId, tab, properties);
+	}
 	
 	/**
 	 * Creates a Saber item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Saber item
 	 */
-	public abstract Item addSaber(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	public abstract Item addSaber(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addRapier(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Rapier item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Rapier item
 	 */
-	public abstract Item addRapier(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addRapier(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addRapier(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Rapier item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Rapier item
+	 */
+	public abstract Item addRapier(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+	
+	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addGreatsword(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
+	 * Creates a Greatsword item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Greatsword item
+	 */
+	@Deprecated
+	public default Item addGreatsword(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addGreatsword(material, modId, tab, properties);
+	}
 	
 	/**
 	 * Creates a Greatsword item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Greatsword item
 	 */
-	public abstract Item addGreatsword(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	public abstract Item addGreatsword(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addHammer(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Hammer item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Hammer item
 	 */
-	public abstract Item addHammer(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addHammer(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addHammer(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Hammer item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Hammer item
+	 */
+	public abstract Item addHammer(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+	
+	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addWarhammer(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
+	 * Creates a Warhammer item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Warhammer item
+	 */
+	@Deprecated
+	public default Item addWarhammer(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addWarhammer(material, modId, tab, properties);
+	}
 	
 	/**
 	 * Creates a Warhammer item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Warhammer item
 	 */
-	public abstract Item addWarhammer(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	public abstract Item addWarhammer(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addSpear(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Spear item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Spear item
 	 */
-	public abstract Item addSpear(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addSpear(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addSpear(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Spear item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Spear item
+	 */
+	public abstract Item addSpear(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addHalberd(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Halberd item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Halberd item
 	 */
-	public abstract Item addHalberd(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addHalberd(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addHalberd(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Halberd item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Halberd item
+	 */
+	public abstract Item addHalberd(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addPike(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Pike item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Pike item
 	 */
-	public abstract Item addPike(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addPike(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addPike(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Pike item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Pike item
+	 */
+	public abstract Item addPike(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+	
+	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addLance(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
+	 * Creates a Lance item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Lance item
+	 */
+	@Deprecated
+	public default Item addLance(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addLance(material, modId, tab, properties);
+	}
 	
 	/**
 	 * Creates a Lance item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Lance item
 	 */
-	public abstract Item addLance(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	public abstract Item addLance(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
 	 * Creates a Longbow item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param callback A callback method to add to the weapon
 	 * @return The newly created Longbow item
@@ -164,7 +344,6 @@ public interface IInternalMethodHandler
 	 * Creates a Crossbow item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
 	 * @param tab The Creative Tab the item will show up in
 	 * @param callback A callback method to add to the weapon
 	 * @return The newly created Crossbow item
@@ -172,70 +351,182 @@ public interface IInternalMethodHandler
 	public abstract Item addCrossbow(ToolMaterialEx material, String modId, CreativeTabs tab, IWeaponCallback callback);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addThrowingKnife(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Throwing Knife item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Throwing Knife item
 	 */
-	public abstract Item addThrowingKnife(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addThrowingKnife(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addThrowingKnife(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Throwing Knife item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Throwing Knife item
+	 */
+	public abstract Item addThrowingKnife(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addThrowingAxe(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Throwing Axe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Throwing Axe item
 	 */
-	public abstract Item addThrowingAxe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addThrowingAxe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addThrowingAxe(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Throwing Axe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Throwing Axe item
+	 */
+	public abstract Item addThrowingAxe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addJavelin(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Javelin item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Javelin item
 	 */
-	public abstract Item addJavelin(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addJavelin(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addJavelin(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Javelin item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Javelin item
+	 */
+	public abstract Item addJavelin(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addBoomerang(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Boomerang item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Boomerang item
 	 */
-	public abstract Item addBoomerang(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addBoomerang(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addBoomerang(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Boomerang item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Boomerang item
+	 */
+	public abstract Item addBoomerang(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addBattleaxe(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Battleaxe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Battleaxe item
 	 */
-	public abstract Item addBattleaxe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addBattleaxe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addBattleaxe(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Battleaxe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Battleaxe item
+	 */
+	public abstract Item addBattleaxe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addMace(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Mace item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
 	 * @param material The weapon material
 	 * @param modId The mod ID for the mod calling this
-	 * @param damage The damage inflicted
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
 	 * @return The newly created Mace item
 	 */
-	public abstract Item addMace(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties);
+	@Deprecated
+	public default Item addMace(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addMace(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Mace item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Mace item
+	 */
+	public abstract Item addMace(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+	
+	/**
+	 * Creates a Glaive item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Mace item
+	 */
+	public abstract Item addGlaive(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+
+	/**
+	 * Creates a Quarterstaff item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Mace item
+	 */
+	public abstract Item addQuarterstaff(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 	
 
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

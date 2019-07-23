@@ -28,6 +28,6 @@ public class WeaponPropertyVersatile extends WeaponProperty
 			types += (i > 0 ? " & " : "") +  SpartanWeaponryAPI.internalHandler.translateString("versatile." + toolClass, "tooltip", modId);
 		}
 		
-		tooltip.add(TextFormatting.ITALIC + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, types));
+		tooltip.add(TextFormatting.ITALIC + "   " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, types));
 	}
 }
