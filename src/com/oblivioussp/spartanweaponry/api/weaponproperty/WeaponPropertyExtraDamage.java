@@ -28,25 +28,27 @@ public class WeaponPropertyExtraDamage extends WeaponPropertyWithCallback
 	}
 
 	@Override
-	public float modifyDamageDealt(ToolMaterialEx material, float baseDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim) 
+	public float modifyDamageDealt(ToolMaterialEx material, float baseDamage, float initialDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim) 
 	{
 		if(attacker == null || victim == null)
 			return baseDamage;
+		float bonusDamage = ((this.getMagnitude() - 1.0f) * initialDamage);
+		
 		switch(type)
 		{
 			case(WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_CHEST):
-				return victim.getItemStackFromSlot(EntityEquipmentSlot.CHEST).isEmpty() ? this.getMagnitude() * baseDamage : baseDamage;
+				return victim.getItemStackFromSlot(EntityEquipmentSlot.CHEST).isEmpty() ? baseDamage + bonusDamage : baseDamage;
 			case(WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED):
 			{
 				if(victim.getItemStackFromSlot(EntityEquipmentSlot.HEAD).isEmpty() && victim.getItemStackFromSlot(EntityEquipmentSlot.CHEST).isEmpty() &&
 						victim.getItemStackFromSlot(EntityEquipmentSlot.LEGS).isEmpty() && victim.getItemStackFromSlot(EntityEquipmentSlot.FEET).isEmpty())
-					return this.getMagnitude() * baseDamage;
+					return baseDamage + bonusDamage;
 				return baseDamage;
 			}
 			case(WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_RIDING):
-				return attacker.isRiding() ? this.getMagnitude() * baseDamage : baseDamage;
+				return attacker.isRiding() ? baseDamage + bonusDamage : baseDamage;
 			case(WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_UNDEAD):
-				return victim.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD ? this.getMagnitude() * baseDamage : baseDamage;
+				return victim.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD ? baseDamage + bonusDamage : baseDamage;
 			default:
 				return baseDamage;
 		}

@@ -30,6 +30,22 @@ public interface IPropertyCallback
 	}
 	
 	/**
+	 * Change this to customise damage from a weapon with this Weapon Property when it deals damage. Can now access inital weapon damage.
+	 * @param material The weapon's material
+	 * @param baseDamage The base damage that should be taken if unmodified
+	 * @param initialDamage The initial damage the weapon would inflict without enchantments/bonuses
+	 * @param source The source of the damage
+	 * @param attacker The attacking Entity
+	 * @param victim The Entity being attacked
+	 * @return The damage that will be taken after any necessary modifications.
+	 */
+	@SuppressWarnings("unused")
+	public default float modifyDamageDealt(ToolMaterialEx material, float baseDamage, float initialDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim)
+	{
+		return modifyDamageDealt(material, baseDamage, source, attacker, victim);
+	}
+	
+	/**
 	 * Change this to customise damage taken with this weapon equipped with this Weapon Property when damage is taken
 	 * @param material The weapon's material
 	 * @param baseDamage The base damage that should be taken if unmodified

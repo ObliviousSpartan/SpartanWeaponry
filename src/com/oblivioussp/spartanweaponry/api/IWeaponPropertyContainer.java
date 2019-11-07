@@ -39,14 +39,17 @@ public interface IWeaponPropertyContainer<T extends Item>
 	/**
 	 * Returns a copy of all the Weapon Properties in the current weapon
 	 * NOTE: This does not return the Weapon Properties granted by a Material Bonus. To retrieve those, use {@link #getMaterialEx()} to retrieve the Material, and use the getAllWeaponProperties() method with the Material.
-	 * @return
 	 */
 	public List<WeaponProperty> getAllWeaponProperties();
 	
 	/**
 	 * Returns the material the weapon is made of. Allows Weapon Properties to access the material directly.
 	 * Use this instead of {@link #getAllWeaponProperties()} to retrieve all the Weapon Properties as part of the Material Bonus.
-	 * @return
 	 */
 	public ToolMaterialEx getMaterialEx();
+	
+	/**
+	 * Returns the damage that the weapon would inflict without enchantments/bonuses.
+	 */
+	public float getDirectAttackDamage();
 }
