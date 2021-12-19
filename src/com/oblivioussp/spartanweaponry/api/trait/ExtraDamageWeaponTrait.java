@@ -11,7 +11,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -25,7 +24,7 @@ public class ExtraDamageWeaponTrait extends MeleeCallbackWeaponTrait
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip) 
 	{
-		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", SpartanWeaponryAPI.MOD_ID, type), MathHelper.floor((magnitude - 1.0f) * 100.0f)).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
+		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", SpartanWeaponryAPI.MOD_ID, type), (magnitude - 1.0f) * 100.0f).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
 	}
 
 	@Override
@@ -37,6 +36,8 @@ public class ExtraDamageWeaponTrait extends MeleeCallbackWeaponTrait
 		{
 			case(WeaponTraits.TRAIT_TYPE_EXTRA_DAMAGE_CHEST):
 				return victim.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty() ? this.getMagnitude() * baseDamage : baseDamage;
+			case(WeaponTraits.TRAIT_TYPE_EXTRA_DAMAGE_HELMET):
+				return victim.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() ? this.getMagnitude() * baseDamage: baseDamage;
 			case(WeaponTraits.TRAIT_TYPE_EXTRA_DAMAGE_UNARMOURED):
 			{
 				if(victim.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() && victim.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty() &&

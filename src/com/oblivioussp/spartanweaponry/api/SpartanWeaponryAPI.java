@@ -5,7 +5,7 @@ import net.minecraft.item.ItemGroup;
 
 public class SpartanWeaponryAPI 
 {
-	public static final int API_VERSION = 5;
+	public static final int API_VERSION = 6;
 	public static final String MOD_ID = "spartanweaponry";
 	
 	//	public static ArrayList<WeaponMaterial> materials = new ArrayList<WeaponMaterial>();
@@ -242,7 +242,7 @@ public class SpartanWeaponryAPI
 	}
 
 	/**
-	 * Creates a new mace, using the specified material. Gives the new item the registry name of "item.[modId].mace_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
+	 * Creates a new mace, using the specified material. Gives the new item the registry name of "item.[modId].flanged_mace_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
 	 * @param material The Material that the weapon is made of
 	 * @param group The Creative Tab that this weapon will appear in
 	 * @return The newly created weapon
@@ -253,7 +253,7 @@ public class SpartanWeaponryAPI
 	}
 
 	/**
-	 * Creates a new glaive, using the specified material. Gives the new item the registry name of "item.[modId].mace_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
+	 * Creates a new glaive, using the specified material. Gives the new item the registry name of "item.[modId].glaive_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
 	 * @param material The Material that the weapon is made of
 	 * @param group The Creative Tab that this weapon will appear in
 	 * @return The newly created weapon
@@ -264,7 +264,7 @@ public class SpartanWeaponryAPI
 	}
 
 	/**
-	 * Creates a new quarterstaff, using the specified material. Gives the new item the registry name of "item.[modId].mace_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
+	 * Creates a new quarterstaff, using the specified material. Gives the new item the registry name of "item.[modId].quarterstaff_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
 	 * @param material The Material that the weapon is made of
 	 * @param group The Creative Tab that this weapon will appear in
 	 * @return The newly created weapon
@@ -272,5 +272,16 @@ public class SpartanWeaponryAPI
 	public static Item createQuarterstaff(WeaponMaterial material, ItemGroup group)
 	{
 		return internalHandler.addQuarterstaff(material, group);
+	}
+
+	/**
+	 * Creates a new scythe, using the specified material. Gives the new item the registry name of "item.[modId].scythe_[material.unlocName]". The caller is responsible for registering the weapon item and recipe
+	 * @param material The Material that the weapon is made of
+	 * @param group The Creative Tab that this weapon will appear in
+	 * @return The newly created weapon
+	 */
+	public static Item createScythe(WeaponMaterial material, ItemGroup group)
+	{
+		return internalHandler.addScythe(material, group);
 	}
 }

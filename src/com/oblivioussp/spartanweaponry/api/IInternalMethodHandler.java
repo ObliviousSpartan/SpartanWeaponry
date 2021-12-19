@@ -189,17 +189,12 @@ public interface IInternalMethodHandler
 	 * @return The newly created Mace item
 	 */
 	public abstract Item addQuarterstaff(WeaponMaterial material, ItemGroup group);
-	
-	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-	// Registration functions
-	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-	
+
 	/**
-	 * Registers the Item to use the Spartan Weaponry colour handler. This means that the second and third layers of the item model will use the tint primary/secondary respective colours provided by the {@link ToolMaterialEx}.
-	 * Use this method when you register your items. Spartan Weaponry will load them during the init phase
-	 * @param item The Item to register
-	 * @param material The tool material to use for this. Contains the colours for the materials within.
+	 * Creates a Scythe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param group The Creative Tab the item will show up in
+	 * @return The newly created Mace item
 	 */
-	// TODO: Possibly add this back in
-	//public abstract void registerColourHandler(Item item, WeaponMaterial material);
+	public abstract Item addScythe(WeaponMaterial material, ItemGroup group);
 }

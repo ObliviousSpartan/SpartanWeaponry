@@ -3,6 +3,7 @@ package com.oblivioussp.spartanweaponry.api;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 
@@ -12,6 +13,9 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class WeaponMaterial implements IItemTier
 {
@@ -43,10 +47,13 @@ public class WeaponMaterial implements IItemTier
 	private final LazyValue<Ingredient> repairMaterial;
 	private final ResourceLocation tagName;
 	
-	private String name;
-	private String modId = SpartanWeaponryAPI.MOD_ID;
+	private final String name;
+	private final String modId;
 	private int colourPrimary = 0x7F7F7F,
 				colourSecondary = 0xFFFFFF;
+	
+	private boolean useCustomDisplayName = false;
+	private Function<String, String> translationFunc = null;
 	
 	protected List<WeaponTrait> traits = new ArrayList<WeaponTrait>();
 	
@@ -85,6 +92,30 @@ public class WeaponMaterial implements IItemTier
 	{
 		this(unlocName, SpartanWeaponryAPI.MOD_ID, itemTier, tagName);
 		this.traits = Arrays.asList(traits);
+	}
+	
+	public WeaponMaterial setUseCustomDisplayName()
+	{
+		this.useCustomDisplayName = true;
+		return this;
+	}
+	
+	public WeaponMaterial setUseCustomDisplayName(Function<String, String> translationFunc)
+	{
+		this.translationFunc = translationFunc;
+		return setUseCustomDisplayName();
+	}
+	
+	public boolean useCustomDisplayName()
+	{
+		return this.useCustomDisplayName;
+	}
+	
+	public ITextComponent translateName()
+	{
+		if(translationFunc == null)
+			return new TranslationTextComponent("material." + this.getModId() + "." + this.getMaterialName());
+		return new StringTextComponent(translationFunc.apply(name));
 	}
 	
 	public String getMaterialName()

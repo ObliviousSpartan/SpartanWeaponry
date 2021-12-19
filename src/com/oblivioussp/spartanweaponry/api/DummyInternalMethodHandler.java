@@ -141,4 +141,10 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 		return null;
 	}
 
+	@Override
+	public Item addScythe(WeaponMaterial material, ItemGroup group)
+	{
+		return null;
+	}
+
 }

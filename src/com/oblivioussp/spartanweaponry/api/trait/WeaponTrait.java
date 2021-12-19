@@ -4,16 +4,18 @@ import java.util.List;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 /**
  * Base Weapon Trait class. Extend this class or other classes to implement your own Weapon Trait for any weapon.
  * @author ObliviousSpartan
  *
  */
-public class WeaponTrait 
+public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 {
 	/**
 	 * Trait Quality determines what colour that a Weapon Trait shows up in the tooltip for any weapon
@@ -46,6 +48,7 @@ public class WeaponTrait
 	protected int level;
 	protected float magnitude;
 	protected TraitQuality quality;
+	protected ResourceLocation regName;
 	
 	public WeaponTrait(String type, String modId, int level, float magnitude, TraitQuality quality)
 	{
@@ -168,7 +171,7 @@ public class WeaponTrait
 					.mergeStyle(this.quality.getFormatting()));
 		else
 			tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))
-					.append(new TranslationTextComponent("enchantment.level." + Integer.toString(level)))
+					.appendSibling(new TranslationTextComponent("enchantment.level." + Integer.toString(level)))
 					.mergeStyle(this.quality.getFormatting()));
 	}
 
@@ -180,5 +183,26 @@ public class WeaponTrait
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
 		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", this.modId, this.type)).mergeStyle(DESCRIPTION_COLOUR));
+	}
+	
+	// IForgeRegistryEntry
+
+	@Override
+	public WeaponTrait setRegistryName(ResourceLocation name) 
+	{
+		regName = name;
+		return this;
+	}
+
+	@Override
+	public ResourceLocation getRegistryName() 
+	{
+		return regName;
+	}
+
+	@Override
+	public Class<WeaponTrait> getRegistryType() 
+	{
+		return WeaponTrait.class;
 	}
 }

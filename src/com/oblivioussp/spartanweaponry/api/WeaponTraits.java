@@ -2,9 +2,9 @@ package com.oblivioussp.spartanweaponry.api;
 
 import com.oblivioussp.spartanweaponry.api.trait.DamageAbsorbWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.ExtraDamageWeaponTrait;
-import com.oblivioussp.spartanweaponry.api.trait.MeleeAndRangedWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.HeavyWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.KnockbackWeaponTrait;
+import com.oblivioussp.spartanweaponry.api.trait.MeleeAndRangedWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.NauseaWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.QuickStrikeWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.ReachWeaponTrait;
@@ -15,6 +15,7 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait.TraitQuality;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTraitWithMagnitude;
 
+//@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class WeaponTraits 
 {
 	// Weapon Trait Types
@@ -23,6 +24,7 @@ public class WeaponTraits
 								TRAIT_TYPE_TWO_HANDED = "two_handed",
 								TRAIT_TYPE_EXTRA_DAMAGE = "extra_damage",
 								TRAIT_TYPE_EXTRA_DAMAGE_CHEST = "extra_damage_chest",
+								TRAIT_TYPE_EXTRA_DAMAGE_HELMET = "extra_damage_helmet",
 								TRAIT_TYPE_EXTRA_DAMAGE_RIDING = "extra_damage_riding",
 								TRAIT_TYPE_EXTRA_DAMAGE_THROWN = "extra_damage_thrown",
 								TRAIT_TYPE_EXTRA_DAMAGE_UNARMOURED = "extra_damage_unarmoured",
@@ -37,13 +39,19 @@ public class WeaponTraits
 								TRAIT_TYPE_VERSATILE = "versatile",
 								TRAIT_TYPE_QUICK_STRIKE = "quick_strike",
 								TRAIT_TYPE_FIREPROOF = "fireproof",
-								TRAIT_TYPE_HEAVY = "heavy";
+								TRAIT_TYPE_HEAVY = "heavy",
+								TRAIT_TYPE_DECAPITATE = "decapitate";
+	
+	// Weapon Trait registry
+	// While this is optional, this is used to allow custom materials (from *.json) to add Weapon Traits to weapons made from those materials
+//	public static IForgeRegistry<WeaponTrait> REGISTRY;
 	
 	// Weapon Traits
 	public static final WeaponTrait THROWABLE = new WeaponTrait(TRAIT_TYPE_THROWABLE, SpartanWeaponryAPI.MOD_ID, TraitQuality.POSITIVE);
 	public static final WeaponTrait TWO_HANDED_1 = new TwoHandedWeaponTrait(TRAIT_TYPE_TWO_HANDED, SpartanWeaponryAPI.MOD_ID, 1, 2.0f);
 	public static final WeaponTrait TWO_HANDED_2 = new TwoHandedWeaponTrait(TRAIT_TYPE_TWO_HANDED, SpartanWeaponryAPI.MOD_ID, 2, 3.0f);
 	public static final WeaponTrait EXTRA_DAMAGE_2_CHEST = new ExtraDamageWeaponTrait(TRAIT_TYPE_EXTRA_DAMAGE_CHEST, SpartanWeaponryAPI.MOD_ID, 2.0f);
+	public static final WeaponTrait EXTRA_DAMAGE_50P_HELMET = new ExtraDamageWeaponTrait(TRAIT_TYPE_EXTRA_DAMAGE_HELMET, SpartanWeaponryAPI.MOD_ID, 1.5f);
 	public static final WeaponTrait EXTRA_DAMAGE_2_RIDING = new ExtraDamageWeaponTrait(TRAIT_TYPE_EXTRA_DAMAGE_RIDING, SpartanWeaponryAPI.MOD_ID, 2.0f);
 	public static final WeaponTrait EXTRA_DAMAGE_2_THROWN = new ExtraDamageWeaponTrait(TRAIT_TYPE_EXTRA_DAMAGE_THROWN, SpartanWeaponryAPI.MOD_ID, 2.0f);
 	public static final WeaponTrait EXTRA_DAMAGE_3_THROWN = new ExtraDamageWeaponTrait(TRAIT_TYPE_EXTRA_DAMAGE_THROWN, SpartanWeaponryAPI.MOD_ID, 3.0f);
@@ -63,4 +71,29 @@ public class WeaponTraits
 	public static final WeaponTrait QUICK_STRIKE = new QuickStrikeWeaponTrait(TRAIT_TYPE_QUICK_STRIKE, SpartanWeaponryAPI.MOD_ID, 14.0f);
 	public static final WeaponTrait FIREPROOF = new MeleeAndRangedWeaponTrait(TRAIT_TYPE_FIREPROOF, SpartanWeaponryAPI.MOD_ID, TraitQuality.POSITIVE);
 	public static final WeaponTrait HEAVY = new HeavyWeaponTrait(TRAIT_TYPE_HEAVY);
+	public static final WeaponTrait DECAPITATE = new WeaponTraitWithMagnitude(TRAIT_TYPE_DECAPITATE, SpartanWeaponryAPI.MOD_ID, 50.0f, TraitQuality.POSITIVE);
+	
+/*	@SubscribeEvent
+	public static void onNewRegistry(RegistryEvent.NewRegistry ev)
+	{
+//		Log.info("Creating Weapon Trait Registry!");
+		RegistryBuilder<WeaponTrait> regBuilder = new RegistryBuilder<WeaponTrait>();
+		regBuilder.setName(new ResourceLocation(ModSpartanWeaponry.ID, "weapon_trait"));
+		regBuilder.setType(WeaponTrait.class);
+		REGISTRY = regBuilder.create();
+//		Log.info("Created Weapon Trait Registry successfully!");
+	}
+	
+	@SubscribeEvent
+	public static void onRegister(RegistryEvent.Register<WeaponTrait> ev)
+	{
+		REGISTRY.registerAll(THROWABLE, TWO_HANDED_1, TWO_HANDED_2,
+				EXTRA_DAMAGE_2_CHEST, EXTRA_DAMAGE_2_RIDING, EXTRA_DAMAGE_2_THROWN, 
+				EXTRA_DAMAGE_3_THROWN, EXTRA_DAMAGE_3_NO_ARMOUR, EXTRA_DAMAGE_50P_UNDEAD,
+				DAMAGE_ABSORB_25, REACH_1, REACH_2,
+				SWEEP_DAMAGE_NORMAL, SWEEP_DAMAGE_HALF, SWEEP_DAMAGE_FULL,
+				KNOCKBACK, NAUSEA, ARMOUR_PIERCING_50,
+				SHIELD_BREACH, VERSATILE, QUICK_STRIKE,
+				FIREPROOF, HEAVY);
+	}*/
 }

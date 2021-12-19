@@ -32,11 +32,11 @@ public class VersatileWeaponTrait extends WeaponTrait
 				text.appendString(" & ");
 			else
 				text.appendString(" ");
-			text.append(new TranslationTextComponent(String.format("tooltip.%s.trait.versatile." + toolType.getName(), SpartanWeaponryAPI.MOD_ID)));
+			text.appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.versatile." + toolType.getName(), SpartanWeaponryAPI.MOD_ID)));
 			++types;
 		}
 		if(types == 0)
-			text.append(new TranslationTextComponent(String.format("tooltip.%s.trait.versatile.nothing", SpartanWeaponryAPI.MOD_ID)));
+			text.appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.versatile.nothing", SpartanWeaponryAPI.MOD_ID)));
 		
 		tooltip.add(text.mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
 	}
