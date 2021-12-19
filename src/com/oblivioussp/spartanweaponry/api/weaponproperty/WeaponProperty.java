@@ -12,6 +12,30 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WeaponProperty 
 {
+	/**
+	 * Trait Quality determines what colour that a Weapon Trait shows up in the tooltip for any weapon
+	 * @author ObliviousSpartan
+	 *
+	 */
+	public enum PropertyQuality
+	{
+		POSITIVE(TextFormatting.GREEN),
+		NEUTRAL(TextFormatting.YELLOW),
+		NEGATIVE(TextFormatting.RED);
+		
+		private TextFormatting formatting;
+		
+		private PropertyQuality(TextFormatting formatting)
+		{
+			this.formatting = formatting;
+		}
+		
+		public TextFormatting getFormatting()
+		{
+			return formatting;
+		}
+	}
+	
 	protected String type;
 	protected String modId;
 	protected int level;
@@ -57,12 +81,26 @@ public class WeaponProperty
 	}
 	
 	/**
+	 * Sets the value of the magnitude of the Weapon Property. Intended for configuration from a config file
+	 * @param value The value to set the magnitude to
+	 */
+	public void setMagnitude(float value)
+	{
+		magnitude = value;
+	}
+	
+	/**
 	 * Retrieves the Weapon Property's callback. Use this method instead of using the "instanceof" check
 	 * @return The callback if it exists; null otherwise. Make sure to perform null-checking before using this!
 	 */
 	public IPropertyCallback getCallback()
 	{
 		return null;
+	}
+	
+	public PropertyQuality getQuality()
+	{
+		return PropertyQuality.POSITIVE;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -81,17 +119,17 @@ public class WeaponProperty
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipTitle(ItemStack stack, List<String> tooltip)
 	{
-		// Dont add the level to tooltip if not specified
+		// Don't add the level to tooltip if not specified
 		if(level == 0)
-			tooltip.add(TextFormatting.GOLD + SpartanWeaponryAPI.internalHandler.translateString(type, "tooltip", modId));
+			tooltip.add(getQuality().getFormatting() + "- " + SpartanWeaponryAPI.internalHandler.translateString(type, "tooltip", modId));
 		else
-			tooltip.add(TextFormatting.GOLD + SpartanWeaponryAPI.internalHandler.translateFormattedString(type, "tooltip", modId, I18n.translateToLocal("enchantment.level." + level)));
+			tooltip.add(getQuality().getFormatting() + "- " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type, "tooltip", modId, I18n.translateToLocal("enchantment.level." + level)));
 	}
 	
 	@SuppressWarnings("unused")
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip)
 	{
-		tooltip.add(/*TextFormatting.AQUA +*/ TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId));
+		tooltip.add(TextFormatting.GRAY + "" +  TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateString(type + ".desc", "tooltip", modId));
 	}
 }

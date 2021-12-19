@@ -513,7 +513,7 @@ public interface IInternalMethodHandler
 	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
-	 * @return The newly created Mace item
+	 * @return The newly created Glaive item
 	 */
 	public abstract Item addGlaive(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 
@@ -524,10 +524,20 @@ public interface IInternalMethodHandler
 	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
 	 * @param tab The Creative Tab the item will show up in
 	 * @param properties Additional Weapon Properties to add to the weapon
-	 * @return The newly created Mace item
+	 * @return The newly created Quarterstaff item
 	 */
 	public abstract Item addQuarterstaff(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
-	
+
+	/**
+	 * Creates a Parrying Dagger item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Parrying Dagger item
+	 */
+	public abstract Item addParryingDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
 
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	// Registration functions

@@ -32,7 +32,6 @@ public class WeaponPropertyDamageAbsorb extends WeaponPropertyWithCallback
 		ItemStack heldItemVictim = victim.getHeldItemMainhand();
 		if(!heldItemVictim.isEmpty())
 		{
-			//LogHelper.info("Reducing damage by " + (100.0f * magnitude) + "%% - Before: " + baseDamage + " - After: " + (baseDamage - (baseDamage * magnitude)) + " - Reduction: " + (baseDamage * magnitude) + " taken in item damage");
 			heldItemVictim.damageItem(MathHelper.floor(baseDamage * magnitude), victim);
 			return baseDamage * (1.0f - magnitude);
 		}

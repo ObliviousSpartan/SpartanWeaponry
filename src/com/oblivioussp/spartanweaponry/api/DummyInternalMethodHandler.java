@@ -150,6 +150,12 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	{
 		return null;
 	}
+
+	@Override
+	public Item addParryingDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
+	{
+		return null;
+	}
 	
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 	// Registration functions

@@ -19,7 +19,7 @@ public class ToolMaterialEx
 	public static final ToolMaterialEx IRON = new ToolMaterialEx("iron", ToolMaterial.IRON, "ingotIron");
 	public static final ToolMaterialEx GOLD = new ToolMaterialEx("gold", ToolMaterial.GOLD, "ingotGold");
 	public static final ToolMaterialEx DIAMOND = new ToolMaterialEx("diamond", ToolMaterial.DIAMOND, "gemDiamond");
-	// TODO: Possibly change the leather material to make it look better.
+
 	public static final ToolMaterialEx LEATHER = new ToolMaterialEx("leather", EnumHelper.addToolMaterial("sw_leather", 0, 128, 2.0f, 0.0f, 5).setRepairItem(new ItemStack(Items.LEATHER)), "leather");
 	
 	protected ToolMaterial material;
@@ -119,7 +119,7 @@ public class ToolMaterialEx
 		//ItemStack stackToCompare = new ItemStack(stack.getItem());
 		for(ItemStack ore : ores)
 		{
-			if(OreDictionary.itemMatches(stack, ore, false))
+			if(OreDictionary.itemMatches(ore, stack, false))
 				return true;
 		}
 		return false;

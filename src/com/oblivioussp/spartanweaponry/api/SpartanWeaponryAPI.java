@@ -570,7 +570,7 @@ public class SpartanWeaponryAPI
 	}
 
 	/**
-	 * Creates a new glaive, using the specified material and adds new Weapon Properties to it. Gives the new item the registry name of "item.[modId].mace_[material.unlocName]". The caller is responsible for registering the weapon item, model and recipe
+	 * Creates a new glaive, using the specified material and adds new Weapon Properties to it. Gives the new item the registry name of "item.[modId].glaive_[material.unlocName]". The caller is responsible for registering the weapon item, model and recipe
 	 * @param material The Material that the weapon is made of
 	 * @param modId The mod ID. Used to correctly localize the weapon's material
 	 * @param damage The damage of this weapon. Can be used to create a config file on the addon mod's end to customise damage
@@ -584,7 +584,7 @@ public class SpartanWeaponryAPI
 	}
 
 	/**
-	 * Creates a new quarterstaff, using the specified material and adds new Weapon Properties to it. Gives the new item the registry name of "item.[modId].mace_[material.unlocName]". The caller is responsible for registering the weapon item, model and recipe
+	 * Creates a new quarterstaff, using the specified material and adds new Weapon Properties to it. Gives the new item the registry name of "item.[modId].staff_[material.unlocName]". The caller is responsible for registering the weapon item, model and recipe
 	 * @param material The Material that the weapon is made of
 	 * @param modId The mod ID. Used to correctly localize the weapon's material
 	 * @param damage The damage of this weapon. Can be used to create a config file on the addon mod's end to customise damage
@@ -595,6 +595,20 @@ public class SpartanWeaponryAPI
 	public static Item createQuarterstaff(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
 	{
 		return internalHandler.addQuarterstaff(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a new parrying dagger, using the specified material and adds new Weapon Properties to it. Gives the new item the registry name of "item.[modId].parrying_dagger_[material.unlocName]". The caller is responsible for registering the weapon item, model and recipe
+	 * @param material The Material that the weapon is made of
+	 * @param modId The mod ID. Used to correctly localize the weapon's material
+	 * @param damage The damage of this weapon. Can be used to create a config file on the addon mod's end to customise damage
+	 * @param tab The Creative Tab that this weapon will appear in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created weapon. Will return 'null' if the config option for this weapon has been disabled. Remember to null-check this before registering!
+	 */
+	public static Item createParryingDagger(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return internalHandler.addParryingDagger(material, modId, tab, properties);
 	}
 	
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
