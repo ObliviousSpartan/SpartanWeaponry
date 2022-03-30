@@ -10,139 +10,145 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	//---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 	@Override
-	public Item addDagger(WeaponMaterial material, ItemGroup group) 
+	public Item addDagger(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
+	{
+		return null;
+	}
+	
+	@Override
+	public Item addParryingDagger(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addLongsword(WeaponMaterial material, ItemGroup group) 
+	public Item addLongsword(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addKatana(WeaponMaterial material, ItemGroup group) 
+	public Item addKatana(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addSaber(WeaponMaterial material, ItemGroup group) 
+	public Item addSaber(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addRapier(WeaponMaterial material, ItemGroup group) 
+	public Item addRapier(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addGreatsword(WeaponMaterial material, ItemGroup group) 
+	public Item addGreatsword(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addBattleHammer(WeaponMaterial material, ItemGroup group)
+	public Item addBattleHammer(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addWarhammer(WeaponMaterial material, ItemGroup group) 
+	public Item addWarhammer(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addSpear(WeaponMaterial material, ItemGroup group) 
+	public Item addSpear(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addHalberd(WeaponMaterial material, ItemGroup group) 
+	public Item addHalberd(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addPike(WeaponMaterial material, ItemGroup group) 
+	public Item addPike(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addLance(WeaponMaterial material, ItemGroup group) 
+	public Item addLance(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addLongbow(WeaponMaterial material, ItemGroup group)
+	public Item addLongbow(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addHeavyCrossbow(WeaponMaterial material, ItemGroup group) 
+	public Item addHeavyCrossbow(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addThrowingKnife(WeaponMaterial material, ItemGroup group)
+	public Item addThrowingKnife(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addTomahawk(WeaponMaterial material, ItemGroup group)
+	public Item addTomahawk(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addJavelin(WeaponMaterial material, ItemGroup group) 
+	public Item addJavelin(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addBoomerang(WeaponMaterial material, ItemGroup group)
+	public Item addBoomerang(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addBattleaxe(WeaponMaterial material, ItemGroup group) 
+	public Item addBattleaxe(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addFlangedMace(WeaponMaterial material, ItemGroup group)
+	public Item addFlangedMace(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}
 
 	@Override
-	public Item addGlaive(WeaponMaterial material,  ItemGroup group) 
+	public Item addGlaive(WeaponMaterial material,  ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addQuarterstaff(WeaponMaterial material, ItemGroup group) 
+	public Item addQuarterstaff(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister) 
 	{
 		return null;
 	}
 
 	@Override
-	public Item addScythe(WeaponMaterial material, ItemGroup group)
+	public Item addScythe(WeaponMaterial material, ItemGroup group, boolean usingDeferredRegister)
 	{
 		return null;
 	}

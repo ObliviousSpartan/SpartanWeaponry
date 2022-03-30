@@ -6,6 +6,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
@@ -124,6 +125,15 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	{
 		return false;
 	}
+
+	/**
+	 * If true, this will show up on the Trait tooltip for any Throwing weapons
+	 * @return
+	 */
+	public boolean isThrowingTrait()
+	{
+		return false;
+	}
 	
 	/**
 	 * Retrieves the Weapon Trait's Melee callback. Use this method instead of using the "instanceof" check
@@ -139,6 +149,15 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	 * @return The callback if it exists; null otherwise. Make sure to perform null-checking before using this!
 	 */
 	public IRangedTraitCallback getRangedCallback()
+	{
+		return null;
+	}
+	
+	/**
+	 * Retrieves the Weapon Trait's Throwing weapons callback. Use this method instead of using the "instanceof" check
+	 * @return The callback if it exists; null otherwise. Make sure to perform null-checking before using this!
+	 */
+	public IThrowingTraitCallback getThrowingCallback()
 	{
 		return null;
 	}
@@ -167,12 +186,10 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	{
 		// Don't add the level to tooltip if not specified
 		if(level == 0)
-			tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))
-					.mergeStyle(this.quality.getFormatting()));
+			tooltip.add(new StringTextComponent("- ").mergeStyle(this.quality.getFormatting()).appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))));
 		else
-			tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))
-					.appendSibling(new TranslationTextComponent("enchantment.level." + Integer.toString(level)))
-					.mergeStyle(this.quality.getFormatting()));
+			tooltip.add(new StringTextComponent("- ").mergeStyle(this.quality.getFormatting()).appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))
+					.appendSibling(new TranslationTextComponent("enchantment.level." + Integer.toString(level)))));
 	}
 
     /**
@@ -182,7 +199,7 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
      */
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
-		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", this.modId, this.type)).mergeStyle(DESCRIPTION_COLOUR));
+		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", this.modId, this.type)).mergeStyle(DESCRIPTION_COLOUR)));
 	}
 	
 	// IForgeRegistryEntry

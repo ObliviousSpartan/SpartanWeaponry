@@ -11,6 +11,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class DamageAbsorbWeaponTrait extends MeleeCallbackWeaponTrait 
@@ -24,8 +25,7 @@ public class DamageAbsorbWeaponTrait extends MeleeCallbackWeaponTrait
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
-		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", modId, type), magnitude * 100.0f).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
-		
+		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", modId, type), magnitude * 100.0f).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
 	}
 
 	@Override

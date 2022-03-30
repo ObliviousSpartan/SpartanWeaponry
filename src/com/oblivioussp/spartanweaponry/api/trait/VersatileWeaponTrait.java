@@ -8,6 +8,7 @@ import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ToolType;
 
@@ -38,6 +39,6 @@ public class VersatileWeaponTrait extends WeaponTrait
 		if(types == 0)
 			text.appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.versatile.nothing", SpartanWeaponryAPI.MOD_ID)));
 		
-		tooltip.add(text.mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
+		tooltip.add(new StringTextComponent("  ").appendSibling(text).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
 	}
 }

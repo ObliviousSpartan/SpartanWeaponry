@@ -1,12 +1,17 @@
 package com.oblivioussp.spartanweaponry.api.trait;
 
+import java.util.List;
+
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class TwoHandedWeaponTrait extends MeleeCallbackWeaponTrait
@@ -15,6 +20,12 @@ public class TwoHandedWeaponTrait extends MeleeCallbackWeaponTrait
 	public TwoHandedWeaponTrait(String type, String modId, int level, float magnitude) 
 	{
 		super(type, modId, level, magnitude, TraitQuality.NEGATIVE);
+	}
+	
+	@Override
+	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
+	{
+		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", modId, this.type), magnitude * 100.0f).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
 	}
 
 	@Override
@@ -29,11 +40,28 @@ public class TwoHandedWeaponTrait extends MeleeCallbackWeaponTrait
 		{
 			// Apply Mining Fatigue as often as needed.
 			if(effect == null || effect.getDuration() <= 1)
-				entity.addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, 20, MathHelper.floor(magnitude), false, false));
+				entity.addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, 20, level == 2 ? 3 : 2, false, false));
 		}
 		else if(effect != null && effect.getDuration() <= 0)
 		{
 			entity.removePotionEffect(Effects.MINING_FATIGUE);
 		}
+	}
+	
+	@Override
+	public float modifyDamageDealt(WeaponMaterial material, float baseDamage, DamageSource source, LivingEntity attacker, LivingEntity victim) 
+	{
+		float resultDamage = baseDamage;
+		ItemStack mainHand = attacker.getHeldItemMainhand();
+		ItemStack offHand = attacker.getHeldItemOffhand();
+
+		// If a Titan is wielding the weapon this property is on, then render them immune to the negative two-handed effects
+		/*if(ModSpartanWeaponry.isTrinketsLoaded && TrinketsHelper.getEntityRace(attacker) == TrinketsHelper.RACE_TITAN)
+			return resultDamage;*/
+		if(!mainHand.isEmpty() && !offHand.isEmpty())
+		{
+			resultDamage *= (1.0f - magnitude);
+		}
+		return resultDamage;
 	}
 }

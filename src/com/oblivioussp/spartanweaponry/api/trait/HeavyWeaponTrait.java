@@ -11,7 +11,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.entity.ai.attributes.Attributes;
 
-public class HeavyWeaponTrait extends WeaponTrait implements IMeleeTraitCallback, IRangedTraitCallback
+public class HeavyWeaponTrait extends WeaponTrait implements IMeleeTraitCallback, IRangedTraitCallback, IThrowingTraitCallback
 {
 	public static final UUID SPEED_MODIFIER = UUID.fromString("c9d12f07-dbe8-484a-b457-5f8ad5a681a8");
 	
@@ -66,5 +66,23 @@ public class HeavyWeaponTrait extends WeaponTrait implements IMeleeTraitCallback
 	public int modifyHeavyCrossbowAimTime(WeaponMaterial material, int baseAim)
 	{
 		return baseAim + 5;
+	}
+	
+	@Override
+	public boolean isThrowingTrait() 
+	{
+		return true;
+	}
+	
+	@Override
+	public IThrowingTraitCallback getThrowingCallback() 
+	{
+		return this;
+	}
+	
+	@Override
+	public int modifyThrowingChargeTime(WeaponMaterial material, int baseCharge)
+	{
+		return baseCharge + 5;
 	}
 }

@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class NauseaWeaponTrait extends MeleeCallbackWeaponTrait 
@@ -25,7 +26,7 @@ public class NauseaWeaponTrait extends MeleeCallbackWeaponTrait
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
-		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", SpartanWeaponryAPI.MOD_ID, type), magnitude).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR));
+		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", SpartanWeaponryAPI.MOD_ID, type), magnitude).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
 	}
 	
 	@Override

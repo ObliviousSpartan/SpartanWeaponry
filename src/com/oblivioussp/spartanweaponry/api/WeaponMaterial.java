@@ -252,4 +252,17 @@ public class WeaponMaterial implements IItemTier
 	{
 		return tagName;
 	}
+	
+	/**
+	 * Converts RGB color to the integer format expected for material colors
+	 * @param r Red value
+	 * @param g Green value
+	 * @param b Blue value
+	 * @return The combined integer color format
+	 */
+	public static int colorRGB(byte r, byte g, byte b)
+	{
+		int color = ((int)r << 16) + ((int)g << 8) + b;
+		return color;
+	}
 }
