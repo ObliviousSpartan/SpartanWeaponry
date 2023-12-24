@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:greatsword_diamond"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftGreatsword"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftGreatsword.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemGreatsword"
+      }
+    }
+  }
+}

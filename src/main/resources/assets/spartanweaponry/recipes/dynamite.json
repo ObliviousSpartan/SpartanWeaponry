@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  s",
+	" e ",
+	"e  "
+  ],
+  "key": {
+    "s": {
+      "type": "forge:ore_dict",
+	  "ore": "string"
+    },
+    "e": {
+      "item": "spartanweaponry:material",
+	  "data": 2
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:dynamite",
+	"count": 2
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:dynamite"
+    }
+  ]
+}

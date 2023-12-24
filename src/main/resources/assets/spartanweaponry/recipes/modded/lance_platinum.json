@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "p",
+    "h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotPlatinum"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+      "data": 0
+    },
+    "p": {
+      "item": "spartanweaponry:material",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:lance_platinum"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:lance_platinum"
+    }
+  ]
+}

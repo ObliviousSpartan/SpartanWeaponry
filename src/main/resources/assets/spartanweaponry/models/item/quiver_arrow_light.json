@@ -1,0 +1,26 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "spartanweaponry:items/quiver_arrow_base"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "arrow": 1
+            },
+            "model": "spartanweaponry:item/quiver_arrow_light_1"
+        },
+        {
+            "predicate": {
+                "arrow": 2
+            },
+            "model": "spartanweaponry:item/quiver_arrow_light_2"
+        },
+        {
+            "predicate": {
+                "arrow": 3
+            },
+            "model": "spartanweaponry:item/quiver_arrow_light_3"
+        }
+    ]
+}

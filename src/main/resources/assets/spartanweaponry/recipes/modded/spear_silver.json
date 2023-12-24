@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "p"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotSilver"
+    },
+    "p": {
+      "item": "spartanweaponry:material",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:spear_silver"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:spear_silver"
+    }
+  ]
+}

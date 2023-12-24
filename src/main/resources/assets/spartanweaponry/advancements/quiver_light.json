@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:quiver_arrow"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftQuiver"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftQuiver.desc"
+    }
+  },
+  "parent": "spartanweaponry:longbow",
+  "criteria": {
+    "quiver_arrow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+        	"item": "spartanweaponry:quiver_arrow"
+          }
+        ]
+      }
+    },
+    "quiver_bolt": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:quiver_bolt"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "quiver_arrow",
+      "quiver_bolt"
+    ]
+  ]
+}

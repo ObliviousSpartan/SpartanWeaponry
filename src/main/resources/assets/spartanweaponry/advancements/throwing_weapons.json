@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:dagger_diamond"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:thrownWeapons"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:thrownWeapons.desc"
+    },
+	"show_toast": false,
+	"announce_to_chat": false
+  },
+  "parent": "spartanweaponry:root",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

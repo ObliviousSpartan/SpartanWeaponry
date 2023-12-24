@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+	"c"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotIron"
+    },
+    "c": {
+      "item": "spartanweaponry:caestus"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:caestus_studded"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:caestus_studded"
+    }
+  ]
+}

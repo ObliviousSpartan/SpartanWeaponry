@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " w",
+	"w "
+  ],
+  "key": {
+    "w": {
+      "type": "forge:ore_dict",
+	  "ore": "logWood"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:club_wood"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:club_wood"
+    }
+  ]
+}

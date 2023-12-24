@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:spear_iron"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftSpear"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftSpear.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemSpear"
+      }
+    }
+  }
+}

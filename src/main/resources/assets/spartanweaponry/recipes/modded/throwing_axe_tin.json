@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "hi",
+    " i"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotTin"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:throwing_axe_tin"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:throwing_axe_tin"
+    }
+  ]
+}

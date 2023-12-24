@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:melee"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:melee.desc"
+    },
+	"show_toast": false,
+	"announce_to_chat": false
+  },
+  "parent": "spartanweaponry:root",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

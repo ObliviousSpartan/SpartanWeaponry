@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+    "iii",
+    "ihi"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotNickel"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:greatsword_nickel"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:greatsword_nickel"
+    }
+  ]
+}

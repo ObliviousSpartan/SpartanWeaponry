@@ -1,0 +1,6 @@
+{
+    "parent":"spartanweaponry:item/parrying_dagger_wood_blocking",
+    "textures": {
+        "layer0":"spartanweaponry:items/parrying_dagger_iron"
+    }
+}

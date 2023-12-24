@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:javelin_stone"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftJavelin"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftJavelin.desc"
+    }
+  },
+  "parent": "spartanweaponry:throwing_weapons",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemJavelin"
+      }
+    }
+  }
+}

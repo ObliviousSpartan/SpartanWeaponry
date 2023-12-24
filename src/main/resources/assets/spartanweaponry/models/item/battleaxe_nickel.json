@@ -1,0 +1,8 @@
+{
+    "parent":"spartanweaponry:item/battleaxe_wood",
+    "textures": {
+        "layer0":"spartanweaponry:items/custom/battleaxe_layer_0",
+        "layer1":"spartanweaponry:items/custom/battleaxe_layer_1",
+        "layer2":"spartanweaponry:items/custom/battleaxe_layer_2"
+    }
+}

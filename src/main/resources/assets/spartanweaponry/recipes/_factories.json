@@ -1,0 +1,6 @@
+{
+	"conditions": {
+		"ore_dict_exists": "com.oblivioussp.spartanweaponry.util.ConditionFactoryOreDict",
+		"item_exists": "com.oblivioussp.spartanweaponry.util.ConditionFactoryItemExists"
+	}
+}

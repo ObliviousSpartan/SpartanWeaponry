@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iww",
+    "w  ",
+    "w  "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotCopper"
+    },
+    "w": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:boomerang_copper"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:boomerang_copper"
+    }
+  ]
+}

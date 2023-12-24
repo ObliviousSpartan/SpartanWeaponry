@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":	[
+		[
+			{
+			  "item": "minecraft:arrow"
+			}
+		],
+		[
+			{
+			  "item": "spartanweaponry:material",
+			  "data": 2
+			}
+		]
+	],
+  "result": {
+    "item": "spartanweaponry:arrow_explosive"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:arrow_explosive"
+    }
+  ]
+}

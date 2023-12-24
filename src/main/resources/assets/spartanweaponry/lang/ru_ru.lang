@@ -1,0 +1,529 @@
+#Localisation for Spartan Weaponry version beta 1.3.x
+
+#Перевод на русский by Driv3r.F1 (  Могут быть ошЫбки и недоработки :)  )
+
+#Items
+item.spartanweaponry:handle.name=Рукоять
+item.spartanweaponry:pole.name=Древко
+item.spartanweaponry:explosive_charge.name=Взрывной заряд
+
+item.spartanweaponry:caestus.name=Цест
+item.spartanweaponry:caestus_studded.name=Шипованный Цест
+
+item.spartanweaponry:club_wood.name=Деревянная Дубина
+item.spartanweaponry:club_studded.name=Шипованная Дубина
+
+item.spartanweaponry:longbow_wood.name=Деревянный Длинный лук
+item.spartanweaponry:longbow_leather.name=Усиленный Кожаный Длинный лук
+item.spartanweaponry:longbow_iron.name=Усиленный Железный Длинный лук
+item.spartanweaponry:longbow_diamond.name=Усиленный Алмазный Длинный лук
+#Arrows
+item.spartanweaponry:arrow_wood.name=Деревянная Стрела
+item.spartanweaponry:arrow_flint.name=Кремневая Стрела
+item.spartanweaponry:arrow_iron.name=Железная Стрела
+item.spartanweaponry:arrow_diamond.name=Алмазная Стрела
+item.spartanweaponry:arrow_explosive.name=Взрывная Стрела
+
+item.spartanweaponry:quiver_arrow.name=Маленький Колчан стрел
+item.spartanweaponry:quiver_arrow_moderate.name=Средний Колчан стрел
+item.spartanweaponry:quiver_arrow_heavy.name=Большой Колчан стрел
+
+#Bolts
+item.spartanweaponry:bolt.name=Болт
+item.spartanweaponry:bolt_spectral.name=Спектральный болт
+item.spartanweaponry:bolt_diamond.name=Алмазный Болт
+item.spartanweaponry:quiver_bolt.name=Маленький Колчан стрел
+item.spartanweaponry:quiver_bolt_moderate.name=Средний Колчан стрел
+item.spartanweaponry:quiver_bolt_heavy.name=Большой Колчан стрел
+
+#Weapon Oils
+item.spartanweaponry:weapon_oil.name=Weapon Oil
+
+#Vanilla Tipped Projectiles
+item.spartanweaponry:proj_tipped.name=Tipped %s
+item.spartanweaponry:proj_tipped.empty=Uncraftable Tipped %s
+item.spartanweaponry:proj_tipped.mundane=Tipped %s
+item.spartanweaponry:proj_tipped.thick=Tipped %s
+item.spartanweaponry:proj_tipped.awkward=Tipped %s
+item.spartanweaponry:proj_tipped.night_vision=%s of Ночного зрения
+item.spartanweaponry:proj_tipped.invisibility=%s of Невидимости
+item.spartanweaponry:proj_tipped.leaping=%s Прыгучести 
+item.spartanweaponry:proj_tipped.fire_resistance=%s Огнестойкости
+item.spartanweaponry:proj_tipped.swiftness=%s of Скорости
+item.spartanweaponry:proj_tipped.slowness=%s of Замедления
+item.spartanweaponry:proj_tipped.water=%s of Splashing
+item.spartanweaponry:proj_tipped.water_breathing=%s Подводного дыхания
+item.spartanweaponry:proj_tipped.healing=%s of Исцеления
+item.spartanweaponry:proj_tipped.harming=%s of Моментального урона
+item.spartanweaponry:proj_tipped.poison=%s of Отравления
+item.spartanweaponry:proj_tipped.regeneration=%s of Регенерации
+item.spartanweaponry:proj_tipped.strength=%s of Силы
+item.spartanweaponry:proj_tipped.weakness=%s of Слабости
+item.spartanweaponry:proj_tipped.levitation=%s of Левитации
+item.spartanweaponry:proj_tipped.luck=%s of Удачи
+
+#Extra Utilities 2 Tipped Projectiles
+item.spartanweaponry:proj_tipped.xu2.doom=%s of DOOM!
+item.spartanweaponry:proj_tipped.xu2.gravity=%s of Gravity
+item.spartanweaponry:proj_tipped.xu2.gravity.long=%s of Gravity
+item.spartanweaponry:proj_tipped.xu2.second.chance=%s of Second Chance
+item.spartanweaponry:proj_tipped.xu2.greek.fire=%s of Greek Fire
+item.spartanweaponry:proj_tipped.oily=Oily %s
+item.spartanweaponry:proj_tipped.xu2.fizzy.lifting=%s of Fizzy Lifting
+item.spartanweaponry:proj_tipped.xu2.relapse=%s of Relapse
+item.spartanweaponry:proj_tipped.xu2.love=%s of Love
+item.spartanweaponry:proj_tipped.xu2.purging=%s of Purging
+
+#Extra Alchemy Tipped Projectiles
+item.spartanweaponry:proj_tipped.fuse=%s of Fuse
+item.spartanweaponry:proj_tipped.recall=%s of Recall
+item.spartanweaponry:proj_tipped.sinking=%s of Sinking
+item.spartanweaponry:proj_tipped.freezing=%s of Freezing
+item.spartanweaponry:proj_tipped.dislocation=%s of Dislocation
+item.spartanweaponry:proj_tipped.magnetism=%s of Magnetism
+item.spartanweaponry:proj_tipped.piper=%s of the Piper
+item.spartanweaponry:proj_tipped.pacifism=%s of Pacifism
+item.spartanweaponry:proj_tipped.crumbling=%s of Crumbling
+item.spartanweaponry:proj_tipped.concentration=%s of Concentration
+item.spartanweaponry:proj_tipped.return=%s of Return
+item.spartanweaponry:proj_tipped.photosynthesis=%s of Photosynthesis
+item.spartanweaponry:proj_tipped.hurry=%s of Hurry
+item.spartanweaponry:proj_tipped.cheatDeath_quiescent=%s of Delay Death
+item.spartanweaponry:proj_tipped.charged=Lesser Charged %s
+item.spartanweaponry:proj_tipped.charged2=Greater Charged %s
+item.spartanweaponry:proj_tipped.reincarnation=%s of Reincarnation
+item.spartanweaponry:proj_tipped.combustion=%s of Combustion
+item.spartanweaponry:proj_tipped.detection=%s of Detection
+item.spartanweaponry:proj_tipped.learning=%s of Learning
+item.spartanweaponry:proj_tipped.gravity=%s of Gravity
+item.spartanweaponry:proj_tipped.leech=%s of the Leech
+item.spartanweaponry:proj_tipped.sails=%s of the 7 Seas
+item.spartanweaponry:proj_tipped.beheading=%s of Beheading
+item.spartanweaponry:proj_tipped.dispel=%s of Dispel Enchantment
+item.spartanweaponry:proj_tipped.pain=%s of Pain
+item.spartanweaponry:proj_tipped.push=%s of Pushing
+item.spartanweaponry:proj_tipped.pull=%s of Pulling
+
+#PotionCore Tipped Projectiles
+item.spartanweaponry:proj_tipped.saturation=%s of Saturation
+item.spartanweaponry:proj_tipped.hunger=%s of Starvation
+item.spartanweaponry:proj_tipped.blindness=%s of Blindness
+item.spartanweaponry:proj_tipped.nausea=%s of Confusion
+item.spartanweaponry:proj_tipped.glowing=%s of Gleaming
+item.spartanweaponry:proj_tipped.health_boost=%s of Health Boost
+item.spartanweaponry:proj_tipped.unluck=%s of Bad Luck
+item.spartanweaponry:proj_tipped.love=Love %s
+item.spartanweaponry:proj_tipped.repair=%s of Mending
+item.spartanweaponry:proj_tipped.flight=%s of Wings
+item.spartanweaponry:proj_tipped.extension=%s of Extension
+item.spartanweaponry:proj_tipped.recoil=%s of Spines
+item.spartanweaponry:proj_tipped.iron_skin=%s of Guarding
+item.spartanweaponry:proj_tipped.purity=%s of Wither Purity
+item.spartanweaponry:proj_tipped.reach=%s of Long Arms
+item.spartanweaponry:proj_tipped.diamond_skin=%s of Diamond Skin
+item.spartanweaponry:proj_tipped.teleport=%s of Scattering
+item.spartanweaponry:proj_tipped.teleport_surface=%s of Escape
+item.spartanweaponry:proj_tipped.magic_focus=%s of Magical Focus
+item.spartanweaponry:proj_tipped.cure=%s of Curing
+item.spartanweaponry:proj_tipped.step_up=%s of High Step
+item.spartanweaponry:proj_tipped.drown=%s of Gills
+item.spartanweaponry:proj_tipped.teleport_spawn=%s of Return
+item.spartanweaponry:proj_tipped.disorganization=%s of Disorganization
+item.spartanweaponry:proj_tipped.slimb=%s of Spiders
+item.spartanweaponry:proj_tipped.perplexity=%s of Perplexity
+item.spartanweaponry:proj_tipped.rust=%s of Rust
+item.spartanweaponry:proj_tipped.vulnerable=%s of Vulnerability
+item.spartanweaponry:proj_tipped.explode=%s of Detonation
+item.spartanweaponry:proj_tipped.solid_core=%s of Immovability
+item.spartanweaponry:proj_tipped.fire=%s of Spontaneous Combustion
+item.spartanweaponry:proj_tipped.lightning=%s of Thundering
+item.spartanweaponry:proj_tipped.magic_inhibition=%s of Magical Inhibition
+item.spartanweaponry:proj_tipped.chance=%s of Chance
+item.spartanweaponry:proj_tipped.invert=%s of Inversion
+item.spartanweaponry:proj_tipped.weight=%s of Heaviness
+item.spartanweaponry:proj_tipped.launch=%s of Knock-up
+item.spartanweaponry:proj_tipped.revival=%s of 1-Up
+item.spartanweaponry:proj_tipped.klutz=%s of Fumbling
+item.spartanweaponry:proj_tipped.bless=%s of Blessing
+item.spartanweaponry:proj_tipped.broken_armor=%s of Penetration
+item.spartanweaponry:proj_tipped.magic_shield=%s of Magic Shielding
+item.spartanweaponry:proj_tipped.slow_fall=%s of Feather Falling
+item.spartanweaponry:proj_tipped.antidote=%s of Poison Antidote
+item.spartanweaponry:proj_tipped.curse=%s of Cursing
+item.spartanweaponry:proj_tipped.burst=%s of Concussion
+item.spartanweaponry:proj_tipped.archery=%s of Archery
+item.spartanweaponry:proj_tipped.climb=%s of Spiders
+
+#Cyclic Tipped Projectiles
+item.spartanweaponry:proj_tipped.slowfall=%s of Slowfall
+item.spartanweaponry:proj_tipped.waterwalk=%s of Waterwalk
+item.spartanweaponry:proj_tipped.snow=%s of Snow
+item.spartanweaponry:proj_tipped.swim=%s of Swim Speed
+item.spartanweaponry:proj_tipped.swim2=%s of Swim Speed II
+item.spartanweaponry:proj_tipped.bounce=%s of Bounce
+item.spartanweaponry:proj_tipped.frostwalker=%s of Frost Walker
+item.spartanweaponry:proj_tipped.magnet=%s of Magnet
+item.spartanweaponry:proj_tipped.haste2=%s of Haste
+item.spartanweaponry:proj_tipped.resistance2=%s of Resistance
+item.spartanweaponry:proj_tipped.healthboost=%s of Health Boost
+item.spartanweaponry:proj_tipped.ender=%s of Ender
+item.spartanweaponry:proj_tipped.butter=%s of Butterfingers
+item.spartanweaponry:proj_tipped.butter2=%s of Butterfingers II
+#Blindness and Saturation is already added by PotionCore and has the same localization key so none is needed here.
+
+#NetherEx Tipped Projectiles
+item.spartanweaponry:proj_tipped.nex:normalFreeze=%s of Freezing
+item.spartanweaponry:proj_tipped.nex:normalFrostbite=%s of Frostbite
+item.spartanweaponry:proj_tipped.nex:normalSpore=%s of Dispersal
+item.spartanweaponry:proj_tipped.nex:normalLost=%s of The Lost
+
+#Quark Tipped Projectiles
+item.spartanweaponry:proj_tipped.haste=%s of Haste
+item.spartanweaponry:proj_tipped.mining_fatigue=%s of Lagging
+item.spartanweaponry:proj_tipped.resistance=%s of Fortitude
+item.spartanweaponry:proj_tipped.danger_sight=%s of Danger Sight
+
+#CoFH Core Tipped Projectiles
+item.spartanweaponry:proj_tipped.absorption=%s of Absorption
+item.spartanweaponry:proj_tipped.wither=%s of Decay
+
+#Ender IO Tipped Projectiles
+item.spartanweaponry:proj_tipped.enderio.withering=%s of Decay
+item.spartanweaponry:proj_tipped.enderio.confusion=%s of Confusion
+item.spartanweaponry:proj_tipped.enderio.floating=%s of Rising
+
+item.spartanweaponry:crossbow_wood.name=Деревянный Арбалет
+item.spartanweaponry:crossbow_leather.name=Усиленный Кожаный Арбалет
+item.spartanweaponry:crossbow_iron.name=Усиленный Железный Арбалет
+item.spartanweaponry:crossbow_diamond.name=Усиленный Алмазный Арбалет
+
+item.spartanweaponry:dynamite.name=Динамит
+
+item.spartanweaponry:ingot_custom.name=%s Слиток
+item.spartanweaponry:dagger_custom.name=%s Кинжал
+item.spartanweaponry:parrying_dagger_custom.name=%s Дага
+item.spartanweaponry:longsword_custom.name=%s Полутораручный Меч
+item.spartanweaponry:katana_custom.name=%s Катана
+item.spartanweaponry:saber_custom.name=%s Сабля
+item.spartanweaponry:rapier_custom.name=%s Рапира
+item.spartanweaponry:greatsword_custom.name=%s Двуручный Меч
+item.spartanweaponry:hammer_custom.name=%s Молот
+item.spartanweaponry:warhammer_custom.name=%s Боевой Молот
+item.spartanweaponry:spear_custom.name=%s Копье
+item.spartanweaponry:halberd_custom.name=%s Алебарда
+item.spartanweaponry:pike_custom.name=%s Пика
+item.spartanweaponry:lance_custom.name=%s Сулица
+item.spartanweaponry:longbow_custom.name=%s-Усиленный Длинный Лук
+item.spartanweaponry:crossbow_custom.name=%s-Усиленый Арбалет
+item.spartanweaponry:throwing_knife_custom.name=%s Метательный Нож
+item.spartanweaponry:throwing_axe_custom.name=%s Томагавк
+item.spartanweaponry:javelin_custom.name=%s Метательное Копье
+item.spartanweaponry:boomerang_custom.name=%s Бумеранг
+item.spartanweaponry:battleaxe_custom.name=%s Боевой Топор
+item.spartanweaponry:mace_custom.name=%s Фланцевая Булава
+item.spartanweaponry:glaive_custom.name=%s Глефа
+item.spartanweaponry:quarterstaff_custom.name=%s Дубина с железным наконечником
+
+#Materials
+material.spartanweaponry:wood=Деревянный
+material.spartanweaponry:stone=Каменный
+material.spartanweaponry:leather=Кожанный
+material.spartanweaponry:iron=Железный
+material.spartanweaponry:gold=Золотой
+material.spartanweaponry:diamond=Алмазный
+
+material.spartanweaponry:copper=Медный
+material.spartanweaponry:tin=Оловянный
+material.spartanweaponry:bronze=Бронзовый
+material.spartanweaponry:steel=Стальной
+material.spartanweaponry:silver=Серебряный
+material.spartanweaponry:invar=Инваровый
+material.spartanweaponry:platinum=Платиновый
+material.spartanweaponry:electrum=Электрумный
+material.spartanweaponry:nickel=Никелевый
+material.spartanweaponry:lead=Свинцовый
+material.spartanweaponry:titanium=Титановый
+
+#OreDicts
+material.spartanweaponry:ingotCopper=Медь
+material.spartanweaponry:ingotTin=Олово
+material.spartanweaponry:ingotBronze=Бронза
+material.spartanweaponry:ingotSteel=Сталь
+material.spartanweaponry:ingotSilver=Серебро
+material.spartanweaponry:ingotInvar=Инвар
+material.spartanweaponry:ingotPlatinum=Платина
+material.spartanweaponry:ingotElectrum=Электрум
+material.spartanweaponry:ingotNickel=Никель
+material.spartanweaponry:ingotLead=Свинц
+material.spartanweaponry:ingotTitanium=Титан
+
+#Creative Tabs
+itemGroup.spartanweaponry:tabBasic.name=Spartan Weaponry: Стандартные Материалы 
+itemGroup.spartanweaponry:tabModded.name=Spartan Weaponry: Материалы из Модификаций
+itemGroup.spartanweaponry:tabArrowsAndBolts.name=Spartan Weaponry: Стрелы & Болты
+
+#Enchantments
+enchantment.spartanweaponry:throwing_range=Легкость
+enchantment.spartanweaponry.throwing_range.desc=Увеличивает длину метания этого оружия
+enchantment.spartanweaponry:throwing_damage=Заостренный
+enchantment.spartanweaponry.throwing_damage.desc=Увеличивает урон метательного оружия
+enchantment.spartanweaponry:throwing_fire=Поджигающий
+enchantment.spartanweaponry.throwing_fire.desc=Поджигает противников, пораженных этим метательным оружием
+enchantment.spartanweaponry:throwing_luck=Удачный выстрел
+enchantment.spartanweaponry.throwing_luck.desc=Работает как Удача/Добыча для метательного оружия
+
+#Tooltips
+tooltip.spartanweaponry:showDetails=[Нажми %s чтобы показать детали об оружии]
+tooltip.spartanweaponry:throwable=Метательное
+tooltip.spartanweaponry:throwable.desc=Это оружие можно бросить в недруга
+tooltip.spartanweaponry:blocking=Блокировка
+tooltip.spartanweaponry:blocking.desc=Может блокировать атаки ближнего боя
+tooltip.spartanweaponry:two_handed=Двуручное %s
+tooltip.spartanweaponry:two_handed.desc=Любой предмет в слоте противоположной руки замедляет скорость атаки
+tooltip.spartanweaponry:extra_damage=Бонус к урону
+tooltip.spartanweaponry:extra_damage.desc=%fx Дополнительного урона %s
+tooltip.spartanweaponry:extra_damage_chest=Бонус к урону по груди
+tooltip.spartanweaponry:extra_damage_chest.desc=+%f%% доп.урона, когда у врага нет нагрудной брони
+tooltip.spartanweaponry:extra_damage_unarmoured=Бонус к урону по небронированым целям
+tooltip.spartanweaponry:extra_damage_unarmoured.desc=+%f%% доп.урона, когда у врага нет брони
+tooltip.spartanweaponry:extra_damage_riding=Бонус за урон верхом
+tooltip.spartanweaponry:extra_damage_riding.desc=+%f%% доп.урона,при езде на маунте или дркгом транспортном средстве
+tooltip.spartanweaponry:extra_damage_thrown=Бонус к урону за метание
+tooltip.spartanweaponry:extra_damage_thrown.desc=+%f%% доп.урона, когда это оружие кинуто
+tooltip.spartanweaponry:extra_damage_undead=Бонус к урону по нежити
+tooltip.spartanweaponry:extra_damage_undead.desc=+%f%% доп.урона против нежити
+tooltip.spartanweaponry:damage_absorb=Поглощение урона
+tooltip.spartanweaponry:damage_absorb.desc=%d%% от урона будет перенесено на его прочность
+tooltip.spartanweaponry:reach=Удлиненное %s
+tooltip.spartanweaponry:reach.desc=Увеличено растояние атаки.Больше уровень-больше растояние
+tooltip.spartanweaponry:sweep_damage=Широкий размах %s
+tooltip.spartanweaponry:sweep_damage.desc=Все цели в радиусе атаки получают %d%% от обычного урона
+tooltip.spartanweaponry:knockback=Усиленное отбрасывание
+tooltip.spartanweaponry:knockback.desc=Противники отлетают еще дальше.
+tooltip.spartanweaponry:nausea=Тошнотворный удар
+tooltip.spartanweaponry:nausea.desc=Вызывает тошноту II (% ds) при попадании, если противник не носит шлем
+tooltip.spartanweaponry:armour_piercing=Пронзительный удар
+tooltip.spartanweaponry:armour_piercing.desc=%d%% урона игнорирует броню
+tooltip.spartanweaponry:shield_breach=Пробивающий удар
+tooltip.spartanweaponry:shield_breach.desc=Шанс пробить щит противника
+tooltip.spartanweaponry:versatile=Многофункциональный
+tooltip.spartanweaponry:versatile.desc=Может быть использован как %s
+tooltip.spartanweaponry:versatile.axe= Топор
+tooltip.spartanweaponry:versatile.pickaxe= Кирка
+tooltip.spartanweaponry:versatile.shovel= Лопата
+tooltip.spartanweaponry:quick_strike=Молниеносный удар
+tooltip.spartanweaponry:quick_strike.desc=Это оружие может наносить серию быстрых ударов с очень коротким временем восстановления
+
+tooltip.spartanweaponry:longbow=Дальнобойная версия стандартного лука.
+tooltip.spartanweaponry:longbow.desc=Занимает больше времени,чтобы натянуть полностью.
+tooltip.spartanweaponry:crossbow=Высокий урон и дальняя атака. Требуется взведение перед стрельбой. Использует Болты.
+tooltip.spartanweaponry:crossbow.desc=Беспрерывные выстрелы влияют на точность.
+tooltip.spartanweaponry:crossbow.desc2=Удерживайте натянутым для точного выстрела.
+tooltip.spartanweaponry:crossbow.loaded_bolt=Loaded With: %s
+
+tooltip.spartanweaponry:throwable_stack_status=%d/%d
+
+tooltip.spartanweaponry:projectile_base_damage=Base Damage: %f
+tooltip.spartanweaponry:projectile_range_multiplier=Range: x%f
+
+tooltip.spartanweaponry:quiver_arrow.desc=Автоматически поставляет стрелы для использования в луках или длинных луках
+tooltip.spartanweaponry:quiver_bolt.desc=Автоматически поставляет Болты для использования в арбалетах
+tooltip.spartanweaponry:quiver_capacity=Максимальная емкость: %d стаков
+tooltip.spartanweaponry:quiver_show_contents=[Нажми %s чтобы показать больше контента]
+tooltip.spartanweaponry:quiver_show_description=[Нажми %s чтобы показать описание]
+tooltip.spartanweaponry:quiver_contains=В настоящее время содержит:
+tooltip.spartanweaponry:quiver_ammo=- %dx %s
+tooltip.spartanweaponry:quiver_none=- Ничего!
+tooltip.spartanweaponry:quiver_collect_status=Сбор боеприпасов: %s
+
+tooltip.spartanweaponry:cantCraftMissingMaterial=Не может быть изготовлен. Метериал %s отсутствует.
+tooltip.spartanweaponry:invalidEnchantments=Это оружие имеет недействительные зачарования. Положите в сетку крафта в одиночку, чтобы исправить зачарования.
+
+tooltip.spartanweaponry:enabled=Включено
+tooltip.spartanweaponry:disabled=Отключено
+
+message.spartanweaponry:ammoCollectToggle=Сбор боеприпасов : %s
+
+#Item modifier tooltips
+tooltip.spartanweaponry:modifiers.thrown=Когда кинуто:
+tooltip.spartanweaponry:attribute.damage=%s Урона
+attribute.name.spartanweaponry:generic.throwing_damage=Метательный урон
+
+#Dev tooltips
+dev.spartanweaponry:wip=В разработке (WIP)
+
+#Advancements
+advancement.spartanweaponry:root.title=Spartan Weaponry
+advancement.spartanweaponry:root.desc=Оружия в изобилии!
+advancement.spartanweaponry:melee=Арсенал Воина
+advancement.spartanweaponry:melee.desc=Создай оружие ближнего боя!
+advancement.spartanweaponry:archery=Аресенал Лучника
+advancement.spartanweaponry:archery.desc=Создай оружие дальнего боя!
+advancement.spartanweaponry:thrownWeapons=Арсенал убийцы
+advancement.spartanweaponry:thrownWeapons.desc=Метательное оружие!
+advancement.spartanweaponry:craftDagger=Лучший друг Разбойника
+advancement.spartanweaponry:craftDagger.desc=Создай Кинжал
+advancement.spartanweaponry:craftLongsword=Больший клинок!
+advancement.spartanweaponry:craftLongsword.desc=Создай Полутораручный Меч
+advancement.spartanweaponry:craftKatana=Клинок Самурая
+advancement.spartanweaponry:craftKatana.desc=Создай Катану
+advancement.spartanweaponry:craftSaber=Головорез
+advancement.spartanweaponry:craftSaber.desc=Создай Саблю
+advancement.spartanweaponry:craftRapier=En Garde!
+advancement.spartanweaponry:craftRapier.desc=Создай Рипиру
+advancement.spartanweaponry:craftGreatsword=На голову выше остальных
+advancement.spartanweaponry:craftGreatsword.desc=Создай Двуручный Меч
+advancement.spartanweaponry:craftCaestus=Драчун
+advancement.spartanweaponry:craftCaestus.desc=Сойдай Цетус
+advancement.spartanweaponry:craftClub=Каменный век
+advancement.spartanweaponry:craftClub.desc=Создай Дубину
+advancement.spartanweaponry:craftHammer=Время Молота!
+advancement.spartanweaponry:craftHammer.desc=Создай Молот
+advancement.spartanweaponry:craftWarhammer=По пальцам не попади!
+advancement.spartanweaponry:craftWarhammer.desc=Создай Боевой Молот
+advancement.spartanweaponry:craftSpear=На кончике копья
+advancement.spartanweaponry:craftSpear.desc=Сойзда Копье
+advancement.spartanweaponry:craftHalberd=Абракадабра
+advancement.spartanweaponry:craftHalberd.desc=Создай Алебарду
+advancement.spartanweaponry:craftPike=На кол его!
+advancement.spartanweaponry:craftPike.desc=Создай пика
+advancement.spartanweaponry:craftLance=Четвертый всадник...
+advancement.spartanweaponry:craftLance.desc=Создай Сулицу
+advancement.spartanweaponry:craftLongbow=Дальнобойная стрельба из лука
+advancement.spartanweaponry:craftLongbow.desc=Создай Длинный лук
+advancement.spartanweaponry:craftCrossbow=Заведен и прогрет
+advancement.spartanweaponry:craftCrossbow.desc=Создай Арбалет
+advancement.spartanweaponry:craftThrowingKnife=Все что нужно Ассасину
+advancement.spartanweaponry:craftThrowingKnife.desc=Создай Метательный нож
+advancement.spartanweaponry:craftThrowingAxe=Томагавк
+advancement.spartanweaponry:craftThrowingAxe.desc=Craft a Throwing Axe
+advancement.spartanweaponry:craftJavelin=Not the Olympic Type
+advancement.spartanweaponry:craftJavelin.desc=Craft a Javelin
+advancement.spartanweaponry:craftBoomerang=Guess who's back, back again...
+advancement.spartanweaponry:craftBoomerang.desc=Создай Бумеранг
+advancement.spartanweaponry:craftBattleaxe=...И мой Топор!
+advancement.spartanweaponry:craftBattleaxe.desc=Создай Боевой топор 
+advancement.spartanweaponry:craftMace=В Пух и Прах!
+advancement.spartanweaponry:craftMace.desc=Создай булаву
+advancement.spartanweaponry:craftGlaive=Как Мотыга,только лучше!
+advancement.spartanweaponry:craftGlaive.desc=Сойздай Глефу
+advancement.spartanweaponry:craftQuarterstaff=Не очень острая палка!
+advancement.spartanweaponry:craftQuarterstaff.desc=Создай Дубину с железным наконечником
+advancement.spartanweaponry:explode_creeper=Карма
+advancement.spartanweaponry:explode_creeper.desc=Покажи криперу что умеешь ТЫ!
+
+#Subtitles
+subtitle.spartanweaponry:crossbow_load=Арбалет Заряжен
+subtitle.spartanweaponry:crossbow_fire=Арбалет выстрелил
+subtitle.spartanweaponry:throwing_weapon_throw=Метательное оружие брошенно 
+subtitle.spartanweaponry:throwing_weapon_hit=Попадание Метательный оружием 
+subtitle.spartanweaponry:boomerang_throw=Бумеранг Брошен
+subtitle.spartanweaponry:boomerang_flight=Бумеранг Летит
+
+#Configs
+config.spartanweaponry:category.materials=Метериалы
+
+config.spartanweaponry:damageBaseCopper=Базовый урон меди
+config.spartanweaponry:damageBaseTin=Базовый урон Олова
+config.spartanweaponry:damageBaseBronze=Базовый урон Бронзы
+config.spartanweaponry:damageBaseSteel=Базовый урон Стали
+config.spartanweaponry:damageBaseSilver=Базовый урон Серебра
+config.spartanweaponry:damageBaseInvar=Базовый урон Инвара
+config.spartanweaponry:damageBasePlatinum=Базовый урон Платины
+config.spartanweaponry:damageBaseElectrum=Базовый урон Электрума
+config.spartanweaponry:damageBaseNickel=Базовый урон Никеля
+config.spartanweaponry:damageBaseLead=Базовый урон Свинца
+
+config.spartanweaponry:durabilityBaseCopper=Прочность Меди
+config.spartanweaponry:durabilityBaseTin=Прочность Олова
+config.spartanweaponry:durabilityBaseBronze=Прочность Бронзы
+config.spartanweaponry:durabilityBaseSteel=Прочность Стали
+config.spartanweaponry:durabilityBaseSilver=Прочность Серебра
+config.spartanweaponry:durabilityBaseInvar=Прочность Инвара
+config.spartanweaponry:durabilityBasePlatinum=Прочность Платины
+config.spartanweaponry:durabilityBaseElectrum=Прочность Электрума
+config.spartanweaponry:durabilityBaseNickel=Прочность Никеля
+config.spartanweaponry:durabilityBaseLead=Прочность Свинца
+
+config.spartanweaponry:disableCopper=Отключить медное оружие
+config.spartanweaponry:disableTin=Отключить Оловянное оружие
+config.spartanweaponry:disableBronze=Отключить Бронзовое оружие
+config.spartanweaponry:disableSteel=Отключить Стальное оружие
+config.spartanweaponry:disableSilver=Отключить Серебряное оружие
+config.spartanweaponry:disableInvar=Отключить Инварное оружие
+config.spartanweaponry:disablePlatinum=Отключить Платиновое оружие
+config.spartanweaponry:disableElectrum=Отключить Электрумное оружие
+config.spartanweaponry:disableNickel=Отключить Никелевое оружие
+config.spartanweaponry:disableLead=Отключить Свинцовое оружие
+
+config.spartanweaponry:disableWeapon=Отключить тип оружия
+config.spartanweaponry:damageMultiplier=Множитель урона от оружия
+config.spartanweaponry:damageBase=Базовое значение урона от оружия
+
+config.spartanweaponry:category.dagger=Кинжал
+config.spartanweaponry:category.parrying_dagger=Дага
+config.spartanweaponry:category.longsword=Полутораручный Меч
+config.spartanweaponry:category.katana=Катана
+config.spartanweaponry:category.saber=Сабля
+config.spartanweaponry:category.rapier=Рапира
+config.spartanweaponry:category.greatsword=Двуручный Меч
+config.spartanweaponry:category.caestus=Цетус
+config.spartanweaponry:category.club=Дубина
+config.spartanweaponry:category.hammer=Молот
+config.spartanweaponry:category.warhammer=Боевой Молот
+config.spartanweaponry:category.spear=Копье
+config.spartanweaponry:category.halberd=Алебарда
+config.spartanweaponry:category.pike=Пика
+config.spartanweaponry:category.lance=Сулица
+
+config.spartanweaponry:category.longbow=Длинный Лук
+config.spartanweaponry:woodenLongbowOnly=Только Деревянные длинные луки
+config.spartanweaponry:multiplierLongbow=Множитель урона Длинного Лука
+
+config.spartanweaponry:category.crossbow=Арбалет
+config.spartanweaponry:woodenCrossbowOnly=Только Деревянные Арбалеты
+config.spartanweaponry:crossbowInaccuracyMax=Максимальный разброс болта
+config.spartanweaponry:crossbowTicksToLoad=Количество тиков для зарядки Арбалета
+config.spartanweaponry:crossbowTicksCooldown=Время перезарядки Арбалета
+config.spartanweaponry:boltDamage=Базовый урон Болта
+config.spartanweaponry:boltDiamondDamage=Базовый урон от Алмазного Болта
+
+config.spartanweaponry:category.throwing_knife=Метательный нож
+
+config.spartanweaponry:category.throwing_axe=Томагавк
+
+config.spartanweaponry:category.javelin=Метательное Копье
+
+config.spartanweaponry:category.boomerang=Бумеранг
+config.spartanweaponry:woodenBoomerangOnly=Только деревянные бумеранги
+
+config.spartanweaponry:category.battleaxe=Боевой Топор
+
+config.spartanweaponry:category.mace=Булава
+
+config.spartanweaponry:category.glaive=Глифа
+
+config.spartanweaponry:category.quarterstaff=Дубина с железным наконечником
+
+config.spartanweaponry:category.arrows=Стрелы & Колчаны
+config.spartanweaponry:disableNewArrows=Отключить Стрелы
+config.spartanweaponry:disableDiamondArrowsAndBolts=Отключить Алмазные Стрелы и Болты
+config.spartanweaponry:disableQuivers=Отключить Колчаны
+config.spartanweaponry:quiverBowBlacklist=Колчан не работает на лук:
+config.spartanweaponry:baseDamageArrowWood=Базовый урон Деревянной Стрелы
+config.spartanweaponry:baseDamageArrowIron=Базовый урон Железной Стрелы
+config.spartanweaponry:baseDamageArrowDiamond=Базовый урон Алмазной Стрелы
+
+config.spartanweaponry:category.explosives=Взрывчатка
+config.spartanweaponry:disableExplosives=Отключить взрывы
+config.spartanweaponry:enableTerrainDamage=Взрывчатые вещества вызывают повреждение местности
+
+config.spartanweaponry:category.general=Общие настройки
+config.spartanweaponry:enableExperimentalWeapons=Включить экспериментальное оружие
+config.spartanweaponry:enableModdedMaterialWeapons=Разрешить оружие из материалов модов
+config.spartanweaponry:forceDisableUncraftableTooltips=Отключить подсказки для вещей которые невозможно скрафтить
+
+config.spartanweaponry:category.client=Настройки клиента
+config.spartanweaponry:quiverHudAlignment=HUD Центровка Колчана
+config.spartanweaponry:quiverHudOffsetX=HUD Смещение по оси X для Колчана
+config.spartanweaponry:quiverHudOffsetY=HUD Смещение по оси Y для Колчана

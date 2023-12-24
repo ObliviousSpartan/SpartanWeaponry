@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:glaive_iron"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftGlaive"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftGlaive.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemGlaive"
+      }
+    }
+  }
+}

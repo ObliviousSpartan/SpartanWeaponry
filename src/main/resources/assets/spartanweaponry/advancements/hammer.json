@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:hammer_gold"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftHammer"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftHammer.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemHammer"
+      }
+    }
+  }
+}

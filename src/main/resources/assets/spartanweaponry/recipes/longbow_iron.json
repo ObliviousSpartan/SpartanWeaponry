@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "hwi",
+    "w s",
+    "iss"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+      "data": 0
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    },
+    "w": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:longbow_iron"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:longbow_iron"
+    }
+  ]
+}

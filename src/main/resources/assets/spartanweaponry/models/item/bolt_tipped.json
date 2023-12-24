@@ -1,0 +1,7 @@
+{
+    "parent":"item/generated",
+    "textures": {
+        "layer0":"spartanweaponry:items/bolt_tipped_base",
+        "layer1":"spartanweaponry:items/bolt_tipped_head"
+    }
+}

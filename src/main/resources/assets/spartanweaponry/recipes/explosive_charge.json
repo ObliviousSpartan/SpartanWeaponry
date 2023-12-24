@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ggg",
+    "nnn",
+    "ggg"
+  ],
+  "key": {
+    "n": {
+      "type": "forge:ore_dict",
+	  "ore": "nuggetIron"
+    },
+    "g": {
+      "type": "forge:ore_dict",
+	  "ore": "gunpowder"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:material",
+	"data": 2,
+	"count": 4
+  }
+}

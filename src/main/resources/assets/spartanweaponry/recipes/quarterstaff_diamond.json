@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " p ",
+    "i  "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "gemDiamond"
+    },
+    "p": {
+      "item": "spartanweaponry:material",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:staff_diamond"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:staff_diamond"
+    }
+  ]
+}

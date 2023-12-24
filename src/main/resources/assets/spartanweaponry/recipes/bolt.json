@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+	" n ",
+	"f  "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotIron"
+    },
+    "n": {
+      "type": "forge:ore_dict",
+	  "ore": "nuggetIron"
+    },
+    "f": {
+      "type": "forge:ore_dict",
+	  "ore": "feather"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:bolt",
+	"count": 4
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:bolt"
+    }
+  ]
+}

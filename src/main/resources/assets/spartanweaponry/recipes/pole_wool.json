@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"www",
+    "www",
+	"wws"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:wool",
+	  "data": 32767
+    },
+    "w": {
+      "type": "forge:ore_dict",
+	  "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:material",
+	"data": 1,
+	"count": 4
+  }
+}

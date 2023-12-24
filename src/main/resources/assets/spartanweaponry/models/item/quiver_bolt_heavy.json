@@ -1,0 +1,38 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "spartanweaponry:items/quiver_bolt_heavy_base"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "arrow": 1
+            },
+            "model": "spartanweaponry:item/quiver_bolt_heavy_1"
+        },
+        {
+            "predicate": {
+                "arrow": 2
+            },
+            "model": "spartanweaponry:item/quiver_bolt_heavy_2"
+        },
+        {
+            "predicate": {
+                "arrow": 3
+            },
+            "model": "spartanweaponry:item/quiver_bolt_heavy_3"
+        },
+        {
+            "predicate": {
+                "arrow": 4
+            },
+            "model": "spartanweaponry:item/quiver_bolt_heavy_4"
+        },
+        {
+            "predicate": {
+                "arrow": 5
+            },
+            "model": "spartanweaponry:item/quiver_bolt_heavy_5"
+        }
+    ]
+}

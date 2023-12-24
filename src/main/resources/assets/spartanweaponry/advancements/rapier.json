@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:rapier_iron"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftRapier"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftRapier.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemRapier"
+      }
+    }
+  }
+}

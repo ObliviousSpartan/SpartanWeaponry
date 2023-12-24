@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"w ",
+    "ws",
+	"w "
+  ],
+  "key": {
+    "s": {
+      "type": "forge:ore_dict",
+	  "ore": "string"
+    },
+    "w": {
+      "type": "forge:ore_dict",
+	  "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:material",
+	"data": 1
+  }
+}

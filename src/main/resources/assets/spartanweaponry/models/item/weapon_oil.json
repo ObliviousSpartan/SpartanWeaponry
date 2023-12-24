@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "spartanweaponry:items/weapon_oil_overlay",
+        "layer1": "spartanweaponry:items/weapon_oil_bottle"
+    }
+}

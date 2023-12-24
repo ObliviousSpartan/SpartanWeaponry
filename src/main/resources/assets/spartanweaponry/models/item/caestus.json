@@ -1,0 +1,38 @@
+{
+    "parent":"spartanweaponry:item/caestus_model",
+    "textures": {
+        "layer0":"spartanweaponry:items/caestus_model"
+    },
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, 0, 270 ],
+			"translation": [ 0.00, -2.00, 2.75 ],
+			"scale": [ 1.20, 1.20, 1.20 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 0, 270 ],
+			"translation": [ 0.00, -2.00, 2.75 ],
+			"scale": [ 1.20, 1.20, 1.20 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 30, 330, 330 ],
+			"translation": [ 0.00, -1.00, -2.50 ],
+			"scale": [ 1.00, 1.00, 1.00 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 30, 330, 330 ],
+			"translation": [ 0.00, -1.00, -2.50 ],
+			"scale": [ 1.00, 1.00, 1.00 ]
+		},
+		"gui": {
+			"rotation": [ 30, 316, 0 ],
+			"translation": [ 0.00, 0.00, 0.00 ],
+			"scale": [ 1.50, 1.50, 1.50 ]
+		},
+		"ground": {
+			"rotation": [ 0, 0, 0 ],
+			"translation": [ 0.00, 0.00, 0.00 ],
+			"scale": [ 1.00, 1.00, 1.00 ]
+		}
+	}
+}

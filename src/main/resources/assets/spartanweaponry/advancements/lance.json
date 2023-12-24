@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:lance_iron"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftLance"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftLance.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemLance"
+      }
+    }
+  }
+}

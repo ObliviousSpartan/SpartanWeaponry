@@ -1,0 +1,6 @@
+{
+    "parent":"spartanweaponry:item/caestus",
+    "textures": {
+        "0":"spartanweaponry:items/caestus_studded_model"
+    }
+}

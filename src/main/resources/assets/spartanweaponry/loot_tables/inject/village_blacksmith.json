@@ -1,0 +1,118 @@
+{
+    "pools": [
+        {
+            "name": "main",
+            "rolls": {
+                "min": 1,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:dagger_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:longsword_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:katana_iron",
+                    "weight": 5
+                }, 
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:saber_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:rapier_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:greatsword_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:caestus",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:hammer_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:warhammer_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:spear_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:halberd_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:pike_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:lance_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:throwing_knife_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:throwing_axe_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:javelin_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:boomerang_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:battleaxe_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:mace_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:glaive_iron",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "spartanweaponry:staff_iron",
+                    "weight": 5
+                }
+            ]
+        }
+    ]
+}

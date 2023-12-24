@@ -1,0 +1,37 @@
+{
+	"crossbow_load": {
+		"category": "master",
+		"subtitle": "subtitle.spartanweaponry:crossbow_load",
+		"sounds": [ "random/wood_click" ]
+	},
+	"crossbow_fire": {
+		"category": "master",
+		"subtitle": "subtitle.spartanweaponry:crossbow_fire",
+		"sounds": [ "spartanweaponry:crossbow_fire" ]
+	},
+	"throwing_weapon_throw": {
+		"category": "master",
+		"subtitle": "subtitle.spartanweaponry:throwing_weapon_throw",
+		"sounds": [ "random/bow" ]
+	},
+	"throwing_weapon_hit": {
+		"category": "master",
+		"subtitle": "subtitle.spartanweaponry:throwing_weapon_hit",
+		"sounds": [ "random/bowhit1", "random/bowhit2", "random/bowhit3", "random/bowhit4" ]
+	},
+    "throwing_weapon_return": {
+        "category": "master",
+        "subtitle": "subtitle.spartanweaponry:throwing_weapon_return",
+        "sounds": [ "random/bow" ]
+    },
+	"boomerang_throw": {
+		"category": "master",
+		"subtitle": "subtitle.spartanweaponry:boomerang_throw",
+		"sounds": [ "random/bow" ]
+	},
+	"boomerang_flight": {
+		"category": "master",
+		"subtitle": "subtitle.spartanweaponry:boomerang_flight",
+		"sounds": [ "random/bow" ]
+	}
+}

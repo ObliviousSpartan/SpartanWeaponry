@@ -1,0 +1,16 @@
+[
+{
+  "modid": "spartanweaponry",
+  "name": "Spartan Weaponry",
+  "description": "Weapons Galore! A whole new arsenal of weaponry made for Minecraft. Inspired by Balkon's WeaponMod, it adds new versions of weapons from that mod, as well expanding the arsenal with a bunch of original weapons.",
+  "version": "1.5.3",
+  "mcversion": "1.12.2",
+  "url": "https://minecraft.curseforge.com/projects/spartan-weaponry",
+  "updateUrl": "",
+  "authorList": ["ObliviousSpartan"],
+  "credits": "- xwerffx for most of the weapon ideas and most of the art.\n          - Translators: Neerwan & ahmedmootazrizq (French) and driv3r_f1 (Russian).\n          - Shivaxi, fonnymunkey, Charles445 and the rest of the RLCraft dev team for testing, advice and feedback\n          - XZeroAir for help with implementing Trinkets and Baubles integration",
+  "logoFile": "assets/spartanweaponry/textures/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,43 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:quiver_arrow_heavy"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:upgradeQuiverMax"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:upgradeQuiverMax.desc"
+    },
+    "frame": "goal"
+  },
+  "parent": "spartanweaponry:upgrade_quiver",
+  "criteria": {
+    "quiver_arrow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+        	"item": "spartanweaponry:quiver_arrow_heavy"
+          }
+        ]
+      }
+    },
+    "quiver_bolt": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:quiver_bolt_heavy"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "quiver_arrow",
+      "quiver_bolt"
+    ]
+  ]
+}

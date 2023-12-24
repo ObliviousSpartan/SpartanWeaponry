@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    "ih"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotLead"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:parrying_dagger_lead"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:parrying_dagger_lead"
+    }
+  ]
+}

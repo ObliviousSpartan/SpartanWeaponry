@@ -1,0 +1,17 @@
+{
+	"package": "com.oblivioussp.spartanweaponry.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"refmap": "spartanweaponry.mixin.refmap.json",
+	"mixins": [
+		"EntityMixin",
+		"EntityArrowMixin",
+		"EntityLivingBaseMixin"
+	],
+	"client": [
+	],
+	"injectors":
+	{
+		"defaultRequire": 1
+	},
+	"minVersion": "0.7"
+}

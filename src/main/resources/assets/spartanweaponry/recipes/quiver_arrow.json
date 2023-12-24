@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "lsl",
+    "lal",
+    "iii"
+  ],
+  "key": {
+    "l": {
+      "type": "forge:ore_dict",
+	  "ore": "leather"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+	  "ore": "string"
+    },
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotIron"
+    },
+    "a": {
+      "type": "forge:ore_dict",
+	  "ore": "spartanweaponry:arrows"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:quiver_arrow"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:quiver_arrow"
+    }
+  ]
+}

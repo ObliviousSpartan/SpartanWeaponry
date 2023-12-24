@@ -1,0 +1,7 @@
+{
+    "items": {
+        "SWORD": [
+            "com.oblivioussp.spartanweaponry.item.ItemRapier"
+        ]
+    }
+}

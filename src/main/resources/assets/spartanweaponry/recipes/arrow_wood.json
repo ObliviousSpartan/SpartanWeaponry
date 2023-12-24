@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+	" s ",
+	" f "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+	  "ore": "plankWood"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+	  "ore": "stickWood"
+    },
+    "f": {
+      "type": "forge:ore_dict",
+	  "ore": "feather"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:arrow_wood",
+	"count": 4
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:arrow_wood"
+    }
+  ]
+}

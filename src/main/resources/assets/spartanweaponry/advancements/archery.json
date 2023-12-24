@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:bow"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:archery"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:archery.desc"
+    },
+	"show_toast": false,
+	"announce_to_chat": false
+  },
+  "parent": "spartanweaponry:root",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bsi",
+    "sw ",
+    "i h"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "h": {
+      "item": "spartanweaponry:material",
+      "data": 0
+    },
+    "b": {
+      "item": "minecraft:bow"
+    },
+    "s": {
+      "type": "forge:ore_dict",
+      "ore": "string"
+    },
+    "w": {
+      "type": "forge:ore_dict",
+      "ore": "logWood"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:crossbow_wood"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:crossbow_wood"
+    }
+  ]
+}

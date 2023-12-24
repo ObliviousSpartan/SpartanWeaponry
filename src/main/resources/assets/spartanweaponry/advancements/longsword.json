@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:longsword_iron"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftLongsword"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftLongsword.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemLongsword"
+      }
+    }
+  }
+}

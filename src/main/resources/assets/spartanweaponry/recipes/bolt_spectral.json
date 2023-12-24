@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":	[
+		[
+			{
+			  "type": "forge:ore_dict",
+			  "ore": "dustGlowstone"
+			}
+		],
+		[
+			{
+			  "type": "forge:ore_dict",
+			  "ore": "dustGlowstone"
+			}
+		],
+		[
+			{
+			  "item": "spartanweaponry:bolt"
+			}
+		]
+	],
+  "result": {
+    "item": "spartanweaponry:bolt_spectral"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:bolt_spectral"
+    }
+  ]
+}

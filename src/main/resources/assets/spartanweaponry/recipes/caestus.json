@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "lw"
+  ],
+  "key": {
+    "l": {
+      "type": "forge:ore_dict",
+	  "ore": "leather"
+    },
+    "w": {
+      "item": "minecraft:wool",
+	  "data": 32767
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:caestus"
+  },
+  "conditions": [
+	{
+      "type": "item_exists",
+      "item": "spartanweaponry:caestus"
+    }
+  ]
+}

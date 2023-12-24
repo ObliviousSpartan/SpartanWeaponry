@@ -1,0 +1,8 @@
+{
+    "parent":"spartanweaponry:item/staff",
+    "textures": {
+        "layer0":"spartanweaponry:items/custom/quarterstaff_layer_0",
+        "layer1":"spartanweaponry:items/custom/quarterstaff_layer_1",
+        "layer2":"spartanweaponry:items/custom/quarterstaff_layer_2"
+    }
+}

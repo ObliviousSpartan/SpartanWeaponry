@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:skull",
+      "data": 4
+    },
+    "frame":"challenge",
+    "title": {
+      "translate": "advancement.spartanweaponry:explode_creeper"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:explode_creeper.desc"
+    }
+  },
+  "parent": "spartanweaponry:root",
+  "rewards": {
+    "experience": 50
+  },
+  "criteria": {
+    "killed_skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "is_explosion": true
+        },
+        "entity": {
+          "type": "minecraft:creeper"
+        }
+      }
+    }
+  }
+}

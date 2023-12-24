@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:dagger_stone"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftDagger"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftDagger.desc"
+    }
+  },
+  "parent": "spartanweaponry:throwing_weapons",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemDagger"
+      }
+    }
+  }
+}

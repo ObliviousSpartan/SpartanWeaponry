@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:longbow_wood",
+	  "data": 4
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftLongbow"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftLongbow.desc"
+    }
+  },
+  "parent": "spartanweaponry:archery",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemLongbow"
+      }
+    }
+  }
+}
