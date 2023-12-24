@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:copper_dagger",
+    "spartanweaponry:copper_parrying_dagger",
+    "spartanweaponry:copper_longsword",
+    "spartanweaponry:copper_katana",
+    "spartanweaponry:copper_saber",
+    "spartanweaponry:copper_rapier",
+    "spartanweaponry:copper_greatsword",
+    "spartanweaponry:copper_battle_hammer",
+    "spartanweaponry:copper_warhammer",
+    "spartanweaponry:copper_spear",
+    "spartanweaponry:copper_halberd",
+    "spartanweaponry:copper_pike",
+    "spartanweaponry:copper_lance",
+    "spartanweaponry:copper_longbow",
+    "spartanweaponry:copper_heavy_crossbow",
+    "spartanweaponry:copper_throwing_knife",
+    "spartanweaponry:copper_tomahawk",
+    "spartanweaponry:copper_javelin",
+    "spartanweaponry:copper_boomerang",
+    "spartanweaponry:copper_battleaxe",
+    "spartanweaponry:copper_flanged_mace",
+    "spartanweaponry:copper_glaive",
+    "spartanweaponry:copper_quarterstaff",
+    "spartanweaponry:copper_scythe"
+  ]
+}

@@ -1,0 +1,33 @@
+{ 
+	"type": "apotheosis:fletching",
+	"conditions": [
+    {
+    	"modid": "apotheosis",
+    	"type": "forge:mod_loaded"
+    },
+    {
+      "disabled": [
+        "bolts"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    { 
+		"type": "apotheosis:module",
+		"module": "village"
+	}],
+	"ingredients":[ 
+		{
+			"tag": "forge:dusts/glowstone"
+		},
+		{
+			"item": "spartanweaponry:bolt"
+		},
+		{
+			"tag": "forge:dusts/glowstone"
+		}
+	],
+	"result": {
+	  "item": "spartanweaponry:bolt_spectral",
+	  "count": 2
+	}
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "spartanweaponry:item/base/club",
+  "textures": {
+    "layer0": "spartanweaponry:item/studded_club",
+    "coating": "spartanweaponry:item/coating/club"
+  },
+  "loader": "spartanweaponry:oil_coated_item",
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:blocking": 1.0
+      },
+      "model": "spartanweaponry:item/studded_club_blocking"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0
+      },
+      "model": "spartanweaponry:item/studded_club_throwing"
+    }
+  ]
+}

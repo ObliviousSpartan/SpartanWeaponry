@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/saber_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/nickel_saber",
+    "coating": "spartanweaponry:item/coating/saber"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

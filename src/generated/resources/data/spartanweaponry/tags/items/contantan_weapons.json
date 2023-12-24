@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:constantan_dagger",
+    "spartanweaponry:constantan_parrying_dagger",
+    "spartanweaponry:constantan_longsword",
+    "spartanweaponry:constantan_katana",
+    "spartanweaponry:constantan_saber",
+    "spartanweaponry:constantan_rapier",
+    "spartanweaponry:constantan_greatsword",
+    "spartanweaponry:constantan_battle_hammer",
+    "spartanweaponry:constantan_warhammer",
+    "spartanweaponry:constantan_spear",
+    "spartanweaponry:constantan_halberd",
+    "spartanweaponry:constantan_pike",
+    "spartanweaponry:constantan_lance",
+    "spartanweaponry:constantan_longbow",
+    "spartanweaponry:constantan_heavy_crossbow",
+    "spartanweaponry:constantan_throwing_knife",
+    "spartanweaponry:constantan_tomahawk",
+    "spartanweaponry:constantan_javelin",
+    "spartanweaponry:constantan_boomerang",
+    "spartanweaponry:constantan_battleaxe",
+    "spartanweaponry:constantan_flanged_mace",
+    "spartanweaponry:constantan_glaive",
+    "spartanweaponry:constantan_quarterstaff",
+    "spartanweaponry:constantan_scythe"
+  ]
+}

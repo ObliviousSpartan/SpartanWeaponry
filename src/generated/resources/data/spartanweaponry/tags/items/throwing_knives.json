@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_throwing_knife",
+    "spartanweaponry:stone_throwing_knife",
+    "spartanweaponry:copper_throwing_knife",
+    "spartanweaponry:iron_throwing_knife",
+    "spartanweaponry:golden_throwing_knife",
+    "spartanweaponry:diamond_throwing_knife",
+    "spartanweaponry:netherite_throwing_knife",
+    "spartanweaponry:tin_throwing_knife",
+    "spartanweaponry:bronze_throwing_knife",
+    "spartanweaponry:steel_throwing_knife",
+    "spartanweaponry:silver_throwing_knife",
+    "spartanweaponry:electrum_throwing_knife",
+    "spartanweaponry:lead_throwing_knife",
+    "spartanweaponry:nickel_throwing_knife",
+    "spartanweaponry:invar_throwing_knife",
+    "spartanweaponry:constantan_throwing_knife",
+    "spartanweaponry:platinum_throwing_knife",
+    "spartanweaponry:aluminum_throwing_knife"
+  ]
+}

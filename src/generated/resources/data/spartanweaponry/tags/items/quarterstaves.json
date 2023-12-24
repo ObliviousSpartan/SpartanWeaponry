@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_quarterstaff",
+    "spartanweaponry:stone_quarterstaff",
+    "spartanweaponry:copper_quarterstaff",
+    "spartanweaponry:iron_quarterstaff",
+    "spartanweaponry:golden_quarterstaff",
+    "spartanweaponry:diamond_quarterstaff",
+    "spartanweaponry:netherite_quarterstaff",
+    "spartanweaponry:tin_quarterstaff",
+    "spartanweaponry:bronze_quarterstaff",
+    "spartanweaponry:steel_quarterstaff",
+    "spartanweaponry:silver_quarterstaff",
+    "spartanweaponry:electrum_quarterstaff",
+    "spartanweaponry:lead_quarterstaff",
+    "spartanweaponry:nickel_quarterstaff",
+    "spartanweaponry:invar_quarterstaff",
+    "spartanweaponry:constantan_quarterstaff",
+    "spartanweaponry:platinum_quarterstaff",
+    "spartanweaponry:aluminum_quarterstaff"
+  ]
+}

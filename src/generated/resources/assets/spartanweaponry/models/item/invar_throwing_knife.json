@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/throwing_knife",
+  "textures": {
+    "layer0": "spartanweaponry:item/invar_throwing_knife"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0,
+        "spartanweaponry:empty": 0.0
+      },
+      "model": "spartanweaponry:item/invar_throwing_knife_throwing"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/throwing_knife_empty"
+    }
+  ]
+}

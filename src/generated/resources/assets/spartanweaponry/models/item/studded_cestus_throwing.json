@@ -1,0 +1,7 @@
+{
+  "parent": "spartanweaponry:item/base/cestus_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/studded_cestus",
+    "coating": "spartanweaponry:item/coating/cestus"
+  }
+}

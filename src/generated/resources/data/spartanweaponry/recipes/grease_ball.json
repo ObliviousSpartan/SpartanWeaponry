@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:grease_ball",
+  "pattern": [
+    " # ",
+    "#O#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:foods/meat/raw"
+    },
+    "O": {
+      "tag": "forge:slimeballs"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:grease_ball"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "oil"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

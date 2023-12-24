@@ -1,0 +1,22 @@
+{
+  "parent": "spartanweaponry:item/base/pike",
+  "textures": {
+    "layer0": "spartanweaponry:item/tin_pike",
+    "coating": "spartanweaponry:item/coating/pike"
+  },
+  "loader": "spartanweaponry:oil_coated_item",
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:blocking": 1.0
+      },
+      "model": "spartanweaponry:item/tin_pike_blocking"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0
+      },
+      "model": "spartanweaponry:item/tin_pike_throwing"
+    }
+  ]
+}

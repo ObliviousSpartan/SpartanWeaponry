@@ -1,0 +1,34 @@
+{ 
+	"type": "apotheosis:fletching",
+	"conditions": [
+    {
+    	"modid": "apotheosis",
+    	"type": "forge:mod_loaded"
+    },
+    {
+      	"disabled": [
+        	"arrows"
+      	],
+      	"type": "spartanweaponry:type_disabled"
+    },
+    { 
+		"type": "apotheosis:module",
+		"module": "village"
+	}],
+	"ingredients":[ 
+		
+		{
+			"tag": "forge:feathers"
+		},
+		{
+			"tag": "forge:rods/wooden"
+		},
+		{
+			"tag": "forge:ingots/iron"
+		}
+	],
+	"result": {
+	  "item": "spartanweaponry:arrow_iron",
+	  "count": 6
+	}
+}

@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_glaive",
+    "spartanweaponry:stone_glaive",
+    "spartanweaponry:copper_glaive",
+    "spartanweaponry:iron_glaive",
+    "spartanweaponry:golden_glaive",
+    "spartanweaponry:diamond_glaive",
+    "spartanweaponry:netherite_glaive",
+    "spartanweaponry:tin_glaive",
+    "spartanweaponry:bronze_glaive",
+    "spartanweaponry:steel_glaive",
+    "spartanweaponry:silver_glaive",
+    "spartanweaponry:electrum_glaive",
+    "spartanweaponry:lead_glaive",
+    "spartanweaponry:nickel_glaive",
+    "spartanweaponry:invar_glaive",
+    "spartanweaponry:constantan_glaive",
+    "spartanweaponry:platinum_glaive",
+    "spartanweaponry:aluminum_glaive"
+  ]
+}

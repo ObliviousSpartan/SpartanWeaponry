@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:stone_dagger",
+    "spartanweaponry:stone_parrying_dagger",
+    "spartanweaponry:stone_longsword",
+    "spartanweaponry:stone_katana",
+    "spartanweaponry:stone_saber",
+    "spartanweaponry:stone_rapier",
+    "spartanweaponry:stone_greatsword",
+    "spartanweaponry:stone_battle_hammer",
+    "spartanweaponry:stone_warhammer",
+    "spartanweaponry:stone_spear",
+    "spartanweaponry:stone_halberd",
+    "spartanweaponry:stone_pike",
+    "spartanweaponry:stone_lance",
+    "spartanweaponry:stone_throwing_knife",
+    "spartanweaponry:stone_tomahawk",
+    "spartanweaponry:stone_javelin",
+    "spartanweaponry:stone_boomerang",
+    "spartanweaponry:stone_battleaxe",
+    "spartanweaponry:stone_flanged_mace",
+    "spartanweaponry:stone_glaive",
+    "spartanweaponry:stone_quarterstaff",
+    "spartanweaponry:stone_scythe"
+  ]
+}

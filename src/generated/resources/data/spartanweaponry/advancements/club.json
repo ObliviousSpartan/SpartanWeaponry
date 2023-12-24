@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:root",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:wooden_club",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_club.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_club.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_club": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:clubs"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_club"
+    ]
+  ]
+}

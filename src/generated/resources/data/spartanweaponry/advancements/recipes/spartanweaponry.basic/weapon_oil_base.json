@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:weapon_oil_base"
+    ]
+  },
+  "criteria": {
+    "has_greaseball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:grease_ball"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:weapon_oil_base"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_greaseball",
+      "has_the_recipe"
+    ]
+  ]
+}

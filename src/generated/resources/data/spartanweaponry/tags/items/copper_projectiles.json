@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:copper_arrow",
+    "spartanweaponry:tipped_copper_arrow",
+    "spartanweaponry:copper_bolt",
+    "spartanweaponry:tipped_copper_bolt"
+  ]
+}

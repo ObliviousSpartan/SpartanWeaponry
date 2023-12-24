@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/netherite"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    },
+    {
+      "item": "spartanweaponry:diamond_bolt"
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:netherite_bolt",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "bolts",
+        "netherite_ammo"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/javelin",
+  "textures": {
+    "layer0": "spartanweaponry:item/wooden_javelin"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0,
+        "spartanweaponry:empty": 0.0
+      },
+      "model": "spartanweaponry:item/wooden_javelin_throwing"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/javelin_empty"
+    }
+  ]
+}

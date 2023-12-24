@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:blaze_head",
+    "spartanweaponry:enderman_head",
+    "spartanweaponry:spider_head",
+    "spartanweaponry:cave_spider_head",
+    "spartanweaponry:piglin_head",
+    "spartanweaponry:zombified_piglin_head",
+    "spartanweaponry:husk_head",
+    "spartanweaponry:stray_skull",
+    "spartanweaponry:drowned_head",
+    "spartanweaponry:illager_head",
+    "spartanweaponry:witch_head"
+  ]
+}

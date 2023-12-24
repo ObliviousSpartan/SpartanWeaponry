@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/tomahawk_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/diamond_tomahawk"
+  }
+}

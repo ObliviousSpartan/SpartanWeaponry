@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_battle_hammer",
+    "spartanweaponry:stone_battle_hammer",
+    "spartanweaponry:copper_battle_hammer",
+    "spartanweaponry:iron_battle_hammer",
+    "spartanweaponry:golden_battle_hammer",
+    "spartanweaponry:diamond_battle_hammer",
+    "spartanweaponry:netherite_battle_hammer",
+    "spartanweaponry:tin_battle_hammer",
+    "spartanweaponry:bronze_battle_hammer",
+    "spartanweaponry:steel_battle_hammer",
+    "spartanweaponry:silver_battle_hammer",
+    "spartanweaponry:electrum_battle_hammer",
+    "spartanweaponry:lead_battle_hammer",
+    "spartanweaponry:nickel_battle_hammer",
+    "spartanweaponry:invar_battle_hammer",
+    "spartanweaponry:constantan_battle_hammer",
+    "spartanweaponry:platinum_battle_hammer",
+    "spartanweaponry:aluminum_battle_hammer"
+  ]
+}

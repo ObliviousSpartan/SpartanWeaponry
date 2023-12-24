@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/longsword_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/wooden_longsword",
+    "coating": "spartanweaponry:item/coating/longsword"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:diamond_dagger",
+    "spartanweaponry:diamond_parrying_dagger",
+    "spartanweaponry:diamond_longsword",
+    "spartanweaponry:diamond_katana",
+    "spartanweaponry:diamond_saber",
+    "spartanweaponry:diamond_rapier",
+    "spartanweaponry:diamond_greatsword",
+    "spartanweaponry:diamond_battle_hammer",
+    "spartanweaponry:diamond_warhammer",
+    "spartanweaponry:diamond_spear",
+    "spartanweaponry:diamond_halberd",
+    "spartanweaponry:diamond_pike",
+    "spartanweaponry:diamond_lance",
+    "spartanweaponry:diamond_longbow",
+    "spartanweaponry:diamond_heavy_crossbow",
+    "spartanweaponry:diamond_throwing_knife",
+    "spartanweaponry:diamond_tomahawk",
+    "spartanweaponry:diamond_javelin",
+    "spartanweaponry:diamond_boomerang",
+    "spartanweaponry:diamond_battleaxe",
+    "spartanweaponry:diamond_flanged_mace",
+    "spartanweaponry:diamond_glaive",
+    "spartanweaponry:diamond_quarterstaff",
+    "spartanweaponry:diamond_scythe"
+  ]
+}

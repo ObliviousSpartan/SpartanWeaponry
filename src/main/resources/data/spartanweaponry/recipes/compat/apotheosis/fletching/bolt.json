@@ -1,0 +1,33 @@
+{ 
+	"type": "apotheosis:fletching",
+	"conditions": [
+    {
+    	"modid": "apotheosis",
+    	"type": "forge:mod_loaded"
+    },
+    {
+      	"disabled": [
+        	"bolts"
+      	],
+      	"type": "spartanweaponry:type_disabled"
+    },
+    { 
+		"type": "apotheosis:module",
+		"module": "village"
+	}],
+	"ingredients":[ 
+		{
+			"tag": "forge:ingots/iron"
+		},
+		{
+			"tag": "forge:nuggets/iron"
+		},
+		{
+			"tag": "forge:feathers"
+		}
+	],
+	"result": {
+	  "item": "spartanweaponry:bolt",
+	  "count": 6
+	}
+}

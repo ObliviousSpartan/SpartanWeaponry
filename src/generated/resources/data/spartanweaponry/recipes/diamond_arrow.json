@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "|",
+    "F"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:gems/diamond"
+    },
+    "|": {
+      "tag": "forge:rods/wooden"
+    },
+    "F": {
+      "tag": "forge:feathers"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:diamond_arrow",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "arrows",
+        "diamond_ammo"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

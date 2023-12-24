@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "|",
+    "F"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/copper"
+    },
+    "|": {
+      "tag": "forge:rods/wooden"
+    },
+    "F": {
+      "tag": "forge:feathers"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:copper_arrow",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "arrows",
+        "copper_ammo"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

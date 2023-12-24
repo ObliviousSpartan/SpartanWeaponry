@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/scythe_blocking",
+  "textures": {
+    "layer0": "spartanweaponry:item/electrum_scythe",
+    "coating": "spartanweaponry:item/coating/scythe"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

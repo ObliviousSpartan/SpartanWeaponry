@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_lance",
+    "spartanweaponry:stone_lance",
+    "spartanweaponry:copper_lance",
+    "spartanweaponry:iron_lance",
+    "spartanweaponry:golden_lance",
+    "spartanweaponry:diamond_lance",
+    "spartanweaponry:netherite_lance",
+    "spartanweaponry:tin_lance",
+    "spartanweaponry:bronze_lance",
+    "spartanweaponry:steel_lance",
+    "spartanweaponry:silver_lance",
+    "spartanweaponry:electrum_lance",
+    "spartanweaponry:lead_lance",
+    "spartanweaponry:nickel_lance",
+    "spartanweaponry:invar_lance",
+    "spartanweaponry:constantan_lance",
+    "spartanweaponry:platinum_lance",
+    "spartanweaponry:aluminum_lance"
+  ]
+}

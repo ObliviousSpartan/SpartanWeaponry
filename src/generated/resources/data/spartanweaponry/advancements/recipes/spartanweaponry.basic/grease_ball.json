@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:grease_ball"
+    ]
+  },
+  "criteria": {
+    "has_meat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:foods/meat/raw"
+          }
+        ]
+      }
+    },
+    "has_slimeball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:slimeballs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:grease_ball"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_meat",
+      "has_slimeball",
+      "has_the_recipe"
+    ]
+  ]
+}

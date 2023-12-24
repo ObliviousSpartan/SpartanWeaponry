@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/flanged_mace_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/copper_flanged_mace",
+    "coating": "spartanweaponry:item/coating/flanged_mace"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

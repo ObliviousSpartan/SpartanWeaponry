@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:wooden_club"
+    ]
+  },
+  "criteria": {
+    "has_wood_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:wooden_club"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_wood_log",
+      "has_the_recipe"
+    ]
+  ]
+}

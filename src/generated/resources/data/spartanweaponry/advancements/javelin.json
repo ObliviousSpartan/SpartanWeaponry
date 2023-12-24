@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:root",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:diamond_javelin",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_javelin.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_javelin.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_javelin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:javelins"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_javelin"
+    ]
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 2.0
+      },
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_dagger"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_parrying_dagger"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_longsword"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_katana"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_saber"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_rapier"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_greatsword"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:studded_club"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:cestus"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_battle_hammer"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_warhammer"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_spear"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_halberd"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_pike"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_lance"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_throwing_knife"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_tomahawk"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_javelin"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_boomerang"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_battleaxe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_flanged_mace"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_glaive"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_quarterstaff"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:iron_scythe"
+        }
+      ]
+    }
+  ]
+}

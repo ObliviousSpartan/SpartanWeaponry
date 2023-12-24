@@ -1,0 +1,22 @@
+{
+  "parent": "spartanweaponry:item/base/longsword",
+  "textures": {
+    "layer0": "spartanweaponry:item/lead_longsword",
+    "coating": "spartanweaponry:item/coating/longsword"
+  },
+  "loader": "spartanweaponry:oil_coated_item",
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:blocking": 1.0
+      },
+      "model": "spartanweaponry:item/lead_longsword_blocking"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0
+      },
+      "model": "spartanweaponry:item/lead_longsword_throwing"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_scythe",
+    "spartanweaponry:stone_scythe",
+    "spartanweaponry:copper_scythe",
+    "spartanweaponry:iron_scythe",
+    "spartanweaponry:golden_scythe",
+    "spartanweaponry:diamond_scythe",
+    "spartanweaponry:netherite_scythe",
+    "spartanweaponry:tin_scythe",
+    "spartanweaponry:bronze_scythe",
+    "spartanweaponry:steel_scythe",
+    "spartanweaponry:silver_scythe",
+    "spartanweaponry:electrum_scythe",
+    "spartanweaponry:lead_scythe",
+    "spartanweaponry:nickel_scythe",
+    "spartanweaponry:invar_scythe",
+    "spartanweaponry:constantan_scythe",
+    "spartanweaponry:platinum_scythe",
+    "spartanweaponry:aluminum_scythe"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:flanged_mace",
+  "pattern": [
+    " ##",
+    " /#",
+    "|  "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/constantan"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:constantan_flanged_mace"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "flanged_mace",
+        "constantan"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/constantan",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

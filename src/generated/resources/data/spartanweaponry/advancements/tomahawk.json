@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:root",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:golden_tomahawk",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_tomahawk.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_tomahawk.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_tomahawk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:tomahawks"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tomahawk"
+    ]
+  ]
+}

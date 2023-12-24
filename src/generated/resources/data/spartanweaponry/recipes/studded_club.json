@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:club",
+  "pattern": [
+    "C#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "C": {
+      "item": "spartanweaponry:wooden_club"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:studded_club"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "club"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

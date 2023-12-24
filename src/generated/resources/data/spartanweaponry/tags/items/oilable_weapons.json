@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:wooden_sword",
+    "minecraft:stone_sword",
+    "minecraft:iron_sword",
+    "minecraft:golden_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword",
+    "#spartanweaponry:daggers",
+    "#spartanweaponry:parrying_daggers",
+    "#spartanweaponry:longswords",
+    "#spartanweaponry:katanas",
+    "#spartanweaponry:sabers",
+    "#spartanweaponry:rapiers",
+    "#spartanweaponry:greatswords",
+    "#spartanweaponry:clubs",
+    "#spartanweaponry:battle_hammers",
+    "#spartanweaponry:warhammers",
+    "#spartanweaponry:spears",
+    "#spartanweaponry:halberds",
+    "#spartanweaponry:pikes",
+    "#spartanweaponry:lances",
+    "#spartanweaponry:battleaxes",
+    "#spartanweaponry:flanged_maces",
+    "#spartanweaponry:glaives",
+    "#spartanweaponry:quarterstaves",
+    "#spartanweaponry:scythes"
+  ]
+}

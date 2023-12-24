@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:dagger",
+  "pattern": [
+    "#",
+    "|"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/silver"
+    },
+    "|": {
+      "tag": "spartanweaponry:handles"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:silver_dagger"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "dagger",
+        "silver"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/silver",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:aluminum_dagger",
+    "spartanweaponry:aluminum_parrying_dagger",
+    "spartanweaponry:aluminum_longsword",
+    "spartanweaponry:aluminum_katana",
+    "spartanweaponry:aluminum_saber",
+    "spartanweaponry:aluminum_rapier",
+    "spartanweaponry:aluminum_greatsword",
+    "spartanweaponry:aluminum_battle_hammer",
+    "spartanweaponry:aluminum_warhammer",
+    "spartanweaponry:aluminum_spear",
+    "spartanweaponry:aluminum_halberd",
+    "spartanweaponry:aluminum_pike",
+    "spartanweaponry:aluminum_lance",
+    "spartanweaponry:aluminum_longbow",
+    "spartanweaponry:aluminum_heavy_crossbow",
+    "spartanweaponry:aluminum_throwing_knife",
+    "spartanweaponry:aluminum_tomahawk",
+    "spartanweaponry:aluminum_javelin",
+    "spartanweaponry:aluminum_boomerang",
+    "spartanweaponry:aluminum_battleaxe",
+    "spartanweaponry:aluminum_flanged_mace",
+    "spartanweaponry:aluminum_glaive",
+    "spartanweaponry:aluminum_quarterstaff",
+    "spartanweaponry:aluminum_scythe"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_longsword",
+    "spartanweaponry:stone_longsword",
+    "spartanweaponry:copper_longsword",
+    "spartanweaponry:iron_longsword",
+    "spartanweaponry:golden_longsword",
+    "spartanweaponry:diamond_longsword",
+    "spartanweaponry:netherite_longsword",
+    "spartanweaponry:tin_longsword",
+    "spartanweaponry:bronze_longsword",
+    "spartanweaponry:steel_longsword",
+    "spartanweaponry:silver_longsword",
+    "spartanweaponry:electrum_longsword",
+    "spartanweaponry:lead_longsword",
+    "spartanweaponry:nickel_longsword",
+    "spartanweaponry:invar_longsword",
+    "spartanweaponry:constantan_longsword",
+    "spartanweaponry:platinum_longsword",
+    "spartanweaponry:aluminum_longsword"
+  ]
+}

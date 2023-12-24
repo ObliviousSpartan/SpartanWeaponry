@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:nickel_heavy_crossbow"
+    ]
+  },
+  "criteria": {
+    "has_nickel_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/nickel"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:nickel_heavy_crossbow"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nickel_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

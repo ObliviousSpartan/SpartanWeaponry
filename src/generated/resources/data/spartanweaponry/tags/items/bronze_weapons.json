@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:bronze_dagger",
+    "spartanweaponry:bronze_parrying_dagger",
+    "spartanweaponry:bronze_longsword",
+    "spartanweaponry:bronze_katana",
+    "spartanweaponry:bronze_saber",
+    "spartanweaponry:bronze_rapier",
+    "spartanweaponry:bronze_greatsword",
+    "spartanweaponry:bronze_battle_hammer",
+    "spartanweaponry:bronze_warhammer",
+    "spartanweaponry:bronze_spear",
+    "spartanweaponry:bronze_halberd",
+    "spartanweaponry:bronze_pike",
+    "spartanweaponry:bronze_lance",
+    "spartanweaponry:bronze_longbow",
+    "spartanweaponry:bronze_heavy_crossbow",
+    "spartanweaponry:bronze_throwing_knife",
+    "spartanweaponry:bronze_tomahawk",
+    "spartanweaponry:bronze_javelin",
+    "spartanweaponry:bronze_boomerang",
+    "spartanweaponry:bronze_battleaxe",
+    "spartanweaponry:bronze_flanged_mace",
+    "spartanweaponry:bronze_glaive",
+    "spartanweaponry:bronze_quarterstaff",
+    "spartanweaponry:bronze_scythe"
+  ]
+}

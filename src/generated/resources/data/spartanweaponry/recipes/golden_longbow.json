@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:longbow",
+  "pattern": [
+    "|/#",
+    "/ ~",
+    "#~~"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/gold"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    },
+    "~": {
+      "tag": "forge:string"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:golden_longbow"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "longbow"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

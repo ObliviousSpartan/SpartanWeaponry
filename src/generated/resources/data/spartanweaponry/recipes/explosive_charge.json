@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:explosive",
+  "pattern": [
+    "###",
+    "---",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:gunpowder"
+    },
+    "-": {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:explosive_charge",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "explosives"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

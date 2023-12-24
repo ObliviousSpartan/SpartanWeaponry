@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "condition": "spartanweaponry:new_heads_enabled"
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "predicate": {
+        "type": "minecraft:player"
+      },
+      "entity": "this"
+    }
+  ],
+  "skull": "minecraft:player_head",
+  "type": "spartanweaponry:decapitate"
+}

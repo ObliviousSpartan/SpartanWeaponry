@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:platinum_rapier"
+    ]
+  },
+  "criteria": {
+    "has_platinum_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/platinum"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:platinum_rapier"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_platinum_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

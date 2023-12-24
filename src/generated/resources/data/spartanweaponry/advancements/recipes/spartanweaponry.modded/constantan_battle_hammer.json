@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:constantan_battle_hammer"
+    ]
+  },
+  "criteria": {
+    "has_constantan_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/constantan"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:constantan_battle_hammer"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_constantan_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_dagger",
+    "spartanweaponry:wooden_parrying_dagger",
+    "spartanweaponry:wooden_longsword",
+    "spartanweaponry:wooden_katana",
+    "spartanweaponry:wooden_saber",
+    "spartanweaponry:wooden_rapier",
+    "spartanweaponry:wooden_greatsword",
+    "spartanweaponry:wooden_battle_hammer",
+    "spartanweaponry:wooden_warhammer",
+    "spartanweaponry:wooden_spear",
+    "spartanweaponry:wooden_halberd",
+    "spartanweaponry:wooden_pike",
+    "spartanweaponry:wooden_lance",
+    "spartanweaponry:wooden_longbow",
+    "spartanweaponry:wooden_heavy_crossbow",
+    "spartanweaponry:wooden_throwing_knife",
+    "spartanweaponry:wooden_tomahawk",
+    "spartanweaponry:wooden_javelin",
+    "spartanweaponry:wooden_boomerang",
+    "spartanweaponry:wooden_battleaxe",
+    "spartanweaponry:wooden_flanged_mace",
+    "spartanweaponry:wooden_glaive",
+    "spartanweaponry:wooden_quarterstaff",
+    "spartanweaponry:wooden_scythe"
+  ]
+}

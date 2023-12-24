@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/heavy_crossbow_pulling",
+  "textures": {
+    "layer0": "spartanweaponry:item/bronze_heavy_crossbow_pulling_1"
+  }
+}

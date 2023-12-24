@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:nickel_dagger",
+    "spartanweaponry:nickel_parrying_dagger",
+    "spartanweaponry:nickel_longsword",
+    "spartanweaponry:nickel_katana",
+    "spartanweaponry:nickel_saber",
+    "spartanweaponry:nickel_rapier",
+    "spartanweaponry:nickel_greatsword",
+    "spartanweaponry:nickel_battle_hammer",
+    "spartanweaponry:nickel_warhammer",
+    "spartanweaponry:nickel_spear",
+    "spartanweaponry:nickel_halberd",
+    "spartanweaponry:nickel_pike",
+    "spartanweaponry:nickel_lance",
+    "spartanweaponry:nickel_longbow",
+    "spartanweaponry:nickel_heavy_crossbow",
+    "spartanweaponry:nickel_throwing_knife",
+    "spartanweaponry:nickel_tomahawk",
+    "spartanweaponry:nickel_javelin",
+    "spartanweaponry:nickel_boomerang",
+    "spartanweaponry:nickel_battleaxe",
+    "spartanweaponry:nickel_flanged_mace",
+    "spartanweaponry:nickel_glaive",
+    "spartanweaponry:nickel_quarterstaff",
+    "spartanweaponry:nickel_scythe"
+  ]
+}

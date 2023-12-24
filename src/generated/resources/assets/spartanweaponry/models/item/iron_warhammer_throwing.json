@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/warhammer_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/iron_warhammer",
+    "coating": "spartanweaponry:item/coating/warhammer"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

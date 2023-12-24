@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:spear",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:diamond_pike",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_pike.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_pike.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_pike": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:pikes"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pike"
+    ]
+  ]
+}

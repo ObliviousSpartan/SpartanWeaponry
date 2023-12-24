@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:iron_dagger",
+    "spartanweaponry:iron_longsword",
+    "spartanweaponry:iron_katana",
+    "spartanweaponry:iron_saber",
+    "spartanweaponry:iron_rapier",
+    "spartanweaponry:iron_greatsword",
+    "spartanweaponry:iron_battle_hammer",
+    "spartanweaponry:iron_warhammer",
+    "spartanweaponry:iron_battleaxe",
+    "spartanweaponry:iron_flanged_mace"
+  ]
+}

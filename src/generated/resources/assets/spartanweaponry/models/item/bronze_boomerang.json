@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/boomerang",
+  "textures": {
+    "layer0": "spartanweaponry:item/bronze_boomerang"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0,
+        "spartanweaponry:empty": 0.0
+      },
+      "model": "spartanweaponry:item/bronze_boomerang_throwing"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/boomerang_empty"
+    }
+  ]
+}

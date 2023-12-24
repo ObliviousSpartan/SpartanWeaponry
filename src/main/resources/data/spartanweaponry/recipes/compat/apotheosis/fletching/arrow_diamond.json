@@ -1,0 +1,34 @@
+{ 
+	"type": "apotheosis:fletching",
+	"conditions": [
+    {
+    	"modid": "apotheosis",
+    	"type": "forge:mod_loaded"
+    },
+    {
+      	"disabled": [
+        	"arrows",
+        	"diamond_ammo"
+      	],
+      	"type": "spartanweaponry:type_disabled"
+    },
+    { 
+		"type": "apotheosis:module",
+		"module": "village"
+	}],
+	"ingredients":[ 
+		{
+			"tag": "forge:gems/diamond"
+		},
+		{
+			"tag": "forge:rods/wooden"
+		},
+		{
+			"tag": "forge:feathers"
+		}
+	],
+	"result": {
+	  "item": "spartanweaponry:arrow_diamond",
+	  "count": 6
+	}
+}

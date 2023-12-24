@@ -1,0 +1,41 @@
+{
+  "parent": "spartanweaponry:item/base/heavy_crossbow",
+  "textures": {
+    "layer0": "spartanweaponry:item/electrum_heavy_crossbow_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0
+      },
+      "model": "spartanweaponry:item/electrum_heavy_crossbow_pulling_0"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0,
+        "spartanweaponry:pull": 0.65
+      },
+      "model": "spartanweaponry:item/electrum_heavy_crossbow_pulling_1"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0,
+        "spartanweaponry:pull": 1.0
+      },
+      "model": "spartanweaponry:item/electrum_heavy_crossbow_pulling_2"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:charged": 1.0
+      },
+      "model": "spartanweaponry:item/electrum_heavy_crossbow_loaded"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0,
+        "spartanweaponry:charged": 1.0
+      },
+      "model": "spartanweaponry:item/electrum_heavy_crossbow_firing"
+    }
+  ]
+}

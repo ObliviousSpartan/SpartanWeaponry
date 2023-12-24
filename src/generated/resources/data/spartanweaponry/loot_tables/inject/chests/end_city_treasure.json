@@ -1,0 +1,151 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 2.0
+      },
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_dagger"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_parrying_dagger"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_longsword"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_katana"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_saber"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_rapier"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_greatsword"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_battle_hammer"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_warhammer"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_spear"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_halberd"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_pike"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_lance"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_longbow"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_heavy_crossbow"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ],
+          "name": "spartanweaponry:diamond_bolt"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_throwing_knife"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_tomahawk"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_javelin"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_boomerang"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_battleaxe"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_flanged_mace"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_glaive"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_quarterstaff"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "spartanweaponry:diamond_scythe"
+        }
+      ]
+    }
+  ]
+}

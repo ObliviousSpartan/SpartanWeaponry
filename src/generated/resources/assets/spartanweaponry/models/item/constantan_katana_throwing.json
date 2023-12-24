@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/katana_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/constantan_katana",
+    "coating": "spartanweaponry:item/coating/katana"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

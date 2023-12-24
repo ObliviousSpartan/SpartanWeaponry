@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/longbow_pulling",
+  "textures": {
+    "layer0": "spartanweaponry:item/electrum_longbow_pulling_1"
+  }
+}

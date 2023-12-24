@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  #",
+    " | ",
+    "F  "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/copper"
+    },
+    "|": {
+      "tag": "forge:nuggets/iron"
+    },
+    "F": {
+      "tag": "forge:feathers"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:copper_bolt",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "bolts"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

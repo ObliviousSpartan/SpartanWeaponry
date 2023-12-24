@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:huge_arrow_quiver_smithing"
+    ]
+  },
+  "criteria": {
+    "has_huge_quiver_upgrade_kit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:huge_quiver_upgrade_kit"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:huge_arrow_quiver_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_huge_quiver_upgrade_kit",
+      "has_the_recipe"
+    ]
+  ]
+}

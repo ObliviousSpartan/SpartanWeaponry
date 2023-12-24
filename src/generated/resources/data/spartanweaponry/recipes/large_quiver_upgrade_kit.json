@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L L",
+    "###"
+  ],
+  "key": {
+    "L": {
+      "tag": "forge:leather"
+    },
+    "#": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:large_quiver_upgrade_kit"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "quiver"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

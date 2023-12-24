@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L~L",
+    "L^L",
+    "###"
+  ],
+  "key": {
+    "L": {
+      "tag": "forge:leather"
+    },
+    "~": {
+      "tag": "forge:string"
+    },
+    "^": {
+      "tag": "spartanweaponry:bolts"
+    },
+    "#": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:small_bolt_quiver"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "quiver",
+        "bolts"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

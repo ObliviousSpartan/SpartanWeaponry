@@ -1,0 +1,34 @@
+{ 
+	"type": "apotheosis:fletching",
+	"conditions": [
+    {
+    	"modid": "apotheosis",
+    	"type": "forge:mod_loaded"
+    },
+    {
+      	"disabled": [
+        	"bolts",
+        	"copper_ammo"
+      	],
+      	"type": "spartanweaponry:type_disabled"
+    },
+    { 
+		"type": "apotheosis:module",
+		"module": "village"
+	}],
+	"ingredients":[ 
+		{
+			"tag": "forge:ingots/copper"
+		},
+		{
+			"tag": "forge:nuggets/iron"
+		},
+		{
+			"tag": "forge:feathers"
+		}
+	],
+	"result": {
+	  "item": "spartanweaponry:bolt_copper",
+	  "count": 6
+	}
+}

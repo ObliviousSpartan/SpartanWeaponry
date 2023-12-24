@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_arrow",
+    "spartanweaponry:tipped_wooden_arrow",
+    "spartanweaponry:copper_arrow",
+    "spartanweaponry:tipped_copper_arrow",
+    "spartanweaponry:iron_arrow",
+    "spartanweaponry:tipped_iron_arrow",
+    "spartanweaponry:diamond_arrow",
+    "spartanweaponry:tipped_diamond_arrow",
+    "spartanweaponry:netherite_arrow",
+    "spartanweaponry:netherite_arrow",
+    "spartanweaponry:explosive_arrow"
+  ]
+}

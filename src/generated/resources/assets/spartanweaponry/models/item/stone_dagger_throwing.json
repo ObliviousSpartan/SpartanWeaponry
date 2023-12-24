@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/dagger_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/stone_dagger",
+    "coating": "spartanweaponry:item/coating/dagger"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

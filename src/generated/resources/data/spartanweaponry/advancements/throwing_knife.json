@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:dagger",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:iron_throwing_knife",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_throwing_knife.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_throwing_knife.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_throwing_knife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:throwing_knives"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_throwing_knife"
+    ]
+  ]
+}

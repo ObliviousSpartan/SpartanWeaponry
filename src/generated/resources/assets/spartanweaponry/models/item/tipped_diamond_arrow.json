@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweaponry:item/tipped_diamond_arrow_base",
+    "layer1": "spartanweaponry:item/tipped_arrow_head"
+  }
+}

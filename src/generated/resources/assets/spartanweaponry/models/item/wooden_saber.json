@@ -1,0 +1,22 @@
+{
+  "parent": "spartanweaponry:item/base/saber",
+  "textures": {
+    "layer0": "spartanweaponry:item/wooden_saber",
+    "coating": "spartanweaponry:item/coating/saber"
+  },
+  "loader": "spartanweaponry:oil_coated_item",
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:blocking": 1.0
+      },
+      "model": "spartanweaponry:item/wooden_saber_blocking"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0
+      },
+      "model": "spartanweaponry:item/wooden_saber_throwing"
+    }
+  ]
+}

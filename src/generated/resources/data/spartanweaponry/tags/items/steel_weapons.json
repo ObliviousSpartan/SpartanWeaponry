@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:steel_dagger",
+    "spartanweaponry:steel_parrying_dagger",
+    "spartanweaponry:steel_longsword",
+    "spartanweaponry:steel_katana",
+    "spartanweaponry:steel_saber",
+    "spartanweaponry:steel_rapier",
+    "spartanweaponry:steel_greatsword",
+    "spartanweaponry:steel_battle_hammer",
+    "spartanweaponry:steel_warhammer",
+    "spartanweaponry:steel_spear",
+    "spartanweaponry:steel_halberd",
+    "spartanweaponry:steel_pike",
+    "spartanweaponry:steel_lance",
+    "spartanweaponry:steel_longbow",
+    "spartanweaponry:steel_heavy_crossbow",
+    "spartanweaponry:steel_throwing_knife",
+    "spartanweaponry:steel_tomahawk",
+    "spartanweaponry:steel_javelin",
+    "spartanweaponry:steel_boomerang",
+    "spartanweaponry:steel_battleaxe",
+    "spartanweaponry:steel_flanged_mace",
+    "spartanweaponry:steel_glaive",
+    "spartanweaponry:steel_quarterstaff",
+    "spartanweaponry:steel_scythe"
+  ]
+}

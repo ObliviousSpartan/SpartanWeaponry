@@ -1,0 +1,272 @@
+{
+  "throwing_weapon_throw": {
+    "subtitle": "subtitle.spartanweaponry.thrown_weapon_throw",
+    "sounds": [
+      "item/trident/throw1",
+      "item/trident/throw2"
+    ]
+  },
+  "throwing_weapon_hit_mob": {
+    "subtitle": "subtitle.spartanweaponry.thrown_weapon_hit_mob",
+    "sounds": [
+      "item/trident/pierce1",
+      "item/trident/pierce2",
+      "item/trident/pierce3"
+    ]
+  },
+  "throwing_weapon_hit_ground": {
+    "subtitle": "subtitle.spartanweaponry.thrown_weapon_hit_ground",
+    "sounds": [
+      {
+        "name": "item/trident/ground_impact1",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact2",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact3",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact4",
+        "volume": 0.9
+      }
+    ]
+  },
+  "throwing_knife_throw": {
+    "subtitle": "subtitle.spartanweaponry.throwing_knife_throw",
+    "sounds": [
+      "item/trident/throw1",
+      "item/trident/throw2"
+    ]
+  },
+  "throwing_knife_hit_mob": {
+    "subtitle": "subtitle.spartanweaponry.throwing_knife_hit_mob",
+    "sounds": [
+      "item/trident/pierce1",
+      "item/trident/pierce2",
+      "item/trident/pierce3"
+    ]
+  },
+  "throwing_knife_hit_ground": {
+    "subtitle": "subtitle.spartanweaponry.throwing_knife_hit_ground",
+    "sounds": [
+      {
+        "name": "item/trident/ground_impact1",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact2",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact3",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact4",
+        "volume": 0.9
+      }
+    ]
+  },
+  "tomahawk_throw": {
+    "subtitle": "subtitle.spartanweaponry.tomahawk_throw",
+    "sounds": [
+      "item/trident/throw1",
+      "item/trident/throw2"
+    ]
+  },
+  "tomahawk_hit_mob": {
+    "subtitle": "subtitle.spartanweaponry.tomahawk_hit_mob",
+    "sounds": [
+      "item/trident/pierce1",
+      "item/trident/pierce2",
+      "item/trident/pierce3"
+    ]
+  },
+  "tomahawk_hit_ground": {
+    "subtitle": "subtitle.spartanweaponry.tomahawk_hit_ground",
+    "sounds": [
+      {
+        "name": "item/trident/ground_impact1",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact2",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact3",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact4",
+        "volume": 0.9
+      }
+    ]
+  },
+  "javelin_throw": {
+    "subtitle": "subtitle.spartanweaponry.javelin_throw",
+    "sounds": [
+      "item/trident/throw1",
+      "item/trident/throw2"
+    ]
+  },
+  "javelin_hit_mob": {
+    "subtitle": "subtitle.spartanweaponry.javelin_hit_mob",
+    "sounds": [
+      "item/trident/pierce1",
+      "item/trident/pierce2",
+      "item/trident/pierce3"
+    ]
+  },
+  "javelin_hit_ground": {
+    "subtitle": "subtitle.spartanweaponry.javelin_hit_ground",
+    "sounds": [
+      {
+        "name": "item/trident/ground_impact1",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact2",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact3",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact4",
+        "volume": 0.9
+      }
+    ]
+  },
+  "boomerang_throw": {
+    "subtitle": "subtitle.spartanweaponry.boomerang_throw",
+    "sounds": [
+      "item/trident/throw1",
+      "item/trident/throw2"
+    ]
+  },
+  "boomerang_fly": {
+    "subtitle": "subtitle.spartanweaponry.boomerang_fly",
+    "sounds": [
+      "random/bow"
+    ]
+  },
+  "boomerang_hit_mob": {
+    "subtitle": "subtitle.spartanweaponry.boomerang_hit_mob",
+    "sounds": [
+      "item/trident/pierce1",
+      "item/trident/pierce2",
+      "item/trident/pierce3"
+    ]
+  },
+  "boomerang_bounce": {
+    "subtitle": "subtitle.spartanweaponry.boomerang_bounce",
+    "sounds": [
+      {
+        "name": "entity/player/attack/weak1",
+        "volume": 0.7
+      },
+      {
+        "name": "entity/player/attack/weak2",
+        "volume": 0.7
+      },
+      {
+        "name": "entity/player/attack/weak3",
+        "volume": 0.7
+      },
+      {
+        "name": "entity/player/attack/weak4",
+        "volume": 0.7
+      }
+    ]
+  },
+  "boomerang_hit_ground": {
+    "subtitle": "subtitle.spartanweaponry.boomerang_hit_ground",
+    "sounds": [
+      {
+        "name": "item/trident/ground_impact1",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact2",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact3",
+        "volume": 0.9
+      },
+      {
+        "name": "item/trident/ground_impact4",
+        "volume": 0.9
+      }
+    ]
+  },
+  "throwing_weapon_loyalty_return": {
+    "subtitle": "subtitle.spartanweaponry.throwing_weapon_loyalty_return",
+    "sounds": [
+      {
+        "name": "item/trident/return1",
+        "volume": 0.8
+      },
+      {
+        "name": "item/trident/return2",
+        "volume": 0.8,
+        "pitch": 1.2
+      },
+      {
+        "name": "item/trident/return3",
+        "volume": 0.8,
+        "pitch": 0.8
+      },
+      {
+        "name": "item/trident/return2",
+        "volume": 0.8
+      },
+      {
+        "name": "item/trident/return2",
+        "volume": 0.8,
+        "pitch": 1.2
+      },
+      {
+        "name": "item/trident/return2",
+        "volume": 0.8,
+        "pitch": 0.8
+      },
+      {
+        "name": "item/trident/return3",
+        "volume": 0.8
+      },
+      {
+        "name": "item/trident/return3",
+        "volume": 0.8,
+        "pitch": 1.2
+      },
+      {
+        "name": "item/trident/return3",
+        "volume": 0.8,
+        "pitch": 0.8
+      }
+    ]
+  },
+  "oil_applied": {
+    "subtitle": "subtitle.spartanweaponry.oil_applied",
+    "sounds": [
+      "block/brewing_stand/brew1",
+      "block/brewing_stand/brew2"
+    ]
+  },
+  "hammer_slams_into_ground": {
+    "subtitle": "subtitle.spartanweaponry.hammer_slams_into_ground",
+    "sounds": [
+      "random/explode1",
+      "random/explode2",
+      "random/explode3",
+      "random/explode4"
+    ]
+  }
+}

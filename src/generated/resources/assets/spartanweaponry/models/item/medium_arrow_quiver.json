@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweaponry:item/medium_arrow_quiver_base"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:arrow": 1.0
+      },
+      "model": "spartanweaponry:item/medium_arrow_quiver_1"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:arrow": 2.0
+      },
+      "model": "spartanweaponry:item/medium_arrow_quiver_2"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:arrow": 3.0
+      },
+      "model": "spartanweaponry:item/medium_arrow_quiver_3"
+    }
+  ]
+}

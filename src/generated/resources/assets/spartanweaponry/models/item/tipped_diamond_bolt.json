@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweaponry:item/tipped_diamond_bolt_base",
+    "layer1": "spartanweaponry:item/tipped_bolt_head"
+  }
+}

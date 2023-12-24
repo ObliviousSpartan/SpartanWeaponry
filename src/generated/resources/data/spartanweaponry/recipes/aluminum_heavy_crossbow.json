@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:heavy_crossbow",
+  "pattern": [
+    "#D#",
+    "PHP",
+    " | "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/aluminum"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "D": {
+      "item": "minecraft:bow"
+    },
+    "H": {
+      "item": "minecraft:tripwire_hook"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:aluminum_heavy_crossbow"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "heavy_crossbow",
+        "aluminum"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/aluminum",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "spartanweaponry:item/base/battleaxe",
+  "textures": {
+    "layer0": "spartanweaponry:item/iron_battleaxe",
+    "coating": "spartanweaponry:item/coating/battleaxe"
+  },
+  "loader": "spartanweaponry:oil_coated_item",
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:blocking": 1.0
+      },
+      "model": "spartanweaponry:item/iron_battleaxe_blocking"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:throwing": 1.0
+      },
+      "model": "spartanweaponry:item/iron_battleaxe_throwing"
+    }
+  ]
+}

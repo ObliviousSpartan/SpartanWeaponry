@@ -1,0 +1,120 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "layer0": "spartanweaponry:items/cestus_model"
+    },
+    "elements": [
+        {
+            "name": "Cestus",
+            "from": [ 6.0, 6.0, 4.0 ], 
+            "to": [ 10.0, 10.0, 9.0 ], 
+            "faces": {
+                "north": { "texture": "#layer0", "uv": [ 0.0, 0.0, 4.0, 4.0 ] },
+                "east": { "texture": "#layer0", "uv": [ 4.0, 4.0, 8.0, 9.0 ], "rotation": 90 },
+                "south": { "texture": "#layer0", "uv": [ 4.0, 0.0, 8.0, 4.0 ] },
+                "west": { "texture": "#layer0", "uv": [ 12.0, 4.0, 16.0, 9.0 ], "rotation": 270 },
+                "up": { "texture": "#layer0", "uv": [ 0.0, 4.0, 4.0, 9.0 ] },
+                "down": { "texture": "#layer0", "uv": [ 8.0, 4.0, 12.0, 9.0 ] }
+            }
+        },
+        {
+            "name": "Knux",
+            "from": [ 5.499999992549419, 9.49999999254942, 3.4999999925494194 ], 
+            "to": [ 10.49999999254942, 10.49999999254942, 7.499999992549419 ], 
+            "faces": {
+                "north": { "texture": "#layer0", "uv": [ 0.0, 10.0, 5.0, 11.0 ] },
+                "east": { "texture": "#layer0", "uv": [ 5.0, 9.0, 6.0, 13.0 ], "rotation": 90 },
+                "south": { "texture": "#layer0", "uv": [ 0.0, 15.0, 5.0, 16.0 ] },
+                "west": { "texture": "#layer0", "uv": [ 11.0, 9.0, 12.0, 13.0 ], "rotation": 270 },
+                "up": { "texture": "#layer0", "uv": [ 0.0, 11.0, 5.0, 15.0 ] },
+                "down": { "texture": "#layer0", "uv": [ 7.0, 11.0, 12.0, 15.0 ] }
+            }
+        },
+        {
+            "name": "Strap1",
+            "from": [ 6.0, 6.0, 9.699999995529652 ], 
+            "to": [ 10.0, 10.0, 10.199999988079071 ], 
+            "rotation": { "origin": [ 8.0, 8.0, 9.999999997019767 ], "axis": "x", "angle": 22.5 },
+            "faces": {
+                "north": { "texture": "#layer0", "uv": [ 8.0, 0.0, 12.0, 4.0 ] },
+                "east": { "texture": "#layer0", "uv": [ 8.0, 3.0, 11.999999992549421, 4.0 ], "rotation": 90 },
+                "south": { "texture": "#layer0", "uv": [ 12.0, 0.0, 16.0, 4.0 ] },
+                "west": { "texture": "#layer0", "uv": [ 12.0, 3.0, 15.999999992549418, 4.0 ], "rotation": 270 },
+                "up": { "texture": "#layer0", "uv": [ 12.0, 0.0, 16.0, 0.9999999925494176 ] },
+                "down": { "texture": "#layer0", "uv": [ 8.0, 3.0, 12.0, 3.999999992549421 ] }
+            }
+        },
+        {
+            "name": "Strap2",
+            "from": [ 6.0, 6.0, 12.0 ], 
+            "to": [ 10.0, 10.0, 12.49999999254942 ], 
+            "faces": {
+                "north": { "texture": "#layer0", "uv": [ 8.0, 0.0, 12.0, 4.0 ] },
+                "east": { "texture": "#layer0", "uv": [ 8.0, 0.0, 11.999999992549418, 1.0 ], "rotation": 90 },
+                "south": { "texture": "#layer0", "uv": [ 12.0, 0.0, 16.0, 4.0 ] },
+                "west": { "texture": "#layer0", "uv": [ 12.0, 3.0, 15.99999999254942, 4.0 ], "rotation": 270 },
+                "up": { "texture": "#layer0", "uv": [ 12.0, 0.0, 16.0, 0.9999999925494194 ] },
+                "down": { "texture": "#layer0", "uv": [ 8.0, 3.0, 12.0, 3.9999999925494194 ] }
+            }
+        },
+        {
+            "name": "Strap3",
+            "from": [ 6.100000001490116, 6.0, 11.200000002980232 ], 
+            "to": [ 9.899999998509884, 10.0, 11.699999995529652 ], 
+            "rotation": { "origin": [ 8.0, 8.0, 11.500000004470348 ], "axis": "x", "angle": -22.5 },
+            "faces": {
+                "north": { "texture": "#layer0", "uv": [ 8.0, 0.0, 11.799999997019768, 4.0 ] },
+                "east": { "texture": "#layer0", "uv": [ 8.0, 0.0, 11.99999999254942, 1.0 ], "rotation": 90 },
+                "south": { "texture": "#layer0", "uv": [ 12.0, 0.0, 15.799999997019768, 4.0 ] },
+                "west": { "texture": "#layer0", "uv": [ 12.0, 0.0, 15.99999999254942, 1.0 ], "rotation": 270 },
+                "up": { "texture": "#layer0", "uv": [ 8.0, 3.0, 11.999999997019767, 3.9999999925494176 ] },
+                "down": { "texture": "#layer0", "uv": [ 12.0, 3.0, 15.999999997019767, 3.9999999925494194 ] }
+            }
+        },
+        {
+            "name": "Knux2",
+            "from": [ 5.499999992549419, 6.499999992549419, 3.4999999925494194 ], 
+            "to": [ 10.49999999254942, 9.49999999254942, 4.499999992549419 ], 
+            "faces": {
+                "north": { "texture": "#layer0", "uv": [ 6.0, 13.0, 11.0, 16.0 ] },
+                "east": { "texture": "#layer0", "uv": [ 14.0, 10.0, 15.0, 13.0 ] },
+                "south": { "texture": "#layer0", "uv": [ 11.0, 13.0, 16.0, 16.0 ] },
+                "west": { "texture": "#layer0", "uv": [ 15.0, 10.0, 16.0, 13.0 ] },
+                "up": { "texture": "#layer0", "uv": [ 6.0, 13.0, 11.0, 14.0 ] },
+                "down": { "texture": "#layer0", "uv": [ 11.0, 15.0, 16.0, 16.0 ] }
+            }
+        }
+    ],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, 0, 270 ],
+			"translation": [ 0.00, -2.00, 2.75 ],
+			"scale": [ 1.20, 1.20, 1.20 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 0, 270 ],
+			"translation": [ 0.00, -2.00, 2.75 ],
+			"scale": [ 1.20, 1.20, 1.20 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 30, 330, 330 ],
+			"translation": [ 0.00, -1.00, -2.50 ],
+			"scale": [ 1.00, 1.00, 1.00 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 30, 330, 330 ],
+			"translation": [ 0.00, -1.00, -2.50 ],
+			"scale": [ 1.00, 1.00, 1.00 ]
+		},
+		"gui": {
+			"rotation": [ 30, 316, 0 ],
+			"translation": [ 0.00, 0.00, 0.00 ],
+			"scale": [ 1.50, 1.50, 1.50 ]
+		},
+		"ground": {
+			"rotation": [ 0, 0, 0 ],
+			"translation": [ 0.00, 0.00, 0.00 ],
+			"scale": [ 1.00, 1.00, 1.00 ]
+		}
+	}
+}

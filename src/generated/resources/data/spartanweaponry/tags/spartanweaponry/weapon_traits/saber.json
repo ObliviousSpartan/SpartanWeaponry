@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:damage_absorb",
+    "spartanweaponry:chest_damage_bonus",
+    "spartanweaponry:sweep_1"
+  ]
+}

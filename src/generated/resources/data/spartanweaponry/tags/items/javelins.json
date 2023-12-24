@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_javelin",
+    "spartanweaponry:stone_javelin",
+    "spartanweaponry:copper_javelin",
+    "spartanweaponry:iron_javelin",
+    "spartanweaponry:golden_javelin",
+    "spartanweaponry:diamond_javelin",
+    "spartanweaponry:netherite_javelin",
+    "spartanweaponry:tin_javelin",
+    "spartanweaponry:bronze_javelin",
+    "spartanweaponry:steel_javelin",
+    "spartanweaponry:silver_javelin",
+    "spartanweaponry:electrum_javelin",
+    "spartanweaponry:lead_javelin",
+    "spartanweaponry:nickel_javelin",
+    "spartanweaponry:invar_javelin",
+    "spartanweaponry:constantan_javelin",
+    "spartanweaponry:platinum_javelin",
+    "spartanweaponry:aluminum_javelin"
+  ]
+}

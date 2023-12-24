@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:studded_cestus"
+    ]
+  },
+  "criteria": {
+    "has_cestus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:cestus"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:studded_cestus"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cestus",
+      "has_the_recipe"
+    ]
+  ]
+}

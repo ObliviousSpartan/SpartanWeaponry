@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:enderman",
+    "minecraft:ender_dragon",
+    "minecraft:endermite",
+    "minecraft:shulker"
+  ]
+}

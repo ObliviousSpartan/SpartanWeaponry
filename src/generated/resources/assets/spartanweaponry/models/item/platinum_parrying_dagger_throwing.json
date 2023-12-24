@@ -1,0 +1,8 @@
+{
+  "parent": "spartanweaponry:item/base/parrying_dagger_throwing",
+  "textures": {
+    "layer0": "spartanweaponry:item/platinum_parrying_dagger",
+    "coating": "spartanweaponry:item/coating/parrying_dagger"
+  },
+  "loader": "spartanweaponry:oil_coated_item"
+}

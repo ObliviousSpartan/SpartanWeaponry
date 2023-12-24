@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweaponry:item/tipped_copper_bolt_base",
+    "layer1": "spartanweaponry:item/tipped_bolt_head"
+  }
+}

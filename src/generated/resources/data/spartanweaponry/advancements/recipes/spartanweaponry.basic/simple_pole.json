@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:simple_pole"
+    ]
+  },
+  "criteria": {
+    "has_handle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:simple_handle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:simple_pole"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_handle",
+      "has_the_recipe"
+    ]
+  ]
+}

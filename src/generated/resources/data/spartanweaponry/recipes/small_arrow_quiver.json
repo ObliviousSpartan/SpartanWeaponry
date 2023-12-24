@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L~L",
+    "L^L",
+    "###"
+  ],
+  "key": {
+    "L": {
+      "tag": "forge:leather"
+    },
+    "~": {
+      "tag": "forge:string"
+    },
+    "^": {
+      "tag": "minecraft:arrows"
+    },
+    "#": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:small_arrow_quiver"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "quiver"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/throwing_knife",
+  "textures": {
+    "layer0": "spartanweaponry:item/empty_throwing_knife"
+  }
+}

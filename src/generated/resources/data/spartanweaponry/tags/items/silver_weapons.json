@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:silver_dagger",
+    "spartanweaponry:silver_parrying_dagger",
+    "spartanweaponry:silver_longsword",
+    "spartanweaponry:silver_katana",
+    "spartanweaponry:silver_saber",
+    "spartanweaponry:silver_rapier",
+    "spartanweaponry:silver_greatsword",
+    "spartanweaponry:silver_battle_hammer",
+    "spartanweaponry:silver_warhammer",
+    "spartanweaponry:silver_spear",
+    "spartanweaponry:silver_halberd",
+    "spartanweaponry:silver_pike",
+    "spartanweaponry:silver_lance",
+    "spartanweaponry:silver_longbow",
+    "spartanweaponry:silver_heavy_crossbow",
+    "spartanweaponry:silver_throwing_knife",
+    "spartanweaponry:silver_tomahawk",
+    "spartanweaponry:silver_javelin",
+    "spartanweaponry:silver_boomerang",
+    "spartanweaponry:silver_battleaxe",
+    "spartanweaponry:silver_flanged_mace",
+    "spartanweaponry:silver_glaive",
+    "spartanweaponry:silver_quarterstaff",
+    "spartanweaponry:silver_scythe"
+  ]
+}

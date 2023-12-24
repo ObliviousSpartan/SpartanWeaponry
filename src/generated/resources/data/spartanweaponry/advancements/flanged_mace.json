@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:root",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:iron_flanged_mace",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_flanged_mace.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_flanged_mace.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_flanged_mace": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:flanged_maces"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_flanged_mace"
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:bolt",
+    "spartanweaponry:tipped_bolt",
+    "spartanweaponry:spectral_bolt",
+    "spartanweaponry:copper_bolt",
+    "spartanweaponry:tipped_copper_bolt",
+    "spartanweaponry:diamond_bolt",
+    "spartanweaponry:diamond_bolt",
+    "spartanweaponry:netherite_bolt",
+    "spartanweaponry:netherite_bolt"
+  ]
+}

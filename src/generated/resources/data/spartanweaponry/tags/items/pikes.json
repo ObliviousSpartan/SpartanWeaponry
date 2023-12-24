@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:wooden_pike",
+    "spartanweaponry:stone_pike",
+    "spartanweaponry:copper_pike",
+    "spartanweaponry:iron_pike",
+    "spartanweaponry:golden_pike",
+    "spartanweaponry:diamond_pike",
+    "spartanweaponry:netherite_pike",
+    "spartanweaponry:tin_pike",
+    "spartanweaponry:bronze_pike",
+    "spartanweaponry:steel_pike",
+    "spartanweaponry:silver_pike",
+    "spartanweaponry:electrum_pike",
+    "spartanweaponry:lead_pike",
+    "spartanweaponry:nickel_pike",
+    "spartanweaponry:invar_pike",
+    "spartanweaponry:constantan_pike",
+    "spartanweaponry:platinum_pike",
+    "spartanweaponry:aluminum_pike"
+  ]
+}

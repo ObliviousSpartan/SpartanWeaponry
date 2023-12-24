@@ -1,0 +1,28 @@
+{
+  "parent": "spartanweaponry:item/base/longbow",
+  "textures": {
+    "layer0": "spartanweaponry:item/lead_longbow_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0
+      },
+      "model": "spartanweaponry:item/lead_longbow_pulling_0"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0,
+        "spartanweaponry:pull": 0.65
+      },
+      "model": "spartanweaponry:item/lead_longbow_pulling_1"
+    },
+    {
+      "predicate": {
+        "spartanweaponry:pulling": 1.0,
+        "spartanweaponry:pull": 0.9
+      },
+      "model": "spartanweaponry:item/lead_longbow_pulling_2"
+    }
+  ]
+}

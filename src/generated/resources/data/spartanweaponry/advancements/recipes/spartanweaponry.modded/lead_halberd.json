@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:lead_halberd"
+    ]
+  },
+  "criteria": {
+    "has_lead_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/lead"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:lead_halberd"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lead_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

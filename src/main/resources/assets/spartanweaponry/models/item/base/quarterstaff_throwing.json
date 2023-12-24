@@ -1,0 +1,25 @@
+{
+    "parent":"item/handheld",
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [ 0, -90, 55 ],
+            "translation": [ 0, 4.0, 0.5 ],
+            "scale": [ 1.275, 1.275, 1.275 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 0, 90, -55 ],
+            "translation": [ 0, 4.0, 0.5 ],
+            "scale": [ 1.275, 1.275, 1.275 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 90, 50 ],
+            "translation": [ 3.13, -4.2, -4 ],
+            "scale": [ 1.02, 1.02, 0.51 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, -90, -50 ],
+            "translation": [ 3.13, -4.2, -4 ],
+            "scale": [ 1.02, 1.02, 0.51 ]
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "parent": "spartanweaponry:longsword",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:diamond_greatsword",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_greatsword.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_greatsword.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_greatsword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:greatswords"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_greatsword"
+    ]
+  ]
+}
