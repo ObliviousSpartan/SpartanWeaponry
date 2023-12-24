@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:longbow",
+  "pattern": [
+    "|/#",
+    "/ ~",
+    "#~~"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/lead"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    },
+    "~": {
+      "tag": "forge:string"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:longbow_lead"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "longbow",
+        "lead"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/lead",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

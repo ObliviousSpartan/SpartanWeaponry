@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "spartanweaponry:quarterstaff_diamond"
+  },
+  "addition": {
+    "tag": "forge:ingots/netherite"
+  },
+  "result": {
+    "item": "spartanweaponry:quarterstaff_netherite"
+  }
+}

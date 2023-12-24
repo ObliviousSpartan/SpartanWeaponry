@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:katana",
+  "pattern": [
+    "  #",
+    " # ",
+    "|  "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/gold"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:katana_gold"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "katana"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

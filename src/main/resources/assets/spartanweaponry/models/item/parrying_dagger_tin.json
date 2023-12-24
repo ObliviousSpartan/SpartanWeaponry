@@ -1,0 +1,14 @@
+{
+  "parent": "spartanweaponry:item/base/parrying_dagger",
+  "textures": {
+    "layer0": "spartanweaponry:item/parrying_dagger_tin"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:blocking": 1.0
+      },
+      "model": "spartanweaponry:item/parrying_dagger_tin_blocking"
+    }
+  ]
+}

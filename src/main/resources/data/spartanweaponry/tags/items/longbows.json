@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:longbow_wood",
+    "spartanweaponry:longbow_leather",
+    "spartanweaponry:longbow_iron",
+    "spartanweaponry:longbow_gold",
+    "spartanweaponry:longbow_diamond",
+    "spartanweaponry:longbow_netherite",
+    "spartanweaponry:longbow_copper",
+    "spartanweaponry:longbow_tin",
+    "spartanweaponry:longbow_bronze",
+    "spartanweaponry:longbow_steel",
+    "spartanweaponry:longbow_silver",
+    "spartanweaponry:longbow_invar",
+    "spartanweaponry:longbow_platinum",
+    "spartanweaponry:longbow_electrum",
+    "spartanweaponry:longbow_nickel",
+    "spartanweaponry:longbow_lead"
+  ]
+}

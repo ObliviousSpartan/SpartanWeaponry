@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/spear",
+  "textures": {
+    "layer0": "spartanweaponry:item/spear_bronze"
+  }
+}

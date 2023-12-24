@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/lance",
+  "textures": {
+    "layer0": "spartanweaponry:item/lance_electrum"
+  }
+}

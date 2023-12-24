@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:heavy_crossbow_wood",
+    "spartanweaponry:heavy_crossbow_leather",
+    "spartanweaponry:heavy_crossbow_iron",
+    "spartanweaponry:heavy_crossbow_gold",
+    "spartanweaponry:heavy_crossbow_diamond",
+    "spartanweaponry:heavy_crossbow_netherite",
+    "spartanweaponry:heavy_crossbow_copper",
+    "spartanweaponry:heavy_crossbow_tin",
+    "spartanweaponry:heavy_crossbow_bronze",
+    "spartanweaponry:heavy_crossbow_steel",
+    "spartanweaponry:heavy_crossbow_silver",
+    "spartanweaponry:heavy_crossbow_invar",
+    "spartanweaponry:heavy_crossbow_platinum",
+    "spartanweaponry:heavy_crossbow_electrum",
+    "spartanweaponry:heavy_crossbow_nickel",
+    "spartanweaponry:heavy_crossbow_lead"
+  ]
+}

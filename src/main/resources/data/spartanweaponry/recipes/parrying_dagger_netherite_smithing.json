@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "spartanweaponry:parrying_dagger_diamond"
+  },
+  "addition": {
+    "tag": "forge:ingots/netherite"
+  },
+  "result": {
+    "item": "spartanweaponry:parrying_dagger_netherite"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:quiver_arrow_small",
+    "spartanweaponry:quiver_arrow_medium",
+    "spartanweaponry:quiver_arrow_large",
+    "spartanweaponry:quiver_arrow_huge"
+  ]
+}

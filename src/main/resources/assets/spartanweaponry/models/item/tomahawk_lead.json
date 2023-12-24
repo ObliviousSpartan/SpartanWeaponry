@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/tomahawk",
+  "textures": {
+    "layer0": "spartanweaponry:item/tomahawk_lead"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:throwing": 1.0,
+        "minecraft:empty": 0.0
+      },
+      "model": "spartanweaponry:item/tomahawk_lead_throwing"
+    },
+    {
+      "predicate": {
+        "minecraft:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/tomahawk_empty"
+    }
+  ]
+}

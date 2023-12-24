@@ -1,0 +1,52 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+# The license for your mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
+# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
+license="All Rights Reserved"
+issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/spartan-weaponry/issues"
+logoFile="logo.png"
+
+[[mods]]
+	modId="spartanweaponry"
+	version="${version}"
+	displayName="Spartan Weaponry"
+	#updateJSONURL="http://myurl.me/"
+	displayURL="https://www.curseforge.com/minecraft/mc-mods/spartan-weaponry/"
+	credits="xwerffx for the weapon ideas and most of the art"
+	authors="ObliviousSpartan"
+	description='''
+Weapons Galore! A whole new arsenal of weaponry made for Minecraft.
+
+Inspired by Balkon's WeaponMod, it adds new versions of weapons from that mod, as well expanding the arsenal with a bunch of original weapons.
+'''
+
+[[dependencies.spartanweaponry]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36.1.47,37)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.spartanweaponry]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3, 1.16.4]"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.spartanweaponry]]
+    modId="jei"
+    mandatory=false
+    versionRange="[7.6.0.58,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.spartanweaponry]]
+    modId="curios"
+    mandatory=false
+    versionRange="[1.16.4-4.0.3.0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.spartanweaponry]]
+    modId="enderitemod"
+    mandatory=false
+    versionRange="[1.16.5-0.8.1,)"
+    ordering="AFTER"
+    side="BOTH"

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:arrow_wood",
+    "spartanweaponry:arrow_wood_tipped",
+    "spartanweaponry:arrow_iron",
+    "spartanweaponry:arrow_iron_tipped",
+    "spartanweaponry:arrow_diamond",
+    "spartanweaponry:arrow_diamond_tipped",
+    "spartanweaponry:arrow_explosive"
+  ]
+}

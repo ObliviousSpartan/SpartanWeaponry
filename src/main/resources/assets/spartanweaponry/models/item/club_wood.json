@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/club",
+  "textures": {
+    "layer0": "spartanweaponry:item/club_wood"
+  }
+}

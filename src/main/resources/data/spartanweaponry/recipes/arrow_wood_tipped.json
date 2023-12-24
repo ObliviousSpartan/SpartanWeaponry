@@ -1,0 +1,5 @@
+{
+  "type": "spartanweaponry:tipped_projectile",
+  "projectile": "spartanweaponry:arrow_wood",
+  "result": "spartanweaponry:arrow_wood_tipped"
+}

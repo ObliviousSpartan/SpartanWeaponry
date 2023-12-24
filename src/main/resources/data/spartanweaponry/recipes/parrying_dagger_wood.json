@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:parrying_dagger",
+  "pattern": [
+    " #",
+    "#|"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:parrying_dagger_wood"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "parrying_dagger"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:warhammer",
+  "pattern": [
+    " #",
+    "##",
+    " |"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:warhammer_iron"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "warhammer"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

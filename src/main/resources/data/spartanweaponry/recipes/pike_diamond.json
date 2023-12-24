@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:pike",
+  "pattern": [
+    "#",
+    "/",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:gems/diamond"
+    },
+    "/": {
+      "item": "spartanweaponry:pole"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:pike_diamond"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "pike"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

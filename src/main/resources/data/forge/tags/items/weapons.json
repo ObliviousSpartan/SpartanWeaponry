@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "#spartanweaponry:daggers",
+    "#spartanweaponry:parrying_daggers",
+    "#spartanweaponry:longswords",
+    "#spartanweaponry:katanas",
+    "#spartanweaponry:sabers",
+    "#spartanweaponry:rapiers",
+    "#spartanweaponry:greatswords",
+    "#spartanweaponry:clubs",
+    "#spartanweaponry:cestusae",
+    "#spartanweaponry:battle_hammers",
+    "#spartanweaponry:warhammers",
+    "#spartanweaponry:spears",
+    "#spartanweaponry:halberds",
+    "#spartanweaponry:pikes",
+    "#spartanweaponry:lances",
+    "#spartanweaponry:longbows",
+    "#spartanweaponry:heavy_crossbows",
+    "#spartanweaponry:throwing_knives",
+    "#spartanweaponry:tomahawks",
+    "#spartanweaponry:javelins",
+    "#spartanweaponry:boomerangs",
+    "#spartanweaponry:battleaxes",
+    "#spartanweaponry:flanged_maces",
+    "#spartanweaponry:glaives",
+    "#spartanweaponry:quarterstaves",
+    "#spartanweaponry:scythes"
+  ]
+}

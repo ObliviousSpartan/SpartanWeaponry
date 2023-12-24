@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/longsword",
+  "textures": {
+    "layer0": "spartanweaponry:item/longsword_electrum"
+  }
+}

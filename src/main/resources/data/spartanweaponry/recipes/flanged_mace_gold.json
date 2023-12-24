@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:flanged_mace",
+  "pattern": [
+    " ##",
+    " /#",
+    "|  "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/gold"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:flanged_mace_gold"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "flanged_mace"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

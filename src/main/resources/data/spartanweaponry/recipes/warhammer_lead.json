@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:warhammer",
+  "pattern": [
+    " #",
+    "##",
+    " |"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/lead"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:warhammer_lead"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "warhammer",
+        "lead"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/lead",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

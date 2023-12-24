@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:katana_wood",
+    "spartanweaponry:katana_stone",
+    "spartanweaponry:katana_iron",
+    "spartanweaponry:katana_gold",
+    "spartanweaponry:katana_diamond",
+    "spartanweaponry:katana_netherite",
+    "spartanweaponry:katana_copper",
+    "spartanweaponry:katana_tin",
+    "spartanweaponry:katana_bronze",
+    "spartanweaponry:katana_steel",
+    "spartanweaponry:katana_silver",
+    "spartanweaponry:katana_invar",
+    "spartanweaponry:katana_platinum",
+    "spartanweaponry:katana_electrum",
+    "spartanweaponry:katana_nickel",
+    "spartanweaponry:katana_lead"
+  ]
+}

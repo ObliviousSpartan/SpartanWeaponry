@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:saber",
+  "pattern": [
+    " #",
+    " #",
+    "#|"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/bronze"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:saber_bronze"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "saber",
+        "bronze"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/bronze",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

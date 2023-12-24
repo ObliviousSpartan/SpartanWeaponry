@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/cestus",
+  "textures": {
+    "layer0": "spartanweaponry:item/cestus_studded"
+  }
+}

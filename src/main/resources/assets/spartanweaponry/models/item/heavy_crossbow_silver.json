@@ -1,0 +1,41 @@
+{
+  "parent": "spartanweaponry:item/base/heavy_crossbow",
+  "textures": {
+    "layer0": "spartanweaponry:item/heavy_crossbow_silver_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0
+      },
+      "model": "spartanweaponry:item/heavy_crossbow_silver_pulling_0"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:pull": 0.65
+      },
+      "model": "spartanweaponry:item/heavy_crossbow_silver_pulling_1"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:pull": 1.0
+      },
+      "model": "spartanweaponry:item/heavy_crossbow_silver_pulling_2"
+    },
+    {
+      "predicate": {
+        "minecraft:charged": 1.0
+      },
+      "model": "spartanweaponry:item/heavy_crossbow_silver_loaded"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:charged": 1.0
+      },
+      "model": "spartanweaponry:item/heavy_crossbow_silver_firing"
+    }
+  ]
+}

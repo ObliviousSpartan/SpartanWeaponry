@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:flanged_mace_wood",
+    "spartanweaponry:flanged_mace_stone",
+    "spartanweaponry:flanged_mace_iron",
+    "spartanweaponry:flanged_mace_gold",
+    "spartanweaponry:flanged_mace_diamond",
+    "spartanweaponry:flanged_mace_netherite",
+    "spartanweaponry:flanged_mace_copper",
+    "spartanweaponry:flanged_mace_tin",
+    "spartanweaponry:flanged_mace_bronze",
+    "spartanweaponry:flanged_mace_steel",
+    "spartanweaponry:flanged_mace_silver",
+    "spartanweaponry:flanged_mace_invar",
+    "spartanweaponry:flanged_mace_platinum",
+    "spartanweaponry:flanged_mace_electrum",
+    "spartanweaponry:flanged_mace_nickel",
+    "spartanweaponry:flanged_mace_lead"
+  ]
+}

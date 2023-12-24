@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:throwing_knife",
+  "pattern": [
+    "|#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/lead"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:throwing_knife_lead"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "throwing_knife",
+        "lead"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/lead",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

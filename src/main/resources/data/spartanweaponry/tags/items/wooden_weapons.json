@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_wood",
+    "spartanweaponry:parrying_dagger_wood",
+    "spartanweaponry:longsword_wood",
+    "spartanweaponry:katana_wood",
+    "spartanweaponry:saber_wood",
+    "spartanweaponry:rapier_wood",
+    "spartanweaponry:greatsword_wood",
+    "spartanweaponry:hammer_wood",
+    "spartanweaponry:warhammer_wood",
+    "spartanweaponry:spear_wood",
+    "spartanweaponry:halberd_wood",
+    "spartanweaponry:pike_wood",
+    "spartanweaponry:lance_wood",
+    "spartanweaponry:longbow_wood",
+    "spartanweaponry:heavy_crossbow_wood",
+    "spartanweaponry:throwing_knife_wood",
+    "spartanweaponry:tomahawk_wood",
+    "spartanweaponry:javelin_wood",
+    "spartanweaponry:boomerang_wood",
+    "spartanweaponry:battleaxe_wood",
+    "spartanweaponry:flanged_mace_wood",
+    "spartanweaponry:glaive_wood",
+    "spartanweaponry:quarterstaff_wood",
+    "spartanweaponry:scythe_wood"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:battleaxe_wood",
+    "spartanweaponry:battleaxe_stone",
+    "spartanweaponry:battleaxe_iron",
+    "spartanweaponry:battleaxe_gold",
+    "spartanweaponry:battleaxe_diamond",
+    "spartanweaponry:battleaxe_netherite",
+    "spartanweaponry:battleaxe_copper",
+    "spartanweaponry:battleaxe_tin",
+    "spartanweaponry:battleaxe_bronze",
+    "spartanweaponry:battleaxe_steel",
+    "spartanweaponry:battleaxe_silver",
+    "spartanweaponry:battleaxe_invar",
+    "spartanweaponry:battleaxe_platinum",
+    "spartanweaponry:battleaxe_electrum",
+    "spartanweaponry:battleaxe_nickel",
+    "spartanweaponry:battleaxe_lead"
+  ]
+}

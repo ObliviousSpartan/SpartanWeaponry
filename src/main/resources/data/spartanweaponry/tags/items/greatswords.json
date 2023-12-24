@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:greatsword_wood",
+    "spartanweaponry:greatsword_stone",
+    "spartanweaponry:greatsword_iron",
+    "spartanweaponry:greatsword_gold",
+    "spartanweaponry:greatsword_diamond",
+    "spartanweaponry:greatsword_netherite",
+    "spartanweaponry:greatsword_copper",
+    "spartanweaponry:greatsword_tin",
+    "spartanweaponry:greatsword_bronze",
+    "spartanweaponry:greatsword_steel",
+    "spartanweaponry:greatsword_silver",
+    "spartanweaponry:greatsword_invar",
+    "spartanweaponry:greatsword_platinum",
+    "spartanweaponry:greatsword_electrum",
+    "spartanweaponry:greatsword_nickel",
+    "spartanweaponry:greatsword_lead"
+  ]
+}

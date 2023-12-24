@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/flanged_mace",
+  "textures": {
+    "layer0": "spartanweaponry:item/flanged_mace_wood"
+  }
+}

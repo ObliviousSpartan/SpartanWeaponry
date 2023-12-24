@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/battleaxe",
+  "textures": {
+    "layer0": "spartanweaponry:item/battleaxe_platinum"
+  }
+}

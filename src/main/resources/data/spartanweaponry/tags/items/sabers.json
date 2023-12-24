@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:saber_wood",
+    "spartanweaponry:saber_stone",
+    "spartanweaponry:saber_iron",
+    "spartanweaponry:saber_gold",
+    "spartanweaponry:saber_diamond",
+    "spartanweaponry:saber_netherite",
+    "spartanweaponry:saber_copper",
+    "spartanweaponry:saber_tin",
+    "spartanweaponry:saber_bronze",
+    "spartanweaponry:saber_steel",
+    "spartanweaponry:saber_silver",
+    "spartanweaponry:saber_invar",
+    "spartanweaponry:saber_platinum",
+    "spartanweaponry:saber_electrum",
+    "spartanweaponry:saber_nickel",
+    "spartanweaponry:saber_lead"
+  ]
+}

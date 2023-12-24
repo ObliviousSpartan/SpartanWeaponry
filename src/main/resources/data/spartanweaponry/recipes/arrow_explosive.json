@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:arrow"
+    },
+    {
+      "item": "spartanweaponry:explosive_charge"
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:arrow_explosive"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "arrows",
+        "explosives"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

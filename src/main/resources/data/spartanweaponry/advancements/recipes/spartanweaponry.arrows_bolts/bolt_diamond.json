@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:bolt_diamond"
+    ]
+  },
+  "criteria": {
+    "has_feather": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:feathers"
+          }
+        ]
+      }
+    },
+    "has_bow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanweaponry:heavy_crossbows"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:bolt_diamond"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_feather",
+      "has_bow",
+      "has_the_recipe"
+    ]
+  ]
+}

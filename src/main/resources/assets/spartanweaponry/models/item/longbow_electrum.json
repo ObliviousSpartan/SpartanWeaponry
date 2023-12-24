@@ -1,0 +1,28 @@
+{
+  "parent": "spartanweaponry:item/base/longbow",
+  "textures": {
+    "layer0": "spartanweaponry:item/longbow_electrum_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0
+      },
+      "model": "spartanweaponry:item/longbow_electrum_pulling_0"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:pull": 0.65
+      },
+      "model": "spartanweaponry:item/longbow_electrum_pulling_1"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:pull": 0.9
+      },
+      "model": "spartanweaponry:item/longbow_electrum_pulling_2"
+    }
+  ]
+}

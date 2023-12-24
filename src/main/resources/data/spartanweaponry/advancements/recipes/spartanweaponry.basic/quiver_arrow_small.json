@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:quiver_arrow_small"
+    ]
+  },
+  "criteria": {
+    "has_arrow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:arrows"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:quiver_arrow_small"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_arrow",
+      "has_the_recipe"
+    ]
+  ]
+}

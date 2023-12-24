@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:club_studded"
+    ]
+  },
+  "criteria": {
+    "has_club": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:club_wood"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:club_studded"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_club",
+      "has_the_recipe"
+    ]
+  ]
+}

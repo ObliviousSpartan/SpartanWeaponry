@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/halberd",
+  "textures": {
+    "layer0": "spartanweaponry:item/halberd_platinum"
+  }
+}

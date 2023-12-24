@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:parrying_dagger_wood",
+    "spartanweaponry:parrying_dagger_stone",
+    "spartanweaponry:parrying_dagger_iron",
+    "spartanweaponry:parrying_dagger_gold",
+    "spartanweaponry:parrying_dagger_diamond",
+    "spartanweaponry:parrying_dagger_netherite",
+    "spartanweaponry:parrying_dagger_copper",
+    "spartanweaponry:parrying_dagger_tin",
+    "spartanweaponry:parrying_dagger_bronze",
+    "spartanweaponry:parrying_dagger_steel",
+    "spartanweaponry:parrying_dagger_silver",
+    "spartanweaponry:parrying_dagger_invar",
+    "spartanweaponry:parrying_dagger_platinum",
+    "spartanweaponry:parrying_dagger_electrum",
+    "spartanweaponry:parrying_dagger_nickel",
+    "spartanweaponry:parrying_dagger_lead"
+  ]
+}

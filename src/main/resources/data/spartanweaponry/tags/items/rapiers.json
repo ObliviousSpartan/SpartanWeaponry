@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:rapier_wood",
+    "spartanweaponry:rapier_stone",
+    "spartanweaponry:rapier_iron",
+    "spartanweaponry:rapier_gold",
+    "spartanweaponry:rapier_diamond",
+    "spartanweaponry:rapier_netherite",
+    "spartanweaponry:rapier_copper",
+    "spartanweaponry:rapier_tin",
+    "spartanweaponry:rapier_bronze",
+    "spartanweaponry:rapier_steel",
+    "spartanweaponry:rapier_silver",
+    "spartanweaponry:rapier_invar",
+    "spartanweaponry:rapier_platinum",
+    "spartanweaponry:rapier_electrum",
+    "spartanweaponry:rapier_nickel",
+    "spartanweaponry:rapier_lead"
+  ]
+}

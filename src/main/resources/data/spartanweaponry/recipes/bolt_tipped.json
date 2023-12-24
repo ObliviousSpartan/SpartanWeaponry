@@ -1,0 +1,5 @@
+{
+  "type": "spartanweaponry:tipped_projectile",
+  "projectile": "spartanweaponry:bolt",
+  "result": "spartanweaponry:bolt_tipped"
+}

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_platinum",
+    "spartanweaponry:parrying_dagger_platinum",
+    "spartanweaponry:longsword_platinum",
+    "spartanweaponry:katana_platinum",
+    "spartanweaponry:saber_platinum",
+    "spartanweaponry:rapier_platinum",
+    "spartanweaponry:greatsword_platinum",
+    "spartanweaponry:hammer_platinum",
+    "spartanweaponry:warhammer_platinum",
+    "spartanweaponry:spear_platinum",
+    "spartanweaponry:halberd_platinum",
+    "spartanweaponry:pike_platinum",
+    "spartanweaponry:lance_platinum",
+    "spartanweaponry:longbow_platinum",
+    "spartanweaponry:heavy_crossbow_platinum",
+    "spartanweaponry:throwing_knife_platinum",
+    "spartanweaponry:tomahawk_platinum",
+    "spartanweaponry:javelin_platinum",
+    "spartanweaponry:boomerang_platinum",
+    "spartanweaponry:battleaxe_platinum",
+    "spartanweaponry:flanged_mace_platinum",
+    "spartanweaponry:glaive_platinum",
+    "spartanweaponry:quarterstaff_platinum",
+    "spartanweaponry:scythe_platinum"
+  ]
+}

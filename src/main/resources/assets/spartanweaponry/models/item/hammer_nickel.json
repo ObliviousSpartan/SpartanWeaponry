@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/battle_hammer",
+  "textures": {
+    "layer0": "spartanweaponry:item/hammer_nickel"
+  }
+}

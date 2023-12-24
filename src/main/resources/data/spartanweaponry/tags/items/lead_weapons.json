@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_lead",
+    "spartanweaponry:parrying_dagger_lead",
+    "spartanweaponry:longsword_lead",
+    "spartanweaponry:katana_lead",
+    "spartanweaponry:saber_lead",
+    "spartanweaponry:rapier_lead",
+    "spartanweaponry:greatsword_lead",
+    "spartanweaponry:hammer_lead",
+    "spartanweaponry:warhammer_lead",
+    "spartanweaponry:spear_lead",
+    "spartanweaponry:halberd_lead",
+    "spartanweaponry:pike_lead",
+    "spartanweaponry:lance_lead",
+    "spartanweaponry:longbow_lead",
+    "spartanweaponry:heavy_crossbow_lead",
+    "spartanweaponry:throwing_knife_lead",
+    "spartanweaponry:tomahawk_lead",
+    "spartanweaponry:javelin_lead",
+    "spartanweaponry:boomerang_lead",
+    "spartanweaponry:battleaxe_lead",
+    "spartanweaponry:flanged_mace_lead",
+    "spartanweaponry:glaive_lead",
+    "spartanweaponry:quarterstaff_lead",
+    "spartanweaponry:scythe_lead"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:quiver_arrow_medium",
+    "spartanweaponry:quiver_bolt_medium",
+    "spartanweaponry:quiver_arrow_large",
+    "spartanweaponry:quiver_bolt_large",
+    "#spartanweaponry:upgraded_quivers_max"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/boomerang",
+  "textures": {
+    "layer0": "spartanweaponry:item/boomerang_tin"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:throwing": 1.0,
+        "minecraft:empty": 0.0
+      },
+      "model": "spartanweaponry:item/boomerang_tin_throwing"
+    },
+    {
+      "predicate": {
+        "minecraft:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/boomerang_empty"
+    }
+  ]
+}

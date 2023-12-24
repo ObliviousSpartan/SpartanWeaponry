@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweaponry:item/quiver_arrow_small_base"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:arrow": 1.0
+      },
+      "model": "spartanweaponry:item/quiver_arrow_small_1"
+    },
+    {
+      "predicate": {
+        "minecraft:arrow": 2.0
+      },
+      "model": "spartanweaponry:item/quiver_arrow_small_2"
+    },
+    {
+      "predicate": {
+        "minecraft:arrow": 3.0
+      },
+      "model": "spartanweaponry:item/quiver_arrow_small_3"
+    }
+  ]
+}

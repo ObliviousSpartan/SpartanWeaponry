@@ -1,0 +1,220 @@
+{
+  "parent": "spartanweaponry:scythe",
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:piglin_head"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry.collect_heads.title"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry.collect_heads.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 200
+  },
+  "criteria": {
+    "creeper_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:creeper_head"
+          }
+        ]
+      }
+    },
+    "skeleton_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:skeleton_skull"
+          }
+        ]
+      }
+    },
+    "wither_skeleton_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:wither_skeleton_skull"
+          }
+        ]
+      }
+    },
+    "zombie_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:zombie_head"
+          }
+        ]
+      }
+    },
+    "blaze_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:blaze_head"
+          }
+        ]
+      }
+    },
+    "enderman_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:enderman_head"
+          }
+        ]
+      }
+    },
+    "spider_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:spider_head"
+          }
+        ]
+      }
+    },
+    "cave_spider_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:cave_spider_head"
+          }
+        ]
+      }
+    },
+    "piglin_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:piglin_head"
+          }
+        ]
+      }
+    },
+    "zombified_piglin_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:zombified_piglin_head"
+          }
+        ]
+      }
+    },
+    "husk_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:husk_head"
+          }
+        ]
+      }
+    },
+    "stray_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:stray_skull"
+          }
+        ]
+      }
+    },
+    "drowned_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:drowned_head"
+          }
+        ]
+      }
+    },
+    "illager_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:illager_head"
+          }
+        ]
+      }
+    },
+    "witch_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:witch_head"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "creeper_head"
+    ],
+    [
+      "skeleton_skull"
+    ],
+    [
+      "wither_skeleton_skull"
+    ],
+    [
+      "zombie_head"
+    ],
+    [
+      "blaze_head"
+    ],
+    [
+      "enderman_head"
+    ],
+    [
+      "spider_head"
+    ],
+    [
+      "cave_spider_head"
+    ],
+    [
+      "piglin_head"
+    ],
+    [
+      "zombified_piglin_head"
+    ],
+    [
+      "husk_head"
+    ],
+    [
+      "stray_skull"
+    ],
+    [
+      "drowned_head"
+    ],
+    [
+      "illager_head"
+    ],
+    [
+      "witch_head"
+    ]
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:bolt",
+    "spartanweaponry:bolt_spectral",
+    "spartanweaponry:bolt_tipped",
+    "spartanweaponry:bolt_diamond",
+    "spartanweaponry:bolt_tipped_diamond"
+  ]
+}

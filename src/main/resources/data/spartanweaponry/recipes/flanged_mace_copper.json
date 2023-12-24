@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:flanged_mace",
+  "pattern": [
+    " ##",
+    " /#",
+    "|  "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/copper"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:flanged_mace_copper"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "flanged_mace",
+        "copper"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/copper",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}

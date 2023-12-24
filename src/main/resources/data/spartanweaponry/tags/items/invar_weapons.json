@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_invar",
+    "spartanweaponry:parrying_dagger_invar",
+    "spartanweaponry:longsword_invar",
+    "spartanweaponry:katana_invar",
+    "spartanweaponry:saber_invar",
+    "spartanweaponry:rapier_invar",
+    "spartanweaponry:greatsword_invar",
+    "spartanweaponry:hammer_invar",
+    "spartanweaponry:warhammer_invar",
+    "spartanweaponry:spear_invar",
+    "spartanweaponry:halberd_invar",
+    "spartanweaponry:pike_invar",
+    "spartanweaponry:lance_invar",
+    "spartanweaponry:longbow_invar",
+    "spartanweaponry:heavy_crossbow_invar",
+    "spartanweaponry:throwing_knife_invar",
+    "spartanweaponry:tomahawk_invar",
+    "spartanweaponry:javelin_invar",
+    "spartanweaponry:boomerang_invar",
+    "spartanweaponry:battleaxe_invar",
+    "spartanweaponry:flanged_mace_invar",
+    "spartanweaponry:glaive_invar",
+    "spartanweaponry:quarterstaff_invar",
+    "spartanweaponry:scythe_invar"
+  ]
+}

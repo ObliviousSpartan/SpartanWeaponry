@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/rapier",
+  "textures": {
+    "layer0": "spartanweaponry:item/rapier_electrum"
+  }
+}

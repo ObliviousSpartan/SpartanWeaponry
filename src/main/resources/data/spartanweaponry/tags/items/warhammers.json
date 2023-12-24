@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:warhammer_wood",
+    "spartanweaponry:warhammer_stone",
+    "spartanweaponry:warhammer_iron",
+    "spartanweaponry:warhammer_gold",
+    "spartanweaponry:warhammer_diamond",
+    "spartanweaponry:warhammer_netherite",
+    "spartanweaponry:warhammer_copper",
+    "spartanweaponry:warhammer_tin",
+    "spartanweaponry:warhammer_bronze",
+    "spartanweaponry:warhammer_steel",
+    "spartanweaponry:warhammer_silver",
+    "spartanweaponry:warhammer_invar",
+    "spartanweaponry:warhammer_platinum",
+    "spartanweaponry:warhammer_electrum",
+    "spartanweaponry:warhammer_nickel",
+    "spartanweaponry:warhammer_lead"
+  ]
+}

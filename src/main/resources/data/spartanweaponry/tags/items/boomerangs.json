@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:boomerang_wood",
+    "spartanweaponry:boomerang_stone",
+    "spartanweaponry:boomerang_iron",
+    "spartanweaponry:boomerang_gold",
+    "spartanweaponry:boomerang_diamond",
+    "spartanweaponry:boomerang_netherite",
+    "spartanweaponry:boomerang_copper",
+    "spartanweaponry:boomerang_tin",
+    "spartanweaponry:boomerang_bronze",
+    "spartanweaponry:boomerang_steel",
+    "spartanweaponry:boomerang_silver",
+    "spartanweaponry:boomerang_invar",
+    "spartanweaponry:boomerang_platinum",
+    "spartanweaponry:boomerang_electrum",
+    "spartanweaponry:boomerang_nickel",
+    "spartanweaponry:boomerang_lead"
+  ]
+}

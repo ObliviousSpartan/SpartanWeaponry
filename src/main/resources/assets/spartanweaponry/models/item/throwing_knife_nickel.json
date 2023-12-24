@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/throwing_knife",
+  "textures": {
+    "layer0": "spartanweaponry:item/throwing_knife_nickel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:throwing": 1.0,
+        "minecraft:empty": 0.0
+      },
+      "model": "spartanweaponry:item/throwing_knife_nickel_throwing"
+    },
+    {
+      "predicate": {
+        "minecraft:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/throwing_knife_empty"
+    }
+  ]
+}

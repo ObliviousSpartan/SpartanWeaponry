@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "min": 1.0,
+        "max": 2.0,
+        "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "spartanweaponry:bolt"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "spartanweaponry:longbow_wood"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spartanweaponry:longbow_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "spartanweaponry:heavy_crossbow_wood"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spartanweaponry:heavy_crossbow_iron"
+        }
+      ]
+    }
+  ]
+}

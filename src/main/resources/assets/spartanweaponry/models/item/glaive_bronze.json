@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/glaive",
+  "textures": {
+    "layer0": "spartanweaponry:item/glaive_bronze"
+  }
+}

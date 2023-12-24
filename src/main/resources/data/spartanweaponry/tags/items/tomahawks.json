@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:tomahawk_wood",
+    "spartanweaponry:tomahawk_stone",
+    "spartanweaponry:tomahawk_iron",
+    "spartanweaponry:tomahawk_gold",
+    "spartanweaponry:tomahawk_diamond",
+    "spartanweaponry:tomahawk_netherite",
+    "spartanweaponry:tomahawk_copper",
+    "spartanweaponry:tomahawk_tin",
+    "spartanweaponry:tomahawk_bronze",
+    "spartanweaponry:tomahawk_steel",
+    "spartanweaponry:tomahawk_silver",
+    "spartanweaponry:tomahawk_invar",
+    "spartanweaponry:tomahawk_platinum",
+    "spartanweaponry:tomahawk_electrum",
+    "spartanweaponry:tomahawk_nickel",
+    "spartanweaponry:tomahawk_lead"
+  ]
+}

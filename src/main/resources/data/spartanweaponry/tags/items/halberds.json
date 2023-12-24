@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:halberd_wood",
+    "spartanweaponry:halberd_stone",
+    "spartanweaponry:halberd_iron",
+    "spartanweaponry:halberd_gold",
+    "spartanweaponry:halberd_diamond",
+    "spartanweaponry:halberd_netherite",
+    "spartanweaponry:halberd_copper",
+    "spartanweaponry:halberd_tin",
+    "spartanweaponry:halberd_bronze",
+    "spartanweaponry:halberd_steel",
+    "spartanweaponry:halberd_silver",
+    "spartanweaponry:halberd_invar",
+    "spartanweaponry:halberd_platinum",
+    "spartanweaponry:halberd_electrum",
+    "spartanweaponry:halberd_nickel",
+    "spartanweaponry:halberd_lead"
+  ]
+}

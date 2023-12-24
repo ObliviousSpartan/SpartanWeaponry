@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:quiver_arrow_medium_smithing"
+    ]
+  },
+  "criteria": {
+    "has_medium_quiver_upgrade_kit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "spartanweaponry:quiver_upgrade_kit_medium"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:quiver_arrow_medium_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_medium_quiver_upgrade_kit",
+      "has_the_recipe"
+    ]
+  ]
+}

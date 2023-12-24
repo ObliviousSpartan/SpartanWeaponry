@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_netherite",
+    "spartanweaponry:parrying_dagger_netherite",
+    "spartanweaponry:longsword_netherite",
+    "spartanweaponry:katana_netherite",
+    "spartanweaponry:saber_netherite",
+    "spartanweaponry:rapier_netherite",
+    "spartanweaponry:greatsword_netherite",
+    "spartanweaponry:hammer_netherite",
+    "spartanweaponry:warhammer_netherite",
+    "spartanweaponry:spear_netherite",
+    "spartanweaponry:halberd_netherite",
+    "spartanweaponry:pike_netherite",
+    "spartanweaponry:lance_netherite",
+    "spartanweaponry:longbow_netherite",
+    "spartanweaponry:heavy_crossbow_netherite",
+    "spartanweaponry:throwing_knife_netherite",
+    "spartanweaponry:tomahawk_netherite",
+    "spartanweaponry:javelin_netherite",
+    "spartanweaponry:boomerang_netherite",
+    "spartanweaponry:battleaxe_netherite",
+    "spartanweaponry:flanged_mace_netherite",
+    "spartanweaponry:glaive_netherite",
+    "spartanweaponry:quarterstaff_netherite",
+    "spartanweaponry:scythe_netherite"
+  ]
+}

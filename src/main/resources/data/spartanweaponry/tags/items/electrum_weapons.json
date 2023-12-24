@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_electrum",
+    "spartanweaponry:parrying_dagger_electrum",
+    "spartanweaponry:longsword_electrum",
+    "spartanweaponry:katana_electrum",
+    "spartanweaponry:saber_electrum",
+    "spartanweaponry:rapier_electrum",
+    "spartanweaponry:greatsword_electrum",
+    "spartanweaponry:hammer_electrum",
+    "spartanweaponry:warhammer_electrum",
+    "spartanweaponry:spear_electrum",
+    "spartanweaponry:halberd_electrum",
+    "spartanweaponry:pike_electrum",
+    "spartanweaponry:lance_electrum",
+    "spartanweaponry:longbow_electrum",
+    "spartanweaponry:heavy_crossbow_electrum",
+    "spartanweaponry:throwing_knife_electrum",
+    "spartanweaponry:tomahawk_electrum",
+    "spartanweaponry:javelin_electrum",
+    "spartanweaponry:boomerang_electrum",
+    "spartanweaponry:battleaxe_electrum",
+    "spartanweaponry:flanged_mace_electrum",
+    "spartanweaponry:glaive_electrum",
+    "spartanweaponry:quarterstaff_electrum",
+    "spartanweaponry:scythe_electrum"
+  ]
+}

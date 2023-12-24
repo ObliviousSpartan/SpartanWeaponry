@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_gold",
+    "spartanweaponry:parrying_dagger_gold",
+    "spartanweaponry:longsword_gold",
+    "spartanweaponry:katana_gold",
+    "spartanweaponry:saber_gold",
+    "spartanweaponry:rapier_gold",
+    "spartanweaponry:greatsword_gold",
+    "spartanweaponry:hammer_gold",
+    "spartanweaponry:warhammer_gold",
+    "spartanweaponry:spear_gold",
+    "spartanweaponry:halberd_gold",
+    "spartanweaponry:pike_gold",
+    "spartanweaponry:lance_gold",
+    "spartanweaponry:longbow_gold",
+    "spartanweaponry:heavy_crossbow_gold",
+    "spartanweaponry:throwing_knife_gold",
+    "spartanweaponry:tomahawk_gold",
+    "spartanweaponry:javelin_gold",
+    "spartanweaponry:boomerang_gold",
+    "spartanweaponry:battleaxe_gold",
+    "spartanweaponry:flanged_mace_gold",
+    "spartanweaponry:glaive_gold",
+    "spartanweaponry:quarterstaff_gold",
+    "spartanweaponry:scythe_gold"
+  ]
+}

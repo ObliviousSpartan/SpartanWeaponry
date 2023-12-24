@@ -1,0 +1,21 @@
+{
+  "parent": "spartanweaponry:item/base/javelin",
+  "textures": {
+    "layer0": "spartanweaponry:item/javelin_stone"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:throwing": 1.0,
+        "minecraft:empty": 0.0
+      },
+      "model": "spartanweaponry:item/javelin_stone_throwing"
+    },
+    {
+      "predicate": {
+        "minecraft:empty": 1.0
+      },
+      "model": "spartanweaponry:item/base/javelin_empty"
+    }
+  ]
+}

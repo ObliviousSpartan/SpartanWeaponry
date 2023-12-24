@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "spartanweaponry:bolt"
+    },
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:bolt_spectral"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "bolts"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

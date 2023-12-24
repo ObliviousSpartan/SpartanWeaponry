@@ -1,0 +1,12 @@
+{
+  "type": "spartanweaponry:quiver_upgrade_smithing",
+  "base": {
+    "item": "spartanweaponry:quiver_arrow_medium"
+  },
+  "addition": {
+    "item": "spartanweaponry:quiver_upgrade_kit_large"
+  },
+  "result": {
+    "item": "spartanweaponry:quiver_arrow_large"
+  }
+}

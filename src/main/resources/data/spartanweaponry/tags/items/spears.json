@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:spear_wood",
+    "spartanweaponry:spear_stone",
+    "spartanweaponry:spear_iron",
+    "spartanweaponry:spear_gold",
+    "spartanweaponry:spear_diamond",
+    "spartanweaponry:spear_netherite",
+    "spartanweaponry:spear_copper",
+    "spartanweaponry:spear_tin",
+    "spartanweaponry:spear_bronze",
+    "spartanweaponry:spear_steel",
+    "spartanweaponry:spear_silver",
+    "spartanweaponry:spear_invar",
+    "spartanweaponry:spear_platinum",
+    "spartanweaponry:spear_electrum",
+    "spartanweaponry:spear_nickel",
+    "spartanweaponry:spear_lead"
+  ]
+}

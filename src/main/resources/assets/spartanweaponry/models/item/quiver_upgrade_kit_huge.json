@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spartanweaponry:item/quiver_upgrade_kit_huge"
+  }
+}

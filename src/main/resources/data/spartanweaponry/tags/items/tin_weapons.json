@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_tin",
+    "spartanweaponry:parrying_dagger_tin",
+    "spartanweaponry:longsword_tin",
+    "spartanweaponry:katana_tin",
+    "spartanweaponry:saber_tin",
+    "spartanweaponry:rapier_tin",
+    "spartanweaponry:greatsword_tin",
+    "spartanweaponry:hammer_tin",
+    "spartanweaponry:warhammer_tin",
+    "spartanweaponry:spear_tin",
+    "spartanweaponry:halberd_tin",
+    "spartanweaponry:pike_tin",
+    "spartanweaponry:lance_tin",
+    "spartanweaponry:longbow_tin",
+    "spartanweaponry:heavy_crossbow_tin",
+    "spartanweaponry:throwing_knife_tin",
+    "spartanweaponry:tomahawk_tin",
+    "spartanweaponry:javelin_tin",
+    "spartanweaponry:boomerang_tin",
+    "spartanweaponry:battleaxe_tin",
+    "spartanweaponry:flanged_mace_tin",
+    "spartanweaponry:glaive_tin",
+    "spartanweaponry:quarterstaff_tin",
+    "spartanweaponry:scythe_tin"
+  ]
+}

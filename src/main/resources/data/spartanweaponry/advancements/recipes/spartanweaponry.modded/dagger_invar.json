@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:dagger_invar"
+    ]
+  },
+  "criteria": {
+    "has_invar_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/invar"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanweaponry:dagger_invar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_invar_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

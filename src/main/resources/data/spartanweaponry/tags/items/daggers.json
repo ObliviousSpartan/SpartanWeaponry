@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "spartanweaponry:dagger_wood",
+    "spartanweaponry:dagger_stone",
+    "spartanweaponry:dagger_iron",
+    "spartanweaponry:dagger_gold",
+    "spartanweaponry:dagger_diamond",
+    "spartanweaponry:dagger_netherite",
+    "spartanweaponry:dagger_copper",
+    "spartanweaponry:dagger_tin",
+    "spartanweaponry:dagger_bronze",
+    "spartanweaponry:dagger_steel",
+    "spartanweaponry:dagger_silver",
+    "spartanweaponry:dagger_invar",
+    "spartanweaponry:dagger_platinum",
+    "spartanweaponry:dagger_electrum",
+    "spartanweaponry:dagger_nickel",
+    "spartanweaponry:dagger_lead"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "parent": "spartanweaponry:item/base/dagger",
+  "textures": {
+    "layer0": "spartanweaponry:item/dagger_wood"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:throwing": 1.0
+      },
+      "model": "spartanweaponry:item/dagger_wood_throwing"
+    }
+  ]
+}

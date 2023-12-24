@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:saber",
+  "pattern": [
+    " #",
+    " #",
+    "#|"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/tin"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:saber_tin"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "saber",
+        "tin"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
+    {
+      "value": {
+        "tag": "forge:ingots/tin",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ]
+}
