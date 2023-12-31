@@ -4,12 +4,10 @@ package com.oblivioussp.spartanweaponry.item;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multimap;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.IReloadable;
@@ -54,15 +52,12 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
-import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITagManager;
 
 public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<SwordBaseItem>, IReloadable
 {
-	protected final Set<ToolAction> DEFAULT_SWORD_NO_SWEEP_ACTIONS = ImmutableSet.of(ToolActions.SWORD_DIG);
-	
 	protected float attackDamage = 1.0f;
 	protected double attackSpeed = 0.0D;
 	protected WeaponMaterial material;
@@ -77,7 +72,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	/**
 	 * A list of *ALL* Weapon Traits, including material bonus traits. Refreshed when the world is loaded (after tags are updated)
 	 */
-	protected List<WeaponTrait> traits;
+	protected List<WeaponTrait> traits = ImmutableList.of();
 	
 	public SwordBaseItem(Item.Properties prop, WeaponMaterial materialIn, WeaponArchetype archetypeIn, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed) 
 	{
@@ -372,7 +367,14 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	@Override
 	public boolean canPerformAction(ItemStack stack, ToolAction toolAction) 
 	{
-		return hasWeaponTraitWithType(WeaponTraits.TYPE_SWEEP_DAMAGE) ? super.canPerformAction(stack, toolAction) : DEFAULT_SWORD_NO_SWEEP_ACTIONS.contains(toolAction);
+		for(WeaponTrait trait : traits)
+		{
+			// Pass the action to another trait if false
+			if(trait.canPerformToolAction(stack, toolAction))
+				return true;
+		}
+		/*return hasWeaponTraitWithType(WeaponTraits.TYPE_SWEEP_DAMAGE) ? super.canPerformAction(stack, toolAction) : DEFAULT_SWORD_NO_SWEEP_ACTIONS.contains(toolAction);*/
+		return archetype.canPerformToolAction(toolAction);
 	}
     
     @Override
@@ -406,7 +408,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	@Override
 	public boolean hasWeaponTraitWithType(String type)
 	{
-		return traits.stream().anyMatch((trait) -> trait.getType() == type);
+		return traits == null ? false : traits.stream().anyMatch((trait) -> trait.getType() == type);
 	}
 
 	@Override

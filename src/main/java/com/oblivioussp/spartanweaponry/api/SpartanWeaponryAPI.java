@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 
 public class SpartanWeaponryAPI 
 {
-	public static final int API_VERSION = 8;
+	public static final int API_VERSION = 9;
 	public static final String MOD_ID = "spartanweaponry";
 	
 	/**

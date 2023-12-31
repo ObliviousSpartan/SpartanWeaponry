@@ -16,6 +16,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 /**
@@ -294,6 +295,17 @@ public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
 	 * @return true if the enchantment is incompatible with the weapon with this trait, false otherwise
 	 */
 	public boolean isEnchantmentIncompatible(Enchantment enchantIn)
+	{
+		return false;
+	}
+	
+	/**
+	 * Queries if the ToolAction can be performed using the weapon containing this trait
+	 * @param stack The weapon
+	 * @param action The tool action
+	 * @return true if the tool action can be performed, false otherwise
+	 */
+	public boolean canPerformToolAction(ItemStack stack, ToolAction action)
 	{
 		return false;
 	}

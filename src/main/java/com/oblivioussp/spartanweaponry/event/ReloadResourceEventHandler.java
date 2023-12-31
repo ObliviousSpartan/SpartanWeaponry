@@ -7,14 +7,14 @@ import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraftforge.event.TagsUpdatedEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class ReloadResourceEventHandler
 {
-	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGH)
 	public static void onUpdateTags(TagsUpdatedEvent ev)
 	{
 		List<IReloadable> reloadList = ReloadableHandler.getReloadList();

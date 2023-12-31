@@ -10,6 +10,8 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
 
 public class SweepWeaponTrait extends WeaponTraitWithMagnitude 
 {
@@ -32,5 +34,11 @@ public class SweepWeaponTrait extends WeaponTraitWithMagnitude
 	public boolean isEnchantmentCompatible(Enchantment enchantIn) 
 	{
 		return magnitude == 1.0f && enchantIn == Enchantments.SWEEPING_EDGE;
+	}
+	
+	@Override
+	public boolean canPerformToolAction(ItemStack stack, ToolAction action) 
+	{
+		return action == ToolActions.SWORD_SWEEP;
 	}
 }

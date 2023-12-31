@@ -3,12 +3,14 @@ package com.oblivioussp.spartanweaponry.util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import com.google.common.collect.ImmutableSet;
 import com.oblivioussp.spartanweaponry.api.IReloadable;
 import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
@@ -21,6 +23,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryManager;
 import net.minecraftforge.registries.tags.ITag;
@@ -40,11 +44,11 @@ public class WeaponArchetype implements IReloadable
 	
 	public static final WeaponArchetype DAGGER = new WeaponArchetype("Dagger", true, ModWeaponTraitTags.DAGGER, IS_MELEE);
 	public static final WeaponArchetype PARRYING_DAGGER = new WeaponArchetype("Parrying Dagger", true, ModWeaponTraitTags.PARRYING_DAGGER, IS_MELEE);
-	public static final WeaponArchetype LONGSWORD = new WeaponArchetype("Longsword", true, ModWeaponTraitTags.LONGSWORD, IS_MELEE);
-	public static final WeaponArchetype KATANA = new WeaponArchetype("Katana", true, ModWeaponTraitTags.KATANA, IS_MELEE);
-	public static final WeaponArchetype SABER = new WeaponArchetype("Saber", true, ModWeaponTraitTags.SABER, IS_MELEE);
+	public static final WeaponArchetype LONGSWORD = new WeaponArchetype("Longsword", true, ModWeaponTraitTags.LONGSWORD, IS_MELEE, ToolActions.SWORD_DIG);
+	public static final WeaponArchetype KATANA = new WeaponArchetype("Katana", true, ModWeaponTraitTags.KATANA, IS_MELEE, ToolActions.SWORD_DIG);
+	public static final WeaponArchetype SABER = new WeaponArchetype("Saber", true, ModWeaponTraitTags.SABER, IS_MELEE, ToolActions.SWORD_DIG);
 	public static final WeaponArchetype RAPIER = new WeaponArchetype("Rapier", true, ModWeaponTraitTags.RAPIER, IS_MELEE);
-	public static final WeaponArchetype GREATSWORD = new WeaponArchetype("Greatsword", true, ModWeaponTraitTags.GREATSWORD, IS_MELEE);
+	public static final WeaponArchetype GREATSWORD = new WeaponArchetype("Greatsword", true, ModWeaponTraitTags.GREATSWORD, IS_MELEE, ToolActions.SWORD_DIG);
 	public static final WeaponArchetype CLUB = new WeaponArchetype("Club", false, ModWeaponTraitTags.CLUB, IS_MELEE);
 	public static final WeaponArchetype CESTUS = new WeaponArchetype("Cestus", false, ModWeaponTraitTags.CESTUS, IS_MELEE);
 	public static final WeaponArchetype BATTLE_HAMMER = new WeaponArchetype("Battle Hammer", false, ModWeaponTraitTags.BATTLE_HAMMER, IS_MELEE);
@@ -57,7 +61,7 @@ public class WeaponArchetype implements IReloadable
 	public static final WeaponArchetype TOMAHAWK = new WeaponArchetype("Tomahawk", false, ModWeaponTraitTags.TOMAHAWK, IS_THROWING);
 	public static final WeaponArchetype JAVELIN = new WeaponArchetype("Javelin", false, ModWeaponTraitTags.JAVELIN, IS_THROWING);
 	public static final WeaponArchetype BOOMERANG = new WeaponArchetype("Boomerang", false, ModWeaponTraitTags.BOOMERANG, IS_THROWING);
-	public static final WeaponArchetype BATTLEAXE = new WeaponArchetype("Battleaxe", false, ModWeaponTraitTags.BATTLEAXE, IS_MELEE);
+	public static final WeaponArchetype BATTLEAXE = new WeaponArchetype("Battleaxe", false, ModWeaponTraitTags.BATTLEAXE, IS_MELEE, ToolActions.DEFAULT_AXE_ACTIONS);
 	public static final WeaponArchetype FLANGED_MACE = new WeaponArchetype("Flanged Mace", false, ModWeaponTraitTags.FLANGED_MACE, IS_MELEE);
 	public static final WeaponArchetype GLAIVE = new WeaponArchetype("Glaive", true, ModWeaponTraitTags.GLAIVE, IS_MELEE);
 	public static final WeaponArchetype QUARTERSTAFF = new WeaponArchetype("Quarterstaff", false, ModWeaponTraitTags.QUARTERSTAFF, IS_MELEE);
@@ -72,15 +76,22 @@ public class WeaponArchetype implements IReloadable
 	protected Optional<List<Pair<WeaponTrait, WeaponTrait.InvalidReason>>> invalidTraits = Optional.empty();
 	protected final Predicate<WeaponTrait> traitFilter;
 	protected final boolean isBladed;						// Used to determine if the weapon has a blade can cut through things such as Cobwebs
+	protected final Set<ToolAction> toolActions;
 	
-	public WeaponArchetype(String nameIn, boolean isBladedIn, TagKey<WeaponTrait> traitsTagIn, Predicate<WeaponTrait> traitFilterIn)
+	public WeaponArchetype(String nameIn, boolean isBladedIn, TagKey<WeaponTrait> traitsTagIn, Predicate<WeaponTrait> traitFilterIn, Set<ToolAction> toolActionsIn)
 	{
 		name = nameIn;
 		traitsTag = traitsTagIn;
 		traitFilter = traitFilterIn;
 		isBladed = isBladedIn;
+		toolActions = toolActionsIn;
 		
 		ReloadableHandler.addToReloadList(this);
+	}
+	
+	public WeaponArchetype(String nameIn, boolean isBladedIn, TagKey<WeaponTrait> traitsTagIn, Predicate<WeaponTrait> traitFilterIn, ToolAction... toolActionsIn)
+	{
+		this(nameIn, isBladedIn, traitsTagIn, traitFilterIn, ImmutableSet.copyOf(toolActionsIn));
 	}
 
 	@Override
@@ -141,6 +152,11 @@ public class WeaponArchetype implements IReloadable
 	public boolean isBladed() 
 	{
 		return isBladed;
+	}
+	
+	public boolean canPerformToolAction(ToolAction toolAction)
+	{
+		return toolActions.contains(toolAction);
 	}
 	
 	public List<WeaponTrait> getTraits() 
