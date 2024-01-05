@@ -137,8 +137,8 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 					setDeltaMovement(-distanceVec.x / length,
 							-distanceVec.y / length,
 							-distanceVec.z / length);
-				if(length < 1.0d && getOwner() instanceof Player)
-						attemptCatch((Player)getOwner());
+//				if(length < 1.0d && getOwner() instanceof Player)
+//						attemptCatch((Player)getOwner());
 				// Otherwise, just fly in reverse as normal
 				else
 				{

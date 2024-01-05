@@ -194,9 +194,9 @@ public class ThrowingWeaponEntity extends AbstractArrow implements IEntityAdditi
             }
             
 			// Try and catch the throwing weapon if possible.
-			if(shooter != null && (canBeCaughtInMidair(shooter, entity) || isReturning) && entity instanceof Player)
+			if(shooter != null && (canBeCaughtInMidair(shooter, entity) || isReturning) && entity instanceof Player player)
 			{
-				if(attemptCatch((Player)entity))
+				if(attemptCatch(player))
 					return;
 			}
 			if(shooter == null)
@@ -458,9 +458,9 @@ public class ThrowingWeaponEntity extends AbstractArrow implements IEntityAdditi
 					if(slotStack.getItem() == weapon.getItem() && 
 							weapon.getOrCreateTag().hasUUID(ThrowingWeaponItem.NBT_UUID) && slotStack.getOrCreateTag().hasUUID(ThrowingWeaponItem.NBT_UUID) && 
 							weapon.getTag().getUUID(ThrowingWeaponItem.NBT_UUID).equals(slotStack.getTag().getUUID(ThrowingWeaponItem.NBT_UUID)) &&
-							weapon.getItem() instanceof ThrowingWeaponItem)
+							weapon.getItem() instanceof ThrowingWeaponItem throwingWeapon)
 					{
-						int maxAmmo = ((ThrowingWeaponItem)slotStack.getItem()).getMaxAmmo(slotStack);
+						int maxAmmo = throwingWeapon.getMaxAmmo(slotStack);
 						int currentAmmo = maxAmmo - slotStack.getTag().getInt(ThrowingWeaponItem.NBT_AMMO_USED);
 						
 						if(currentAmmo < maxAmmo)

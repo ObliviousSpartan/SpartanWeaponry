@@ -19,7 +19,7 @@ public class SpartanWeaponryAPI
 	public static void assertAPIVersion(String modId, int version)
 	{
 		if(version > API_VERSION)
-			throw new IllegalStateException("API version mismatch! Addon " + modId + " expects version: " + version + " - has verison: " + API_VERSION);
+			throw new IllegalStateException("API version mismatch! Addon " + modId + " expects version: " + version + " - has version: " + API_VERSION);
 	}
 	
 	/**
