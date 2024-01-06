@@ -1,0 +1,7 @@
+{
+	"parent": "bettercombat:sword",
+	"attributes": {
+		"two_handed": true,
+		"pose": "bettercombat:pos_two_handed_sword"
+	}
+}
