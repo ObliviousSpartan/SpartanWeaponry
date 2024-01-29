@@ -65,7 +65,7 @@ public class BoltSpectralEntity extends BoltEntity
     @Override
     public ResourceLocation getTexture() 
     {
-    	return new ResourceLocation(ModSpartanWeaponry.ID, "textures/entity/projectiles/bolt_spectral.png");
+    	return new ResourceLocation(ModSpartanWeaponry.ID, "textures/entity/projectiles/spectral_bolt.png");
     }
     
     @Override

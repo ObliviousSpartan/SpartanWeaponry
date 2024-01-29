@@ -137,7 +137,7 @@ public class ModItemTagsProvider extends ItemTagsProvider
 				ModItems.BOOMERANGS.aluminum.get(), ModItems.BATTLEAXES.aluminum.get(), ModItems.FLANGED_MACES.aluminum.get(), ModItems.GLAIVES.aluminum.get(), ModItems.QUARTERSTAVES.aluminum.get(), ModItems.SCYTHES.aluminum.get());
 		
 		tag(ModItemTags.ARROWS).add(ModItems.WOODEN_ARROW.get(), ModItems.TIPPED_WOODEN_ARROW.get(), ModItems.COPPER_ARROW.get(), ModItems.TIPPED_COPPER_ARROW.get(), ModItems.IRON_ARROW.get(), ModItems.TIPPED_IRON_ARROW.get(), ModItems.DIAMOND_ARROW.get(), ModItems.TIPPED_DIAMOND_ARROW.get(),
-				ModItems.NETHERITE_ARROW.get(), ModItems.NETHERITE_ARROW.get(), ModItems.EXPLOSIVE_ARROW.get());
+				ModItems.NETHERITE_ARROW.get(), ModItems.TIPPED_NETHERITE_ARROW.get(), ModItems.EXPLOSIVE_ARROW.get());
 		tag(ModItemTags.BOLTS).add(ModItems.BOLT.get(), ModItems.TIPPED_BOLT.get(), ModItems.SPECTRAL_BOLT.get(), ModItems.COPPER_BOLT.get(), ModItems.TIPPED_COPPER_BOLT.get(), ModItems.DIAMOND_BOLT.get(), ModItems.DIAMOND_BOLT.get(), ModItems.NETHERITE_BOLT.get(), ModItems.NETHERITE_BOLT.get());
 		tag(ModItemTags.COPPER_PROJECTILES).add(ModItems.COPPER_ARROW.get(), ModItems.TIPPED_COPPER_ARROW.get(), ModItems.COPPER_BOLT.get(), ModItems.TIPPED_COPPER_BOLT.get());
 		tag(ModItemTags.DIAMOND_PROJECTILES).add(ModItems.DIAMOND_ARROW.get(), ModItems.TIPPED_DIAMOND_ARROW.get(), ModItems.DIAMOND_BOLT.get(), ModItems.TIPPED_DIAMOND_BOLT.get());

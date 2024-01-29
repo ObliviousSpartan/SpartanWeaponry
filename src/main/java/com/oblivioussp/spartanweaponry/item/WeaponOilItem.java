@@ -118,7 +118,13 @@ public class WeaponOilItem extends BasicItem
 				{
 					if(!handler.isOiled())
 					{
-						handler.setEffect(oil, stack);
+						if(oil == OilEffects.POTION.get())
+						{
+							Potion potion = OilHelper.getPotionFromStack(stack);
+							handler.setPotion(potion, stack);
+						}
+						else
+							handler.setEffect(oil, stack);
 						playerIn.displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".oil_applied", stack.getHoverName(), oppositeStack.getHoverName()), true);
 						playerIn.playSound(ModSounds.OIL_APPLIED.get(), 1.0f, 1.0f);
 						// Remove one from the stack and replace the container back into the inventory (a glass bottle)

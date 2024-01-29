@@ -59,7 +59,7 @@ public abstract class AbstractArrowMixin extends ProjectileMixin
 						if(!arrowStack.isEmpty() && !quiver.isEmpty() && ((QuiverBaseItem)quiver.getItem()).isAmmoValid(arrowStack, quiver))
 						{
 							// Make sure auto-collect is enabled.
-							if(quiver.getOrCreateTag().getBoolean("ammoCollect"))
+							if(quiver.getOrCreateTag().getBoolean(QuiverBaseItem.NBT_AMMO_COLLECT))
 							{
 								// Attempt to place the arrows into the quiver.
 								IItemHandler quiverHandler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).resolve().orElseThrow();

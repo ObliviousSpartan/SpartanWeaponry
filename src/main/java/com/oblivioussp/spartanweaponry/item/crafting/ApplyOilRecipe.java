@@ -12,6 +12,7 @@ import com.oblivioussp.spartanweaponry.util.OilHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
@@ -73,7 +74,7 @@ public class ApplyOilRecipe extends CustomRecipe
 				// Oil found
 				if(stack.is(ModItems.WEAPON_OIL.get()))
 				{
-					// Aleady have an oil; not a valid recipe
+					// Already have an oil; not a valid recipe
 					if(!oilStack.isEmpty())
 						return ItemStack.EMPTY;
 					oilStack = stack;
@@ -81,7 +82,7 @@ public class ApplyOilRecipe extends CustomRecipe
 				// Oilable weapon found
 				else if(stack.is(ModItemTags.OILABLE_WEAPONS))
 				{
-					// Aleady have an oilable weapon; not a valid recipe
+					// Already have an oilable weapon; not a valid recipe
 					if(!weaponStack.isEmpty())
 						return ItemStack.EMPTY;
 					weaponStack = stack;
@@ -98,7 +99,14 @@ public class ApplyOilRecipe extends CustomRecipe
 			LazyOptional<IOilHandler> handler = resultStack.getCapability(ModCapabilities.OIL_CAPABILITY);
 			if(effect != OilEffects.NONE.get() && handler.isPresent())
 			{
-				handler.resolve().get().setEffect(effect, oilStack);
+				IOilHandler oilHandler = handler.resolve().get();
+				if(effect == OilEffects.POTION.get())
+				{
+					Potion potion = OilHelper.getPotionFromStack(oilStack);
+					oilHandler.setPotion(potion, oilStack);
+				}
+				else
+					oilHandler.setEffect(effect, oilStack);
 				return resultStack.copy();
 			}
 		}

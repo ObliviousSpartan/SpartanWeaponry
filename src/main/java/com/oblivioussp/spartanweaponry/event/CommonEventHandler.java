@@ -593,11 +593,10 @@ public class CommonEventHandler
 	@SubscribeEvent
 	public static void onJoinWorld(SpecialSpawn ev)
 	{
-		if(!Config.INSTANCE.disableSpawningZombieWithWeapon.get() && ev.getEntity() instanceof Zombie)
+		if(!Config.INSTANCE.disableSpawningZombieWithWeapon.get() && ev.getEntity() instanceof Zombie zombie)
 		{
-			Zombie entity = (Zombie)ev.getEntity();
-			float rand = entity.level.random.nextFloat();
-			float chance = entity.level.getDifficulty() == Difficulty.HARD ? 
+			float rand = zombie.level.random.nextFloat();
+			float chance = zombie.level.getDifficulty() == Difficulty.HARD ? 
 					Config.INSTANCE.zombieWithMeleeSpawnChanceHard.get().floatValue() : 
 					Config.INSTANCE.zombieWithMeleeSpawnChanceNormal.get().floatValue();
 			
@@ -609,17 +608,16 @@ public class CommonEventHandler
 					ItemStack weapon = ItemStack.EMPTY;
 					List<Item> possibleWeapons = tag.stream().toList();
 					
-					weapon = generateRandomItem(entity.level, possibleWeapons);
+					weapon = generateRandomItem(zombie.level, possibleWeapons);
 				
-					entity.setItemSlot(EquipmentSlot.MAINHAND, weapon);
+					zombie.setItemSlot(EquipmentSlot.MAINHAND, weapon);
 				}
 			}
 		}
-		if(!Config.INSTANCE.disableSpawningSkeletonWithLongbow.get() && ev.getEntity() instanceof AbstractSkeleton)
+		if(!Config.INSTANCE.disableSpawningSkeletonWithLongbow.get() && ev.getEntity() instanceof AbstractSkeleton skeleton)
 		{
-			AbstractSkeleton entity = (AbstractSkeleton)ev.getEntity();
-			float rand = entity.level.random.nextFloat();
-			float chance = entity.level.getDifficulty() == Difficulty.HARD ? 
+			float rand = skeleton.level.random.nextFloat();
+			float chance = skeleton.level.getDifficulty() == Difficulty.HARD ? 
 					Config.INSTANCE.skeletonWithLongbowSpawnChanceHard.get().floatValue() : 
 					Config.INSTANCE.skeletonWithLongbowSpawnChanceNormal.get().floatValue();
 			
@@ -630,8 +628,8 @@ public class CommonEventHandler
 				{
 					ItemStack weapon = ItemStack.EMPTY;
 					List<Item> possibleWeapons = tag.stream().toList();
-					weapon = generateRandomItem(entity.level, possibleWeapons);
-					entity.setItemSlot(EquipmentSlot.MAINHAND, weapon);
+					weapon = generateRandomItem(skeleton.level, possibleWeapons);
+					skeleton.setItemSlot(EquipmentSlot.MAINHAND, weapon);
 				}
 			}
 		}

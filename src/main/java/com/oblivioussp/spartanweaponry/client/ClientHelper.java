@@ -189,7 +189,7 @@ public class ClientHelper
 		Log.info("Registering Entity Renderers!");
 		ev.registerEntityRenderer(ModEntities.ARROW_SW.get(), ArrowBaseRenderer::new);
 		ev.registerEntityRenderer(ModEntities.ARROW_EXPLOSIVE.get(), (rendererProvider) -> 
-			new SimpleArrowRenderer<ArrowExplosiveEntity>(rendererProvider, new ResourceLocation(ModSpartanWeaponry.ID, "textures/entity/projectiles/arrow_explosive.png")));
+			new SimpleArrowRenderer<ArrowExplosiveEntity>(rendererProvider, new ResourceLocation(ModSpartanWeaponry.ID, "textures/entity/projectiles/explosive_arrow.png")));
 		ev.registerEntityRenderer(ModEntities.BOLT.get(), BoltRenderer::new);
 		ev.registerEntityRenderer(ModEntities.BOLT_SPECTRAL.get(), BoltRenderer::new);
 		ev.registerEntityRenderer(ModEntities.THROWING_WEAPON.get(), ThrowingWeaponRenderer::new);
