@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:greatsword",
-  "pattern": [
-    " # ",
-    "###",
-    "#|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "greatsword",
+        "copper"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/copper"
+      }
+    }
   ],
+  "group": "spartanweaponry:greatsword",
   "key": {
     "#": {
       "tag": "forge:ingots/copper"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " # ",
+    "###",
+    "#|#"
+  ],
   "result": {
     "item": "spartanweaponry:copper_greatsword"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "greatsword",
-        "copper"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/copper",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

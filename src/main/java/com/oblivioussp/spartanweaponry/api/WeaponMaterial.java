@@ -16,8 +16,6 @@ import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
@@ -163,8 +161,8 @@ public class WeaponMaterial implements Tier, IReloadable
 	public Component translateName()
 	{
 		if(translationFunc == null)
-			return new TranslatableComponent("material." + this.getModId() + "." + this.getMaterialName());
-		return new TextComponent(translationFunc.apply(name));
+			return Component.translatable("material." + this.getModId() + "." + this.getMaterialName());
+		return Component.literal(translationFunc.apply(name));
 	}
 	
 	public String getMaterialName()
@@ -267,7 +265,7 @@ public class WeaponMaterial implements Tier, IReloadable
 	public void addTagErrorTooltip(ItemStack stack, List<Component> tooltip)
 	{
 		if(!isValidTag)
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.trait.invalid.material_tag", SpartanWeaponryAPI.MOD_ID), new TranslatableComponent(String.format("tooltip.%s.material.%s", SpartanWeaponryAPI.MOD_ID, name)), traitsTag.location()).withStyle(ChatFormatting.DARK_RED));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.trait.invalid.material_tag", SpartanWeaponryAPI.MOD_ID), Component.translatable(String.format("tooltip.%s.material.%s", SpartanWeaponryAPI.MOD_ID, name)), traitsTag.location()).withStyle(ChatFormatting.DARK_RED));
 	}
 	
 	public void addTraitsToTooltip(ItemStack stack, List<Component> tooltip, boolean isShiftPressed)

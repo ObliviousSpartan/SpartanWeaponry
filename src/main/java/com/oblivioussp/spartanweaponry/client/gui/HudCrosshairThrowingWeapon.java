@@ -18,11 +18,11 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.gui.ForgeIngameGui;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
 
 public class HudCrosshairThrowingWeapon
 {
-	public static void render(ForgeIngameGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight, ItemStack equippedStack) 
+	public static void render(ForgeGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight, ItemStack equippedStack) 
 	{
 		RenderSystem.assertOnRenderThread();
 		
@@ -72,8 +72,8 @@ public class HudCrosshairThrowingWeapon
 	        RenderSystem.setShader(GameRenderer::getPositionTexShader);
 	        RenderSystem.setShaderTexture(0, Gui.GUI_ICONS_LOCATION);
 	        
-	        // Render the attack indicator if applicable and if Better Combat Rebirth is not installed
-	        if (mc.options.attackIndicator == AttackIndicatorStatus.CROSSHAIR && (!ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get()))
+	        // Render the attack indicator if applicable
+	        if (mc.options.attackIndicator().get() == AttackIndicatorStatus.CROSSHAIR && (!ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get()))
 	        {
 	            float f = player.getAttackStrengthScale(0.0F);
 	            boolean flag = false;

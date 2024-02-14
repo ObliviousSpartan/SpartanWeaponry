@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/glaive",
-  "textures": {
-    "layer0": "spartanweaponry:item/copper_glaive",
-    "coating": "spartanweaponry:item/coating/glaive"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/copper_glaive_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/copper_glaive_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/copper_glaive_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/copper_glaive_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/glaive",
+    "layer0": "spartanweaponry:item/copper_glaive"
+  }
 }

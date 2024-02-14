@@ -15,8 +15,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -35,7 +33,7 @@ import net.minecraftforge.registries.RegistryManager;
 public class OilHelper
 {
 	
-	private static final Component NO_EFFECT = new TranslatableComponent("effect.none").withStyle(ChatFormatting.GRAY);
+	private static final Component NO_EFFECT = Component.translatable("effect.none").withStyle(ChatFormatting.GRAY);
 	
 	public static OilEffect getOilFromStack(ItemStack stackIn)
 	{
@@ -51,7 +49,8 @@ public class OilHelper
 	{
 		ItemStack stack = new ItemStack(ModItems.WEAPON_OIL.get());
 		CompoundTag tag = new CompoundTag();
-		tag.putString(OilHandler.NBT_OIL_EFFECT, oilIn.getRegistryName().toString());
+		ForgeRegistry<OilEffect> registry = RegistryManager.ACTIVE.getRegistry(OilEffects.REGISTRY_KEY);
+		tag.putString(OilHandler.NBT_OIL_EFFECT, registry.getKey(oilIn).toString());
 		stack.getOrCreateTag().put(OilHandler.NBT_OIL, tag);
 		return stack;
 	}
@@ -108,7 +107,7 @@ public class OilHelper
 		{
 			for(MobEffectInstance mobEffectInst : mobEffectList)
 			{
-				MutableComponent component = new TranslatableComponent(mobEffectInst.getDescriptionId());
+				MutableComponent component = Component.translatable(mobEffectInst.getDescriptionId());
 				MobEffect mobEffect = mobEffectInst.getEffect();
 				Map<Attribute, AttributeModifier> attributeMap = mobEffect.getAttributeModifiers();
 				if(!attributeMap.isEmpty())
@@ -122,10 +121,10 @@ public class OilHelper
 				}
 				
 				if(mobEffectInst.getAmplifier() > 0)
-					component = new TranslatableComponent("potion.withAmplifier", component, new TranslatableComponent("potion.potency." + mobEffectInst.getAmplifier()));
+					component = Component.translatable("potion.withAmplifier", component, Component.translatable("potion.potency." + mobEffectInst.getAmplifier()));
 				
 				if(mobEffectInst.getDuration() > 20)
-					component = new TranslatableComponent("potion.withDuration", component, MobEffectUtil.formatDuration(mobEffectInst, durationModifierIn));
+					component = Component.translatable("potion.withDuration", component, MobEffectUtil.formatDuration(mobEffectInst, durationModifierIn));
 				
 				tooltipListIn.add(component.withStyle(mobEffect.getCategory().getTooltipFormatting()));
 			}
@@ -133,8 +132,8 @@ public class OilHelper
 		
 		if(!attributeList.isEmpty())
 		{
-			tooltipListIn.add(TextComponent.EMPTY);
-			tooltipListIn.add(new TranslatableComponent("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE));
+			tooltipListIn.add(Component.empty());
+			tooltipListIn.add(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE));
 			
 			for(Pair<Attribute, AttributeModifier> attributePair : attributeList)
 			{
@@ -148,11 +147,11 @@ public class OilHelper
 					modifiedValue = modifier.getAmount() * 100.0d;
 				
 				if(amount > 0.0d)
-					tooltipListIn.add(new TranslatableComponent("attribute.modifier.plus." + modifier.getOperation().toValue(), ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(modifiedValue), new TranslatableComponent(attributePair.getFirst().getDescriptionId())).withStyle(ChatFormatting.BLUE));
+					tooltipListIn.add(Component.translatable("attribute.modifier.plus." + modifier.getOperation().toValue(), ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(modifiedValue), Component.translatable(attributePair.getFirst().getDescriptionId())).withStyle(ChatFormatting.BLUE));
 				else if(amount < 0.0d)
 				{
 					modifiedValue *= -1.0d;
-					tooltipListIn.add(new TranslatableComponent("attribute.modifier.take." + modifier.getOperation().toValue(), ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(modifiedValue), new TranslatableComponent(attributePair.getFirst().getDescriptionId())).withStyle(ChatFormatting.RED));
+					tooltipListIn.add(Component.translatable("attribute.modifier.take." + modifier.getOperation().toValue(), ItemStack.ATTRIBUTE_MODIFIER_FORMAT.format(modifiedValue), Component.translatable(attributePair.getFirst().getDescriptionId())).withStyle(ChatFormatting.RED));
 				}
 			}
 		}

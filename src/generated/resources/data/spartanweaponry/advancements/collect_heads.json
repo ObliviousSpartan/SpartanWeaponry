@@ -1,74 +1,7 @@
 {
   "parent": "spartanweaponry:scythe",
-  "display": {
-    "icon": {
-      "item": "spartanweaponry:piglin_head"
-    },
-    "title": {
-      "translate": "advancement.spartanweaponry.collect_heads.title"
-    },
-    "description": {
-      "translate": "advancement.spartanweaponry.collect_heads.desc"
-    },
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "rewards": {
-    "experience": 200
-  },
   "criteria": {
-    "creeper_head": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:creeper_head"
-            ]
-          }
-        ]
-      }
-    },
-    "skeleton_skull": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:skeleton_skull"
-            ]
-          }
-        ]
-      }
-    },
-    "wither_skeleton_skull": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:wither_skeleton_skull"
-            ]
-          }
-        ]
-      }
-    },
-    "zombie_head": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:zombie_head"
-            ]
-          }
-        ]
-      }
-    },
     "blaze_head": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -77,34 +10,10 @@
             ]
           }
         ]
-      }
-    },
-    "enderman_head": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "spartanweaponry:enderman_head"
-            ]
-          }
-        ]
-      }
-    },
-    "spider_head": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "spartanweaponry:spider_head"
-            ]
-          }
-        ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "cave_spider_head": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -113,58 +22,22 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-    "piglin_head": {
-      "trigger": "minecraft:inventory_changed",
+    "creeper_head": {
       "conditions": {
         "items": [
           {
             "items": [
-              "spartanweaponry:piglin_head"
+              "minecraft:creeper_head"
             ]
           }
         ]
-      }
-    },
-    "zombified_piglin_head": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "spartanweaponry:zombified_piglin_head"
-            ]
-          }
-        ]
-      }
-    },
-    "husk_head": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "spartanweaponry:husk_head"
-            ]
-          }
-        ]
-      }
-    },
-    "stray_skull": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "spartanweaponry:stray_skull"
-            ]
-          }
-        ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "drowned_head": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -173,10 +46,34 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "enderman_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:enderman_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "husk_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:husk_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "illager_head": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -185,10 +82,58 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "piglin_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:piglin_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "skeleton_skull": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:skeleton_skull"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "spider_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:spider_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "stray_skull": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:stray_skull"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "witch_head": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -197,7 +142,59 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wither_skeleton_skull": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:wither_skeleton_skull"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "zombie_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:zombie_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "zombified_piglin_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:zombified_piglin_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.spartanweaponry.collect_heads.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "spartanweaponry:piglin_head"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.spartanweaponry.collect_heads.title"
     }
   },
   "requirements": [
@@ -246,5 +243,8 @@
     [
       "witch_head"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 200
+  }
 }

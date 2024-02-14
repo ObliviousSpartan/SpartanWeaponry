@@ -1,5 +1,14 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "bolts",
+        "netherite_ammo"
+      ]
+    }
+  ],
   "ingredients": [
     {
       "tag": "forge:ingots/netherite"
@@ -30,16 +39,7 @@
     }
   ],
   "result": {
-    "item": "spartanweaponry:netherite_bolt",
-    "count": 8
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "bolts",
-        "netherite_ammo"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+    "count": 8,
+    "item": "spartanweaponry:netherite_bolt"
+  }
 }

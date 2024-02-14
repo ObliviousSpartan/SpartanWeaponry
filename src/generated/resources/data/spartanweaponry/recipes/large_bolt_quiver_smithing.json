@@ -1,10 +1,10 @@
 {
   "type": "spartanweaponry:quiver_upgrade_smithing",
-  "base": {
-    "item": "spartanweaponry:medium_bolt_quiver"
-  },
   "addition": {
     "item": "spartanweaponry:large_quiver_upgrade_kit"
+  },
+  "base": {
+    "item": "spartanweaponry:medium_bolt_quiver"
   },
   "result": {
     "item": "spartanweaponry:large_bolt_quiver"

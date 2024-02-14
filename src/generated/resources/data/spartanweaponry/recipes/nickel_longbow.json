@@ -1,42 +1,42 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:longbow",
-  "pattern": [
-    "|/#",
-    "/ ~",
-    "#~~"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longbow",
+        "nickel"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/nickel"
+      }
+    }
   ],
+  "group": "spartanweaponry:longbow",
   "key": {
     "#": {
       "tag": "forge:ingots/nickel"
     },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
     "/": {
       "tag": "forge:rods/wooden"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
     },
     "~": {
       "tag": "forge:string"
     }
   },
+  "pattern": [
+    "|/#",
+    "/ ~",
+    "#~~"
+  ],
   "result": {
     "item": "spartanweaponry:nickel_longbow"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "longbow",
-        "nickel"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/nickel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

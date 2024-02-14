@@ -1,5 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "oil"
+      ]
+    }
+  ],
   "ingredients": [
     {
       "item": "spartanweaponry:grease_ball"
@@ -15,16 +23,8 @@
     }
   ],
   "result": {
-    "item": "spartanweaponry:weapon_oil",
     "count": 3,
+    "item": "spartanweaponry:weapon_oil",
     "nbt": "{Oil:{Effect:\"spartanweaponry:none\"}}"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "oil"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

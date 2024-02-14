@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:greatsword",
-  "pattern": [
-    " # ",
-    "###",
-    "#|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "greatsword",
+        "lead"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/lead"
+      }
+    }
   ],
+  "group": "spartanweaponry:greatsword",
   "key": {
     "#": {
       "tag": "forge:ingots/lead"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " # ",
+    "###",
+    "#|#"
+  ],
   "result": {
     "item": "spartanweaponry:lead_greatsword"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "greatsword",
-        "lead"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/lead",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

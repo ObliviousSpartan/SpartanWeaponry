@@ -43,19 +43,15 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.AbstractSkeleton;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades.ItemListing;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -71,6 +67,7 @@ import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.brewing.PlayerBrewedPotionEvent;
@@ -78,17 +75,14 @@ import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent.SpecialSpawn;
 import net.minecraftforge.event.entity.living.LootingLevelEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.tags.ITag;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEventHandler
@@ -100,7 +94,7 @@ public class CommonEventHandler
 	{
 		DamageSource src = ev.getSource();
 		float dmgDealt = ev.getAmount();
-		LivingEntity target = ev.getEntityLiving();
+		LivingEntity target = ev.getEntity();
 		
 		// Debug crap (code doesn't seem to be called anymore, even in an IDE)
 //		if(SharedConstants.IS_RUNNING_IN_IDE)
@@ -186,7 +180,7 @@ public class CommonEventHandler
 	@SubscribeEvent
 	public static void attackEvent(LivingAttackEvent ev)
 	{
-		if(ev.getEntityLiving() instanceof Player player && player.isUsingItem() && !player.getUseItem().isEmpty())
+		if(ev.getEntity() instanceof Player player && player.isUsingItem() && !player.getUseItem().isEmpty())
 		{
 			ItemStack activeStack = player.getUseItem();
 			
@@ -230,7 +224,7 @@ public class CommonEventHandler
 		// Null-check the passed damage source's immediate entity (fixes issue #150)
 		if(e != null && e instanceof ThrowingWeaponEntity throwingWeapon)
 		{
-			int luckLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.LUCKY_THROW.get(), throwingWeapon.getWeaponItem());
+			int luckLevel = throwingWeapon.getWeaponItem().getEnchantmentLevel(ModEnchantments.LUCKY_THROW.get());
 			ev.setLootingLevel(luckLevel);
 		}
 	}
@@ -245,7 +239,7 @@ public class CommonEventHandler
 		// - If found, then place a stack of ammo in the appropriate opposite hand slot, and take that ammo from the quiver.
 		// -- If the weapon is unequiped, do the opposite and place the arrow stack back into the quiver as appropriate.
 		
-		if((ev.getSlot() == EquipmentSlot.MAINHAND || ev.getSlot() == EquipmentSlot.OFFHAND) && ev.getEntityLiving() instanceof Player player)
+		if((ev.getSlot() == EquipmentSlot.MAINHAND || ev.getSlot() == EquipmentSlot.OFFHAND) && ev.getEntity() instanceof Player player)
 		{
 			ItemStack fromStack = ev.getFrom();
 			ItemStack toStack = ev.getTo();
@@ -265,7 +259,7 @@ public class CommonEventHandler
 			{
 				// Check if the item being switched to is blacklisted in the config
 				boolean toStackBlacklisted = false;
-				String toName = toStack.getItem().getRegistryName().toString();
+				String toName = ForgeRegistries.ITEMS.getKey(toStack.getItem()).toString();
 				
 				// If the item being switched to is blacklisted, it will allow the quiver to put the arrows away when equipped
 				if(Config.INSTANCE.quiverBowBlacklist.get().contains(toName))
@@ -289,7 +283,7 @@ public class CommonEventHandler
 								int itemSlot = nbt.getInt(QuiverBaseItem.NBT_ITEM_SLOT);
 								ItemStack offhandStack = player.getInventory().getItem(itemSlot);
 								// Check to see if the item in the slot is a match
-								if(offhandStack.getItem().getRegistryName().toString().equals(itemId))
+								if(ForgeRegistries.ITEMS.getKey(offhandStack.getItem()).toString().equals(itemId))
 								{
 									// Now move the item to the offhand from the appropriate inventory slot
 									player.setItemSlot(oppositeHand, offhandStack);
@@ -307,7 +301,7 @@ public class CommonEventHandler
 			if(!ItemStack.isSame(toStack, fromStack))
 			{
 				// Check to see if the weapon being equipped is blacklisted in the config
-				String regName = toStack.getItem().getRegistryName().toString();
+				String regName = ForgeRegistries.ITEMS.getKey(toStack.getItem()).toString();
 				// If so, then the quiver will *NOT* take any arrows out. However, arrows will be put into the Quiver
 				if(Config.INSTANCE.quiverBowBlacklist.get().contains(regName))
 					return;
@@ -321,7 +315,7 @@ public class CommonEventHandler
 						if(!quiver.isEmpty())
 						{
 							// TODO: Possibly make an isEmpty() method for a custom item handler
-							IItemHandler quiverHandler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).resolve().orElseThrow();
+							IItemHandler quiverHandler = quiver.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().orElseThrow();
 							boolean isQuiverEmpty = true;
 							for(int i = 0; i < quiverHandler.getSlots(); i++)
 							{
@@ -350,7 +344,7 @@ public class CommonEventHandler
 								// If found, place it in that empty slot
 								if(emptySlot != -1)
 								{
-									String itemId = oppositeStack.getItem().getRegistryName().toString();
+									String itemId = ForgeRegistries.ITEMS.getKey(oppositeStack.getItem()).toString();
 									// Store the relevant data to find the offhand item in the Quiver NBT Tag
 									CompoundTag nbt = quiver.getOrCreateTagElement(QuiverBaseItem.NBT_OFFHAND_MOVED);
 									nbt.putString(QuiverBaseItem.NBT_ITEM_ID, itemId);
@@ -385,7 +379,7 @@ public class CommonEventHandler
 	{
 		if(!quiver.isEmpty())
 		{
-			IItemHandler quiverHandler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).resolve().orElseThrow();
+			IItemHandler quiverHandler = quiver.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().orElseThrow();
 			ItemStack arrowStack = player.getItemBySlot(oppositeHandSlot);
 			
 			int prioritySlot = quiver.getOrCreateTag().getInt(QuiverBaseItem.NBT_PROIRITY_SLOT);
@@ -416,7 +410,7 @@ public class CommonEventHandler
 	{
 		if(!quiver.isEmpty())
 		{
-			IItemHandler quiverHandler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).resolve().orElseThrow();
+			IItemHandler quiverHandler = quiver.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().orElseThrow();
 			ItemStack arrowStack = ItemStack.EMPTY;
 			
 			int prioritySlot = quiver.getOrCreateTag().getInt(QuiverBaseItem.NBT_PROIRITY_SLOT);
@@ -448,7 +442,7 @@ public class CommonEventHandler
 		ItemStack pickedUpStack = ev.getItem().getItem().copy();
 		int beforeCount = pickedUpStack.getCount(),
 			afterCount = beforeCount;
-		Player player  = ev.getPlayer();
+		Player player  = ev.getEntity();
 		List<ItemStack> quivers = QuiverHelper.findValidQuivers(player);
 		
 		if(!quivers.isEmpty())
@@ -462,7 +456,7 @@ public class CommonEventHandler
 					if(quiver.getOrCreateTag().getBoolean(QuiverBaseItem.NBT_AMMO_COLLECT))
 					{
 						// Attempt to place the arrows into the quiver.
-						IItemHandler quiverHandler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).resolve().orElseThrow();
+						IItemHandler quiverHandler = quiver.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().orElseThrow();
 						for(int i = 0; i < quiverHandler.getSlots(); i++)
 						{
 							pickedUpStack = quiverHandler.insertItem(i, pickedUpStack, false);
@@ -590,7 +584,7 @@ public class CommonEventHandler
 	 * Allow Mobs to spawn with weapons from this mod; Zombies with most melee weapons and Skeletons with Longbows
 	 * @param ev
 	 */
-	@SubscribeEvent
+	/*@SubscribeEvent
 	public static void onJoinWorld(SpecialSpawn ev)
 	{
 		if(!Config.INSTANCE.disableSpawningZombieWithWeapon.get() && ev.getEntity() instanceof Zombie zombie)
@@ -643,7 +637,7 @@ public class CommonEventHandler
 		idx = idx > items.size() - 1 ? items.size() - 1 : idx;
 		
 		return new ItemStack(items.get(idx));
-	}
+	}*/
 	
 	@SubscribeEvent
 	public static void addVillagerTrades(VillagerTradesEvent ev)
@@ -762,7 +756,7 @@ public class CommonEventHandler
 		ItemStack stack = ev.getStack();
 		OilEffect oil = OilEffects.NONE.get();
 		if(stack.is(ModItems.WEAPON_OIL.get()) && (oil = OilHelper.getOilFromStack(stack)) != OilEffects.NONE.get())
-			ModCriteriaTriggers.BREW_OIL.trigger((ServerPlayer)ev.getPlayer(), oil);
+			ModCriteriaTriggers.BREW_OIL.trigger((ServerPlayer)ev.getEntity(), oil);
 	}
 	
 	/**
@@ -781,13 +775,13 @@ public class CommonEventHandler
 	public static void onItemRightClick(PlayerInteractEvent.RightClickBlock ev)
 	{
 		// Skip if the item is not some form of stick or if the stick is on a cooldown
-		Player player = ev.getPlayer();
+		Player player = ev.getEntity();
 		InteractionHand hand = ev.getHand();
 		ItemStack stack = player.getItemInHand(hand);
 		if(!stack.is(Tags.Items.RODS_WOODEN) || player.getCooldowns().isOnCooldown(stack.getItem()))
 			return;
 
-		Level level = ev.getWorld();
+		Level level = ev.getLevel();
 		BlockPos pos = ev.getPos();
 		BlockState state = level.getBlockState(pos);
 		Block block = state.getBlock();
@@ -802,7 +796,7 @@ public class CommonEventHandler
 				if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.UPPER)
 				{
 					pos = pos.below();
-					state = ev.getWorld().getBlockState(pos);
+					state = level.getBlockState(pos);
 				}
 			}
 			// Remove an item of the main stack

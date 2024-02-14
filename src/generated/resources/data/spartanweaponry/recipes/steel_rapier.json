@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:rapier",
-  "pattern": [
-    "  #",
-    "## ",
-    "|# "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "rapier",
+        "steel"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/steel"
+      }
+    }
   ],
+  "group": "spartanweaponry:rapier",
   "key": {
     "#": {
       "tag": "forge:ingots/steel"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "  #",
+    "## ",
+    "|# "
+  ],
   "result": {
     "item": "spartanweaponry:steel_rapier"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "rapier",
-        "steel"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/steel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

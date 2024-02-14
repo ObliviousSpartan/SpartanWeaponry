@@ -8,7 +8,7 @@ import com.oblivioussp.spartanweaponry.api.oil.OilEffect;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -93,7 +93,7 @@ public class OilHandler implements IOilHandler
 		if(usesLeft <= 0)
 		{
 			if(userIn instanceof Player)
-				((Player)userIn).displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".oil_depleted", oilStack.getHoverName(), userWeaponIn.getHoverName()), true);
+				((Player)userIn).displayClientMessage(Component.translatable("message." + ModSpartanWeaponry.ID + ".oil_depleted", oilStack.getHoverName(), userWeaponIn.getHoverName()), true);
 			clearEffect();
 		}
 		return resultDamage;

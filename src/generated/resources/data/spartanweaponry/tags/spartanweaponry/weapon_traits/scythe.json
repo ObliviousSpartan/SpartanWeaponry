@@ -1,8 +1,6 @@
 {
-  "replace": false,
   "values": [
     "spartanweaponry:head_damage_bonus",
-    "spartanweaponry:decapitate",
-    "spartanweaponry:harvester"
+    "spartanweaponry:decapitate"
   ]
 }

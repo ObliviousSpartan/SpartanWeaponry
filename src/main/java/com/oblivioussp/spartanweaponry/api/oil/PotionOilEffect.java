@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.oblivioussp.spartanweaponry.capability.OilHandler;
 import com.oblivioussp.spartanweaponry.util.Config;
+import com.oblivioussp.spartanweaponry.util.Defaults;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import net.minecraft.nbt.CompoundTag;
@@ -21,7 +22,7 @@ public class PotionOilEffect extends OilEffect
 {
 	public PotionOilEffect()
 	{
-		super("potion", 0x0, Config.INSTANCE.oilUsesNormal.get(), 0.0f, OilEffect.USE_NOTHING, true);
+		super("potion", OilEffectType.EFFECT_ONLY, 0x0, Defaults.OIL_USES_NORMAL, 0.0f, OilEffect.USE_NOTHING, true);
 	}
 	
 	@Override

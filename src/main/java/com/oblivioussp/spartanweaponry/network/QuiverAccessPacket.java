@@ -10,7 +10,7 @@ import com.oblivioussp.spartanweaponry.util.QuiverHelper.IQuiverInfo;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.ModList;
@@ -116,7 +116,7 @@ public class QuiverAccessPacket
 				
 				if(quiver.isEmpty() || quiverItem == null || slotType == QuiverBaseItem.SlotType.UNDEFINED)
 				{
-					player.displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".quiver_not_found").withStyle(ChatFormatting.RED, ChatFormatting.BOLD), true);
+					player.displayClientMessage(Component.translatable("message." + ModSpartanWeaponry.ID + ".quiver_not_found").withStyle(ChatFormatting.RED, ChatFormatting.BOLD), true);
 					return;
 				}
 				

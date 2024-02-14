@@ -19,9 +19,9 @@ import com.oblivioussp.spartanweaponry.util.OilHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.synchronization.ArgumentTypes;
-import net.minecraft.commands.synchronization.EmptyArgumentSerializer;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.commands.synchronization.ArgumentTypeInfos;
+import net.minecraft.commands.synchronization.SingletonArgumentInfo;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potion;
@@ -31,12 +31,12 @@ public class ModCommands
 {
 	private static final DynamicCommandExceptionType ERROR_NO_ITEM = new DynamicCommandExceptionType((object) -> 
 	{
-		return new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.error.no_item", object);
+		return Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.error.no_item", object);
 	});
 
 	private static final DynamicCommandExceptionType ERROR_INCOMPATIBLE_ITEM = new DynamicCommandExceptionType((object) -> 
 	{
-		return new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.error.incompatible_item", object);
+		return Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.error.incompatible_item", object);
 	});
 	
 	public static void registerCommands(RegisterCommandsEvent ev)
@@ -78,7 +78,7 @@ public class ModCommands
 		ItemStack oilStack = OilHelper.makeOilStack(oilEffect);
 		oilHandler.setEffect(oilEffect, ItemStack.EMPTY);
 		playerIn.playNotifySound(ModSounds.OIL_APPLIED.get(), playerIn.getSoundSource(), 1.0f, 1.0f);
-		commandSourceIn.sendSuccess(new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.success", oilStack.getHoverName(), applyStack.getItem().getName(applyStack).getString(), playerIn.getName().getString()), true);
+		commandSourceIn.sendSuccess(Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.success", oilStack.getHoverName(), applyStack.getItem().getName(applyStack).getString(), playerIn.getName().getString()), true);
 		return 1;
 	}
 	
@@ -95,7 +95,7 @@ public class ModCommands
 		ItemStack oilStack = OilHelper.makePotionOilStack(potion);
 		oilHandler.setPotion(potion, ItemStack.EMPTY);
 		playerIn.playNotifySound(ModSounds.OIL_APPLIED.get(), playerIn.getSoundSource(), 1.0f, 1.0f);
-		commandSourceIn.sendSuccess(new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_potion_oil.success", oilStack.getHoverName(), applyStack.getItem().getName(applyStack).getString(), playerIn.getName().getString()), true);
+		commandSourceIn.sendSuccess(Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_potion_oil.success", oilStack.getHoverName(), applyStack.getItem().getName(applyStack).getString(), playerIn.getName().getString()), true);
 		return 1;
 	}
 	
@@ -109,14 +109,14 @@ public class ModCommands
 				orElseThrow(() -> ERROR_INCOMPATIBLE_ITEM.create(applyStack.getItem().getName(applyStack).getString()));
 
 		oilHandler.clearEffect();
-		commandSourceIn.sendSuccess(new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".clear_oil.success", applyStack.getItem().getName(applyStack).getString(), playerIn.getName().getString()), true);
+		commandSourceIn.sendSuccess(Component.translatable("command." + ModSpartanWeaponry.ID + ".clear_oil.success", applyStack.getItem().getName(applyStack).getString(), playerIn.getName().getString()), true);
 		
 		return 1;
 	}
 	
 	public static void registerArgumentSerializers()
 	{
-		ArgumentTypes.register(ModSpartanWeaponry.ID + ":oil", OilArgument.class, new EmptyArgumentSerializer<>(OilArgument::oil));
-		ArgumentTypes.register(ModSpartanWeaponry.ID + ":potion", PotionArgument.class, new EmptyArgumentSerializer<>(PotionArgument::potion));
+		ArgumentTypeInfos.registerByClass(OilArgument.class, SingletonArgumentInfo.contextFree(OilArgument::oil));
+		ArgumentTypeInfos.registerByClass(PotionArgument.class, SingletonArgumentInfo.contextFree(PotionArgument::potion));
 	}
 }

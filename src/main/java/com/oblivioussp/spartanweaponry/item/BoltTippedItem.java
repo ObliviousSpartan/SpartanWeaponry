@@ -7,8 +7,6 @@ import com.oblivioussp.spartanweaponry.entity.projectile.BoltEntity;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -45,7 +43,7 @@ public class BoltTippedItem extends BoltItem
 	@Override
 	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items)
 	{
-		if(allowdedIn(tab))
+		if(allowedIn(tab))
 		{
 			for(Potion potion : ForgeRegistries.POTIONS)
 			{
@@ -64,7 +62,7 @@ public class BoltTippedItem extends BoltItem
 	{
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 
-		tooltip.add(new TextComponent(""));
+		tooltip.add(Component.empty());
 		PotionUtils.addPotionTooltip(stack, tooltip, 0.125f);
 	}
 
@@ -73,6 +71,6 @@ public class BoltTippedItem extends BoltItem
 		Potion potion = PotionUtils.getPotion(stack);
 		
 		String potionKey = potion.getName("item.spartanweaponry.proj_tipped.effect.");
-		return new TranslatableComponent(potionKey, new TranslatableComponent("item." + ModSpartanWeaponry.ID + "." + baseName));
+		return Component.translatable(potionKey, Component.translatable("item." + ModSpartanWeaponry.ID + "." + baseName));
 	}
 }

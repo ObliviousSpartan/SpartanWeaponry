@@ -19,7 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.AbstractArrow.Pickup;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
 
 @Mixin(AbstractArrow.class)
@@ -40,6 +40,7 @@ public abstract class AbstractArrowMixin extends ProjectileMixin
 			
 			if(pickup == Pickup.ALLOWED)
 			{
+				//Log.debug("Arrow can be picked up! Finding a home for it!");
 				// Attempt to pickup and put into the quiver first; if that fails, then do nothing
 				List<ItemStack> quivers = QuiverHelper.findValidQuivers(entityIn);
 				ItemStack arrowStack = getPickupItem();
@@ -53,16 +54,19 @@ public abstract class AbstractArrowMixin extends ProjectileMixin
 				
 				if(!quivers.isEmpty())
 				{
+					//Log.debug("Detected quiver to check!");
 					// Loop through all valid quivers to place the item into...
 					for(ItemStack quiver : quivers)
 					{
 						if(!arrowStack.isEmpty() && !quiver.isEmpty() && ((QuiverBaseItem)quiver.getItem()).isAmmoValid(arrowStack, quiver))
 						{
+							//Log.debug("Found a quiver to place the arrow into!");
 							// Make sure auto-collect is enabled.
 							if(quiver.getOrCreateTag().getBoolean(QuiverBaseItem.NBT_AMMO_COLLECT))
 							{
+								//Log.debug("Inserting arrows into a quiver!");
 								// Attempt to place the arrows into the quiver.
-								IItemHandler quiverHandler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).resolve().orElseThrow();
+								IItemHandler quiverHandler = quiver.getCapability(ForgeCapabilities.ITEM_HANDLER, null).resolve().orElseThrow();
 								for(int i = 0; i < quiverHandler.getSlots(); i++)
 								{
 									arrowStack = quiverHandler.insertItem(i, arrowStack, false);

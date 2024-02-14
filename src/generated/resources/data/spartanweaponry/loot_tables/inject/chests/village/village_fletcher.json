@@ -2,33 +2,28 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 1.0,
-        "max": 2.0
-      },
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 5,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 3.0
+                "max": 3.0,
+                "min": 1.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "spartanweaponry:bolt"
+          "name": "spartanweaponry:bolt",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
-          "name": "spartanweaponry:wooden_longbow"
+          "name": "spartanweaponry:wooden_longbow",
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -36,14 +31,19 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
-          "name": "spartanweaponry:wooden_heavy_crossbow"
+          "name": "spartanweaponry:wooden_heavy_crossbow",
+          "weight": 3
         },
         {
           "type": "minecraft:item",
           "name": "spartanweaponry:iron_heavy_crossbow"
         }
-      ]
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
     }
   ]
 }

@@ -10,7 +10,8 @@
 		"LivingEntityMixin",
 		"PlayerMixin",
 		"MobMixin",
-		"AbstractSkeletonMixin"
+		"AbstractSkeletonMixin",
+		"ZombieMixin"
 	],
 	"minVersion": "0.8"
 }

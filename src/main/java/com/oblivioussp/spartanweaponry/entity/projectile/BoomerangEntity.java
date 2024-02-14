@@ -21,7 +21,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -151,7 +150,7 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 			
 			// Attempt to catch the first item the boomerang finds
 			ItemStack weaponItem = getWeaponItem();
-			int collectorangLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.COLLECTORANG.get(), weaponItem);
+			int collectorangLevel = weaponItem.getEnchantmentLevel(ModEnchantments.COLLECTORANG.get());
 			if(caughtItems < collectorangLevel)
 			{
 				AABB aabb = getBoundingBox().inflate(1.0d, 1.0d, 1.0d);

@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/halberd",
-  "textures": {
-    "layer0": "spartanweaponry:item/lead_halberd",
-    "coating": "spartanweaponry:item/coating/halberd"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/lead_halberd_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/lead_halberd_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/lead_halberd_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/lead_halberd_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/halberd",
+    "layer0": "spartanweaponry:item/lead_halberd"
+  }
 }

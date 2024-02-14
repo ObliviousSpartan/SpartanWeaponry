@@ -10,6 +10,7 @@ import com.oblivioussp.spartanweaponry.api.oil.OilEffect;
 import com.oblivioussp.spartanweaponry.api.tags.ModItemTags;
 import com.oblivioussp.spartanweaponry.capability.IOilHandler;
 import com.oblivioussp.spartanweaponry.client.KeyBinds;
+import com.oblivioussp.spartanweaponry.client.gui.HudCrosshair;
 import com.oblivioussp.spartanweaponry.init.ModCapabilities;
 import com.oblivioussp.spartanweaponry.inventory.tooltip.OilCoatingTooltip;
 import com.oblivioussp.spartanweaponry.network.NetworkHandler;
@@ -18,13 +19,14 @@ import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.InputEvent.KeyInputEvent;
-import net.minecraftforge.client.event.InputEvent.MouseInputEvent;
+import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RenderGuiOverlayEvent;
 import net.minecraftforge.client.event.RenderTooltipEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,7 +36,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ClientEventHandler 
 {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public static void onMouseEvent(MouseInputEvent ev)
+	public static void onMouseEvent(InputEvent.MouseButton ev)
 	{
 		Minecraft mc = Minecraft.getInstance();
 		if(mc.level == null || mc.screen != null || mc.isPaused())
@@ -48,7 +50,7 @@ public class ClientEventHandler
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public static void onKeyEvent(KeyInputEvent ev)
+	public static void onKeyEvent(InputEvent.Key ev)
 	{
 		Minecraft mc = Minecraft.getInstance();
 		if(mc.level == null || mc.screen != null || mc.isPaused())
@@ -81,9 +83,16 @@ public class ClientEventHandler
 					ev.getTooltipElements().add(1, Either.right(new OilCoatingTooltip(oilStack, oilHandler.getUsesLeft(), oilEffect.getMaxUses())));
 				}
 				else
-					ev.getTooltipElements().add(1, Either.left(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".oilable").withStyle(ChatFormatting.BLUE)));
+					ev.getTooltipElements().add(1, Either.left(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".oilable").withStyle(ChatFormatting.BLUE)));
 			});
 		}
+	}
+	
+	@SubscribeEvent
+	public static void onRenderGuiOverlayPre(RenderGuiOverlayEvent.Pre ev)
+	{
+		if(ev.getOverlay() == VanillaGuiOverlay.CROSSHAIR.type() && HudCrosshair.isVanillaCrosshairDisabled())
+			ev.setCanceled(true);
 	}
 	
 	// Debug NBT viewer; Enable if NBT needs to be debugged

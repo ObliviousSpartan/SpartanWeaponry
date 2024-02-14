@@ -10,13 +10,12 @@ import com.oblivioussp.spartanweaponry.init.ModItems;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.alchemy.PotionBrewing.Mix;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.brewing.IBrewingRecipe;
 
 public class OilBrewingRecipe implements IBrewingRecipe 
 {
-	private static final List<Mix<OilEffect>> VALID_MIXES = new ArrayList<>();
+	private static final List<OilMix> VALID_MIXES = new ArrayList<>();
 
 	@Override
 	public boolean isInput(ItemStack input) 
@@ -27,9 +26,9 @@ public class OilBrewingRecipe implements IBrewingRecipe
 	@Override
 	public boolean isIngredient(ItemStack ingredient) 
 	{
-		for(Mix<OilEffect> mix : VALID_MIXES)
+		for(OilMix mix : VALID_MIXES)
 		{
-			if(mix.ingredient.test(ingredient))
+			if(mix.brewingIngredient.test(ingredient))
 				return true;
 		}
 		return false;
@@ -41,10 +40,10 @@ public class OilBrewingRecipe implements IBrewingRecipe
 		if(isInput(input) && isIngredient(ingredient))
 		{
 			OilEffect effect = OilHelper.getOilFromStack(input);
-			for(Mix<OilEffect> mix : VALID_MIXES)
+			for(OilMix mix : VALID_MIXES)
 			{
-				if(mix.from.get() == effect && mix.ingredient.test(ingredient))
-					return OilHelper.makeOilStack(mix.to.get());
+				if(mix.from == effect && mix.brewingIngredient.test(ingredient))
+					return OilHelper.makeOilStack(mix.to);
 			}
 		}
 		
@@ -58,12 +57,12 @@ public class OilBrewingRecipe implements IBrewingRecipe
 		do
 		{
 			int currentSteps = steps;
-			for(Mix<OilEffect> mix : VALID_MIXES)
+			for(OilMix mix : VALID_MIXES)
 			{
-				if(currentEffect == mix.to.get())
+				if(currentEffect == mix.to)
 				{
 					steps++;
-					currentEffect = mix.from.get();
+					currentEffect = mix.from;
 					break;
 				}
 			}
@@ -81,16 +80,29 @@ public class OilBrewingRecipe implements IBrewingRecipe
 	
 	public static void addBaseOilMix(Ingredient ingredientIn, OilEffect oilEffectOut)
 	{
-		VALID_MIXES.add(new Mix<>(OilEffects.NONE.get(), ingredientIn, oilEffectOut));
+		VALID_MIXES.add(new OilMix(OilEffects.NONE.get(), ingredientIn, oilEffectOut));
 	}
 	
 	public static void addOilMix(OilEffect oilEffectIn, Ingredient ingredientIn, OilEffect oilEffectOut)
 	{
-		VALID_MIXES.add(new Mix<>(oilEffectIn, ingredientIn, oilEffectOut));
+		VALID_MIXES.add(new OilMix(oilEffectIn, ingredientIn, oilEffectOut));
 	}
 
-	public static List<Mix<OilEffect>> getValidMixes()
+	public static List<OilMix> getValidMixes()
 	{
 		return ImmutableList.copyOf(VALID_MIXES);
+	}
+	
+	public static class OilMix
+	{
+		public final OilEffect from, to;
+		public final Ingredient brewingIngredient;
+		
+		public OilMix(OilEffect oilEffectIn, Ingredient ingredientIn, OilEffect oilEffectOut)
+		{
+			from = oilEffectIn;
+			brewingIngredient = ingredientIn;
+			to = oilEffectOut;
+		}
 	}
 }

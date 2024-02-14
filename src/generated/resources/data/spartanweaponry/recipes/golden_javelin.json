@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:javelin",
-  "pattern": [
-    "/#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "javelin"
+      ]
+    }
   ],
+  "group": "spartanweaponry:javelin",
   "key": {
     "#": {
       "tag": "forge:ingots/gold"
@@ -12,15 +17,10 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "/#"
+  ],
   "result": {
     "item": "spartanweaponry:golden_javelin"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "javelin"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

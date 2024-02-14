@@ -27,8 +27,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -44,7 +42,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -141,14 +138,14 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 		if(entityLiving instanceof Player)
 		{
 			Player player = (Player)entityLiving;
-			boolean isCreativeOrInfinite = player.getAbilities().instabuild || EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) > 0;
+			boolean isCreativeOrInfinite = player.getAbilities().instabuild || stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) > 0;
             
     		if(this.getLoadProgress(stack, entityLiving) == 1.0f)
     		{
     			// Load the Crossbow
     			stack.getOrCreateTag().putBoolean(NBT_CHARGED, true);
     			ItemStack bolt = ItemStack.EMPTY;
-    			int count = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MULTISHOT, stack) > 0 ? 3 : 1;
+    			int count = stack.getEnchantmentLevel(Enchantments.MULTISHOT) > 0 ? 3 : 1;
     			
     			bolt = entityLiving.getProjectile(stack);
     			if(bolt.isEmpty() || !BOLT.test(bolt))			// Fix: When in Creative Mode, the player will return an Arrow item as ammo, which is invalid; replace it with a Bolt
@@ -240,7 +237,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     	entityBolt.setCritArrow(true);
     	entityBolt.setSoundEvent(SoundEvents.CROSSBOW_HIT);
     	entityBolt.setShotFromCrossbow(true);
-        int pierceLvl = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PIERCING, crossbow);
+        int pierceLvl = crossbow.getEnchantmentLevel(Enchantments.PIERCING);
     	if(pierceLvl > 0)
     		entityBolt.setPierceLevel((byte)pierceLvl);
         
@@ -252,21 +249,21 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     	for(WeaponTrait trait : rangedTraits)
     		trait.getRangedCallback().ifPresent((callback) -> callback.onProjectileSpawn(material, entityBolt));
         
-        int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, crossbow);
+        int j = crossbow.getEnchantmentLevel(Enchantments.POWER_ARROWS);
 
         if (j > 0)
         {
             entityBolt.setBaseDamage(entityBolt.getBaseDamage() + j * 0.5D + 0.5D);
         }
 
-        int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, crossbow);
+        int k = crossbow.getEnchantmentLevel(Enchantments.PUNCH_ARROWS);
 
         if (k > 0)
         {
             entityBolt.setKnockback(k);
         }
 
-        if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, crossbow) > 0)
+        if (crossbow.getEnchantmentLevel(Enchantments.FLAMING_ARROWS) > 0)
         {
             entityBolt.setSecondsOnFire(100);
         }
@@ -294,7 +291,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     	ItemStack ammoStack = playerIn.getProjectile(stack);
     	boolean hasAmmo = !ammoStack.isEmpty();
     	
-    	if(!playerIn.getAbilities().instabuild && !hasAmmo && !stack.getOrCreateTag().getBoolean(NBT_CHARGED) && EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) == 0)
+    	if(!playerIn.getAbilities().instabuild && !hasAmmo && !stack.getOrCreateTag().getBoolean(NBT_CHARGED) && stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) == 0)
     	{
     		return !hasAmmo ? InteractionResultHolder.fail(stack) : InteractionResultHolder.pass(stack);
     	}
@@ -321,7 +318,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     }
     
     @Override
-	public int getItemEnchantability(ItemStack stack)
+	public int getEnchantmentValue(ItemStack stack)
 	{
 		return material != null ? material.getEnchantmentValue() : 1;
 	}
@@ -337,7 +334,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 	{
 		if(customDisplayName == null)
 			return super.getName(stack);
-		return new TranslatableComponent(customDisplayName, material.translateName());
+		return Component.translatable(customDisplayName, material.translateName());
 	}
 	
     @Override
@@ -357,7 +354,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     	}
 
     	if(!canBeCrafted)
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
 
     	material.addTagErrorTooltip(stack, tooltip);
     	
@@ -366,40 +363,40 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     		ItemStack bolt = ItemStack.of(stack.getTag().getCompound(NBT_PROJECTILE));
     		if(!bolt.isEmpty())
     		{
-	    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.heavy_crossbow.loaded_bolt", ModSpartanWeaponry.ID), String.format("[%s x%d]", ChatFormatting.AQUA.toString() + bolt.getHoverName().getString() + ChatFormatting.WHITE.toString(), bolt.getCount())));
-	        	tooltip.add(new TextComponent(""));
+	    		tooltip.add(Component.translatable(String.format("tooltip.%s.heavy_crossbow.loaded_bolt", ModSpartanWeaponry.ID), String.format("[%s x%d]", ChatFormatting.AQUA.toString() + bolt.getHoverName().getString() + ChatFormatting.WHITE.toString(), bolt.getCount())));
+	        	tooltip.add(Component.empty());
     		}
     	}
 
     	if(material.hasAnyBonusTraits())
     	{
 			if(isShiftPressed)
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 			else
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.DARK_AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.DARK_AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 
 			if(!rangedTraits.isEmpty())
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
 
 			rangedTraits.forEach((trait) -> trait.addTooltip(stack, tooltip, isShiftPressed));
-        	tooltip.add(new TextComponent(""));
+        	tooltip.add(Component.empty());
     	}
     	
     	if(isShiftPressed)
     	{
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.heavy_crossbow.desc", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.heavy_crossbow.desc_2", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.heavy_crossbow.desc_3", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.heavy_crossbow.desc", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.heavy_crossbow.desc_2", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.heavy_crossbow.desc_3", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     	}
     	else
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
     	
-    	tooltip.add(new TextComponent(""));
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.modifiers.ammo.type", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.modifiers.ammo.bolt", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.modifiers.heavy_crossbow.load_time", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.modifiers.heavy_crossbow.load_time.value", ModSpartanWeaponry.ID), (float)getFullLoadTicks(stack) / 20.0f).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.modifiers.heavy_crossbow.aim_time", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.modifiers.heavy_crossbow.aim_time.value", ModSpartanWeaponry.ID), (float)getAimTicks(stack) / 20.0f).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(new TextComponent(""));
+    	tooltip.add(Component.empty());
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.ammo.type", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.ammo.bolt", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.heavy_crossbow.load_time", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.heavy_crossbow.load_time.value", ModSpartanWeaponry.ID), (float)getFullLoadTicks(stack) / 20.0f).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.heavy_crossbow.aim_time", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.heavy_crossbow.aim_time.value", ModSpartanWeaponry.ID), (float)getAimTicks(stack) / 20.0f).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.empty());
     }
 
     @Override
@@ -410,7 +407,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     		ItemStack bolt = ItemStack.of(item.getTag().getCompound(NBT_PROJECTILE));
     		if(!bolt.isEmpty())
     		{
-    			return new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".highlight_heavy_crossbow", displayName, bolt.getHoverName(), bolt.getCount());
+    			return Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".highlight_heavy_crossbow", displayName, bolt.getHoverName(), bolt.getCount());
     		}
 		}
 
@@ -438,7 +435,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 	
 	public int getFullLoadTicks(ItemStack stack)
 	{
-		int i = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.QUICK_CHARGE, stack);
+		int i = stack.getEnchantmentLevel(Enchantments.QUICK_CHARGE);
 		return Mth.clamp(loadTicks - 5 * i, 0, loadTicks);
 	}
 	
@@ -449,7 +446,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 	
 	public int getAimTicks(ItemStack stack)
 	{
-		int i = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SHARPSHOOTER.get(), stack);
+		int i = stack.getEnchantmentLevel(ModEnchantments.SHARPSHOOTER.get());
 		return Mth.clamp(aimTicks - 2 * i, 0, aimTicks);
 	}
     

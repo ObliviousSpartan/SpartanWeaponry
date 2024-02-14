@@ -1,38 +1,38 @@
 {
   "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "spartanweaponry:item/huge_bolt_quiver_base"
-  },
   "overrides": [
     {
+      "model": "spartanweaponry:item/huge_bolt_quiver_1",
       "predicate": {
         "spartanweaponry:arrow": 1.0
-      },
-      "model": "spartanweaponry:item/huge_bolt_quiver_1"
+      }
     },
     {
+      "model": "spartanweaponry:item/huge_bolt_quiver_2",
       "predicate": {
         "spartanweaponry:arrow": 2.0
-      },
-      "model": "spartanweaponry:item/huge_bolt_quiver_2"
+      }
     },
     {
+      "model": "spartanweaponry:item/huge_bolt_quiver_3",
       "predicate": {
         "spartanweaponry:arrow": 3.0
-      },
-      "model": "spartanweaponry:item/huge_bolt_quiver_3"
+      }
     },
     {
+      "model": "spartanweaponry:item/huge_bolt_quiver_4",
       "predicate": {
         "spartanweaponry:arrow": 4.0
-      },
-      "model": "spartanweaponry:item/huge_bolt_quiver_4"
+      }
     },
     {
+      "model": "spartanweaponry:item/huge_bolt_quiver_5",
       "predicate": {
         "spartanweaponry:arrow": 5.0
-      },
-      "model": "spartanweaponry:item/huge_bolt_quiver_5"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "layer0": "spartanweaponry:item/huge_bolt_quiver_base"
+  }
 }

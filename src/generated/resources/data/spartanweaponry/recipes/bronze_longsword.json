@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:longsword",
-  "pattern": [
-    " # ",
-    " # ",
-    "#|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longsword",
+        "bronze"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/bronze"
+      }
+    }
   ],
+  "group": "spartanweaponry:longsword",
   "key": {
     "#": {
       "tag": "forge:ingots/bronze"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " # ",
+    " # ",
+    "#|#"
+  ],
   "result": {
     "item": "spartanweaponry:bronze_longsword"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "longsword",
-        "bronze"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/bronze",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

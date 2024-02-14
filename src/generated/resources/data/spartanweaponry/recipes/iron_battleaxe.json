@@ -1,31 +1,31 @@
 {
   "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "battleaxe"
+      ]
+    }
+  ],
   "group": "spartanweaponry:battleaxe",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
   "pattern": [
     "###",
     "#/#",
     " | "
   ],
-  "key": {
-    "#": {
-      "tag": "forge:ingots/iron"
-    },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
-    "/": {
-      "tag": "forge:rods/wooden"
-    }
-  },
   "result": {
     "item": "spartanweaponry:iron_battleaxe"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "battleaxe"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

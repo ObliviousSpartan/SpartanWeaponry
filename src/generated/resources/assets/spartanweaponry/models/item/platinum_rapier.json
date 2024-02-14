@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/rapier",
-  "textures": {
-    "layer0": "spartanweaponry:item/platinum_rapier",
-    "coating": "spartanweaponry:item/coating/rapier"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/platinum_rapier_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/platinum_rapier_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/platinum_rapier_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/platinum_rapier_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/rapier",
+    "layer0": "spartanweaponry:item/platinum_rapier"
+  }
 }

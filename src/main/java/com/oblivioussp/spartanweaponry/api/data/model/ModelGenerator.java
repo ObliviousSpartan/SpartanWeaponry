@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.ExistingModelFile;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * Contains helper methods to generate customised model files based off items from Spartan Weaponry.<br>
@@ -30,7 +31,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createSimpleModel(Item item)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		return itemModelProvider.withExistingParent(itemPath, itemModelProvider.mcLoc("item/generated")).texture("layer0", "item/" + itemPath).getLocation();
 	}
 	
@@ -42,7 +43,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createSimpleModel(Item item, ResourceLocation parent)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		return itemModelProvider.withExistingParent(itemPath, parent).texture("layer0", "item/" + itemPath).getLocation();
 	}
 	
@@ -54,7 +55,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createMeleeWeaponModels(Item item, ResourceLocation baseModel, ResourceLocation coatingTexture)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		ResourceLocation blockingModel = itemModelProvider.withExistingParent(itemPath + "_blocking", new ResourceLocation(baseModel.getNamespace(), baseModel.getPath() + "_blocking")).
 				customLoader(OilCoatingItemModelBuilder::new).end().
 				texture("layer0", "item/" + itemPath).
@@ -82,7 +83,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createCestusModels(Item item, ResourceLocation baseModel, ResourceLocation coatingTexture)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		ResourceLocation blockingModel = itemModelProvider.withExistingParent(itemPath + "_blocking", new ResourceLocation(baseModel.getNamespace(), baseModel.getPath() + "_blocking")).
 				texture("layer0", "item/" + itemPath).
 				texture("coating", coatingTexture.getPath()).
@@ -107,7 +108,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createThrowingWeaponModels(Item item, ResourceLocation baseModel, ResourceLocation baseThrowingModel, ResourceLocation emptyModel)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		ResourceLocation throwingModel = itemModelProvider.withExistingParent(itemPath + "_throwing", baseThrowingModel).texture("layer0", "item/" + itemPath).getLocation();
 		return itemModelProvider.withExistingParent(itemPath, baseModel).texture("layer0", "item/" + itemPath).
 				override().predicate(ModelOverrides.THROWING, 1.0f).predicate(ModelOverrides.EMPTY, 0.0f).model(new ExistingModelFile(throwingModel, itemModelProvider.existingFileHelper)).end().
@@ -122,7 +123,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createVanillaSwordModels(Item item)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		return itemModelProvider.withExistingParent(itemPath, "minecraft:item/handheld").
 				customLoader(OilCoatingItemModelBuilder::new).end().
 				texture("layer0", "minecraft:item/" + itemPath).
@@ -287,7 +288,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createLongbowModels(Item item)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		ResourceLocation pulling0 = itemModelProvider.withExistingParent(itemPath + "_pulling_0", BaseModels.LONGBOW_PULLING).texture("layer0", "item/" + itemPath + "_pulling_0").getLocation();
 		ResourceLocation pulling1 = itemModelProvider.withExistingParent(itemPath + "_pulling_1", BaseModels.LONGBOW_PULLING).texture("layer0", "item/" + itemPath + "_pulling_1").getLocation();
 		ResourceLocation pulling2 = itemModelProvider.withExistingParent(itemPath + "_pulling_2", BaseModels.LONGBOW_PULLING).texture("layer0", "item/" + itemPath + "_pulling_2").getLocation();
@@ -305,7 +306,7 @@ public class ModelGenerator
 	 */
 	public ResourceLocation createHeavyCrossbowModels(Item item)
 	{
-		String itemPath = item.getRegistryName().getPath();
+		String itemPath = ForgeRegistries.ITEMS.getKey(item).getPath();
 		ResourceLocation pulling0 = itemModelProvider.withExistingParent(itemPath + "_pulling_0", BaseModels.HEAVY_CROSSBOW_PULLING).texture("layer0", "item/" + itemPath + "_pulling_0").getLocation();
 		ResourceLocation pulling1 = itemModelProvider.withExistingParent(itemPath + "_pulling_1", BaseModels.HEAVY_CROSSBOW_PULLING).texture("layer0", "item/" + itemPath + "_pulling_1").getLocation();
 		ResourceLocation pulling2 = itemModelProvider.withExistingParent(itemPath + "_pulling_2", BaseModels.HEAVY_CROSSBOW_PULLING).texture("layer0", "item/" + itemPath + "_pulling_2").getLocation();

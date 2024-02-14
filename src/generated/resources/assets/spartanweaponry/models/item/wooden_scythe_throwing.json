@@ -1,8 +1,8 @@
 {
   "parent": "spartanweaponry:item/base/scythe_throwing",
+  "loader": "spartanweaponry:oil_coated_item",
   "textures": {
-    "layer0": "spartanweaponry:item/wooden_scythe",
-    "coating": "spartanweaponry:item/coating/scythe"
-  },
-  "loader": "spartanweaponry:oil_coated_item"
+    "coating": "spartanweaponry:item/coating/scythe",
+    "layer0": "spartanweaponry:item/wooden_scythe"
+  }
 }

@@ -1,10 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:spear",
-  "pattern": [
-    "#",
-    "/"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "spear",
+        "tin"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/tin"
+      }
+    }
   ],
+  "group": "spartanweaponry:spear",
   "key": {
     "#": {
       "tag": "forge:ingots/tin"
@@ -13,23 +25,11 @@
       "tag": "spartanweaponry:poles"
     }
   },
+  "pattern": [
+    "#",
+    "/"
+  ],
   "result": {
     "item": "spartanweaponry:tin_spear"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "spear",
-        "tin"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/tin",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

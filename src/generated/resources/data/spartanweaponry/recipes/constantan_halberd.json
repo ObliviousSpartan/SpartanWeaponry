@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:halberd",
-  "pattern": [
-    " #",
-    "##",
-    "#/"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "halberd",
+        "constantan"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/constantan"
+      }
+    }
   ],
+  "group": "spartanweaponry:halberd",
   "key": {
     "#": {
       "tag": "forge:ingots/constantan"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    " #",
+    "##",
+    "#/"
+  ],
   "result": {
     "item": "spartanweaponry:constantan_halberd"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "halberd",
-        "constantan"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/constantan",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

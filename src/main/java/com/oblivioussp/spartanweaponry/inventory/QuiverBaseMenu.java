@@ -16,7 +16,7 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
@@ -38,7 +38,7 @@ public abstract class QuiverBaseMenu extends AbstractContainerMenu
 		slotFilter = slotFilterIn;
 		quiverStack = quiverStackIn;
 		emptySlotTexture = emptySlotTextureIn;
-		handler = quiverStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).resolve().orElseThrow();
+		handler = quiverStack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().orElseThrow();
 		
 		playerInvStart = handler.getSlots();
 		playerInvEnd = playerInvStart + 26;

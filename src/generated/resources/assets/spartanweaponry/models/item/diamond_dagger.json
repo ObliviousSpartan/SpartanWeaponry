@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/dagger",
-  "textures": {
-    "layer0": "spartanweaponry:item/diamond_dagger",
-    "coating": "spartanweaponry:item/coating/dagger"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/diamond_dagger_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/diamond_dagger_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/diamond_dagger_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/diamond_dagger_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/dagger",
+    "layer0": "spartanweaponry:item/diamond_dagger"
+  }
 }

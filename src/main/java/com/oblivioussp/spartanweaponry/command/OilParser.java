@@ -17,8 +17,9 @@ import com.oblivioussp.spartanweaponry.api.OilEffects;
 import com.oblivioussp.spartanweaponry.api.oil.OilEffect;
 
 import net.minecraft.commands.SharedSuggestionProvider;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryManager;
 
@@ -26,12 +27,12 @@ public class OilParser
 {
 	public static final DynamicCommandExceptionType ERROR_UNKNOWN_OIL_EFFECT = new DynamicCommandExceptionType((object) -> 
 	{
-		return new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.error.unknown_oil_effect", object);
+		return Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.error.unknown_oil_effect", object);
 	});
 	
 	public static final DynamicCommandExceptionType ERROR_INVALID_OIL_EFFECT = new DynamicCommandExceptionType((object) -> 
 	{
-		return new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.error.invalid_oil_effect", object);
+		return Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.error.invalid_oil_effect", object);
 	});
 	
 	private static final BiFunction<SuggestionsBuilder, IForgeRegistry<OilEffect>, CompletableFuture<Suggestions>> SUGGEST_NOTHING = (builder, registry) -> builder.buildFuture();
@@ -81,7 +82,8 @@ public class OilParser
 	
 	private CompletableFuture<Suggestions> suggestOilEffect(SuggestionsBuilder builderIn, IForgeRegistry<OilEffect> oilRegistryIn)
 	{
-		Set<ResourceLocation> suggestions = oilRegistryIn.getKeys().stream().filter((oil) -> oil != OilEffects.NONE.get().getRegistryName() || oil != OilEffects.POTION.get().getRegistryName()).collect(Collectors.toSet());
+		ForgeRegistry<OilEffect> registry = RegistryManager.ACTIVE.getRegistry(OilEffects.REGISTRY_KEY);
+		Set<ResourceLocation> suggestions = oilRegistryIn.getKeys().stream().filter((oil) -> oil != registry.getKey(OilEffects.NONE.get()) || oil != registry.getKey(OilEffects.POTION.get())).collect(Collectors.toSet());
 		return SharedSuggestionProvider.suggestResource(suggestions, builderIn);
 	}
 	

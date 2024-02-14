@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "item": "spartanweaponry:diamond_throwing_knife"
-  },
   "addition": {
     "tag": "forge:ingots/netherite"
+  },
+  "base": {
+    "item": "spartanweaponry:diamond_throwing_knife"
   },
   "result": {
     "item": "spartanweaponry:netherite_throwing_knife"

@@ -46,7 +46,7 @@ public class MeleeBlockWeaponTrait extends WeaponTrait implements IActionTraitCa
 
 	public static void onBlockEvent(ShieldBlockEvent ev)
 	{
-		LivingEntity living = ev.getEntityLiving();
+		LivingEntity living = ev.getEntity();
 		if(living.getUseItem().getItem() instanceof IWeaponTraitContainer<?> container && container.hasWeaponTrait(WeaponTraits.BLOCK_MELEE.get()))
 		{
 			DamageSource source = ev.getDamageSource();

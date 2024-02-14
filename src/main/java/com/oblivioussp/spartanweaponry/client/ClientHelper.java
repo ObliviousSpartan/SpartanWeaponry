@@ -45,11 +45,10 @@ import com.oblivioussp.spartanweaponry.item.LongbowItem;
 import com.oblivioussp.spartanweaponry.item.QuiverBaseItem;
 import com.oblivioussp.spartanweaponry.item.SwordBaseItem;
 import com.oblivioussp.spartanweaponry.item.ThrowingWeaponItem;
-import com.oblivioussp.spartanweaponry.item.WeaponOilItem;
 import com.oblivioussp.spartanweaponry.util.Log;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.SkullModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -60,12 +59,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
-import net.minecraftforge.client.gui.ForgeIngameGui;
-import net.minecraftforge.client.gui.IIngameOverlay;
-import net.minecraftforge.client.gui.OverlayRegistry;
+import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.gui.overlay.IGuiOverlay;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -75,25 +75,35 @@ import top.theillusivec4.curios.api.CuriosApi;
 public class ClientHelper 
 {
 	
-	public static final IIngameOverlay LOAD_STATE = HudLoadState::render;
-	public static final IIngameOverlay QUIVER_AMMO = HudQuiverAmmo::render;
-	public static final IIngameOverlay OIL_USES = HudOilUses::render;
-	public static final IIngameOverlay NEW_CROSSHAIR = HudCrosshair::render;
+	public static final IGuiOverlay LOAD_STATE = HudLoadState::render;
+	public static final IGuiOverlay QUIVER_AMMO = HudQuiverAmmo::render;
+	public static final IGuiOverlay OIL_USES = HudOilUses::render;
+	public static final IGuiOverlay NEW_CROSSHAIR = HudCrosshair::render;
 	
-	public static void registerItemRenders()
+	public static final ItemColor COLOR_TIPPED_PROJECTILE = (stack, idx) -> idx == 1 ? PotionUtils.getColor(stack) : 0xFFFFFF;
+	public static final ItemColor COLOR_OIL = (stack, idx) ->
+		{
+			OilEffect oilEffect = OilHelper.getOilFromStack(stack);
+			return idx == 1 ? oilEffect.getColor(stack) : 0xFFFFFF;
+		};
+	
+	@SubscribeEvent
+	public static void registerItemColoursHandler(RegisterColorHandlersEvent.Item ev)
 	{
-		// Register item property overrides here
-		registerTippedProjectile(ModItems.TIPPED_WOODEN_ARROW.get());
-		registerTippedProjectile(ModItems.TIPPED_COPPER_ARROW.get());
-		registerTippedProjectile(ModItems.TIPPED_IRON_ARROW.get());
-		registerTippedProjectile(ModItems.TIPPED_DIAMOND_ARROW.get());
-		registerTippedProjectile(ModItems.TIPPED_NETHERITE_ARROW.get());
-		registerTippedProjectile(ModItems.TIPPED_BOLT.get());
-		registerTippedProjectile(ModItems.TIPPED_COPPER_BOLT.get());
-		registerTippedProjectile(ModItems.TIPPED_DIAMOND_BOLT.get());
-		registerTippedProjectile(ModItems.TIPPED_NETHERITE_BOLT.get());
-		registerOil(ModItems.WEAPON_OIL.get());
-		
+		ev.register(COLOR_TIPPED_PROJECTILE, ModItems.TIPPED_WOODEN_ARROW.get(), 
+				ModItems.TIPPED_COPPER_ARROW.get(),
+				ModItems.TIPPED_IRON_ARROW.get(),
+				ModItems.TIPPED_DIAMOND_ARROW.get(),
+				ModItems.TIPPED_NETHERITE_ARROW.get(),
+				ModItems.TIPPED_BOLT.get(),
+				ModItems.TIPPED_COPPER_BOLT.get(),
+				ModItems.TIPPED_DIAMOND_BOLT.get(),
+				ModItems.TIPPED_NETHERITE_BOLT.get());
+		ev.register(COLOR_OIL, ModItems.WEAPON_OIL.get());
+	}
+	
+	public static void registerCurioRenders()
+	{
 		if(ModList.get().isLoaded(CuriosApi.MODID))
 		{
 			CurioRenderer.register();
@@ -164,23 +174,6 @@ public class ClientHelper
 		{
 			return quiver.getAmmoCount(stack);
 		});
-	}
-	
-	public static void registerTippedProjectile(Item arrow)
-	{
-		Minecraft.getInstance().getItemColors().register((stack, idx) -> 
-		{
-			return idx == 1 ? PotionUtils.getColor(stack) : 0xFFFFFF;
-		}, arrow);
-	}
-	
-	public static void registerOil(WeaponOilItem oil)
-	{
-		Minecraft.getInstance().getItemColors().register((stack, idx) ->
-		{
-			OilEffect oilEffect = OilHelper.getOilFromStack(stack);
-			return idx == 1 ? oilEffect.getColor(stack) : 0xFFFFFF;
-		}, oil);
 	}
 	
 	@SubscribeEvent
@@ -274,17 +267,19 @@ public class ClientHelper
 		MenuScreens.register(ModMenus.QUIVER_BOLT.get(), QuiverBoltScreen::new);
 	}
 	
-	public static void registerHudOverlays()
+	@SubscribeEvent
+	public static void registerHudOverlays(RegisterGuiOverlaysEvent ev)
 	{
-		OverlayRegistry.registerOverlayTop(ModSpartanWeaponry.ID + ":LoadState", LOAD_STATE);
-		OverlayRegistry.registerOverlayTop(ModSpartanWeaponry.ID + ":QuiverAmmo", QUIVER_AMMO);
-		OverlayRegistry.registerOverlayTop(ModSpartanWeaponry.ID + ":OilUses", OIL_USES);
-		OverlayRegistry.registerOverlayAbove(ForgeIngameGui.CROSSHAIR_ELEMENT, ModSpartanWeaponry.ID + ":Crosshair", NEW_CROSSHAIR);
+		ev.registerAboveAll("load_state", LOAD_STATE);
+		ev.registerAboveAll("quiver_ammo", QUIVER_AMMO);
+		ev.registerAboveAll("oil_uses", OIL_USES);
+		ev.registerAbove(VanillaGuiOverlay.CROSSHAIR.id(), "crosshair", NEW_CROSSHAIR);
 	}
-	
-	public static void registerTooltipComponents()
+
+	@SubscribeEvent
+	public static void registerTooltipComponents(RegisterClientTooltipComponentFactoriesEvent ev)
 	{
-		MinecraftForgeClient.registerTooltipComponentFactory(QuiverTooltip.class, ClientQuiverTooltip::new);
-		MinecraftForgeClient.registerTooltipComponentFactory(OilCoatingTooltip.class, ClientOilCoatingTooltip::new);
+		ev.register(QuiverTooltip.class, ClientQuiverTooltip::new);
+		ev.register(OilCoatingTooltip.class, ClientOilCoatingTooltip::new);
 	}
 }

@@ -3,7 +3,6 @@ package com.oblivioussp.spartanweaponry.api.trait;
 import java.util.List;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 
 public class WeaponTraitWithMagnitude extends WeaponTrait 
@@ -16,7 +15,7 @@ public class WeaponTraitWithMagnitude extends WeaponTrait
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<Component> tooltip)
 	{
-		tooltip.add(tooltipIndent().append(new TranslatableComponent(String.format("tooltip.%s.trait.%s.desc", modId, this.type), magnitude).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
+		tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.desc", modId, this.type), magnitude).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
 	}
 
 }

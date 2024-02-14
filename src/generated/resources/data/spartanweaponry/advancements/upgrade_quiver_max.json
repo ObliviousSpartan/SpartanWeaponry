@@ -1,30 +1,30 @@
 {
   "parent": "spartanweaponry:upgrade_quiver",
-  "display": {
-    "icon": {
-      "item": "spartanweaponry:huge_arrow_quiver"
-    },
-    "title": {
-      "translate": "advancement.spartanweaponry.upgrade_quiver_max.title"
-    },
-    "description": {
-      "translate": "advancement.spartanweaponry.upgrade_quiver_max.desc"
-    },
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "has_max_upgraded_quiver": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "spartanweaponry:upgraded_quivers_max"
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.spartanweaponry.upgrade_quiver_max.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "spartanweaponry:huge_arrow_quiver"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.spartanweaponry.upgrade_quiver_max.title"
     }
   },
   "requirements": [

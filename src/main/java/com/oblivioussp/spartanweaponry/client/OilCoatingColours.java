@@ -24,7 +24,7 @@ public class OilCoatingColours implements IReloadable
 		if(oilLazyHandler.isPresent())
 		{
 			IOilHandler oilHandler = oilLazyHandler.resolve().get();
-			return oilHandler.isOiled() ? oilHandler.getEffect().get().getColor(stack) : 0;
+			return oilHandler.isOiled() ? oilHandler.getEffect().get().getColor(stack) : 0x00000000;
 		}
 		return 0;
 	};
@@ -34,6 +34,7 @@ public class OilCoatingColours implements IReloadable
 		ReloadableHandler.addToReloadList(new OilCoatingColours());
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void reload() 
 	{

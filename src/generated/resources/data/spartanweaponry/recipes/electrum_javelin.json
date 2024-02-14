@@ -1,9 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:javelin",
-  "pattern": [
-    "/#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "javelin",
+        "electrum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/electrum"
+      }
+    }
   ],
+  "group": "spartanweaponry:javelin",
   "key": {
     "#": {
       "tag": "forge:ingots/electrum"
@@ -12,23 +25,10 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "/#"
+  ],
   "result": {
     "item": "spartanweaponry:electrum_javelin"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "javelin",
-        "electrum"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/electrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

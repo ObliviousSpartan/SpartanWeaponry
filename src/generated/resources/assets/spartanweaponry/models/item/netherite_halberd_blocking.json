@@ -1,8 +1,8 @@
 {
   "parent": "spartanweaponry:item/base/halberd_blocking",
+  "loader": "spartanweaponry:oil_coated_item",
   "textures": {
-    "layer0": "spartanweaponry:item/netherite_halberd",
-    "coating": "spartanweaponry:item/coating/halberd"
-  },
-  "loader": "spartanweaponry:oil_coated_item"
+    "coating": "spartanweaponry:item/coating/halberd",
+    "layer0": "spartanweaponry:item/netherite_halberd"
+  }
 }

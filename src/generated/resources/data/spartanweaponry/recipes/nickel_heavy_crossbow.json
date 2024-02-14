@@ -1,45 +1,45 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:heavy_crossbow",
-  "pattern": [
-    "#D#",
-    "PHP",
-    " | "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "heavy_crossbow",
+        "nickel"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/nickel"
+      }
+    }
   ],
+  "group": "spartanweaponry:heavy_crossbow",
   "key": {
     "#": {
       "tag": "forge:ingots/nickel"
-    },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
-    "P": {
-      "tag": "minecraft:planks"
     },
     "D": {
       "item": "minecraft:bow"
     },
     "H": {
       "item": "minecraft:tripwire_hook"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "#D#",
+    "PHP",
+    " | "
+  ],
   "result": {
     "item": "spartanweaponry:nickel_heavy_crossbow"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "heavy_crossbow",
-        "nickel"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/nickel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

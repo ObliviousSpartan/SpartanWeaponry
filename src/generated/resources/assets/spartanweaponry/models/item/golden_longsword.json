@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/longsword",
-  "textures": {
-    "layer0": "spartanweaponry:item/golden_longsword",
-    "coating": "spartanweaponry:item/coating/longsword"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/golden_longsword_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/golden_longsword_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/golden_longsword_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/golden_longsword_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/longsword",
+    "layer0": "spartanweaponry:item/golden_longsword"
+  }
 }

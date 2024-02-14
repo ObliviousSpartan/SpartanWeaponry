@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:quarterstaff",
-  "pattern": [
-    "  #",
-    " / ",
-    "#  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "quarterstaff"
+      ]
+    }
   ],
+  "group": "spartanweaponry:quarterstaff",
   "key": {
     "#": {
       "tag": "forge:cobblestone"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "  #",
+    " / ",
+    "#  "
+  ],
   "result": {
     "item": "spartanweaponry:stone_quarterstaff"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "quarterstaff"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

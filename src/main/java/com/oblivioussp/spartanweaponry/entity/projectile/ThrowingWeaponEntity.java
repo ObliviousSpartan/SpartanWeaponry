@@ -105,7 +105,7 @@ public class ThrowingWeaponEntity extends AbstractArrow implements IEntityAdditi
 	public void tick() 
 	{
 		if(waterInertia == 0.0f)
-			waterInertia = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.HYDRODYNAMIC.get(), getWeaponItem()) == 1 ? 0.98f : -1.0f;
+			waterInertia = getWeaponItem().getEnchantmentLevel(ModEnchantments.HYDRODYNAMIC.get()) == 1 ? 0.98f : -1.0f;
 		
 		Entity thrower = getOwner();			//func_234616_v_();
 		if((inGroundTime > 4 || isReturning) && thrower != null)
@@ -427,7 +427,7 @@ public class ThrowingWeaponEntity extends AbstractArrow implements IEntityAdditi
 			stack.getTag().putBoolean(ThrowingWeaponItem.NBT_ORIGINAL, false);
 		}
 		getEntityData().set(DATA_WEAPON, stack);
-		getEntityData().set(DATA_RETURN, (byte)EnchantmentHelper.getItemEnchantmentLevel(Enchantments.LOYALTY, stack));
+		getEntityData().set(DATA_RETURN, (byte)stack.getEnchantmentLevel(Enchantments.LOYALTY));
 	}
 	
 	protected boolean canBeCaughtInMidair(Entity shooter, Entity entityHit)

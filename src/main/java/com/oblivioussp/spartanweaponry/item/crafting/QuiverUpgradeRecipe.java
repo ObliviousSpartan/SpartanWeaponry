@@ -14,10 +14,9 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.UpgradeRecipe;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class QuiverUpgradeRecipe extends UpgradeRecipe
 {
@@ -31,11 +30,11 @@ public class QuiverUpgradeRecipe extends UpgradeRecipe
 	{
 		ItemStack inputStack = inv.getItem(0);
 		ItemStack outputStack = super.assemble(inv);
-		LazyOptional<IItemHandler> inputCap = inputStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
+		LazyOptional<IItemHandler> inputCap = inputStack.getCapability(ForgeCapabilities.ITEM_HANDLER);
 		if(inputCap.isPresent())
 		{
 			// Place the items in the input stack into the output stack 
-			LazyOptional<IItemHandler> outputCap = outputStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
+			LazyOptional<IItemHandler> outputCap = outputStack.getCapability(ForgeCapabilities.ITEM_HANDLER);
 			if(outputCap.isPresent())
 			{
 				IItemHandler inputHandler = inputCap.resolve().orElseThrow();
@@ -68,7 +67,7 @@ public class QuiverUpgradeRecipe extends UpgradeRecipe
 		return RecipeType.SMITHING;
 	}
 
-	public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<QuiverUpgradeRecipe>
+	public static class Serializer implements RecipeSerializer<QuiverUpgradeRecipe>
 	{
 		public Serializer() {}
 

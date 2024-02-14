@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:scythe",
-  "pattern": [
-    "## ",
-    "  #",
-    " / "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "scythe"
+      ]
+    }
   ],
+  "group": "spartanweaponry:scythe",
   "key": {
     "#": {
       "tag": "forge:gems/diamond"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "## ",
+    "  #",
+    " / "
+  ],
   "result": {
     "item": "spartanweaponry:diamond_scythe"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "scythe"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

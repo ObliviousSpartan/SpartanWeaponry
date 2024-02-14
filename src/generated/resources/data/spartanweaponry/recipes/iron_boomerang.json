@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:boomerang",
-  "pattern": [
-    "#PP",
-    "P  ",
-    "P  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "boomerang"
+      ]
+    }
   ],
+  "group": "spartanweaponry:boomerang",
   "key": {
     "#": {
       "tag": "forge:ingots/iron"
@@ -14,15 +17,12 @@
       "tag": "minecraft:planks"
     }
   },
+  "pattern": [
+    "#PP",
+    "P  ",
+    "P  "
+  ],
   "result": {
     "item": "spartanweaponry:iron_boomerang"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "boomerang"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

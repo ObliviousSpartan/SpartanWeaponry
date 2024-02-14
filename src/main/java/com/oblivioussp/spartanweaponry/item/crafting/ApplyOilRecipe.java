@@ -74,7 +74,7 @@ public class ApplyOilRecipe extends CustomRecipe
 				// Oil found
 				if(stack.is(ModItems.WEAPON_OIL.get()))
 				{
-					// Already have an oil; not a valid recipe
+					// Aleady have an oil; not a valid recipe
 					if(!oilStack.isEmpty())
 						return ItemStack.EMPTY;
 					oilStack = stack;
@@ -82,7 +82,7 @@ public class ApplyOilRecipe extends CustomRecipe
 				// Oilable weapon found
 				else if(stack.is(ModItemTags.OILABLE_WEAPONS))
 				{
-					// Already have an oilable weapon; not a valid recipe
+					// Aleady have an oilable weapon; not a valid recipe
 					if(!weaponStack.isEmpty())
 						return ItemStack.EMPTY;
 					weaponStack = stack;

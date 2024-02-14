@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/battleaxe",
-  "textures": {
-    "layer0": "spartanweaponry:item/netherite_battleaxe",
-    "coating": "spartanweaponry:item/coating/battleaxe"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/netherite_battleaxe_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/netherite_battleaxe_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/netherite_battleaxe_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/netherite_battleaxe_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/battleaxe",
+    "layer0": "spartanweaponry:item/netherite_battleaxe"
+  }
 }

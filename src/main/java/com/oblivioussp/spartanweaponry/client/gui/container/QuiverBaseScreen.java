@@ -19,14 +19,12 @@ import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
 public class QuiverBaseScreen<T extends QuiverBaseMenu> extends AbstractContainerScreen<T> 
@@ -36,9 +34,9 @@ public class QuiverBaseScreen<T extends QuiverBaseMenu> extends AbstractContaine
 	protected final ResourceLocation GUI_TEXTURE_LARGE = new ResourceLocation(ModSpartanWeaponry.ID, "textures/gui/quiver_large.png");
 	protected final ResourceLocation GUI_TEXTURE_HUGE = new ResourceLocation(ModSpartanWeaponry.ID, "textures/gui/quiver_huge.png");
 	
-	protected final Component PRIORITY_BUTTON_TOOLTIP = new TextComponent("[").append(new TranslatableComponent("gui." + ModSpartanWeaponry.ID + ".set_priority_slot")).append(new TextComponent("]"));
-	protected final Component AMMO_COLLECT_ENABLED_BUTTON_TOOLTIP = new TranslatableComponent("gui." + ModSpartanWeaponry.ID + ".ammo_collect_enabled");
-	protected final Component AMMO_COLLECT_DISABLED_BUTTON_TOOLTIP = new TranslatableComponent("gui." + ModSpartanWeaponry.ID + ".ammo_collect_disabled");
+	protected final Component PRIORITY_BUTTON_TOOLTIP = Component.literal("[").append(Component.translatable("gui." + ModSpartanWeaponry.ID + ".set_priority_slot")).append(Component.literal("]"));
+	protected final Component AMMO_COLLECT_ENABLED_BUTTON_TOOLTIP = Component.translatable("gui." + ModSpartanWeaponry.ID + ".ammo_collect_enabled");
+	protected final Component AMMO_COLLECT_DISABLED_BUTTON_TOOLTIP = Component.translatable("gui." + ModSpartanWeaponry.ID + ".ammo_collect_disabled");
 	
 	protected final ResourceLocation texture;
 	protected final ItemStack quiver;
@@ -53,7 +51,7 @@ public class QuiverBaseScreen<T extends QuiverBaseMenu> extends AbstractContaine
 		prioritySlot = quiver.getOrCreateTag().getInt(QuiverBaseItem.NBT_PROIRITY_SLOT);
 		isAmmoCollectEnabled = quiver.getOrCreateTag().getBoolean(QuiverBaseItem.NBT_AMMO_COLLECT);
 		
-		LazyOptional<IItemHandler> handler = quiver.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
+		LazyOptional<IItemHandler> handler = quiver.getCapability(ForgeCapabilities.ITEM_HANDLER);
 		if(handler.isPresent())
 			ammoSlots = handler.resolve().orElseThrow().getSlots();
 		else
@@ -88,7 +86,7 @@ public class QuiverBaseScreen<T extends QuiverBaseMenu> extends AbstractContaine
 		{
 			isAmmoCollectEnabled = !isAmmoCollectEnabled;
 			NetworkHandler.sendPacketToServer(new QuiverButtonPacket(isAmmoCollectEnabled));
-		}, this::drawAmmoCollectTooltip, TextComponent.EMPTY));
+		}, this::drawAmmoCollectTooltip, Component.empty()));
 		for(int i = 0; i < ammoSlots; i++)
 		{
 			Slot slot = menu.getSlot(i);
@@ -97,7 +95,7 @@ public class QuiverBaseScreen<T extends QuiverBaseMenu> extends AbstractContaine
 				// Do button pushing actions here
 				prioritySlot = hoveredSlot.getContainerSlot();
 				NetworkHandler.sendPacketToServer(new QuiverPrioritySlotPacket(hoveredSlot.getContainerSlot()));
-			}, this::drawButtonTooltip, TextComponent.EMPTY));
+			}, this::drawButtonTooltip, Component.empty()));
 		}
 	}
 	

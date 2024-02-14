@@ -7,7 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.gui.ForgeIngameGui;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
 
 public class HudLoadState
 {
@@ -15,7 +15,7 @@ public class HudLoadState
 	protected static final int COLOUR_LOAD_READY = 0x6060FFFF;	// Teal-ish
 	protected static final int COLOUR_LOADED = 0x6040C040;		// Green
 
-	public static void render(ForgeIngameGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight) 
+	public static void render(ForgeGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight) 
 	{
 		Minecraft mc = Minecraft.getInstance();
 		
@@ -59,7 +59,7 @@ public class HudLoadState
 					posY = mc.getWindow().getGuiScaledHeight() - 3 - Mth.clamp(Mth.floor((16 * loadProgress) + partialTicks), 0, 16);
 		
 				if(loadSlot != -1 || isOffhand)
-					ForgeIngameGui.fill(poseStack, posX, posY, posX + 16, (mc.getWindow().getGuiScaledHeight() - 19) + 16, colour);
+					ForgeGui.fill(poseStack, posX, posY, posX + 16, (mc.getWindow().getGuiScaledHeight() - 19) + 16, colour);
 			}
 		}
 	}

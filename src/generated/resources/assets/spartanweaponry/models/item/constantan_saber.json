@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/saber",
-  "textures": {
-    "layer0": "spartanweaponry:item/constantan_saber",
-    "coating": "spartanweaponry:item/coating/saber"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/constantan_saber_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/constantan_saber_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/constantan_saber_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/constantan_saber_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/saber",
+    "layer0": "spartanweaponry:item/constantan_saber"
+  }
 }

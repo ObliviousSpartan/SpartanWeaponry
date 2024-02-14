@@ -1,10 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:tomahawk",
-  "pattern": [
-    "|#",
-    " #"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "tomahawk",
+        "electrum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/electrum"
+      }
+    }
   ],
+  "group": "spartanweaponry:tomahawk",
   "key": {
     "#": {
       "tag": "forge:ingots/electrum"
@@ -13,23 +25,11 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "|#",
+    " #"
+  ],
   "result": {
     "item": "spartanweaponry:electrum_tomahawk"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "tomahawk",
-        "electrum"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/electrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

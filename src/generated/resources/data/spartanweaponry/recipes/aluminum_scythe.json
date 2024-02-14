@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:scythe",
-  "pattern": [
-    "## ",
-    "  #",
-    " / "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "scythe",
+        "aluminum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/aluminum"
+      }
+    }
   ],
+  "group": "spartanweaponry:scythe",
   "key": {
     "#": {
       "tag": "forge:ingots/aluminum"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "## ",
+    "  #",
+    " / "
+  ],
   "result": {
     "item": "spartanweaponry:aluminum_scythe"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "scythe",
-        "aluminum"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/aluminum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

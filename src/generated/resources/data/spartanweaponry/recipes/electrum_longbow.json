@@ -1,42 +1,42 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:longbow",
-  "pattern": [
-    "|/#",
-    "/ ~",
-    "#~~"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longbow",
+        "electrum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/electrum"
+      }
+    }
   ],
+  "group": "spartanweaponry:longbow",
   "key": {
     "#": {
       "tag": "forge:ingots/electrum"
     },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
     "/": {
       "tag": "forge:rods/wooden"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
     },
     "~": {
       "tag": "forge:string"
     }
   },
+  "pattern": [
+    "|/#",
+    "/ ~",
+    "#~~"
+  ],
   "result": {
     "item": "spartanweaponry:electrum_longbow"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "longbow",
-        "electrum"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/electrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:halberd",
-  "pattern": [
-    " #",
-    "##",
-    "#/"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "halberd"
+      ]
+    }
   ],
+  "group": "spartanweaponry:halberd",
   "key": {
     "#": {
       "tag": "forge:ingots/gold"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    " #",
+    "##",
+    "#/"
+  ],
   "result": {
     "item": "spartanweaponry:golden_halberd"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "halberd"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

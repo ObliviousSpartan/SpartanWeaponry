@@ -26,8 +26,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -197,7 +195,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	{
 		if(customDisplayName == null)
 			return super.getName(stack);
-		return new TranslatableComponent(customDisplayName, material.translateName());
+		return Component.translatable(customDisplayName, material.translateName());
 	}
 	
 	@Override
@@ -217,7 +215,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
     	}
 
     	if(!canBeCrafted)
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
 		
     	archetype.addTagErrorTooltip(stack, tooltip);
     	material.addTagErrorTooltip(stack, tooltip);
@@ -225,17 +223,17 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		if(traits != null && !traits.isEmpty())
 		{
 			if(isShiftPressed)
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 			else
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 
 			archetype.addTraitsToTooltip(stack, tooltip, isShiftPressed);
-//			tooltip.add(new TextComponent(""));
+//			tooltip.add(Component.empty());
 		}
-		tooltip.add(new TextComponent(""));
+		tooltip.add(Component.empty());
     	if(material.hasAnyBonusTraits())
     	{
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
     		material.addTraitsToTooltip(stack, tooltip, isShiftPressed);
     	}
 		
@@ -354,7 +352,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) 
 	{
-		if(allowdedIn(group))
+		if(allowedIn(group))
 		{
 			ItemStack stack = new ItemStack(this);
 			if(traits != null)

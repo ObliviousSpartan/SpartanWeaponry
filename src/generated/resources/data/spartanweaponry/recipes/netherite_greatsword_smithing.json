@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "item": "spartanweaponry:diamond_greatsword"
-  },
   "addition": {
     "tag": "forge:ingots/netherite"
+  },
+  "base": {
+    "item": "spartanweaponry:diamond_greatsword"
   },
   "result": {
     "item": "spartanweaponry:netherite_greatsword"

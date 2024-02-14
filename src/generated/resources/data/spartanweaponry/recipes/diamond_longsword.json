@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:longsword",
-  "pattern": [
-    " # ",
-    " # ",
-    "#|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longsword"
+      ]
+    }
   ],
+  "group": "spartanweaponry:longsword",
   "key": {
     "#": {
       "tag": "forge:gems/diamond"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " # ",
+    " # ",
+    "#|#"
+  ],
   "result": {
     "item": "spartanweaponry:diamond_longsword"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "longsword"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

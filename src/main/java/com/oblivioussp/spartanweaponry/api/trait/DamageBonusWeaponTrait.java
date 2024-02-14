@@ -8,7 +8,6 @@ import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 import com.oblivioussp.spartanweaponry.api.WeaponTraits;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -94,9 +93,9 @@ public class DamageBonusWeaponTrait extends MeleeCallbackWeaponTrait
 	{
 		if(APIConfigValues.damageBonusCheckArmorValue && (type == WeaponTraits.TYPE_DAMAGE_BONUS_CHEST || 
 				type == WeaponTraits.TYPE_DAMAGE_BONUS_UNARMOURED || type == WeaponTraits.TYPE_DAMAGE_BONUS_HELMET))
-			tooltip.add(tooltipIndent().append(new TranslatableComponent(String.format("tooltip.%s.trait.%s.desc.armor_points", SpartanWeaponryAPI.MOD_ID, type), (magnitude - 1.0f) * 100.0f, APIConfigValues.damageBonusMaxArmorValue).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
+			tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.desc.armor_points", SpartanWeaponryAPI.MOD_ID, type), (magnitude - 1.0f) * 100.0f, APIConfigValues.damageBonusMaxArmorValue).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
 		else
-			tooltip.add(tooltipIndent().append(new TranslatableComponent(String.format("tooltip.%s.trait.%s.desc", SpartanWeaponryAPI.MOD_ID, type), (magnitude - 1.0f) * 100.0f).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
+			tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.desc", SpartanWeaponryAPI.MOD_ID, type), (magnitude - 1.0f) * 100.0f).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
 	}
 
 	@Override

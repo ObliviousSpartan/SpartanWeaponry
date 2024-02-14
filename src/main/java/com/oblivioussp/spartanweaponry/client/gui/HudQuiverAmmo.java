@@ -20,13 +20,13 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.client.gui.ForgeIngameGui;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
 
 public class HudQuiverAmmo
 {
 	protected static final ResourceLocation WIDGETS = new ResourceLocation("textures/gui/widgets.png");
 
-	public static void render(ForgeIngameGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight) 
+	public static void render(ForgeGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight) 
 	{
 		RenderSystem.assertOnRenderThread();
 		

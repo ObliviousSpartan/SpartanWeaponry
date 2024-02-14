@@ -12,18 +12,15 @@ import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.common.ToolAction;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
 /**
  * Base Weapon Trait class. Extend this class or other classes to implement your own Weapon Trait for any weapon.
  * @author ObliviousSpartan
  */
-public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
+public class WeaponTrait
 {
 	/**
 	 * Trait Quality determines what colour that a Weapon Trait shows up in the tooltip for any weapon
@@ -335,7 +332,7 @@ public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
 			if(invalidReason == InvalidReason.NONE)
 				addTooltipDescription(stack, tooltip);
 			else
-				tooltip.add(tooltipIndent().append(new TranslatableComponent(String.format(invalidReason.getLanguageKey())).withStyle(INVALID_FORMAT)));
+				tooltip.add(tooltipIndent().append(Component.translatable(String.format(invalidReason.getLanguageKey())).withStyle(INVALID_FORMAT)));
 		}
     }
 
@@ -357,18 +354,18 @@ public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
     protected final void initTooltipTypes()
     {
 		List<MutableComponent> traitTypesList = new ArrayList<MutableComponent>();
-		Component comma = new TextComponent(", ");
+		Component comma = Component.literal(", ");
 		
 		if(isAction)
-			traitTypesList.add(new TranslatableComponent(String.format("tooltip.%s.trait.type.action", modId)));
+			traitTypesList.add(Component.translatable(String.format("tooltip.%s.trait.type.action", modId)));
 		if(isMelee)
-			traitTypesList.add(new TranslatableComponent(String.format("tooltip.%s.trait.type.melee", modId)));
+			traitTypesList.add(Component.translatable(String.format("tooltip.%s.trait.type.melee", modId)));
 		if(isRanged)
-			traitTypesList.add(new TranslatableComponent(String.format("tooltip.%s.trait.type.ranged", modId)));
+			traitTypesList.add(Component.translatable(String.format("tooltip.%s.trait.type.ranged", modId)));
 		if(isThrowing)
-			traitTypesList.add(new TranslatableComponent(String.format("tooltip.%s.trait.type.throwing", modId)));
+			traitTypesList.add(Component.translatable(String.format("tooltip.%s.trait.type.throwing", modId)));
 
-		types = new TextComponent("  [").append(ComponentUtils.formatList(traitTypesList, comma, Function.identity())).append(new TextComponent("]")).withStyle(ChatFormatting.ITALIC, ChatFormatting.DARK_GRAY);
+		types = Component.literal("  [").append(ComponentUtils.formatList(traitTypesList, comma, Function.identity())).append(Component.literal("]")).withStyle(ChatFormatting.ITALIC, ChatFormatting.DARK_GRAY);
     }
 	
     /**
@@ -379,12 +376,12 @@ public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
 	protected void addTooltipTitle(ItemStack stack, List<Component> tooltip, ChatFormatting... formatting)
 	{
 		// Don't add the level to tooltip if not specified
-		MutableComponent titleText = new TextComponent("- ").withStyle(formatting);
+		MutableComponent titleText = Component.literal("- ").withStyle(formatting);
 		if(level == 0)
-			tooltip.add(titleText.append(new TranslatableComponent(String.format("tooltip.%s.trait.%s", modId, type))));
+			tooltip.add(titleText.append(Component.translatable(String.format("tooltip.%s.trait.%s", modId, type))));
 		else
-			tooltip.add(titleText.append(new TranslatableComponent(String.format("tooltip.%s.trait.%s", modId, type), 
-				new TranslatableComponent("enchantment.level." + Integer.toString(level)))));
+			tooltip.add(titleText.append(Component.translatable(String.format("tooltip.%s.trait.%s", modId, type), 
+				Component.translatable("enchantment.level." + Integer.toString(level)))));
 	}
 
     /**
@@ -394,7 +391,7 @@ public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
      */
 	protected void addTooltipDescription(ItemStack stack, List<Component> tooltip)
 	{
-		tooltip.add(tooltipIndent().append(new TranslatableComponent(String.format("tooltip.%s.trait.%s.desc", modId, type)).withStyle(DESCRIPTION_FORMAT)));
+		tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.desc", modId, type)).withStyle(DESCRIPTION_FORMAT)));
 	}
 	
 	/**
@@ -403,6 +400,6 @@ public class WeaponTrait extends ForgeRegistryEntry<WeaponTrait>
 	 */
 	protected static MutableComponent tooltipIndent()
 	{
-		return new TextComponent("  ");
+		return Component.literal("  ");
 	}
 }

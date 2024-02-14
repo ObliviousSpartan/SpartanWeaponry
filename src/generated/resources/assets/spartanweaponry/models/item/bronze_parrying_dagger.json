@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/parrying_dagger",
-  "textures": {
-    "layer0": "spartanweaponry:item/bronze_parrying_dagger",
-    "coating": "spartanweaponry:item/coating/parrying_dagger"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/bronze_parrying_dagger_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/bronze_parrying_dagger_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/bronze_parrying_dagger_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/bronze_parrying_dagger_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/parrying_dagger",
+    "layer0": "spartanweaponry:item/bronze_parrying_dagger"
+  }
 }

@@ -1,31 +1,31 @@
 {
   "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "lance"
+      ]
+    }
+  ],
   "group": "spartanweaponry:lance",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "/": {
+      "item": "spartanweaponry:pole"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
   "pattern": [
     "  #",
     "#/ ",
     "|# "
   ],
-  "key": {
-    "#": {
-      "tag": "minecraft:planks"
-    },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
-    "/": {
-      "item": "spartanweaponry:pole"
-    }
-  },
   "result": {
     "item": "spartanweaponry:wooden_lance"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "lance"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

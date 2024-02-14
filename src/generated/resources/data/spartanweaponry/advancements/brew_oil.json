@@ -1,24 +1,24 @@
 {
   "parent": "spartanweaponry:root",
+  "criteria": {
+    "has_brewed_oil": {
+      "conditions": {},
+      "trigger": "spartanweaponry:brew_oil"
+    }
+  },
   "display": {
-    "icon": {
-      "item": "spartanweaponry:weapon_oil"
-    },
-    "title": {
-      "translate": "advancement.spartanweaponry.brew_oil.title"
-    },
+    "announce_to_chat": true,
     "description": {
       "translate": "advancement.spartanweaponry.brew_oil.desc"
     },
     "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "spartanweaponry:weapon_oil"
+    },
     "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "has_brewed_oil": {
-      "trigger": "spartanweaponry:brew_oil",
-      "conditions": {}
+    "title": {
+      "translate": "advancement.spartanweaponry.brew_oil.title"
     }
   },
   "requirements": [

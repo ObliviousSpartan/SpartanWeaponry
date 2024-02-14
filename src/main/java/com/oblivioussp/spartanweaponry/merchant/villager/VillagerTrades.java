@@ -1,8 +1,8 @@
 package com.oblivioussp.spartanweaponry.merchant.villager;
 
 import java.util.List;
-import java.util.Random;
 
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades.ItemListing;
 import net.minecraft.world.item.Item;
@@ -33,7 +33,7 @@ public class VillagerTrades
 		}
 
 		@Override
-		public MerchantOffer getOffer(Entity trader, Random rand)
+		public MerchantOffer getOffer(Entity trader, RandomSource rand)
 		{
 			return new MerchantOffer(wantedStack, wantedStack2, offeredStack, maxUses, xpGiven, priceMultiplier);
 		}
@@ -58,7 +58,7 @@ public class VillagerTrades
 		}
 		
 		@Override
-		public MerchantOffer getOffer(Entity trader, Random rand)
+		public MerchantOffer getOffer(Entity trader, RandomSource rand)
 		{
 			int level = 5 + rand.nextInt(15);
 			ItemStack enchantedStack = EnchantmentHelper.enchantItem(rand, new ItemStack(offeredStack.getItem()), level, false);
@@ -105,7 +105,7 @@ public class VillagerTrades
 		}
 
 		@Override
-		public MerchantOffer getOffer(Entity trader, Random rand) 
+		public MerchantOffer getOffer(Entity trader, RandomSource rand) 
 		{
 			RandomisedTradeItem offeredItem = offeredItems.get(offeredItems.size() == 1 ? 0 : rand.nextInt(offeredItems.size() - 1));
 			return new MerchantOffer(new ItemStack(Items.EMERALD, offeredItem.getEmeraldCost()), offeredItem.getItemStack(), maxUses, xpGiven, priceMultiplier);
@@ -123,7 +123,7 @@ public class VillagerTrades
 		}
 		
 		@Override
-		public MerchantOffer getOffer(Entity trader, Random rand)
+		public MerchantOffer getOffer(Entity trader, RandomSource rand)
 		{
 			RandomisedTradeItem offeredItem = offeredItems.get(rand.nextInt(offeredItems.size() - 1));
 			int level = 5 + rand.nextInt(15);

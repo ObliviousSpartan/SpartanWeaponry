@@ -2,150 +2,150 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 1.0,
-        "max": 2.0
-      },
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_dagger"
+          "name": "spartanweaponry:diamond_dagger",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_parrying_dagger"
+          "name": "spartanweaponry:diamond_parrying_dagger",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_longsword"
+          "name": "spartanweaponry:diamond_longsword",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_katana"
+          "name": "spartanweaponry:diamond_katana",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_saber"
+          "name": "spartanweaponry:diamond_saber",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_rapier"
+          "name": "spartanweaponry:diamond_rapier",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_greatsword"
+          "name": "spartanweaponry:diamond_greatsword",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_battle_hammer"
+          "name": "spartanweaponry:diamond_battle_hammer",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_warhammer"
+          "name": "spartanweaponry:diamond_warhammer",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_spear"
+          "name": "spartanweaponry:diamond_spear",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_halberd"
+          "name": "spartanweaponry:diamond_halberd",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_pike"
+          "name": "spartanweaponry:diamond_pike",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_lance"
+          "name": "spartanweaponry:diamond_lance",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_longbow"
+          "name": "spartanweaponry:diamond_longbow",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_heavy_crossbow"
+          "name": "spartanweaponry:diamond_heavy_crossbow",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 3.0
+                "max": 3.0,
+                "min": 1.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             }
           ],
-          "name": "spartanweaponry:diamond_bolt"
+          "name": "spartanweaponry:diamond_bolt",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_throwing_knife"
+          "name": "spartanweaponry:diamond_throwing_knife",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_tomahawk"
+          "name": "spartanweaponry:diamond_tomahawk",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_javelin"
+          "name": "spartanweaponry:diamond_javelin",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_boomerang"
+          "name": "spartanweaponry:diamond_boomerang",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_battleaxe"
+          "name": "spartanweaponry:diamond_battleaxe",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_flanged_mace"
+          "name": "spartanweaponry:diamond_flanged_mace",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_glaive"
+          "name": "spartanweaponry:diamond_glaive",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_quarterstaff"
+          "name": "spartanweaponry:diamond_quarterstaff",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "spartanweaponry:diamond_scythe"
+          "name": "spartanweaponry:diamond_scythe",
+          "weight": 5
         }
-      ]
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
     }
   ]
 }

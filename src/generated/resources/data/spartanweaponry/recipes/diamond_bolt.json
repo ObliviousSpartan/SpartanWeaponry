@@ -1,32 +1,32 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  #",
-    " | ",
-    "F  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "bolts",
+        "diamond_ammo"
+      ]
+    }
   ],
   "key": {
     "#": {
       "tag": "forge:gems/diamond"
     },
-    "|": {
-      "tag": "forge:nuggets/iron"
-    },
     "F": {
       "tag": "forge:feathers"
+    },
+    "|": {
+      "tag": "forge:nuggets/iron"
     }
   },
+  "pattern": [
+    "  #",
+    " | ",
+    "F  "
+  ],
   "result": {
-    "item": "spartanweaponry:diamond_bolt",
-    "count": 4
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "bolts",
-        "diamond_ammo"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+    "count": 4,
+    "item": "spartanweaponry:diamond_bolt"
+  }
 }

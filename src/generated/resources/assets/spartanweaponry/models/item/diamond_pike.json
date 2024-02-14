@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/pike",
-  "textures": {
-    "layer0": "spartanweaponry:item/diamond_pike",
-    "coating": "spartanweaponry:item/coating/pike"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/diamond_pike_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/diamond_pike_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/diamond_pike_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/diamond_pike_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/pike",
+    "layer0": "spartanweaponry:item/diamond_pike"
+  }
 }

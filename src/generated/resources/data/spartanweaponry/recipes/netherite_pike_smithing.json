@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "item": "spartanweaponry:diamond_pike"
-  },
   "addition": {
     "tag": "forge:ingots/netherite"
+  },
+  "base": {
+    "item": "spartanweaponry:diamond_pike"
   },
   "result": {
     "item": "spartanweaponry:netherite_pike"

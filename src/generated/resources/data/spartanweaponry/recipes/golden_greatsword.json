@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:greatsword",
-  "pattern": [
-    " # ",
-    "###",
-    "#|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "greatsword"
+      ]
+    }
   ],
+  "group": "spartanweaponry:greatsword",
   "key": {
     "#": {
       "tag": "forge:ingots/gold"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " # ",
+    "###",
+    "#|#"
+  ],
   "result": {
     "item": "spartanweaponry:golden_greatsword"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "greatsword"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

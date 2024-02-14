@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:scythe",
-  "pattern": [
-    "## ",
-    "  #",
-    " / "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "scythe",
+        "tin"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/tin"
+      }
+    }
   ],
+  "group": "spartanweaponry:scythe",
   "key": {
     "#": {
       "tag": "forge:ingots/tin"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "## ",
+    "  #",
+    " / "
+  ],
   "result": {
     "item": "spartanweaponry:tin_scythe"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "scythe",
-        "tin"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/tin",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

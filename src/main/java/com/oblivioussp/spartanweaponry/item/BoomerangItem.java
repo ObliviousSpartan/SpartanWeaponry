@@ -12,7 +12,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 
 public class BoomerangItem extends ThrowingWeaponItem
@@ -35,7 +34,7 @@ public class BoomerangItem extends ThrowingWeaponItem
 	{
 		BoomerangEntity boomerang = new BoomerangEntity(levelIn, player);
 		boomerang.setDistanceToReturn((charge / 5.0d) * (BoomerangEntity.DISTANCE_TO_RETURN - 3.0d) + 3.0d + 
-				EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.PROPEL.get(), stack) * 3.0f);
+				stack.getEnchantmentLevel(ModEnchantments.PROPEL.get()) * 3.0f);
 		return boomerang;
 	}
 	

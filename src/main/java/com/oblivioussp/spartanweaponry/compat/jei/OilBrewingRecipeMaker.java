@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
-import com.oblivioussp.spartanweaponry.api.oil.OilEffect;
 import com.oblivioussp.spartanweaponry.init.ModItems;
 import com.oblivioussp.spartanweaponry.init.ModOilRecipes;
 import com.oblivioussp.spartanweaponry.item.crafting.OilBrewingRecipe;
+import com.oblivioussp.spartanweaponry.item.crafting.OilBrewingRecipe.OilMix;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import mezz.jei.api.recipe.vanilla.IJeiBrewingRecipe;
@@ -15,7 +15,6 @@ import mezz.jei.api.recipe.vanilla.IVanillaRecipeFactory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionBrewing.Mix;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -27,14 +26,14 @@ public class OilBrewingRecipeMaker
 		
 		if(ModOilRecipes.oilRecipes != null)
 		{
-			List<Mix<OilEffect>> mixes = OilBrewingRecipe.getValidMixes();
+			List<OilMix> mixes = OilBrewingRecipe.getValidMixes();
 			
-			for(Mix<OilEffect> mix : mixes)
+			for(OilMix mix : mixes)
 			{
-				ItemStack fromStack = OilHelper.makeOilStack(mix.from.get());
-				ItemStack toStack = OilHelper.makeOilStack(mix.to.get());
+				ItemStack fromStack = OilHelper.makeOilStack(mix.from);
+				ItemStack toStack = OilHelper.makeOilStack(mix.to);
 				
-				recipes.add(new JeiOilBrewingRecipe(ImmutableList.of(fromStack), ImmutableList.copyOf(mix.ingredient.getItems()), toStack));
+				recipes.add(new JeiOilBrewingRecipe(ImmutableList.of(fromStack), ImmutableList.copyOf(mix.brewingIngredient.getItems()), toStack));
 			}
 		}
 		

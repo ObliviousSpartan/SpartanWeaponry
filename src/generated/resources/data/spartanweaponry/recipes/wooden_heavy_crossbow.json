@@ -1,19 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:heavy_crossbow",
-  "pattern": [
-    "#D#",
-    "PHP",
-    " | "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "heavy_crossbow"
+      ]
+    }
   ],
+  "group": "spartanweaponry:heavy_crossbow",
   "key": {
     "#": {
-      "tag": "minecraft:planks"
-    },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
-    "P": {
       "tag": "minecraft:planks"
     },
     "D": {
@@ -21,17 +18,20 @@
     },
     "H": {
       "item": "minecraft:tripwire_hook"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "#D#",
+    "PHP",
+    " | "
+  ],
   "result": {
     "item": "spartanweaponry:wooden_heavy_crossbow"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "heavy_crossbow"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

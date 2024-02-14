@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:katana",
-  "pattern": [
-    "  #",
-    " # ",
-    "|  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "katana",
+        "constantan"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/constantan"
+      }
+    }
   ],
+  "group": "spartanweaponry:katana",
   "key": {
     "#": {
       "tag": "forge:ingots/constantan"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "  #",
+    " # ",
+    "|  "
+  ],
   "result": {
     "item": "spartanweaponry:constantan_katana"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "katana",
-        "constantan"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/constantan",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

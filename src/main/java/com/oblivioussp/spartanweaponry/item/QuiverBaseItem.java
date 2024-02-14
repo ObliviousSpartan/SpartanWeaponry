@@ -17,7 +17,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -27,10 +26,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
@@ -112,7 +111,7 @@ public abstract class QuiverBaseItem extends Item
 		{
 			if(!playerIn.isCrouching())
 			{
-				IItemHandler handler = heldItem.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).resolve().orElseThrow();
+				IItemHandler handler = heldItem.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().orElseThrow();
 				if(handler instanceof ItemStackHandler)
 				{
 					SlotType slotType = handIn == InteractionHand.OFF_HAND ? SlotType.OFF_HAND : SlotType.MAIN_HAND;
@@ -130,7 +129,7 @@ public abstract class QuiverBaseItem extends Item
 				
 				String collectStatus = ammoCollect ? "enabled" : "disabled";
 				ChatFormatting collectColour = ammoCollect ? ChatFormatting.GREEN : ChatFormatting.RED;
-				playerIn.displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".ammo_collect_toggle").append(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + "." + collectStatus).withStyle(collectColour)), true);
+				playerIn.displayClientMessage(Component.translatable("message." + ModSpartanWeaponry.ID + ".ammo_collect_toggle").append(Component.translatable("tooltip." + ModSpartanWeaponry.ID + "." + collectStatus).withStyle(collectColour)), true);
 				return InteractionResultHolder.fail(heldItem);
 			}
 		}
@@ -140,7 +139,7 @@ public abstract class QuiverBaseItem extends Item
 	@Override
 	public CompoundTag getShareTag(ItemStack stack) 
 	{
-		IItemHandler handler = stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).resolve().orElseThrow();
+		IItemHandler handler = stack.getCapability(ForgeCapabilities.ITEM_HANDLER, null).resolve().orElseThrow();
 		if(!(handler instanceof ItemStackHandler))
 			return super.getShareTag(stack);
 		
@@ -162,10 +161,10 @@ public abstract class QuiverBaseItem extends Item
 		boolean ammoCollect = stack.getOrCreateTag().getBoolean(NBT_AMMO_COLLECT);
 		String collectStatus = ammoCollect ? "enabled" : "disabled";
 		ChatFormatting statusColour = ammoCollect ? ChatFormatting.GREEN : ChatFormatting.RED;
-		tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".quiver_collect_status").append(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + "." + collectStatus).withStyle(statusColour)).withStyle(ChatFormatting.DARK_AQUA));
+		tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".quiver_collect_status").append(Component.translatable("tooltip." + ModSpartanWeaponry.ID + "." + collectStatus).withStyle(statusColour)).withStyle(ChatFormatting.DARK_AQUA));
 		
 		if(ammoSlots != Defaults.SlotsQuiverHuge)
-			tooltip.add(new TranslatableComponent("tooltip."+ ModSpartanWeaponry.ID + ".quiver_upgrade").withStyle(ChatFormatting.YELLOW));
+			tooltip.add(Component.translatable("tooltip."+ ModSpartanWeaponry.ID + ".quiver_upgrade").withStyle(ChatFormatting.YELLOW));
 	}
 	
 	public Optional<TooltipComponent> makeTooltipImage(ItemStack stackIn, boolean isBoltQuiver)

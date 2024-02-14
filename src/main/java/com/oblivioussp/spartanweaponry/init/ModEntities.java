@@ -20,16 +20,16 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntities 
 {
-	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, ModSpartanWeaponry.ID);
+	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ModSpartanWeaponry.ID);
 	
-	public static final RegistryObject<EntityType<ArrowBaseEntity>> ARROW_SW = REGISTRY.register("arrow_sw", () -> EntityType.Builder.<ArrowBaseEntity>of(ArrowBaseEntity::new, MobCategory.MISC).
+	public static final RegistryObject<EntityType<ArrowBaseEntity>> ARROW_SW = REGISTRY.register("arrow", () -> EntityType.Builder.<ArrowBaseEntity>of(ArrowBaseEntity::new, MobCategory.MISC).
 			clientTrackingRange(4).
 			updateInterval(20).
 			setShouldReceiveVelocityUpdates(true).
 			sized(0.5f, 0.5f).
 			setCustomClientFactory(ArrowBaseEntity::new).
 			build("arrow_sw"));
-	public static final RegistryObject<EntityType<ArrowExplosiveEntity>> ARROW_EXPLOSIVE = REGISTRY.register("arrow_explosive", () -> EntityType.Builder.<ArrowExplosiveEntity>of(ArrowExplosiveEntity::new, MobCategory.MISC).
+	public static final RegistryObject<EntityType<ArrowExplosiveEntity>> ARROW_EXPLOSIVE = REGISTRY.register("explosive_arrow", () -> EntityType.Builder.<ArrowExplosiveEntity>of(ArrowExplosiveEntity::new, MobCategory.MISC).
 			clientTrackingRange(4).
 			updateInterval(20).
 			setShouldReceiveVelocityUpdates(true).
@@ -43,7 +43,7 @@ public class ModEntities
 			sized(0.5f, 0.5f).
 			setCustomClientFactory(BoltEntity::new).
 			build("bolt"));
-	public static final RegistryObject<EntityType<BoltSpectralEntity>> BOLT_SPECTRAL = REGISTRY.register("bolt_spectral", () -> EntityType.Builder.<BoltSpectralEntity>of(BoltSpectralEntity::new, MobCategory.MISC).
+	public static final RegistryObject<EntityType<BoltSpectralEntity>> BOLT_SPECTRAL = REGISTRY.register("spectral_bolt", () -> EntityType.Builder.<BoltSpectralEntity>of(BoltSpectralEntity::new, MobCategory.MISC).
 			clientTrackingRange(4).
 			updateInterval(20).
 			setShouldReceiveVelocityUpdates(true).

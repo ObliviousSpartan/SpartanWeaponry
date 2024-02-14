@@ -1,21 +1,21 @@
 {
   "parent": "spartanweaponry:item/base/cestus",
-  "textures": {
-    "layer0": "spartanweaponry:item/studded_cestus",
-    "coating": "spartanweaponry:item/coating/cestus"
-  },
   "overrides": [
     {
+      "model": "spartanweaponry:item/studded_cestus_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/studded_cestus_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/studded_cestus_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/studded_cestus_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/cestus",
+    "layer0": "spartanweaponry:item/studded_cestus"
+  }
 }

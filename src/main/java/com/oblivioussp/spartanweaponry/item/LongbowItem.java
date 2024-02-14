@@ -19,8 +19,6 @@ import com.oblivioussp.spartanweaponry.util.Defaults;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -33,7 +31,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.ForgeEventFactory;
@@ -96,7 +93,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
         if (entityLiving instanceof Player)
         {
         	Player player = (Player)entityLiving;
-            boolean flag = player.getAbilities().instabuild || EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) > 0;
+            boolean flag = player.getAbilities().instabuild || stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) > 0;
             ItemStack itemstack = player.getProjectile(stack);
 
             int i = this.getUseDuration(stack) - timeLeft;
@@ -126,15 +123,15 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
                         if (f == maxVelocity)
                             entityarrow.setCritArrow(true);
 
-                        int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, stack);
+                        int j = stack.getEnchantmentLevel(Enchantments.POWER_ARROWS);
                         if (j > 0)
                             entityarrow.setBaseDamage(entityarrow.getBaseDamage() + j * 0.5d + 0.5d);
 
-                        int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, stack);
+                        int k = stack.getEnchantmentLevel(Enchantments.PUNCH_ARROWS);
                         if (k > 0)
                             entityarrow.setKnockback(k);
 
-                        if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, stack) > 0)
+                        if (stack.getEnchantmentLevel(Enchantments.FLAMING_ARROWS) > 0)
                             entityarrow.setSecondsOnFire(100);
 
                         stack.hurtAndBreak(1, player, (playerEntity) -> {
@@ -180,7 +177,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
     }
 	
 	@Override
-	public int getItemEnchantability(ItemStack stack)
+	public int getEnchantmentValue(ItemStack stack)
 	{
 		return material.getEnchantmentValue();
 	}
@@ -196,7 +193,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
 	{
 		if(customDisplayName == null)
 			return super.getName(stack);
-		return new TranslatableComponent(customDisplayName, material.translateName());
+		return Component.translatable(customDisplayName, material.translateName());
 	}
     
     @Override
@@ -216,7 +213,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
     	}
 
     	if(!canBeCrafted)
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
 
     	material.addTagErrorTooltip(stack, tooltip);
 		
@@ -225,31 +222,31 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
 			if(rangedTraits != null && !rangedTraits.isEmpty())
 			{
 				if(isShiftPressed)
-					tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+					tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 				else
-					tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.DARK_AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
+					tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.DARK_AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
 				
 				rangedTraits.forEach((trait) -> trait.addTooltip(stack, tooltip, isShiftPressed));
-	        	tooltip.add(new TextComponent(""));
+	        	tooltip.add(Component.empty());
 			}
     	}
 		
     	if(isShiftPressed)
     	{
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.longbow.desc", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.longbow.desc_2", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.longbow.desc", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.longbow.desc_2", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
     	}
     	else
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.description", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
    	
     	
-    	tooltip.add(new TextComponent(""));
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.modifiers.ammo.type", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.modifiers.ammo.arrow", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.modifiers.longbow.draw_length", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.modifiers.longbow.draw_length.value", ModSpartanWeaponry.ID), drawTime).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.modifiers.longbow.speed_multiplier", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.modifiers.longbow.draw_length.value", ModSpartanWeaponry.ID), maxVelocity).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(new TextComponent(""));
+    	tooltip.add(Component.empty());
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.ammo.type", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.ammo.arrow", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.longbow.draw_length", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.longbow.draw_length.value", ModSpartanWeaponry.ID), drawTime).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.longbow.speed_multiplier", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.longbow.draw_length.value", ModSpartanWeaponry.ID), maxVelocity).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.empty());
     }
 	
 	// ---- ---- ---- ---- ---- ---- ---- ----

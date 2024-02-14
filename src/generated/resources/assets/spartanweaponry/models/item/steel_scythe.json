@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/scythe",
-  "textures": {
-    "layer0": "spartanweaponry:item/steel_scythe",
-    "coating": "spartanweaponry:item/coating/scythe"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/steel_scythe_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/steel_scythe_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/steel_scythe_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/steel_scythe_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/scythe",
+    "layer0": "spartanweaponry:item/steel_scythe"
+  }
 }

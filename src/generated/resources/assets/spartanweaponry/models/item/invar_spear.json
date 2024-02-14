@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/spear",
-  "textures": {
-    "layer0": "spartanweaponry:item/invar_spear",
-    "coating": "spartanweaponry:item/coating/spear"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/invar_spear_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/invar_spear_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/invar_spear_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/invar_spear_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/spear",
+    "layer0": "spartanweaponry:item/invar_spear"
+  }
 }

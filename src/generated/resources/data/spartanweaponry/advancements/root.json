@@ -1,24 +1,6 @@
 {
-  "display": {
-    "icon": {
-      "item": "spartanweaponry:diamond_longsword",
-      "nbt": "{Damage:0}"
-    },
-    "title": {
-      "translate": "advancement.spartanweaponry.root.title"
-    },
-    "description": {
-      "translate": "advancement.spartanweaponry.root.desc"
-    },
-    "frame": "task",
-    "show_toast": false,
-    "announce_to_chat": false,
-    "hidden": false,
-    "background": "minecraft:textures/block/anvil.png"
-  },
   "criteria": {
     "has_handle": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -27,10 +9,10 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "has_pole": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -39,7 +21,25 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/anvil.png",
+    "description": {
+      "translate": "advancement.spartanweaponry.root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "spartanweaponry:diamond_longsword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.spartanweaponry.root.title"
     }
   },
   "requirements": [

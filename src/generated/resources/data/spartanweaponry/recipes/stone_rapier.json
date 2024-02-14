@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:rapier",
-  "pattern": [
-    "  #",
-    "## ",
-    "|# "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "rapier"
+      ]
+    }
   ],
+  "group": "spartanweaponry:rapier",
   "key": {
     "#": {
       "tag": "forge:cobblestone"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "  #",
+    "## ",
+    "|# "
+  ],
   "result": {
     "item": "spartanweaponry:stone_rapier"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "rapier"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

@@ -15,7 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 
@@ -66,17 +65,17 @@ public class ThrowableMeleeWeaponTrait extends WeaponTrait implements IActionTra
 	            thrown.setBaseDamage(attackDamage + 1.0f);
 	            
 	            // Apply enchantments as necessary
-	            int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stackIn);
+	            int j = stackIn.getEnchantmentLevel(Enchantments.SHARPNESS);
 	            if (j > 0)
 	            {
 	            	thrown.setBaseDamage(thrown.getBaseDamage() + j * 0.5d + 0.5d);
 	            }
-	            int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.KNOCKBACK, stackIn);
+	            int k = stackIn.getEnchantmentLevel(Enchantments.KNOCKBACK);
 	            if (k > 0)
 	            {
 	            	thrown.setKnockback(k);
 	            }
-	            if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, stackIn) > 0)
+	            if (stackIn.getEnchantmentLevel(Enchantments.FIRE_ASPECT) > 0)
 	            {
 	            	thrown.setSecondsOnFire(100);
 	            }

@@ -17,7 +17,7 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 
 import net.minecraft.commands.SharedSuggestionProvider;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
@@ -31,12 +31,12 @@ public class PotionParser
 	
 	public static final DynamicCommandExceptionType ERROR_UNKNOWN_POTION = new DynamicCommandExceptionType((object) -> 
 	{
-		return new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.error.unknown_potion", object);
+		return Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.error.unknown_potion", object);
 	});
 	
 	public static final DynamicCommandExceptionType ERROR_INVALID_POTION = new DynamicCommandExceptionType((object) -> 
 	{
-		return new TranslatableComponent("command." + ModSpartanWeaponry.ID + ".apply_oil.error.invalid_potion", object);
+		return Component.translatable("command." + ModSpartanWeaponry.ID + ".apply_oil.error.invalid_potion", object);
 	});
 	
 	private static final BiFunction<SuggestionsBuilder, IForgeRegistry<Potion>, CompletableFuture<Suggestions>> SUGGEST_NOTHING = (builder, registry) -> builder.buildFuture();

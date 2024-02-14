@@ -1,24 +1,24 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:club",
-  "pattern": [
-    " #",
-    "# "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "club"
+      ]
+    }
   ],
+  "group": "spartanweaponry:club",
   "key": {
     "#": {
       "tag": "minecraft:logs"
     }
   },
+  "pattern": [
+    " #",
+    "# "
+  ],
   "result": {
     "item": "spartanweaponry:wooden_club"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "club"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

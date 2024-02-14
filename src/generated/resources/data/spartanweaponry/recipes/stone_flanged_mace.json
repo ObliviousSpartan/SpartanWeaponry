@@ -1,31 +1,31 @@
 {
   "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "flanged_mace"
+      ]
+    }
+  ],
   "group": "spartanweaponry:flanged_mace",
+  "key": {
+    "#": {
+      "tag": "forge:cobblestone"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
   "pattern": [
     " ##",
     " /#",
     "|  "
   ],
-  "key": {
-    "#": {
-      "tag": "forge:cobblestone"
-    },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
-    "/": {
-      "tag": "forge:rods/wooden"
-    }
-  },
   "result": {
     "item": "spartanweaponry:stone_flanged_mace"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "flanged_mace"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

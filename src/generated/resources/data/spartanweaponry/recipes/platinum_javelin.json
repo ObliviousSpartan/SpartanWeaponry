@@ -1,9 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:javelin",
-  "pattern": [
-    "/#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "javelin",
+        "platinum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/platinum"
+      }
+    }
   ],
+  "group": "spartanweaponry:javelin",
   "key": {
     "#": {
       "tag": "forge:ingots/platinum"
@@ -12,23 +25,10 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "/#"
+  ],
   "result": {
     "item": "spartanweaponry:platinum_javelin"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "javelin",
-        "platinum"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/platinum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

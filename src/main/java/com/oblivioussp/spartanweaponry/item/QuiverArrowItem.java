@@ -8,7 +8,6 @@ import com.oblivioussp.spartanweaponry.inventory.QuiverArrowMenu;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.ItemTags;
@@ -37,15 +36,15 @@ public class QuiverArrowItem extends QuiverBaseItem
 	@Override
 	public void appendHoverText(ItemStack stack, Level levelIn, List<Component> tooltip, TooltipFlag flagIn) 
 	{
-		tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.ammo.type", 
-				 new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.ammo.arrow").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+		tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".modifiers.ammo.type", 
+				 Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".modifiers.ammo.arrow").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 	}
 
 	@Override
 	public void openGui(ItemStack stack, Player player, SlotType slotType, int slot) 
 	{
-		NetworkHooks.openGui((ServerPlayer)player, new ContainerProvider(new TranslatableComponent("gui." + ModSpartanWeaponry.ID + ".quiver_arrow.title"), stack), buf -> 
+		NetworkHooks.openScreen((ServerPlayer)player, new ContainerProvider(Component.translatable("gui." + ModSpartanWeaponry.ID + ".quiver_arrow.title"), stack), buf -> 
 			{
 				buf.writeEnum(slotType);
 				buf.writeInt(slot);

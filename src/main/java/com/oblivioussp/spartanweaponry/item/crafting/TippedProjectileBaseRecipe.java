@@ -17,7 +17,6 @@ import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class TippedProjectileBaseRecipe extends CustomRecipe 
 {
@@ -97,7 +96,7 @@ public class TippedProjectileBaseRecipe extends CustomRecipe
 		return ModRecipeSerializers.TIPPED_PROJECTILE_BASE.get();
 	}
 
-	public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<TippedProjectileBaseRecipe>
+	public static class Serializer implements RecipeSerializer<TippedProjectileBaseRecipe>
 	{
 		public Serializer() {}
 
@@ -128,8 +127,8 @@ public class TippedProjectileBaseRecipe extends CustomRecipe
 		@Override
 		public void toNetwork(FriendlyByteBuf buffer, TippedProjectileBaseRecipe recipe) 
 		{
-			buffer.writeResourceLocation(recipe.projectileIn.getRegistryName());
-			buffer.writeResourceLocation(recipe.projectileOut.getRegistryName());
+			buffer.writeResourceLocation(ForgeRegistries.ITEMS.getKey(recipe.projectileIn));
+			buffer.writeResourceLocation(ForgeRegistries.ITEMS.getKey(recipe.projectileOut));
 		}
 	}
 }

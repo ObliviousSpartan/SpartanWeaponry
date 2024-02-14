@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/lance",
-  "textures": {
-    "layer0": "spartanweaponry:item/nickel_lance",
-    "coating": "spartanweaponry:item/coating/lance"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/nickel_lance_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/nickel_lance_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/nickel_lance_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/nickel_lance_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/lance",
+    "layer0": "spartanweaponry:item/nickel_lance"
+  }
 }

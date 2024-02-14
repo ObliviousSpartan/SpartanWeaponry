@@ -8,7 +8,6 @@ import com.oblivioussp.spartanweaponry.util.Config;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -54,11 +53,11 @@ public class DynamiteItem extends Item
 	@Override
 	public void appendHoverText(ItemStack stack, Level levelIn, List<Component> tooltip, TooltipFlag flagIn) 
 	{
-		tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".dynamite.desc", (float)Config.INSTANCE.fuseTicksDynamite.get() / 20.0f).withStyle(ChatFormatting.GRAY));
+		tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".dynamite.desc", (float)Config.INSTANCE.fuseTicksDynamite.get() / 20.0f).withStyle(ChatFormatting.GRAY));
 		if(Config.INSTANCE.disableTerrainDamage.get())
-			tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".dynamite.no_terrain_damage").withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".dynamite.no_terrain_damage").withStyle(ChatFormatting.GRAY));
 		else
-			tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".dynamite.terrain_damage").withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".dynamite.terrain_damage").withStyle(ChatFormatting.GRAY));
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 	}
 }

@@ -618,9 +618,27 @@
 	"item.spartanweaponry.proj_tipped.effect.mana_regen_potion": "%s of Mana Regeneration",
 	"item.spartanweaponry.proj_tipped.effect.mana_regen_potion_long": "%s of Mana Regeneration",
 	"item.spartanweaponry.proj_tipped.effect.mana_regen_potion_strong": "%s of Mana Regeneration",
-	"item.spartanweaponry.proj_tipped.effect.spell_damage": "%s of Spell Damage",
-	"item.spartanweaponry.proj_tipped.effect.spell_damage_long": "%s of Spell Damage",
-	"item.spartanweaponry.proj_tipped.effect.spell_damage_strong": "%s of Spell Damage",
+	"item.spartanweaponry.proj_tipped.effect.spell_damage_potion": "%s of Spell Damage",
+	"item.spartanweaponry.proj_tipped.effect.spell_damage_potion_long": "%s of Spell Damage",
+	"item.spartanweaponry.proj_tipped.effect.spell_damage_potion_strong": "%s of Spell Damage",
+	"item.spartanweaponry.proj_tipped.effect.recovery_potion": "%s of Recovery",
+	"item.spartanweaponry.proj_tipped.effect.recovery_potion_long": "%s of Recovery",
+	"item.spartanweaponry.proj_tipped.effect.recovery_potion_strong": "%s of Recovery",
+	"item.spartanweaponry.proj_tipped.effect.blasting_potion": "%s of Blasting",
+	"item.spartanweaponry.proj_tipped.effect.blasting_potion_long": "%s of Blasting",
+	"item.spartanweaponry.proj_tipped.effect.blasting_potion_strong": "%s of Blasting",
+	"item.spartanweaponry.proj_tipped.effect.freezing_potion": "%s of Freezing",
+	"item.spartanweaponry.proj_tipped.effect.freezing_potion_long": "%s of Freezing",
+	"item.spartanweaponry.proj_tipped.effect.freezing_potion_strong": "%s of Freezing",
+	"item.spartanweaponry.proj_tipped.effect.shielding_potion": "%s of Shielding",
+	"item.spartanweaponry.proj_tipped.effect.shielding_potion_long": "%s of Shielding",
+	"item.spartanweaponry.proj_tipped.effect.shielding_potion_strong": "%s of Shielding",
+	
+	// Ars Elemental
+	"item.spartanweaponry.proj_tipped.effect.enderference_potion": "%s of Enderference",
+	"item.spartanweaponry.proj_tipped.effect.enderference_potion_long": "%s of Enderference",
+	"item.spartanweaponry.proj_tipped.effect.shock_potion": "%s of Static Charge",
+	"item.spartanweaponry.proj_tipped.effect.shock_potion_long": "%s of Static Charge",
 	
 	// Potions Master
 	"item.spartanweaponry.proj_tipped.effect.coal_sight": "%s of Coal Sight",
@@ -647,6 +665,7 @@
 	"item.spartanweaponry.proj_tipped.effect.allthemodium_sight": "%s of Allthemodium Sight",
 	"item.spartanweaponry.proj_tipped.effect.vibranium_sight": "%s of Vibranium Sight",
 	"item.spartanweaponry.proj_tipped.effect.unobtainium_sight": "%s of Unobtainium Sight",
+	"item.spartanweaponry.proj_tipped.effect.bismuth_sight": "%s of Bismuth Sight",
 	
 	// Eidolon
 	"item.spartanweaponry.proj_tipped.effect.chilled": "%s of Chilling",
@@ -769,6 +788,30 @@
 	// Nether Exoticism
 	"item.spartanweaponry.proj_tipped.effect.wither_cure": "%s of Wither Cure",
 	
+	// Corail Tombstone
+	"item.spartanweaponry.proj_tipped.effect.earthly_garden": "%s of Earthly Garden",
+	"item.spartanweaponry.proj_tipped.effect.bait": "%s of Bait",
+	"item.spartanweaponry.proj_tipped.effect.frostbite": "%s of Frostbite",
+	"item.spartanweaponry.proj_tipped.effect.darkness": "%s of Darkness",
+	"item.spartanweaponry.proj_tipped.effect.discretion": "%s of Discretion",
+	"item.spartanweaponry.proj_tipped.effect.restoration": "%s of Restoration",
+	
+	// Apotheosis
+	"item.spartanweaponry.proj_tipped.effect.grievous": "%s of Healing Reduction",
+	
+	// The Undergarden
+	"item.spartanweaponry.proj_tipped.effect.brittleness": "%s of Brittleness",
+	"item.spartanweaponry.proj_tipped.effect.featherweight": "%s of Featherweight",
+	"item.spartanweaponry.proj_tipped.effect.virulent_resistance": "%s of Virulent Resistance",
+	"item.spartanweaponry.proj_tipped.effect.glowing": "%s of Glowing",
+	
+	// Naturalist (Glowing is already defined above)
+	"item.spartanweaponry.proj_tipped.effect.forest_dasher": "%s of the Forest Dasher",
+	
+	// Deeper and Darker
+	"item.spartanweaponry.proj_tipped.effect.sculk_affinity": "%s of Sculk Affinity",
+	"item.spartanweaponry.proj_tipped.effect.long_sculk_affinity": "%s of Sculk Affinity",
+	
 	// Quivers
 	"item.spartanweaponry.small_arrow_quiver": "Small Arrow Quiver",
 	"item.spartanweaponry.medium_arrow_quiver": "Medium Arrow Quiver",
@@ -826,9 +869,9 @@
 	
 	// Entities
 	"entity.spartanweaponry.arrow": "Arrow",
-	"entity.spartanweaponry.arrow_explosive": "Explosive Arrow",
+	"entity.spartanweaponry.explosive_arrow": "Explosive Arrow",
 	"entity.spartanweaponry.bolt": "Bolt",
-	"entity.spartanweaponry.bolt_spectral": "Spectral Bolt",
+	"entity.spartanweaponry.spectral_bolt": "Spectral Bolt",
 	"entity.spartanweaponry.throwing_weapon": "Throwing Weapon",
 	"entity.spartanweaponry.throwing_knife": "Throwing Knife",
 	"entity.spartanweaponry.tomahawk": "Tomahawk",

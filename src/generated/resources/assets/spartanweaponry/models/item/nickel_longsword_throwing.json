@@ -1,8 +1,8 @@
 {
   "parent": "spartanweaponry:item/base/longsword_throwing",
+  "loader": "spartanweaponry:oil_coated_item",
   "textures": {
-    "layer0": "spartanweaponry:item/nickel_longsword",
-    "coating": "spartanweaponry:item/coating/longsword"
-  },
-  "loader": "spartanweaponry:oil_coated_item"
+    "coating": "spartanweaponry:item/coating/longsword",
+    "layer0": "spartanweaponry:item/nickel_longsword"
+  }
 }

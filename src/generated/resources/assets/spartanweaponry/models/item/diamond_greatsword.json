@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/greatsword",
-  "textures": {
-    "layer0": "spartanweaponry:item/diamond_greatsword",
-    "coating": "spartanweaponry:item/coating/greatsword"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/diamond_greatsword_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/diamond_greatsword_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/diamond_greatsword_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/diamond_greatsword_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/greatsword",
+    "layer0": "spartanweaponry:item/diamond_greatsword"
+  }
 }

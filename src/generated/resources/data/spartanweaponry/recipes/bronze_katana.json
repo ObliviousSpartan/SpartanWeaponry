@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:katana",
-  "pattern": [
-    "  #",
-    " # ",
-    "|  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "katana",
+        "bronze"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/bronze"
+      }
+    }
   ],
+  "group": "spartanweaponry:katana",
   "key": {
     "#": {
       "tag": "forge:ingots/bronze"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "  #",
+    " # ",
+    "|  "
+  ],
   "result": {
     "item": "spartanweaponry:bronze_katana"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "katana",
-        "bronze"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/bronze",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

@@ -33,8 +33,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -55,7 +53,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -205,7 +202,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	{
 		if(customDisplayName == null)
 			return super.getName(stack);
-		return new TranslatableComponent(customDisplayName, material.translateName());
+		return Component.translatable(customDisplayName, material.translateName());
 	}
 
 	@Override
@@ -225,36 +222,36 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
     	}
 
     	if(!canBeCrafted)
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.uncraftable_missing_material", ModSpartanWeaponry.ID), material.getRepairTagName()).withStyle(ChatFormatting.RED));
     	
     	archetype.addTagErrorTooltip(stack, tooltip);
     	material.addTagErrorTooltip(stack, tooltip);
     	
     	if(stack.getOrCreateTag().contains(NBT_ORIGINAL) && !stack.getTag().getBoolean(NBT_ORIGINAL))
-    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.throwable.not_original", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.DARK_RED));
+    		tooltip.add(Component.translatable(String.format("tooltip.%s.throwable.not_original", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.DARK_RED));
     	if(stack.getTag().hasUUID(NBT_UUID) && flagIn.isAdvanced())
-    		tooltip.add(new TextComponent("UUID: " + ChatFormatting.GRAY.toString() + stack.getTag().getUUID(NBT_UUID).toString()).withStyle(ChatFormatting.DARK_PURPLE));
+    		tooltip.add(Component.literal("UUID: " + ChatFormatting.GRAY.toString() + stack.getTag().getUUID(NBT_UUID).toString()).withStyle(ChatFormatting.DARK_PURPLE));
     	int mxAmmo = getMaxAmmo(stack);
-    	tooltip.add(new TranslatableComponent(String.format("tooltip.%s.throwable.ammo", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.throwable.ammo.value", ModSpartanWeaponry.ID), mxAmmo - stack.getTag().getInt(NBT_AMMO_USED), mxAmmo).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.throwable.charge_time", ModSpartanWeaponry.ID), new TranslatableComponent(String.format("tooltip.%s.throwable.charge_time.value", ModSpartanWeaponry.ID), getMaxChargeTicks(stack) / 20.0f).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.throwable.ammo", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.throwable.ammo.value", ModSpartanWeaponry.ID), mxAmmo - stack.getTag().getInt(NBT_AMMO_USED), mxAmmo).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+		tooltip.add(Component.translatable(String.format("tooltip.%s.throwable.charge_time", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.throwable.charge_time.value", ModSpartanWeaponry.ID), getMaxChargeTicks(stack) / 20.0f).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
     	
 		if(traits != null && !traits.isEmpty())
 		{
 			if(isShiftPressed)
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 			else
-				tooltip.add(new TranslatableComponent(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
+				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 
 			archetype.addTraitsToTooltip(stack, tooltip, isShiftPressed);
 			
 	    	if(material.hasAnyBonusTraits())
 	    	{
-	    		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
+	    		tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
 	    		material.getBonusTraits().forEach((trait) -> trait.addTooltip(stack, tooltip, isShiftPressed));
 	    	}
 		}
 
-		tooltip.add(new TextComponent(""));
+		tooltip.add(Component.empty());
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 	}
 
@@ -303,7 +300,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 		            if(thrown == null)	return;
 		            
 		            thrown.setWeapon(stack);
-		            int velocityBonus = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.PROPEL.get(), stack);
+		            int velocityBonus = stack.getEnchantmentLevel(ModEnchantments.PROPEL.get());
 		            thrown.shootFromRotation(player, player.xRotO, player.yRotO, 0.0F, this.throwVelocity * ((velocityBonus * 0.2f) + 1) * (chargePerc * 0.9f + 0.1f), 0.5f);
 		            
 		            traits.forEach((trait) -> trait.getThrowingCallback().ifPresent((callback) -> callback.onThrowingProjectileSpawn(material, thrown)));
@@ -312,12 +309,12 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 		            thrown.setBaseDamage(damage);
 		            
 		            // Apply enchantments as necessary
-		            int j = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.RAZORS_EDGE.get(), stack);
+		            int j = stack.getEnchantmentLevel(ModEnchantments.RAZORS_EDGE.get());
 		            if (j > 0)
 		            {
 		            	thrown.setBaseDamage(thrown.getBaseDamage() + j * 0.5D + 0.5D);
 		            }
-		            if (EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.INCENDIARY.get(), stack) > 0)
+		            if (stack.getEnchantmentLevel(ModEnchantments.INCENDIARY.get()) > 0)
 		            {
 		            	thrown.setSecondsOnFire(100);
 		            }
@@ -380,7 +377,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) 
 	{
-		if(this.allowdedIn(group))
+		if(this.allowedIn(group))
 		{
 			ItemStack stack = new ItemStack(this);
 
@@ -393,7 +390,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	}
 
 	@Override
-	public int getItemEnchantability(ItemStack stack) 
+	public int getEnchantmentValue(ItemStack stack) 
 	{
 		return this.material.getEnchantmentValue();
 	}
@@ -524,7 +521,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	
 	public int getMaxAmmo(ItemStack stack)
 	{
-		int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.EXPANSE.get(), stack);
+		int level = stack.getEnchantmentLevel(ModEnchantments.EXPANSE.get());
 		// Find the value to increase by per level (if ammo increase is too small e.g. Boomerang; then use ammo + 1 per level instead)
 		int increasePerLevel = Math.max((int)(maxAmmo * 0.25f), 1);
 		return this.maxAmmo + (increasePerLevel * level);
@@ -537,7 +534,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	
 	public int getMaxChargeTicks(ItemStack stack)
 	{
-		int chargeTicks = (int)(this.maxChargeTicks * (1 - EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SUPERCHARGE.get(), stack) * 0.2f));
+		int chargeTicks = (int)(this.maxChargeTicks * (1 - stack.getEnchantmentLevel(ModEnchantments.SUPERCHARGE.get()) * 0.2f));
 		if(traits != null)
 			for(WeaponTrait trait : traits)
 			{

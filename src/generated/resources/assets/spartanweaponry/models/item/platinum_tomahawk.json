@@ -1,21 +1,21 @@
 {
   "parent": "spartanweaponry:item/base/tomahawk",
-  "textures": {
-    "layer0": "spartanweaponry:item/platinum_tomahawk"
-  },
   "overrides": [
     {
+      "model": "spartanweaponry:item/platinum_tomahawk_throwing",
       "predicate": {
-        "spartanweaponry:throwing": 1.0,
-        "spartanweaponry:empty": 0.0
-      },
-      "model": "spartanweaponry:item/platinum_tomahawk_throwing"
+        "spartanweaponry:empty": 0.0,
+        "spartanweaponry:throwing": 1.0
+      }
     },
     {
+      "model": "spartanweaponry:item/base/tomahawk_empty",
       "predicate": {
         "spartanweaponry:empty": 1.0
-      },
-      "model": "spartanweaponry:item/base/tomahawk_empty"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "layer0": "spartanweaponry:item/platinum_tomahawk"
+  }
 }

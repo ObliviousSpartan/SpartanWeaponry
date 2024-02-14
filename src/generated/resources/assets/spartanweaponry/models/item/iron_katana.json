@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/katana",
-  "textures": {
-    "layer0": "spartanweaponry:item/iron_katana",
-    "coating": "spartanweaponry:item/coating/katana"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/iron_katana_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/iron_katana_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/iron_katana_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/iron_katana_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/katana",
+    "layer0": "spartanweaponry:item/iron_katana"
+  }
 }

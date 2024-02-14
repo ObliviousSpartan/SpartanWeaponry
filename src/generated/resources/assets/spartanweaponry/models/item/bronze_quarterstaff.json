@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/quarterstaff",
-  "textures": {
-    "layer0": "spartanweaponry:item/bronze_quarterstaff",
-    "coating": "spartanweaponry:item/coating/quarterstaff"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/bronze_quarterstaff_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/bronze_quarterstaff_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/bronze_quarterstaff_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/bronze_quarterstaff_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/quarterstaff",
+    "layer0": "spartanweaponry:item/bronze_quarterstaff"
+  }
 }

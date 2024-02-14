@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:glaive",
-  "pattern": [
-    " #",
-    " #",
-    " /"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "glaive",
+        "copper"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/copper"
+      }
+    }
   ],
+  "group": "spartanweaponry:glaive",
   "key": {
     "#": {
       "tag": "forge:ingots/copper"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    " #",
+    " #",
+    " /"
+  ],
   "result": {
     "item": "spartanweaponry:copper_glaive"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "glaive",
-        "copper"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/copper",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

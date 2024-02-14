@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:battle_hammer",
-  "pattern": [
-    "###",
-    "###",
-    " | "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "battle_hammer"
+      ]
+    }
   ],
+  "group": "spartanweaponry:battle_hammer",
   "key": {
     "#": {
       "tag": "forge:ingots/gold"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "###",
+    "###",
+    " | "
+  ],
   "result": {
     "item": "spartanweaponry:golden_battle_hammer"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "battle_hammer"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:katana",
-  "pattern": [
-    "  #",
-    " # ",
-    "|  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "katana"
+      ]
+    }
   ],
+  "group": "spartanweaponry:katana",
   "key": {
     "#": {
       "tag": "forge:cobblestone"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    "  #",
+    " # ",
+    "|  "
+  ],
   "result": {
     "item": "spartanweaponry:stone_katana"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "katana"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

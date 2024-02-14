@@ -1,9 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:throwing_knife",
-  "pattern": [
-    "|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "throwing_knife",
+        "silver"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/silver"
+      }
+    }
   ],
+  "group": "spartanweaponry:throwing_knife",
   "key": {
     "#": {
       "tag": "forge:ingots/silver"
@@ -12,23 +25,10 @@
       "tag": "spartanweaponry:handles"
     }
   },
+  "pattern": [
+    "|#"
+  ],
   "result": {
     "item": "spartanweaponry:silver_throwing_knife"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "throwing_knife",
-        "silver"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/silver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

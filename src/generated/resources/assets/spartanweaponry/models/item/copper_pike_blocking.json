@@ -1,8 +1,8 @@
 {
   "parent": "spartanweaponry:item/base/pike_blocking",
+  "loader": "spartanweaponry:oil_coated_item",
   "textures": {
-    "layer0": "spartanweaponry:item/copper_pike",
-    "coating": "spartanweaponry:item/coating/pike"
-  },
-  "loader": "spartanweaponry:oil_coated_item"
+    "coating": "spartanweaponry:item/coating/pike",
+    "layer0": "spartanweaponry:item/copper_pike"
+  }
 }

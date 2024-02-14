@@ -1,31 +1,31 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  #",
-    " | ",
-    "F  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "bolts"
+      ]
+    }
   ],
   "key": {
     "#": {
       "tag": "forge:ingots/iron"
     },
-    "|": {
-      "tag": "forge:nuggets/iron"
-    },
     "F": {
       "tag": "forge:feathers"
+    },
+    "|": {
+      "tag": "forge:nuggets/iron"
     }
   },
+  "pattern": [
+    "  #",
+    " | ",
+    "F  "
+  ],
   "result": {
-    "item": "spartanweaponry:bolt",
-    "count": 4
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "bolts"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+    "count": 4,
+    "item": "spartanweaponry:bolt"
+  }
 }

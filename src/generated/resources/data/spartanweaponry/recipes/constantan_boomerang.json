@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:boomerang",
-  "pattern": [
-    "#PP",
-    "P  ",
-    "P  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "boomerang",
+        "constantan"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/constantan"
+      }
+    }
   ],
+  "group": "spartanweaponry:boomerang",
   "key": {
     "#": {
       "tag": "forge:ingots/constantan"
@@ -14,23 +25,12 @@
       "tag": "minecraft:planks"
     }
   },
+  "pattern": [
+    "#PP",
+    "P  ",
+    "P  "
+  ],
   "result": {
     "item": "spartanweaponry:constantan_boomerang"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "boomerang",
-        "constantan"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/constantan",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

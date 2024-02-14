@@ -1,31 +1,31 @@
 {
   "parent": "spartanweaponry:root",
-  "display": {
-    "icon": {
-      "item": "spartanweaponry:wooden_longbow",
-      "nbt": "{Damage:0}"
-    },
-    "title": {
-      "translate": "advancement.spartanweaponry.craft_longbow.title"
-    },
-    "description": {
-      "translate": "advancement.spartanweaponry.craft_longbow.desc"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
   "criteria": {
     "has_longbow": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "spartanweaponry:longbows"
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.spartanweaponry.craft_longbow.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "spartanweaponry:wooden_longbow",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.spartanweaponry.craft_longbow.title"
     }
   },
   "requirements": [

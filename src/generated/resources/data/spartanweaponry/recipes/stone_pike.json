@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:pike",
-  "pattern": [
-    "#",
-    "/",
-    "/"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "pike"
+      ]
+    }
   ],
+  "group": "spartanweaponry:pike",
   "key": {
     "#": {
       "tag": "forge:cobblestone"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "#",
+    "/",
+    "/"
+  ],
   "result": {
     "item": "spartanweaponry:stone_pike"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "pike"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

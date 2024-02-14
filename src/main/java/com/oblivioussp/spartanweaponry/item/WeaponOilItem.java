@@ -15,8 +15,6 @@ import com.oblivioussp.spartanweaponry.util.OilHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -45,7 +43,7 @@ public class WeaponOilItem extends BasicItem
 	@Override
 	public void fillItemCategory(CreativeModeTab tabIn, NonNullList<ItemStack> itemListIn) 
 	{
-		if(allowdedIn(tabIn))
+		if(allowedIn(tabIn))
 		{
 			ForgeRegistry<OilEffect> registry = RegistryManager.ACTIVE.getRegistry(OilEffects.REGISTRY_KEY);
 			if(registry != null)
@@ -79,13 +77,13 @@ public class WeaponOilItem extends BasicItem
 		OilEffect oil = OilHelper.getOilFromStack(stack);
 		if(oil != OilEffects.NONE.get())
 		{
-			tooltip.add(new TextComponent(""));
+			tooltip.add(Component.empty());
 			oil.getTooltip(stack, tooltip);
-			tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".weapon_oil.uses", oil.getMaxUses()).withStyle(ChatFormatting.DARK_GREEN));
+			tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".weapon_oil.uses", oil.getMaxUses()).withStyle(ChatFormatting.DARK_GREEN));
 		}
 		else
 		{
-			tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".weapon_oil.base"));
+			tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".weapon_oil.base"));
 		}
 	}
 	
@@ -96,8 +94,8 @@ public class WeaponOilItem extends BasicItem
 		Potion potion = OilHelper.getPotionFromStack(stack);
 		ForgeRegistry<OilEffect> registry = RegistryManager.ACTIVE.getRegistry(OilEffects.REGISTRY_KEY);
 		ResourceLocation itemLoc = ForgeRegistries.ITEMS.getKey(this);
-		Component baseName = new TranslatableComponent("item." + itemLoc.getNamespace() + "." + itemLoc.getPath() + "." + registry.getKey(oil).getPath());
-		return potion == Potions.EMPTY ? baseName : new TranslatableComponent(potion.getName("item.spartanweaponry.proj_tipped.effect."), baseName);
+		Component baseName = Component.translatable("item." + itemLoc.getNamespace() + "." + itemLoc.getPath() + "." + registry.getKey(oil).getPath());
+		return potion == Potions.EMPTY ? baseName : Component.translatable(potion.getName("item.spartanweaponry.proj_tipped.effect."), baseName);
 	}
 	
 	@Override
@@ -125,21 +123,21 @@ public class WeaponOilItem extends BasicItem
 						}
 						else
 							handler.setEffect(oil, stack);
-						playerIn.displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".oil_applied", stack.getHoverName(), oppositeStack.getHoverName()), true);
+						playerIn.displayClientMessage(Component.translatable("message." + ModSpartanWeaponry.ID + ".oil_applied", stack.getHoverName(), oppositeStack.getHoverName()), true);
 						playerIn.playSound(ModSounds.OIL_APPLIED.get(), 1.0f, 1.0f);
 						// Remove one from the stack and replace the container back into the inventory (a glass bottle)
-						ItemStack bottleStack = getContainerItem(stack);
+						ItemStack bottleStack = getCraftingRemainingItem(stack);
 						stack.shrink(1);
 						if(stack.getCount() == 0)
 							playerIn.setItemInHand(handIn, ItemStack.EMPTY);
 						playerIn.getInventory().placeItemBackInInventory(bottleStack);
 					}
 					else
-						playerIn.displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".weapon_already_oiled", stack.getHoverName(), oppositeStack.getHoverName()).withStyle(ChatFormatting.RED), true);
+						playerIn.displayClientMessage(Component.translatable("message." + ModSpartanWeaponry.ID + ".weapon_already_oiled", stack.getHoverName(), oppositeStack.getHoverName()).withStyle(ChatFormatting.RED), true);
 				});
 			}
 			else
-				playerIn.displayClientMessage(new TranslatableComponent("message." + ModSpartanWeaponry.ID + ".no_oilable_weapon", stack.getHoverName()).withStyle(ChatFormatting.RED), true);
+				playerIn.displayClientMessage(Component.translatable("message." + ModSpartanWeaponry.ID + ".no_oilable_weapon", stack.getHoverName()).withStyle(ChatFormatting.RED), true);
 		}
 		return super.use(levelIn, playerIn, handIn);
 	}

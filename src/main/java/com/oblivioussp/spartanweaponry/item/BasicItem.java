@@ -6,7 +6,6 @@ import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -24,7 +23,7 @@ public class BasicItem extends Item
 	@Override
 	public void appendHoverText(ItemStack stack, Level levelIn, List<Component> tooltip, TooltipFlag flagIn)
 	{
-		tooltip.add(new TranslatableComponent(String.format("tooltip.%s.%s.desc", ModSpartanWeaponry.ID, ForgeRegistries.ITEMS.getKey(this).getPath())).withStyle(ChatFormatting.GRAY));
+		tooltip.add(Component.translatable(String.format("tooltip.%s.%s.desc", ModSpartanWeaponry.ID, ForgeRegistries.ITEMS.getKey(this).getPath())).withStyle(ChatFormatting.GRAY));
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 	}
 }

@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "spartanweaponry:pole",
+  "key": {
+    "#": {
+      "tag": "forge:string"
+    },
+    "|": {
+      "tag": "forge:rods/wooden"
+    }
+  },
   "pattern": [
     "| ",
     "|#",
     "| "
   ],
-  "key": {
-    "|": {
-      "tag": "forge:rods/wooden"
-    },
-    "#": {
-      "tag": "forge:string"
-    }
-  },
   "result": {
     "item": "spartanweaponry:pole"
   }

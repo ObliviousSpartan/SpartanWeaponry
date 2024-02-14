@@ -1,26 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "quiver"
+      ]
+    }
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/gold"
+    },
+    "L": {
+      "tag": "forge:leather"
+    }
+  },
   "pattern": [
     "L L",
     "###"
   ],
-  "key": {
-    "L": {
-      "tag": "forge:leather"
-    },
-    "#": {
-      "tag": "forge:ingots/gold"
-    }
-  },
   "result": {
     "item": "spartanweaponry:medium_quiver_upgrade_kit"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "quiver"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

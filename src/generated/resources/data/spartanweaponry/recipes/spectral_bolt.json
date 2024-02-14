@@ -1,5 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "bolts"
+      ]
+    }
+  ],
   "ingredients": [
     {
       "item": "spartanweaponry:bolt"
@@ -13,13 +21,5 @@
   ],
   "result": {
     "item": "spartanweaponry:spectral_bolt"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "bolts"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

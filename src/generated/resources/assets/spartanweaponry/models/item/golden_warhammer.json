@@ -1,22 +1,22 @@
 {
   "parent": "spartanweaponry:item/base/warhammer",
-  "textures": {
-    "layer0": "spartanweaponry:item/golden_warhammer",
-    "coating": "spartanweaponry:item/coating/warhammer"
-  },
   "loader": "spartanweaponry:oil_coated_item",
   "overrides": [
     {
+      "model": "spartanweaponry:item/golden_warhammer_blocking",
       "predicate": {
         "spartanweaponry:blocking": 1.0
-      },
-      "model": "spartanweaponry:item/golden_warhammer_blocking"
+      }
     },
     {
+      "model": "spartanweaponry:item/golden_warhammer_throwing",
       "predicate": {
         "spartanweaponry:throwing": 1.0
-      },
-      "model": "spartanweaponry:item/golden_warhammer_throwing"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "coating": "spartanweaponry:item/coating/warhammer",
+    "layer0": "spartanweaponry:item/golden_warhammer"
+  }
 }

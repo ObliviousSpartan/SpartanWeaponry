@@ -1,26 +1,26 @@
 {
   "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "spartanweaponry:item/small_arrow_quiver_base"
-  },
   "overrides": [
     {
+      "model": "spartanweaponry:item/small_arrow_quiver_1",
       "predicate": {
         "spartanweaponry:arrow": 1.0
-      },
-      "model": "spartanweaponry:item/small_arrow_quiver_1"
+      }
     },
     {
+      "model": "spartanweaponry:item/small_arrow_quiver_2",
       "predicate": {
         "spartanweaponry:arrow": 2.0
-      },
-      "model": "spartanweaponry:item/small_arrow_quiver_2"
+      }
     },
     {
+      "model": "spartanweaponry:item/small_arrow_quiver_3",
       "predicate": {
         "spartanweaponry:arrow": 3.0
-      },
-      "model": "spartanweaponry:item/small_arrow_quiver_3"
+      }
     }
-  ]
+  ],
+  "textures": {
+    "layer0": "spartanweaponry:item/small_arrow_quiver_base"
+  }
 }

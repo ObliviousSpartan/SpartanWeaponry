@@ -1,31 +1,31 @@
 {
   "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "flanged_mace"
+      ]
+    }
+  ],
   "group": "spartanweaponry:flanged_mace",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "/": {
+      "tag": "forge:rods/wooden"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
   "pattern": [
     " ##",
     " /#",
     "|  "
   ],
-  "key": {
-    "#": {
-      "tag": "forge:ingots/iron"
-    },
-    "|": {
-      "item": "spartanweaponry:handle"
-    },
-    "/": {
-      "tag": "forge:rods/wooden"
-    }
-  },
   "result": {
     "item": "spartanweaponry:iron_flanged_mace"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "flanged_mace"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

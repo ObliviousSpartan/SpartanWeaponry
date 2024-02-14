@@ -19,14 +19,14 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraftforge.client.gui.ForgeIngameGui;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
 import net.minecraftforge.common.util.LazyOptional;
 
-public class HudOilUses 
+public class HudOilUses
 {
 	protected static final ResourceLocation WIDGETS = new ResourceLocation("textures/gui/widgets.png");
 	
-	public static void render(ForgeIngameGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight) 
+	public static void render(ForgeGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight)
 	{
 		RenderSystem.assertOnRenderThread();
 		

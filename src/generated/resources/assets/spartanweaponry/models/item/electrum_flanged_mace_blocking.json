@@ -1,8 +1,8 @@
 {
   "parent": "spartanweaponry:item/base/flanged_mace_blocking",
+  "loader": "spartanweaponry:oil_coated_item",
   "textures": {
-    "layer0": "spartanweaponry:item/electrum_flanged_mace",
-    "coating": "spartanweaponry:item/coating/flanged_mace"
-  },
-  "loader": "spartanweaponry:oil_coated_item"
+    "coating": "spartanweaponry:item/coating/flanged_mace",
+    "layer0": "spartanweaponry:item/electrum_flanged_mace"
+  }
 }

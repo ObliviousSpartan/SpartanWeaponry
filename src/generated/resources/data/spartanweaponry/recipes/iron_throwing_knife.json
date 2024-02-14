@@ -1,9 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:throwing_knife",
-  "pattern": [
-    "|#"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "throwing_knife"
+      ]
+    }
   ],
+  "group": "spartanweaponry:throwing_knife",
   "key": {
     "#": {
       "tag": "forge:ingots/iron"
@@ -12,15 +17,10 @@
       "tag": "spartanweaponry:handles"
     }
   },
+  "pattern": [
+    "|#"
+  ],
   "result": {
     "item": "spartanweaponry:iron_throwing_knife"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "throwing_knife"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

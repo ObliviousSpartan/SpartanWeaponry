@@ -7,8 +7,6 @@ import com.oblivioussp.spartanweaponry.entity.projectile.ArrowExplosiveEntity;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -34,7 +32,7 @@ public class ArrowExplosiveItem extends ArrowItemSW
 	public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flagIn)
 	{
 		super.appendHoverText(stack, level, tooltip, flagIn);
-		tooltip.add(new TextComponent(""));
-		tooltip.add(new TranslatableComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.impact.explosion").withStyle(ChatFormatting.BLUE));
+		tooltip.add(Component.empty());
+		tooltip.add(Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.impact.explosion").withStyle(ChatFormatting.BLUE));
 	}
 }

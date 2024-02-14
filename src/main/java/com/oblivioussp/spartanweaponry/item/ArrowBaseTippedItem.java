@@ -7,8 +7,6 @@ import com.oblivioussp.spartanweaponry.entity.projectile.ArrowBaseEntity;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.CreativeModeTab;
@@ -46,7 +44,7 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 	@Override
 	public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items)
 	{
-		if(this.allowdedIn(tab))
+		if(this.allowedIn(tab))
 		{
 			for(Potion potion : ForgeRegistries.POTIONS)
 			{
@@ -65,7 +63,7 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 	public void appendHoverText(ItemStack stack, Level levelIn, List<Component> tooltip, TooltipFlag flagIn) 
 	{
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
-		tooltip.add(new TextComponent(""));
+		tooltip.add(Component.empty());
 		PotionUtils.addPotionTooltip(stack, tooltip, 0.125f);
 	}
 
@@ -75,6 +73,6 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 		Potion potion = PotionUtils.getPotion(stack);
 		
 		String potionKey = potion.getName("item.spartanweaponry.proj_tipped.effect.");
-		return new TranslatableComponent(potionKey, new TranslatableComponent("item." + ModSpartanWeaponry.ID + "." + baseName));
+		return Component.translatable(potionKey, Component.translatable("item." + ModSpartanWeaponry.ID + "." + baseName));
 	}
 }

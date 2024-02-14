@@ -1,11 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:saber",
-  "pattern": [
-    " #",
-    " #",
-    "#|"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "saber"
+      ]
+    }
   ],
+  "group": "spartanweaponry:saber",
   "key": {
     "#": {
       "tag": "forge:ingots/iron"
@@ -14,15 +17,12 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " #",
+    " #",
+    "#|"
+  ],
   "result": {
     "item": "spartanweaponry:iron_saber"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "saber"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+  }
 }

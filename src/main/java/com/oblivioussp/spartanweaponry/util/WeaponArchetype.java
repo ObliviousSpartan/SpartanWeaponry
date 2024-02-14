@@ -20,12 +20,11 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.RegistryManager;
 import net.minecraftforge.registries.tags.ITag;
 import net.minecraftforge.registries.tags.ITagManager;
@@ -97,7 +96,7 @@ public class WeaponArchetype implements IReloadable
 	@Override
 	public void reload() 
 	{
-		IForgeRegistry<WeaponTrait> registry = RegistryManager.ACTIVE.getRegistry(WeaponTraits.REGISTRY_KEY);
+		ForgeRegistry<WeaponTrait> registry = RegistryManager.ACTIVE.getRegistry(WeaponTraits.REGISTRY_KEY);
 		ITagManager<WeaponTrait> tagManager = registry.tags();
 
 		if(!(isValidTag = tagManager.isKnownTagName(traitsTag)))
@@ -134,7 +133,7 @@ public class WeaponArchetype implements IReloadable
 													WeaponTrait.InvalidReason.WEAPON_NOT_SUPPORTED;
 				
 				invalidTraitList.add(Pair.of(trait, reason));
-				invalidTraitValues.add(trait.getRegistryName().toString());
+				invalidTraitValues.add(registry.getKey(trait).toString());
 			}
 			return isValid;
 		}).collect(Collectors.toUnmodifiableList());
@@ -176,7 +175,7 @@ public class WeaponArchetype implements IReloadable
 	public void addTagErrorTooltip(ItemStack stack, List<Component> tooltip)
 	{
 		if(!isValidTag)
-			tooltip.add(new TranslatableComponent(String.format("tooltip.%s.trait.invalid.archetype_tag", SpartanWeaponryAPI.MOD_ID), name, traitsTag.location()).withStyle(ChatFormatting.DARK_RED));
+			tooltip.add(Component.translatable(String.format("tooltip.%s.trait.invalid.archetype_tag", SpartanWeaponryAPI.MOD_ID), name, traitsTag.location()).withStyle(ChatFormatting.DARK_RED));
 	}
 	
 	public void addTraitsToTooltip(ItemStack stack, List<Component> tooltip, boolean isShiftPressed)

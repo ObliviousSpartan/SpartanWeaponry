@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "item": "spartanweaponry:diamond_warhammer"
-  },
   "addition": {
     "tag": "forge:ingots/netherite"
+  },
+  "base": {
+    "item": "spartanweaponry:diamond_warhammer"
   },
   "result": {
     "item": "spartanweaponry:netherite_warhammer"

@@ -9,9 +9,11 @@ import org.apache.commons.lang3.tuple.Pair;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.APIConfigValues;
 import com.oblivioussp.spartanweaponry.api.APIConstants;
+import com.oblivioussp.spartanweaponry.api.OilEffects;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 import com.oblivioussp.spartanweaponry.api.WeaponTraits;
 import com.oblivioussp.spartanweaponry.api.crafting.condition.TypeDisabledCondition;
+import com.oblivioussp.spartanweaponry.api.oil.OilEffect;
 import com.oblivioussp.spartanweaponry.init.ModItems;
 import com.oblivioussp.spartanweaponry.merchant.villager.WeaponsmithTrades;
 
@@ -24,6 +26,8 @@ import net.minecraftforge.common.ForgeConfigSpec.IntValue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
+import net.minecraftforge.registries.ForgeRegistry;
+import net.minecraftforge.registries.RegistryManager;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config
@@ -531,6 +535,9 @@ public class Config
 	@SubscribeEvent
 	public static void onConfigLoad(ModConfigEvent ev)
 	{
+		if(ev.getConfig().getSpec() != CONFIG_SPEC)
+			return;
+		
 		TypeDisabledCondition.disabledRecipeTypes.clear();
 		
 		updateMaterialValues(WeaponMaterial.COPPER, INSTANCE.copper.damage.get().floatValue(), INSTANCE.copper.durability.get());
@@ -660,6 +667,28 @@ public class Config
 		WeaponTraits.ARMOUR_PIERCING.get().setMagnitude(INSTANCE.armorPiercePercentage.get().floatValue());
 		WeaponTraits.QUICK_STRIKE.get().setMagnitude(INSTANCE.quickStrikeHurtResistTicks.get().floatValue());
 		WeaponTraits.DECAPITATE.get().setMagnitude(INSTANCE.decapitateSkullDropPercentage.get().floatValue());
+		
+		// Update Oils
+		ForgeRegistry<OilEffect> oilEffects = RegistryManager.ACTIVE.getRegistry(OilEffects.REGISTRY_KEY);
+		for(OilEffect effect : oilEffects)
+		{
+			switch(effect.getType())
+			{
+			case STANDARD:
+				effect.updateFromConfig(INSTANCE.oilUsesNormal.get(), INSTANCE.oilDamageModifierNormal.get().floatValue());
+				break;
+			case SUSTAINED:
+				effect.updateFromConfig(INSTANCE.oilUsesLong.get(), INSTANCE.oilDamageModifierNormal.get().floatValue());
+				break;
+			case POTENT:
+				effect.updateFromConfig(INSTANCE.oilUsesNormal.get(), INSTANCE.oilDamageModifierStrong.get().floatValue());
+				break;
+			case EFFECT_ONLY:
+				effect.updateFromConfig(INSTANCE.oilUsesNormal.get(), 0.0f);
+			default:
+				break;
+			}
+		}
 		
 		// Update values required API-side
 		APIConfigValues.damageBonusCheckArmorValue = INSTANCE.damageBonusCheckArmorValue.get();

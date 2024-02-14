@@ -1,31 +1,31 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#",
-    "|",
-    "F"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "arrows"
+      ]
+    }
   ],
   "key": {
     "#": {
       "tag": "forge:ingots/iron"
     },
-    "|": {
-      "tag": "forge:rods/wooden"
-    },
     "F": {
       "tag": "forge:feathers"
+    },
+    "|": {
+      "tag": "forge:rods/wooden"
     }
   },
+  "pattern": [
+    "#",
+    "|",
+    "F"
+  ],
   "result": {
-    "item": "spartanweaponry:iron_arrow",
-    "count": 4
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "arrows"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    }
-  ]
+    "count": 4,
+    "item": "spartanweaponry:iron_arrow"
+  }
 }

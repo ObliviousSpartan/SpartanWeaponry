@@ -1,11 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:quarterstaff",
-  "pattern": [
-    "  #",
-    " / ",
-    "#  "
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "quarterstaff",
+        "nickel"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/nickel"
+      }
+    }
   ],
+  "group": "spartanweaponry:quarterstaff",
   "key": {
     "#": {
       "tag": "forge:ingots/nickel"
@@ -14,23 +25,12 @@
       "item": "spartanweaponry:pole"
     }
   },
+  "pattern": [
+    "  #",
+    " / ",
+    "#  "
+  ],
   "result": {
     "item": "spartanweaponry:nickel_quarterstaff"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "quarterstaff",
-        "nickel"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/nickel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

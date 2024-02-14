@@ -1,10 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "spartanweaponry:parrying_dagger",
-  "pattern": [
-    " #",
-    "#|"
+  "conditions": [
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "parrying_dagger",
+        "invar"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/invar"
+      }
+    }
   ],
+  "group": "spartanweaponry:parrying_dagger",
   "key": {
     "#": {
       "tag": "forge:ingots/invar"
@@ -13,23 +25,11 @@
       "item": "spartanweaponry:handle"
     }
   },
+  "pattern": [
+    " #",
+    "#|"
+  ],
   "result": {
     "item": "spartanweaponry:invar_parrying_dagger"
-  },
-  "conditions": [
-    {
-      "disabled": [
-        "parrying_dagger",
-        "invar"
-      ],
-      "type": "spartanweaponry:type_disabled"
-    },
-    {
-      "value": {
-        "tag": "forge:ingots/invar",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
-    }
-  ]
+  }
 }

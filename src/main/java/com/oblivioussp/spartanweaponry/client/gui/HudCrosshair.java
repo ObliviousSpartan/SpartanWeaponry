@@ -19,14 +19,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraftforge.client.gui.ForgeIngameGui;
-import net.minecraftforge.client.gui.OverlayRegistry;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
 
 public class HudCrosshair
 {
 	public static final ResourceLocation CROSSHAIR_TEXTURES = new ResourceLocation(ModSpartanWeaponry.ID, "textures/gui/crosshairs.png");
+	protected static boolean isVanillaCrosshairDisabled = false;
 	
-	public static void render(ForgeIngameGui gui, PoseStack mStack, float partialTicks, int screenWidth, int screenHeight) 
+	public static void render(ForgeGui gui, PoseStack poseStack, float partialTicks, int screenWidth, int screenHeight)
 	{
 		Minecraft mc = Minecraft.getInstance();
 		Options options = mc.options;
@@ -40,8 +40,10 @@ public class HudCrosshair
 		
 		if(equipStack.isEmpty())
 		{
-			if(!OverlayRegistry.getEntry(ForgeIngameGui.CROSSHAIR_ELEMENT).isEnabled())
-				OverlayRegistry.enableOverlay(ForgeIngameGui.CROSSHAIR_ELEMENT, true);
+			if(isVanillaCrosshairDisabled)
+				isVanillaCrosshairDisabled = false;
+/*			if(!OverlayRegistry.getEntry(ForgeIngameGui.CROSSHAIR_ELEMENT).isEnabled())
+				OverlayRegistry.enableOverlay(ForgeIngameGui.CROSSHAIR_ELEMENT, true);*/
 			return;
 		}
 		else
@@ -50,13 +52,15 @@ public class HudCrosshair
 			
 			if(crosshairItem.getCrosshairHudElement() != null)
 			{
-				if(OverlayRegistry.getEntry(ForgeIngameGui.CROSSHAIR_ELEMENT).isEnabled())
-					OverlayRegistry.enableOverlay(ForgeIngameGui.CROSSHAIR_ELEMENT, false);
+//				if(OverlayRegistry.getEntry(ForgeIngameGui.CROSSHAIR_ELEMENT).isEnabled())
+//					OverlayRegistry.enableOverlay(ForgeIngameGui.CROSSHAIR_ELEMENT, false);
+				if(!isVanillaCrosshairDisabled)
+					isVanillaCrosshairDisabled = true;
 				
 				if(options.getCameraType().isFirstPerson() && (mc.gameMode.getPlayerMode() != GameType.SPECTATOR || canRenderCrosshairForSpectator(mc)))
 				{
 					// Do the debug rendering for crosshairs even with the custom crosshairs enabled
-		            if (options.renderDebug && !options.hideGui && !player.isReducedDebugInfo() && !options.reducedDebugInfo)
+		            if (options.renderDebug && !options.hideGui && !player.isReducedDebugInfo() && !options.reducedDebugInfo().get())
 		            {
 		               Camera camera = mc.gameRenderer.getMainCamera();
 		               PoseStack posestack = RenderSystem.getModelViewStack();
@@ -71,10 +75,15 @@ public class HudCrosshair
 		               RenderSystem.applyModelViewMatrix();
 		            }
 		            else
-		            	crosshairItem.getCrosshairHudElement().render(gui, mStack, partialTicks, screenWidth, screenHeight, equipStack);
+		            	crosshairItem.getCrosshairHudElement().render(gui, poseStack, partialTicks, screenWidth, screenHeight, equipStack);
 				}
 			}
 		}
+	}
+	
+	public static boolean isVanillaCrosshairDisabled()
+	{
+		return isVanillaCrosshairDisabled;
 	}
 	
 	private static boolean canRenderCrosshairForSpectator(Minecraft mc)
@@ -92,5 +101,5 @@ public class HudCrosshair
 		}
 		else
 			return false;
-	   }
+	}
 }

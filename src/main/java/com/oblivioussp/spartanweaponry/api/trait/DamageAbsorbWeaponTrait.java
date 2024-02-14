@@ -5,7 +5,6 @@ import java.util.List;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,7 +23,7 @@ public class DamageAbsorbWeaponTrait extends MeleeCallbackWeaponTrait
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<Component> tooltip)
 	{
-		tooltip.add(tooltipIndent().append(new TranslatableComponent(String.format("tooltip.%s.trait.%s.desc", modId, type), magnitude * 100.0f).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
+		tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.desc", modId, type), magnitude * 100.0f).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
 	}
 
 	@Override
