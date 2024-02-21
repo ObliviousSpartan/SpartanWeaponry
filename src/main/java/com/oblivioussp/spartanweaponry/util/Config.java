@@ -141,7 +141,7 @@ public class Config
 		
 		private MaterialCategory(ForgeConfigSpec.Builder builder, String materialNameIn, float damageIn, int durabilityIn, String typeDisabledNameIn)
 		{
-			builder.push(materialName);
+			builder.push(materialNameIn);
 			materialName = materialNameIn;
 			typeDisabledName = typeDisabledNameIn;
 			damage = builder.comment("Base Damage for " + materialName + " weapons")
