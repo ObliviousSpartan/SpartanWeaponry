@@ -7,8 +7,8 @@
     },
     {
       	"disabled": [
-        	"arrows",
-        	"diamond_ammo"
+        	"bolts",
+        	"copper_ammo"
       	],
       	"type": "spartanweaponry:type_disabled"
     },
@@ -18,17 +18,17 @@
 	}],
 	"ingredients":[ 
 		{
-			"tag": "forge:gems/diamond"
+			"tag": "forge:ingots/copper"
 		},
 		{
-			"tag": "forge:rods/wooden"
+			"tag": "forge:nuggets/iron"
 		},
 		{
 			"tag": "forge:feathers"
 		}
 	],
 	"result": {
-	  "item": "spartanweaponry:arrow_diamond",
+	  "item": "spartanweaponry:copper_bolt",
 	  "count": 6
 	}
 }

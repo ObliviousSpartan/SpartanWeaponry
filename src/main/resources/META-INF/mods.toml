@@ -3,7 +3,7 @@ loaderVersion="[40,)"
 # The license for your mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="All Rights Reserved"
-issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/spartan-weaponry/issues"
+issueTrackerURL="https://github.com/ObliviousSpartan/SpartanWeaponry/issues"
 logoFile="logo.png"
 
 [[mods]]
