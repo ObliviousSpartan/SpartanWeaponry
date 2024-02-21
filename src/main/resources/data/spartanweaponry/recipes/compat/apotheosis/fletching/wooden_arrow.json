@@ -7,8 +7,7 @@
     },
     {
       	"disabled": [
-        	"bolts",
-        	"diamond_ammo"
+        	"arrows"
       	],
       	"type": "spartanweaponry:type_disabled"
     },
@@ -18,17 +17,17 @@
 	}],
 	"ingredients":[ 
 		{
-			"tag": "forge:gems/diamond"
+			"tag": "minecraft:planks"
 		},
 		{
-			"tag": "forge:nuggets/iron"
+			"tag": "forge:rods/wooden"
 		},
 		{
 			"tag": "forge:feathers"
 		}
 	],
 	"result": {
-	  "item": "spartanweaponry:bolt_diamond",
+	  "item": "spartanweaponry:wooden_arrow",
 	  "count": 6
 	}
 }

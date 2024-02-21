@@ -38,10 +38,10 @@ public class LivingEntityMixin extends EntityMixin
 	@Inject(at = @At("HEAD"), method = "getDamageAfterArmorAbsorb(Lnet/minecraft/world/damagesource/DamageSource;F)F", cancellable = true)
 	protected void getDamageAfterArmorAbsorb(DamageSource source, float damage, CallbackInfoReturnable<Float> callback)
 	{
-		if(source instanceof IArmorPiercingDamageSource && !source.isBypassArmor())
+		if(source instanceof IArmorPiercingDamageSource apSource && !source.isBypassArmor())
 		{
 			hurtArmor(source, damage);
-			float percentage = ((IArmorPiercingDamageSource)source).getArmorPiercingPercentage();
+			float percentage = apSource.getArmorPiercingPercentage();
 			Log.debug("Found armor piercing damage source! Reducing armor value of target by " + (percentage * 100.0f) + "%");
 			float toughness = (float)getAttributeValue(Attributes.ARMOR_TOUGHNESS);
 			float armorPiercingDamage = damage * percentage;			// Damage which ignores armor completely

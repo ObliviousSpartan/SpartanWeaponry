@@ -5,29 +5,23 @@
     	"modid": "apotheosis",
     	"type": "forge:mod_loaded"
     },
-    {
-      	"disabled": [
-        	"arrows"
-      	],
-      	"type": "spartanweaponry:type_disabled"
-    },
     { 
 		"type": "apotheosis:module",
 		"module": "village"
 	}],
 	"ingredients":[ 
 		{
-			"tag": "minecraft:planks"
+			"item": "spartanweaponry:explosive_charge"
 		},
 		{
-			"tag": "forge:rods/wooden"
+			"item": "minecraft:arrow"
 		},
 		{
-			"tag": "forge:feathers"
+			"item": "minecraft:arrow"
 		}
 	],
 	"result": {
-	  "item": "spartanweaponry:arrow_wood",
-	  "count": 6
+	  "item": "spartanweaponry:explosive_arrow",
+	  "count": 2
 	}
 }

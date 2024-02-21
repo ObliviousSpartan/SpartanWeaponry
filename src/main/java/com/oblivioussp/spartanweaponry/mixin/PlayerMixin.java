@@ -31,8 +31,9 @@ public class PlayerMixin
 			if(sweepTrait != null && sweepTrait.getLevel() > 1)
 			{
 				float damage = (float)entityIn.getAttributeValue(Attributes.ATTACK_DAMAGE);
-				float result = ((damage - 1.0f) / damage) * sweepTrait.getMagnitude();
-				Log.debug("Damage: " + damage + " - Magnitude: " + sweepTrait.getMagnitude() + " - Overridden sweep damage ratio to " + result);
+				float resultDamage = damage * sweepTrait.getMagnitude();
+				float result = ((resultDamage - 1.0f) / resultDamage) * sweepTrait.getMagnitude();;
+				Log.debug("Base damage: " + damage + " * Magnitude: " + sweepTrait.getMagnitude() + " = Result damage: " + resultDamage + " - Overridden sweep damage ratio to " + result);
 				return result;
 			}
 		}

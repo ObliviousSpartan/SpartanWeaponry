@@ -99,11 +99,11 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 		ReloadableHandler.addToReloadList(this);
 	}
 	
-	public ThrowingWeaponItem(Item.Properties prop, WeaponMaterial material, WeaponArchetype archetypeIn, float weaponBaseDamage, float weaponDamageMultiplier, float weaponSpeed, int maxAmmoCapacity, int chargeTicks, String customDisplayName)
+	public ThrowingWeaponItem(Item.Properties prop, WeaponMaterial material, WeaponArchetype archetypeIn, float weaponBaseDamage, float weaponDamageMultiplier, float weaponSpeed, int maxAmmoCapacity, int chargeTicks, String customDisplayNameIn)
 	{
 		this(prop, material, archetypeIn, weaponBaseDamage, weaponDamageMultiplier, weaponSpeed, maxAmmoCapacity, chargeTicks);
 		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+			customDisplayName = customDisplayNameIn;
 	}
 
 	@Override
@@ -116,8 +116,8 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 
 		// Initialize the weapon's attribute modifier map
 		ImmutableMultimap.Builder<Attribute, AttributeModifier> mapBuilder = ImmutableMultimap.builder();
-		mapBuilder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)this.getDirectAttackDamage(), AttributeModifier.Operation.ADDITION));
-		mapBuilder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)this.attackSpeed - 4.0d, AttributeModifier.Operation.ADDITION));
+		mapBuilder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", (double)getDirectAttackDamage(), AttributeModifier.Operation.ADDITION));
+		mapBuilder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)attackSpeed - 4.0d, AttributeModifier.Operation.ADDITION));
 		
 		// Add melee attributes from Weapon Traits
 		if(traits != null)
@@ -290,23 +290,23 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 				Player player = (Player)entityLiving;
 	
 				int maxCharge = getMaxChargeTicks(stack);
-	            int charge = Math.min(this.getUseDuration(stack) - timeLeft, maxCharge);
+	            int charge = Math.min(getUseDuration(stack) - timeLeft, maxCharge);
 				
 				if (!levelIn.isClientSide && charge > 2)
 		        {
-		            ThrowingWeaponEntity thrown = this.createThrowingWeaponEntity(levelIn, player, stack, charge);
+		            ThrowingWeaponEntity thrown = createThrowingWeaponEntity(levelIn, player, stack, charge);
 		            float chargePerc = (charge / (float)maxCharge);
 		            
 		            if(thrown == null)	return;
 		            
 		            thrown.setWeapon(stack);
 		            int velocityBonus = stack.getEnchantmentLevel(ModEnchantments.PROPEL.get());
-		            thrown.shootFromRotation(player, player.xRotO, player.yRotO, 0.0F, this.throwVelocity * ((velocityBonus * 0.2f) + 1) * (chargePerc * 0.9f + 0.1f), 0.5f);
+		            thrown.shootFromRotation(player, player.xRotO, player.yRotO, 0.0F, throwVelocity * ((velocityBonus * 0.2f) + 1) * (chargePerc * 0.9f + 0.1f), 0.5f);
 		            
 		            traits.forEach((trait) -> trait.getThrowingCallback().ifPresent((callback) -> callback.onThrowingProjectileSpawn(material, thrown)));
 		            
-		            float damage = (this.getDirectAttackDamage() + 1.0f) * this.throwDamageMultiplier;
-		            thrown.setBaseDamage(damage);
+		            double damageMultiplier = (throwDamageMultiplier - 1.0f) * chargePerc + 1.0f;
+		            thrown.setBaseDamage((getDirectAttackDamage() + 1.0d) * damageMultiplier);
 		            
 		            // Apply enchantments as necessary
 		            int j = stack.getEnchantmentLevel(ModEnchantments.RAZORS_EDGE.get());
@@ -377,7 +377,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) 
 	{
-		if(this.allowedIn(group))
+		if(allowedIn(group))
 		{
 			ItemStack stack = new ItemStack(this);
 
@@ -392,7 +392,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	@Override
 	public int getEnchantmentValue(ItemStack stack) 
 	{
-		return this.material.getEnchantmentValue();
+		return material.getEnchantmentValue();
 	}
 	
 	@Override
@@ -452,7 +452,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	@Override
 	public WeaponMaterial getMaterial()
 	{
-		return this.material;
+		return material;
 	}
 	
 	// New methods
@@ -524,7 +524,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 		int level = stack.getEnchantmentLevel(ModEnchantments.EXPANSE.get());
 		// Find the value to increase by per level (if ammo increase is too small e.g. Boomerang; then use ammo + 1 per level instead)
 		int increasePerLevel = Math.max((int)(maxAmmo * 0.25f), 1);
-		return this.maxAmmo + (increasePerLevel * level);
+		return maxAmmo + (increasePerLevel * level);
 	}
 	
 	public int getMaxAmmoBase()
@@ -534,7 +534,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	
 	public int getMaxChargeTicks(ItemStack stack)
 	{
-		int chargeTicks = (int)(this.maxChargeTicks * (1 - stack.getEnchantmentLevel(ModEnchantments.SUPERCHARGE.get()) * 0.2f));
+		int chargeTicks = (int)(maxChargeTicks * (1 - stack.getEnchantmentLevel(ModEnchantments.SUPERCHARGE.get()) * 0.2f));
 		if(traits != null)
 			for(WeaponTrait trait : traits)
 			{

@@ -2,7 +2,7 @@
 	"required": true,
 	"package": "com.oblivioussp.spartanweaponry.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"refmap": "spartanweaponry.refmap.json",
+	"refmap": "spartanweaponry.mixins.refmap.json",
 	"mixins": [
 		"EntityMixin",
 		"ProjectileMixin",

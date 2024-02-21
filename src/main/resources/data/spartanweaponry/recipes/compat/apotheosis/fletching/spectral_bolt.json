@@ -5,23 +5,29 @@
     	"modid": "apotheosis",
     	"type": "forge:mod_loaded"
     },
+    {
+      "disabled": [
+        "bolts"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    },
     { 
 		"type": "apotheosis:module",
 		"module": "village"
 	}],
 	"ingredients":[ 
 		{
-			"item": "spartanweaponry:explosive_charge"
+			"tag": "forge:dusts/glowstone"
 		},
 		{
-			"item": "minecraft:arrow"
+			"item": "spartanweaponry:bolt"
 		},
 		{
-			"item": "minecraft:arrow"
+			"tag": "forge:dusts/glowstone"
 		}
 	],
 	"result": {
-	  "item": "spartanweaponry:arrow_explosive",
+	  "item": "spartanweaponry:spectral_bolt",
 	  "count": 2
 	}
 }
