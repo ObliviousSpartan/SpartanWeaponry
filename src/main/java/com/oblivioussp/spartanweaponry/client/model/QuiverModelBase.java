@@ -15,7 +15,6 @@ public abstract class QuiverModelBase extends EntityModel<LivingEntity>
 	public QuiverModelBase() 
 	{
 		super(RenderType::getEntityCutoutNoCull);
-//		super(RenderType::getEntitySolid);
 	}
     
     @Override
@@ -24,9 +23,9 @@ public abstract class QuiverModelBase extends EntityModel<LivingEntity>
     
     public abstract void rotate(BipedModel<LivingEntity> model);
 
-    public void setArrowsToRender(int arrowsToRender) 
+    public void setArrowsToRender(int arrowsToRenderIn) 
     {
-		this.arrowsToRender = arrowsToRender;
+		arrowsToRender = arrowsToRenderIn;
 	}
     
     protected abstract void renderArrows(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha);

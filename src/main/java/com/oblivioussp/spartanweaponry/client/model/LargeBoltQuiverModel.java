@@ -36,74 +36,74 @@ public class LargeBoltQuiverModel extends QuiverModelBase
 
     public LargeBoltQuiverModel() 
     {
-        this.textureWidth = 32;
-        this.textureHeight = 32;
-        this.quiver = new ModelRenderer(this, 0, 0);
-        this.quiver.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.quiver.addBox(-3.0F, -3.0F, 3.0F, 6.0F, 5.0F, 4.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(quiver, 0.0F, 0.0F, -0.5235987755982988F);
-        this.strap_front = new ModelRenderer(this, 0, 16);
-        this.strap_front.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.strap_front.addBox(-6.0F, -1.0F, -3.5F, 12.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(strap_front, 0.0F, 0.0F, -0.8726646259971648F);
-        this.strap_top = new ModelRenderer(this, 0, 18);
-        this.strap_top.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.strap_top.addBox(-3.5F, -1.0F, 6.0F, 7.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(strap_top, 0.0F, 1.5707963267948966F, -0.8726646259971648F);
-        this.strap_back = new ModelRenderer(this, 0, 14);
-        this.strap_back.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.strap_back.addBox(-6.0F, -1.0F, 2.5F, 12.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(strap_back, 0.0F, 0.0F, -0.8726646259971648F);
-        this.strap_bottom = new ModelRenderer(this, 0, 20);
-        this.strap_bottom.setRotationPoint(0.0F, 5.0F, 0.0F);
-        this.strap_bottom.addBox(-3.5F, -1.0F, -7.0F, 7.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(strap_bottom, 0.0F, 1.5707963267948966F, -0.8726646259971648F);
-        this.arrow_1_1 = new ModelRenderer(this, 26, 0);
-        this.arrow_1_1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_1_1.addBox(-8.6F, -3.6F, 1.1F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_1_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_1_2 = new ModelRenderer(this, 26, 0);
-        this.arrow_1_2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_1_2.addBox(-0.4F, -3.6F, 7.1F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_1_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_2_1 = new ModelRenderer(this, 26, 0);
-        this.arrow_2_1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_2_1.addBox(-7.4F, -3.6F, 2.4F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_2_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_2_2 = new ModelRenderer(this, 26, 0);
-        this.arrow_2_2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_2_2.addBox(0.9F, -3.6F, 5.9F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_2_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_3_1 = new ModelRenderer(this, 26, 0);
-        this.arrow_3_1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_3_1.addBox(-6.8F, -3.6F, 0.6F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_3_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_3_2 = new ModelRenderer(this, 26, 0);
-        this.arrow_3_2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_3_2.addBox(-0.9F, -3.6F, 5.3F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_3_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_4_1 = new ModelRenderer(this, 26, 0);
-        this.arrow_4_1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_4_1.addBox(-5.5F, -3.6F, 1.8F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_4_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_4_2 = new ModelRenderer(this, 26, 0);
-        this.arrow_4_2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_4_2.addBox(0.3F, -3.6F, 4.0F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_4_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_5_1 = new ModelRenderer(this, 26, 0);
-        this.arrow_5_1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_5_1.addBox(-6.1F, -3.6F, 3.6F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_5_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
-        this.arrow_5_2 = new ModelRenderer(this, 26, 0);
-        this.arrow_5_2.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.arrow_5_2.addBox(2.1F, -3.6F, 4.6F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(arrow_5_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
+        textureWidth = 32;
+        textureHeight = 32;
+        quiver = new ModelRenderer(this, 0, 0);
+        quiver.setRotationPoint(0.0F, 5.0F, 0.0F);
+        quiver.addBox(-3.0F, -3.0F, 3.0F, 6.0F, 5.0F, 4.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(quiver, 0.0F, 0.0F, -0.5235987755982988F);
+        strap_front = new ModelRenderer(this, 0, 16);
+        strap_front.setRotationPoint(0.0F, 5.0F, 0.0F);
+        strap_front.addBox(-6.0F, -1.0F, -3.5F, 12.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(strap_front, 0.0F, 0.0F, -0.8726646259971648F);
+        strap_top = new ModelRenderer(this, 0, 18);
+        strap_top.setRotationPoint(0.0F, 5.0F, 0.0F);
+        strap_top.addBox(-3.5F, -1.0F, 6.0F, 7.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(strap_top, 0.0F, 1.5707963267948966F, -0.8726646259971648F);
+        strap_back = new ModelRenderer(this, 0, 14);
+        strap_back.setRotationPoint(0.0F, 5.0F, 0.0F);
+        strap_back.addBox(-6.0F, -1.0F, 2.5F, 12.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(strap_back, 0.0F, 0.0F, -0.8726646259971648F);
+        strap_bottom = new ModelRenderer(this, 0, 20);
+        strap_bottom.setRotationPoint(0.0F, 5.0F, 0.0F);
+        strap_bottom.addBox(-3.5F, -1.0F, -7.0F, 7.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(strap_bottom, 0.0F, 1.5707963267948966F, -0.8726646259971648F);
+        arrow_1_1 = new ModelRenderer(this, 26, 0);
+        arrow_1_1.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_1_1.addBox(-8.6F, -3.6F, 1.1F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_1_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
+        arrow_1_2 = new ModelRenderer(this, 26, 0);
+        arrow_1_2.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_1_2.addBox(-0.4F, -3.6F, 7.1F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_1_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
+        arrow_2_1 = new ModelRenderer(this, 26, 0);
+        arrow_2_1.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_2_1.addBox(-7.4F, -3.6F, 2.4F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_2_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
+        arrow_2_2 = new ModelRenderer(this, 26, 0);
+        arrow_2_2.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_2_2.addBox(0.9F, -3.6F, 5.9F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_2_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
+        arrow_3_1 = new ModelRenderer(this, 26, 0);
+        arrow_3_1.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_3_1.addBox(-6.8F, -3.6F, 0.6F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_3_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
+        arrow_3_2 = new ModelRenderer(this, 26, 0);
+        arrow_3_2.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_3_2.addBox(-0.9F, -3.6F, 5.3F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_3_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
+        arrow_4_1 = new ModelRenderer(this, 26, 0);
+        arrow_4_1.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_4_1.addBox(-5.5F, -3.6F, 1.8F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_4_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
+        arrow_4_2 = new ModelRenderer(this, 26, 0);
+        arrow_4_2.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_4_2.addBox(0.3F, -3.6F, 4.0F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_4_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
+        arrow_5_1 = new ModelRenderer(this, 26, 0);
+        arrow_5_1.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_5_1.addBox(-6.1F, -3.6F, 3.6F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_5_1, 0.0F, 0.7853981633974483F, -0.5235987755982988F);
+        arrow_5_2 = new ModelRenderer(this, 26, 0);
+        arrow_5_2.setRotationPoint(0.0F, 0.0F, 0.0F);
+        arrow_5_2.addBox(2.1F, -3.6F, 4.6F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+        setRotateAngle(arrow_5_2, 0.0F, -0.7853981633974483F, -0.5235987755982988F);
     }
 
     @Override
     public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) 
     { 
-        ImmutableList.of(this.quiver, this.strap_front, this.strap_back, this.strap_bottom, this.strap_top).forEach((modelRenderer) -> { 
+        ImmutableList.of(quiver, strap_front, strap_back, strap_bottom, strap_top).forEach((modelRenderer) -> { 
             modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
         });
         renderArrows(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
@@ -113,38 +113,36 @@ public class LargeBoltQuiverModel extends QuiverModelBase
 	protected void renderArrows(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn,
 			int packedOverlayIn, float red, float green, float blue, float alpha) 
 	{
-		//RenderHelper.disableStandardItemLighting();
-		if(this.arrowsToRender >= 1)
+		if(arrowsToRender >= 1)
 		{
-			ImmutableList.of(this.arrow_1_1, this.arrow_1_2).forEach((modelRenderer) -> {
+			ImmutableList.of(arrow_1_1, arrow_1_2).forEach((modelRenderer) -> {
 				modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 			});
 		}
-		if(this.arrowsToRender >= 2)
+		if(arrowsToRender >= 2)
 		{
-			ImmutableList.of(this.arrow_2_1, this.arrow_2_2).forEach((modelRenderer) -> {
+			ImmutableList.of(arrow_2_1, arrow_2_2).forEach((modelRenderer) -> {
 				modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 			});
 		}
-		if(this.arrowsToRender >= 3)
+		if(arrowsToRender >= 3)
 		{
-			ImmutableList.of(this.arrow_3_1, this.arrow_3_2).forEach((modelRenderer) -> {
+			ImmutableList.of(arrow_3_1, arrow_3_2).forEach((modelRenderer) -> {
 				modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 			});
 		}
-		if(this.arrowsToRender >= 4)
+		if(arrowsToRender >= 4)
 		{
-			ImmutableList.of(this.arrow_4_1, this.arrow_4_2).forEach((modelRenderer) -> {
+			ImmutableList.of(arrow_4_1, arrow_4_2).forEach((modelRenderer) -> {
 				modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 			});
 		}
-		if(this.arrowsToRender >= 5)
+		if(arrowsToRender >= 5)
 		{
-			ImmutableList.of(this.arrow_5_1, this.arrow_5_2).forEach((modelRenderer) -> {
+			ImmutableList.of(arrow_5_1, arrow_5_2).forEach((modelRenderer) -> {
 				modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 			});
 		}
-		//RenderHelper.enableStandardItemLighting();
 	}
 	
     /**
@@ -158,8 +156,5 @@ public class LargeBoltQuiverModel extends QuiverModelBase
     }
 
 	@Override
-	public void rotate(BipedModel<LivingEntity> model) 
-	{
-//		quiver.setRotationPoint(quiver.rotationPointX + model.bipedBody.rotateAngleX, quiver.rotationPointY + model.bipedBody.rotateAngleY, quiver.rotationPointZ + model.bipedBody.rotateAngleZ);
-	}
+	public void rotate(BipedModel<LivingEntity> model) {}
 }

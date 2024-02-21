@@ -30,7 +30,6 @@ public class DynamiteEntity extends ThrowableEntity implements IRendersAsItem
 	// TODO: Add water drag to dynamite
 	protected int timer;
 	protected boolean stickToSurface = false;
-//	protected final int TIMER_MAX = 60;
 	protected int fuseTicks = Defaults.FuseTicksDynamite;
 	
 	public DynamiteEntity(EntityType<? extends DynamiteEntity> type, World world)
@@ -99,44 +98,8 @@ public class DynamiteEntity extends ThrowableEntity implements IRendersAsItem
         
         if(stickToSurface)
         {
-        	/*this.motionX = 0.0D;
-        	this.motionY = 0.0D;
-        	this.motionZ = 0.0D;*/
         	setMotion(0.0d, 0.0d, 0.0d);
         }
-        
-        /*Vec3d vecPos = new Vec3d(this.posX, this.posY, this.posZ);
-        Vec3d vecNextPos = new Vec3d(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
-        RayTraceResult rayTrace = this.world.rayTraceBlocks(vecPos, vecNextPos);
-        Vec3d vecHit = null;
-        
-        if(rayTrace != null)
-        {
-        	vecHit = new Vec3d(rayTrace.hitVec.x, rayTrace.hitVec.y, rayTrace.hitVec.z);
-        }
-        
-        if(vecHit != null && rayTrace.typeOfHit == Type.BLOCK)
-        {
-        	double offX, offY, offZ;
-        	if(rayTrace.sideHit == EnumFacing.UP)
-        	{
-        		offY = -1.5D;
-        	}
-        	
-        	//BlockPos blockPos = rayTrace.getBlockPos();
-        	//IBlockState blockState = this.world.getBlockState(blockPos);
-        	this.stickToSurface = true;
-        	this.motionX = vecHit.x - posX;
-        	this.motionY = vecHit.y - posY;
-        	this.motionZ = vecHit.z - posZ;
-        	float f2 = MathHelper.sqrt(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
-            this.posX -= this.motionX / f2 * 0.05D;
-            this.posY -= this.motionY / f2 * 0.05D;
-            this.posZ -= this.motionZ / f2 * 0.05D;
-            this.playSound(SoundEvents.ENTITY_ARROW_HIT, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
-            this.inGround = true;
-        	this.setNoGravity(true);
-        }*/
 
         timer++;
 		if(timer >= fuseTicks)
@@ -145,9 +108,6 @@ public class DynamiteEntity extends ThrowableEntity implements IRendersAsItem
 		}
         else
         {
-            //this.handleWaterMovement();
-            //this.world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX, this.posY + 0.25D, this.posZ, 0.0D, 0.0D, 0.0D);
-            //this.world.addParticle(ParticleTypes.SMOKE, this.posX, this.posY + 0.25D, this.posZ, this.rand.nextFloat() * 0.1d - 0.05d, 0.1d, this.rand.nextFloat() * 0.1d - 0.05d);
             world.addParticle(ParticleTypes.SMOKE, getPosX(), getPosY() + 0.25D, getPosZ(), 0.0d, 0.1d, 0.0d);
         }
 	}
@@ -165,11 +125,11 @@ public class DynamiteEntity extends ThrowableEntity implements IRendersAsItem
 
 	protected void explode()
 	{
-		if(!this.world.isRemote)
+		if(!world.isRemote)
 		{
-			boolean mobGriefing = this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
-			this.world.createExplosion(this, getPosX(), getPosY(), getPosZ(), Config.INSTANCE.explosionStrengthDynamite.get().floatValue(), mobGriefing && !Config.INSTANCE.disableTerrainDamage.get() ? Explosion.Mode.BREAK : Explosion.Mode.NONE); /*ConfigHandler.enableTerrainDamage &&*/// mobGriefing);
-			this.remove();
+			boolean mobGriefing = world.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
+			world.createExplosion(this, getPosX(), getPosY(), getPosZ(), Config.INSTANCE.explosionStrengthDynamite.get().floatValue(), mobGriefing && !Config.INSTANCE.disableTerrainDamage.get() ? Explosion.Mode.BREAK : Explosion.Mode.NONE); /*ConfigHandler.enableTerrainDamage &&*/// mobGriefing);
+			remove();
 		}
 	}
 	

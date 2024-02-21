@@ -17,10 +17,10 @@ public class LongReachAttackPacket
 	private int entityID;
 	private float velocity;
 	
-	public LongReachAttackPacket(int entityID, float velocity)
+	public LongReachAttackPacket(int entityIDIn, float velocityIn)
 	{
-		this.entityID = entityID;
-		this.velocity = velocity;
+		entityID = entityIDIn;
+		velocity = velocityIn;
 	}
 	
 	public static void encode(LongReachAttackPacket packet, PacketBuffer buf)
@@ -54,31 +54,23 @@ public class LongReachAttackPacket
 				// Double check weapon type and reach to prevent trick kills by hackers
 				if(weapon.isEmpty())
 					return;
-//				if(weapon.getItem() instanceof IWeaponTraitContainer)
-//				{
-//					WeaponTrait reachTrait = ((IWeaponTraitContainer<?>)weapon.getItem()).getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_REACH);
-					
-//					if(reachTrait != null)
-//					{
-//						float reach = reachTrait.getMagnitude();
-						double reach = player.getAttributeValue(APIAttributes.ATTACK_REACH);
-						if(reach == APIAttributes.ATTACK_REACH.getDefaultValue())
-							return;
-						// Compare squared distance vs squared reach.
-						double distanceSquared = player.getDistanceSq(target),
-								//reachSquared = longReachItem.getReach() * longReachItem.getReach();
-								reachSquared = reach * reach;
-						
-						if(reachSquared >= distanceSquared)
-						{
-							//player.getPersistentData().putFloat(SpartanWeaponryAPI.MOD_ID + "_riding_velocity", packet.velocity);
-							player.attackTargetEntityWithCurrentItem(target);
-							Log.debug("Attacking victim!");
-						}
-//					}
-					player.swingArm(Hand.MAIN_HAND);
-					player.resetCooldown();
-//				}
+				
+				double reach = player.getAttributeValue(APIAttributes.ATTACK_REACH);
+				if(reach == APIAttributes.ATTACK_REACH.getDefaultValue())
+					return;
+				// Compare squared distance vs squared reach.
+				double distanceSquared = player.getDistanceSq(target),
+						reachSquared = reach * reach;
+				
+				if(reachSquared >= distanceSquared)
+				{
+					//player.getPersistentData().putFloat(SpartanWeaponryAPI.MOD_ID + "_riding_velocity", packet.velocity);
+					player.attackTargetEntityWithCurrentItem(target);
+					Log.debug("Attacking victim!");
+				}
+				
+				player.swingArm(Hand.MAIN_HAND);
+				player.resetCooldown();
 			});
 		}
 	}

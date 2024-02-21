@@ -36,7 +36,6 @@ public abstract class AbstractArrowEntityMixin extends ProjectileEntityMixin
 		if(!world.isRemote && (inGround || getNoClip()) && arrowShake <= 0)
 		{
 			Log.debug("Player collision with arrow entity intercepted!");
-//			boolean pickupItem = pickupStatus == PickupStatus.ALLOWED || pickupStatus == PickupStatus.CREATIVE_ONLY && entityIn.abilities.isCreativeMode || getNoClip() && getShooter().getUniqueID() == entityIn.getUniqueID();
 			
 			if(pickupStatus == PickupStatus.ALLOWED)
 			{

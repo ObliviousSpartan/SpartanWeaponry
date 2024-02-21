@@ -18,18 +18,6 @@ public class KnockbackWeaponTrait extends MeleeCallbackWeaponTrait
 		super(type, modId, TraitQuality.POSITIVE);
 	}
 	
-	/*@Override
-	public void onHitEntity(WeaponMaterial material, ItemStack stack, LivingEntity target, LivingEntity attacker, Entity projectile)
-	{
-		float knockbackStrength = 1 + EnchantmentHelper.getKnockbackModifier(attacker);
-
-        if (attacker.isSprinting())
-            ++knockbackStrength;
-		
-		// Enhance the knockback effect for this weapon.
-		target.applyKnockback(knockbackStrength * 1.0F, MathHelper.sin(attacker.rotationYaw * ((float)Math.PI / 180F)), (-MathHelper.cos(attacker.rotationYaw * ((float)Math.PI / 180F))));
-	}*/
-	
 	@Override
 	public void onModifyAttibutesMelee(Multimap<Attribute, AttributeModifier> modifiers) 
 	{

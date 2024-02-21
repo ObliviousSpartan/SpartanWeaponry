@@ -22,8 +22,8 @@ public class HeadwearHeadModel extends GenericHeadModel
 	@Override
 	public void func_225603_a_(float p_225603_1_, float p_225603_2_, float p_225603_3_) 
 	{
-		this.head.rotateAngleY = p_225603_2_ * ((float)Math.PI / 180.0f);
-		this.head.rotateAngleX = p_225603_3_ * ((float)Math.PI / 180.0f);
+		head.rotateAngleY = p_225603_2_ * ((float)Math.PI / 180.0f);
+		head.rotateAngleX = p_225603_3_ * ((float)Math.PI / 180.0f);
 	}
 	
 	@Override

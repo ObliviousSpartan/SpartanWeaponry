@@ -21,20 +21,18 @@ public class ArrowBaseItem extends ArrowItem
 {
 	protected float damageModifier = 1.0f;
 	protected float rangeModifier = 1.0f;
-//	protected Potion potion = Potions.EMPTY;
 	
-	public ArrowBaseItem(String regName, float damageModifier, float rangeModifier) 
+	public ArrowBaseItem(String regName, float damageModifierIn, float rangeModifierIn) 
 	{
 		super(new Item.Properties().group(ModItems.GROUP_SW_ARROWS_BOLTS));
-		this.setRegistryName(ModSpartanWeaponry.ID, regName);
-		this.damageModifier = damageModifier;
-		this.rangeModifier = rangeModifier;
+		setRegistryName(ModSpartanWeaponry.ID, regName);
+		damageModifier = damageModifierIn;
+		rangeModifier = rangeModifierIn;
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
 	{
-//		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers").mergeStyle(TextFormatting.GOLD));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.base_damage", new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.base_damage.value", damageModifier).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.range",  new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.range.value", rangeModifier).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));	
 	}
@@ -52,9 +50,9 @@ public class ArrowBaseItem extends ArrowItem
 		return null;
 	}
 	
-	public void updateFromConfig(float damageModifier, float rangeModifier)
+	public void updateFromConfig(float damageModifierIn, float rangeModifierIn)
 	{
-		this.damageModifier = damageModifier;
-		this.rangeModifier = rangeModifier;
+		damageModifier = damageModifierIn;
+		rangeModifier = rangeModifierIn;
 	}
 }

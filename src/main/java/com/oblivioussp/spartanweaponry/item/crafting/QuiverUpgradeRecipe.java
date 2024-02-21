@@ -27,13 +27,7 @@ public class QuiverUpgradeRecipe extends SmithingRecipe
 	{
 		super(recipeId, base, addition, result);
 	}
-
-	/*@Override
-	public boolean matches(IInventory inv, World worldIn) 
-	{
-		return internalRecipe.matches(inv, worldIn);
-	}*/
-
+	
 	@Override
 	public ItemStack getCraftingResult(IInventory inv) 
 	{
@@ -63,30 +57,6 @@ public class QuiverUpgradeRecipe extends SmithingRecipe
 		}
 		return outputStack;
 	}
-
-	/*@Override
-	public boolean canFit(int width, int height) 
-	{
-		return internalRecipe.canFit(width, height);
-	}
-
-	@Override
-	public ItemStack getRecipeOutput() 
-	{
-		return internalRecipe.getRecipeOutput();
-	}
-
-	@Override
-	public ItemStack getIcon() 
-	{
-		return internalRecipe.getIcon();
-	}
-	
-	@Override
-	public ResourceLocation getId() 
-	{
-		return internalRecipe.getId();
-	}*/
 
 	@Override
 	public IRecipeSerializer<?> getSerializer()

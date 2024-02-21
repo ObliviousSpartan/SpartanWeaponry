@@ -37,21 +37,18 @@ public class QuiverHelper
 				@Override
 				public boolean isQuiver(ItemStack stack) 
 				{
-//					return stack.getItem() instanceof QuiverBoltItem;
 					return stack.isEmpty() ? false : BOLT_QUIVER.test(stack);
 				}
 
 				@Override
 				public boolean isWeapon(ItemStack stack) 
 				{
-//					return stack.getItem() instanceof HeavyCrossbowItem;
 					return stack.isEmpty() ? false : HEAVY_CROSSBOW.test(stack);
 				}
 
 				@Override
 				public boolean isAmmo(ItemStack stack)
 				{
-//					return stack.getItem() instanceof BoltItem;
 					return stack.isEmpty() ? false : HeavyCrossbowItem.BOLT.test(stack);
 				}
 		
@@ -61,7 +58,6 @@ public class QuiverHelper
 				@Override
 				public boolean isQuiver(ItemStack stack)
 				{
-//					return stack.getItem() instanceof QuiverArrowItem;
 					return stack.isEmpty() ? false : ARROW_QUIVER.test(stack);
 				}
 	
@@ -74,7 +70,6 @@ public class QuiverHelper
 				@Override
 				public boolean isAmmo(ItemStack stack) 
 				{
-//					return stack.getItem() instanceof ArrowItem;
 					return stack.isEmpty() ? false : BowItem.ARROWS.test(stack);
 				}
 			});

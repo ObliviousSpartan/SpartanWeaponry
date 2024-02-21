@@ -29,29 +29,6 @@ public class ModItemModelProvider extends ItemModelProvider
 	protected void registerModels() 
 	{
 		final ModelGenerator generator = new ModelGenerator(this);
-		
-		// Base models
-		/*final ResourceLocation basePole = withExistingParent("item/base/" + ModItems.pole.getRegistryName().getPath(), mcLoc("item/generated")).transforms().
-				transform(Perspective.THIRDPERSON_RIGHT).rotation(0.0f, -90.0f, 55.0f).translation(0.0f, 4.0f, 0.5f).scale(1.275f, 1.275f, 0.6375f).end().
-				transform(Perspective.THIRDPERSON_LEFT).rotation(0.0f, 90.0f, -55.0f).translation(0.0f, 4.0f, 0.5f).scale(1.275f, 1.275f, 0.6375f).end().
-				transform(Perspective.FIRSTPERSON_RIGHT).rotation(0.0f, -90.0f, 25.0f).translation(1.13f, 3.2f, 1.13f).scale(1.02f, 1.02f, 0.51f).end().
-				transform(Perspective.FIRSTPERSON_LEFT).rotation(0.0f, 90.0f, -25.0f).translation(1.13f, 3.2f, 1.13f).scale(1.02f, 1.02f, 0.51f).end().
-				transform(Perspective.GROUND).translation(0.0f, 4.25f, 0.0f).scale(1.125f, 1.125f, 0.5625f).end().
-				end().getLocation();*/
-
-		/*final ResourceLocation baseDagger = withExistingParent("item/base/dagger", mcLoc("item/generated")).transforms().
-				transform(Perspective.THIRDPERSON_RIGHT).rotation(0.0f, -90.0f, 55.0f).translation(0.0f, 3.0f, 1.0f).scale(0.85f).end().
-				transform(Perspective.THIRDPERSON_LEFT).rotation(0.0f, 90.0f, -55.0f).translation(0.0f, 3.0f, 1.0f).scale(0.85f).end().
-				transform(Perspective.FIRSTPERSON_RIGHT).rotation(0.0f, -90.0f, 25.0f).translation(1.13f, 3.2f, 1.13f).scale(0.68f).end().
-				transform(Perspective.FIRSTPERSON_LEFT).rotation(0.0f, 90.0f, -25.0f).translation(1.13f, 3.2f, 1.13f).scale(0.68f).end().
-				end().getLocation();*/
-		
-		/*final ResourceLocation baseDaggerThrowing = withExistingParent("item/base/dagger_throwing", mcLoc("item/generated")).transforms().
-				transform(Perspective.THIRDPERSON_RIGHT).rotation(180.0f, 90.0f, 55.0f).translation(0.0f, -7.0f, 2.5f).scale(0.85f).end().
-				transform(Perspective.THIRDPERSON_LEFT).rotation(180.0f, -90.0f, -55.0f).translation(0.0f, -7.0f, 2.5f).scale(0.85f).end().
-				transform(Perspective.FIRSTPERSON_RIGHT).rotation(0.0f, 90.0f, 50.0f).translation(3.13f, -4.2f, -4.0f).scale(0.5f).end().
-				transform(Perspective.FIRSTPERSON_LEFT).rotation(0.0f, -90.0f, -50.0f).translation(3.13f, -4.2f, -4.0f).scale(0.5f).end().
-				end().getLocation();*/
 
 		// Generate the rest of the models
 		generator.createSimpleModel(ModItems.handle);

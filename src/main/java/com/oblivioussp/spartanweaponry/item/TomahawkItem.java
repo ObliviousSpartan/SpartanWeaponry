@@ -16,17 +16,17 @@ import net.minecraft.world.World;
 public class TomahawkItem extends ThrowingWeaponItem 
 {
 
-	public TomahawkItem(String regName, Item.Properties prop, WeaponMaterial material, boolean usingDeferredRegister) 
+	public TomahawkItem(String regName, Item.Properties prop, WeaponMaterial materialIn, boolean usingDeferredRegister) 
 	{
-		super(regName, prop, material, Defaults.DamageBaseTomahawk, Defaults.DamageMultiplierTomahawk, Defaults.MeleeSpeedTomahawk, 8, Defaults.ChargeTicksTomahawk, usingDeferredRegister, WeaponTraits.EXTRA_DAMAGE_2_THROWN);
-		this.throwVelocity = 1.75f;
+		super(regName, prop, materialIn, Defaults.DamageBaseTomahawk, Defaults.DamageMultiplierTomahawk, Defaults.MeleeSpeedTomahawk, 8, Defaults.ChargeTicksTomahawk, usingDeferredRegister, WeaponTraits.EXTRA_DAMAGE_2_THROWN);
+		throwVelocity = 1.75f;
 	}
 	
-	public TomahawkItem(String regName, Item.Properties prop, WeaponMaterial material, String customDisplayName, boolean usingDeferredRegister)
+	public TomahawkItem(String regName, Item.Properties prop, WeaponMaterial materialIn, String customDisplayNameIn, boolean usingDeferredRegister)
 	{
-		this(regName, prop, material, usingDeferredRegister);
-		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+		this(regName, prop, materialIn, usingDeferredRegister);
+		if(materialIn.useCustomDisplayName())
+			customDisplayName = customDisplayNameIn;
 	}
 
 	@Override

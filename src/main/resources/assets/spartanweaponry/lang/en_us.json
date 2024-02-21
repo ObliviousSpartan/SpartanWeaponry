@@ -812,7 +812,7 @@
 	"tooltip.spartanweaponry.trait.extra_damage_riding": "Riding Damage Bonus",
 	"tooltip.spartanweaponry.trait.extra_damage_riding.desc": "+%f%% damage while riding a mount or vehicle",
 	"tooltip.spartanweaponry.trait.extra_damage_thrown": "Throwing Damage Bonus",
-	"tooltip.spartanweaponry.trait.extra_damage_thrown.desc": "+%f%% damage when this weapon is thrown",
+	"tooltip.spartanweaponry.trait.extra_damage_thrown.desc": "+%f%% damage when this weapon is thrown depending on the charge progress",
 	"tooltip.spartanweaponry.trait.extra_damage_undead": "Undead Damage Bonus",
 	"tooltip.spartanweaponry.trait.extra_damage_undead.desc": "+%f%% damage against Undead foes",
 	"tooltip.spartanweaponry.trait.extra_damage_backstab": "Backstab Damage Bonus",

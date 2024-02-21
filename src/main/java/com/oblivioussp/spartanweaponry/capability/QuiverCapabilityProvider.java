@@ -21,10 +21,6 @@ public class QuiverCapabilityProvider implements ICapabilitySerializable<Compoun
 		inventorySize = invSize;
 		
 		handler = new ItemStackHandler(invSize);
-		
-		// Restore NBT data if available
-		//if(nbt != null && !nbt.isEmpty() && nbt.contains("Parent"))
-		//	deserializeNBT(nbt.getCompound("Parent"));
 	}
 	
 	@Override

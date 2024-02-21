@@ -19,13 +19,13 @@ public class ExtendedSkullItem extends SkullItem
 	public ExtendedSkullItem(String regName, Block floorBlockIn, Block wallBlockIn, Properties builder) 
 	{
 		super(floorBlockIn, wallBlockIn, builder);
-		this.setRegistryName(regName);
+		setRegistryName(regName);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + "." + this.getRegistryName().getPath() + ".desc").mergeStyle(TextFormatting.GRAY, TextFormatting.ITALIC));
+		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + "." + getRegistryName().getPath() + ".desc").mergeStyle(TextFormatting.GRAY, TextFormatting.ITALIC));
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 }

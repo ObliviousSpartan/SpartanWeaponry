@@ -19,19 +19,9 @@ public class BoomerangRenderer extends ThrowingWeaponRenderer<BoomerangEntity>
 	@Override
 	protected void doRenderTransformations(BoomerangEntity entity, float partialTicks, MatrixStack matrixStack) 
 	{
-		//super.doRenderTransformations(entity, partialTicks);
 		float rotationInAir = entity.getTicksInAir() != 0 ? (entity.getTicksInAir() + partialTicks)  * 40.0f % 360.0f : 0.0f;
 		if(entity.getTicksInAir() != 0)
 			entity.setNoGravity(true);
-
-		// TODO: Revise the rotations to make them work again!
-		/*GlStateManager.rotatef(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * partialTicks - 90.0F,  0.0F, 1.0F, 0.0F);
-        GlStateManager.rotatef(entity.prevRotationPitch + (entity.rotationPitch - entity.prevRotationPitch) * partialTicks + 45.0F, 0.0F, 0.0F, 1.0F);
-        //GlStateManager.scale(1.0f, 1.0f, 1.0f);
-        GlStateManager.rotatef(180.0f, 1.0f, 1.0f, 0.0f);
-        GlStateManager.rotatef(90.f, 1.0f, -1.0f, 0.0f);
-        GlStateManager.translatef(0.075f, -0.2f, 0.0f);
-        GlStateManager.rotatef(rotationInAir, 0.0f, 0.0f, 1.0f);*/
 		
 		matrixStack.scale(2.0f, 2.0f, 2.0f);
 		matrixStack.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entity.prevRotationYaw, entity.rotationYaw) - 90.0f));

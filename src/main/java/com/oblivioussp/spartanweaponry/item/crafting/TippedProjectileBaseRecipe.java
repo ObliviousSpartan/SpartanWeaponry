@@ -28,8 +28,8 @@ public class TippedProjectileBaseRecipe extends SpecialRecipe
 	public TippedProjectileBaseRecipe(ResourceLocation idIn, Item arrowIn, Item arrowOut) 
 	{
 		super(idIn);
-		this.projectileIn = arrowIn;
-		this.projectileOut = arrowOut;
+		projectileIn = arrowIn;
+		projectileOut = arrowOut;
 	}
 
 	@Override
@@ -74,7 +74,6 @@ public class TippedProjectileBaseRecipe extends SpecialRecipe
 			{
 				ItemStack arrowResult = new ItemStack(projectileOut, 8);
 				PotionUtils.addPotionToItemStack(arrowResult, potion);
-				//PotionUtils.appendEffects(arrowResult, PotionUtils.getEffectsFromStack(potionStack));
 				return arrowResult;
 			}
 		}

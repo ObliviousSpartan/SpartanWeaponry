@@ -26,7 +26,7 @@ public class SpartanWeaponryPlugin implements IModPlugin
 
 	public ResourceLocation getPluginUid()
 	{ 
-		return this.PLUGIN_UID;
+		return PLUGIN_UID;
 	}
   
 	public void registerItemSubtypes(ISubtypeRegistration subtypeRegistry)
@@ -38,27 +38,10 @@ public class SpartanWeaponryPlugin implements IModPlugin
 		subtypeRegistry.registerSubtypeInterpreter(ModItems.tippedArrowIron, TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(ModItems.tippedBoltDiamond, TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(ModItems.tippedArrowDiamond, TippedProjectileSubtypeInterpreter.INSTANCE);
-//		subtypeRegistry.registerSubtypeInterpreter(ModItems.weaponOil, WeaponOilSubtypeInterpreter.INSTANCE);
 	}
 
 	public void registerRecipes(IRecipeRegistration reg)
 	{
-		
-		// Add Anvil Repair Recipes
-		// TODO: Make it work just like vanilla ones...
-		/*IVanillaRecipeFactory vanillaRecipeFactory = reg.getVanillaRecipeFactory();
-		ItemStack weaponStack = new ItemStack(ModItems.daggers.wood);
-		ItemStack damagedStack = weaponStack.copy();
-		damagedStack.setDamage(weaponStack.getMaxDamage());
-		List<ItemStack> repairStacks = new ArrayList<ItemStack>();
-		for(Item item : ItemTags.PLANKS.getAllElements())
-		{
-			repairStacks.add(new ItemStack(item));
-		}
-		List<AnvilRecipe> anvilRecipes = new ArrayList<AnvilRecipe>();
-		anvilRecipes.add((AnvilRecipe) vanillaRecipeFactory.createAnvilRecipe(weaponStack, repairStacks, Collections.singletonList(weaponStack)));
-		reg.addRecipes(anvilRecipes, VanillaRecipeCategoryUid.ANVIL);*/
-		
 		reg.addRecipes(TippedProjectileRecipeMaker.getRecipes(ModItems.bolt, ModItems.tippedBolt), VanillaRecipeCategoryUid.CRAFTING);
 		
 		if (!Config.INSTANCE.disableNewArrowRecipes.get())

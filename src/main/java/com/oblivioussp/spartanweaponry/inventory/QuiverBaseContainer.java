@@ -32,11 +32,11 @@ public abstract class QuiverBaseContainer extends Container
 	
 	protected int playerInvStart, playerInvEnd, hotbarStart, hotbarEnd;
 
-	protected QuiverBaseContainer(ContainerType<?> type, int id, PlayerInventory inventory, ItemStack quiverStack, Predicate<ItemStack> slotFilter)
+	protected QuiverBaseContainer(ContainerType<?> type, int id, PlayerInventory inventory, ItemStack quiverStackIn, Predicate<ItemStack> slotFilterIn)
 	{
 		super(type, id);
-		this.slotFilter = slotFilter;
-		this.quiverStack = quiverStack;
+		slotFilter = slotFilterIn;
+		quiverStack = quiverStackIn;
 		handler = quiverStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).orElseThrow(QuiverBaseItem.CAPABILITY_EXCEPTION);
 		
 		playerInvStart = handler.getSlots();
@@ -78,7 +78,7 @@ public abstract class QuiverBaseContainer extends Container
 		// Quiver inventory
 		for(int i = 0; i < handler.getSlots(); i++)
 		{
-			this.addSlot(new SlotFiltered(handler, i, slotStartX + (18 * (i % columns)), slotStartY + (MathHelper.floor(i / columns) * 18), slotFilter));
+			addSlot(new SlotFiltered(handler, i, slotStartX + (18 * (i % columns)), slotStartY + (MathHelper.floor(i / columns) * 18), slotFilter));
 			// 52, 19
 		}
 	}
@@ -92,18 +92,18 @@ public abstract class QuiverBaseContainer extends Container
 		{
 			for(int j = 0; j < 9; j++)
 			{
-				this.addSlot(new Slot(inventory, 9 + (i * 9) + j, 8 + (j * 18), 51 + yOffset + (i * 18)));
+				addSlot(new Slot(inventory, 9 + (i * 9) + j, 8 + (j * 18), 51 + yOffset + (i * 18)));
 			}
 		}
 		
 		// Player hotbar
 		for(int i = 0; i < 9; i++)
 		{
-			this.addSlot(new Slot(inventory, i, 8 + (i * 18), 109 + yOffset));
+			addSlot(new Slot(inventory, i, 8 + (i * 18), 109 + yOffset));
 		}
 		
 		// Offhand slot
-		this.addSlot(new Slot(inventory, 40, -21, handler.getSlots() == Defaults.SlotsQuiverHuge ? 127 : 109)
+		addSlot(new Slot(inventory, 40, -21, handler.getSlots() == Defaults.SlotsQuiverHuge ? 127 : 109)
 			{
 				@Override
 				public Pair<ResourceLocation, ResourceLocation> getBackground() 
@@ -117,7 +117,7 @@ public abstract class QuiverBaseContainer extends Container
 	public ItemStack transferStackInSlot(PlayerEntity player, int slotIdx)
 	{
 		ItemStack stack = ItemStack.EMPTY;
-		Slot slot = this.inventorySlots.get(slotIdx);
+		Slot slot = inventorySlots.get(slotIdx);
 		
 		if(slot != null && slot.getHasStack())
 		{
@@ -128,26 +128,14 @@ public abstract class QuiverBaseContainer extends Container
 			if(slotIdx >= 0 && slotIdx < handler.getSlots())
 			{
 				// TODO: Find an existing matching stack to place the stack into first
-				/*for(int i = playerInvStart; i < inventorySlots.size(); i++)
-				{
-					ItemStack stackToMatch = inventorySlots.get(i).getStack();
-					if(areItemsAndTagsEqual(slotStack, stackToMatch))
-					{
-						
-					}
-					
-					if(slotStack.isEmpty())
-						break;
-				}*/
 				// Prioritise the hotbar next, then the main inventory
-				if(!this.mergeItemStack(slotStack, playerInvStart, hotbarEnd + 2, false) /*&&
-						!this.mergeItemStack(slotStack, playerInvStart, playerInvEnd + 1, false)*/)
+				if(!mergeItemStack(slotStack, playerInvStart, hotbarEnd + 2, false))
 					return ItemStack.EMPTY;
 			}
 			// Attempt to place arrows into the quiver
 			else if(slotIdx >= playerInvStart && slotIdx <= hotbarEnd + 1 && slot.isItemValid(stack))
 			{
-				if(!this.mergeItemStack(slotStack, 0, playerInvStart, false))
+				if(!mergeItemStack(slotStack, 0, playerInvStart, false))
 					return ItemStack.EMPTY;
 			}
 			

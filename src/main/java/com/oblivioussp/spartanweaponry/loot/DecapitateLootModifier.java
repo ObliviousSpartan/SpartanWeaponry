@@ -39,7 +39,6 @@ public class DecapitateLootModifier extends LootModifier
 		{
 			LivingEntity living = (LivingEntity)killer;
 			ItemStack weapon = living.getHeldItemMainhand();
-//			ItemStack weapon = context.get(LootParameters.TOOL);
 			
 			// TODO: See if there is a way that this weapon (above) can be retrieved in a dual-wielding friendly way.
 			if(context.getRandom().nextDouble() < WeaponTraits.DECAPITATE.getMagnitude() / 100.0f && weapon.getItem() instanceof IWeaponTraitContainer)
@@ -78,7 +77,7 @@ public class DecapitateLootModifier extends LootModifier
 		@Override
 		public JsonObject write(DecapitateLootModifier instance)
 		{
-			JsonObject result = this.makeConditions(instance.conditions);
+			JsonObject result = makeConditions(instance.conditions);
 			result.addProperty("skull", ForgeRegistries.ITEMS.getKey(instance.skull).toString());
 			return result;
 		}

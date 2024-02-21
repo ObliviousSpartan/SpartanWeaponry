@@ -13,22 +13,6 @@ import net.minecraft.entity.merchant.villager.VillagerTrades.ITrade;
 
 public class WeaponsmithTrades
 {
-/*	public static List<RandomisedTradeItem> LVL1_ITEMS = Arrays.asList(new RandomisedTradeItem(ModItems.daggers.iron, 2), new RandomisedTradeItem(ModItems.longswords.iron, 3), new RandomisedTradeItem(ModItems.katanas.iron, 3),
-			new RandomisedTradeItem(ModItems.spears.iron, 2), new RandomisedTradeItem(ModItems.flangedMaces.iron, 3), new RandomisedTradeItem(ModItems.quarterstaves.iron, 2));
-	public static List<RandomisedTradeItem> LVL2_ITEMS = Arrays.asList(new RandomisedTradeItem(ModItems.sabers.iron, 4), new RandomisedTradeItem(ModItems.rapiers.iron, 4), new RandomisedTradeItem(ModItems.greatswords.iron, 5),
-			new RandomisedTradeItem(ModItems.battleHammers.iron, 4), new RandomisedTradeItem(ModItems.warhammers.iron, 3), new RandomisedTradeItem(ModItems.halberds.iron, 4), new RandomisedTradeItem(ModItems.pikes.iron, 3),
-			new RandomisedTradeItem(ModItems.lances.iron, 3), new RandomisedTradeItem(ModItems.battleaxes.iron, 4), new RandomisedTradeItem(ModItems.glaives.iron, 3));
-	public static List<RandomisedTradeItem> LVL3_ITEMS = Arrays.asList(new RandomisedTradeItem(ModItems.daggers.diamond, 4), new RandomisedTradeItem(ModItems.longswords.diamond, 6), new RandomisedTradeItem(ModItems.katanas.diamond, 6),
-			new RandomisedTradeItem(ModItems.spears.diamond, 4), new RandomisedTradeItem(ModItems.flangedMaces.diamond, 6), new RandomisedTradeItem(ModItems.quarterstaves.diamond, 4));
-	public static List<RandomisedTradeItem> LVL4_ITEMS = Arrays.asList(new RandomisedTradeItem(ModItems.sabers.diamond, 8), new RandomisedTradeItem(ModItems.rapiers.diamond, 8), new RandomisedTradeItem(ModItems.greatswords.diamond, 10),
-			new RandomisedTradeItem(ModItems.battleHammers.diamond, 8), new RandomisedTradeItem(ModItems.warhammers.diamond, 6), new RandomisedTradeItem(ModItems.halberds.diamond, 8), new RandomisedTradeItem(ModItems.pikes.diamond, 6),
-			new RandomisedTradeItem(ModItems.lances.diamond, 6), new RandomisedTradeItem(ModItems.battleaxes.diamond, 8), new RandomisedTradeItem(ModItems.glaives.diamond, 6));
-	public static List<RandomisedTradeItem> LVL5_ITEMS = Arrays.asList(new RandomisedTradeItem(ModItems.daggers.diamond, 6), new RandomisedTradeItem(ModItems.longswords.diamond, 9), new RandomisedTradeItem(ModItems.katanas.diamond, 9),
-			new RandomisedTradeItem(ModItems.spears.diamond, 6), new RandomisedTradeItem(ModItems.flangedMaces.diamond, 9), new RandomisedTradeItem(ModItems.quarterstaves.diamond, 6),
-			new RandomisedTradeItem(ModItems.sabers.diamond, 12), new RandomisedTradeItem(ModItems.rapiers.diamond, 12), new RandomisedTradeItem(ModItems.greatswords.diamond, 15),
-			new RandomisedTradeItem(ModItems.battleHammers.diamond, 12), new RandomisedTradeItem(ModItems.warhammers.diamond, 9), new RandomisedTradeItem(ModItems.halberds.diamond, 12), new RandomisedTradeItem(ModItems.pikes.diamond, 9),
-			new RandomisedTradeItem(ModItems.lances.diamond, 9), new RandomisedTradeItem(ModItems.battleaxes.diamond, 12), new RandomisedTradeItem(ModItems.glaives.diamond, 9));
-*/	
 	public static List<RandomisedTradeItem> LVL1_ITEMS = new ArrayList<RandomisedTradeItem>();
 	public static List<RandomisedTradeItem> LVL2_ITEMS = new ArrayList<RandomisedTradeItem>();
 	public static List<RandomisedTradeItem> LVL3_ITEMS = new ArrayList<RandomisedTradeItem>();

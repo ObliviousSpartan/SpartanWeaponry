@@ -23,10 +23,10 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 {
 	protected String baseName;
 	
-	public ArrowBaseTippedItem(String regName, String baseName, float damageModifier, float rangeModifier) 
+	public ArrowBaseTippedItem(String regName, String baseNameIn, float damageModifier, float rangeModifier) 
 	{
 		super(regName, damageModifier, rangeModifier);
-		this.baseName = baseName;
+		baseName = baseNameIn;
 	}
 	
 	@Override
@@ -46,11 +46,10 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items)
 	{
-		if(this.isInGroup(group))
+		if(isInGroup(group))
 		{
 			for(Potion potion : ForgeRegistries.POTION_TYPES)
 			{
-				//Potion potion = Potions.WATER;
 				if(!potion.getEffects().isEmpty())
 				{
 					ItemStack stack = new ItemStack(this);
@@ -64,9 +63,6 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-		//if(PotionUtils.getPotionFromItem(stack) == Potions.EMPTY)
-		//	tooltip.add(new TranslationTextComponent("tooltip." + Reference.MOD_ID + ".tipped_arrow.crafting").applyTextStyle(TextFormatting.YELLOW));
-		
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 		tooltip.add(new StringTextComponent(""));
 		PotionUtils.addPotionTooltip(stack, tooltip, 0.125f);
@@ -78,7 +74,6 @@ public class ArrowBaseTippedItem extends ArrowBaseItem
 		Potion potion = PotionUtils.getPotionFromItem(stack);
 		
 		String transKey = potion.getNamePrefixed("item.spartanweaponry.proj_tipped.effect.");
-//		return new TranslationTextComponent(transKey, I18n.format("item." + ModSpartanWeaponry.ID + "." + baseName));
 		return new TranslationTextComponent(transKey, new TranslationTextComponent("item." + ModSpartanWeaponry.ID + "." + baseName));
 	}
 }

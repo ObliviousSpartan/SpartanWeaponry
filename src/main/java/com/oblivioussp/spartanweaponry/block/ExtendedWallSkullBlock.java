@@ -13,7 +13,7 @@ public class ExtendedWallSkullBlock extends WallSkullBlock
 	public ExtendedWallSkullBlock(String regName, ISkullType type, Properties properties)
 	{
 		super(type, properties);
-		this.setRegistryName(regName);
+		setRegistryName(regName);
 	}
 
 	@Override

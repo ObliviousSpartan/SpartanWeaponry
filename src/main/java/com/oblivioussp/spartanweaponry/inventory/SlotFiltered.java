@@ -10,10 +10,10 @@ public class SlotFiltered extends SlotItemHandler
 {
 	protected final Predicate<ItemStack> filter;
 
-	public SlotFiltered(IItemHandler handler, int index, int xPosition, int yPosition, Predicate<ItemStack> filter)
+	public SlotFiltered(IItemHandler handler, int index, int xPosition, int yPosition, Predicate<ItemStack> filterIn)
 	{
 		super(handler, index, xPosition, yPosition);
-		this.filter = filter;
+		filter = filterIn;
 	}
 
 	@Override

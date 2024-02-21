@@ -21,7 +21,7 @@ public class SweepWeaponTrait extends WeaponTraitWithMagnitude
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
 		if(magnitude == 1.0f)
-			tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.fixed.desc", SpartanWeaponryAPI.MOD_ID, this.type), magnitude).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
+			tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.fixed.desc", SpartanWeaponryAPI.MOD_ID, type), magnitude).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
 		else
 			super.addTooltipDescription(stack, tooltip);
 	}

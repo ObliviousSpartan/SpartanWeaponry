@@ -52,33 +52,26 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	
 	protected float baseDamage = 1.0f;
 	protected float rangeMultiplier = 1.0f;
-//	protected int knockbackStrength = 0;
 	protected float armorPiercingFactor = 0.0f;
-//	protected ItemStack boltStack = ItemStack.EMPTY;
 	
 	public BoltEntity(EntityType<? extends BoltEntity> type, World worldIn)
     {
         super(type, worldIn);
-//		initEntity();
     }
 
     public BoltEntity(EntityType<? extends BoltEntity> type, double x, double y, double z, World worldIn)
     {
         super(type, x, y, z, worldIn);
-//		initEntity();
     }
     
     public BoltEntity(EntityType<? extends BoltEntity> type, LivingEntity shooter, World world)
     {
         super(type, shooter, world);
-//		initEntity();
     }
 
     public BoltEntity(LivingEntity shooter, World world)
     {
     	this(ModEntities.BOLT, shooter, world);
-//		initEntity();
-        //this.setDamage(baseDamage);
     }
     
     public BoltEntity(SpawnEntity spawnEntity, World world)
@@ -86,28 +79,14 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
     	this(ModEntities.BOLT, world);
     }
 	
-	public void initEntity(float baseDamage, float rangeMultiplier, float armorPiercingFactor, ItemStack boltStack)
+	public void initEntity(float baseDamageIn, float rangeMultiplierIn, float armorPiercingFactorIn, ItemStack boltStack)
 	{
-//		initStats();
-		this.baseDamage = baseDamage;
-		this.rangeMultiplier = rangeMultiplier;
-		this.armorPiercingFactor = armorPiercingFactor;
-		this.setDamage(baseDamage);
-//		this.boltStack = boltStack;
-		this.getDataManager().set(DATA_BOLT, boltStack);
+		baseDamage = baseDamageIn;
+		rangeMultiplier = rangeMultiplierIn;
+		armorPiercingFactor = armorPiercingFactorIn;
+		setDamage(baseDamageIn);
+		getDataManager().set(DATA_BOLT, boltStack);
 	}
-	
-/*	protected void initStats()
-	{
-		// TODO: Make this abstract when new Bolts are added.
-		baseDamage = Defaults.BoltBaseDamage;
-	}
-*/   
-/*    @Override
-    public void shoot(Entity shooter, float pitch, float yaw, float p_184547_4_, float velocity, float inaccuracy)
-    {
-    	super.shoot(shooter, pitch, yaw, p_184547_4_, (float)(velocity * rangeMultiplier), inaccuracy);
-    } */
     
     @Override
     public void setDirectionAndMovement(Entity shooter, float pitch, float yaw, float p_184547_4_, float velocity, float inaccuracy)
@@ -119,8 +98,8 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	protected void registerData() 
 	{
 		super.registerData();
-		this.dataManager.register(DATA_COLOUR, -1);
-		this.dataManager.register(DATA_BOLT, ItemStack.EMPTY);
+		dataManager.register(DATA_COLOUR, -1);
+		dataManager.register(DATA_BOLT, ItemStack.EMPTY);
 	}
     
     @Override
@@ -128,21 +107,21 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
     {
     	super.tick();
 
-		if(this.world.isRemote /*&& this.potion != null && this.potion != Potions.EMPTY*/)
+		if(world.isRemote)
 		{
-			if(this.inGround)
+			if(inGround)
 			{
-				if(this.timeInGround % 5 == 0)
+				if(timeInGround % 5 == 0)
 					spawnPotionParticles(1);
 			}
 			else
 				spawnPotionParticles(2);
 		}
-		else if(this.inGround && this.timeInGround != 0 && this.timeInGround >= 600)
+		else if(inGround && timeInGround != 0 && timeInGround >= 600)
 		{
-	         this.world.setEntityState(this, (byte)0);
-	         this.potion = Potions.EMPTY;
-	         this.dataManager.set(DATA_COLOUR, -1);
+	         world.setEntityState(this, (byte)0);
+	         potion = Potions.EMPTY;
+	         dataManager.set(DATA_COLOUR, -1);
 		}
     }
     
@@ -155,7 +134,7 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
     protected void onEntityHit(EntityRayTraceResult result)
     {
     	Entity entity = result.getEntity();
-        float velocity = (float)this.getMotion().length();
+        float velocity = (float)getMotion().length();
         int damage = MathHelper.ceil(MathHelper.clamp((double)velocity * getDamage(), 0.0D, 2.147483647E9D));
         if(getPierceLevel() > 0) 
         {
@@ -180,7 +159,7 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
         	damage = (int)Math.min(critDamageBonus + (long)damage, 2147483647L);
         }
 
-        Entity shooter = this.getShooter();
+        Entity shooter = getShooter();
         DamageSource source;
         if(shooter == null)
         	source = causeArmorPiercingDamage(this, this);
@@ -214,7 +193,7 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
         				livingentity.addVelocity(vector3d.x, 0.1D, vector3d.z);
         		}
 
-        		if(!this.world.isRemote && shooter instanceof LivingEntity) 
+        		if(!world.isRemote && shooter instanceof LivingEntity) 
         		{
         			EnchantmentHelper.applyThornEnchantments(livingentity, shooter);
         			EnchantmentHelper.applyArthropodEnchantments((LivingEntity)shooter, livingentity);
@@ -262,34 +241,17 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	{
 		super.arrowHit(living);
 		
-		for(EffectInstance effect : this.potion.getEffects())
+		for(EffectInstance effect : potion.getEffects())
 		{
 			living.addPotionEffect(new EffectInstance(effect.getPotion(), Math.max(effect.getDuration() / 8, 1), effect.getAmplifier(), effect.isAmbient(), effect.doesShowParticles()));
 		}
 	}
-    
-	/**
-     * Sets the amount of knockback the projectile applies when it hits a mob.
-     */
-/*	@Override
-    public void setKnockbackStrength(int knockback)
-    {
-        this.knockbackStrength = knockback;
-    }*/
 
 	@Override
 	protected ItemStack getArrowStack()
 	{
-//		return this.boltStack;
 		return getDataManager().get(DATA_BOLT);
-//		return new ItemStack(Items.bolt);
 	}
-
-	/*@Override
-	public float getArmourPiercingFactor() 
-	{
-		return 0.5f;
-	}*/
 
 	@Override
 	public IPacket<?> createSpawnPacket() 
@@ -300,7 +262,6 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	@Override
 	public void readSpawnData(PacketBuffer buffer)
 	{
-//		this.boltStack = additionalData.readItemStack();
 		double x, y, z;
 		x = buffer.readDouble();
 		y = buffer.readDouble();
@@ -312,12 +273,10 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	public void readAdditional(CompoundNBT compound)
 	{
 		super.readAdditional(compound);
-//		CompoundNBT nbt = compound.getCompound(NBT_BOLT);
-//		this.boltStack = ItemStack.read(nbt);
 		
 		if(compound.contains(NBT_POTION, 8))
 		{
-			this.potion = PotionUtils.getPotionTypeFromNBT(compound);
+			potion = PotionUtils.getPotionTypeFromNBT(compound);
 		}
 		
 		dataManager.set(DATA_COLOUR, compound.contains(NBT_POTION_COLOUR) ? compound.getInt(NBT_POTION_COLOUR) : -1);
@@ -326,7 +285,6 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	@Override
 	public void writeSpawnData(PacketBuffer buffer)
 	{
-//		buffer.writeItemStack(this.boltStack);
 		buffer.writeDouble(getMotion().getX());
 		buffer.writeDouble(getMotion().getY());
 		buffer.writeDouble(getMotion().getZ());
@@ -336,13 +294,10 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	public void writeAdditional(CompoundNBT compound) 
 	{
 		super.writeAdditional(compound);
-//		CompoundNBT nbt = new CompoundNBT();
-//		nbt = this.boltStack.write(nbt);
-//		compound.put(NBT_BOLT, nbt);
 		
-		if(this.potion != null && this.potion != Potions.EMPTY)
+		if(potion != null && potion != Potions.EMPTY)
 		{
-			compound.putString(NBT_POTION, ForgeRegistries.POTION_TYPES.getKey(this.potion).toString());
+			compound.putString(NBT_POTION, ForgeRegistries.POTION_TYPES.getKey(potion).toString());
 		}
 		
 		compound.putInt(NBT_POTION_COLOUR, dataManager.get(DATA_COLOUR));
@@ -350,19 +305,13 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	
 	public void setPotionEffect(ItemStack stack)
 	{
-		this.potion = PotionUtils.getPotionFromItem(stack);
-		/*List<EffectInstance> effects = PotionUtils.getFullEffectsFromItem(stack);
-		if(!effects.isEmpty())
-		{
-			for(EffectInstance effect : effects)
-				customEffects.add(new EffectInstance(effect));
-		}*/
+		potion = PotionUtils.getPotionFromItem(stack);
 		dataManager.set(DATA_COLOUR, PotionUtils.getColor(stack));
 	}
 	
 	private void spawnPotionParticles(int particleCount)
 	{
-		int colour = this.dataManager.get(DATA_COLOUR);
+		int colour = dataManager.get(DATA_COLOUR);
 		if(colour != -1 && particleCount > 0)
 		{
 	         double cR = (double)(colour >> 16 & 255) / 255.0D;
@@ -371,27 +320,25 @@ public class BoltEntity extends AbstractArrowEntity implements IEntityAdditional
 	         
 	         for(int i = 0; i < particleCount; i++)
 	         {
-	        	 this.world.addParticle(ParticleTypes.ENTITY_EFFECT, this.getPosX() + (this.rand.nextDouble() - 0.5D) * (double)this.getWidth(), this.getPosY() + this.rand.nextDouble() * (double)this.getHeight(), this.getPosZ() + (this.rand.nextDouble() - 0.5D) * (double)this.getWidth(), cR, cG, cB);
+	        	 world.addParticle(ParticleTypes.ENTITY_EFFECT, getPosX() + (rand.nextDouble() - 0.5D) * (double)getWidth(), getPosY() + rand.nextDouble() * (double)getHeight(), getPosZ() + (rand.nextDouble() - 0.5D) * (double)getWidth(), cR, cG, cB);
 	         }
 		}
 	}
 	
 	public boolean isValid()
 	{
-//		return !this.boltStack.isEmpty();
 		return !getArrowStack().isEmpty();
 	}
 	
 	public ResourceLocation getTexture()
 	{
-//		String boltRegName = boltStack.getItem().getRegistryName().getPath();
 		ItemStack boltStack = getArrowStack();
 		if(boltStack.isEmpty())
 			return new ResourceLocation(ModSpartanWeaponry.ID, "missing_stack");
 					
 		String boltRegName = boltStack.getItem().getRegistryName().getPath();
 		
-		if(this.potion.getRegistryName().getPath() != "empty")
+		if(potion.getRegistryName().getPath() != "empty")
 		{
 			int idx = boltRegName.indexOf("_tipped");
 			if(idx != -1)

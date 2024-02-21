@@ -31,9 +31,9 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 		
 		private TextFormatting formatting;
 		
-		private TraitQuality(TextFormatting formatting)
+		private TraitQuality(TextFormatting formattingIn)
 		{
-			this.formatting = formatting;
+			formatting = formattingIn;
 		}
 		
 		public TextFormatting getFormatting()
@@ -51,13 +51,13 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	protected TraitQuality quality;
 	protected ResourceLocation regName;
 	
-	public WeaponTrait(String type, String modId, int level, float magnitude, TraitQuality quality)
+	public WeaponTrait(String typeIn, String modIdIn, int levelIn, float magnitudeIn, TraitQuality qualityIn)
 	{
-		this.type = type;
-		this.modId = modId;
-		this.level = level;
-		this.magnitude = magnitude;
-		this.quality = quality;
+		type = typeIn;
+		modId = modIdIn;
+		level = levelIn;
+		magnitude = magnitudeIn;
+		quality = qualityIn;
 	}
 	
 	public WeaponTrait(String type, String modId, int level, TraitQuality quality)
@@ -78,7 +78,7 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	@Override
 	public String toString() 
 	{
-		return String.format("WeaponTrait{Type: %s:%s - Level: %d - Magnitude: %f - Quality: %s}", this.modId, this.type, this.level, this.magnitude, this.quality.toString());
+		return String.format("WeaponTrait{Type: %s:%s - Level: %d - Magnitude: %f - Quality: %s}", modId, type, level, magnitude, quality.toString());
 	}
 	
 	/**
@@ -87,7 +87,12 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	 */
 	public String getType()
 	{
-		return this.type;
+		return type;
+	}
+	
+	public int getLevel() 
+	{
+		return level;
 	}
 	
 	/**
@@ -96,7 +101,7 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	 */
 	public float getMagnitude()
 	{
-		return this.magnitude;
+		return magnitude;
 	}
 	
 	/**
@@ -105,7 +110,7 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	 */
 	public void setMagnitude(float value)
 	{
-		this.magnitude = value;
+		magnitude = value;
 	}
 	
 	/**
@@ -173,7 +178,7 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
     {
 		addTooltipTitle(stack, tooltip);
 		
-		if(isShiftPressed && I18n.hasKey(String.format("tooltip.%s.trait.%s.desc", this.modId, this.type)))
+		if(isShiftPressed && I18n.hasKey(String.format("tooltip.%s.trait.%s.desc", modId, type)))
 			addTooltipDescription(stack, tooltip);
     }
 	
@@ -186,9 +191,9 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
 	{
 		// Don't add the level to tooltip if not specified
 		if(level == 0)
-			tooltip.add(new StringTextComponent("- ").mergeStyle(this.quality.getFormatting()).appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))));
+			tooltip.add(new StringTextComponent("- ").mergeStyle(quality.getFormatting()).appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", modId, type))));
 		else
-			tooltip.add(new StringTextComponent("- ").mergeStyle(this.quality.getFormatting()).appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", this.modId, this.type))
+			tooltip.add(new StringTextComponent("- ").mergeStyle(quality.getFormatting()).appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s", modId, type))
 					.appendSibling(new TranslationTextComponent("enchantment.level." + Integer.toString(level)))));
 	}
 
@@ -199,7 +204,7 @@ public class WeaponTrait implements IForgeRegistryEntry<WeaponTrait>
      */
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
-		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", this.modId, this.type)).mergeStyle(DESCRIPTION_COLOUR)));
+		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", modId, type)).mergeStyle(DESCRIPTION_COLOUR)));
 	}
 	
 	// IForgeRegistryEntry

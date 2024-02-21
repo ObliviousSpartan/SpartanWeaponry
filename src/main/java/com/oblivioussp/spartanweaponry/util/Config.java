@@ -139,18 +139,18 @@ public class Config
 		private String materialName;
 		private String typeDisabledName;
 		
-		private MaterialCategory(ForgeConfigSpec.Builder builder, String materialName, float damage, int durability, String typeDisabledName)
+		private MaterialCategory(ForgeConfigSpec.Builder builder, String materialNameIn, float damageIn, int durabilityIn, String typeDisabledNameIn)
 		{
 			builder.push(materialName);
-			this.materialName = materialName;
-			this.typeDisabledName = typeDisabledName;
-			this.damage = builder.comment("Base Damage for " + this.materialName + " weapons")
+			materialName = materialNameIn;
+			typeDisabledName = typeDisabledNameIn;
+			damage = builder.comment("Base Damage for " + materialName + " weapons")
 						.translation("config." + ModSpartanWeaponry.ID + ".material.base_damage")
-						.defineInRange("base_damage", damage, 0.1d, 100.0d);
-			this.durability = builder.comment("Durability for " + this.materialName + " weapons")
+						.defineInRange("base_damage", damageIn, 0.1d, 100.0d);
+			durability = builder.comment("Durability for " + materialName + " weapons")
 					.translation("config." + ModSpartanWeaponry.ID + ".material.durability")
-					.defineInRange("durability", durability, 1, 100000);
-			this.disableRecipes = builder.comment("Set to true to disable " + this.materialName + " weapons")
+					.defineInRange("durability", durabilityIn, 1, 100000);
+			disableRecipes = builder.comment("Set to true to disable " + materialName + " weapons")
 					.translation("config." + ModSpartanWeaponry.ID + ".material.disable")
 					.worldRestart()
 					.define("disable", false);
@@ -168,17 +168,17 @@ public class Config
 		public DoubleValue baseDamage;
 		public DoubleValue rangeMultiplier;
 		
-		private ProjectileCategory(ForgeConfigSpec.Builder builder, String materialName, String projectileName, float baseDamage, float rangeMultiplier)
+		private ProjectileCategory(ForgeConfigSpec.Builder builder, String materialName, String projectileName, float baseDamageIn, float rangeMultiplierIn)
 		{
 			String projName = materialName == null || materialName == "" ? projectileName : materialName + " " + projectileName;
 			String category = materialName == null || materialName == "" ? projectileName : materialName + "_" + projectileName;
 			builder.push(category);
-			this.baseDamage = builder.comment("Base damage for " + projName + "s")
+			baseDamage = builder.comment("Base damage for " + projName + "s")
 					.translation("config." + ModSpartanWeaponry.ID + ".arrow.base_damage")
-					.defineInRange("base_damage", baseDamage, 0.1d, 100.0d);
-			this.rangeMultiplier = builder.comment("Range muliplier for " + projName + "s")
+					.defineInRange("base_damage", baseDamageIn, 0.1d, 100.0d);
+			rangeMultiplier = builder.comment("Range muliplier for " + projName + "s")
 					.translation("config." + ModSpartanWeaponry.ID + ".arrow.range_multiplier")
-					.defineInRange("range_multiplier", rangeMultiplier, 0.1d, 100.0d);
+					.defineInRange("range_multiplier", rangeMultiplierIn, 0.1d, 100.0d);
 			builder.pop();
 		}
 	}
@@ -189,20 +189,20 @@ public class Config
 		public DoubleValue rangeMultiplier;
 		public DoubleValue armorPiercingFactor;
 		
-		protected BoltCategory(ForgeConfigSpec.Builder builder, String materialName, String projectileName, float baseDamage, float rangeMultiplier, float armorPiercingFactor)
+		protected BoltCategory(ForgeConfigSpec.Builder builder, String materialName, String projectileName, float baseDamageIn, float rangeMultiplierIn, float armorPiercingFactorIn)
 		{
 			String projName = materialName == null || materialName == "" ? projectileName : materialName + " " + projectileName;
 			String category = materialName == null || materialName == "" ? projectileName : materialName + "_" + projectileName;
 			builder.push(category);
-			this.baseDamage = builder.comment("Base damage for " + projName + "s")
+			baseDamage = builder.comment("Base damage for " + projName + "s")
 					.translation("config." + ModSpartanWeaponry.ID + ".arrow.base_damage")
-					.defineInRange("base_damage", baseDamage, 0.1d, 100.0d);
-			this.rangeMultiplier = builder.comment("Range muliplier for " + projName + "s")
+					.defineInRange("base_damage", baseDamageIn, 0.1d, 100.0d);
+			rangeMultiplier = builder.comment("Range muliplier for " + projName + "s")
 				.translation("config." + ModSpartanWeaponry.ID + ".arrow.range_multiplier")
-				.defineInRange("range_multiplier", rangeMultiplier, 0.1d, 100.0d);
-			this.armorPiercingFactor = builder.comment("Armor Piercing factor for " + projName + "s")
+				.defineInRange("range_multiplier", rangeMultiplierIn, 0.1d, 100.0d);
+			armorPiercingFactor = builder.comment("Armor Piercing factor for " + projName + "s")
 					.translation("config." + ModSpartanWeaponry.ID + ".bolt.armor_piercing_factor")
-					.defineInRange("armor_piercing_factor", armorPiercingFactor, 0.0d, 1.0d);
+					.defineInRange("armor_piercing_factor", armorPiercingFactorIn, 0.0d, 1.0d);
 			builder.pop();
 		}
 	}
@@ -339,9 +339,8 @@ public class Config
 						.translation("config." + ModSpartanWeaponry.ID + ".arrow.range_multiplier")
 						.defineInRange("range_multiplier", Defaults.RangeMultiplierArrowExplosive, 0.1d, 100.0d);
 			builder.pop();
-			quiverBowBlacklist = builder.comment("Bows in this blacklist will not get Arrows pulled out of the Arrow Quiver. Use the registry ID of the bow to add to this. e.g. \"minecraft:bow\"")
+			quiverBowBlacklist = builder.comment("Bows in this blacklist will not get Arrows pulled out of the Arrow Quiver. Use the registry ID of the bow to add to  e.g. \"minecraft:bow\"")
 								.translation("config." + ModSpartanWeaponry.ID + ".projectile.quiver_bow_blacklist")
-//								.<String>defineList("quiver_bow_blacklist", Defaults.QuiverArrowBlacklist, /*(value) -> ForgeRegistries.ITEMS.containsKey(new ResourceLocation((String)value))*/ (value) -> value.getClass() == String.class);
 								.<String>defineListAllowEmpty(ImmutableList.of("quiver_bow_blacklist"), () -> Arrays.asList(Defaults.QuiverArrowBlacklist), value -> true);
 		builder.pop();
 		
@@ -588,15 +587,6 @@ public class Config
 //		APIConfigValues.damageBonusRidingVelocityForMaxBonus = INSTANCE.damageBonusRidingVelocityForMaxBonus.get().floatValue();
 		
 		WeaponsmithTrades.initTradeLists();
-		
-		// Debug crap
-		/*Log.info("Disabled Recipes:");
-		if(INSTANCE.disabledRecipeTypes.isEmpty())
-			Log.info("- None!");
-		for(String type : INSTANCE.disabledRecipeTypes)
-		{
-			Log.info("- " + type);
-		}*/
 	}
 	
 	public static void updateDisabledRecipe(String type, boolean disabled)

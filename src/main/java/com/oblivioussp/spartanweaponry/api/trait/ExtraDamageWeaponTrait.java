@@ -68,11 +68,10 @@ public class ExtraDamageWeaponTrait extends MeleeCallbackWeaponTrait
 				float velocity = attacker.getPersistentData().getFloat(SpartanWeaponryAPI.MOD_ID + "_riding_velocity");
 				attacker.getPersistentData().putFloat(SpartanWeaponryAPI.MOD_ID + "_riding_velocity", 0.0f);
 				bonusDamage *= MathHelper.clamp(velocity / APIConfigValues.damageBonusRidingVelocityForMaxBonus, 0.0f, 1.0f);*/
-				return attacker.getRidingEntity() != null ? this.getMagnitude() * baseDamage : baseDamage;
-//				return attacker.getRidingEntity() != null ? baseDamage + bonusDamage : baseDamage;
+				return attacker.getRidingEntity() != null ? getMagnitude() * baseDamage : baseDamage;
 			}
 			case(WeaponTraits.TRAIT_TYPE_EXTRA_DAMAGE_UNDEAD):
-				return victim.getCreatureAttribute() == CreatureAttribute.UNDEAD ? this.getMagnitude() * baseDamage : baseDamage;
+				return victim.getCreatureAttribute() == CreatureAttribute.UNDEAD ? getMagnitude() * baseDamage : baseDamage;
 			case(WeaponTraits.TRAIT_TYPE_EXTRA_DAMAGE_BACKSTAB):
 			{
 				Entity immediateEntity = source.getImmediateSource();

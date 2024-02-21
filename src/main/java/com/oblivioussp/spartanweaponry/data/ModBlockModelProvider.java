@@ -17,20 +17,9 @@ public class ModBlockModelProvider extends BlockStateProvider
 		super(gen, modid, exFileHelper);
 	}
 
-	/*@SuppressWarnings("deprecation")
-	public void generateModels()
-	{
-		func_239916_a_(ModelsResourceUtil.func_240223_a_("skull"), Blocks.SOUL_SAND).
-			func_240050_a_(StockModelShapes.TEMPLATE_SKULL, ModBlocks.blazeHead, ModBlocks.endermanHead, ModBlocks.spiderHead, ModBlocks.caveSpiderHead, ModBlocks.piglinHead, ModBlocks.zombifiedPiglinHead, ModBlocks.huskHead, ModBlocks.straySkull, ModBlocks.drownedHead, ModBlocks.illagerHead, ModBlocks.witchHead).
-			func_240052_b_(ModBlocks.blazeWallHead, ModBlocks.endermanWallHead, ModBlocks.spiderWallHead, ModBlocks.caveSpiderWallHead, ModBlocks.piglinWallHead, ModBlocks.zombifiedPiglinWallHead, ModBlocks.huskWallHead, ModBlocks.strayWallSkull, ModBlocks.drownedWallHead, ModBlocks.illagerWallHead, ModBlocks.witchWallHead);
-	}*/
-
 	@Override
 	protected void registerStatesAndModels() 
 	{
-		/*getVariantBuilder(ModBlocks.blazeHead).partialState().setModels(ConfiguredModel.builder().modelFile(new ExistingModelFile(mcLoc("block/skull"), this.models().existingFileHelper)).build());
-		getVariantBuilder(ModBlocks.blazeWallHead).partialState().setModels(ConfiguredModel.builder().modelFile(new ExistingModelFile(mcLoc("block/skull"), this.models().existingFileHelper)).build());
-		itemModels().withExistingParent(ModBlocks.blazeHead.getRegistryName().getPath(), mcLoc("item/template_skull"));*/
 		generateSkullModels(ModBlocks.blazeHead, ModBlocks.blazeWallHead);
 		generateSkullModels(ModBlocks.endermanHead, ModBlocks.endermanWallHead);
 		generateSkullModels(ModBlocks.spiderHead, ModBlocks.spiderWallHead);

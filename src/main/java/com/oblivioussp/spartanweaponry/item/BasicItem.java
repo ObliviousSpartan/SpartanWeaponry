@@ -25,7 +25,7 @@ public class BasicItem extends Item
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
 	{
-		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.%s.desc", ModSpartanWeaponry.ID, this.getRegistryName().getPath())).mergeStyle(TextFormatting.GRAY));
+		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.%s.desc", ModSpartanWeaponry.ID, getRegistryName().getPath())).mergeStyle(TextFormatting.GRAY));
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 	}
 

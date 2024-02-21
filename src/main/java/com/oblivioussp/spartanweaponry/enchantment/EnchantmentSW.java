@@ -16,8 +16,8 @@ public class EnchantmentSW extends Enchantment
 	protected EnchantmentSW(String unlocName, Rarity rarityIn, EnchantmentType typeIn, EquipmentSlotType[] slots)
 	{
 		super(rarityIn, typeIn, slots);
-		this.name = unlocName;
-		this.setRegistryName(unlocName);
+		name = unlocName;
+		setRegistryName(unlocName);
 	}
     
     /**
@@ -26,7 +26,7 @@ public class EnchantmentSW extends Enchantment
     @Override
     public String getName()
     {
-    	return String.format("enchantment.%s.%s", ModSpartanWeaponry.ID, this.name);
+    	return String.format("enchantment.%s.%s", ModSpartanWeaponry.ID, name);
     }
 
 }

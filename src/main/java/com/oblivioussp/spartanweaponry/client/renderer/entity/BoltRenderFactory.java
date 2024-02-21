@@ -8,18 +8,8 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class BoltRenderFactory<T extends BoltEntity> implements IRenderFactory<T> 
 {
-//	public final ResourceLocation texture;
+	public BoltRenderFactory() {}
 	
-	public BoltRenderFactory(/*ResourceLocation textureLocation*/)
-	{
-//		texture = textureLocation;
-	}
-	
-/*	public BoltRenderFactory(String textureName)
-	{
-		texture = new ResourceLocation(ModSpartanWeaponry.ID, textureName);
-	}
-*/	
 	@Override
 	public EntityRenderer<T> createRenderFor(EntityRendererManager manager)
 	{

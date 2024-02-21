@@ -43,7 +43,6 @@ public class QuiverBoltItem extends QuiverBaseItem
 	{
 		NetworkHooks.openGui((ServerPlayerEntity)player, new ContainerProvider(new TranslationTextComponent("gui." + ModSpartanWeaponry.ID + ".quiver_bolt.title"), stack), buf -> 
 			{
-//				buf.writeBoolean(handIn == Hand.MAIN_HAND);
 				buf.writeEnumValue(slotType);
 				buf.writeInt(slot);
 			});
@@ -62,10 +61,10 @@ public class QuiverBoltItem extends QuiverBaseItem
 		private final ITextComponent displayName;
 		private final ItemStack quiverStack;
 		
-		protected ContainerProvider(ITextComponent displayName, ItemStack quiverStack)
+		protected ContainerProvider(ITextComponent displayNameIn, ItemStack quiverStackIn)
 		{
-			this.displayName = displayName;
-			this.quiverStack = quiverStack;
+			displayName = displayNameIn;
+			quiverStack = quiverStackIn;
 		}
 
 		@Override

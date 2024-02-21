@@ -33,7 +33,6 @@ public class BoltSpectralEntity extends BoltEntity
     public BoltSpectralEntity(LivingEntity shooter, World world)
     {
         super(ModEntities.BOLT_SPECTRAL, shooter, world);
-        //this.setDamage(baseDamage);
     }
     
     public BoltSpectralEntity(SpawnEntity spawnEntity, World world)
@@ -45,8 +44,8 @@ public class BoltSpectralEntity extends BoltEntity
     public void tick() 
     {
     	super.tick();
-    	if(world.isRemote && !this.inGround)
-    		world.addParticle(ParticleTypes.INSTANT_EFFECT, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0d, 0.0d, 0.0d);
+    	if(world.isRemote && !inGround)
+    		world.addParticle(ParticleTypes.INSTANT_EFFECT, getPosX(), getPosY(), getPosZ(), 0.0d, 0.0d, 0.0d);
     }
     
     @Override
@@ -59,7 +58,7 @@ public class BoltSpectralEntity extends BoltEntity
     protected void arrowHit(LivingEntity living) 
     {
     	super.arrowHit(living);
-    	EffectInstance effect = new EffectInstance(Effects.GLOWING, this.duration, 0);
+    	EffectInstance effect = new EffectInstance(Effects.GLOWING, duration, 0);
     	living.addPotionEffect(effect);
     }
     
@@ -74,13 +73,13 @@ public class BoltSpectralEntity extends BoltEntity
     {
     	super.readAdditional(compound);
     	if(compound.contains(NBT_DURATION))
-    		this.duration = compound.getInt(NBT_DURATION);
+    		duration = compound.getInt(NBT_DURATION);
     }
     
     @Override
     public void writeAdditional(CompoundNBT compound) 
     {
     	super.writeAdditional(compound);
-    	compound.putInt(NBT_DURATION, this.duration);
+    	compound.putInt(NBT_DURATION, duration);
     }
 }

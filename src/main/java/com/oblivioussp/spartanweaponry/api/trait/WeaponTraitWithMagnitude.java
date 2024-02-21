@@ -22,7 +22,7 @@ public class WeaponTraitWithMagnitude extends WeaponTrait
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<ITextComponent> tooltip)
 	{
-		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", modId, this.type), magnitude).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
+		tooltip.add(new StringTextComponent("  ").appendSibling(new TranslationTextComponent(String.format("tooltip.%s.trait.%s.desc", modId, type), magnitude).mergeStyle(WeaponTrait.DESCRIPTION_COLOUR)));
 	}
 
 }

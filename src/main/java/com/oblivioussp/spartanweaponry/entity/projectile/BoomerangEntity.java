@@ -65,7 +65,7 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 	
 	protected void initEntity()
 	{
-		this.setNoGravity(true);
+		setNoGravity(true);
 	}
 	
 	protected void setReturnPosition(Entity shooter)
@@ -89,21 +89,16 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 			return;
 		
 		// Update the return position, accounting the player's movement
-//		setReturnPosition(this.func_234616_v_());
-		setReturnPosition(this.getShooter());
+		setReturnPosition(getShooter());
 		
 		// Get the distance between this entity and the shooter
 		double distance = -1.0d;
 		if(returnPos != null)
-			distance = returnPos.distanceTo(this.getPositionVec());
+			distance = returnPos.distanceTo(getPositionVec());
 		
 		// Check that the Boomerang is still in flight (either going out or coming back)
 		if(hasNoGravity())
 		{
-			// Don't apply as much water drag when this weapon has the Aquadynamic enchantment on it.
-			/*affectedByWaterDrag = getWeaponStack() == null || getWeaponStack().isEmpty() || 
-					EnchantmentHelper.getEnchantmentLevel(ModEnchantments.THROWING_HYDRODYNAMIC, getWeaponStack()) == 0;*/
-			
 			// Start dropping when the boomerang is close to the player and when it's returning
 			// Or if it's return position is invalid
 			if((distance < 1.0d && isReturning) || (inWater && waterDrag <= 0.0f) || returnPos == null)
@@ -114,7 +109,7 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 			// Override motion for Boomerang when returning to the thrower
 			if(isReturning && returnPos != null)
 			{
-				Vector3d distanceVec = this.getPositionVec().subtract(returnPos);
+				Vector3d distanceVec = getPositionVec().subtract(returnPos);
 				double length = distanceVec.length();
 				
 				// Fly towards the player when close enough.
@@ -123,8 +118,8 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 					setMotion(-distanceVec.x / length,
 							-distanceVec.y / length,
 							-distanceVec.z / length);
-					if(this.getShooter() instanceof PlayerEntity)
-						attemptCatch((PlayerEntity)this.getShooter());
+					if(getShooter() instanceof PlayerEntity)
+						attemptCatch((PlayerEntity)getShooter());
 				}
 				// Otherwise, just fly in reverse as normal
 				else
@@ -148,21 +143,15 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 		}
 		if (!world.isRemote && ticksExisted > 200)
         {
-            /*if (pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
-            {
-                entityDropItem(this.getArrowStack(), 0.1F);
-            }*/
-
-//        	if(EnchantmentHelper.getEnchantmentLevel(Enchantments.LOYALTY, getWeaponStack()) > 0)
             if(getDataManager().get(DATA_RETURN) > 0 && !getNoClip())
             	setNoClip(true);
-        	else if (this.pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
+        	else if (pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
         	{
         		dropAsItem();
             	remove();
         	}
         }
-		if (world.isRemote && !this.inGround)
+		if (world.isRemote && !inGround)
         {
             world.addParticle(ParticleTypes.CRIT, getPosX(), getPosY(), getPosZ(), 0.0D, 0.0D, 0.0D);
         }
@@ -180,18 +169,13 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 	{
 		// Bounce off the block surface and return when hitting a block, but only when not returning
 		// Note: This will mean that the Boomerang will no longer activate buttons or pressure plates... (unless they are not moving in flight in front of it)
-		if(raytraceResultIn.getType() == Type.BLOCK && this.hasNoGravity())
+		if(raytraceResultIn.getType() == Type.BLOCK && hasNoGravity())
 		{
 			// Once the Boomerang hits any surface, it should return to the player.
-			//isReturning = true;
 			
 			BlockRayTraceResult blockRaytrace = (BlockRayTraceResult)raytraceResultIn;
 			BlockPos blockPos = blockRaytrace.getPos();
 			BlockState blockState = world.getBlockState(blockPos);
-			//Block block = blockState.getBlock();
-			
-			// Set motion to return to the user (the old and very unrealistic way)
-			//this.setMotion(this.getMotion().mul(-0.9d, -0.9d, -0.9d));
 			
 			// Attempt to make the boomerang bounce off a block face
 			// To do this, I need to calculate a reflection vector from the block that was hit.
@@ -199,7 +183,7 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 			// as well as the current motion vector
 			Vector3i faceNormali = blockRaytrace.getFace().getDirectionVec();
 			Vector3d faceNormalVec = new Vector3d(faceNormali.getX(), faceNormali.getY(), faceNormali.getZ());
-			Vector3d motionVec = this.getMotion();
+			Vector3d motionVec = getMotion();
 			// This should be normalized anyway, but just to ensure that it is, normalize it anyway.
 			faceNormalVec.normalize();
 			
@@ -208,9 +192,9 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 			Vector3d reflectVec = faceNormalVec.scale(2 * motionVec.dotProduct(faceNormalVec)).subtract(motionVec);
 			
 			// Apply this reflection motion, but not without negating and dampening the vector first
-			this.setMotion(reflectVec.scale(-0.75d));
+			setMotion(reflectVec.scale(-0.75d));
 			
-			this.playSound(getBounceSound(), 1.0f, 2.2f / rand.nextFloat() * 0.2f + 0.9f);
+			playSound(getBounceSound(), 1.0f, 2.2f / rand.nextFloat() * 0.2f + 0.9f);
 			
 			// Do Block collision logic with projectiles (e.g. Set the projectile on fire, etc.)
 			if(blockState.getMaterial() != Material.AIR)
@@ -271,38 +255,11 @@ public class BoomerangEntity extends ThrowingWeaponEntity
 		compound.putBoolean(NBT_RETURNING, isReturning);
 	}
 	
-	/*@Override
-	protected float getWaterDrag() 
-	{
-		return affectedByWaterDrag ? super.getWaterDrag() : 0.99f;
-	}*/
-	
 	@Override
 	protected boolean canBeCaughtInMidair(Entity shooter, Entity entityHit) 
 	{
 		// Only the shooter can catch the Boomerang
 		return shooter.isEntityEqual(entityHit);
-	}
-	
-	@Override
-	public void handleStatusUpdate(byte id) 
-	{
-		// Spawn Breaking particles when appropriate
-		/*if(id == 4)
-		{
-			float maxMotion = 0.5f;
-			
-			for(int i = 0; i < 16; i++)
-			{
-				BlockParticleData particle = new BlockParticleData(ParticleTypes.BLOCK, );
-				float motionX = (this.rand.nextFloat() - 0.5f) * maxMotion;
-				float motionY = this.rand.nextFloat() * 0.5f * maxMotion;
-				float motionZ = (this.rand.nextFloat() - 0.5f) * maxMotion;
-				//this.world.addParticle(particle, this.posX, this.posY, this.posZ, 0.0f, 0.0f, 0.0f);
-				this.world.addParticle(particle, this.posX, this.posY, this.posZ, motionX, motionY, motionZ);
-			}
-		}*/
-		super.handleStatusUpdate(id);
 	}
 	
 	@Override

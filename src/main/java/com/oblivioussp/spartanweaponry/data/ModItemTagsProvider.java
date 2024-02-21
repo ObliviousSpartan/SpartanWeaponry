@@ -28,8 +28,6 @@ public class ModItemTagsProvider extends ItemTagsProvider
 	@Override
 	protected void registerTags()
 	{
-//		super.registerTags();
-		
 		final INamedTag<Item> WEAPONS = ItemTags.makeWrapperTag("forge:weapons");
 		final INamedTag<Item> CURIOS_BACK = ItemTags.makeWrapperTag("curios:back");
 		

@@ -24,13 +24,13 @@ public class BoltItem extends Item
 	protected float rangeModifier = Defaults.RangeMultiplierBolt;
 	protected float armorPiercingFactor = Defaults.ArmorPiercingFactorBolt;
 
-	public BoltItem(String unlocName, float damageModifier, float rangeModifier, float armorPiercingFactor) 
+	public BoltItem(String unlocName, float damageModifierIn, float rangeModifierIn, float armorPiercingFactorIn) 
 	{
 		super(new Item.Properties().group(ModItems.GROUP_SW_ARROWS_BOLTS));
-		this.setRegistryName(ModSpartanWeaponry.ID, unlocName);
-		this.damageModifier = damageModifier;
-		this.rangeModifier = rangeModifier;
-		this.armorPiercingFactor = armorPiercingFactor;
+		setRegistryName(ModSpartanWeaponry.ID, unlocName);
+		damageModifier = damageModifierIn;
+		rangeModifier = rangeModifierIn;
+		armorPiercingFactor = armorPiercingFactorIn;
 	}
 
     public BoltEntity createBolt(World world, ItemStack stack, LivingEntity shooter)
@@ -48,37 +48,21 @@ public class BoltItem extends Item
 	public boolean isInfinite(ItemStack stack, ItemStack crossbow, PlayerEntity player)
     {
         int enchant = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, crossbow);
-        return enchant <= 0 ? false : this.getClass() == BoltItem.class;
+        return enchant <= 0 ? false : getClass() == BoltItem.class;
     }
 	
-	/**
-     * allows items to add custom lines of information to the mouseover description
-     */
-/*    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-    	//tooltip.add(TextFormatting.RED + StringHelper.translateString("wip", "dev"));
-    	tooltip.add(StringHelper.translateFormattedString("projectile_base_damage", "tooltip", baseDamage));
-    	tooltip.add(StringHelper.translateFormattedString("projectile_range_multiplier", "tooltip", rangeMultiplier));
-    	    	
-    	tooltip.add("");
-    	
-    	super.addInformation(stack, worldIn, tooltip, flagIn);
-    }*/
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-//		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers").mergeStyle(TextFormatting.GOLD));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.base_damage", new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.base_damage.value", damageModifier).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.range", new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.range.value", rangeModifier).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.armor_piercing_factor", new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.armor_piercing_factor.value", armorPiercingFactor * 100.0f).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));
 	}
 	
-	public void updateFromConfig(float damageModifier, float rangeModifier, float armorPiercingFactor)
+	public void updateFromConfig(float damageModifierIn, float rangeModifierIn, float armorPiercingFactorIn)
 	{
-		this.damageModifier = damageModifier;
-		this.rangeModifier = rangeModifier;
-		this.armorPiercingFactor = armorPiercingFactor;
+		damageModifier = damageModifierIn;
+		rangeModifier = rangeModifierIn;
+		armorPiercingFactor = armorPiercingFactorIn;
 	} 
 }

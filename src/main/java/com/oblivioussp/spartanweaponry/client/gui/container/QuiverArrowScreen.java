@@ -57,27 +57,26 @@ public class QuiverArrowScreen extends ContainerScreen<QuiverArrowContainer>
 	@Override
 	public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) 
 	{
-		this.renderBackground(matrixStack);
+		renderBackground(matrixStack);
 		super.render(matrixStack, mouseX, mouseY, partialTicks);
-		this.renderHoveredTooltip(matrixStack, mouseX, mouseY);
-		//this.renderHoveredToolTip(matrixStack, mouseX, mouseY);
+		renderHoveredTooltip(matrixStack, mouseX, mouseY);
 	}
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int mouseX, int mouseY) 
 	{
-		this.minecraft.getTextureManager().bindTexture(texture);
-		this.blit(matrixStack, this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
+		minecraft.getTextureManager().bindTexture(texture);
+		blit(matrixStack, guiLeft, guiTop, 0, 0, xSize, ySize);
 		int offhandY = ammoSlots == Defaults.SlotsQuiverHuge ? 122 : 104;
-		this.blit(matrixStack, this.guiLeft - 27, this.guiTop + offhandY, 178, offhandY, 27, 29);
+		blit(matrixStack, guiLeft - 27, guiTop + offhandY, 178, offhandY, 27, 29);
 	}
 	
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int mouseX, int mouseY) 
 	{
 		String name = quiver.getDisplayName().getString();	//getFormattedText();
-		this.font.drawString(matrixStack, name, this.xSize / 2 - this.font.getStringWidth(name) / 2, 5, 0x404040);
-		this.font.drawString(matrixStack, this.playerInventory.getDisplayName().getString(), 8, 42 + (ammoSlots == Defaults.SlotsQuiverHuge ? 18 : 0), 0x404040);
+		font.drawString(matrixStack, name, xSize / 2 - font.getStringWidth(name) / 2, 5, 0x404040);
+		font.drawString(matrixStack, playerInventory.getDisplayName().getString(), 8, 42 + (ammoSlots == Defaults.SlotsQuiverHuge ? 18 : 0), 0x404040);
 	}
 
 }

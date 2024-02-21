@@ -22,14 +22,14 @@ public class VillagerTrades
 		protected int xpGiven;	// Not to be confused with player XP
 		protected float priceMultiplier;
 		
-		public BaseTrade(ItemStack wantedStack, ItemStack wantedStack2, ItemStack offeredStack, int maxUses, int xpGiven, float priceMultiplier)
+		public BaseTrade(ItemStack wantedStackIn, ItemStack wantedStack2In, ItemStack offeredStackIn, int maxUsesIn, int xpGivenIn, float priceMultiplierIn)
 		{
-			this.wantedStack = wantedStack;
-			this.wantedStack2 = wantedStack2;
-			this.offeredStack = offeredStack;
-			this.maxUses = maxUses;
-			this.xpGiven = xpGiven;
-			this.priceMultiplier = priceMultiplier;
+			wantedStack = wantedStackIn;
+			wantedStack2 = wantedStack2In;
+			offeredStack = offeredStackIn;
+			maxUses = maxUsesIn;
+			xpGiven = xpGivenIn;
+			priceMultiplier = priceMultiplierIn;
 		}
 
 		@Override
@@ -47,15 +47,6 @@ public class VillagerTrades
 			super(new ItemStack(Items.EMERALD, emeraldCost), ItemStack.EMPTY, offeredStack, maxUses, xpGiven, priceMultiplier);
 		}
 	}
-	
-	/*public static class SellItemForEmeraldsTrade extends BaseTrade
-	{
-		public SellItemForEmeraldsTrade(ItemStack wantedStack, int emeraldCost, int maxUses,
-				int xpGiven, float priceMultiplier) 
-		{
-			super(wantedStack, ItemStack.EMPTY, new ItemStack(Items.EMERALD, emeraldCost), maxUses, xpGiven, priceMultiplier);
-		}
-	}*/
 	
 	public static class BuyEnchantedItemWithEmeraldsTrade extends BuyItemWithEmeraldsTrade
 	{
@@ -80,10 +71,10 @@ public class VillagerTrades
 		private ItemStack stack;
 		private int emeraldCost;
 		
-		public RandomisedTradeItem(Item item, int emeraldCost)
+		public RandomisedTradeItem(Item item, int emeraldCostIn)
 		{
-			this.stack = new ItemStack(item);
-			this.emeraldCost = emeraldCost;
+			stack = new ItemStack(item);
+			emeraldCost = emeraldCostIn;
 		}
 		
 		public ItemStack getItemStack()
@@ -105,12 +96,12 @@ public class VillagerTrades
 		protected float priceMultiplier;
 
 		public RandomisedBuyItemWithEmeraldsTrade(List<RandomisedTradeItem> items,
-				int maxUses, int xpGiven, float priceMultiplier) 
+				int maxUsesIn, int xpGivenIn, float priceMultiplierIn) 
 		{
-			this.offeredItems = items;
-			this.maxUses = maxUses;
-			this.xpGiven = xpGiven;
-			this.priceMultiplier = priceMultiplier;
+			offeredItems = items;
+			maxUses = maxUsesIn;
+			xpGiven = xpGivenIn;
+			priceMultiplier = priceMultiplierIn;
 		}
 
 		@Override

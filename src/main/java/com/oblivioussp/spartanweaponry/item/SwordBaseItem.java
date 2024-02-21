@@ -20,7 +20,6 @@ import com.oblivioussp.spartanweaponry.client.ClientHelper;
 import com.oblivioussp.spartanweaponry.entity.projectile.ThrowingWeaponEntity;
 import com.oblivioussp.spartanweaponry.init.ModEntities;
 import com.oblivioussp.spartanweaponry.init.ModSounds;
-import com.oblivioussp.spartanweaponry.util.WeaponHelper;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
@@ -61,25 +60,19 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	protected double attackSpeed = 0.0D;
 	protected List<WeaponTrait> traits;
 	protected WeaponMaterial material;
-//	protected String modId = null;
 	protected String customDisplayName = null;
-//	protected boolean useMaterialDisplayName = false;
-//	protected ITextComponent displayText = null;
-	
 	protected boolean doCraftCheck = true;
 	protected boolean canBeCrafted = true;
 	
-	// TODO: Find out if the Battleaxe can truly chop all types of wood (via the Versatile Weapon Trait)
-	
 	// NOTE: This must be retained for API compatibility (most likely)
-	public SwordBaseItem(String regName, Item.Properties prop, WeaponMaterial material, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed, boolean usingDeferredRegister, WeaponTrait... weaponTraits) 
+	public SwordBaseItem(String regName, Item.Properties prop, WeaponMaterial materialIn, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed, boolean usingDeferredRegister, WeaponTrait... weaponTraits) 
 	{
-		super(material, 3, -2.4f, prop.maxDamage(material.getMaxUses()));
+		super(materialIn, 3, -2.4f, prop.maxDamage(materialIn.getMaxUses()));
 		if(!usingDeferredRegister)
-			this.setRegistryName(regName);
-		this.material = material;
-		this.setAttackDamage(weaponBaseDamage, weaponDamageMultiplier);
-		this.setAttackSpeed(weaponSpeed);
+			setRegistryName(regName);
+		material = materialIn;
+		setAttackDamage(weaponBaseDamage, weaponDamageMultiplier);
+		setAttackSpeed(weaponSpeed);
 		traits = new ArrayList<WeaponTrait>();
 		traits.addAll(Arrays.asList(weaponTraits));
 		
@@ -90,20 +83,13 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 			if(hasWeaponTrait(WeaponTraits.BLOCK_MELEE))
 				ClientHelper.registerBlockablePropertyOverrides(this);
 		}
-
-		
-		/*this.addPropertyOverride(new ResourceLocation("throwing"), (stack, world, living) ->
-		{
-			if(living == null || !this.hasWeaponTrait(WeaponTraits.THROWABLE) || !stack.isItemEqual(living.getActiveItemStack()))	return 0.0f;
-			return living.getItemInUseCount() > 0 ? 1.0f : 0.0f;
-		});*/
 	}
 	
-	public SwordBaseItem(String regName, Item.Properties prop, WeaponMaterial material, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed, String customDisplayName, boolean usingDeferredRegister, WeaponTrait... weaponTraits)
+	public SwordBaseItem(String regName, Item.Properties prop, WeaponMaterial material, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed, String customDisplayNameIn, boolean usingDeferredRegister, WeaponTrait... weaponTraits)
 	{
 		this(regName, prop, material, weaponBaseDamage, weaponDamageMultiplier, weaponSpeed, usingDeferredRegister, weaponTraits);
 		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+			customDisplayName = customDisplayNameIn;
 	}
 	
 	/**
@@ -155,37 +141,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		return material.getMaxUses();
 	}
 	
-	/**
-    * Return the enchantability factor of the item, most of the time is based on material.
-    */
-	/*@Override
-	public int getItemEnchantability()
-	{
-		return this.material.getEnchantability();
-	}*/
-	
-	/**
-     * Return whether this item is repairable in an anvil.
-     */
-	/*@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
-    	if(toRepair.isEmpty() || repair.isEmpty())
-    		return false;
-    	if( materialEx.doesOreDictMatch(repair))
-    		return true;
-    	return super.getIsRepairable(toRepair, repair);
-    }*/
-	
-	/**
-     * Return the name for this tool's material.
-     */
-	/*@Override
-    public String getToolMaterialName()
-    {
-        return this.materialEx.getMaterial().toString();
-    }*/
-	
 	@Override
 	public float getDestroySpeed(ItemStack stack, BlockState state)
     {
@@ -205,7 +160,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
         if (equipmentSlot == EquipmentSlotType.MAINHAND)
         {
             multimap.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", getDirectAttackDamage(), AttributeModifier.Operation.ADDITION));
-            multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", this.attackSpeed - 4.0D, AttributeModifier.Operation.ADDITION));
+            multimap.put(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", attackSpeed - 4.0D, AttributeModifier.Operation.ADDITION));
 
             if(traits != null)
 			{
@@ -235,17 +190,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	{
 		return hasWeaponTrait(WeaponTraits.SHIELD_BREACH);
 	}
-    
-    /*@Override
-    public String getItemStackDisplayName(ItemStack stack)
-    {
-		if(displayName != null)
-		{
-			String name = I18n.translateToLocalFormatted(String.format("item.%s:%s.name", Reference.ModID, displayName), I18n.translateToLocal(materialEx.getFullUnlocName()));
-			return name;
-		}
-		return super.getItemStackDisplayName(stack);
-    }*/
 	
 	@Override
 	public ITextComponent getDisplayName(ItemStack stack) 
@@ -260,8 +204,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	{
 		boolean isShiftPressed = Screen.hasShiftDown();
 		
-		//tooltip.add(new TranslationTextComponent(String.format("dev.%s.wip", Reference.MOD_ID)).applyTextStyles(TextFormatting.BOLD, TextFormatting.DARK_RED));
-
     	if(doCraftCheck && worldIn != null)
     	{
     		if(material.getModId() == ModSpartanWeaponry.ID && material.getRepairMaterial() == Ingredient.EMPTY)
@@ -289,10 +231,8 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 
     	if(material.hasAnyWeaponTrait())
     	{
-    		//tooltip.add("");
-    		//tooltip.add(TextFormatting.DARK_AQUA + "Material Bonus:");
     		tooltip.add(new TranslationTextComponent(String.format("tooltip.%s.traits.material_bonus", ModSpartanWeaponry.ID)).mergeStyle(TextFormatting.AQUA));
-    		for(WeaponTrait matTrait : this.material.getAllWeaponTraits())
+    		for(WeaponTrait matTrait : material.getAllWeaponTraits())
     		{
     			matTrait.addTooltip(stack, tooltip, isShiftPressed);
     		}
@@ -330,18 +270,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
         return super.hitEntity(stack, target, attacker);
     }
 	
-	/*@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) 
-	{
-		if(this.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_THROWABLE) != null)
-		{
-			ItemStack stack = playerIn.getHeldItem(hand);
-	        playerIn.setActiveHand(hand);
-	        return new ActionResult(EnumActionResult.SUCCESS, stack);
-		}
-		return super.onItemRightClick(worldIn, playerIn, hand);
-	}*/
-	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity player, Hand hand)
 	{
@@ -360,69 +288,15 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		}
 		return super.onItemRightClick(worldIn, player, hand);
 	}
-
-	/*@Override
-	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) 
-	{
-		if(this.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_THROWABLE) != null && entityLiving instanceof EntityPlayer)
-		{
-			EntityPlayer player = (EntityPlayer)entityLiving;
-
-            int charge = this.getMaxItemUseDuration(stack) - timeLeft;
-            
-            if(charge >= 5)
-            	charge = 5;
-			
-			if (!worldIn.isRemote && charge > 2)
-	        {
-	            EntityThrownWeapon thrown = new EntityThrownWeapon(worldIn, player);
-	            thrown.setWeapon(stack);
-	            //float distance = (float)player.getDistance(player.posX + player.motionX, playerIn.posY + playerIn.motionY, playerIn.posZ + playerIn.motionZ);
-	            thrown.shoot(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5f * (charge / 10.0f + 0.5f), 0.5f);
-	            thrown.setDamage(this.getDirectAttackDamage() + 1.0f);
-	            
-	            // Apply enchantments as necessary
-	            int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.SHARPNESS, stack);
-	            if (j > 0)
-	            {
-	            	thrown.setDamage(thrown.getDamage() + j * 0.5D + 0.5D);
-	            }
-	            int k = EnchantmentHelper.getEnchantmentLevel(Enchantments.KNOCKBACK, stack);
-	            if (k > 0)
-	            {
-	            	thrown.setKnockbackStrength(k);
-	            }
-	            if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FIRE_ASPECT, stack) > 0)
-	            {
-	            	thrown.setFire(100);
-	            }
-	            
-	            if(player.capabilities.isCreativeMode)
-	            	thrown.pickupStatus = PickupStatus.CREATIVE_ONLY;
-	            else
-	            {
-	                stack.setCount(stack.getCount() - 1);
-	                if(stack.getCount() <= 0)
-	                	player.inventory.deleteStack(stack);
-	            }
-	            
-	            worldIn.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-	            worldIn.spawnEntity(thrown);
-	        }
-
-	        player.addStat(StatList.getObjectUseStats(this));
-		}
-		super.onPlayerStoppedUsing(stack, worldIn, entityLiving, timeLeft);
-	}*/
 	
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) 
 	{
-		if(this.getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_THROWABLE) != null && entityLiving instanceof PlayerEntity)
+		if(getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_THROWABLE) != null && entityLiving instanceof PlayerEntity)
 		{
 			PlayerEntity player = (PlayerEntity)entityLiving;
 
-            int charge = this.getUseDuration(stack) - timeLeft;
+            int charge = getUseDuration(stack) - timeLeft;
             
             if(charge >= 5)
             	charge = 5;
@@ -431,9 +305,8 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	        {
 	            ThrowingWeaponEntity thrown = new ThrowingWeaponEntity(ModEntities.THROWING_WEAPON, player, worldIn);
 	            thrown.setWeapon(stack);
-	            //float distance = (float)player.getDistance(player.posX + player.motionX, playerIn.posY + playerIn.motionY, playerIn.posZ + playerIn.motionZ);
 	            thrown.setDirectionAndMovement(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5f * (charge / 10.0f + 0.5f), 0.5f);
-	            thrown.setDamage(this.getDirectAttackDamage() + 1.0f);
+	            thrown.setDamage(getDirectAttackDamage() + 1.0f);
 	            
 	            // Apply enchantments as necessary
 	            int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.SHARPNESS, stack);
@@ -471,14 +344,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		}
 		super.onPlayerStoppedUsing(stack, worldIn, entityLiving, timeLeft);
 	}
-
-	/*@Override
-	public int getMaxItemUseDuration(ItemStack stack) 
-	{
-		if(this.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_THROWABLE) != null)
-			return 72000;
-		return super.getMaxItemUseDuration(stack);
-	}*/
 	
 	@Override
 	public int getUseDuration(ItemStack stack) 
@@ -487,14 +352,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 			return 72000;
 		return super.getUseDuration(stack);
 	}
-
-	/*@Override
-	public EnumAction getItemUseAction(ItemStack stack) 
-	{
-		if(this.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_THROWABLE) != null)
-			return EnumAction.BOW;
-		return super.getItemUseAction(stack);
-	}*/
 	
 	@Override
 	public UseAction getUseAction(ItemStack stack) 
@@ -505,24 +362,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 			return UseAction.BLOCK;
 		return super.getUseAction(stack);
 	}
-
-	/*@Override
-	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn) 
-	{
-		for(WeaponProperty prop : properties)
-		{
-			IPropertyCallback callback = prop.getCallback();
-			if(callback != null)
-				callback.onCreateItem(materialEx, stack);
-		}
-		for(WeaponProperty prop : materialEx.getAllWeaponProperties())
-		{
-			IPropertyCallback callback = prop.getCallback();
-			if(callback != null)
-				callback.onCreateItem(materialEx, stack);
-		}
-		super.onCreated(stack, worldIn, playerIn);
-	}*/
 	
 	@Override
 	public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) 
@@ -542,31 +381,10 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		super.onCreated(stack, worldIn, playerIn);
 	}
 	
-	/*@Override
-	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) 
-	{
-		if(this.isInCreativeTab(tab))
-		{
-			ItemStack stack = new ItemStack(this);
-			for(WeaponProperty prop : properties)
-			{
-				IPropertyCallback callback = prop.getCallback();
-				if(callback != null)
-					callback.onCreateItem(materialEx, stack);
-			}
-			for(WeaponProperty prop : materialEx.getAllWeaponProperties())
-			{
-				IPropertyCallback callback = prop.getCallback();
-				if(callback != null)
-					callback.onCreateItem(materialEx, stack);
-			}
-			items.add(stack);
-		}
-	}*/
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) 
 	{
-		if(this.isInGroup(group))
+		if(isInGroup(group))
 		{
 			ItemStack stack = new ItemStack(this);
 			for(WeaponTrait trait : traits)
@@ -583,17 +401,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 			}
 			items.add(stack);
 		}
-	}
-	
-	@Override
-	public boolean onLeftClickEntity(ItemStack stack, PlayerEntity player, Entity entity)
-	{
-		/*WeaponTrait sweepTrait = this.getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_SWEEP_DAMAGE);
-		if(sweepTrait != null && sweepTrait.getMagnitude() == 1.0f)
-			return super.onLeftClickEntity(stack, player, entity);*/
-		
-		WeaponHelper.inflictAttackDamage(this, player, entity);
-		return true;
 	}
 	
 	/**
@@ -613,15 +420,13 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
     @Nullable
     public String getCreatorModId(ItemStack itemStack)
     {
-//    	if(this.modId != null)
-//            return this.modId;
     	return super.getCreatorModId(itemStack);
     }
     
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment)
     {
-    	if(this.getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_SWEEP_DAMAGE) == null)
+    	if(getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_SWEEP_DAMAGE) == null)
         	return enchantment != Enchantments.SWEEPING && super.canApplyAtEnchantingTable(stack, enchantment);
         return super.canApplyAtEnchantingTable(stack, enchantment);
     }
@@ -631,7 +436,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	@Override
 	public boolean hasWeaponTrait(WeaponTrait prop) 
 	{
-		return traits.contains(prop) /*|| materialEx.getAllWeaponProperties().contains(prop)*/;
+		return traits.contains(prop);
 	}
 
 	// TODO: Determine whether or not removing this will break any addon mods
@@ -679,11 +484,9 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		return result;
 	}
 
-	// TODO: Determine whether or not changing the type to immutable breaks anything...
 	@Override
 	public List<WeaponTrait> getAllWeaponTraits() 
 	{
-//		return new ArrayList<WeaponTrait>(traits);
 		return ImmutableList.copyOf(traits);
 	}
 
@@ -702,35 +505,4 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	{
 		attackSpeed = speed;
 	}
-	
-	// Sets Weapon Traits to this weapon, provided they are strictly melee traits
-	/*public List<WeaponTrait> setTraits(WeaponTrait... traits)
-	{
-		List<WeaponTrait> traitList = new ArrayList<WeaponTrait>();
-		for(WeaponTrait trait : traits)
-		{
-			
-		}
-		return traitList;
-	}*/
-    
-    /*@Override
-	public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack) 
-    {
-    	if(entityLiving instanceof EntityPlayer)
-    		LogHelper.info("Swinging weapon! Cooldown " + ((EntityPlayer)entityLiving).getCooledAttackStrength(0.0f));
-		return super.onEntitySwing(entityLiving, stack);
-	}*/
-
-	/*@Override
-	public List<WeaponProperty> getAllWeaponProperties() 
-	{
-		return new ArrayList<WeaponProperty>(properties);
-	}*/
-
-	/*@Override
-	public List<WeaponProperty> getWeaponProperties() 
-	{
-		return Collections.unmodifiableList(properties);
-	}*/
 }

@@ -63,9 +63,6 @@ public class HudElementQuiverAmmo extends HudElement
 		offsetX = getAlignedX(align, ClientConfig.INSTANCE.quiverHudOffsetX.get());
 		offsetY = getAlignedY(align, ClientConfig.INSTANCE.quiverHudOffsetY.get());
 		
-		//GlStateManager.enableBlend();
-		//RenderSystem.disableDepthTest();
-		//GlStateManager.color4f(1.0f, 1.0f, 1.0f, 1.0f);
 		matrixStack.push();
         matrixStack.translate(0.0D, 0.0D, (double)(mc.getItemRenderer().zLevel + 200.0F));
         IRenderTypeBuffer.Impl renderBuffer = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
@@ -83,15 +80,11 @@ public class HudElementQuiverAmmo extends HudElement
 		}
 		renderBuffer.finish();
 		matrixStack.pop();
-		//font.drawStringWithShadow(ammoStr, offsetX + 20 - font.getStringWidth(ammoStr), offsetY + 13, totalAmmo == 0 ? 0xFF6060 : 0xFFC000);
-
-		//RenderSystem.enableDepthTest();
-		//GlStateManager.disableBlend();
 	}
 
 	public void setQuiver(ItemStack quiverStack)
 	{
-		this.quiver = quiverStack;
+		quiver = quiverStack;
 	}
 	
 	public boolean isAlignedOnTop(Alignment align)

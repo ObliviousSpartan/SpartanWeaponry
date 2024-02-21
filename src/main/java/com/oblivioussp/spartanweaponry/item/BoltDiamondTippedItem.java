@@ -23,10 +23,10 @@ public class BoltDiamondTippedItem extends BoltDiamondItem
 {
 	protected String baseName;
 	
-	public BoltDiamondTippedItem(String unlocName, String baseName, float damageModifier, float rangeModifier, float armorPiercingFactor) 
+	public BoltDiamondTippedItem(String unlocName, String baseNameIn, float damageModifier, float rangeModifier, float armorPiercingFactor) 
 	{
 		super(unlocName, damageModifier, rangeModifier, armorPiercingFactor);
-		this.baseName = baseName;
+		baseName = baseNameIn;
 	}
 	
 	@Override
@@ -40,7 +40,7 @@ public class BoltDiamondTippedItem extends BoltDiamondItem
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items)
 	{
-		if(this.isInGroup(group))
+		if(isInGroup(group))
 		{
 			for(Potion potion : ForgeRegistries.POTION_TYPES)
 			{
@@ -57,9 +57,6 @@ public class BoltDiamondTippedItem extends BoltDiamondItem
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
 	{
-		//if(PotionUtils.getPotionFromItem(stack) == Potions.EMPTY)
-		//	tooltip.add(new TranslationTextComponent("tooltip." + Reference.MOD_ID + ".tipped_arrow.crafting").applyTextStyle(TextFormatting.YELLOW));
-		
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 
 		tooltip.add(new StringTextComponent(""));

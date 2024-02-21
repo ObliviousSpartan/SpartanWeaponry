@@ -45,12 +45,12 @@ public class LongbowItem extends BowItem /*implements IHudQuiverDisplay*/
 	protected boolean canBeCrafted = true;
 //	protected IWeaponCallback callback = null;
 	
-	public LongbowItem(String unlocName, Item.Properties prop, WeaponMaterial material, boolean usingDeferredRegister)
+	public LongbowItem(String unlocName, Item.Properties prop, WeaponMaterial materialIn, boolean usingDeferredRegister)
 	{
-		super(prop.maxDamage((int)(material.getMaxUses() * 2.0f)));
+		super(prop.maxDamage((int)(materialIn.getMaxUses() * 2.0f)));
 		if(!usingDeferredRegister)
-			this.setRegistryName(unlocName);
-		this.material = material;
+			setRegistryName(unlocName);
+		material = materialIn;
 		maxVelocity = Defaults.MultiplierLongbow;
 		
 		// Modify load and aim ticks via traits
@@ -68,48 +68,14 @@ public class LongbowItem extends BowItem /*implements IHudQuiverDisplay*/
 		
 		if(FMLEnvironment.dist.isClient())
 			ClientHelper.registerLongbowPropertyOverrides(this);
-		
-        /*this.addPropertyOverride(new ResourceLocation("pulling"), new IItemPropertyGetter()
-        {
-            @SideOnly(Side.CLIENT)
-            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn)
-            {
-                return entityIn != null && entityIn.isHandActive() && entityIn.getActiveItemStack() == stack ? 1.0F : 0.0F;
-            }
-        });*/
-		/*this.addPropertyOverride(new ResourceLocation("pull"), (stack, world, shooter) -> {
-			if(shooter == null)
-				return 0.0f;
-			return !(shooter.getActiveItemStack().getItem() instanceof LongbowItem) ? 0.0f : (float)(stack.getUseDuration() - shooter.getItemInUseCount()) / (20.0F * maxVelocity);
-		});*/
 	}
 	
-	public LongbowItem(String regName, Item.Properties prop, WeaponMaterial material, String customDisplayName, boolean usingDeferredRegister)
+	public LongbowItem(String regName, Item.Properties prop, WeaponMaterial materialIn, String customDisplayNameIn, boolean usingDeferredRegister)
 	{
-		this(regName, prop, material, usingDeferredRegister);
-		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+		this(regName, prop, materialIn, usingDeferredRegister);
+		if(materialIn.useCustomDisplayName())
+			customDisplayName = customDisplayNameIn;
 	}
-	
-	/*@OnlyIn(Dist.CLIENT)
-	public static void registerPropertyOverrides(LongbowItem longbow)
-	{
-		ItemModelsProperties.func_239418_a_(longbow, new ResourceLocation("pull"), (stack, world, shooter) -> {
-			if(shooter == null)
-				return 0.0f;
-			return !(shooter.getActiveItemStack().getItem() instanceof LongbowItem) ? 0.0f : (float)(stack.getUseDuration() - shooter.getItemInUseCount()) / (20.0F * maxVelocity);
-		});
-	}*/
-	
-	/*@Override
-	public int getMaxDamage(ItemStack stack) 
-	{
-		return material.getMaxUses();
-	}*/
-	
-	/**
-     * Called when the player stops using an Item (stops holding the right mouse button).
-     */
 	@Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft)
     {
@@ -119,7 +85,7 @@ public class LongbowItem extends BowItem /*implements IHudQuiverDisplay*/
             boolean flag = player.abilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0;
             ItemStack itemstack = player.findAmmo(stack);
 
-            int i = this.getUseDuration(stack) - timeLeft;
+            int i = getUseDuration(stack) - timeLeft;
             i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, worldIn, (PlayerEntity)entityLiving, i, itemstack != null || flag);
             if (i < 0) return;
 
@@ -215,45 +181,7 @@ public class LongbowItem extends BowItem /*implements IHudQuiverDisplay*/
         }
 
         return f;
-    }
-	
-	/**
-     * allows items to add custom lines of information to the mouseover description
-     */
-/*    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-    	if(doCraftCheck && worldIn != null)
-    	{
-    		if(this.material.getModId() == Reference.ModID)
-    		{
-		    	List<ItemStack> ores = OreDictionary.getOres(material.getOreDictForRepairMaterial(), false);
-		    	if(ores == null || ores.isEmpty())
-		    		canBeCrafted = false;
-    		}
-	    	doCraftCheck = false;
-    	}
-    	else if(!ConfigHandler.forceDisableUncraftableTooltips && !canBeCrafted)
-    		tooltip.add(TextFormatting.RED + StringHelper.translateFormattedString("cantCraftMissingMaterial", "tooltip", Reference.ModID, StringHelper.translateString(material.getOreDictForRepairMaterial(), "material", material.getModId())));
-    	
-    	if(callback != null)
-    	{
-    		callback.onTooltip(material, stack, worldIn, tooltip, flagIn);
-    		tooltip.add("");
-    	}
-    	
-    	if(GuiScreen.isShiftKeyDown())
-    	{
-	    	tooltip.add(StringHelper.translateString("longbow", "tooltip"));
-	    	tooltip.add(StringHelper.translateString("longbow.desc", "tooltip"));
-    	}
-    	else
-    		tooltip.add(TextFormatting.DARK_GRAY + StringHelper.translateFormattedString("showDetails", "tooltip", Reference.ModID, "<SHIFT>"));
-    	
-    	tooltip.add("");
-    }
-*/    
+    } 
 
 	@Override
 	public int getItemEnchantability()
@@ -335,56 +263,4 @@ public class LongbowItem extends BowItem /*implements IHudQuiverDisplay*/
     {
     	return (float)(stack.getUseDuration() - shooter.getItemInUseCount()) / (20.0F * drawTime);
     }
-    
-/*    @Override
-	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn)
-    {
-    	if(callback != null)
-    		callback.onCreateItem(material, stack);
-		super.onCreated(stack, worldIn, playerIn);
-	}
-*/
-/*	@Override
-	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) 
-	{
-		if(this.isInCreativeTab(tab))
-		{
-			ItemStack stack = new ItemStack(this);
-			if(callback != null)
-				callback.onCreateItem(material, stack);
-			items.add(stack);
-		}
-	}
-*/	
-/*	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) 
-	{
-		if(callback != null && entityIn instanceof EntityLivingBase)
-			callback.onItemUpdate(material, stack, worldIn, (EntityLivingBase)entityIn, itemSlot, isSelected);
-		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
-	}
-*/
-	/*@Override
-	public HudQuiverAmmo createHudElement(EntityPlayer player, ItemStack stack, ItemStack secondaryStack) 
-	{
-		return new HudQuiverAmmo(64, 20, secondaryStack);
-	}*/
-	
-/*	@Override
-	public Class<? extends HudElement> getHudClass()
-	{
-		return HudQuiverAmmo.class;
-	}*/
-
-	/*@Override
-	public boolean requiresItemInHotbar() 
-	{
-		return true;
-	}*/
-
-/*	@Override
-	public Class<? extends ItemQuiverBase> getRequiredQuiverClass() 
-	{
-		return ItemQuiverArrow.class;
-	}*/
 }

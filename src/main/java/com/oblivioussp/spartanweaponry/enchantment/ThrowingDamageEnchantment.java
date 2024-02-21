@@ -23,7 +23,7 @@ public class ThrowingDamageEnchantment extends EnchantmentSW
      */
     public int getMaxEnchantability(int enchantmentLevel)
     {
-        return this.getMinEnchantability(enchantmentLevel) + 15;
+        return getMinEnchantability(enchantmentLevel) + 15;
     }
 
     /**

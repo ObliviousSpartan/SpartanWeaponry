@@ -258,7 +258,7 @@ public class ModItems
 	public static Item quiverArrowSmall, quiverArrowMedium, quiverArrowLarge, quiverArrowHuge;
 	public static Item quiverBoltSmall, quiverBoltMedium, quiverBoltLarge, quiverBoltHuge;
 	public static Item quiverUpgradeKitMedium, quiverUpgradeKitLarge, quiverUpgradeKitHuge;
-	public static Item dynamite;//, weaponOilMundane, weaponOil;
+	public static Item dynamite;
 	
 	public static Item blazeHead, endermanHead, spiderHead, caveSpiderHead,
 						piglinHead, zombifiedPiglinHead, huskHead, straySkull,
@@ -267,11 +267,9 @@ public class ModItems
 	static
 	{
 		Item.Properties prop = new Item.Properties().group(GROUP_SW);
-//		Item.Properties weaponProp = new Item.Properties();
 		handle = new BasicItem("handle", prop);
 		pole = new BasicItem("pole", prop);
 		explosiveCharge = new BasicItem("explosive_charge", prop);
-//		greaseball = new BasicItem("grease_ball", prop);
 		daggers = new WeaponItemsStandard(WeaponFactory.DAGGER);
 		parryingDaggers = new WeaponItemsStandard(WeaponFactory.PARRYING_DAGGER);
 		longswords = new WeaponItemsStandard(WeaponFactory.LONGSWORD);
@@ -332,8 +330,6 @@ public class ModItems
 		quiverUpgradeKitHuge = new BasicItem("quiver_upgrade_kit_huge", prop);
 		
 		dynamite = new DynamiteItem("dynamite", new Item.Properties().group(GROUP_SW));
-//		weaponOilMundane = new BasicItem("weapon_oil_mundane", new Item.Properties().group(GROUP_SW));
-//		weaponOil = new WeaponOilItem("weapon_oil");
 		
 		blazeHead = new ExtendedSkullItem("blaze_head", ModBlocks.blazeHead, ModBlocks.blazeWallHead, new Item.Properties().group(GROUP_SW).rarity(Rarity.UNCOMMON));
 		endermanHead = new ExtendedSkullItem("enderman_head", ModBlocks.endermanHead, ModBlocks.endermanWallHead, new Item.Properties().group(GROUP_SW).rarity(Rarity.UNCOMMON));
@@ -387,8 +383,7 @@ public class ModItems
 				bolt, spectralBolt, boltDiamond, tippedBolt, tippedBoltDiamond,
 				quiverArrowSmall, quiverArrowMedium, quiverArrowLarge, quiverArrowHuge,
 				quiverBoltSmall, quiverBoltMedium, quiverBoltLarge, quiverBoltHuge,
-				quiverUpgradeKitMedium, quiverUpgradeKitLarge, quiverUpgradeKitHuge,
-				dynamite/*, weaponOilMundane, weaponOil*/,
+				quiverUpgradeKitMedium, quiverUpgradeKitLarge, quiverUpgradeKitHuge, dynamite,
 				blazeHead, endermanHead, spiderHead, caveSpiderHead,
 				piglinHead, zombifiedPiglinHead, huskHead, straySkull,
 				drownedHead, illagerHead, witchHead);

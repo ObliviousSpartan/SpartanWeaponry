@@ -75,8 +75,8 @@ public class CommonEventHandler
 		float dmgDealt = ev.getAmount();
 		LivingEntity target = ev.getEntityLiving();
 		
-		if(ModSpartanWeaponry.debugMode)
-			Log.info("Damage: Entity: " + target.getDisplayName().getUnformattedComponentText() + " Armour value: " + target.getTotalArmorValue() + " Damage value: " + dmgDealt + " Source: " + src.damageType);			
+//		if(ModSpartanWeaponry.debugMode)
+//			Log.info("Damage: Entity: " + target.getDisplayName().getUnformattedComponentText() + " Armour value: " + target.getTotalArmorValue() + " Damage value: " + dmgDealt + " Source: " + src.damageType);			
 		
 		if(dmgDealt == 0.0f || src.isProjectile() || src.isFireDamage() || src.isExplosion() || src.isMagicDamage() ||
 				(!src.getDamageType().equals("player") && !src.getDamageType().equals("mob")))
@@ -106,10 +106,6 @@ public class CommonEventHandler
 					if(callback != null)
 						dmgDealt = callback.modifyDamageDealt(container.getMaterial(), dmgDealt, src, attacker, target);
 				}
-				
-//				WeaponTrait trait = container.getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_ARMOUR_PIERCING);
-//				if(trait != null)
-//					dmgDealt = WeaponHelper.dealArmourPiercingDamage(attacker, trait.getMagnitude() / 100.0f, target, dmgDealt);
 			}
 			if(attackerStack.getItem() instanceof ThrowingWeaponItem && attackerStack.hasTag() && 
 					attackerStack.getTag().getInt(ThrowingWeaponItem.NBT_AMMO_USED) >= ((ThrowingWeaponItem)attackerStack.getItem()).getMaxAmmo(attackerStack))
@@ -166,7 +162,6 @@ public class CommonEventHandler
 				
 				if(activeStack.getItem() instanceof SwordBaseItem && ((SwordBaseItem)activeStack.getItem()).hasWeaponTrait(WeaponTraits.BLOCK_MELEE))
 				{
-//					IBlockingWeapon weapon = (IBlockingWeapon)activeStack.getItem();
 					DamageSource source = ev.getSource();
 					boolean damageItem = false;
 					
@@ -175,43 +170,19 @@ public class CommonEventHandler
 					{
 						// Do knockback due to damage.
 						Entity trueSourceEntity = source.getTrueSource();
-//						double mX = trueSourceEntity.motionX;
-//						double mY = trueSourceEntity.motionY;
-//						double mZ = trueSourceEntity.motionZ;
 						
                         if (trueSourceEntity instanceof LivingEntity)
                         {
                         	LivingEntity living = (LivingEntity)source.getTrueSource();
                         	living.applyKnockback(0.3F, player.getPosX() - living.getPosX(), player.getPosZ() - living.getPosZ());
                         }
-                        /*if(trueSourceEntity instanceof ServerPlayerEntity && trueSourceEntity.velocityChanged)
-                        {
-                        	((ServerPlayerEntity)trueSourceEntity).connection.sendPacket(new SPacketEntityVelocity(trueSourceEntity));
-                        	trueSourceEntity.velocityChanged = false;
-                        	trueSourceEntity.motionX = mX;
-                            trueSourceEntity.motionY = mY;
-                            trueSourceEntity.motionZ = mZ;
-                        }*/
                         damageItem = true;
 					}
 					if(damageItem)
 					{
-//						ItemStack copy = activeStack.copy();
                         int itemDamage = 1 + MathHelper.floor(ev.getAmount());
                         activeStack.damageItem(itemDamage, player, (playerEntity) -> playerEntity.sendBreakAnimation(playerEntity.getActiveHand()));
                         
-                        /*if(activeStack.isEmpty())
-                        {
-                        	Hand activeHand = player.getActiveHand();
-                        	ForgeEventFactory.onPlayerDestroyItem(player, copy, activeHand);
-                            player.renderBrokenItemStack(copy);
-                        	if(activeHand == EnumHand.MAIN_HAND)
-                        		player.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, ItemStack.EMPTY);
-                        	else if(activeHand == EnumHand.OFF_HAND)
-                        		player.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, ItemStack.EMPTY);
-
-                        	activeStack = ItemStack.EMPTY;
-                        }*/
                         player.world.playSound((PlayerEntity)null, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK, SoundCategory.PLAYERS, 0.8f, 0.8f);
                         ev.setCanceled(true);                        
 					}
@@ -252,7 +223,6 @@ public class CommonEventHandler
 			PlayerEntity player = (PlayerEntity)ev.getEntityLiving();
 			ItemStack fromStack = ev.getFrom();
 			ItemStack toStack = ev.getTo();
-			//ItemStack quiver = ItemStack.EMPTY;
 			EquipmentSlotType oppositeHand;
 			ItemStack oppositeStack;
 			
@@ -271,12 +241,6 @@ public class CommonEventHandler
 				// Check that if the item being switched to is blacklisted in the config
 				boolean toStackBlacklisted = false;
 				String toName = toStack.getItem().getRegistryName().toString();
-				/*for(String compName : Config.INSTANCE.quiverBowBlacklist.get())
-				{
-					// If the item being switched to is blacklisted, it will allow the quiver to put the arrows away when equipped
-					if(compName.equals(toName))
-						toStackBlacklisted = true;
-				}*/
 				
 				// If the item being switched to is blacklisted, it will allow the quiver to put the arrows away when equipped
 				if(Config.INSTANCE.quiverBowBlacklist.get().contains(toName))
@@ -317,65 +281,55 @@ public class CommonEventHandler
 			// Check to see if a bow has been equipped
 			if(!toStack.isItemEqual(fromStack))
 			{
-				// Check to see if the opposite hand slot is empty.
-//				if(oppositeStack.isEmpty())
-//				{
-					// Check to see if the weapon being equipped is blacklisted in the config
-					String regName = toStack.getItem().getRegistryName().toString();
-					/*for(String compName : Config.INSTANCE.quiverBowBlacklist.get())
+				// Check to see if the weapon being equipped is blacklisted in the config
+				String regName = toStack.getItem().getRegistryName().toString();
+				// If so, then the quiver will *NOT* take any arrows out. However, arrows will be put into the Quiver
+				if(Config.INSTANCE.quiverBowBlacklist.get().contains(regName))
+					return;
+				
+				for(IQuiverInfo quiverInfo : QuiverHelper.info)
+				{
+					if(quiverInfo.isWeapon(toStack))
 					{
-						// If so, then the quiver will *NOT* take any arrows out. However, arrows will be put into the Quiver
-						if(compName.equals(regName))
-							return;
-					}*/
-					// If so, then the quiver will *NOT* take any arrows out. However, arrows will be put into the Quiver
-					if(Config.INSTANCE.quiverBowBlacklist.get().contains(regName))
-						return;
-					
-					for(IQuiverInfo quiverInfo : QuiverHelper.info)
-					{
-						if(quiverInfo.isWeapon(toStack))
+						ItemStack quiver = QuiverHelper.findFirstOfType(player, quiverInfo);
+						
+						// Check to see if the opposite hand slot is not empty; attempt to move it somewhere else
+						if(!quiver.isEmpty() && !oppositeStack.isEmpty() && !quiverInfo.isAmmo(oppositeStack))
 						{
-							ItemStack quiver = QuiverHelper.findFirstOfType(player, quiverInfo);
-							
-							// Check to see if the opposite hand slot is not empty; attempt to move it somewhere else
-							if(!quiver.isEmpty() && !oppositeStack.isEmpty() && !quiverInfo.isAmmo(oppositeStack))
+							// Find the nearest empty slot...
+							int emptySlot = -1;
+							for(int i = 0; i < player.inventory.mainInventory.size(); i++)
 							{
-								// Find the nearest empty slot...
-								int emptySlot = -1;
-								for(int i = 0; i < player.inventory.mainInventory.size(); i++)
+								ItemStack playerStack = player.inventory.mainInventory.get(i);
+								if(playerStack.isEmpty())
 								{
-									ItemStack playerStack = player.inventory.mainInventory.get(i);
-									if(playerStack.isEmpty())
-									{
-										emptySlot = i;
-										break;
-									}
-								}
-								// If found, place it in that empty slot
-								if(emptySlot != -1)
-								{
-									String itemId = oppositeStack.getItem().getRegistryName().toString();
-									// Store the relevant data to find the offhand item in the Quiver NBT Tag
-									CompoundNBT nbt = quiver.getOrCreateChildTag(QuiverBaseItem.NBT_OFFHAND_MOVED);
-									nbt.putString(QuiverBaseItem.NBT_ITEM_ID, itemId);
-									nbt.putInt(QuiverBaseItem.NBT_ITEM_SLOT, emptySlot);
-									
-									// Now move the item from the offhand to the appropriate inventory slot
-									player.inventory.setInventorySlotContents(emptySlot, oppositeStack);
-									player.setItemStackToSlot(oppositeHand, ItemStack.EMPTY);
+									emptySlot = i;
+									break;
 								}
 							}
-							
-							if(player.getItemStackFromSlot(oppositeHand).isEmpty())
-								takeAmmoFromQuiver(player, quiver, oppositeHand);
-	
-							oppositeStack = player.getItemStackFromSlot(oppositeHand);
-							if(!oppositeStack.isEmpty())
-								break;
+							// If found, place it in that empty slot
+							if(emptySlot != -1)
+							{
+								String itemId = oppositeStack.getItem().getRegistryName().toString();
+								// Store the relevant data to find the offhand item in the Quiver NBT Tag
+								CompoundNBT nbt = quiver.getOrCreateChildTag(QuiverBaseItem.NBT_OFFHAND_MOVED);
+								nbt.putString(QuiverBaseItem.NBT_ITEM_ID, itemId);
+								nbt.putInt(QuiverBaseItem.NBT_ITEM_SLOT, emptySlot);
+								
+								// Now move the item from the offhand to the appropriate inventory slot
+								player.inventory.setInventorySlotContents(emptySlot, oppositeStack);
+								player.setItemStackToSlot(oppositeHand, ItemStack.EMPTY);
+							}
 						}
+						
+						if(player.getItemStackFromSlot(oppositeHand).isEmpty())
+							takeAmmoFromQuiver(player, quiver, oppositeHand);
+
+						oppositeStack = player.getItemStackFromSlot(oppositeHand);
+						if(!oppositeStack.isEmpty())
+							break;
 					}
-//				}
+				}
 			}
 		}
 	}
@@ -434,7 +388,6 @@ public class CommonEventHandler
 			afterCount = beforeCount;
 		PlayerEntity player  = ev.getPlayer();
 		List<ItemStack> quivers = QuiverHelper.findValidQuivers(player);
-		//ItemStack quiverArrow = findQuiverArrow(ev.getEntityPlayer());
 		
 		if(!quivers.isEmpty())
 		{
@@ -451,8 +404,6 @@ public class CommonEventHandler
 						for(int i = 0; i < quiverHandler.getSlots(); i++)
 						{
 							pickedUpStack = quiverHandler.insertItem(i, pickedUpStack, false);
-							/*if(pickedUpStack.isEmpty())
-								break;*/
 						}
 					}
 				}
@@ -493,8 +444,6 @@ public class CommonEventHandler
 						// If the total damage exceeds the damage of the equipped stack, then "break" one of the ammo items and not increment the ammo count
     					if(itemDamage > slotStack.getMaxDamage())
     					{
-//    						this.playSound(SoundEvents.ENTITY_ITEM_BREAK, 0.8F, 0.8F + this.world.rand.nextFloat() * 0.4F);
-//    						player.renderBrokenItemStack(pickedUpStack);
     	            		itemDamage -= slotStack.getMaxDamage() + 1;
     					}
     					else
@@ -603,28 +552,6 @@ public class CommonEventHandler
 				entity.setItemStackToSlot(EquipmentSlotType.MAINHAND, weapon);
 			}
 		}
-		/*if(Config.INSTANCE.disableSpawningSkeletonWithWeapon.get() && ev.getEntity() instanceof AbstractSkeletonEntity)
-		{
-			AbstractSkeletonEntity entity = (AbstractSkeletonEntity)ev.getEntity();
-			float rand = entity.world.rand.nextFloat();
-			float chance = entity.world.getDifficulty() == Difficulty.HARD ? 
-					Config.INSTANCE.skeletonWithLongbowSpawnChanceHard.get().floatValue() : 
-					Config.INSTANCE.skeletonWithLongbowSpawnChanceNormal.get().floatValue();
-			
-			if(rand > 1 - chance)
-			{
-				ItemStack weapon = ItemStack.EMPTY;
-				Item[] possibleWeapons = 
-				{
-					ModItems.longbows.wood,
-					ModItems.longbows.leather,
-					ModItems.longbows.iron
-				};
-				
-				weapon = generateRandomItem(entity.world, possibleWeapons);
-				entity.setItemStackToSlot(EquipmentSlotType.MAINHAND, weapon);
-			}
-		}*/
 	}
 	
 	private static ItemStack generateRandomItem(World world, Item[] items)
@@ -636,43 +563,6 @@ public class CommonEventHandler
 		
 		return new ItemStack(items[idx]);
 	}
-	
-/*	@SubscribeEvent
-	public static void onSpawnLivingEntities(LivingSpawnEvent ev)
-	{
-		if(ev.getEntityLiving() instanceof AbstractSkeletonEntity)
-		{
-			
-		}
-	}
-
-	
-	public void setCombatTask(AbstractSkeletonEntity entity)
-	{
-		final RangedBowAttackGoal<AbstractSkeletonEntity> aiArrowAttack = new RangedBowAttackGoal<>(entity, 1.0D, 20, 15.0F);
-		
-		if (entity.world != null && !entity.world.isRemote)
-		{
-			entity.goalSelector.removeGoal(entity.aiAttackOnCollide);
-			entity.goalSelector.removeGoal(aiArrowAttack);
-			ItemStack itemstack = this.getHeldItem(ProjectileHelper.getHandWith(this, Items.BOW));
-			if (itemstack.getItem() instanceof net.minecraft.item.BowItem)
-			{
-				int i = 20;
-				if (entity.world.getDifficulty() != Difficulty.HARD) 
-				{
-					i = 40;
-				}
-
-				entity.aiArrowAttack.setAttackCooldown(i);
-				entity.goalSelector.addGoal(4, aiArrowAttack);
-			} 
-			else
-			{
-				entity.goalSelector.addGoal(4, entity.aiAttackOnCollide);
-			}
-		}
-	}*/
 	
 	@SubscribeEvent
 	public static void addVillagerTrades(VillagerTradesEvent ev)
@@ -720,7 +610,7 @@ public class CommonEventHandler
 			int leftAmmo = left.getTag().getInt(ThrowingWeaponItem.NBT_AMMO_USED);
 			int rightAmmo = right.getTag().getInt(ThrowingWeaponItem.NBT_AMMO_USED);
 			
-			if(leftAmmo == /*throwingWeapon.getMaxAmmo()*/ 0)
+			if(leftAmmo == 0)
 				return;
 			
 			// Combine ammo and durability

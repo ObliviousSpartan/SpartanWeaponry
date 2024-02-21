@@ -23,7 +23,6 @@ public class QuiverCurioRenderer implements ICurio
 	
 	public QuiverCurioRenderer(QuiverBaseItem item, ItemStack stack)
 	{
-//		texture = new ResourceLocation(ModSpartanWeaponry.ID, "textures/model/quiver_arrow_light.png");
 		quiverItem = item;
 		quiverStack = stack;
 		if(FMLEnvironment.dist.isClient())
@@ -72,24 +71,6 @@ public class QuiverCurioRenderer implements ICurio
 			int light, LivingEntity livingEntity, float limbSwing, float limbSwingAmount, float partialTicks,
 			float ageInTicks, float netHeadYaw, float headPitch) 
 	{
-//		if(model == null)
-//			model = new LightArrowQuiverModel<LivingEntity>();
-		
-//		int arrowsToRender
-		
-		/*EntityRenderer<? super LivingEntity> entityRender = Minecraft.getInstance().getRenderManager().getRenderer(livingEntity);
-		
-		if(entityRender instanceof LivingRenderer)
-		{
-			@SuppressWarnings("unchecked")
-			LivingRenderer<LivingEntity, EntityModel<LivingEntity>> livingRender = (LivingRenderer<LivingEntity, EntityModel<LivingEntity>>)entityRender;
-			if(livingRender.getEntityModel() instanceof BipedModel)
-			{
-				BipedModel<LivingEntity> livingModel = (BipedModel<LivingEntity>)livingRender.getEntityModel();
-				model.rotate(livingModel);
-			}
-		}*/
-		
 		int ammoFilled = quiverItem.getAmmoCount(quiverStack);
 		if(model != null) 
 		{

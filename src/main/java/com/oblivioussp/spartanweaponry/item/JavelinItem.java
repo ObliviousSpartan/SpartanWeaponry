@@ -15,18 +15,17 @@ import net.minecraft.world.World;
 
 public class JavelinItem extends ThrowingWeaponItem 
 {
-	public JavelinItem(String regName, Item.Properties prop, WeaponMaterial material, boolean usingDeferredRegister) 
+	public JavelinItem(String regName, Item.Properties prop, WeaponMaterial materialIn, boolean usingDeferredRegister) 
 	{
-		super(regName, prop, material, Defaults.DamageBaseJavelin, Defaults.DamageMultiplierJavelin, Defaults.MeleeSpeedJavelin, 4, Defaults.ChargeTicksJavelin, usingDeferredRegister, WeaponTraits.EXTRA_DAMAGE_3_THROWN);
-		//this.throwDamageMultiplier = 3.0f;
-		this.throwVelocity = 2.4f;
+		super(regName, prop, materialIn, Defaults.DamageBaseJavelin, Defaults.DamageMultiplierJavelin, Defaults.MeleeSpeedJavelin, 4, Defaults.ChargeTicksJavelin, usingDeferredRegister, WeaponTraits.EXTRA_DAMAGE_3_THROWN);
+		throwVelocity = 2.4f;
 	}
 	
-	public JavelinItem(String regName, Item.Properties prop, WeaponMaterial material, String customDisplayName, boolean usingDeferredRegister)
+	public JavelinItem(String regName, Item.Properties prop, WeaponMaterial materialIn, String customDisplayNameIn, boolean usingDeferredRegister)
 	{
-		this(regName, prop, material, usingDeferredRegister);
-		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+		this(regName, prop, materialIn, usingDeferredRegister);
+		if(materialIn.useCustomDisplayName())
+			customDisplayName = customDisplayNameIn;
 	}
 
 	@Override

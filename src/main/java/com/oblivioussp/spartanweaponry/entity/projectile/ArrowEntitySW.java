@@ -37,16 +37,10 @@ public abstract class ArrowEntitySW extends AbstractArrowEntity
 	protected void initEntity()
 	{
 		initStats();
-		this.setDamage(baseDamage);
+		setDamage(baseDamage);
 	}
 	
 	abstract protected void initStats();
-	
-	/*@Override
-	public void shoot(Entity shooter, float pitch, float yaw, float p_184547_4_, float velocity, float inaccuracy) 
-	{
-		super.shoot(shooter, pitch, yaw, p_184547_4_, (float)(velocity * rangeMultiplier), inaccuracy);
-	}*/
 	
 	@Override
 	public void setDirectionAndMovement(Entity shooter, float pitch, float yaw, float p_184547_4_, float velocity, float inaccuracy) 

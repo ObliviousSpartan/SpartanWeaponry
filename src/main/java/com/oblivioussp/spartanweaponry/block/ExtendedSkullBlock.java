@@ -12,7 +12,7 @@ public class ExtendedSkullBlock extends SkullBlock
 	public ExtendedSkullBlock(String regName, ISkullType type, Properties properties)
 	{
 		super(type, properties);
-		this.setRegistryName(regName);
+		setRegistryName(regName);
 	}
 
 	@Override

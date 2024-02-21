@@ -17,10 +17,10 @@ import net.minecraft.world.World;
 
 public class ArrowExplosiveItem extends ArrowItemSW 
 {
-	public ArrowExplosiveItem(String regName, float rangeModifier) 
+	public ArrowExplosiveItem(String regName, float rangeModifierIn) 
 	{
 		super(regName);
-		this.rangeModifier = rangeModifier;
+		rangeModifier = rangeModifierIn;
 	}
 
 	@Override

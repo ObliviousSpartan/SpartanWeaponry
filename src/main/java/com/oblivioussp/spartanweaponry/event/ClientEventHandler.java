@@ -43,7 +43,6 @@ public class ClientEventHandler
 		if(ev.getButton() == keyAttack.getKey().getKeyCode() && ev.getAction() == GLFW.GLFW_PRESS)
 		{
 			checkForReachAttack();
-			//Log.info("Mouse: Attack pressed!");
 		}
 		if(ev.getButton() == KeyBinds.KEY_ACCESS_QUIVER.getKey().getKeyCode() && ev.getAction() == GLFW.GLFW_PRESS)
 		{
@@ -63,7 +62,6 @@ public class ClientEventHandler
 		if(ev.getKey() == keyAttack.getKey().getKeyCode() && ev.getAction() == GLFW.GLFW_PRESS)
 		{
 			checkForReachAttack();
-			//Log.info("Keyboard: Attack pressed!");
 		}
 		if(ev.getKey() == KeyBinds.KEY_ACCESS_QUIVER.getKey().getKeyCode() && ev.getAction() == GLFW.GLFW_PRESS)
 		{
@@ -86,22 +84,6 @@ public class ClientEventHandler
 		if(player == null || player.isActiveItemStackBlocking())
 			return;
 		
-//		ItemStack weapon = player.getHeldItemMainhand();
-		//WeaponTrait reachTrait = null;
-		//IWeaponTraitContainer<?> container = null;
-		
-		//if(!(weapon.getItem() instanceof IWeaponTraitContainer))
-		//	return;
-		
-		//container = (IWeaponTraitContainer<?>)weapon.getItem();
-		//reachTrait = container.getFirstWeaponTraitWithType(WeaponTraits.TRAIT_TYPE_REACH);
-		
-		//if(reachTrait == null)
-		//	return;
-		
-//		Log.debug("Attempting Reach Attack!");
-		
-		//float reach = reachTrait.getMagnitude();
 		double reach = (float)player.getAttributeValue(APIAttributes.ATTACK_REACH);
 		if(reach == APIAttributes.ATTACK_REACH.getDefaultValue())
 			return;
@@ -166,7 +148,6 @@ public class ClientEventHandler
 			
 			if(entityRayTrace != null)
 			{
-				//Entity hitEntity = entityRayTrace.getEntity();
 				Vector3d hitVec = entityRayTrace.getHitVec();
 				double d2 = eyePos.squareDistanceTo(hitVec);
 				if(flag && d2 > (reach * reach))

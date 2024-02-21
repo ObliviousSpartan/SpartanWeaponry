@@ -22,11 +22,11 @@ public class BoomerangItem extends ThrowingWeaponItem
 		super(regName, prop.maxDamage(material.getMaxUses()), material, Defaults.DamageBaseBoomerang, Defaults.DamageMultiplierBoomerang, Defaults.MeleeSpeedBoomerang, 1, Defaults.ChargeTicksBoomerang, usingDeferredRegister);
 	}
 	
-	public BoomerangItem(String regName, Item.Properties prop, WeaponMaterial material, String customDisplayName, boolean usingDeferredRegister)
+	public BoomerangItem(String regName, Item.Properties prop, WeaponMaterial material, String customDisplayNameIn, boolean usingDeferredRegister)
 	{
 		this(regName, prop.maxDamage(material.getMaxUses()), material, usingDeferredRegister);
 		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+			customDisplayName = customDisplayNameIn;
 	}
 
 	@Override

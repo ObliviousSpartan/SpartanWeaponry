@@ -84,7 +84,6 @@ public class Defaults
 	public static final float CrossbowInaccuracyMax = 10.0f;		// Formerly 20
 	public static final int CrossbowInaccuracyTicks = 10;			// Used to take 20 ticks for minimalise inaccuracy
 	public static final int CrossbowTicksToLoad = 25;
-	//public static final int CrossbowTicksCooldown = 8;
 	public static final float BaseDamageBolt = 4.0f;
 	public static final float RangeMultiplierBolt = 1.0f;
 	public static final float ArmorPiercingFactorBolt = 0.25f;
@@ -142,7 +141,6 @@ public class Defaults
 	public static final float DamageMultiplierScythe = 1.0f;
 	
 	// Arrows & Quivers
-//	public static final List<String> QuiverArrowBlacklist = Arrays.asList("botania:crystal_bow", "iceandfire:dragonbone_bow");
 	public static final String[] QuiverArrowBlacklist = {"botania:crystal_bow", "iceandfire:dragonbone_bow"};
 	public static final float BaseDamageArrowWood = 0.2f;
 	public static final float RangeMultiplierArrowWood = 1.5f;

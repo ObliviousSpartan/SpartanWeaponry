@@ -31,41 +31,25 @@ public class HudElementCrosshairThrowingWeapon extends HudElementCrosshair
 	public void render(MatrixStack matrixStack, float partialTicks, Minecraft mc, PlayerEntity player, ItemStack equippedStack) 
 	{
 		int x = mc.getMainWindow().getScaledWidth() / 2, y = mc.getMainWindow().getScaledHeight() / 2;
-		//int screenWidth = mc.getMainWindow().getScaledWidth(), screenHeight = mc.getMainWindow().getScaledHeight();
 		
 		if(!ClientConfig.INSTANCE.disableNewCrosshairsThrowingWeapon.get() || ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get())
 		{
-//			ItemStack throwingWeapon = equippedStack;
 			ThrowingWeaponItem throwingWeapon = (ThrowingWeaponItem)equippedStack.getItem();
-			int offset = ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get() ? 20 : 10; /** ev.getResolution().getScaleFactor()*/;
-			if(player.isHandActive() /*&& player.getActiveHand() == Hand.MAIN_HAND*/)
+			int offset = ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get() ? 20 : 10;
+			if(player.isHandActive())
 			{
 				int currentTicks = equippedStack.getUseDuration() - player.getItemInUseCount();
 				float percentage = MathHelper.clamp((currentTicks + partialTicks) / throwingWeapon.getMaxChargeTicks(equippedStack), 0.0f, 1.0f);
 				offset *= (1.0f - percentage);
 			}
-			
-			/*GlStateManager.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, GlStateManager.DestFactor.ONE_MINUS_SRC_COLOR, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-	        GlStateManager.enableBlend();
-	        GlStateManager.color4f(1.0f, 1.0f, 1.0f, 1.0f);*/
 
 			RenderSystem.blendFuncSeparate(SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.ONE_MINUS_SRC_COLOR, SourceFactor.ONE, DestFactor.ZERO);
 			RenderSystem.enableBlend();
 			
-//			RenderSystem.pushMatrix();
 			matrixStack.push();
-	        
-	        // Kinda hacky way to remove the crosshair when Better Combat Rebirth is installed, but it should do the job.
-	        // Just draw over the crosshair again to remove it...
-			/*if(Loader.isModLoaded(Reference.ModID_BetterCombat))
-			{
-				mc.getTextureManager().bindTexture(mc.ingameGUI.ICONS);
-				mc.ingameGUI.drawTexturedModalRect(x - 7,  y - 7, 0, 0, 15, 15);
-			}*/
-	
 			mc.getTextureManager().bindTexture(CROSSHAIR_TEXTURES);
 			
-			if(/*Loader.isModLoaded(Reference.ModID_BetterCombat) ||*/ ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get())
+			if(ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get())
 			{
 				int crossOriginX = (mc.getMainWindow().getScaledWidth() - 15) / 2;
 				int crossOriginY = (mc.getMainWindow().getScaledHeight() - 15) / 2;
@@ -75,12 +59,6 @@ public class HudElementCrosshairThrowingWeapon extends HudElementCrosshair
 				mc.ingameGUI.blit(matrixStack, crossOriginX + 2 + 7 + offset, crossOriginY + 2 - offset, 18, 12, 4, 4);	// Top-Right Part
 				mc.ingameGUI.blit(matrixStack, crossOriginX + 2 - offset, crossOriginY + 2 + 7 + offset, 11, 19, 4, 4);	// Bottom-Left Part
 				mc.ingameGUI.blit(matrixStack, crossOriginX + 2 + 7 + offset, crossOriginY + 2 + 7 + offset, 18, 19, 4, 4);	// Bottom-Right Part
-				
-//				offset = (int) Math.sqrt((offset * offset) / 2.0);	// Inverse pythagoras for two equal opposite and adjacent sides
-//				mc.ingameGUI.blit((screenWidth - 3) / 2 - 4 - offset, (screenHeight - 3) / 2 - 4 - offset, 11, 12, 4, 4);		// Top-Left Part
-//                mc.ingameGUI.blit((screenWidth + 3) / 2 + offset, (screenHeight - 3) / 2 - 4 - offset, 18, 12, 4, 4);			// Top-Right Part
-//                mc.ingameGUI.blit((screenWidth - 3) / 2 - 4 - offset, (screenHeight + 3) / 2 + offset, 11, 19, 4, 4);		// Bottom-Left Part
-//                mc.ingameGUI.blit((screenWidth + 3) / 2 + offset, (screenHeight + 3) / 2 + offset, 18, 19, 4, 4);		// Bottom-Right Part
 			}
 			else
 			{
@@ -89,15 +67,12 @@ public class HudElementCrosshairThrowingWeapon extends HudElementCrosshair
 				
 	            mc.ingameGUI.blit(matrixStack, centreOriginX, centreOriginY - 2, 12, 1, 9, 5);
 	            mc.ingameGUI.blit(matrixStack, centreOriginX, centreOriginY - 2 - 3 - offset, 12, 1, 9, 5);
-//	            mc.ingameGUI.blit((screenWidth - 9) / 2, (screenHeight) / 2 - 5 - 3 - offset, 12, 1, 9, 5);
-//	            mc.ingameGUI.blit((screenWidth - 9) / 2, (screenHeight) / 2 - 5, 12, 1, 9, 5);
-//	            mc.ingameGUI.blit((screenWidth - 9) / 2, (screenHeight) / 2 - 5 - 3 - offset, 12, 1, 9, 5);
 			}
 	        
 	        mc.getTextureManager().bindTexture(AbstractGui.GUI_ICONS_LOCATION);
 	        
-	        // Render the attack indicator if applicable and if Better Combat Rebirth is not installed
-	        if (mc.gameSettings.attackIndicator == AttackIndicatorStatus.CROSSHAIR && (/*!Loader.isModLoaded(Reference.ModID_BetterCombat)) &&*/ !ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get()))
+	        // Render the attack indicator if applicable
+	        if (mc.gameSettings.attackIndicator == AttackIndicatorStatus.CROSSHAIR && (!ClientConfig.INSTANCE.forceCompatibilityCrosshairs.get()))
 	        {
 	            float f = player.getCooledAttackStrength(0.0F);
 	            boolean flag = false;
@@ -123,7 +98,6 @@ public class HudElementCrosshairThrowingWeapon extends HudElementCrosshair
 	            }
 	        }
 	        
-//			RenderSystem.popMatrix();
 			matrixStack.pop();
 
 	        RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);

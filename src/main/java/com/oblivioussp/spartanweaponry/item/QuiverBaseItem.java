@@ -64,19 +64,10 @@ public abstract class QuiverBaseItem extends Item
 	public QuiverBaseItem(String regName, int inventorySize)
 	{
 		super(new Item.Properties().group(ModItems.GROUP_SW).maxStackSize(1));
-		this.setRegistryName(ModSpartanWeaponry.ID, regName);
+		setRegistryName(ModSpartanWeaponry.ID, regName);
 		
 		if(FMLEnvironment.dist.isClient())
 			ClientHelper.registerQuiverPropertyOverrides(this);
-		
-		/*this.addPropertyOverride(new ResourceLocation("arrow"), new IItemPropertyGetter()
-		{
-			@Override
-			public float call(ItemStack stack, World worldIn, LivingEntity entityIn) 
-			{
-				return getAmmoCount(stack);
-			}
-		});*/
 		
 		ammoSlots = inventorySize;
 	}
@@ -100,11 +91,7 @@ public abstract class QuiverBaseItem extends Item
 		if(ammoSlots >= Defaults.SlotsQuiverLarge)
 		{
 			ammo = MathHelper.clamp(ammo, 0, 5);
-//			if(ammo > 5)
-//				ammo = 5;
 		}
-//		else if(ammo > 3)
-//			ammo = 3;
 		else
 			ammo = MathHelper.clamp(ammo, 0, 3);
 		
@@ -119,7 +106,6 @@ public abstract class QuiverBaseItem extends Item
 			return new QuiverCurioCapabilityProvider(stack, ammoSlots, nbt, this);
 		}
 		return new QuiverCapabilityProvider(stack, ammoSlots, nbt);
-		//return super.initCapabilities(stack, nbt);
 	}
 	
 	@Override
@@ -149,8 +135,6 @@ public abstract class QuiverBaseItem extends Item
 				
 				String collectStatus = ammoCollect ? "enabled" : "disabled";
 				TextFormatting collectColour = ammoCollect ? TextFormatting.GREEN : TextFormatting.RED;
-				/*playerIn.sendStatusMessage(new TranslationTextComponent("message." + ModSpartanWeaponry.ID + ".ammo_collect_toggle", 
-						collectColour + I18n.format("tooltip." + ModSpartanWeaponry.ID + "." + collectStatus)), true);*/
 				playerIn.sendStatusMessage(new TranslationTextComponent("message." + ModSpartanWeaponry.ID + ".ammo_collect_toggle").appendSibling(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + "." + collectStatus).mergeStyle(collectColour)), true);
 				return ActionResult.resultFail(heldItem);
 			}

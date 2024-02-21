@@ -9,7 +9,6 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class BoomerangRenderFactory implements IRenderFactory<BoomerangEntity>
 {
-
 	@Override
 	public EntityRenderer<? super BoomerangEntity> createRenderFor(EntityRendererManager manager) 
 	{

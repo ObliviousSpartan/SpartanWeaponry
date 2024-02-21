@@ -14,7 +14,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class ModContainers 
 {
-//	public static ContainerType<?> QUIVER_ARROW = new ContainerType<>(QuiverArrowContainer::new);
 	public static ContainerType<QuiverArrowContainer> QUIVER_ARROW = IForgeContainerType.create(QuiverArrowContainer::createFromNetwork);
 	public static ContainerType<QuiverBoltContainer> QUIVER_BOLT = IForgeContainerType.create(QuiverBoltContainer::createFromNetwork);
 	

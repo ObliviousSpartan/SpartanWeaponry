@@ -45,7 +45,6 @@ public class LivingEntityMixin extends EntityMixin
 			float percentage = ((IArmorPiercingDamageSource)source).getArmorPiercingPercentage();
 			Log.debug("Found armor piercing damage source! Reducing armor value of target by " + (percentage * 100.0f) + "%");
 			float toughness = (float)getAttributeValue(Attributes.ARMOR_TOUGHNESS);
-//			float oldDamage = CombatRules.getDamageAfterAbsorb(damage, (float)getTotalArmorValue(), toughness);
 			float armorPiercingDamage = damage * percentage;			// Damage which ignores armor completely
 			float regularDamage = damage - armorPiercingDamage;			// Damage which is absorbed by armor as normal
 			float reducedDamage = CombatRules.getDamageAfterAbsorb(regularDamage, (float)getTotalArmorValue(), toughness);

@@ -61,19 +61,16 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 	protected boolean doCraftCheck = true;
 	protected boolean canBeCrafted = true;
 	
-//	public static final String NBT_LOADED = "loaded";
-//	public static final String NBT_AMMO = "ammo";
-	
 	public static final String NBT_CHARGED = "Charged";
 	public static final String NBT_PROJECTILE = "Projectile";
 	public static final Predicate<ItemStack> BOLT = (stack) -> stack.getItem().isIn(ItemTags.getCollection().get(new ResourceLocation(ModSpartanWeaponry.ID, "bolts")));
 
-	public HeavyCrossbowItem(String unlocName, Item.Properties prop, WeaponMaterial material, boolean usingDeferredRegister) 
+	public HeavyCrossbowItem(String unlocName, Item.Properties prop, WeaponMaterial materialIn, boolean usingDeferredRegister) 
 	{
-		super(prop.maxDamage((int)(material.getMaxUses() * 1.5f)));
+		super(prop.maxDamage((int)(materialIn.getMaxUses() * 1.5f)));
 		if(!usingDeferredRegister)
-			this.setRegistryName(unlocName);
-		this.material = material;
+			setRegistryName(unlocName);
+		material = materialIn;
 		loadTicks = Defaults.CrossbowTicksToLoad;
 		aimTicks = Defaults.CrossbowInaccuracyTicks;
 		
@@ -94,64 +91,13 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 		// Add to list on client only
 		if(FMLEnvironment.dist.isClient())
 			ClientHelper.registerHeavyCrossbowPropertyOverrides(this);
-		//DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> () -> );
-		
-		//itemList.add(this);
-		/*
-		
-		/*this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter()
-        {
-            @SideOnly(Side.CLIENT)
-            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn)
-            {
-                if (entityIn == null && !(entityIn instanceof EntityPlayer))
-                {
-                    return 0.0F;
-                }
-                
-                ItemStack itemstack = entityIn.getActiveItemStack();
-                //return itemstack != null && itemstack.getItem() instanceof ItemCrossbow  ? (float)(stack.getMaxItemUseDuration() - entityIn.getItemInUseCount()) / 20.0F : 0.0F;
-            	if(NBTHelper.getBoolean(stack, nbtIsLoaded))
-            		return 1.0f;
-                if(itemstack != null && itemstack.isItemEqual(stack) && itemstack.getItem() instanceof ItemCrossbow)
-                {
-                	return (float)(stack.getMaxItemUseDuration() - entityIn.getItemInUseCount()) / ConfigHandler.crossbowTicksToLoad;
-                }
-                return 0.0f;
-            }
-        });
-        this.addPropertyOverride(new ResourceLocation("pulling"), new IItemPropertyGetter()
-        {
-            @SideOnly(Side.CLIENT)
-            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn)
-            {
-                return entityIn != null && entityIn.isHandActive() && entityIn.getActiveItemStack() == stack ? 1.0F : 0.0F;
-            }
-        });*/
-		
-		
-		/*this.addPropertyOverride(new ResourceLocation("pull"), (stack, world, living) ->
-		{
-			if(living != null && stack.getItem() == this)
-				return isLoaded(stack) ? 0.0f : (float)(getLoadingTicks(stack, living)) / getFullLoadTicks(stack);
-			return 0.0f;
-		});
-		this.addPropertyOverride(new ResourceLocation("pulling"), (stack, world, living) ->
-		{
-			return living != null && living.isHandActive() && living.getActiveItemStack() == stack ? 1.0f : 0.0f;
-		});
-		this.addPropertyOverride(new ResourceLocation("charged"), (stack, world, living) ->
-		{
-			return isLoaded(stack) ? 1.0f : 0.0f;
-		});*/
-		
 	}
 
-	public HeavyCrossbowItem(String regName, Item.Properties prop, WeaponMaterial material, String customDisplayName, boolean usingDeferredRegister)
+	public HeavyCrossbowItem(String regName, Item.Properties prop, WeaponMaterial materialIn, String customDisplayNameIn, boolean usingDeferredRegister)
 	{
-		this(regName, prop, material, usingDeferredRegister);
-		if(material.useCustomDisplayName())
-			this.customDisplayName = customDisplayName;
+		this(regName, prop, materialIn, usingDeferredRegister);
+		if(materialIn.useCustomDisplayName())
+			customDisplayName = customDisplayNameIn;
 	}
 	
 	// ---- ---- ---- ---- ---- ---- ---- ----
@@ -178,19 +124,9 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 	@Override
 	public int getUseDuration(ItemStack stack)
 	{
-		return /*stack.getTag() != null && !stack.getTag().getBoolean(NBT_CHARGED) ? Reference.DefaultCrossbowTicksToLoad :*/ 72000;
+		return 72000;
 	}
 	
-/*    @Override
-    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged)
-    {
-        //if(oldStack.hasTagCompound() && newStack.hasTagCompound() && oldStack.getTagCompound() != newStack.getTagCompound())
-            //return true;
-    	if(!ItemStack.areItemStackTagsEqual(oldStack, newStack))
-    		return true;
-        return super.shouldCauseReequipAnimation(oldStack, newStack, slotChanged);
-    }
-*/
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) 
 	{
@@ -199,7 +135,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 			PlayerEntity player = (PlayerEntity)entityLiving;
 			boolean isCreativeOrInfinite = player.abilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0;
             
-    		if(this.getLoadProgress(stack, entityLiving) == 1.0f)
+    		if(getLoadProgress(stack, entityLiving) == 1.0f)
     		{
     			// Load the Crossbow
     			stack.getOrCreateTag().putBoolean(NBT_CHARGED, true);
@@ -224,7 +160,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
     					player.inventory.deleteStack(bolt);
     			}
     			worldIn.playSound((PlayerEntity)null, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_CROSSBOW_LOADING_END, SoundCategory.PLAYERS, 1.0F, 1.0F / (random.nextFloat() * 0.5F + 1.0F) + 0.2F);
-    			//player.getCooldownTracker().setCooldown(this, Reference.DefaultCrossbowTicksCooldown);
     		}
     		else
     		{
@@ -235,7 +170,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
                 if(tag != null && !tag.isEmpty())
                 	itemstack = ItemStack.read(tag);
                 
-	            int i = this.getUseDuration(stack) - timeLeft;
+	            int i = getUseDuration(stack) - timeLeft;
 	            
 	            if (i < 0 || !stack.getTag().getBoolean(NBT_CHARGED)) return;
 	
@@ -261,19 +196,17 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 	                    	inaccuracyModifier = 12.0f * ((float)inaccuracy / stackAimTicks);
 	                	
 	                	// Fire projectiles.
-	                    this.spawnProjectile(stack, itemBolt, itemstack, worldIn, player, flag1, inaccuracyModifier, 0.0f);
+	                    spawnProjectile(stack, itemBolt, itemstack, worldIn, player, flag1, inaccuracyModifier, 0.0f);
 	                    if(itemstack.getCount() > 1)
 	                    {
-		                    this.spawnProjectile(stack, itemBolt, itemstack, worldIn, player, flag1, inaccuracyModifier, -10.0f);
-		                    this.spawnProjectile(stack, itemBolt, itemstack, worldIn, player, flag1, inaccuracyModifier, 10.0f);
+		                    spawnProjectile(stack, itemBolt, itemstack, worldIn, player, flag1, inaccuracyModifier, -10.0f);
+		                    spawnProjectile(stack, itemBolt, itemstack, worldIn, player, flag1, inaccuracyModifier, 10.0f);
 	                    }
 	                    int damage = itemstack.getCount() > 1 ? 3 : 1;
 	                    stack.damageItem(damage, player, (playerEntity) -> playerEntity.sendBreakAnimation(player.getActiveHand()));
 	                    
 	                    stack.getTag().putBoolean(NBT_CHARGED, false);
 	                    stack.getTag().put(NBT_PROJECTILE, new CompoundNBT());
-	                    //NBTHelper.setBoolean(stack, nbtIsLoaded, false);
-	                    //NBTHelper.setTagCompound(stack, nbtAmmoStack, new NBTTagCompound());
 	                }
 	
 	                worldIn.playSound((PlayerEntity)null, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_CROSSBOW_SHOOT, SoundCategory.NEUTRAL, 1.0F, 1.0F / (Item.random.nextFloat() * 0.4F + 1.2F) + getBoltVelocity() * 0.5F);
@@ -306,7 +239,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
     	Quaternion quat = new Quaternion(new Vector3f(player.getUpVector(1.0f)), projectileAngle, true);
     	Vector3f velocityVec = new Vector3f(player.getLook(1.0f));
     	velocityVec.transform(quat);/*.func_214905_a(quat);*/
-    	//entityBolt.shoot(velocityVec.getX(), velocityVec.getY(), velocityVec.getZ(), getBoltVelocity() * 3.0f, inaccuracyModifier);
         entityBolt.setDirectionAndMovement(player, player.rotationPitch, player.rotationYaw, 0.0F, getBoltVelocity() * 3.0F, inaccuracyModifier);
 
         if(material.hasAnyWeaponTrait())
@@ -347,41 +279,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
         worldIn.addEntity(entityBolt);
     }
     
-    /*public int getArrowSlotToUseFirst(@Nonnull IItemHandler quiverHandler)
-	{
-		for(int i = 0; i < quiverHandler.getSlots(); i++)
-		{
-			ItemStack stack = quiverHandler.getStackInSlot(i);
-			if(!stack.isEmpty())
-				return i;
-		}
-		
-		return -1;
-	}*/
-
-    /**
-     * How long it takes to use or consume an item
-     */
-/*    @Override
-    public int getMaxItemUseDuration(ItemStack stack)
-    {
-    	if(!NBTHelper.getBoolean(stack, nbtIsLoaded))
-    		return ConfigHandler.crossbowTicksToLoad;
-        return 72000;
-    }
-*/    
-    /**
-     * returns the action that specifies what animation to play when the items is being used
-     */
-/*    @Override
-    public EnumAction getItemUseAction(ItemStack stack)
-    {
-    	if(!NBTHelper.getBoolean(stack, nbtIsLoaded))
-    		return EnumAction.NONE;
-        return EnumAction.BOW;
-    }
-*/
-    
     @Override
     public UseAction getUseAction(ItemStack stack) 
     {
@@ -389,23 +286,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
     		return UseAction.CROSSBOW;
     	return UseAction.BOW;
     }
-    
-/*    @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
-    {
-    	ItemStack stack = playerIn.getHeldItem(handIn);
-        boolean flag = false;
-        	
-        flag = findAmmo(playerIn) != null;
-
-        if (!playerIn.capabilities.isCreativeMode && !flag && !NBTHelper.getBoolean(stack, nbtIsLoaded) && EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) == 0)
-        {
-            return !flag ? new ActionResult(EnumActionResult.FAIL, stack) : new ActionResult(EnumActionResult.PASS, stack);
-        }
-        playerIn.setActiveHand(handIn);
-        return new ActionResult(EnumActionResult.SUCCESS, stack);
-    }
-*/	
     
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
@@ -436,7 +316,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 	    		loadingSound = SoundEvents.ITEM_CROSSBOW_LOADING_MIDDLE;
 	    	if(loadingSound != null)
 	    		worldIn.playSound((PlayerEntity)null, livingEntityIn.getPosX(), livingEntityIn.getPosY(), livingEntityIn.getPosZ(), loadingSound, SoundCategory.PLAYERS, 0.5f, 1.0f);
-	    	
     	}
     }
     
@@ -446,63 +325,11 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 		return material != null ? material.getEnchantability() : 1;
 	}
     
-    /**
-     * Return whether this item is repairable in an anvil.
-     */
-/*	@Override
-    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-    {
-		if(toRepair.isEmpty() || repair.isEmpty())
-    		return false;
-    	if( material.doesOreDictMatch(repair))
-    		return true;
-    	return super.getIsRepairable(toRepair, repair);
-    }
-*/    
-    
     @Override
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) 
     {
-    	return this.material.getRepairMaterial().test(repair) /*|| super.getIsRepairable(toRepair, repair)*/;
-    	//return super.getIsRepairable(toRepair, repair);
+    	return material.getRepairMaterial().test(repair);
     }
-    
-/*    @Override
-    public String getItemStackDisplayName(ItemStack stack)
-    {
-		if(displayName != null)
-		{
-			String name = I18n.translateToLocalFormatted(String.format("item.%s:%s.name", Reference.ModID, displayName), I18n.translateToLocal(material.getFullUnlocName()));
-			return name;
-		}
-		return super.getItemStackDisplayName(stack);
-		
-        //return ("" + I18n.translateToLocal(this.getUnlocalizedNameInefficiently(stack) + ".name")).trim();
-    }
-*/	
-    
-    /**
-     * Called to get the Mod ID of the mod that *created* the ItemStack,
-     * instead of the real Mod ID that *registered* it.
-     *
-     * For example the Forge Universal Bucket creates a subitem for each modded fluid,
-     * and it returns the modded fluid's Mod ID here.
-     *
-     * Mods that register subitems for other mods can override this.
-     * Informational mods can call it to show the mod that created the item.
-     *
-     * @param itemStack the ItemStack to check
-     * @return the Mod ID for the ItemStack, or
-     *         null when there is no specially associated mod and {@link #getRegistryName()} would return null.
-     */
-/*    @Nullable
-    public String getCreatorModId(ItemStack itemStack)
-    {
-    	if(modId != null)
-            return modId;
-    	return super.getCreatorModId(itemStack);
-    }
-*/	
 
 	@Override
 	public ITextComponent getDisplayName(ItemStack stack) 
@@ -571,35 +398,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
     	tooltip.add(new StringTextComponent(""));
     }
     
-/*    @Override
-	public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn)
-    {
-    	if(callback != null)
-    		callback.onCreateItem(material, stack);
-		super.onCreated(stack, worldIn, playerIn);
-	}
-*/
-/*	@Override
-	public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) 
-	{
-		if(this.isInCreativeTab(tab))
-		{
-			ItemStack stack = new ItemStack(this);
-			if(callback != null)
-				callback.onCreateItem(material, stack);
-			items.add(stack);
-		}
-	}
-*/	
-/*	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) 
-	{
-		if(callback != null && entityIn instanceof EntityLivingBase)
-			callback.onItemUpdate(material, stack, worldIn, (EntityLivingBase)entityIn, itemSlot, isSelected);
-		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
-	}
-*/
-    
     @Override
     public ITextComponent getHighlightTip(ItemStack item, ITextComponent displayName) 
     {
@@ -610,7 +408,6 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
     		{
     			return new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".highlight_heavy_crossbow", displayName, bolt.getDisplayName(), bolt.getCount());
     		}
-//    			return String.format("%s [%s x%d]", displayName, bolt.getDisplayName(), bolt.getCount());
 		}
 
     	return super.getHighlightTip(item, displayName);
@@ -665,13 +462,4 @@ public class HeavyCrossbowItem extends CrossbowItem implements IHudLoadState, IH
 	{
 		return HudElementCrosshairHeavyCrossbow.TYPE;
 	}
-
-/*	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) 
-	{
-		//return super.canApplyAtEnchantingTable(stack, enchantment);
-		return enchantment == Enchantments.POWER || enchantment == Enchantments.PUNCH || enchantment == Enchantments.FLAME || 
-				enchantment == Enchantments.INFINITY || super.canApplyAtEnchantingTable(stack, enchantment);
-	}
-*/
 }

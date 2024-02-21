@@ -59,26 +59,26 @@ public class WeaponMaterial implements IItemTier
 	
 	protected List<WeaponTrait> traits = new ArrayList<WeaponTrait>();
 	
-	public WeaponMaterial(String unlocName, String modId, int colourPrimary, int colourSecondary, int harvestLevel, int maxUses, 
-			float efficiency, float baseDamage, int enchantability, ResourceLocation tagName, WeaponTrait... traits)
+	public WeaponMaterial(String unlocName, String modIdIn, int colourPrimaryIn, int colourSecondaryIn, int harvestLevelIn, int maxUsesIn, 
+			float efficiencyIn, float baseDamageIn, int enchantabilityIn, ResourceLocation tagNameIn, WeaponTrait... traitsIn)
 	{
-		this.name = unlocName;
-		this.modId = modId;
-		this.colourPrimary = colourPrimary;
-		this.colourSecondary = colourSecondary;
+		name = unlocName;
+		modId = modIdIn;
+		colourPrimary = colourPrimaryIn;
+		colourSecondary = colourSecondaryIn;
 		
-		this.harvestLevel = harvestLevel;
-		this.maxUses = maxUses;
-		this.efficiency = efficiency;
-		this.baseDamage = baseDamage;
-		this.enchantability = enchantability;
-		this.tagName = tagName;
-		this.repairMaterial = new LazyValue<Ingredient>(() -> 
+		harvestLevel = harvestLevelIn;
+		maxUses = maxUsesIn;
+		efficiency = efficiencyIn;
+		baseDamage = baseDamageIn;
+		enchantability = enchantabilityIn;
+		tagName = tagNameIn;
+		repairMaterial = new LazyValue<Ingredient>(() -> 
 		{
 			ITag<Item> tag = ItemTags.getCollection().get(tagName);
 			return tag != null && !tag.getAllElements().isEmpty() ? Ingredient.fromTag(tag) : Ingredient.EMPTY;
 		});
-		this.traits = Arrays.asList(traits);
+		traits = Arrays.asList(traitsIn);
 	}
 	
 	public WeaponMaterial(String unlocName, int harvestLevel, int maxUses, float efficiency, float baseDamage, int enchantability,
@@ -94,33 +94,33 @@ public class WeaponMaterial implements IItemTier
 				itemTier.getAttackDamage(), itemTier.getEnchantability(), tagName);
 	}
 	
-	public WeaponMaterial(String unlocName, IItemTier itemTier, ResourceLocation tagName, WeaponTrait... traits)
+	public WeaponMaterial(String unlocName, IItemTier itemTier, ResourceLocation tagName, WeaponTrait... traitsIn)
 	{
 		this(unlocName, SpartanWeaponryAPI.MOD_ID, itemTier, tagName);
-		this.traits = Arrays.asList(traits);
+		traits = Arrays.asList(traitsIn);
 	}
 	
 	public WeaponMaterial setUseCustomDisplayName()
 	{
-		this.useCustomDisplayName = true;
+		useCustomDisplayName = true;
 		return this;
 	}
 	
-	public WeaponMaterial setUseCustomDisplayName(Function<String, String> translationFunc)
+	public WeaponMaterial setUseCustomDisplayName(Function<String, String> translationFuncIn)
 	{
-		this.translationFunc = translationFunc;
+		translationFunc = translationFuncIn;
 		return setUseCustomDisplayName();
 	}
 	
 	public boolean useCustomDisplayName()
 	{
-		return this.useCustomDisplayName;
+		return useCustomDisplayName;
 	}
 	
 	public ITextComponent translateName()
 	{
 		if(translationFunc == null)
-			return new TranslationTextComponent("material." + this.getModId() + "." + this.getMaterialName());
+			return new TranslationTextComponent("material." + getModId() + "." + getMaterialName());
 		return new StringTextComponent(translationFunc.apply(name));
 	}
 	
@@ -147,42 +147,42 @@ public class WeaponMaterial implements IItemTier
 	@Override
 	public int getMaxUses() 
 	{
-		return this.maxUses;
+		return maxUses;
 	}
 	
-	public void setMaxUses(int maxUses) 
+	public void setMaxUses(int maxUsesIn) 
 	{
-		this.maxUses = maxUses;
+		maxUses = maxUsesIn;
 	}
 
 	@Override
 	public float getEfficiency() 
 	{
-		return this.efficiency;
+		return efficiency;
 	}
 
 	@Override
 	public float getAttackDamage()
 	{
-		return this.baseDamage;
+		return baseDamage;
 	}
 	
-	public void setAttackDamage(float baseDamage) 
+	public void setAttackDamage(float baseDamageIn) 
 	{
-		this.baseDamage = baseDamage;
+		baseDamage = baseDamageIn;
 	}
 
 
 	@Override
 	public int getHarvestLevel() 
 	{
-		return this.harvestLevel;
+		return harvestLevel;
 	}
 
 	@Override
 	public int getEnchantability() 
 	{
-		return this.enchantability;
+		return enchantability;
 	}
 
 	@Override

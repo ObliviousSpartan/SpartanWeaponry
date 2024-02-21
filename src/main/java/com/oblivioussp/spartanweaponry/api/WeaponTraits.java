@@ -15,7 +15,6 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait.TraitQuality;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTraitWithMagnitude;
 
-//@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class WeaponTraits 
 {
 	// Weapon Trait Types

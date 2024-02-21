@@ -22,13 +22,12 @@ public abstract class ArrowItemSW extends ArrowItem
 	public ArrowItemSW(String regName) 
 	{
 		super(new Item.Properties().group(ModItems.GROUP_SW_ARROWS_BOLTS));
-		this.setRegistryName(ModSpartanWeaponry.ID, regName);
+		setRegistryName(ModSpartanWeaponry.ID, regName);
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
 	{
-	//	tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers").mergeStyle(TextFormatting.GOLD));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.base_damage", new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.base_damage.value", damageModifier).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));
 		tooltip.add(new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.range",  new TranslationTextComponent("tooltip." + ModSpartanWeaponry.ID + ".modifiers.projectile.range.value", rangeModifier).mergeStyle(TextFormatting.GRAY)).mergeStyle(TextFormatting.DARK_AQUA));
 	}

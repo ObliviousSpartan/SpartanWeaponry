@@ -10,7 +10,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import top.theillusivec4.curios.api.CuriosCapability;
 
-public class QuiverCurioCapabilityProvider extends QuiverCapabilityProvider //implements ICurio
+public class QuiverCurioCapabilityProvider extends QuiverCapabilityProvider
 {
 	protected QuiverCurioRenderer curioRender;
 	
@@ -27,28 +27,4 @@ public class QuiverCurioCapabilityProvider extends QuiverCapabilityProvider //im
 			return LazyOptional.of(() -> curioRender).cast();
 		return super.getCapability(cap, side);
 	}
-	
-	// This is probably redundant, so remove it
-	/*@Override
-	public boolean canSync(String identifier, int index, LivingEntity livingEntity) 
-	{
-		IItemHandlerModifiable curiosHandler = CuriosApi.getCuriosHelper().getEquippedCurios(livingEntity).orElse(null);
-		if(curiosHandler == null)
-			return false;
-		
-		ItemStack curioInSlot = curiosHandler.getStackInSlot(index);
-		return quiver.getItem() == curioInSlot.getItem() && !quiver.areShareTagsEqual(curioInSlot);
-	}
-	
-	@Override
-	public void readSyncData(CompoundNBT compound) 
-	{
-		quiver.readShareTag(compound);
-	}
-	
-	@Override
-	public CompoundNBT writeSyncData()
-	{
-		return quiver.getShareTag();
-	}*/
 }

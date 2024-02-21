@@ -35,12 +35,9 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	protected static final DataParameter<Integer> COLOUR = EntityDataManager.createKey(ArrowBaseEntity.class, DataSerializers.VARINT);
 	protected static final DataParameter<ItemStack> WEAPON = EntityDataManager.createKey(ArrowBaseEntity.class, DataSerializers.ITEMSTACK);
 	protected Potion potion = Potions.EMPTY;
-	//protected Set<EffectInstance> customEffects = new HashSet<EffectInstance>();
-	//protected boolean fixedColour;
 	
 	protected float baseDamage = 1.0f;
 	protected float rangeMultiplier = 1.0f;
-//	protected ItemStack arrowStack = ItemStack.EMPTY;
 	
 	public ArrowBaseEntity(EntityType<? extends ArrowBaseEntity> type, World world) 
 	{
@@ -62,20 +59,13 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 		this(ModEntities.ARROW_SW, world);
 	}
 	
-	public void initEntity(float baseDamage, float rangeMultiplier, ItemStack arrowStack)
+	public void initEntity(float baseDamageIn, float rangeMultiplierIn, ItemStack arrowStack)
 	{
-		this.baseDamage = baseDamage;
-		this.rangeMultiplier = rangeMultiplier;
-		this.setDamage(this.baseDamage);
-//		this.arrowStack = arrowStack;
+		baseDamage = baseDamageIn;
+		rangeMultiplier = rangeMultiplierIn;
+		setDamage(baseDamageIn);
 		setArrowStack(arrowStack);
 	}
-	
-	/*@Override
-	public void shoot(Entity shooter, float pitch, float yaw, float p_184547_4_, float velocity, float inaccuracy) 
-	{
-		super.shoot(shooter, pitch, yaw, p_184547_4_, (float)(velocity * rangeMultiplier), inaccuracy);
-	}*/
 	
 	@Override
 	public void setDirectionAndMovement(Entity shooter, float pitch, float yaw, float p_184547_4_, float velocity, float inaccuracy) 
@@ -87,29 +77,29 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	protected void registerData() 
 	{
 		super.registerData();
-		this.dataManager.register(COLOUR, -1);
-		this.dataManager.register(WEAPON, ItemStack.EMPTY);
+		dataManager.register(COLOUR, -1);
+		dataManager.register(WEAPON, ItemStack.EMPTY);
 	}
 
 	@Override
 	public void tick() 
 	{
 		super.tick();
-		if(this.world.isRemote /*&& this.potion != null && this.potion != Potions.EMPTY*/)
+		if(world.isRemote)
 		{
-			if(this.inGround)
+			if(inGround)
 			{
-				if(this.timeInGround % 5 == 0)
+				if(timeInGround % 5 == 0)
 					spawnPotionParticles(1);
 			}
 			else
 				spawnPotionParticles(2);
 		}
-		else if(this.inGround && this.timeInGround != 0 && this.timeInGround >= 600)
+		else if(inGround && timeInGround != 0 && timeInGround >= 600)
 		{
-	         this.world.setEntityState(this, (byte)0);
-	         this.potion = Potions.EMPTY;
-	         this.dataManager.set(COLOUR, -1);
+	         world.setEntityState(this, (byte)0);
+	         potion = Potions.EMPTY;
+	         dataManager.set(COLOUR, -1);
 		}
 	}
 	
@@ -118,7 +108,7 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	{
 		super.arrowHit(living);
 		
-		for(EffectInstance effect : this.potion.getEffects())
+		for(EffectInstance effect : potion.getEffects())
 		{
 			living.addPotionEffect(new EffectInstance(effect.getPotion(), Math.max(effect.getDuration() / 8, 1), effect.getAmplifier(), effect.isAmbient(), effect.doesShowParticles()));
 		}
@@ -129,7 +119,7 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	{
 		if (id == 0) 
 		{
-			int i = this.dataManager.get(COLOUR);
+			int i = dataManager.get(COLOUR);
 			if (i != -1) 
 			{
 	           double cR = (double)(i >> 16 & 255) / 255.0D;
@@ -138,7 +128,7 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	
 	           for(int j = 0; j < 20; ++j)
 	           {
-	              this.world.addParticle(ParticleTypes.ENTITY_EFFECT, this.getPosX() + (this.rand.nextDouble() - 0.5D) * (double)this.getWidth(), this.getPosY() + this.rand.nextDouble() * (double)this.getHeight(), this.getPosZ() + (this.rand.nextDouble() - 0.5D) * (double)this.getWidth(), cR, cG, cB);
+	              world.addParticle(ParticleTypes.ENTITY_EFFECT, getPosX() + (rand.nextDouble() - 0.5D) * (double)getWidth(), getPosY() + rand.nextDouble() * (double)getHeight(), getPosZ() + (rand.nextDouble() - 0.5D) * (double)getWidth(), cR, cG, cB);
 	           }
 			}
 		} 
@@ -152,7 +142,6 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	protected ItemStack getArrowStack() 
 	{
 		return getDataManager().get(WEAPON);
-//		return arrowStack;
 	}
 	
 	protected void setArrowStack(ItemStack stack)
@@ -171,7 +160,6 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	@Override
 	public void writeSpawnData(PacketBuffer buffer) 
 	{
-//		buffer.writeItemStack(this.arrowStack);
 		buffer.writeItemStack(getArrowStack());
 	}
 
@@ -180,13 +168,12 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	{
 		super.writeAdditional(compound);
 		CompoundNBT nbt = new CompoundNBT();
-//		nbt = this.arrowStack.write(nbt);
 		nbt = getArrowStack().write(nbt);
 		compound.put(NBT_ARROW, nbt);
 		
-		if(this.potion != null && this.potion != Potions.EMPTY)
+		if(potion != null && potion != Potions.EMPTY)
 		{
-			compound.putString(NBT_POTION, ForgeRegistries.POTION_TYPES.getKey(this.potion).toString());
+			compound.putString(NBT_POTION, ForgeRegistries.POTION_TYPES.getKey(potion).toString());
 		}
 		
 		compound.putInt(NBT_POTION_COLOUR, dataManager.get(COLOUR));
@@ -195,7 +182,6 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	@Override
 	public void readSpawnData(PacketBuffer additionalData) 
 	{
-//		this.arrowStack = additionalData.readItemStack();
 		setArrowStack(additionalData.readItemStack());
 	}
 	
@@ -204,12 +190,11 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	{
 		super.readAdditional(compound);
 		CompoundNBT nbt = compound.getCompound(NBT_ARROW);
-//		this.arrowStack = ItemStack.read(nbt);
 		setArrowStack(ItemStack.read(nbt));
 		
 		if(compound.contains(NBT_POTION, 8))
 		{
-			this.potion = PotionUtils.getPotionTypeFromNBT(compound);
+			potion = PotionUtils.getPotionTypeFromNBT(compound);
 		}
 		
 		dataManager.set(COLOUR, compound.contains(NBT_POTION_COLOUR) ? compound.getInt(NBT_POTION_COLOUR) : -1);
@@ -217,16 +202,14 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	
 	public boolean isValid()
 	{
-//		return !this.arrowStack.isEmpty();
 		return !getArrowStack().isEmpty();
 	}
 	
 	public ResourceLocation getTexture()
 	{
-//		String arrowRegName = arrowStack.getItem().getRegistryName().getPath();
 		String arrowRegName = getArrowStack().getItem().getRegistryName().getPath();
 		
-		if(this.potion.getRegistryName().getPath() != "empty")
+		if(potion.getRegistryName().getPath() != "empty")
 		{
 			int idx = arrowRegName.indexOf("_tipped");
 			if(idx != -1)
@@ -239,19 +222,13 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	
 	public void setPotionEffect(ItemStack stack)
 	{
-		this.potion = PotionUtils.getPotionFromItem(stack);
-		/*List<EffectInstance> effects = PotionUtils.getFullEffectsFromItem(stack);
-		if(!effects.isEmpty())
-		{
-			for(EffectInstance effect : effects)
-				customEffects.add(new EffectInstance(effect));
-		}*/
+		potion = PotionUtils.getPotionFromItem(stack);
 		dataManager.set(COLOUR, PotionUtils.getColor(stack));
 	}
 	
 	public void spawnPotionParticles(int particleCount)
 	{
-		int colour = this.dataManager.get(COLOUR);
+		int colour = dataManager.get(COLOUR);
 		if(colour != -1 && particleCount > 0)
 		{
 	         double cR = (double)(colour >> 16 & 255) / 255.0D;
@@ -260,7 +237,7 @@ public class ArrowBaseEntity extends AbstractArrowEntity implements IEntityAddit
 	         
 	         for(int i = 0; i < particleCount; i++)
 	         {
-	        	 this.world.addParticle(ParticleTypes.ENTITY_EFFECT, this.getPosX() + (this.rand.nextDouble() - 0.5D) * (double)this.getWidth(), this.getPosY() + this.rand.nextDouble() * (double)this.getHeight(), this.getPosZ() + (this.rand.nextDouble() - 0.5D) * (double)this.getWidth(), cR, cG, cB);
+	        	 world.addParticle(ParticleTypes.ENTITY_EFFECT, getPosX() + (rand.nextDouble() - 0.5D) * (double)getWidth(), getPosY() + rand.nextDouble() * (double)getHeight(), getPosZ() + (rand.nextDouble() - 0.5D) * (double)getWidth(), cR, cG, cB);
 	         }
 		}
 	}

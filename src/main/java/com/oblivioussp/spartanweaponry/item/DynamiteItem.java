@@ -25,7 +25,7 @@ public class DynamiteItem extends Item
 	public DynamiteItem(String regName, Properties properties) 
 	{
 		super(properties);
-		this.setRegistryName(ModSpartanWeaponry.ID, regName);
+		setRegistryName(ModSpartanWeaponry.ID, regName);
 	}
 
 	@Override

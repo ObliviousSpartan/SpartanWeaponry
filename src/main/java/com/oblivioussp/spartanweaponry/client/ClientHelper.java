@@ -60,23 +60,11 @@ public class ClientHelper
 	public static void registerItemRenders()
 	{
 		// Register item property overrides here
-		//DeferredWorkQueue.runLater(() -> {
-			// TODO: Not type safe, implement it better later.
-			//registerPropertyOverrides();
-			
-			//LongbowItem.registerPropertyOverrides((LongbowItem) ModItems.longbows.wood);
-		//});
-		
 		registerTippedProjectile(ModItems.tippedArrowWood);
 		registerTippedProjectile(ModItems.tippedArrowIron);
 		registerTippedProjectile(ModItems.tippedArrowDiamond);
 		registerTippedProjectile(ModItems.tippedBolt);
 		registerTippedProjectile(ModItems.tippedBoltDiamond);
-		/*Minecraft.getInstance().getItemColors().register((stack, idx) ->
-		{
-			WeaponOilEffect oil = WeaponOilItem.getOilFromStack(stack);
-			return idx == 0 ? oil != null ? oil.getColor() : 0xFFFFFF : 0xFFFFFF;
-		}, ModItems.weaponOil);*/
 	}
 	
 	public static void registerBlockablePropertyOverrides(SwordBaseItem parryingDagger)
@@ -91,7 +79,7 @@ public class ClientHelper
 	{
 		ItemModelsProperties.registerProperty(crossbow, new ResourceLocation(ModelOverrides.PULL), (stack, world, living) ->
 		{
-			if(living != null /*&& stack.getItem() == crossbow*/)
+			if(living != null)
 				return crossbow.isLoaded(stack) ? 0.0f : (float)(crossbow.getLoadingTicks(stack, living)) / crossbow.getFullLoadTicks(stack);
 			return 0.0f;
 		});
@@ -119,7 +107,6 @@ public class ClientHelper
 	
 	public static void registerThrowingWeaponPropertyOverrides(Item throwingWeapon)
 	{
-//		Log.debug("Registering Throwing Weapon Property Overrides for item: \"" + throwingWeapon.getRegistryName().toString() + "\"");
 		ItemModelsProperties.registerProperty(throwingWeapon, new ResourceLocation(ModelOverrides.THROWING), (stack, world, living) ->
 		{
 			if(living == null || !stack.isItemEqual(living.getActiveItemStack()))	return 0.0f;
@@ -153,7 +140,6 @@ public class ClientHelper
 	public static void registerExtendedSkullRenders()
 	{
 		GenericHeadModel genericHeadModel = new GenericHeadModel(0, 0, 64, 32);
-//		GenericHeadModel humanoidHeadModel = new HumanoidHeadModel();
 		GenericHeadModel endermanHeadModel = new EndermanHeadModel();
 		GenericHeadModel spiderHeadModel = new GenericHeadModel(32, 4, 64, 32);
 		GenericHeadModel piglinModel = new PiglinHeadModel();
@@ -206,7 +192,6 @@ public class ClientHelper
 		});
 		
 		ClientRegistry.bindTileEntityRenderer(ModTileEntities.EXTENDED_SKULL_TYPE, dispatcher -> new SkullTileEntityRenderer(dispatcher));
-//		ClientRegistry.bindTileEntityRenderer(ModTileEntities.NEW_SKULL_TYPE, (dispatcher) -> new NewSkullTileEntityRenderer(dispatcher));
 	}
 	
 	public static void registerScreens()

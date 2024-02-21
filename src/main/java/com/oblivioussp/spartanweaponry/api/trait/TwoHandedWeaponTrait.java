@@ -54,10 +54,7 @@ public class TwoHandedWeaponTrait extends MeleeCallbackWeaponTrait
 		float resultDamage = baseDamage;
 		ItemStack mainHand = attacker.getHeldItemMainhand();
 		ItemStack offHand = attacker.getHeldItemOffhand();
-
-		// If a Titan is wielding the weapon this property is on, then render them immune to the negative two-handed effects
-		/*if(ModSpartanWeaponry.isTrinketsLoaded && TrinketsHelper.getEntityRace(attacker) == TrinketsHelper.RACE_TITAN)
-			return resultDamage;*/
+		
 		if(!mainHand.isEmpty() && !offHand.isEmpty())
 		{
 			resultDamage *= (1.0f - magnitude);

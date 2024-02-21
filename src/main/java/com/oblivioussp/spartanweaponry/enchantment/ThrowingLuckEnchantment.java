@@ -10,9 +10,8 @@ public class ThrowingLuckEnchantment extends LootBonusEnchantment
 	public ThrowingLuckEnchantment(Rarity rarityIn, EquipmentSlotType... slots)
 	{
 		super(rarityIn, EnchantmentSW.TYPE_THROWING_WEAPON, slots);
-		//this.setName("throwing_luck");
-		this.name = "lucky_throw";
-		this.setRegistryName("lucky_throw");
+		name = "lucky_throw";
+		setRegistryName("lucky_throw");
 	}
     
     /**
@@ -21,6 +20,6 @@ public class ThrowingLuckEnchantment extends LootBonusEnchantment
     @Override
     public String getName()
     {
-    	return String.format("enchantment.%s.%s", ModSpartanWeaponry.ID, this.name);
+    	return String.format("enchantment.%s.%s", ModSpartanWeaponry.ID, name);
     }
 }

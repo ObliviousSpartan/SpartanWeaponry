@@ -24,7 +24,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.datasync.DataParameter;
@@ -54,11 +53,8 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	protected static final DataParameter<ItemStack> DATA_WEAPON = EntityDataManager.createKey(ThrowingWeaponEntity.class, DataSerializers.ITEMSTACK);
 	protected static final DataParameter<Byte> DATA_RETURN = EntityDataManager.createKey(ThrowingWeaponEntity.class, DataSerializers.BYTE);
 	protected static final DataParameter<Boolean> DATA_IS_RETURNING = EntityDataManager.createKey(ThrowingWeaponEntity.class, DataSerializers.BOOLEAN);
-//	protected ItemStack weapon = ItemStack.EMPTY;
-//	protected int knockbackStrength = 0;
 	protected int ticksInAir = 0;
 	protected float waterDrag = 0.0f;
-//	protected boolean isReturning = false;
 	protected boolean playedReturnSound = false;
 	
 	public ThrowingWeaponEntity(EntityType<? extends ThrowingWeaponEntity> type, World world) 
@@ -93,13 +89,11 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	@Override
 	protected ItemStack getArrowStack()
 	{
-//		return this.weapon;
 		return getDataManager().get(DATA_WEAPON);
 	}
 	
 	public boolean isReturning()
 	{
-//		return isReturning;
 		return getDataManager().get(DATA_IS_RETURNING);
 	}
 	
@@ -114,27 +108,25 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 				waterDrag = -1.0f;
 		}
 		
-		Entity thrower = this.getShooter();			//this.func_234616_v_();
+		Entity thrower = getShooter();			//func_234616_v_();
 		if((timeInGround > 4 || isReturning()) && thrower != null)
 		{
-//			int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.LOYALTY, getWeaponStack());
 			int returnLevel = getDataManager().get(DATA_RETURN);
 			if(returnLevel > 0)
 			{
-				if(thrower != null && thrower.isAlive() && (/*!(thrower instanceof ServerPlayerEntity) ||*/ !thrower.isSpectator()))
+				if(thrower != null && thrower.isAlive() && !thrower.isSpectator())
 				{
 					// Return to thrower
 					if(!isReturning())
 					{
 						setNoClip(true);
 						inGround = false;
-//						isReturning = true;
 						getDataManager().set(DATA_IS_RETURNING, true);
 						
 						setNoGravity(true);
 					}
 					Vector3d distance = new Vector3d(thrower.getPosX() - getPosX(), thrower.getPosYEye() - getPosY(), thrower.getPosZ() - getPosZ());
-					this.setRawPosition(getPosX(), getPosY() + distance.y * 0.015 * (double)returnLevel, getPosZ());
+					setRawPosition(getPosX(), getPosY() + distance.y * 0.015 * (double)returnLevel, getPosZ());
 					if(world.isRemote)
 					{
 						lastTickPosY = getPosY();
@@ -145,14 +137,13 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 					
 					if(!playedReturnSound)
 					{
-						this.playSound(ModSounds.THROWING_WEAPON_LOYALTY_RETURN, 10.0F, 1.0F);
+						playSound(ModSounds.THROWING_WEAPON_LOYALTY_RETURN, 10.0F, 1.0F);
 						playedReturnSound = true;
 					}
 				}
 				else if(returnLevel > 0 && !thrower.isAlive())
 				{
 					setNoClip(false);
-//					isReturning = false;
 					getDataManager().set(DATA_IS_RETURNING, false);
 					setNoGravity(false);
 					getDataManager().set(DATA_RETURN, (byte)0);
@@ -179,19 +170,6 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 		}
 	}
 	
-/*	@Override
-	public void onRemovedFromWorld() 
-	{
-		super.onRemovedFromWorld();
-		
-		// Drop the item as a item stack on the ground if the entity is going to despawn.
-		if(!this.isAlive() && this.pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
-		{
-//            this.entityDropItem(this.getArrowStack(), 0.1F);
-//			dropAsItem();
-		}
-	}*/
-	
 	@Override
 	public int getMaxInPortalTime()
 	{
@@ -204,7 +182,7 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	protected void onEntityHit(EntityRayTraceResult rayTrace) 
 	{
 		Entity entity = rayTrace.getEntity();
-		Entity shooter = this.getShooter();    //this.func_234616_v_();
+		Entity shooter = getShooter();
 		
 		if(entity != null)
 		{
@@ -212,9 +190,9 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 			float damage = MathHelper.ceil(getDamage());
 			DamageSource src;
 
-            if (this.getIsCritical())
+            if (getIsCritical())
             {
-            	damage += this.rand.nextInt((int)damage / 2 + 2);
+            	damage += rand.nextInt((int)damage / 2 + 2);
             }
             
 			// Try and catch the throwing weapon if possible.
@@ -256,27 +234,27 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
         		}
 			}
 			
-            if (this.isBurning() && !(entity instanceof EndermanEntity))
+            if (isBurning() && !(entity instanceof EndermanEntity))
             {
                 entity.setFire(5);
             }
             
             if(entity.attackEntityFrom(src, damage))
             {
-            	if(weapon.isDamageable() && weapon.attemptDamageItem(1, this.rand, null))
+            	if(weapon.isDamageable() && weapon.attemptDamageItem(1, rand, null))
             	{
-            		this.playSound(SoundEvents.ENTITY_ITEM_BREAK, 0.8f, 0.8f + this.rand.nextFloat() * 0.4f);
-            		this.world.setEntityState(this, (byte)3);
-            		this.remove();
+            		playSound(SoundEvents.ENTITY_ITEM_BREAK, 0.8f, 0.8f + rand.nextFloat() * 0.4f);
+            		world.setEntityState(this, (byte)3);
+            		remove();
             	}
             	
             	if (entity instanceof LivingEntity)
                 {
             		LivingEntity entitylivingbase = (LivingEntity)entity;
 
-                    if (this.knockbackStrength > 0)
+                    if (knockbackStrength > 0)
                     {
-                        Vector3d knockVec = this.getMotion().mul(1.0D, 0.0D, 1.0D).normalize().scale((double)this.knockbackStrength * 0.6D);
+                        Vector3d knockVec = getMotion().mul(1.0D, 0.0D, 1.0D).normalize().scale((double)knockbackStrength * 0.6D);
 
                         if (knockVec.lengthSquared() > 0.0F)
                         {
@@ -284,47 +262,45 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
                         }
                     }
 
-                    if (!this.world.isRemote && shooter instanceof LivingEntity)
+                    if (!world.isRemote && shooter instanceof LivingEntity)
                     {
                         EnchantmentHelper.applyThornEnchantments(entitylivingbase, shooter);
                         EnchantmentHelper.applyArthropodEnchantments((LivingEntity)shooter, entitylivingbase);
                     }
 
-                    this.arrowHit(entitylivingbase);
+                    arrowHit(entitylivingbase);
 
                     if (shooter != null && entitylivingbase != shooter && entitylivingbase instanceof PlayerEntity && shooter instanceof ServerPlayerEntity)
                     {
                         ((ServerPlayerEntity)shooter).connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.HIT_PLAYER_ARROW, 0.0F));
- //                       ((ServerPlayerEntity)shooter).connection.sendPacket(new SChangeGameStatePacket(6, 0.0F));
                     }
                 }
 
-                this.playSound(/*SoundRegistry.THROWING_WEAPON_HIT*/ getMobHitSound(), 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+                playSound(getMobHitSound(), 1.0F, 1.2F / (rand.nextFloat() * 0.2F + 0.9F));
 
                 if (!(entity instanceof EndermanEntity))
                 {
-                	this.setMotion(this.getMotion().scale(-0.1d));
-                    this.rotationYaw += 180.0F;
-                    this.prevRotationYaw += 180.0F;
+                	setMotion(getMotion().scale(-0.1d));
+                    rotationYaw += 180.0F;
+                    prevRotationYaw += 180.0F;
                 }
             }
             else
             {
-            	this.setMotion(this.getMotion().scale(-0.1d));
-                this.rotationYaw += 180.0F;
-                this.prevRotationYaw += 180.0F;
-                this.ticksInAir = 0;
+            	setMotion(getMotion().scale(-0.1d));
+                rotationYaw += 180.0F;
+                prevRotationYaw += 180.0F;
+                ticksInAir = 0;
 
-                if (!this.world.isRemote && this.getMotion().lengthSquared() < 1.0e-7d)
+                if (!world.isRemote && getMotion().lengthSquared() < 1.0e-7d)
                 {
                 	if(getDataManager().get(DATA_RETURN) > 0 && !getNoClip())
                 		setNoClip(true);
-                	else if (this.pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
+                	else if (pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
                     {
-//                        this.entityDropItem(this.getArrowStack(), 0.1F);
                 		dropAsItem();
                     }
-                    this.remove();
+                    remove();
                 }
             }
         }
@@ -381,30 +357,10 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
         entityDropItem(stack, 0.1F);
 	}
 	
-	/*@Override
-	public void handleStatusUpdate(byte id) 
-	{
-		// Spawn Breaking particles when appropriate
-		if(id == 3)
-		{
-			float maxMotion = 0.5f;
-			
-			for(int i = 0; i < 16; i++)
-			{
-				ItemParticleData particle = new ItemParticleData(ParticleTypes.ITEM, this.weapon);
-				float motionX = (this.rand.nextFloat() - 0.5f) * maxMotion;
-				float motionY = this.rand.nextFloat() * 0.5f * maxMotion;
-				float motionZ = (this.rand.nextFloat() - 0.5f) * maxMotion;
-				//this.world.addParticle(particle, this.posX, this.posY, this.posZ, 0.0f, 0.0f, 0.0f);
-				this.world.addParticle(particle, this.getPosX(), this.getPosY(), this.getPosZ(), motionX, motionY, motionZ);
-			}
-		}
-	}*/
-	
 	@Override
 	public void onCollideWithPlayer(PlayerEntity entityIn)
 	{
-		if(this.inGround || isReturning())
+		if(inGround || isReturning())
 			attemptCatch(entityIn);
 	}
 	
@@ -417,7 +373,7 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	@Override
 	public void setKnockbackStrength(int knockbackStrengthIn)
 	{
-		this.knockbackStrength = knockbackStrengthIn;
+		knockbackStrength = knockbackStrengthIn;
 	}
 	
 	@Override
@@ -435,22 +391,6 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	{
 		return ModSounds.THROWING_KNIFE_HIT_MOB;
 	}
-	
-	/*protected SoundEvent getHitGroundSound()
-	{
-		return SoundEvents.ITEM_TRIDENT_HIT_GROUND;
-	}*/
-	
-	@Override
-	public void readAdditional(CompoundNBT compound)
-	{
-		super.readAdditional(compound);
-//		CompoundNBT weaponNBT = compound.getCompound(NBT_WEAPON);
-//		this.weapon = ItemStack.read(weaponNBT);
-//		ItemStack weaponStack = ItemStack.read(weaponNBT);
-//		if(!weaponStack.isEmpty())
-//			setWeapon(weaponStack);
-	}
 
 	@Override
 	public void writeSpawnData(PacketBuffer buffer)
@@ -462,18 +402,6 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	public void readSpawnData(PacketBuffer additionalData) 
 	{
 		setWeapon(additionalData.readItemStack());
-	}
-	
-	@Override
-	public void writeAdditional(CompoundNBT compound)
-	{
-		super.writeAdditional(compound);
-//		CompoundNBT weaponNBT = new CompoundNBT();
-//		weaponNBT = this.weapon.write(weaponNBT);
-//		ItemStack weaponStack = getWeaponStack();
-//		if(!weaponStack.isEmpty())
-//			weaponStack.write(weaponNBT);
-//		compound.put(NBT_WEAPON, weaponNBT);
 	}
 	
 	@Override
@@ -495,8 +423,6 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	
 	public void setWeapon(ItemStack weaponStack)
 	{
-//		this.weapon = weaponStack.copy();
-		
 		ItemStack stack = weaponStack.copy();
 		if(!stack.isEmpty() && stack.getItem() instanceof ThrowingWeaponItem)
 		{
@@ -510,11 +436,11 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 	
 	protected boolean attemptCatch(PlayerEntity player)
 	{
-		if(!this.world.isRemote && arrowShake <= 0)
+		if(!world.isRemote && arrowShake <= 0)
 		{
 			boolean canBePickedUp = pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED || pickupStatus == AbstractArrowEntity.PickupStatus.CREATIVE_ONLY && player.abilities.isCreativeMode;
 			
-			if(this.pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
+			if(pickupStatus == AbstractArrowEntity.PickupStatus.ALLOWED)
 			{
 				boolean pickUpAsNewItem = true;
 				
@@ -538,8 +464,6 @@ public class ThrowingWeaponEntity extends AbstractArrowEntity implements IEntity
 							// If the total damage exceeds the damage of the equipped stack, then "break" one of the ammo items and not increment the ammo count
 	    					if(itemDamage > slotStack.getMaxDamage())
 	    					{
-	//    	            		this.playSound(SoundEvents.ENTITY_ITEM_BREAK, 0.8F, 0.8F + this.world.rand.nextFloat() * 0.4F);
-	//    						player.renderBrokenItemStack(weapon);
 	    	            		itemDamage -= slotStack.getMaxDamage() + 1;
 	    					}
 	    					else

@@ -20,19 +20,6 @@ public class TomahawkRenderer<T extends TomahawkEntity> extends ThrowingWeaponRe
 	@Override
 	protected void doRenderTransformations(T entity, float partialTicks, MatrixStack matrixStack)
 	{
-		//super.doRenderTransformations(entity, partialTicks, matrixStack);
-		/*GlStateManager.rotatef(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * partialTicks - 90.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotatef(entity.prevRotationPitch + (entity.rotationPitch - entity.prevRotationPitch) * partialTicks - 90.0F, 0.0F, 0.0F, 1.0F);
-        GlStateManager.rotatef(90.0f, 0.0f, 0.0f, 1.0f);
-        GlStateManager.rotatef(180.0f, 1.0f, 1.0f, 0.0f); 
-        GlStateManager.translated(-0.05d, -0.25d, 0.0d);
-		
-		int ticksInAir = entity.getTicksInAir();
-		if(ticksInAir != 0)
-		{
-			GlStateManager.rotatef(((float)ticksInAir + partialTicks) * 30.0f % 360.0f, 0.0f, 0.0f, 1.0f);
-		}*/
-		
 		int ticksInAir = entity.getTicksInAir();
 		boolean isReturning = entity.isReturning();
 		matrixStack.scale(2.0f, 2.0f, 2.0f);
@@ -47,9 +34,6 @@ public class TomahawkRenderer<T extends TomahawkEntity> extends ThrowingWeaponRe
 			if(isReturning)
 				rotation *= -1;
 			matrixStack.rotate(Vector3f.ZN.rotationDegrees(rotation));
-			//Log.info(String.format("Previous rotation: %f - Current rotation: %f - Difference: %f", previousRotation, rotation, rotation - previousRotation));
-			//previousRotation = rotation;
-			//Log.info(String.format("Ticks in air: %f - Rotation: %f", (float)ticksInAir, rotation));
 		}
 	}
 }

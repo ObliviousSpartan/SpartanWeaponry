@@ -32,23 +32,6 @@ public class HudLoadState extends HudElement
 			highlightedSlot = -1;
 	}
 	
-	/*public void setLoaded(boolean loaded)
-	{
-		isLoaded = loaded;
-	}
-	
-	public void setLoadProgress(float progress)
-	{
-		loadProgress = progress;
-	}
-	
-	public void setOffhand(boolean offhand)
-	{
-		isOffhand = offhand;
-		if(offhand)
-			highlightedSlot = -1;
-	}*/
-	
 	public void setHighlightedSlot(int slot)
 	{
 		highlightedSlot = slot;
@@ -59,18 +42,14 @@ public class HudLoadState extends HudElement
 	{
 		Minecraft mc = Minecraft.getInstance();
 		
-		//int loadWidth = MathHelper.floor(this.width * loadProgress); 
 		int posX = isOffhand ? mc.getMainWindow().getScaledWidth() / 2 - 117 : mc.getMainWindow().getScaledWidth() / 2 - 88 + (highlightedSlot * 20);
 		int posY = mc.getMainWindow().getScaledHeight() - 19;
 		int colour = loadProgress == 1.0f ? COLOUR_LOAD_READY : isLoaded ? COLOUR_LOADED : COLOUR_LOADING;
-		
-		//LogHelper.info("LoadProgress: " + loadProgress);
 		
 		if(!isLoaded)
 			posY = mc.getMainWindow().getScaledHeight() - 3 - MathHelper.clamp(MathHelper.floor((16 * loadProgress) + partialTicks), 0, 16);
 
 		if(highlightedSlot != -1 || isOffhand)
-			//mc.ingameGUI.drawRect(posX, posY, posX + 16, (mc.mainWindow.getScaledHeight() - 19) + 16, colour);
 			ForgeIngameGui.fill(matrixStack, posX, posY, posX + 16, (mc.getMainWindow().getScaledHeight() - 19) + 16, colour);
 	}
 

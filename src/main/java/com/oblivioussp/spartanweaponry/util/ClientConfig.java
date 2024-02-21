@@ -17,8 +17,6 @@ public class ClientConfig
 	public static final ClientConfig INSTANCE;
 	public static final ForgeConfigSpec CONFIG_SPEC;
 	
-//	private static int errorCount;
-	
 	static
 	{
 		 final Pair<ClientConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ClientConfig::new);
@@ -48,63 +46,12 @@ public class ClientConfig
 			quiverHudAlignment = builder.comment("Sets where the Quiver HUD Element should be aligned")
 								.translation("config." + ModSpartanWeaponry.ID + ".client.quiver_hud_alignment")
 								.defineEnum("quiver_hud_alignment", Alignment.BOTTOM_CENTER);
-//			assertValue("hud.quiver_hud_offset_x", Defaults.DefaultQuiverHudOffsetX, -400, 400);
 			quiverHudOffsetX = builder.comment("Sets where on the X-axis the Quiver HUD element should be off-set from it's alignment point")
 								.translation("config." + ModSpartanWeaponry.ID + ".client.quiver_hud_offset_x")
 								.defineInRange("quiver_hud_offset_x", Defaults.DefaultQuiverHudOffsetX, -400, 400);
-//			assertValue("hud.quiver_hud_offset_y", Defaults.DefaultQuiverHudOffsetY, -400, 400);
 			quiverHudOffsetY = builder.comment("Sets where on the Y-axis the Quiver HUD element should be off-set from it's alignment point")
 					.translation("config." + ModSpartanWeaponry.ID + ".client.quiver_hud_offset_y")
 					.defineInRange("quiver_hud_offset_y", Defaults.DefaultQuiverHudOffsetY, -400, 400);
 		builder.pop();
-		
-		/*if(errorCount > 0)
-		{
-			Log.error("Found " + errorCount + " invalid values! Check previous log entries for details!");
-			errorCount = 0;
-		}
-		else
-		{
-			Log.info("No errors found!");
-		}*/
 	}
-	
-	/*private static void assertValue(String name, int value, int min, int max)
-	{
-		if(value != MathHelper.clamp(value, min, max))
-		{
-			Log.error("Found invalid numerical value " + name + ": " + value + "! Expected to be between " + min + " and " + max + "!");
-			errorCount++;
-		}
-		else
-		{
-			Log.info("Config Entry \"" + name + "\" valid!");
-		}
-	}*/
-	
-	/*private static void assertValue(String name, double value, double min, double max)
-	{
-		if(value != MathHelper.clamp(value, min, max))
-		{
-			Log.error("Found invalid numerical value " + name + ": " + value + "! Expected to be between " + min + " and " + max + "!");
-			errorCount++;
-		}
-		else
-		{
-			Log.info("Config Entry \"" + name + "\" valid!");
-		}
-	}*/
-	
-	/*private static void assertValue(String name, float value, float min, float max)
-	{
-		if(value != MathHelper.clamp(value, min, max))
-		{
-			Log.error("Found invalid numerical value " + name + ": " + value + "! Expected to be between " + min + " and " + max + "!");
-			errorCount++;
-		}
-		else
-		{
-			Log.info("Config Entry \"" + name + "\" valid!");
-		}
-	}*/
 }

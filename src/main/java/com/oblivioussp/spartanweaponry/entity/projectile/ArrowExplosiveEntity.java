@@ -49,12 +49,12 @@ public class ArrowExplosiveEntity extends ArrowEntitySW
     {
 		super.tick();
 		
-		if (this.world.isRemote && !this.inGround)
+		if (world.isRemote && !inGround)
         {
-            this.world.addParticle(ParticleTypes.SMOKE, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0D, 0.0D, 0.0D);
+            world.addParticle(ParticleTypes.SMOKE, getPosX(), getPosY(), getPosZ(), 0.0D, 0.0D, 0.0D);
         }
 		
-		if(this.inGround)
+		if(inGround)
 		{
 			explode();
 		}
@@ -62,11 +62,11 @@ public class ArrowExplosiveEntity extends ArrowEntitySW
 	
 	protected void explode()
 	{
-		if(!this.world.isRemote)
+		if(!world.isRemote)
 		{
-			boolean mobGriefing = this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
-			this.world.createExplosion(this, prevPosX, prevPosY, prevPosZ, Config.INSTANCE.arrowExplosiveExplosionStrength.get().floatValue(), !Config.INSTANCE.disableTerrainDamage.get() && mobGriefing ? Explosion.Mode.BREAK : Explosion.Mode.NONE);
-			this.remove();
+			boolean mobGriefing = world.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
+			world.createExplosion(this, prevPosX, prevPosY, prevPosZ, Config.INSTANCE.arrowExplosiveExplosionStrength.get().floatValue(), !Config.INSTANCE.disableTerrainDamage.get() && mobGriefing ? Explosion.Mode.BREAK : Explosion.Mode.NONE);
+			remove();
 		}
 	}
 }

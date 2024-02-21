@@ -14,22 +14,22 @@ public class PiglinHeadModel extends GenericHeadModel
 	public PiglinHeadModel() 
 	{
 		super(0, 0, 64, 64);
-		this.textureWidth = 64;
-		this.textureHeight = 64;
-		this.headBase = new ModelRenderer(this, 0, 0);
-		this.headBase.setTextureOffset(0, 0).addBox(-5.0f, -8.0f, -4.0f, 10.0f, 8.0f, 8.0f, 0.0f);
-		this.headBase.setTextureOffset(31, 1).addBox(-2.0f, -4.0f, -5.0F, 4.0f, 4.0f, 1.0f, 0.0f);
-		this.headBase.setTextureOffset(2, 4).addBox(2.0f, -2.0f, -5.0f, 1.0f, 2.0f, 1.0f, 0.0f);
-		this.headBase.setTextureOffset(2, 0).addBox(-3.0f, -2.0f, -5.0f, 1.0f, 2.0f, 1.0f, 0.0f);
-		this.headBase.setRotationPoint(0.0F, 0.0F, 0.0F);
-		this.earLeft = new ModelRenderer(this);
-		this.earLeft.setRotationPoint(4.5f, -6.0f, 0.0f);
-		this.earLeft.setTextureOffset(51, 6).addBox(0.0f, 0.0f, -2.0f, 1.0f, 5.0f, 4.0f, 0.0f);
-		this.headBase.addChild(this.earLeft);
-		this.earRight = new ModelRenderer(this);
-		this.earRight.setRotationPoint(-4.5f, -6.0f, 0.0f);
-		this.earRight.setTextureOffset(39, 6).addBox(-1.0f, 0.0f, -2.0f, 1.0f, 5.0f, 4.0f, 0.0f);
-		this.headBase.addChild(this.earRight);
+		textureWidth = 64;
+		textureHeight = 64;
+		headBase = new ModelRenderer(this, 0, 0);
+		headBase.setTextureOffset(0, 0).addBox(-5.0f, -8.0f, -4.0f, 10.0f, 8.0f, 8.0f, 0.0f);
+		headBase.setTextureOffset(31, 1).addBox(-2.0f, -4.0f, -5.0F, 4.0f, 4.0f, 1.0f, 0.0f);
+		headBase.setTextureOffset(2, 4).addBox(2.0f, -2.0f, -5.0f, 1.0f, 2.0f, 1.0f, 0.0f);
+		headBase.setTextureOffset(2, 0).addBox(-3.0f, -2.0f, -5.0f, 1.0f, 2.0f, 1.0f, 0.0f);
+		headBase.setRotationPoint(0.0F, 0.0F, 0.0F);
+		earLeft = new ModelRenderer(this);
+		earLeft.setRotationPoint(4.5f, -6.0f, 0.0f);
+		earLeft.setTextureOffset(51, 6).addBox(0.0f, 0.0f, -2.0f, 1.0f, 5.0f, 4.0f, 0.0f);
+		headBase.addChild(earLeft);
+		earRight = new ModelRenderer(this);
+		earRight.setRotationPoint(-4.5f, -6.0f, 0.0f);
+		earRight.setTextureOffset(39, 6).addBox(-1.0f, 0.0f, -2.0f, 1.0f, 5.0f, 4.0f, 0.0f);
+		headBase.addChild(earRight);
 	}
 	
 	@Override
@@ -45,8 +45,6 @@ public class PiglinHeadModel extends GenericHeadModel
 	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
 			float red, float green, float blue, float alpha)
 	{
-		/*earLeft.rotateAngleZ = 30.0f * -((float)Math.PI / 180.0f);
-		earRight.rotateAngleZ = 30.0f * ((float)Math.PI / 180.0f);*/
 		headBase.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 	}
 }

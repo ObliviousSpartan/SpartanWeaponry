@@ -18,9 +18,6 @@ public class QuiverArrowContainer extends QuiverBaseContainer
 	
 	public static QuiverArrowContainer createFromNetwork(int id, PlayerInventory inventory, PacketBuffer buf)
 	{
-//		Hand hand = buf.readBoolean() ? Hand.MAIN_HAND : Hand.OFF_HAND;
-//		ItemStack quiverStack = inventory.player.getHeldItem(hand);
-		
 		QuiverBaseItem.SlotType slotType = buf.readEnumValue(QuiverBaseItem.SlotType.class);
 		int slot = buf.readInt();
 		
