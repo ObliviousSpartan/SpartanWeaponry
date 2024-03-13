@@ -38,6 +38,12 @@ public class DummyInternalMethodHandler implements IInternalMethodHandler
 	}
 
 	@Override
+	public Item addScythe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return null;
+	}
+
+	@Override
 	public Item addSaber(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties) 
 	{
 		return null;

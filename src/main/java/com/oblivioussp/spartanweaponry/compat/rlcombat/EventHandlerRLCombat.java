@@ -12,6 +12,7 @@ import bettercombat.mod.event.RLCombatModifyDamageEvent;
 import bettercombat.mod.event.RLCombatSweepEvent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -112,17 +113,26 @@ public class EventHandlerRLCombat
 		if(weaponStack.getItem() instanceof IWeaponPropertyContainer)
 		{
 			IWeaponPropertyContainer weaponItem = ((IWeaponPropertyContainer)weaponStack.getItem());
-			WeaponProperty sweepProp = weaponItem.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_SWEEP_DAMAGE);
+			WeaponProperty sweepProp = weaponItem.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_WIDE_SWEEP);
+			if(sweepProp == null)
+			{
+				sweepProp = weaponItem.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_SWEEP_DAMAGE);
+			}
 			if(sweepProp != null)
 			{
 				// Do nothing if the sweep property has a magnitude of 1 (normal sweep behavior)
-				if(sweepProp.getLevel() > 1)
+				if(sweepProp.getMagnitude() > 1F)
 				{
 					float modifier = sweepProp.getMagnitude() / 100.0f;		// Base sweep damage modifier
 					float directDmg = ev.getBaseDamage() * modifier;		// Final damage dealt by the sweep attack
 					modifier *= ((directDmg - 1) / directDmg);				// Correct damage calculation modifier to account for the +1 default damage for sweep attacks
 //					Log.info("Sweep modifier set to: " + modifier);
-					ev.setSweepModifier(modifier);
+					ev.setSweepModifier(Math.max(ev.getSweepModifier(), modifier));
+				}
+
+				if (sweepProp.getType() == WeaponProperties.PROPERTY_TYPE_WIDE_SWEEP) {
+					AxisAlignedBB sweepingAABB = ev.getSweepingAABB().grow(ConfigHandler.wideSweepAdditionalRange);
+					ev.setSweepingAABB(sweepingAABB);
 				}
 			}
 			else

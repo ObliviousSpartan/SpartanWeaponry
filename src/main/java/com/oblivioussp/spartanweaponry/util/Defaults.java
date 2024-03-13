@@ -75,7 +75,12 @@ public class Defaults
 	public static final float SpeedKatana = 2.0f;
 	public static final float DamageBaseKatana = 3.5f;
 	public static final float DamageMultiplierKatana = 0.5f;
-	
+
+	// Scythe
+	public static final float SpeedScythe = 1.0f;
+	public static final float DamageBaseScythe = 5.0f;
+	public static final float DamageMultiplierScythe = 1.0f;
+
 	// Saber
 	public static final float SpeedSaber = 1.6f;
 	public static final float DamageBaseSaber = 4.5f;
@@ -218,6 +223,7 @@ public class Defaults
 	// Weapon Property related
 	public static final int QuickStrikeHurtResistTicks = 14;
 	public static final float DamageBonusChestMultiplier = 2.0f;
+	public static final float DamageBonusHeadMultiplier = 2.0f;
 	public static final float DamageBonusRidingMultiplier = 2.0f;
 	public static final float DamageBonusRidingSpeedMax = 0.225f;		// Average horse speed will result in max damage
 	public static final float DamageBonusThrowMultiplier = 2.0f;
@@ -233,6 +239,8 @@ public class Defaults
 	public static final float Reach2Value = 7.0f;
 	public static final float Sweep1Percentage = 50.0f;
 	public static final float Sweep2Percentage = 100.0f;
+	public static final float WideSweepPercentage = 100.0f;
+	public static final float WideSweepAdditionalRange = 1.0f;
 	public static final float ArmorPiercePercentage = 50.0f;
 	
 	// General Options

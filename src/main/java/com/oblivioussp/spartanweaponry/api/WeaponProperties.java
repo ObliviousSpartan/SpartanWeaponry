@@ -18,6 +18,7 @@ public class WeaponProperties
 								PROPERTY_TYPE_TWO_HANDED = "two_handed",
 								PROPERTY_TYPE_EXTRA_DAMAGE = "extra_damage",
 								PROPERTY_TYPE_EXTRA_DAMAGE_CHEST = "extra_damage_chest",
+								PROPERTY_TYPE_EXTRA_DAMAGE_HEAD = "extra_damage_head",
 								PROPERTY_TYPE_EXTRA_DAMAGE_RIDING = "extra_damage_riding",
 								PROPERTY_TYPE_EXTRA_DAMAGE_THROWN = "extra_damage_thrown",
 								PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED = "extra_damage_unarmoured",
@@ -26,6 +27,7 @@ public class WeaponProperties
 								PROPERTY_TYPE_DAMAGE_ABSORB = "damage_absorb",
 								PROPERTY_TYPE_REACH = "reach",
 								PROPERTY_TYPE_SWEEP_DAMAGE = "sweep_damage",
+								PROPERTY_TYPE_WIDE_SWEEP = "wide_sweep",
 								PROPERTY_TYPE_KNOCKBACK = "knockback",
 								PROPERTY_TYPE_NAUSEA = "nausea",
 								PROPERTY_TYPE_ARMOUR_PIERCING = "armour_piercing",
@@ -39,6 +41,7 @@ public class WeaponProperties
 	public static final WeaponProperty TWO_HANDED_1 = new WeaponPropertyTwoHanded(PROPERTY_TYPE_TWO_HANDED, SpartanWeaponryAPI.ModID, 1, 0.5f);
 	public static final WeaponProperty TWO_HANDED_2 = new WeaponPropertyTwoHanded(PROPERTY_TYPE_TWO_HANDED, SpartanWeaponryAPI.ModID, 2, 0.75f);
 	public static final WeaponProperty EXTRA_DAMAGE_2_CHEST = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_CHEST, SpartanWeaponryAPI.ModID, 2.0f);
+	public static final WeaponProperty EXTRA_DAMAGE_2_HEAD = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_HEAD, SpartanWeaponryAPI.ModID, 2.0f);
 	public static final WeaponProperty EXTRA_DAMAGE_2_RIDING = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_RIDING, SpartanWeaponryAPI.ModID, 2.0f);
 	public static final WeaponProperty EXTRA_DAMAGE_2_THROWN = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_THROWN, SpartanWeaponryAPI.ModID, 2.0f);
 	public static final WeaponProperty EXTRA_DAMAGE_3_THROWN = new WeaponPropertyExtraDamage(PROPERTY_TYPE_EXTRA_DAMAGE_THROWN, SpartanWeaponryAPI.ModID, 3.0f);
@@ -51,6 +54,7 @@ public class WeaponProperties
 	public static final WeaponProperty SWEEP_DAMAGE_NORMAL = new WeaponPropertySweepDamage(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID, 1, 1.0f);
 	public static final WeaponProperty SWEEP_DAMAGE_HALF = new WeaponPropertySweepDamage(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID, 2, 50.0f);
 	public static final WeaponProperty SWEEP_DAMAGE_FULL = new WeaponPropertySweepDamage(PROPERTY_TYPE_SWEEP_DAMAGE, SpartanWeaponryAPI.ModID, 3, 100.0f);
+	public static final WeaponProperty WIDE_SWEEP = new WeaponPropertySweepDamage(PROPERTY_TYPE_WIDE_SWEEP, SpartanWeaponryAPI.ModID, 1, 100.0f);
 	public static final WeaponProperty KNOCKBACK = new WeaponPropertyKnockback(PROPERTY_TYPE_KNOCKBACK, SpartanWeaponryAPI.ModID);
 	public static final WeaponProperty NAUSEA = new WeaponPropertyNausea(PROPERTY_TYPE_NAUSEA, SpartanWeaponryAPI.ModID, 5.0f);
 	public static final WeaponProperty ARMOUR_PIERCING_50 = new WeaponPropertyWithMagnitude(PROPERTY_TYPE_ARMOUR_PIERCING, SpartanWeaponryAPI.ModID, 50.0f);

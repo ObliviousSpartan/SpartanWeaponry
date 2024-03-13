@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ii ",
+    "  i",
+    " p "
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    "p": {
+      "item": "spartanweaponry:material",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "spartanweaponry:scythe_stone"
+  },
+  "conditions": [
+    {
+      "type": "item_exists",
+      "item": "spartanweaponry:scythe_stone"
+    }
+  ]
+}

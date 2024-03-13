@@ -2,9 +2,7 @@ package com.oblivioussp.spartanweaponry.init;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import com.google.common.collect.ImmutableMap;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.WeaponProperties;
@@ -47,6 +45,7 @@ import com.oblivioussp.spartanweaponry.item.ItemQuiverArrow;
 import com.oblivioussp.spartanweaponry.item.ItemQuiverBolt;
 import com.oblivioussp.spartanweaponry.item.ItemRapier;
 import com.oblivioussp.spartanweaponry.item.ItemSaber;
+import com.oblivioussp.spartanweaponry.item.ItemScythe;
 import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemSwordBase;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
@@ -56,16 +55,10 @@ import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 import com.oblivioussp.spartanweaponry.util.Log;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.RegistryEvent.MissingMappings.Mapping;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @EventBusSubscriber(modid = ModSpartanWeaponry.ID)
@@ -92,6 +85,7 @@ public class ItemRegistrySW
 	public static ItemSwordBase daggerWood, daggerStone, daggerIron, daggerGold, daggerDiamond;
 	public static ItemSwordBase longswordWood, longswordStone, longswordIron, longswordGold, longswordDiamond;
 	public static ItemSwordBase katanaWood, katanaStone, katanaIron, katanaGold, katanaDiamond;
+	public static ItemSwordBase scytheWood, scytheStone, scytheIron, scytheGold, scytheDiamond;
 	public static ItemSwordBase saberWood, saberStone, saberIron,saberGold, saberDiamond;
 	public static ItemSwordBase rapierWood, rapierStone, rapierIron, rapierGold, rapierDiamond;
 	public static ItemSwordBase greatswordWood, greatswordStone, greatswordIron, greatswordGold, greatswordDiamond;
@@ -171,6 +165,16 @@ public class ItemRegistrySW
 			katanaGold = new ItemKatana("katana_gold", ToolMaterialEx.GOLD);
 			katanaDiamond = new ItemKatana("katana_diamond", ToolMaterialEx.DIAMOND);
 			addItemsToRegister(katanaWood, katanaStone, katanaIron, katanaGold, katanaDiamond);
+		}
+
+		if(!ConfigHandler.disableScythe)
+		{
+			scytheWood = new ItemScythe("scythe_wood", ToolMaterialEx.WOOD);
+			scytheStone = new ItemScythe("scythe_stone", ToolMaterialEx.STONE);
+			scytheIron = new ItemScythe("scythe_iron", ToolMaterialEx.IRON);
+			scytheGold = new ItemScythe("scythe_gold", ToolMaterialEx.GOLD);
+			scytheDiamond = new ItemScythe("scythe_diamond", ToolMaterialEx.DIAMOND);
+			addItemsToRegister(scytheWood, scytheStone, scytheIron, scytheGold, scytheDiamond);
 		}
 		
 		if(!ConfigHandler.disableSaber)
@@ -515,6 +519,7 @@ public class ItemRegistrySW
 			ItemSwordBase dagger = new ItemDagger("dagger_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
 			ItemSwordBase longsword = new ItemLongsword("longsword_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
 			ItemSwordBase katana = new ItemKatana("katana_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
+			ItemSwordBase scythe = new ItemScythe("scythe_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
 			ItemSwordBase saber = new ItemSaber("saber_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
 			ItemSwordBase rapier = new ItemRapier("rapier_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
 			ItemSwordBase greatsword = new ItemGreatsword("greatsword_" + material.getUnlocName(), ModSpartanWeaponry.ID, material);
@@ -550,6 +555,11 @@ public class ItemRegistrySW
 			{
 				customWeapons.add(katana);
 				ModelRenderRegistry.addItemToRegistry(katana, katana.getRegistryName(), material);
+			}
+			if(!ConfigHandler.disableScythe)
+			{
+				customWeapons.add(scythe);
+				ModelRenderRegistry.addItemToRegistry(scythe, scythe.getRegistryName(), material);
 			}
 			if(!ConfigHandler.disableSaber)
 			{

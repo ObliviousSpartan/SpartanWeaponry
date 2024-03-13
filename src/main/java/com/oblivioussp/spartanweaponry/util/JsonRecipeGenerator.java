@@ -39,6 +39,9 @@ public class JsonRecipeGenerator
 			generateOneRecipe("katana_" + material.getUnlocName(), subDir, material, 
 					ModSpartanWeaponry.ID + ":katana_" + material.getUnlocName(),
 					new String[] {"  i", " i ", "h  "}, true, false, false);
+			generateOneRecipe("scythe_" + material.getUnlocName(), subDir, material,
+					ModSpartanWeaponry.ID + ":scythe_" + material.getUnlocName(),
+					new String[] {"ii ", "  i", " p "}, false, true, false);
 			generateOneRecipe("saber_" + material.getUnlocName(), subDir, material, 
 					ModSpartanWeaponry.ID + ":saber_" + material.getUnlocName(),
 					new String[] {" i", " i", "ih"}, true, false, false);

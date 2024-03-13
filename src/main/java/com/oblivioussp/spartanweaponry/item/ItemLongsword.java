@@ -8,7 +8,7 @@ public class ItemLongsword extends ItemSwordBase
 {
 	public ItemLongsword(String unlocName, ToolMaterialEx material)
 	{
-		super(unlocName, material, ConfigHandler.damageBaseLongsword, ConfigHandler.damageMultiplierLongsword, ConfigHandler.speedLongsword, WeaponProperties.SWEEP_DAMAGE_NORMAL, WeaponProperties.TWO_HANDED_1);
+		super(unlocName, material, ConfigHandler.damageBaseLongsword, ConfigHandler.damageMultiplierLongsword, ConfigHandler.speedLongsword, WeaponProperties.TWO_HANDED_1, WeaponProperties.SWEEP_DAMAGE_NORMAL);
 		displayName = "longsword_custom";
 	}
 	
