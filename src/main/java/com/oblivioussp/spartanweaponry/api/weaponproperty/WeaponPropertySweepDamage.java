@@ -17,7 +17,7 @@ public class WeaponPropertySweepDamage extends WeaponPropertyWithMagnitude
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) 
 	{
-		if(level == 1)
+		if(magnitude <= 1F)
 			tooltip.add(TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc.normal", "tooltip", modId, magnitude));
 		else
 			super.addTooltipDescription(stack, tooltip);

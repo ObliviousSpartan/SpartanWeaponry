@@ -25,6 +25,7 @@ public class DamageHelper
 		DAGGER,
 		LONGSWORD,
 		KATANA,
+		SCYTHE,
 		SABER,
 		RAPIER,
 		GREATSWORD,
@@ -56,6 +57,8 @@ public class DamageHelper
 			return 4.5f + (baseDamage * 1.5f);
 		case KATANA:
 			return 3.5f + (baseDamage * 0.5f);
+		case SCYTHE:
+			return 5.0f + baseDamage;
 		case SABER:
 			return 4.5f + (baseDamage * 0.5f);
 		case RAPIER:

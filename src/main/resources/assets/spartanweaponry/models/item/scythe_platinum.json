@@ -1,0 +1,8 @@
+{
+    "parent":"spartanweaponry:item/scythe_wood",
+    "textures": {
+        "layer0":"spartanweaponry:items/custom/scythe_layer_0",
+        "layer1":"spartanweaponry:items/custom/scythe_layer_1",
+        "layer2":"spartanweaponry:items/custom/scythe_layer_2"
+    }
+}

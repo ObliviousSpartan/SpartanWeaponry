@@ -39,8 +39,9 @@ public class WeaponPropertyExtraDamage extends WeaponPropertyWithCallback
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip) 
 	{
-		if(ConfigHandler.damageBonusCheckArmorValue && (type == WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_CHEST || 
-				type == WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED))
+		if(ConfigHandler.damageBonusCheckArmorValue && (type == WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_CHEST
+				|| type == WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_HEAD
+				|| type == WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED))
 			tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc.armor_points", "tooltip", modId, MathHelper.floor((magnitude - 1.0f) * 100.0f), ConfigHandler.damageBonusMaxArmorValue));
 		else
 			tooltip.add(TextFormatting.GRAY + "" + TextFormatting.ITALIC + "  " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type + ".desc", "tooltip", modId, MathHelper.floor((magnitude - 1.0f) * 100.0f)));
@@ -59,6 +60,10 @@ public class WeaponPropertyExtraDamage extends WeaponPropertyWithCallback
 				if(victim.getItemStackFromSlot(EntityEquipmentSlot.CHEST).isEmpty())
 					return !ConfigHandler.damageBonusCheckArmorValue || victim.getEntityAttribute(SharedMonsterAttributes.ARMOR).getBaseValue() <= ConfigHandler.damageBonusMaxArmorValue
 						? baseDamage + bonusDamage : baseDamage;
+			case(WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_HEAD):
+				if(victim.getItemStackFromSlot(EntityEquipmentSlot.HEAD).isEmpty())
+					return !ConfigHandler.damageBonusCheckArmorValue || victim.getEntityAttribute(SharedMonsterAttributes.ARMOR).getBaseValue() <= ConfigHandler.damageBonusMaxArmorValue
+							? baseDamage + bonusDamage : baseDamage;
 			case(WeaponProperties.PROPERTY_TYPE_EXTRA_DAMAGE_UNARMOURED):
 			{
 				if(victim.getItemStackFromSlot(EntityEquipmentSlot.HEAD).isEmpty() && victim.getItemStackFromSlot(EntityEquipmentSlot.CHEST).isEmpty() &&

@@ -94,7 +94,33 @@ public interface IInternalMethodHandler
 	 * @return The newly created Katana item
 	 */
 	public abstract Item addKatana(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
-	
+
+	/**
+	 * @deprecated Damage parameter no longer does anything. Use {@link #addScythe(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
+	 * Creates a Scythe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param damage The damage inflicted. This no longer works due to internal changes to the mod
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Scythe item
+	 */
+	@Deprecated
+	public default Item addScythe(ToolMaterialEx material, String modId, float damage, CreativeTabs tab, WeaponProperty... properties)
+	{
+		return addScythe(material, modId, tab, properties);
+	}
+
+	/**
+	 * Creates a Scythe item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.
+	 * @param material The weapon material
+	 * @param modId The mod ID for the mod calling this
+	 * @param tab The Creative Tab the item will show up in
+	 * @param properties Additional Weapon Properties to add to the weapon
+	 * @return The newly created Scythe item
+	 */
+	public abstract Item addScythe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties);
+
 	/**
 	 * @deprecated Damage parameter no longer does anything. Use {@link #addSaber(ToolMaterialEx, String, CreativeTabs, WeaponProperty...)} instead.<br>
 	 * Creates a Saber item while adding additional Weapon Properties. Does *NOT* register the item. The addon author will have to do that.

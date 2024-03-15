@@ -8,8 +8,8 @@ public class ItemKatana extends ItemSwordBase
 {
 	public ItemKatana(String unlocName, ToolMaterialEx material) 
 	{
-		super(unlocName, material, ConfigHandler.damageBaseKatana, ConfigHandler.damageMultiplierKatana, ConfigHandler.speedKatana, WeaponProperties.SWEEP_DAMAGE_NORMAL, 
-				WeaponProperties.TWO_HANDED_1, WeaponProperties.EXTRA_DAMAGE_2_CHEST);
+		super(unlocName, material, ConfigHandler.damageBaseKatana, ConfigHandler.damageMultiplierKatana, ConfigHandler.speedKatana, WeaponProperties.TWO_HANDED_1,
+				WeaponProperties.SWEEP_DAMAGE_NORMAL, WeaponProperties.EXTRA_DAMAGE_2_CHEST);
 		displayName = "katana_custom";
 	}
 	

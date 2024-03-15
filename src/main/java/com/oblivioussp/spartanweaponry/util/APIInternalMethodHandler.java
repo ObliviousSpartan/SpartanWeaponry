@@ -29,6 +29,7 @@ import com.oblivioussp.spartanweaponry.item.ItemSpear;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingAxe;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingKnife;
 import com.oblivioussp.spartanweaponry.item.ItemWarhammer;
+import com.oblivioussp.spartanweaponry.item.ItemScythe;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -92,6 +93,22 @@ public class APIInternalMethodHandler implements IInternalMethodHandler
 			katana.addWeaponProperty(prop);
 		}
 		return katana;
+	}
+
+	@Override
+	public Item addScythe(ToolMaterialEx material, String modId, CreativeTabs tab, WeaponProperty... properties)
+	{
+		if(ConfigHandler.disableScythe)
+			return null;
+
+		ItemScythe scythe = new ItemScythe("scythe_" + material.getUnlocName(), modId, material);
+		scythe.setCreativeTab(tab);
+
+		for(WeaponProperty prop : properties)
+		{
+			scythe.addWeaponProperty(prop);
+		}
+		return scythe;
 	}
 
 	@Override

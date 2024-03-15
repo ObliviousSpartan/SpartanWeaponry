@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "spartanweaponry:scythe_iron"
+    },
+    "title": {
+      "translate": "advancement.spartanweaponry:craftScythe"
+    },
+    "description": {
+      "translate": "advancement.spartanweaponry:craftScythe.desc"
+    }
+  },
+  "parent": "spartanweaponry:melee",
+  "criteria": {
+    "craft": {
+      "trigger": "craft_item",
+      "conditions": {
+        "className": "com.oblivioussp.spartanweaponry.item.ItemScythe"
+      }
+    }
+  }
+}

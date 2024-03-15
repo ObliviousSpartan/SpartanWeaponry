@@ -64,6 +64,7 @@ public class CreativeTabsSW
 		if(!ConfigHandler.disableLongsword)				return ItemRegistrySW.longswordDiamond;
 		else if(!ConfigHandler.disableGreatsword)		return ItemRegistrySW.greatswordDiamond;
 		else if(!ConfigHandler.disableKatana)			return ItemRegistrySW.katanaDiamond;
+		else if(!ConfigHandler.disableScythe)			return ItemRegistrySW.scytheDiamond;
 		else if(!ConfigHandler.disableSaber)			return ItemRegistrySW.saberDiamond;
 		else if(!ConfigHandler.disableRapier)			return ItemRegistrySW.rapierDiamond;
 		else if(!ConfigHandler.disableHammer)			return ItemRegistrySW.hammerDiamond;
@@ -88,6 +89,7 @@ public class CreativeTabsSW
 		if(!ConfigHandler.disableGreatsword)			return "spartanweaponry:greatsword_copper";
 		else if(!ConfigHandler.disableLongsword)		return "spartanweaponry:longsword_copper";
 		else if(!ConfigHandler.disableKatana)			return "spartanweaponry:katana_copper";
+		else if(!ConfigHandler.disableScythe)			return "spartanweaponry:scythe_copper";
 		else if(!ConfigHandler.disableSaber)			return "spartanweaponry:saber_copper";
 		else if(!ConfigHandler.disableRapier)			return "spartanweaponry:rapier_copper";
 		else if(!ConfigHandler.disableHammer)			return "spartanweaponry:hammer_copper";

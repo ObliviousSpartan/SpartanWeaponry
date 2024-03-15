@@ -13,7 +13,6 @@ import com.oblivioussp.spartanweaponry.client.gui.AlignmentHelper.Alignment;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -111,6 +110,14 @@ public class ConfigHandler
 	public static boolean disableKatana = false;
 	public static float damageBaseKatana = Defaults.DamageBaseKatana;
 	public static float damageMultiplierKatana = Defaults.DamageMultiplierKatana;
+
+	// ---- ---- ---- ---- ---- ---- ---- ----
+	// Scythe
+	// ---- ---- ---- ---- ---- ---- ---- ----
+	public static float speedScythe = Defaults.SpeedScythe;
+	public static boolean disableScythe = false;
+	public static float damageBaseScythe = Defaults.DamageBaseScythe;
+	public static float damageMultiplierScythe = Defaults.DamageMultiplierScythe;
 
 	// ---- ---- ---- ---- ---- ---- ---- ----
 	// Saber
@@ -326,6 +333,7 @@ public class ConfigHandler
 	// Weapon Properties
 	// ---- ---- ---- ---- ---- ---- ---- ----
 	public static float damageBonusChestMultiplier = Defaults.DamageBonusChestMultiplier;
+	public static float damageBonusHeadMultiplier = Defaults.DamageBonusHeadMultiplier;
 	public static float damageBonusRidingMultiplier = Defaults.DamageBonusRidingMultiplier;
 	public static boolean damageBonusRidingCheckSpeed = true;
 	public static float damageBonusRidingSpeedMax = Defaults.DamageBonusRidingSpeedMax;
@@ -341,6 +349,8 @@ public class ConfigHandler
 	public static float twoHanded2Value = Defaults.TwoHanded2Value;
 	public static float reach1Value = Defaults.Reach1Value;
 	public static float reach2Value = Defaults.Reach2Value;
+	public static float wideSweepPercentage = Defaults.WideSweepPercentage;
+	public static float wideSweepAdditionalRange = Defaults.WideSweepAdditionalRange;
 	public static float sweep1Percentage = Defaults.Sweep1Percentage;
 	public static float sweep2Percentage = Defaults.Sweep2Percentage;
 	public static float armorPiercePercentage = Defaults.ArmorPiercePercentage;
@@ -377,6 +387,7 @@ public class ConfigHandler
 	public static final String categoryParryingDagger = "parrying_dagger";
 	public static final String categoryLongsword = "longsword";
 	public static final String categoryKatana = "katana";
+	public static final String categoryScythe = "scythe";
 	public static final String categorySaber = "saber";
 	public static final String categoryRapier = "rapier";
 	public static final String categoryGreatsword = "greatsword";
@@ -403,7 +414,7 @@ public class ConfigHandler
 	public static final String categoryWeaponProperties = "weapon_properties";
 	
 	public static final String[] categories = {Configuration.CATEGORY_GENERAL, Configuration.CATEGORY_CLIENT, categoryMaterials, categoryDagger, categoryParryingDagger, categoryLongsword,
-			categoryKatana, categorySaber, categoryRapier, categoryGreatsword, categoryCaestus, categoryClub,
+			categoryKatana, categoryScythe, categorySaber, categoryRapier, categoryGreatsword, categoryCaestus, categoryClub,
 			categoryHammer, categoryWarhammer, categorySpear, categoryHalberd, categoryPike, categoryLance, 
 			categoryLongbow, categoryCrossbow, categoryThrowingKnife, categoryThrowingAxe, categoryJavelin, 
 			categoryBoomerang, categoryBattleaxe, categoryMace, categoryGlaive, categoryQuarterstaff, categoryArrows, categoryExplosives,
@@ -558,6 +569,14 @@ public class ConfigHandler
 		damageMultiplierKatana = getFloat("damageMultiplier", categoryKatana, Defaults.DamageMultiplierKatana, 0.1f, 100.0f, "Damage Multiplier. Final damage of weapons are calculated with the formula: ([WeaponMultiplier] * [BaseMaterialDamage]) + [WeaponBaseDamage]");
 		damageBaseKatana = getFloat("damageBase", categoryKatana, Defaults.DamageBaseKatana, 0.1f, 100.0f, "Base Damage. Will be the same damage as the Wooden version of this weapon");
 		speedKatana = getFloat("speed", categoryKatana, Defaults.SpeedKatana, 0.1f, 20.0f, "Affects the overall speed of attacks with this weapon");
+
+		// ---- ---- ---- ---- ---- ---- ---- ----
+		// Scythe
+		// ---- ---- ---- ---- ---- ---- ---- ----
+		disableScythe = getBoolean("disableWeapon", categoryScythe, false, "Disables all weapons of this type in this mod");
+		damageMultiplierScythe = getFloat("damageMultiplier", categoryScythe, Defaults.DamageMultiplierScythe, 0.1f, 100.0f, "Damage Multiplier. Final damage of weapons are calculated with the formula: ([WeaponMultiplier] * [BaseMaterialDamage]) + [WeaponBaseDamage]");
+		damageBaseScythe = getFloat("damageBase", categoryScythe, Defaults.DamageBaseScythe, 0.1f, 100.0f, "Base Damage. Will be the same damage as the Wooden version of this weapon");
+		speedScythe = getFloat("speed", categoryScythe, Defaults.SpeedScythe, 0.1f, 20.0f, "Affects the overall speed of attacks with this weapon");
 
 		// ---- ---- ---- ---- ---- ---- ---- ----
 		// Saber
@@ -780,6 +799,7 @@ public class ConfigHandler
 		// Weapon properties
 		// ---- ---- ---- ---- ---- ---- ---- ----
 		damageBonusChestMultiplier = getFloat("damageBonusChestMultiplier", categoryWeaponProperties, Defaults.DamageBonusChestMultiplier, 1.0f, 50.0f, "Changes the \"Chest Damage Bonus\" Weapon Property multiplier value");
+		damageBonusHeadMultiplier = getFloat("damageBonusHeadMultiplier", categoryWeaponProperties, Defaults.DamageBonusHeadMultiplier, 1.0f, 50.0f, "Changes the \"Head Damage Bonus\" Weapon Property multiplier value");
 		damageBonusRidingMultiplier = getFloat("damageBonusRidingMultiplier", categoryWeaponProperties, Defaults.DamageBonusRidingMultiplier, 1.0f, 50.0f, "Changes the \"Riding Damage Bonus\" Weapon Property multiplier value");
 		damageBonusRidingCheckSpeed = getBoolean("damageBonusRidingCheckSpeed", categoryWeaponProperties, true, "If true, checks the speed of the player/mount to scale the \"Riding Damage Bonus\" against. Might not be fully compatible with some mods, so it can be disabled if necessary");
 		damageBonusRidingSpeedMax = getFloat("damageBonusRidingVelocityMax", categoryWeaponProperties, Defaults.DamageBonusRidingSpeedMax, 0.0f, 10.0f, "Changes the speed required for maximum \"Riding Damage Bonus\" to take effect. Adjusting this value scales how much bonus damage is received");
@@ -797,11 +817,14 @@ public class ConfigHandler
 		reach2Value = getFloat("reach2Value", categoryWeaponProperties, Defaults.Reach2Value, 5.0f, 15.0f, "Changes the reach of any weapons withs the \"Reach II\" Weapon Property");
 		sweep1Percentage = getFloat("sweep1Percentage", categoryWeaponProperties, Defaults.Sweep1Percentage, 0.0f, 100.0f, "Changes the percentage of damage inflicted to enemies when sweep attacked on weapons with the \"Sweep I\" Weapon Property");
 		sweep2Percentage = getFloat("sweep2Percentage", categoryWeaponProperties, Defaults.Sweep2Percentage, 0.0f, 100.0f, "Changes the percentage of damage inflicted to enemies when sweep attacked on weapons with the \"Sweep II\" Weapon Property");
+		wideSweepPercentage = getFloat("wideSweepPercentage", categoryWeaponProperties, Defaults.WideSweepPercentage, 0.0f, 100.0f, "Changes the percentage of damage inflicted to enemies when sweep attacked on weapons with the \"Wide Sweep\" Weapon Property");
+		wideSweepAdditionalRange = getFloat("wideSweepAdditionalRange", categoryWeaponProperties, Defaults.WideSweepAdditionalRange, 0.0f, 3.0f, "Increases the maximum range of the sweep attack on weapons with the \"Wide Sweep\" Weapon Property");
 		armorPiercePercentage = getFloat("armorPiercePercentage", categoryWeaponProperties, Defaults.ArmorPiercePercentage, 0.0f, 100.0f, "Changes the percentage of damage that ignores armor on weapons with the \"Armor Piercing\" Weapon Property");
 		quickStrikeHurtResistTicks = getInt("quickStrikeHurtResistTicks", categoryWeaponProperties, Defaults.QuickStrikeHurtResistTicks, 10, 20, "Tweaks the hurt resistance ticks for weapons that use the \"Quick Strike\" Weapon Property");
 		
 		// Update Weapon Property magnitudes
 		WeaponProperties.EXTRA_DAMAGE_2_CHEST.setMagnitude(damageBonusChestMultiplier);
+		WeaponProperties.EXTRA_DAMAGE_2_HEAD.setMagnitude(damageBonusHeadMultiplier);
 		WeaponProperties.EXTRA_DAMAGE_2_RIDING.setMagnitude(damageBonusRidingMultiplier);
 		WeaponProperties.EXTRA_DAMAGE_2_THROWN.setMagnitude(damageBonusThrowMultiplier);
 		WeaponProperties.EXTRA_DAMAGE_3_THROWN.setMagnitude(damageBonusThrowJavelinMultiplier);
@@ -815,6 +838,7 @@ public class ConfigHandler
 		WeaponProperties.REACH_2.setMagnitude(reach2Value);
 		WeaponProperties.SWEEP_DAMAGE_HALF.setMagnitude(sweep1Percentage);
 		WeaponProperties.SWEEP_DAMAGE_FULL.setMagnitude(sweep2Percentage);
+		WeaponProperties.WIDE_SWEEP.setMagnitude(wideSweepPercentage);
 		WeaponProperties.ARMOUR_PIERCING_50.setMagnitude(armorPiercePercentage);
 		
 		// ---- ---- ---- ---- ---- ---- ---- ----
