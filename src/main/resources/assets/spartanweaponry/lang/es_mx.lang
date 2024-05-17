@@ -1,0 +1,755 @@
+#Localisation for Spartan Weaponry version 1.4.x
+## Translated by KameiB
+
+#Items
+item.spartanweaponry:handle.name=Mango
+item.spartanweaponry:pole.name=Asta
+item.spartanweaponry:explosive_charge.name=Carga explosiva
+
+item.spartanweaponry:caestus.name=Caestus
+item.spartanweaponry:caestus_studded.name=Caestus con tachuelas
+
+item.spartanweaponry:club_wood.name=Garrote de madera
+item.spartanweaponry:club_studded.name=Garrote con tachuelas
+
+item.spartanweaponry:longbow_wood.name=Arco largo de madera
+item.spartanweaponry:longbow_leather.name=Arco largo de cuero
+item.spartanweaponry:longbow_iron.name=Arco largo de hierro
+item.spartanweaponry:longbow_diamond.name=Arco largo de diamante
+
+#Arrows
+item.spartanweaponry:arrow_wood.name=Flecha de madera
+item.spartanweaponry:arrow_flint.name=Flecha de pedernal
+item.spartanweaponry:arrow_iron.name=Flecha de hierro
+item.spartanweaponry:arrow_diamond.name=Flecha de diamante
+item.spartanweaponry:arrow_explosive.name=Flecha explosiva
+
+item.spartanweaponry:quiver_arrow.name=Carcaj para flechas ligero
+item.spartanweaponry:quiver_arrow_moderate.name=Carcaj para flechas mediano
+item.spartanweaponry:quiver_arrow_heavy.name=Carcaj para flechas pesado
+
+#Bolts
+item.spartanweaponry:bolt.name=Saeta
+item.spartanweaponry:bolt_spectral.name=Saeta espectral
+item.spartanweaponry:bolt_diamond.name=Saeta de diamante
+item.spartanweaponry:quiver_bolt.name=Carcaj para saetas ligero
+item.spartanweaponry:quiver_bolt_moderate.name=Carcaj para saetas mediano
+item.spartanweaponry:quiver_bolt_heavy.name=Carcaj para saetas pesado
+
+#Weapon Oils
+item.spartanweaponry:weapon_oil.name=Aceite para armas
+
+#Vanilla Tipped Projectiles
+item.spartanweaponry:proj_tipped.name=%s con punta
+item.spartanweaponry:proj_tipped.empty=%s con punta no crafteable
+item.spartanweaponry:proj_tipped.mundane=%s con punta banal
+item.spartanweaponry:proj_tipped.thick=%s con punta espesa
+item.spartanweaponry:proj_tipped.awkward=%s con punta rara
+item.spartanweaponry:proj_tipped.night_vision=%s de Vision nocturna
+item.spartanweaponry:proj_tipped.invisibility=%s de Invisibilidad
+item.spartanweaponry:proj_tipped.leaping=%s de Supersalto
+item.spartanweaponry:proj_tipped.fire_resistance=%s de Resis. al fuego
+item.spartanweaponry:proj_tipped.swiftness=%s de Velocidad
+item.spartanweaponry:proj_tipped.slowness=%s de Lentitud
+item.spartanweaponry:proj_tipped.water=%s de agua
+item.spartanweaponry:proj_tipped.water_breathing=%s de Respiracion
+item.spartanweaponry:proj_tipped.healing=%s de Curacion
+item.spartanweaponry:proj_tipped.harming=%s de Daño
+item.spartanweaponry:proj_tipped.poison=%s de Veneno
+item.spartanweaponry:proj_tipped.regeneration=%s de Regeneracion
+item.spartanweaponry:proj_tipped.strength=%s de Fuerza
+item.spartanweaponry:proj_tipped.weakness=%s de Debilidad
+item.spartanweaponry:proj_tipped.levitation=%s de Levitacion
+item.spartanweaponry:proj_tipped.luck=%s de Suerte
+
+#Extra Utilities 2 Tipped Projectiles
+item.spartanweaponry:proj_tipped.xu2.doom=%s de la MUERTE!
+item.spartanweaponry:proj_tipped.xu2.gravity=%s de Gravedad
+item.spartanweaponry:proj_tipped.xu2.gravity.long=%s de Gravedad
+item.spartanweaponry:proj_tipped.xu2.second.chance=%s de 2da oportunidad
+item.spartanweaponry:proj_tipped.xu2.greek.fire=%s de Fuego griego
+item.spartanweaponry:proj_tipped.oily=%s aceitosa
+item.spartanweaponry:proj_tipped.xu2.fizzy.lifting=%s de Levante gaseoso
+item.spartanweaponry:proj_tipped.xu2.relapse=%s de Recaida
+item.spartanweaponry:proj_tipped.xu2.love=%s de Amor
+item.spartanweaponry:proj_tipped.xu2.purging=%s de Purga
+
+#Extra Alchemy Tipped Projectiles
+item.spartanweaponry:proj_tipped.fuse=%s de Fusion
+item.spartanweaponry:proj_tipped.recall=%s de Retirada
+item.spartanweaponry:proj_tipped.sinking=%s de Hundimiento
+item.spartanweaponry:proj_tipped.freezing=%s de Congelamiento
+item.spartanweaponry:proj_tipped.dislocation=%s de Dislocacion
+item.spartanweaponry:proj_tipped.magnetism=%s de Magnetismo
+item.spartanweaponry:proj_tipped.piper=%s de Piper
+item.spartanweaponry:proj_tipped.pacifism=%s de Pacifismo
+item.spartanweaponry:proj_tipped.crumbling=%s de Desmoronamiento
+item.spartanweaponry:proj_tipped.concentration=%s de Concentracion
+item.spartanweaponry:proj_tipped.return=%s de Retorno
+item.spartanweaponry:proj_tipped.photosynthesis=%s de Fotosintesis
+item.spartanweaponry:proj_tipped.hurry=%s de Prisa
+item.spartanweaponry:proj_tipped.cheatDeath_quiescent=%s de Muerte retrasada
+item.spartanweaponry:proj_tipped.charged=%s ligeramente cargada
+item.spartanweaponry:proj_tipped.charged2=%s mayormente cargada
+item.spartanweaponry:proj_tipped.reincarnation=%s de Reencarnacion
+item.spartanweaponry:proj_tipped.combustion=%s de Combustion
+item.spartanweaponry:proj_tipped.detection=%s de Deteccion
+item.spartanweaponry:proj_tipped.learning=%s de Aprendizaje
+item.spartanweaponry:proj_tipped.gravity=%s de Gravedad
+item.spartanweaponry:proj_tipped.leech=%s de Sanguijuela
+item.spartanweaponry:proj_tipped.sails=%s de los 7 mares
+item.spartanweaponry:proj_tipped.beheading=%s de Decapitacion
+item.spartanweaponry:proj_tipped.dispel=%s de Disipacion
+item.spartanweaponry:proj_tipped.pain=%s de Pena
+item.spartanweaponry:proj_tipped.push=%s de Repelente
+item.spartanweaponry:proj_tipped.pull=%s de Arrastrante
+
+#PotionCore Tipped Projectiles
+item.spartanweaponry:proj_tipped.saturation=%s de Saturacion
+item.spartanweaponry:proj_tipped.hunger=%s de Hambre
+item.spartanweaponry:proj_tipped.blindness=%s de Ceguera
+item.spartanweaponry:proj_tipped.nausea=%s de Nauseas
+item.spartanweaponry:proj_tipped.glowing=%s de Luminiscencia
+item.spartanweaponry:proj_tipped.health_boost=%s de Salud mejorada
+item.spartanweaponry:proj_tipped.unluck=%s de Mala suerte
+item.spartanweaponry:proj_tipped.love=%s de Amor
+item.spartanweaponry:proj_tipped.repair=%s de Reparacion
+item.spartanweaponry:proj_tipped.flight=%s de Vuelo
+item.spartanweaponry:proj_tipped.extension=%s de Extension
+item.spartanweaponry:proj_tipped.recoil=%s de Espinas
+item.spartanweaponry:proj_tipped.iron_skin=%s de Piel de hierro
+item.spartanweaponry:proj_tipped.purity=%s de Composicion
+item.spartanweaponry:proj_tipped.reach=%s de Alcance
+item.spartanweaponry:proj_tipped.diamond_skin=%s de Piel de diamante
+item.spartanweaponry:proj_tipped.teleport=%s de Teletr. aleatoria
+item.spartanweaponry:proj_tipped.teleport_surface=%s de Escape
+item.spartanweaponry:proj_tipped.magic_focus=%s de Enfoque magico
+item.spartanweaponry:proj_tipped.cure=%s de Cura
+item.spartanweaponry:proj_tipped.step_up=%s de Paso alto
+item.spartanweaponry:proj_tipped.drown=%s de Branquias
+item.spartanweaponry:proj_tipped.teleport_spawn=%s de Regreso a casa
+item.spartanweaponry:proj_tipped.disorganization=%s de Desorganizacion
+#item.spartanweaponry:proj_tipped.slimb=%s de Araña
+item.spartanweaponry:proj_tipped.perplexity=%s de Perplejidad
+item.spartanweaponry:proj_tipped.rust=%s de Oxidacion
+item.spartanweaponry:proj_tipped.vulnerable=%s de Vulnerabilidad
+item.spartanweaponry:proj_tipped.explode=%s de Explosion
+item.spartanweaponry:proj_tipped.solid_core=%s de Solidez
+item.spartanweaponry:proj_tipped.fire=%s de Combustion espontanea
+item.spartanweaponry:proj_tipped.lightning=%s de Relampago
+item.spartanweaponry:proj_tipped.magic_inhibition=%s de Inhib. magi
+item.spartanweaponry:proj_tipped.chance=%s del Azar
+item.spartanweaponry:proj_tipped.invert=%s de Inversion
+item.spartanweaponry:proj_tipped.weight=%s de Peso
+item.spartanweaponry:proj_tipped.launch=%s de Lanzamiento
+item.spartanweaponry:proj_tipped.revival=%s de Resurreccion
+item.spartanweaponry:proj_tipped.klutz=%s de Mala arqueria
+item.spartanweaponry:proj_tipped.bless=%s de Bendicion
+item.spartanweaponry:proj_tipped.broken_armor=%s de Penetracion
+item.spartanweaponry:proj_tipped.magic_shield=%s de Escudo magico
+item.spartanweaponry:proj_tipped.slow_fall=%s de Caida lenta
+item.spartanweaponry:proj_tipped.antidote=%s de Antidoto
+item.spartanweaponry:proj_tipped.curse=%s de Maldicion
+item.spartanweaponry:proj_tipped.burst=%s de Estallido
+item.spartanweaponry:proj_tipped.archery=%s de Arqueria
+item.spartanweaponry:proj_tipped.climb=%s de Araña
+item.spartanweaponry:proj_tipped.broken_magic_shield=%s de Vulner. magi
+item.spartanweaponry:proj_tipped.spin=%s de Rotacion
+
+#Cyclic Tipped Projectiles
+item.spartanweaponry:proj_tipped.slowfall=%s de Caida lenta
+item.spartanweaponry:proj_tipped.waterwalk=%s de Caminado sobre agua
+item.spartanweaponry:proj_tipped.snow=%s de Nieve
+item.spartanweaponry:proj_tipped.swim=%s de Nado rapido
+item.spartanweaponry:proj_tipped.swim2=%s de Nado rapido II
+item.spartanweaponry:proj_tipped.bounce=%s de Rebote
+item.spartanweaponry:proj_tipped.frostwalker=%s de Paso helado
+item.spartanweaponry:proj_tipped.magnet=%s de Magneto
+item.spartanweaponry:proj_tipped.haste2=%s de Prisa minera
+item.spartanweaponry:proj_tipped.resistance2=%s de Resistencia
+item.spartanweaponry:proj_tipped.healthboost=%s de Salud mejorada
+item.spartanweaponry:proj_tipped.ender=%s de Ender
+item.spartanweaponry:proj_tipped.butter=%s de Dedos de mantequilla
+item.spartanweaponry:proj_tipped.butter2=%s de Dedos de mantequilla II
+#Blindness and Saturation is already added by PotionCore and has the same localization key so none is needed here.
+
+#NetherEx Tipped Projectiles
+item.spartanweaponry:proj_tipped.netherex:freezing=%s de Congelamiento
+item.spartanweaponry:proj_tipped.netherex:frigid_health=%s de Salud frigida
+item.spartanweaponry:proj_tipped.netherex:dispersal=%s de Dispersion
+item.spartanweaponry:proj_tipped.netherex:sorrow=%s de Tristeza
+
+#Quark Tipped Projectiles
+item.spartanweaponry:proj_tipped.haste=%s de Prisa minera
+item.spartanweaponry:proj_tipped.mining_fatigue=%s de Fatiga minera
+item.spartanweaponry:proj_tipped.resistance=%s de Resistencia
+item.spartanweaponry:proj_tipped.danger_sight=%s de Sexto sentido
+item.spartanweaponry:proj_tipped.resilience=%s de Estabilidad
+
+#CoFH Core Tipped Projectiles
+item.spartanweaponry:proj_tipped.absorption=%s de Absorcion
+item.spartanweaponry:proj_tipped.wither=%s de Descomposicion
+
+#Ender IO Tipped Projectiles
+item.spartanweaponry:proj_tipped.enderio.withering=%s de Descomposicion
+item.spartanweaponry:proj_tipped.enderio.confusion=%s de Confusion
+item.spartanweaponry:proj_tipped.enderio.floating=%s de Flotacion
+
+#Tough as Nails Tipped Projectiles
+item.spartanweaponry:proj_tipped.cold_resistance_type=%s de Resis. al frio
+item.spartanweaponry:proj_tipped.long_cold_resistance_type=%s de Resis. al frio
+item.spartanweaponry:proj_tipped.heat_resistance_type=%s de Resis. al calor
+item.spartanweaponry:proj_tipped.long_heat_resistance_type=%s de Resis. al calor
+
+#Simple Difficulty Tipped Projectiles
+item.spartanweaponry:proj_tipped.cold_resist_type=%s de Resis. al frio
+item.spartanweaponry:proj_tipped.long_cold_resist_type=%s de Resis. al frio
+item.spartanweaponry:proj_tipped.heat_resist_type=%s de Resis. al calor
+item.spartanweaponry:proj_tipped.long_heat_resist_type=%s de Resis. al calor
+
+#Trinkets & Baubles Tipped Projectiles
+item.spartanweaponry:proj_tipped.enhanced=%s con punta mejorada
+item.spartanweaponry:proj_tipped.restorative=%s con punta de Restauracion
+item.spartanweaponry:proj_tipped.fairy=%s con punta de Transformacion en Hada
+item.spartanweaponry:proj_tipped.dwarf=%s con punta de Transformacion en Enano
+
+item.spartanweaponry:proj_tipped.xat.sparkling=%s con punta chispeante
+item.spartanweaponry:proj_tipped.xat.glittering=%s con punta reluciente
+item.spartanweaponry:proj_tipped.xat.glowing=%s con punta brillante
+item.spartanweaponry:proj_tipped.xat.restorative=%s con punta de Restauracion
+item.spartanweaponry:proj_tipped.xat.human=%s con punta de Transformacion en Normie
+item.spartanweaponry:proj_tipped.xat.fairy=%s con punta de Transformacion en Hada
+item.spartanweaponry:proj_tipped.xat.dwarf=%s con punta de Transformacion en Enano
+item.spartanweaponry:proj_tipped.xat.titan=%s con punta de Transformacion en Titan
+item.spartanweaponry:proj_tipped.xat.goblin=%s con punta de Transformacion en Goblin
+item.spartanweaponry:proj_tipped.xat.elf=%s con punta de Transformacion en Elfo
+item.spartanweaponry:proj_tipped.xat.faelis=%s con punta de Transformacion en Felino
+item.spartanweaponry:proj_tipped.xat.dragon=%s con punta de Transformacion en Dragon
+
+#Better Survival Tipped Projectiles
+item.spartanweaponry:proj_tipped.decay=%s de Descomposicion
+item.spartanweaponry:proj_tipped.warp=%s de Teletransporte
+item.spartanweaponry:proj_tipped.antiwarp=%s de Anti-teletrans.
+item.spartanweaponry:proj_tipped.milk=%s con lechita
+
+#Elenai Dodge Tipped Projectiles
+item.spartanweaponry:proj_tipped.forceful=%s de Vigor
+item.spartanweaponry:proj_tipped.feeble=%s de Flojera
+item.spartanweaponry:proj_tipped.sluggish=%s de Pereza
+item.spartanweaponry:proj_tipped.skystride=%s de Paso aereo
+
+#Parasites Tipped Projectiles
+item.spartanweaponry:proj_tipped.srparasites:coth=%s de Llamado de la colmena
+item.spartanweaponry:proj_tipped.srparasites:fear=%s de Terror
+item.spartanweaponry:proj_tipped.srparasites:antimall=%s de Inmaleabilidad
+item.spartanweaponry:proj_tipped.srparasites:corrosive=%s de Corrosion
+item.spartanweaponry:proj_tipped.srparasites:viral=%s de Virulencia
+item.spartanweaponry:proj_tipped.srparasites:repel=%s de Camuflaje
+item.spartanweaponry:proj_tipped.srparasites:rage=%s de Furia
+
+#Charm Tipped Projectiles
+item.spartanweaponry:proj_tipped.coffee=%s de Cafe
+item.spartanweaponry:proj_tipped.ender_sight=%s de Vista de ender
+
+item.spartanweaponry:crossbow_wood.name=Ballesta de madera
+item.spartanweaponry:crossbow_leather.name=Ballesta de cuero
+item.spartanweaponry:crossbow_iron.name=Ballesta de hierro
+item.spartanweaponry:crossbow_diamond.name=Ballesta de diamante
+
+item.spartanweaponry:dynamite.name=Dinamita
+
+item.spartanweaponry:ingot_custom.name=Lingote de %s
+item.spartanweaponry:dagger_custom.name=Daga arrojadiza de %s
+item.spartanweaponry:parrying_dagger_custom.name=Daga esquivadora de %s
+item.spartanweaponry:longsword_custom.name=Espada larga de %s
+item.spartanweaponry:katana_custom.name=Katana de %s
+item.spartanweaponry:scythe_custom.name=Guadaña de %s
+item.spartanweaponry:saber_custom.name=Sable de %s
+item.spartanweaponry:rapier_custom.name=Estoque de %s
+item.spartanweaponry:greatsword_custom.name=Gran espada de %s
+item.spartanweaponry:hammer_custom.name=Martillo espartano de %s
+item.spartanweaponry:warhammer_custom.name=Martillo belico de %s
+item.spartanweaponry:spear_custom.name=Hasta de %s
+item.spartanweaponry:halberd_custom.name=Alabarda de %s
+item.spartanweaponry:pike_custom.name=Pica de %s
+item.spartanweaponry:lance_custom.name=Lanza de %s
+item.spartanweaponry:longbow_custom.name=Arco largo de %s
+item.spartanweaponry:crossbow_custom.name=Ballesta de %s
+item.spartanweaponry:throwing_knife_custom.name=Cuchillo arrojadizo de %s
+item.spartanweaponry:throwing_axe_custom.name=Hacha arrojadiza de %s
+item.spartanweaponry:javelin_custom.name=Jabalina de %s
+item.spartanweaponry:boomerang_custom.name=Bumerang de %s
+item.spartanweaponry:battleaxe_custom.name=Hacha belica de %s
+item.spartanweaponry:mace_custom.name=Mazo de %s
+item.spartanweaponry:glaive_custom.name=Guja de %s
+item.spartanweaponry:quarterstaff_custom.name=Baston de %s
+
+#Materials
+material.spartanweaponry:wood=madera
+material.spartanweaponry:stone=piedra
+material.spartanweaponry:leather=cuero
+material.spartanweaponry:iron=hierro
+material.spartanweaponry:gold=oro
+material.spartanweaponry:diamond=diamante
+
+material.spartanweaponry:copper=cobre
+material.spartanweaponry:tin=estaño
+material.spartanweaponry:bronze=bronce
+material.spartanweaponry:steel=acero
+material.spartanweaponry:silver=plata
+material.spartanweaponry:invar=invar
+material.spartanweaponry:platinum=platino
+material.spartanweaponry:electrum=electrio
+material.spartanweaponry:nickel=niquel
+material.spartanweaponry:lead=plomo
+material.spartanweaponry:titanium=titanio
+
+#OreDicts
+material.spartanweaponry:ingotCopper=Lingote de cobre
+material.spartanweaponry:ingotTin=Lingote de estaño
+material.spartanweaponry:ingotBronze=Lingote de bronce
+material.spartanweaponry:ingotSteel=Lingote de acero
+material.spartanweaponry:ingotSilver=Lingote de plata
+material.spartanweaponry:ingotInvar=Lingote de invar
+material.spartanweaponry:ingotPlatinum=Lingote de platino
+material.spartanweaponry:ingotElectrum=Lingote de electrio
+material.spartanweaponry:ingotNickel=Lingote de niquel
+material.spartanweaponry:ingotLead=Lingote de plomo
+material.spartanweaponry:ingotTitanium=Lingote de titanio
+
+#Creative Tabs
+itemGroup.spartanweaponry:tabBasic.name=Spartan Weaponry: Materiales Vanilla
+itemGroup.spartanweaponry:tabModded.name=Spartan Weaponry: Materiales de Mods
+itemGroup.spartanweaponry:tabArrowsAndBolts.name=Spartan Weaponry: Flechas y Saetas
+
+#Entities
+entity.spartanweaponry:dagger_thrown.name=Daga
+entity.spartanweaponry:throwing_knife.name=Cuchillo arrojadizo
+entity.spartanweaponry:throwing_axe.name=Hacha arrojadiza
+entity.spartanweaponry:javelin_thrown.name=Jabalina
+entity.spartanweaponry:boomerang_thrown.name=Bumerang
+entity.spartanweaponry:bolt.name=Saeta
+entity.spartanweaponry:bolt_spectral.name=Saeta espectral
+entity.spartanweaponry:bolt_diamond.name=Saeta de diamante
+entity.spartanweaponry:arrow_wood.name=Flecha de madera
+entity.spartanweaponry:arrow_iron.name=Flecha de hierro
+entity.spartanweaponry:arrow_diamond.name=Flecha de diamante
+entity.spartanweaponry:arrow_explosive.name=Flecha explosiva
+entity.spartanweaponry:dynamite.name=Dinamita
+####
+#Enchantments
+enchantment.spartanweaponry:propulsion=Propulsion
+enchantment.spartanweaponry.propulsion.desc=Aumenta la velocidad y distancia de las armas arrojadizas.
+enchantment.spartanweaponry:razors_edge=Hoja de navaja
+enchantment.spartanweaponry.razors_edge.desc=Aumenta el daño de las armas arrojadizas.
+enchantment.spartanweaponry:incendiary=Incendiario
+enchantment.spartanweaponry.incendiary.desc=Imbuye esta arma arrojadiza en fuego, incendiando al objetivo.
+enchantment.spartanweaponry:lucky_throw=Lanzamiento suertudo
+enchantment.spartanweaponry.lucky_throw.desc=Aumenta el loot que dropean los mobs al matarlos con armas arrojadizas.
+enchantment.spartanweaponry:hydrodynamic=Hidrodinamico
+enchantment.spartanweaponry.hydrodynamic.desc=Permite a las armas arrojadizas funcionar bien en el agua.
+enchantment.spartanweaponry:supercharge=Supercarga
+enchantment.spartanweaponry.supercharge.desc=Reduce el tiempo de carga de las armas arrojadizas (~20%% * Nivel).
+enchantment.spartanweaponry:expanse=Expansion
+enchantment.spartanweaponry.expanse.desc=Aumenta la capacidad maxima de municiones de las armas arrojadizas, ya sea en 25%% o 1 municion por nivel, lo que sea mayor.
+enchantment.spartanweaponry:return=Retorno
+enchantment.spartanweaponry.return.desc=Hace que las armas arrojadizas regresen a tu mano cuando tocan el piso. A mayor nivel, mayor velocidad de retorno.
+enchantment.spartanweaponry:rapid_load=Carga rapida
+enchantment.spartanweaponry.rapid_load.desc=Reduce el tiempo de carga de las Ballestas. (0.2s * Nivel)
+enchantment.spartanweaponry:spreadshot=Saeta dividida
+enchantment.spartanweaponry.spreadshot.desc=Dispara 2 saetas extra en un disparo amplio desde la original.
+enchantment.spartanweaponry:sharpshooter=Francotirador
+enchantment.spartanweaponry.sharpshooter.desc=Reduce el tiempo necesario para apuntar con la Ballesta. (0.1s * Nivel)
+
+#Tooltips
+tooltip.spartanweaponry:properties=Propiedades: %s
+tooltip.spartanweaponry:showDetails=[Presiona %s para mas detalles]
+tooltip.spartanweaponry:showingDetails=[Mostrando detalles]
+tooltip.spartanweaponry:description=Descripcion: %s
+tooltip.spartanweaponry:showDescription=[Presiona %s para descripcion]
+tooltip.spartanweaponry:showingDescription=[Mostrando descripcion]
+tooltip.spartanweaponry:throwable=Arrojadizo
+tooltip.spartanweaponry:throwable.desc=Puede arrojarse hacia los enemigos
+tooltip.spartanweaponry:block_melee=Bloqueo cuerpo a cuerpo
+tooltip.spartanweaponry:block_melee.desc=Puede bloquear ataques cuerpo a cuerpo, pero no proyectiles
+tooltip.spartanweaponry:two_handed=Dos-manos %s
+tooltip.spartanweaponry:two_handed.desc=Cualquier item en la mano opuesta reduce tu vel. de ataque y daño por golpe en %d%%
+tooltip.spartanweaponry:two_handed.desc.xat=Cualquier item en la mano opuesta reduce tu vel. de ataque y daño por golpe en %d%%, a menos que seas un Titan
+tooltip.spartanweaponry:extra_damage=Daño adicional
+tooltip.spartanweaponry:extra_damage.desc=%fx daño adicional %s
+tooltip.spartanweaponry:extra_damage_chest=Daño adicional al torso
+tooltip.spartanweaponry:extra_damage_chest.desc=Daño adicional a oponentes sin pechera: +%f%%
+tooltip.spartanweaponry:extra_damage_chest.desc.armor_points=Hace +%f%% de daño a oponentes sin pechera y con un maximo de %f puntos de armadura
+tooltip.spartanweaponry:extra_damage_head=Daño adicional a la cabeza
+tooltip.spartanweaponry:extra_damage_head.desc=Daño adicional a oponentes sin casco: +%f%%
+tooltip.spartanweaponry:extra_damage_head.desc.armor_points=Hace +%f%% de daño a oponentes sin casco y con un maximo de %f puntos de armadura
+tooltip.spartanweaponry:extra_damage_unarmoured=Daño adicional a desprotegidos
+tooltip.spartanweaponry:extra_damage_unarmoured.desc=Daño adicional a oponentes sin armadura: +%f%%
+tooltip.spartanweaponry:extra_damage_unarmoured.desc.armor_points=Hace +%f%% de daño a oponentes sin armadura y con un maximo de %f puntos de armadura
+tooltip.spartanweaponry:extra_damage_riding=Daño adicional al montar
+tooltip.spartanweaponry:extra_damage_riding.desc=Daño base adicional mientras montas una mascota o vehiculo: +%f%%, el daño escala basado en tu velocidad
+																																
+tooltip.spartanweaponry:extra_damage_thrown=Daño adicional al arrojar
+tooltip.spartanweaponry:extra_damage_thrown.desc=Daño adicional cuando arrojas, de 0%% a +%f%%, dependiendo del progreso de carga
+tooltip.spartanweaponry:extra_damage_undead=Daño adicional a no-muertos
+tooltip.spartanweaponry:extra_damage_undead.desc=Daño base adicional a no-muertos: +%f%%
+tooltip.spartanweaponry:extra_damage_backstab=Daño adicional por la espalda
+tooltip.spartanweaponry:extra_damage_backstab.desc=Daño adicional cuando atacas por la espalda: +%f%%
+tooltip.spartanweaponry:damage_absorb=Absorcion de daño
+tooltip.spartanweaponry:damage_absorb.desc=Niega %d%% del daño recibido, a costa de la durabilidad del arma
+tooltip.spartanweaponry:reach=Alcance %s
+tooltip.spartanweaponry:reach.desc=Distancia de alcance aumentada. (+0.5 bloques * Nivel)
+tooltip.spartanweaponry:sweep_damage=Barrido %s
+tooltip.spartanweaponry:sweep_damage.desc.normal=Los enemigos dentro del rango de barrido reciben daño de %d
+tooltip.spartanweaponry:sweep_damage.desc=Todos los enemigos dentro del rango de barrido reciben %d%% del daño original
+tooltip.spartanweaponry:sweep_damage.fixed.desc=Los enemigos dentro del rango de barrido reciben daño de %d
+tooltip.spartanweaponry:wide_sweep=Barrido amplio
+tooltip.spartanweaponry:wide_sweep.desc=Los enemigos dentro del rango de barrido amplio reciben %d%% del daño original
+tooltip.spartanweaponry:sweep.desc=Los enemigos son lanzados mas lejos de lo normal.
+tooltip.spartanweaponry:knockback=Empuje mejorado
+tooltip.spartanweaponry:knockback.desc=Los enemigos son empujados mas lejos.
+tooltip.spartanweaponry:nausea=Golpe nauseabundo
+tooltip.spartanweaponry:nausea.desc=Inflige Nauseas II (%ds) al golpear, a menos que el enemigo use un Casco
+tooltip.spartanweaponry:armour_piercing=Perfora armadura
+tooltip.spartanweaponry:armour_piercing.desc=%d%% del daño infligido ignora la armadura
+tooltip.spartanweaponry:shield_breach=Desactiva escudos
+tooltip.spartanweaponry:shield_breach.desc=Puede desactivar el escudo de un enemigo
+tooltip.spartanweaponry:versatile=Versatil
+tooltip.spartanweaponry:versatile.desc=Puede usarse como %s
+tooltip.spartanweaponry:versatile.axe=un Hacha
+tooltip.spartanweaponry:versatile.pickaxe=un Pico
+tooltip.spartanweaponry:versatile.shovel=una Pala
+tooltip.spartanweaponry:quick_strike=Golpe rapido
+tooltip.spartanweaponry:quick_strike.desc=Golpea tan rapido que puede ignorar el tiempo de invencibilidad.
+
+tooltip.spartanweaponry:longbow=Version de mayor alcance que un arco estandar.
+tooltip.spartanweaponry:longbow.desc=Tarda mas en cargar.
+tooltip.spartanweaponry:crossbow=Daño y alcance mayores. Requiere cargar primero y apuntar despues. Usa Saetas.
+tooltip.spartanweaponry:crossbow.desc=Disparar rapidamente afectara la precision.
+tooltip.spartanweaponry:crossbow.desc2=Mantente apuntando para disparar certeramente.
+tooltip.spartanweaponry:crossbow.loaded_bolt=Cargado con: %s
+
+tooltip.spartanweaponry:throwable.ammo=Municiones: %s
+tooltip.spartanweaponry:throwable.ammo.value=%d/%d
+tooltip.spartanweaponry:throwable.charge_time=Tiempo de carga: %s
+tooltip.spartanweaponry:throwable.charge_time.value=%fs
+tooltip.spartanweaponry:throwable.not_original=No puede ser reparado o encantado y no dejara un stack vacio cuando las municiones se acaben
+tooltip.spartanweaponry:throwable_stack_status=%d/%d
+
+tooltip.spartanweaponry:modifiers.ammo.type=Tipo de municion: %s
+tooltip.spartanweaponry:modifiers.ammo.arrow=Flechas
+tooltip.spartanweaponry:modifiers.ammo.bolt=Saetas
+tooltip.spartanweaponry:modifiers.longbow.draw_length=Tiempo de carga: %.2fs
+tooltip.spartanweaponry:modifiers.longbow.speed_multiplier=Vel. de flecha: %s
+tooltip.spartanweaponry:modifiers.longbow.speed_multiplier.value=x%.2f
+tooltip.spartanweaponry:modifiers.crossbow.load_time=Tiempo de carga: %.2fs
+tooltip.spartanweaponry:modifiers.crossbow.aim_time=Tiempo para apuntar: %.2fs
+tooltip.spartanweaponry:modifiers.crossbow.speed_multiplier=Vel. de Saeta: %s
+tooltip.spartanweaponry:modifiers.crossbow.speed_multiplier.value=x%.2f
+
+tooltip.spartanweaponry:projectile.base_damage=Daño base: %f
+tooltip.spartanweaponry:projectile.range_multiplier=Alcance: %s
+tooltip.spartanweaponry:projectile.range_multiplier.value=x%.2f
+tooltip.spartanweaponry:projectile.armor_piercing_factor=Perforar armadura: %s
+tooltip.spartanweaponry:projectile.armor_piercing_factor.value=%.0f%%
+tooltip.spartanweaponry:projectile.impact.glowing=Inflige Luminiscencia al golpear
+tooltip.spartanweaponry:projectile.impact.explosion=Explota al golpear
+
+tooltip.spartanweaponry:quiver_arrow.desc=Suministra Flechas pasivamente para usar en Arcos
+tooltip.spartanweaponry:quiver_bolt.desc=Suministra Saetas pasivamente para usar en Ballestas
+tooltip.spartanweaponry:quiver_capacity=Capacidad max: %d stacks
+tooltip.spartanweaponry:quiver_show_contents=[Presiona %s para mostrar su contenido]
+tooltip.spartanweaponry:quiver_show_description=[Presiona %s para mostrar su descripcion]
+tooltip.spartanweaponry:quiver_contains=Contiene:
+tooltip.spartanweaponry:quiver_ammo=- %dx %s
+tooltip.spartanweaponry:quiver_none=- Nada!
+tooltip.spartanweaponry:quiver_collect_status=Recolectar municiones: %s
+
+tooltip.spartanweaponry:cantCraftMissingMaterial=No puede fabricarse. Falta el material %s.
+tooltip.spartanweaponry:invalidEnchantments=Esta arma tiene argumentos invalidos. Ponla en una mesa de crafteo sola para corregir los encantamientos.
+
+tooltip.spartanweaponry:enabled=Habilitado
+tooltip.spartanweaponry:disabled=Deshabilitado
+
+message.spartanweaponry:ammoCollectToggle=Recolectar municiones: %s
+message.spartanweaponry:quiver_not_found=Carcaj no encontrado!
+
+#Item modifier tooltips
+tooltip.spartanweaponry:modifiers.thrown=Cuando es arrojado:
+tooltip.spartanweaponry:attribute.damage=Daño: %s
+attribute.name.spartanweaponry:generic.throwing_damage=Daño al arrojar
+
+#Dev tooltips
+dev.spartanweaponry:wip=Actualmente es un Trabajo en Proceso (TeP)
+
+#Advancements
+advancement.spartanweaponry:root.title=Spartan Weaponry
+advancement.spartanweaponry:root.desc=Festival de armas!
+advancement.spartanweaponry:melee=Arsenal del guerrero
+advancement.spartanweaponry:melee.desc=Armas cuerpo a cuerpo!
+advancement.spartanweaponry:archery=Arsenal del arquero
+advancement.spartanweaponry:archery.desc=Armas a distancia!
+advancement.spartanweaponry:thrownWeapons=Arsenal del asesino
+advancement.spartanweaponry:thrownWeapons.desc=Armas arrojadizas!
+advancement.spartanweaponry:craftDagger=El mejor amigo de un pillo
+advancement.spartanweaponry:craftDagger.desc=Fabrica una Daga
+advancement.spartanweaponry:craftLongsword=Una hoja mas grande
+advancement.spartanweaponry:craftLongsword.desc=Fabrica una Espada larga
+advancement.spartanweaponry:craftKatana=La hoja de un Samurai
+advancement.spartanweaponry:craftKatana.desc=Fabrica una Katana
+advancement.spartanweaponry:craftScythe=Segando lo que sembraste
+advancement.spartanweaponry:craftScythe.desc=Fabrica una Guadaña
+advancement.spartanweaponry:craftSaber=Bravucon
+advancement.spartanweaponry:craftSaber.desc=Fabrica un Sable
+advancement.spartanweaponry:craftRapier=En guardia!
+advancement.spartanweaponry:craftRapier.desc=Fabrica un Estoque
+advancement.spartanweaponry:craftGreatsword=De corte superior
+advancement.spartanweaponry:craftGreatsword.desc=Fabrica una Gran espada
+advancement.spartanweaponry:craftCaestus=Puños reforzados
+advancement.spartanweaponry:craftCaestus.desc=Fabrica un Caestus
+advancement.spartanweaponry:craftClub=Como en la era de piedra
+advancement.spartanweaponry:craftClub.desc=Fabrica un Garrote
+advancement.spartanweaponry:craftHammer=A martillar!
+advancement.spartanweaponry:craftHammer.desc=Fabrica un Martillo espartano
+advancement.spartanweaponry:craftWarhammer=Trauma de fuerza bruta
+advancement.spartanweaponry:craftWarhammer.desc=Fabrica un Martillo espartano belico
+advancement.spartanweaponry:craftSpear=Punta de Hasta
+advancement.spartanweaponry:craftSpear.desc=Fabrica una Hasta espartana
+advancement.spartanweaponry:craftHalberd=Alabardeador
+advancement.spartanweaponry:craftHalberd.desc=Fabrica una Alabarda
+advancement.spartanweaponry:craftPike=Picate de aqui!
+advancement.spartanweaponry:craftPike.desc=Fabrica una Pica
+advancement.spartanweaponry:craftLance=El cuarto jinete
+advancement.spartanweaponry:craftLance.desc=Fabrica una Lanza
+advancement.spartanweaponry:craftLongbow=Apunten, chicos!
+advancement.spartanweaponry:craftLongbow.desc=Fabrica un Arco largo
+advancement.spartanweaponry:craftCrossbow=El maestro del siglo 15
+advancement.spartanweaponry:craftCrossbow.desc=Fabrica una Ballesta
+advancement.spartanweaponry:craftThrowingKnife=Lo que un asesino necesita
+advancement.spartanweaponry:craftThrowingKnife.desc=Fabrica un cuchillo arrojadizo
+advancement.spartanweaponry:craftThrowingAxe=Tomahawk
+advancement.spartanweaponry:craftThrowingAxe.desc=Fabrica un hacha arrojadiza
+advancement.spartanweaponry:craftJavelin=No de las Olimpiadas
+advancement.spartanweaponry:craftJavelin.desc=Fabrica una Jabalina
+advancement.spartanweaponry:craftBoomerang=De verdad regresa?
+advancement.spartanweaponry:craftBoomerang.desc=Fabrica un Bumerang
+advancement.spartanweaponry:craftBattleaxe=...y mi hacha!
+advancement.spartanweaponry:craftBattleaxe.desc=Fabrica un Hacha belica
+advancement.spartanweaponry:craftMace=Golpear y aplastar!
+advancement.spartanweaponry:craftMace.desc=Fabrica un Mazo
+advancement.spartanweaponry:craftGlaive=Enderezando las guadañas
+advancement.spartanweaponry:craftGlaive.desc=Fabrica una Guja
+advancement.spartanweaponry:craftQuarterstaff=Un palo no tan puntiagudo!
+advancement.spartanweaponry:craftQuarterstaff.desc=Fabrica un Baston
+advancement.spartanweaponry:craftQuiver=Mochila llena de municiones!
+advancement.spartanweaponry:craftQuiver.desc=Obten un Carcaj ligero para flechas o saetas
+advancement.spartanweaponry:upgradeQuiver=Un carcaj todavia mas grande?
+advancement.spartanweaponry:upgradeQuiver.desc=Mejora un Carcaj mediano
+advancement.spartanweaponry:upgradeQuiverMax=Maxima capacidad
+advancement.spartanweaponry:upgradeQuiverMax.desc=Mejora un Carcaj pesado
+advancement.spartanweaponry:explode_creeper=Karma
+advancement.spartanweaponry:explode_creeper.desc=Inflige un daño de explosion a un Creeper para darle una cucharada de su propia medicina!
+
+#Subtitles
+subtitle.spartanweaponry:crossbow_load=Ballesta carga
+subtitle.spartanweaponry:crossbow_fire=Ballesta dispara
+subtitle.spartanweaponry:throwing_weapon_throw=Arma arrojadiza lanzada
+subtitle.spartanweaponry:throwing_weapon_hit=Arma arrojadiza golpea
+subtitle.spartanweaponry:throwing_weapon_return=Arma arrojadiza regresa
+subtitle.spartanweaponry:boomerang_throw=Bumerang lanzado
+subtitle.spartanweaponry:boomerang_flight=Bumerang vuela
+
+#Keybinds
+key.spartanweaponry:category.title=Spartan Weaponry
+key.spartanweaponry.access_quiver=Acceder al Carcaj equipado
+
+#Configs
+config.spartanweaponry:category.materials=Materiales
+
+config.spartanweaponry:damageBaseCopper=Daño base de Cobre
+config.spartanweaponry:damageBaseTin=Daño base de Estaño
+config.spartanweaponry:damageBaseBronze=Daño base de Bronce
+config.spartanweaponry:damageBaseSteel=Daño base de Acero
+config.spartanweaponry:damageBaseSilver=Daño base de Plata
+config.spartanweaponry:damageBaseInvar=Daño base de Invar
+config.spartanweaponry:damageBasePlatinum=Daño base de Platino
+config.spartanweaponry:damageBaseElectrum=Daño base de Electrio
+config.spartanweaponry:damageBaseNickel=Daño base de Niquel
+config.spartanweaponry:damageBaseLead=Daño base de Plomo
+
+config.spartanweaponry:durabilityBaseCopper=Durabilidad de Cobre
+config.spartanweaponry:durabilityBaseTin=Durabilidad de Estaño
+config.spartanweaponry:durabilityBaseBronze=Durabilidad de Bronce
+config.spartanweaponry:durabilityBaseSteel=Durabilidad de Acero
+config.spartanweaponry:durabilityBaseSilver=Durabilidad de Plata
+config.spartanweaponry:durabilityBaseInvar=Durabilidad de Invar
+config.spartanweaponry:durabilityBasePlatinum=Durabilidad de Platino
+config.spartanweaponry:durabilityBaseElectrum=Durabilidad de Electrio
+config.spartanweaponry:durabilityBaseNickel=Durabilidad de Niquel
+config.spartanweaponry:durabilityBaseLead=Durabilidad de Plomo
+
+config.spartanweaponry:disableCopper=Deshabilitar armas de Cobre
+config.spartanweaponry:disableTin=Deshabilitar armas de Estaño
+config.spartanweaponry:disableBronze=Deshabilitar armas de Bronce
+config.spartanweaponry:disableSteel=Deshabilitar armas de Acero
+config.spartanweaponry:disableSilver=Deshabilitar armas de Plata
+config.spartanweaponry:disableInvar=Deshabilitar armas de Invar
+config.spartanweaponry:disablePlatinum=Deshabilitar armas de Platino
+config.spartanweaponry:disableElectrum=Deshabilitar armas de Electrio
+config.spartanweaponry:disableNickel=Deshabilitar armas de Niquel
+config.spartanweaponry:disableLead=Deshabilitar armas de Plomo
+
+config.spartanweaponry:primaryColourCopper=Color primario de Cobre
+config.spartanweaponry:secondaryColourCopper=Color secundario de Cobre
+config.spartanweaponry:primaryColourTin=Color primario de Estaño
+config.spartanweaponry:secondaryColourTin=Color secundario de Estaño
+config.spartanweaponry:primaryColourBronze=Color primario de Bronce
+config.spartanweaponry:secondaryColourBronze=Color secundario de Bronce
+config.spartanweaponry:primaryColourSteel=Color primario de Acero
+config.spartanweaponry:secondaryColourSteel=Color secundario de Acero
+config.spartanweaponry:primaryColourSilver=Color primario de Plata
+config.spartanweaponry:secondaryColourSilver=Color secundario de Plata
+config.spartanweaponry:primaryColourInvar=Color primario de Invar
+config.spartanweaponry:secondaryColourInvar=Color secundario de Invar
+config.spartanweaponry:primaryColourPlatinum=Color primario de Platino
+config.spartanweaponry:secondaryColourPlatinum=Color secundario de Platino
+config.spartanweaponry:primaryColourElectrum=Color primario de Electrio
+config.spartanweaponry:secondaryColourElectrum=Color secundario de Electrio
+config.spartanweaponry:primaryColourNickel=Color primario de Niquel
+config.spartanweaponry:secondaryColourNickel=Color secundario de Niquel
+config.spartanweaponry:primaryColourLead=Color primario de Plomo
+config.spartanweaponry:secondaryColourLead=Color secundario de Plomo
+
+config.spartanweaponry:disableWeapon=Deshabilitar tipo de arma
+config.spartanweaponry:damageMultiplier=Multiplicador de daño de arma
+config.spartanweaponry:damageBase=Daño base de arma
+config.spartanweaponry:speed=Velocidad de arma
+config.spartanweaponry:meleeSpeed=Vel. de arma cuerpo a cuerpo
+config.spartanweaponry:chargeTicks=Ticks de carga al lanzar
+
+config.spartanweaponry:category.dagger=Daga arrojadiza
+config.spartanweaponry:category.parrying_dagger=Daga esquivadora
+config.spartanweaponry:category.longsword=Espada larga
+config.spartanweaponry:category.katana=Katana
+config.spartanweaponry:category.scythe=Guadaña
+config.spartanweaponry:category.saber=Sable
+config.spartanweaponry:category.rapier=Estoque
+config.spartanweaponry:category.greatsword=Gran espada
+config.spartanweaponry:category.caestus=Caestus
+config.spartanweaponry:category.club=Garrote
+config.spartanweaponry:category.hammer=Martillo espartano
+config.spartanweaponry:category.warhammer=Martillo belico
+config.spartanweaponry:category.spear=Hasta
+config.spartanweaponry:category.halberd=Alabarda
+config.spartanweaponry:category.pike=Pica
+config.spartanweaponry:category.lance=Lanza
+
+config.spartanweaponry:category.longbow=Arco largo
+config.spartanweaponry:woodenLongbowOnly=Solo Arcos largos de madera
+config.spartanweaponry:multiplierLongbow=Modif. de vel. de Arco largo
+config.spartanweaponry:materialDrawModifierLongbow=Modif. de material: Ticks de carga
+config.spartanweaponry:materialVelocityModifierLongbow=Modif. de material: Vel. de flecha
+
+config.spartanweaponry:category.crossbow=Ballesta
+config.spartanweaponry:woodenCrossbowOnly=Solo Ballestas de madera
+config.spartanweaponry:crossbowInaccuracyMax=Esparcion max. de Saetas
+config.spartanweaponry:crossbowTicksToLoad=Ticks de carga de Ballesta
+config.spartanweaponry:crossbowTicksCooldown=Tmpo espera de carga de Ballesta
+config.spartanweaponry:baseBoltSpeedCrossbow=Vel. base de la saeta lanzada por ballesta
+config.spartanweaponry:materialVelocityModifierCrossbow=Modif. de material: Vel. saeta
+config.spartanweaponry:materialLoadModifierCrossbow=Modif. de material: Ticks de carga
+config.spartanweaponry:materialAimModifierCrossbow=Modif. de material: Ticks de apuntar
+config.spartanweaponry:boltDamage=Daño base de Saeta
+config.spartanweaponry:boltRangeMultiplier=Multip. de rango de Saeta
+config.spartanweaponry:boltArmorPiercingFactor=Factor de penetracion de armadura de Saeta
+config.spartanweaponry:boltDiamondDamage=Daño base de Saeta de diamante
+config.spartanweaponry:boltDiamondRangeMultiplier=Multip. de rango de Saeta de diamante
+config.spartanweaponry:boltDiamondArmorPiercingFactor=Factor de penetr. de armadura de Saeta de diamante
+config.spartanweaponry:enchantmentWhitelist=Lista blanca de encantamientos de Ballesta
+
+config.spartanweaponry:category.throwing_knife=Cuchillo arrojadizo
+
+config.spartanweaponry:category.throwing_axe=Hacha arrojadiza
+
+config.spartanweaponry:category.javelin=Jabalina
+
+config.spartanweaponry:category.boomerang=Bumerang
+config.spartanweaponry:woodenBoomerangOnly=Solo Bumerangs de madera
+
+config.spartanweaponry:category.battleaxe=Hacha belica
+
+config.spartanweaponry:category.mace=Mazo
+
+config.spartanweaponry:category.glaive=Guja
+
+config.spartanweaponry:category.quarterstaff=Baston
+
+config.spartanweaponry:category.arrows=Flechas y Carcajes
+config.spartanweaponry:disableNewArrows=Deshabilitar flechas
+config.spartanweaponry:disableDiamondArrowsAndBolts=Deshabilitar flechas y saetas de diamante
+config.spartanweaponry:disableQuivers=Deshabilitar Carcajes
+config.spartanweaponry:quiverBowBlacklist=Lista negra de arcos para el carcaj de flechas
+config.spartanweaponry:baseDamageArrowWood=Daño base de Flecha de madera
+config.spartanweaponry:rangeMultiplierArrowWood=Multip. de rango de Flecha de madera
+config.spartanweaponry:baseDamageArrowIron=Daño base de Flecha de hierro
+config.spartanweaponry:rangeMultiplierArrowIron=Multip. de rango de Flecha de hierro
+config.spartanweaponry:baseDamageArrowDiamond=Daño base de Flecha de diamante
+config.spartanweaponry:rangeMultiplierArrowDiamond=Multip. de rango de Flecha de diamante
+config.spartanweaponry:explosionStrengthArrowExplosive=Fuerza de explosion de Flecha explosiva
+config.spartanweaponry:rangeMultiplierArrowExplosive=Multip. de rango de Flecha explosiva
+
+config.spartanweaponry:category.explosives=Explosivos
+config.spartanweaponry:disableExplosives=Deshabilitar explosivos
+config.spartanweaponry:enableTerrainDamage=Explosivos dañan el terreno
+config.spartanweaponry:explosionStrengthDynamite=Dinamita: Fuerza de explosion
+config.spartanweaponry:fuseTicksDynamite=Dinamita: Ticks de activacion
+
+config.spartanweaponry:category.weapon_properties=Propiedades de arma
+config.spartanweaponry:damageBonusChestMultiplier=Bono daño a torso: Multiplicador
+config.spartanweaponry:damageBonusHeadMultiplier=Bono daño a cabeza: Multiplicador
+config.spartanweaponry:damageBonusRidingMultiplier=Bono daño al montar: Multiplicador
+config.spartanweaponry:damageBonusRidingCheckSpeed=Bono daño al montar: Habilitar revision de vel.
+config.spartanweaponry:damageBonusRidingVelocityMax=Bono daño al montar: Vel. para bono maximo
+config.spartanweaponry:damageBonusThrowMultiplier=Bono daño al lanzar: Multiplicador
+config.spartanweaponry:damageBonusThrowJavelinMultiplier=Bono daño al lanzar (Jabalina): Multiplicador
+config.spartanweaponry:damageBonusUnarmoredMultiplier=Bono daño a sin armadura: Multiplicador
+config.spartanweaponry:damageBonusUnarmoredCheckArmorValue=Bono daño a sin armadura: Revisar valor de armadura
+config.spartanweaponry:damageBonusUnarmoredMaxArmorValue=Bono daño a sin armadura: Valor max de armadura
+config.spartanweaponry:damageBonusUndeadMultiplier=Bono daño a no-muertos: Multiplicador
+config.spartanweaponry:damageBonusBackstabMultiplier=Bono daño por la espalda: Multiplicador
+config.spartanweaponry:damageBonusCheckArmorValue=Bonos daño relacionados a armadura: Revisar valor de armadura
+config.spartanweaponry:damageBonusMaxArmorValue=Bonos daño relacionado a armadura: Valor max de armadura
+config.spartanweaponry:damageAbsorptionFactor=Absorcion de daño: Factor de absorcion
+config.spartanweaponry:twoHanded1Value=Dos-manos I: Valor de reduccion de daño
+config.spartanweaponry:twoHanded2Value=Dos-manos II: Valor de reduccion de daño
+config.spartanweaponry:reach1Value=Alcance I: Valor de alcance
+config.spartanweaponry:reach2Value=Alcance II: Valor de alcance
+config.spartanweaponry:sweep1Percentage=Barrido I: Porcentaje daño de barrido
+config.spartanweaponry:sweep2Percentage=Barrido II: Porcentaje daño de barrido
+config.spartanweaponry:wideSweepPercentage=Barrido amplio: Porcentaje de daño por barrido
+config.spartanweaponry:wideSweepAdditionalRange=Barrido amplio: Alcance adicional
+config.spartanweaponry:armorPiercePercentage=Penetr. armadura: Porcentaje de penetracion
+config.spartanweaponry:quickStrikeHurtResistTicks=Golpe rapido: Ticks de resistencia al daño
+
+config.spartanweaponry:category.general=General
+config.spartanweaponry:enableExperimentalWeapons=Habilitar armas experimentales
+config.spartanweaponry:enableModdedMaterialWeapons=Habilitar armas con materiales de mods
+config.spartanweaponry:forceDisableUncraftableTooltips=Deshabilitar forzadamente descripciones de armas incrafteables
+config.spartanweaponry:disableFOVZoomIn=Deshabilitar efecto Zoom-In del FOV
+config.spartanweaponry:disableSpartanHUDBaublesIntegration=Deshabilitar integracion de Spartan HUD: Baubles
+
+config.spartanweaponry:category.client=Cliente
+config.spartanweaponry:quiverHudAlignment=Alineacion del HUD del Carcaj
+config.spartanweaponry:quiverHudOffsetX=Desfase en X del Carcaj
+config.spartanweaponry:quiverHudOffsetY=Desfase en Y del Carcaj
+config.spartanweaponry:disableNewCrosshairCrossbow=Deshabilitar la mira nueva de la Ballesta
+config.spartanweaponry:disableNewCrosshairThrowingWeapon=Deshabilitar la mira nueva de las Armas arrojadizas
+config.spartanweaponry:forceCompatibilityCrosshairs=Habilitacion forzada de compatibilidad de mira
+
+# Missing lang keys from some mods. Added by KameiB.
+item.spartanweaponry:proj_tipped.potion_sickness=%s de Enfermedad por pocion
+item.spartanweaponry:proj_tipped.curse_break=%s de Rompe maldiciones
+item.spartanweaponry:proj_tipped.srparasites:senses=%s de Sentidos agudos
+item.spartanweaponry:proj_tipped.srparasites:debar=%s de Exclusion
+item.spartanweaponry:proj_tipped.srparasites:foster=%s de Promocion
+item.spartanweaponry:proj_tipped.srparasites:link=%s de Enlace
