@@ -252,7 +252,7 @@ public class Config
 			witherSkeletonWithMeleeSpawnChanceNormal = builder.comment("Chance for Wither Skeletons to spawn with Stone Melee Weapons on all difficulties apart from Hard and Hardcore")
 					.translation("config." + ModSpartanWeaponry.ID + ".loot.wither_skeleton_with_melee_spawn_chance_normal")
 					.defineInRange("wither_skeleton_with_melee_spawn_chance_normal", Defaults.witherSkeletonWithMeleeSpawnChanceNormal, 0.0, 1.0);
-			witherSkeletonWithMeleeSpawnChanceHard = builder.comment("Chance for Wither Skeletons to spawn with Golden Melee Weapons on Hard or Hardcore difficulty")
+			witherSkeletonWithMeleeSpawnChanceHard = builder.comment("Chance for Wither Skeletons to spawn with Stone Melee Weapons on Hard or Hardcore difficulty")
 					.translation("config." + ModSpartanWeaponry.ID + ".loot.wither_skeleton_with_melee_spawn_chance_hard")
 					.defineInRange("wither_skeleton_with_melee_spawn_chance_hard", Defaults.witherSkeletonWithMeleeSpawnChanceHard, 0.0, 1.0);
 			disableSpawningWitherSkeletonWithWeapon = builder.comment("Set to true to disable spawning a Wither Skeleton with any weapons from this mod")
