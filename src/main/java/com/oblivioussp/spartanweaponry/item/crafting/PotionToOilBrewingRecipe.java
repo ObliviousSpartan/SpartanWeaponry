@@ -1,6 +1,7 @@
 package com.oblivioussp.spartanweaponry.item.crafting;
 
 import com.oblivioussp.spartanweaponry.init.ModItems;
+import com.oblivioussp.spartanweaponry.util.Config;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import net.minecraft.world.item.ItemStack;
@@ -15,13 +16,13 @@ public class PotionToOilBrewingRecipe implements IBrewingRecipe
 	public boolean isInput(ItemStack input) 
 	{
 		Potion inputPotion = PotionUtils.getPotion(input);
-		return input.is(Items.POTION) && OilHelper.isValidPotion(inputPotion);
+		return !Config.INSTANCE.disableOilRecipes.get() && input.is(Items.POTION) && OilHelper.isValidPotion(inputPotion);
 	}
 	
 	@Override
 	public boolean isIngredient(ItemStack ingredient) 
 	{
-		return ingredient.is(ModItems.GREASE_BALL.get());
+		return !Config.INSTANCE.disableOilRecipes.get() && ingredient.is(ModItems.GREASE_BALL.get());
 	}
 	
 	@Override

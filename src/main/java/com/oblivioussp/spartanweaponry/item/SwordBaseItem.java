@@ -95,6 +95,8 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 	@Override
 	public void reload() 
 	{
+		setAttackDamageAndSpeed(archetype.getBaseDamage(), archetype.getDamageMultiplier(), archetype.getAttackSpeed());
+		
 		ImmutableList.Builder<WeaponTrait> builder = ImmutableList.builder();
 
 		builder.addAll(archetype.getTraits());
@@ -226,7 +228,6 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 			archetype.addTraitsToTooltip(stack, tooltip, isShiftPressed);
 //			tooltip.add(Component.empty());
 		}
-		tooltip.add(Component.empty());
     	material.addTraitsToTooltip(stack, archetype.getType(), tooltip, isShiftPressed);
 		
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);

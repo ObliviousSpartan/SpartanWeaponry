@@ -242,9 +242,9 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 			archetype.addTraitsToTooltip(stack, tooltip, isShiftPressed);
 			
 	    	material.addTraitsToTooltip(stack, archetype.getType(), tooltip, isShiftPressed);
+			tooltip.add(Component.empty());
 		}
 
-		tooltip.add(Component.empty());
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 	}
 

@@ -63,4 +63,10 @@ public class LivingEntityMixin extends EntityMixin
 	{
 		throw new IllegalStateException("Mixin failed to shadow the \"LivingEntity.getItemInHand(InteractionHand)\" method!");
 	}
+	
+	@Shadow
+	public boolean isBaby()
+	{
+		throw new IllegalStateException("Mixin failed to shadow the \"LivingEntity.isBaby()\" method!");
+	}
 }

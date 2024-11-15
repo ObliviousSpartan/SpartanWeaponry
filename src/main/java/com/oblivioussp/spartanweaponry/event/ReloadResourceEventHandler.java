@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.oblivioussp.spartanweaponry.api.IReloadable;
 import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
+import com.oblivioussp.spartanweaponry.init.ModOilRecipes;
 import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraftforge.event.TagsUpdatedEvent;
@@ -24,6 +25,7 @@ public class ReloadResourceEventHandler
 		reloadList.forEach((item) -> item.reload());
 		long end = System.nanoTime();
 		double milliseconds = (end-start) / 1000000.0d;
+		ModOilRecipes.loadOilMixes();
 		Log.info("Finished initialising Weapon Traits & Attributes! Took " + milliseconds + "ms");
 	}
 }

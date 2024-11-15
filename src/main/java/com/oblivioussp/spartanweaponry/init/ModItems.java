@@ -66,10 +66,10 @@ public class ModItems
 			aluminum = register.register("aluminum_" + weaponName, () -> factory.create(WeaponMaterial.ALUMINUM, propModded));
 		}
 		
-		public void updateSettingsFromConfig(float baseDamage, float damageMultiplier, double speed)
+/*		public void updateSettingsFromConfig(float baseDamage, float damageMultiplier, double speed)
 		{
 			getAsList().forEach((weapon) -> weapon.setAttackDamageAndSpeed(baseDamage, damageMultiplier, speed));
-		}
+		}*/
 		
 		public ImmutableList<ItemStack> getVanillaItemStacks()
 		{
@@ -173,10 +173,10 @@ public class ModItems
 			aluminum = register.register("aluminum_" + weaponName, () -> factory.create(WeaponMaterial.ALUMINUM, propModded));
 		}
 		
-		public void updateSettingsFromConfig(float baseDamage, float damageMultiplier, double speed, int chargeTicks)
+/*		public void updateSettingsFromConfig(float baseDamage, float damageMultiplier, double speed, int chargeTicks)
 		{
 			getAsList().forEach((weapon) -> weapon.updateFromConfig(baseDamage, damageMultiplier, speed, chargeTicks));
-		}
+		}*/
 		
 		public ImmutableList<ItemStack> getVanillaItemStacks()
 		{

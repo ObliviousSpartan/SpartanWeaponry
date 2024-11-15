@@ -416,23 +416,26 @@ public class CommonEventHandler
 			ItemStack arrowStack = ItemStack.EMPTY;
 			
 			int prioritySlot = quiver.getOrCreateTag().getInt(QuiverBaseItem.NBT_PROIRITY_SLOT);
-			arrowStack = quiverHandler.extractItem(prioritySlot, 64, false);
-			if(!arrowStack.isEmpty())
+			if(prioritySlot <= quiverHandler.getSlots())
 			{
-				player.setItemSlot(oppositeHandSlot, arrowStack);
-				return;
-			}
-			
-			for(int j = 0; j < quiverHandler.getSlots(); j++)
-			{
-				if(j == prioritySlot)	
-					continue;	// Skip the priority slot, since it's been checked already
-				
-				arrowStack = quiverHandler.extractItem(j, 64, false);
+				arrowStack = quiverHandler.extractItem(prioritySlot, 64, false);
 				if(!arrowStack.isEmpty())
 				{
 					player.setItemSlot(oppositeHandSlot, arrowStack);
-					break;
+					return;
+				}
+				
+				for(int j = 0; j < quiverHandler.getSlots(); j++)
+				{
+					if(j == prioritySlot)	
+						continue;	// Skip the priority slot, since it's been checked already
+					
+					arrowStack = quiverHandler.extractItem(j, 64, false);
+					if(!arrowStack.isEmpty())
+					{
+						player.setItemSlot(oppositeHandSlot, arrowStack);
+						break;
+					}
 				}
 			}
 		}

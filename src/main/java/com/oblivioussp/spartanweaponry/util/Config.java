@@ -6,7 +6,6 @@ import java.util.function.Predicate;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import com.google.common.collect.ImmutableList;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.APIConfigValues;
 import com.oblivioussp.spartanweaponry.api.APIConstants;
@@ -70,9 +69,12 @@ public class Config
 	
 	// Loot settings
 	public BooleanValue addIronWeaponsToVillageWeaponsmith, addBowAndCrossbowLootToVillageFletcher, addDiamondWeaponsToEndCity,
-					disableSpawningZombieWithWeapon, disableSpawningSkeletonWithLongbow;
+					disableSpawningZombieWithWeapon, disableSpawningSkeletonWithLongbow,
+					disableSpawningPiglinWithWeapon, disableSpawningWitherSkeletonWithWeapon;
 	public DoubleValue zombieWithMeleeSpawnChanceNormal, zombieWithMeleeSpawnChanceHard,
-					skeletonWithLongbowSpawnChanceNormal, skeletonWithLongbowSpawnChanceHard;
+					skeletonWithLongbowSpawnChanceNormal, skeletonWithLongbowSpawnChanceHard,
+					piglinWithMeleeSpawnChanceNormal, piglinWithMeleeSpawnChanceHard,
+					witherSkeletonWithMeleeSpawnChanceNormal, witherSkeletonWithMeleeSpawnChanceHard;
 	public BooleanValue disableNewHeadDrops;
 	
 	// Trading settings
@@ -238,6 +240,24 @@ public class Config
 			disableSpawningSkeletonWithLongbow = builder.comment("Set to true to disable spawning a Skeleton with any Longbow from this mod")
 					.translation("config." + ModSpartanWeaponry.ID + ".loot.disable_spawning_skeleton_with_longbow")
 					.define("disable_spawning_skeleton_with_longbow", false);
+			piglinWithMeleeSpawnChanceNormal = builder.comment("Chance for Piglins and Piglin Brutes to spawn with Golden Melee Weapons on all difficulties apart from Hard and Hardcore")
+					.translation("config." + ModSpartanWeaponry.ID + ".loot.piglin_with_melee_spawn_chance_normal")
+					.defineInRange("piglin_with_melee_spawn_chance_normal", Defaults.piglinWithMeleeSpawnChanceNormal, 0.0, 1.0);
+			piglinWithMeleeSpawnChanceHard = builder.comment("Chance for Piglins and Piglin Brutes to spawn with Golden Melee Weapons on Hard or Hardcore difficulty")
+					.translation("config." + ModSpartanWeaponry.ID + ".loot.piglin_with_melee_spawn_chance_hard")
+					.defineInRange("piglin_with_melee_spawn_chance_hard", Defaults.piglinWithMeleeSpawnChanceHard, 0.0, 1.0);
+			disableSpawningPiglinWithWeapon = builder.comment("Set to true to disable spawning a Piglin or Piglin Brute with any weapons from this mod")
+					.translation("config." + ModSpartanWeaponry.ID + ".loot.disable_spawning_piglin_with_weapon")
+					.define("disable_spawning_piglin_with_weapon", false);
+			witherSkeletonWithMeleeSpawnChanceNormal = builder.comment("Chance for Wither Skeletons to spawn with Stone Melee Weapons on all difficulties apart from Hard and Hardcore")
+					.translation("config." + ModSpartanWeaponry.ID + ".loot.wither_skeleton_with_melee_spawn_chance_normal")
+					.defineInRange("wither_skeleton_with_melee_spawn_chance_normal", Defaults.witherSkeletonWithMeleeSpawnChanceNormal, 0.0, 1.0);
+			witherSkeletonWithMeleeSpawnChanceHard = builder.comment("Chance for Wither Skeletons to spawn with Golden Melee Weapons on Hard or Hardcore difficulty")
+					.translation("config." + ModSpartanWeaponry.ID + ".loot.wither_skeleton_with_melee_spawn_chance_hard")
+					.defineInRange("wither_skeleton_with_melee_spawn_chance_hard", Defaults.witherSkeletonWithMeleeSpawnChanceHard, 0.0, 1.0);
+			disableSpawningWitherSkeletonWithWeapon = builder.comment("Set to true to disable spawning a Wither Skeleton with any weapons from this mod")
+					.translation("config." + ModSpartanWeaponry.ID + ".loot.disable_spawning_wither_skeleton_with_weapon")
+					.define("disable_spawning_wither_skeleton_with_weapon", false);
 			disableNewHeadDrops = builder.comment("Set to true to disable the new mob heads from being dropped from mobs using the Decapitate Weapon Trait from this mod.")
 								.translation("config." + ModSpartanWeaponry.ID + ".loot.disable_new_head_drops")
 								.define("disable_new_head_drops", false);
@@ -372,90 +392,79 @@ public class Config
 		if(ev.getConfig().getSpec() != CONFIG_SPEC)
 			return;
 		
+		Log.info("Updating config settings!");
 		TypeDisabledCondition.disabledRecipeTypes.clear();
 		
-		updateMaterialValues(WeaponMaterial.COPPER, INSTANCE.copper.damage.get().floatValue(), INSTANCE.copper.durability.get());
-		INSTANCE.copper.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.TIN, INSTANCE.tin.damage.get().floatValue(), INSTANCE.tin.durability.get());
-		INSTANCE.tin.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.BRONZE, INSTANCE.bronze.damage.get().floatValue(), INSTANCE.bronze.durability.get());
-		INSTANCE.bronze.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.STEEL, INSTANCE.steel.damage.get().floatValue(), INSTANCE.steel.durability.get());
-		INSTANCE.steel.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.SILVER, INSTANCE.silver.damage.get().floatValue(), INSTANCE.silver.durability.get());
-		INSTANCE.silver.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.ELECTRUM, INSTANCE.electrum.damage.get().floatValue(), INSTANCE.electrum.durability.get());
-		INSTANCE.electrum.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.LEAD, INSTANCE.lead.damage.get().floatValue(), INSTANCE.lead.durability.get());
-		INSTANCE.lead.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.NICKEL, INSTANCE.nickel.damage.get().floatValue(), INSTANCE.nickel.durability.get());
-		INSTANCE.nickel.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.INVAR, INSTANCE.invar.damage.get().floatValue(), INSTANCE.invar.durability.get());
-		INSTANCE.invar.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.CONSTANTAN, INSTANCE.constantan.damage.get().floatValue(), INSTANCE.constantan.durability.get());
-		INSTANCE.constantan.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.PLATINUM, INSTANCE.platinum.damage.get().floatValue(), INSTANCE.platinum.durability.get());
-		INSTANCE.platinum.updateDisabledRecipeList();
-		updateMaterialValues(WeaponMaterial.ALUMINUM, INSTANCE.aluminum.damage.get().floatValue(), INSTANCE.aluminum.durability.get());
-		INSTANCE.aluminum.updateDisabledRecipeList();
+		updateMaterialValues(WeaponMaterial.COPPER, INSTANCE.copper);
+		updateMaterialValues(WeaponMaterial.TIN, INSTANCE.tin);
+		updateMaterialValues(WeaponMaterial.BRONZE, INSTANCE.bronze);
+		updateMaterialValues(WeaponMaterial.STEEL, INSTANCE.steel);
+		updateMaterialValues(WeaponMaterial.SILVER, INSTANCE.silver);
+		updateMaterialValues(WeaponMaterial.ELECTRUM, INSTANCE.electrum);
+		updateMaterialValues(WeaponMaterial.LEAD, INSTANCE.lead);
+		updateMaterialValues(WeaponMaterial.NICKEL, INSTANCE.nickel);
+		updateMaterialValues(WeaponMaterial.INVAR, INSTANCE.invar);
+		updateMaterialValues(WeaponMaterial.CONSTANTAN, INSTANCE.constantan);
+		updateMaterialValues(WeaponMaterial.PLATINUM, INSTANCE.platinum);
+		updateMaterialValues(WeaponMaterial.ALUMINUM, INSTANCE.aluminum);
 		
-		ModItems.DAGGERS.updateSettingsFromConfig(INSTANCE.daggers.baseDamage.get().floatValue(), INSTANCE.daggers.damageMultipler.get().floatValue(), INSTANCE.daggers.speed.get().doubleValue());
+//		ModItems.DAGGERS.updateSettingsFromConfig(INSTANCE.daggers.baseDamage.get().floatValue(), INSTANCE.daggers.damageMultipler.get().floatValue(), INSTANCE.daggers.speed.get().doubleValue());
 		INSTANCE.daggers.updateDisabledRecipeList();
-		ModItems.PARRYING_DAGGERS.updateSettingsFromConfig(INSTANCE.parryingDaggers.baseDamage.get().floatValue(), INSTANCE.parryingDaggers.damageMultipler.get().floatValue(), INSTANCE.parryingDaggers.speed.get().doubleValue());
+//		ModItems.PARRYING_DAGGERS.updateSettingsFromConfig(INSTANCE.parryingDaggers.baseDamage.get().floatValue(), INSTANCE.parryingDaggers.damageMultipler.get().floatValue(), INSTANCE.parryingDaggers.speed.get().doubleValue());
 		INSTANCE.parryingDaggers.updateDisabledRecipeList();
-		ModItems.LONGSWORDS.updateSettingsFromConfig(INSTANCE.longswords.baseDamage.get().floatValue(), INSTANCE.longswords.damageMultipler.get().floatValue(), INSTANCE.longswords.speed.get().doubleValue());
+//		ModItems.LONGSWORDS.updateSettingsFromConfig(INSTANCE.longswords.baseDamage.get().floatValue(), INSTANCE.longswords.damageMultipler.get().floatValue(), INSTANCE.longswords.speed.get().doubleValue());
 		INSTANCE.longswords.updateDisabledRecipeList();
-		ModItems.KATANAS.updateSettingsFromConfig(INSTANCE.katanas.baseDamage.get().floatValue(), INSTANCE.katanas.damageMultipler.get().floatValue(), INSTANCE.katanas.speed.get().doubleValue());
+//		ModItems.KATANAS.updateSettingsFromConfig(INSTANCE.katanas.baseDamage.get().floatValue(), INSTANCE.katanas.damageMultipler.get().floatValue(), INSTANCE.katanas.speed.get().doubleValue());
 		INSTANCE.katanas.updateDisabledRecipeList();
-		ModItems.SABERS.updateSettingsFromConfig(INSTANCE.sabers.baseDamage.get().floatValue(), INSTANCE.sabers.damageMultipler.get().floatValue(), INSTANCE.sabers.speed.get().doubleValue());
+//		ModItems.SABERS.updateSettingsFromConfig(INSTANCE.sabers.baseDamage.get().floatValue(), INSTANCE.sabers.damageMultipler.get().floatValue(), INSTANCE.sabers.speed.get().doubleValue());
 		INSTANCE.sabers.updateDisabledRecipeList();
-		ModItems.RAPIERS.updateSettingsFromConfig(INSTANCE.rapiers.baseDamage.get().floatValue(), INSTANCE.rapiers.damageMultipler.get().floatValue(), INSTANCE.rapiers.speed.get().doubleValue());
+//		ModItems.RAPIERS.updateSettingsFromConfig(INSTANCE.rapiers.baseDamage.get().floatValue(), INSTANCE.rapiers.damageMultipler.get().floatValue(), INSTANCE.rapiers.speed.get().doubleValue());
 		INSTANCE.rapiers.updateDisabledRecipeList();
-		ModItems.GREATSWORDS.updateSettingsFromConfig(INSTANCE.greatswords.baseDamage.get().floatValue(), INSTANCE.greatswords.damageMultipler.get().floatValue(), INSTANCE.greatswords.speed.get().doubleValue());
+//		ModItems.GREATSWORDS.updateSettingsFromConfig(INSTANCE.greatswords.baseDamage.get().floatValue(), INSTANCE.greatswords.damageMultipler.get().floatValue(), INSTANCE.greatswords.speed.get().doubleValue());
 		INSTANCE.greatswords.updateDisabledRecipeList();
 		
-		ImmutableList.of(ModItems.WOODEN_CLUB, ModItems.STUDDED_CLUB).forEach((club) -> club.get().setAttackDamageAndSpeed(INSTANCE.clubs.baseDamage.get().floatValue(), INSTANCE.clubs.damageMultipler.get().floatValue(), INSTANCE.clubs.speed.get().doubleValue()));
+//		ImmutableList.of(ModItems.WOODEN_CLUB, ModItems.STUDDED_CLUB).forEach((club) -> club.get().setAttackDamageAndSpeed(INSTANCE.clubs.baseDamage.get().floatValue(), INSTANCE.clubs.damageMultipler.get().floatValue(), INSTANCE.clubs.speed.get().doubleValue()));
 		INSTANCE.clubs.updateDisabledRecipeList();
-		ImmutableList.of(ModItems.CESTUS, ModItems.STUDDED_CESTUS).forEach((club) -> club.get().setAttackDamageAndSpeed(INSTANCE.cestus.baseDamage.get().floatValue(), INSTANCE.cestus.damageMultipler.get().floatValue(), INSTANCE.cestus.speed.get().doubleValue()));
+//		ImmutableList.of(ModItems.CESTUS, ModItems.STUDDED_CESTUS).forEach((club) -> club.get().setAttackDamageAndSpeed(INSTANCE.cestus.baseDamage.get().floatValue(), INSTANCE.cestus.damageMultipler.get().floatValue(), INSTANCE.cestus.speed.get().doubleValue()));
 		INSTANCE.cestus.updateDisabledRecipeList();
 		
-		ModItems.BATTLE_HAMMERS.updateSettingsFromConfig(INSTANCE.battleHammers.baseDamage.get().floatValue(), INSTANCE.battleHammers.damageMultipler.get().floatValue(), INSTANCE.battleHammers.speed.get().doubleValue());
+//		ModItems.BATTLE_HAMMERS.updateSettingsFromConfig(INSTANCE.battleHammers.baseDamage.get().floatValue(), INSTANCE.battleHammers.damageMultipler.get().floatValue(), INSTANCE.battleHammers.speed.get().doubleValue());
 		INSTANCE.battleHammers.updateDisabledRecipeList();
-		ModItems.WARHAMMERS.updateSettingsFromConfig(INSTANCE.warhammers.baseDamage.get().floatValue(), INSTANCE.warhammers.damageMultipler.get().floatValue(), INSTANCE.warhammers.speed.get().doubleValue());
+//		ModItems.WARHAMMERS.updateSettingsFromConfig(INSTANCE.warhammers.baseDamage.get().floatValue(), INSTANCE.warhammers.damageMultipler.get().floatValue(), INSTANCE.warhammers.speed.get().doubleValue());
 		INSTANCE.warhammers.updateDisabledRecipeList();
-		ModItems.SPEARS.updateSettingsFromConfig(INSTANCE.spears.baseDamage.get().floatValue(), INSTANCE.spears.damageMultipler.get().floatValue(), INSTANCE.spears.speed.get().doubleValue());
+//		ModItems.SPEARS.updateSettingsFromConfig(INSTANCE.spears.baseDamage.get().floatValue(), INSTANCE.spears.damageMultipler.get().floatValue(), INSTANCE.spears.speed.get().doubleValue());
 		INSTANCE.spears.updateDisabledRecipeList();
-		ModItems.HALBERDS.updateSettingsFromConfig(INSTANCE.halberds.baseDamage.get().floatValue(), INSTANCE.halberds.damageMultipler.get().floatValue(), INSTANCE.halberds.speed.get().doubleValue());
+//		ModItems.HALBERDS.updateSettingsFromConfig(INSTANCE.halberds.baseDamage.get().floatValue(), INSTANCE.halberds.damageMultipler.get().floatValue(), INSTANCE.halberds.speed.get().doubleValue());
 		INSTANCE.halberds.updateDisabledRecipeList();
-		ModItems.PIKES.updateSettingsFromConfig(INSTANCE.pikes.baseDamage.get().floatValue(), INSTANCE.pikes.damageMultipler.get().floatValue(), INSTANCE.pikes.speed.get().doubleValue());
+//		ModItems.PIKES.updateSettingsFromConfig(INSTANCE.pikes.baseDamage.get().floatValue(), INSTANCE.pikes.damageMultipler.get().floatValue(), INSTANCE.pikes.speed.get().doubleValue());
 		INSTANCE.pikes.updateDisabledRecipeList();
-		ModItems.LANCES.updateSettingsFromConfig(INSTANCE.lances.baseDamage.get().floatValue(), INSTANCE.lances.damageMultipler.get().floatValue(), INSTANCE.lances.speed.get().doubleValue());
+//		ModItems.LANCES.updateSettingsFromConfig(INSTANCE.lances.baseDamage.get().floatValue(), INSTANCE.lances.damageMultipler.get().floatValue(), INSTANCE.lances.speed.get().doubleValue());
 		INSTANCE.lances.updateDisabledRecipeList();
 		
 		// Updating configurable values for Longbows and Heavy Crossbows are not required
 		INSTANCE.longbows.updateDisabledRecipeList();
 		INSTANCE.heavyCrossbows.updateDisabledRecipeList();
 		
-		ModItems.THROWING_KNIVES.updateSettingsFromConfig(INSTANCE.throwingKnives.baseDamage.get().floatValue(), INSTANCE.throwingKnives.damageMultipler.get().floatValue(), INSTANCE.throwingKnives.speed.get().doubleValue(), INSTANCE.throwingKnives.chargeTicks.get());
+//		ModItems.THROWING_KNIVES.updateSettingsFromConfig(INSTANCE.throwingKnives.baseDamage.get().floatValue(), INSTANCE.throwingKnives.damageMultipler.get().floatValue(), INSTANCE.throwingKnives.speed.get().doubleValue(), INSTANCE.throwingKnives.chargeTicks.get());
 		INSTANCE.throwingKnives.updateDisabledRecipeList();
-		ModItems.TOMAHAWKS.updateSettingsFromConfig(INSTANCE.tomahawks.baseDamage.get().floatValue(), INSTANCE.tomahawks.damageMultipler.get().floatValue(), INSTANCE.tomahawks.speed.get().doubleValue(), INSTANCE.tomahawks.chargeTicks.get());
+//		ModItems.TOMAHAWKS.updateSettingsFromConfig(INSTANCE.tomahawks.baseDamage.get().floatValue(), INSTANCE.tomahawks.damageMultipler.get().floatValue(), INSTANCE.tomahawks.speed.get().doubleValue(), INSTANCE.tomahawks.chargeTicks.get());
 		INSTANCE.tomahawks.updateDisabledRecipeList();
-		ModItems.JAVELINS.updateSettingsFromConfig(INSTANCE.javelins.baseDamage.get().floatValue(), INSTANCE.javelins.damageMultipler.get().floatValue(), INSTANCE.javelins.speed.get().doubleValue(), INSTANCE.javelins.chargeTicks.get());
+//		ModItems.JAVELINS.updateSettingsFromConfig(INSTANCE.javelins.baseDamage.get().floatValue(), INSTANCE.javelins.damageMultipler.get().floatValue(), INSTANCE.javelins.speed.get().doubleValue(), INSTANCE.javelins.chargeTicks.get());
 		INSTANCE.javelins.updateDisabledRecipeList();
 		
-		ModItems.BOOMERANGS.updateSettingsFromConfig(INSTANCE.boomerangs.baseDamage.get().floatValue(), INSTANCE.boomerangs.damageMultipler.get().floatValue(), INSTANCE.boomerangs.speed.get().doubleValue(), INSTANCE.boomerangs.chargeTicks.get());
+//		ModItems.BOOMERANGS.updateSettingsFromConfig(INSTANCE.boomerangs.baseDamage.get().floatValue(), INSTANCE.boomerangs.damageMultipler.get().floatValue(), INSTANCE.boomerangs.speed.get().doubleValue(), INSTANCE.boomerangs.chargeTicks.get());
 		INSTANCE.boomerangs.updateDisabledRecipeList();
-		ModItems.BATTLEAXES.updateSettingsFromConfig(INSTANCE.battleaxes.baseDamage.get().floatValue(), INSTANCE.battleaxes.damageMultipler.get().floatValue(), INSTANCE.battleaxes.speed.get().doubleValue());
+//		ModItems.BATTLEAXES.updateSettingsFromConfig(INSTANCE.battleaxes.baseDamage.get().floatValue(), INSTANCE.battleaxes.damageMultipler.get().floatValue(), INSTANCE.battleaxes.speed.get().doubleValue());
 		INSTANCE.battleaxes.updateDisabledRecipeList();
-		ModItems.FLANGED_MACES.updateSettingsFromConfig(INSTANCE.flangedMaces.baseDamage.get().floatValue(), INSTANCE.flangedMaces.damageMultipler.get().floatValue(), INSTANCE.flangedMaces.speed.get().doubleValue());
+//		ModItems.FLANGED_MACES.updateSettingsFromConfig(INSTANCE.flangedMaces.baseDamage.get().floatValue(), INSTANCE.flangedMaces.damageMultipler.get().floatValue(), INSTANCE.flangedMaces.speed.get().doubleValue());
 		INSTANCE.flangedMaces.updateDisabledRecipeList();
 		
-		ModItems.GLAIVES.updateSettingsFromConfig(INSTANCE.glaives.baseDamage.get().floatValue(), INSTANCE.glaives.damageMultipler.get().floatValue(), INSTANCE.glaives.speed.get().doubleValue());
+//		ModItems.GLAIVES.updateSettingsFromConfig(INSTANCE.glaives.baseDamage.get().floatValue(), INSTANCE.glaives.damageMultipler.get().floatValue(), INSTANCE.glaives.speed.get().doubleValue());
 		INSTANCE.glaives.updateDisabledRecipeList();
-		ModItems.QUARTERSTAVES.updateSettingsFromConfig(INSTANCE.quarterstaves.baseDamage.get().floatValue(), INSTANCE.quarterstaves.damageMultipler.get().floatValue(), INSTANCE.quarterstaves.speed.get().doubleValue());
+//		ModItems.QUARTERSTAVES.updateSettingsFromConfig(INSTANCE.quarterstaves.baseDamage.get().floatValue(), INSTANCE.quarterstaves.damageMultipler.get().floatValue(), INSTANCE.quarterstaves.speed.get().doubleValue());
 		INSTANCE.quarterstaves.updateDisabledRecipeList();
 		
-		ModItems.SCYTHES.updateSettingsFromConfig(INSTANCE.scythes.baseDamage.get().floatValue(), INSTANCE.scythes.damageMultipler.get().floatValue(), INSTANCE.scythes.speed.get().doubleValue());
+//		ModItems.SCYTHES.updateSettingsFromConfig(INSTANCE.scythes.baseDamage.get().floatValue(), INSTANCE.scythes.damageMultipler.get().floatValue(), INSTANCE.scythes.speed.get().doubleValue());
 		INSTANCE.scythes.updateDisabledRecipeList();
 		
 		updateDisabledRecipe(TypeDisabledCondition.ARROWS, INSTANCE.disableNewArrowRecipes.get());
@@ -553,10 +562,11 @@ public class Config
 			TypeDisabledCondition.disabledRecipeTypes.remove(type);
 	}
 	
-	private static void updateMaterialValues(WeaponMaterial material, float baseDamage, int durability)
+	private static void updateMaterialValues(WeaponMaterial material, MaterialCategory category)
 	{
-		material.setAttackDamage(baseDamage);
-		material.setDurability(durability);
+		material.setAttackDamage(category.damage.get().floatValue());
+		material.setDurability(category.durability.get().intValue());
+		category.updateDisabledRecipeList();
 	}
 	
 
@@ -579,12 +589,15 @@ public class Config
 					.define("disable", false);
 			speed = builder.comment("Attack speed of " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.speed")
+					.worldRestart()
 					.defineInRange("speed", defaultSpeed, 0.0d, 4.0d);
 			baseDamage = builder.comment("Base Damage of " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.base_damage")
+					.worldRestart()
 					.defineInRange("base_damage", defaultBaseDamage, 0.1d, 100.0d);
 			damageMultipler = builder.comment("Damage Multiplier for " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.damage_multiplier")
+					.worldRestart()
 					.defineInRange("damage_multiplier", defaultDamageMuliplier, 0.1d, 10.0d);
 			builder.pop();
 		}
@@ -636,12 +649,15 @@ public class Config
 					.define("disable", false);
 			speed = builder.comment("Attack speed of " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.speed")
+					.worldRestart()
 					.defineInRange("speed", defaultSpeed, 0.0d, 4.0d);
 			baseDamage = builder.comment("Base Damage of " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.base_damage")
+					.worldRestart()
 					.defineInRange("base_damage", defaultBaseDamage, 0.1d, 100.0d);
 			damageMultipler = builder.comment("Damage Multiplier for " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.damage_multiplier")
+					.worldRestart()
 					.defineInRange("damage_multiplier", defaultDamageMuliplier, 0.1d, 10.0d);
 			chargeTicks = builder.comment("Charge time in ticks for " + weaponPlural + ".")
 					.translation("config." + ModSpartanWeaponry.ID + ".weapon.charge_ticks")
