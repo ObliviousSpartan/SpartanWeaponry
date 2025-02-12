@@ -3,15 +3,14 @@
 	"compatibilityLevel": "JAVA_8",
 	"refmap": "spartanweaponry.mixin.refmap.json",
 	"mixins": [
-		"EntityMixin",
+		"EntityArmorStandMixin",
 		"EntityArrowMixin",
 		"EntityLivingBaseMixin",
-		"EntityArmorStandMixin"
+		"IEntityArrowAccessor"
 	],
 	"client": [
 	],
-	"injectors":
-	{
+	"injectors": {
 		"defaultRequire": 1
 	},
 	"minVersion": "0.7"

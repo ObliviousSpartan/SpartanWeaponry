@@ -51,12 +51,10 @@ public class ModSpartanWeaponry
 	public static final String ModID_SpartanHudBaubles = "spartanhudbaubles";
 	public static final String ModID_BetterCombat = "bettercombatmod";
 	public static final String ModID_Trinkets = "xat";
-	public static final String ModID_SME = "somanyenchantments";
 	public static boolean isBaublesLoaded = false;
 	public static boolean isSpartanHudBaublesLoaded = false;
 	public static boolean isRLCombatLoaded = false;
 	public static boolean isTrinketsLoaded = false;
-	public static boolean isSMELoaded = false;
 	
 	public static boolean debugMode = (Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment");
 	
@@ -84,7 +82,6 @@ public class ModSpartanWeaponry
 		isSpartanHudBaublesLoaded = Loader.isModLoaded(ModID_SpartanHudBaubles);
 		isRLCombatLoaded = Loader.isModLoaded(ModID_BetterCombat);
 		isTrinketsLoaded = Loader.isModLoaded(ModID_Trinkets);
-		isSMELoaded = Loader.isModLoaded(ModID_SME);
 		
 		// Load up the API Internal Method Handler
 		SpartanWeaponryAPI.internalHandler = new APIInternalMethodHandler();

@@ -2,6 +2,7 @@ package com.oblivioussp.spartanweaponry.entity.projectile;
 
 import com.oblivioussp.spartanweaponry.init.ItemRegistrySW;
 import com.oblivioussp.spartanweaponry.item.ItemBolt;
+import com.oblivioussp.spartanweaponry.mixin.IEntityArrowAccessor;
 import com.oblivioussp.spartanweaponry.util.EntityDamageSourceIndirectArmorPiercing;
 
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -146,7 +147,7 @@ public class EntityBolt extends EntityArrow implements IThrowableEntity
                 this.motionZ *= -0.10000000149011612D;
                 this.rotationYaw += 180.0F;
                 this.prevRotationYaw += 180.0F;
-                this.ticksInAir = 0;
+				((IEntityArrowAccessor)this).setTicksInAirAcc(0);
 
                 if (!this.world.isRemote && this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ < 0.0010000000474974513D)
                 {

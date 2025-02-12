@@ -16,7 +16,6 @@ import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.IPropertyCallback;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
-import com.oblivioussp.spartanweaponry.compat.sme.SMEHelper;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityThrownWeapon;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 import com.oblivioussp.spartanweaponry.util.StringHelper;
@@ -456,8 +455,7 @@ public class ItemSwordBase extends ItemSword implements IWeaponPropertyContainer
 	{
 		WeaponProperty prop = getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_SWEEP_DAMAGE);
 		boolean isSweepCompatible = prop != null && prop.getLevel() == 1;	// Sweeping Edge is only compatible with Sweep 1 (not 2 or 3)
-		return (hasWeaponProperty(WeaponProperties.VERSATILE) && ModSpartanWeaponry.isSMELoaded && SMEHelper.isCombatAxeEnchantment(enchantment.type)) ||		// Battleaxes can have tool-type enchantments
-				(enchantment == Enchantments.SWEEPING && isSweepCompatible) || enchantment != Enchantments.SWEEPING && super.canApplyAtEnchantingTable(stack, enchantment);
+		return (enchantment == Enchantments.SWEEPING && isSweepCompatible) || enchantment != Enchantments.SWEEPING && super.canApplyAtEnchantingTable(stack, enchantment);
 	}
     
     // IWeaponPropertyContainer
