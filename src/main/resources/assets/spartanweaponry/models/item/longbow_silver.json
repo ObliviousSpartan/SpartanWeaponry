@@ -1,9 +1,7 @@
 {
     "parent": "spartanweaponry:item/longbow_wood",
     "textures": {
-        "layer0":"spartanweaponry:items/custom/longbow_standby_layer_0",
-        "layer1":"spartanweaponry:items/custom/longbow_standby_layer_1",
-        "layer2":"spartanweaponry:items/custom/longbow_standby_layer_2"
+        "layer0":"spartanweaponry:items/longbow_silver_standby"
     },
     "overrides": [
         {

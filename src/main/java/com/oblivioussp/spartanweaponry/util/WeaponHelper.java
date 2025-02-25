@@ -327,7 +327,9 @@ public class WeaponHelper
                     
                     if(weaponItem.hasWeaponProperty(WeaponProperties.QUICK_STRIKE))
                     {
-                        targetEntity.hurtResistantTime = Math.min(targetEntity.hurtResistantTime, ConfigHandler.quickStrikeHurtResistTicks);
+                    	double hurtResistModifier = targetEntity instanceof EntityLivingBase ? (((EntityLivingBase)targetEntity).maxHurtResistantTime / 20.0d) : 1.0d;
+                        targetEntity.hurtResistantTime = Math.min(targetEntity.hurtResistantTime, (int)(hurtResistModifier * ConfigHandler.quickStrikeHurtResistTicks));
+                        // TODO: Make an hurt resistance event to post here
                     }
                 }
             }
