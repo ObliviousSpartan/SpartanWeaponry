@@ -66,7 +66,7 @@ public class ModelRenderRegistry
 	public static void addItemToRegistry(Item item, ResourceLocation modelLoc, ToolMaterialEx material)
 	{
 		models.add(new ModelRegistryEntry(item, modelLoc));
-//		ModSpartanWeaponry.instance.proxy.addColourHandler(item, material);
+		ModSpartanWeaponry.instance.proxy.addColourHandler(item, material);
 	}
 	
 	public static void addItemToColourHandler(Item item, ToolMaterialEx material)
