@@ -10,6 +10,7 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.init.EnchantmentRegistrySW;
 import com.oblivioussp.spartanweaponry.init.SoundRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
+import com.oblivioussp.spartanweaponry.mixin.IEntityArrowAccessor;
 import com.oblivioussp.spartanweaponry.util.DamageSourcesSW;
 import com.oblivioussp.spartanweaponry.util.Log;
 
@@ -127,7 +128,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
     {
     	super.writeEntityToNBT(compound);
     	
-        compound.setShort(NBT_LIFE, (short)ticksInGround);
+        compound.setShort(NBT_LIFE, (short)((IEntityArrowAccessor)this).getTicksInGroundAcc());
     }
 	
 	/**
@@ -137,8 +138,8 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
     public void readEntityFromNBT(NBTTagCompound compound)
     {
     	super.readEntityFromNBT(compound);
-
-    	ticksInGround = compound.getShort(NBT_LIFE);
+		
+		((IEntityArrowAccessor)this).setTicksInGroundAcc(compound.getShort(NBT_LIFE));
     }
 	
 	/**
@@ -243,13 +244,13 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
                 {
                     EntityLivingBase entitylivingbase = (EntityLivingBase)entity;
 
-                    if (knockbackStrength > 0)
+                    if (((IEntityArrowAccessor)this).getKnockbackStrengthAcc() > 0)
                     {
                         float f1 = MathHelper.sqrt(motionX * motionX + motionZ * motionZ);
 
                         if (f1 > 0.0F)
                         {
-                            entitylivingbase.addVelocity(motionX * knockbackStrength * 0.6000000238418579D / f1, 0.1D, motionZ * knockbackStrength * 0.6000000238418579D / f1);
+                            entitylivingbase.addVelocity(motionX * ((IEntityArrowAccessor)this).getKnockbackStrengthAcc() * 0.6000000238418579D / f1, 0.1D, motionZ * ((IEntityArrowAccessor)this).getKnockbackStrengthAcc() * 0.6000000238418579D / f1);
                         }
                     }
 
@@ -285,7 +286,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
                 motionZ *= -0.10000000149011612D;
                 rotationYaw += 180.0F;
                 prevRotationYaw += 180.0F;
-                ticksInAir = 0;
+				((IEntityArrowAccessor)this).setTicksInAirAcc(0);
 
                 if (!world.isRemote && motionX * motionX + motionY * motionY + motionZ * motionZ < 0.0010000000474974513D)
                 {
@@ -427,7 +428,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
 
 	public int getTicksInAir()
 	{
-		return ticksInAir;
+		return ((IEntityArrowAccessor)this).getTicksInAirAcc();
 	}
 
 	/**
@@ -436,8 +437,9 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
 	@Override
     public void onUpdate()
     {
-		if(inGround)
-			++ticksInGround;
+		if(inGround) {
+			((IEntityArrowAccessor)this).setTicksInGroundAcc(((IEntityArrowAccessor)this).getTicksInGroundAcc() + 1);
+		}
 		
 		if(timeInGround > 4 || isReturning && shootingEntity != null)
 		{
@@ -478,7 +480,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
 			}
 		}
 		
-		if(ticksInGround >= 1200)
+		if(((IEntityArrowAccessor)this).getTicksInGroundAcc() >= 1200)
 		{
 			// Drop the weapon as an item
 			if (pickupStatus == EntityArrow.PickupStatus.ALLOWED)
@@ -487,10 +489,12 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
 			setDead();
 		}
 		
-		if(!inGround)
-			++ticksInAir;
-		else if(ticksInAir != 0)
-			ticksInAir = 0;
+		if(!inGround) {
+			((IEntityArrowAccessor)this).setTicksInAirAcc(((IEntityArrowAccessor)this).getTicksInAirAcc() + 1);
+		}
+		else if(((IEntityArrowAccessor)this).getTicksInAirAcc() != 0) {
+			((IEntityArrowAccessor)this).setTicksInAirAcc(0);
+		}
 		
 		// Copy of Entity.onUpdate()
 		if(!world.isRemote)
@@ -509,7 +513,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
             prevRotationPitch = rotationPitch;
         }
 
-        BlockPos blockpos = new BlockPos(xTile, yTile, zTile);
+        BlockPos blockpos = new BlockPos(((IEntityArrowAccessor)this).getXTileAcc(), ((IEntityArrowAccessor)this).getYTileAcc(), ((IEntityArrowAccessor)this).getZTileAcc());
         IBlockState iblockstate = world.getBlockState(blockpos);
         Block block = iblockstate.getBlock();
 
@@ -532,20 +536,20 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
         {
             int j = block.getMetaFromState(iblockstate);
 
-            if ((block != inTile || j != inData) && !world.collidesWithAnyBlock(getEntityBoundingBox().grow(0.05D)))
+            if ((block != ((IEntityArrowAccessor)this).getInTileAcc() || j != ((IEntityArrowAccessor)this).getInDataAcc()) && !world.collidesWithAnyBlock(getEntityBoundingBox().grow(0.05D)))
             {
                 inGround = false;
                 motionX *= (double)(rand.nextFloat() * 0.2F);
                 motionY *= (double)(rand.nextFloat() * 0.2F);
                 motionZ *= (double)(rand.nextFloat() * 0.2F);
-                ticksInGround = 0;
-                ticksInAir = 0;
+				((IEntityArrowAccessor)this).setTicksInGroundAcc(0);
+				((IEntityArrowAccessor)this).setTicksInAirAcc(0);
             }
             else
             {
-                ++ticksInGround;
+				((IEntityArrowAccessor)this).setTicksInGroundAcc(((IEntityArrowAccessor)this).getTicksInGroundAcc() + 1);
 
-                if (ticksInGround >= 1200 )
+                if (((IEntityArrowAccessor)this).getTicksInGroundAcc() >= 1200 )
                 {
         			if (pickupStatus == EntityArrow.PickupStatus.ALLOWED)
         				dropAsItem();
@@ -558,7 +562,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
         else
         {
             timeInGround = 0;
-            ++ticksInAir;
+			((IEntityArrowAccessor)this).setTicksInAirAcc(((IEntityArrowAccessor)this).getTicksInAirAcc() + 1);
             Vec3d vec3d1 = new Vec3d(posX, posY, posZ);
             Vec3d vec3d = new Vec3d(posX + motionX, posY + motionY, posZ + motionZ);
             RayTraceResult raytraceresult = world.rayTraceBlocks(vec3d1, vec3d, false, true, false);
@@ -680,7 +684,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
 	@Override
     public void setKnockbackStrength(int knockback)
     {
-        knockbackStrength = knockback;
+		((IEntityArrowAccessor)this).setKnockbackStrengthAcc(knockback);
     }
 
 	@Override

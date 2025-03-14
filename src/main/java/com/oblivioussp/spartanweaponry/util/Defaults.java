@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 public class Defaults
 {
 	// Default config options
-	public static final String ModVersion = "@VERSION@";
+	public static final String ModVersion = "1.6.1";//"@VERSION@"; Unsure of updating class file values with new gradle
 	
 	// Materials
 	public static final float MaterialDamageCopper = 1.5f;

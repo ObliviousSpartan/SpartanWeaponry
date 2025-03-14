@@ -2,6 +2,7 @@ package com.oblivioussp.spartanweaponry.mixin;
 
 import java.util.List;
 
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,26 +25,36 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
 @Mixin(EntityArrow.class)
-public class EntityArrowMixin extends EntityMixin
-{
+public abstract class EntityArrowMixin extends Entity {
+	
+	public EntityArrowMixin(World worldIn) {
+		super(worldIn);
+	}
+	
+	@Shadow public PickupStatus pickupStatus;
+	
+	@Shadow protected abstract ItemStack getArrowStack();
+	
+	@Shadow protected boolean inGround;
+	
+	@Shadow public int arrowShake;
+	
 	/**
 	 * Mixin method to collect the arrow entity and put the item in a Quiver
-	 * @param entityIn
-	 * @param callback
 	 */
 	@Inject(at = @At("HEAD"), method = "onCollideWithPlayer(Lnet/minecraft/entity/player/EntityPlayer;)V", cancellable = true)
-	private void onCollideWithPlayer(EntityPlayer entityIn, CallbackInfo callback)
+	private void spartanWeaponry_vanillaEntityArrow_onCollideWithPlayer(EntityPlayer entityIn, CallbackInfo callback)
 	{
-		if(!world.isRemote && inGround && arrowShake <= 0)
+		if(!this.world.isRemote && this.inGround && this.arrowShake <= 0)
 		{
 			Log.debug("Player collision with arrow entity intercepted!");
 //			boolean pickupItem = pickupStatus == PickupStatus.ALLOWED || pickupStatus == PickupStatus.CREATIVE_ONLY && entityIn.abilities.isCreativeMode || getNoClip() && getShooter().getUniqueID() == entityIn.getUniqueID();
 			
-			if(pickupStatus == PickupStatus.ALLOWED)
+			if(this.pickupStatus == PickupStatus.ALLOWED)
 			{
 				// Attempt to pickup and put into the quiver first; if that fails, then do nothing
 				List<ItemStack> quivers = QuiverHelper.findValidQuivers(entityIn);
-				ItemStack arrowStack = getArrowStack();
+				ItemStack arrowStack = this.getArrowStack();
 
 				// Check if the player has the same arrow type and space to store more in one of their hands first before placing it in the quiver
 				ItemStack mainHand = entityIn.getHeldItemMainhand();
@@ -75,10 +86,10 @@ public class EntityArrowMixin extends EntityMixin
 						if(arrowStack.isEmpty())
 						{
 							Log.debug("Picked up arrow on the ground and placed it in the quiver!");
-							Entity thisEntity = world.getEntityByID(getEntityId());
+							Entity thisEntity = this.world.getEntityByID(this.getEntityId());
 							entityIn.onItemPickup(thisEntity, 1);
-							setDead();
-							world.playSound((EntityPlayer)null, posX, posY, posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, (rand.nextFloat() - rand.nextFloat()) * 0.7F + 0.0F);
+							this.setDead();
+							this.world.playSound((EntityPlayer)null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.PLAYERS, 0.2F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 0.0F);
 							// Cancel running the underlying method if the arrow is directly picked up
 							callback.cancel();
 							break;
@@ -88,18 +99,5 @@ public class EntityArrowMixin extends EntityMixin
 			}
 		}
 //		callback.cancel();
-	}
-	
-	@Shadow
-	protected boolean inGround;
-	@Shadow
-	public int arrowShake;
-	@Shadow
-	public PickupStatus pickupStatus;
-	
-	@Shadow
-	public ItemStack getArrowStack()
-	{
-		throw new IllegalStateException("Mixin failed to shadow the \"AbstractArrowEntity.getArrowStack()\" method!");
 	}
 }
