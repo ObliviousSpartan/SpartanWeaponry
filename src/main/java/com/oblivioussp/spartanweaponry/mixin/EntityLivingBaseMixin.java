@@ -60,7 +60,9 @@ public abstract class EntityLivingBaseMixin extends Entity {
 			// TODO: Remove debug checks after finishing debugging
 //			float oldArmor = (float)getTotalArmorValue();
 //			float resultArmor = (float)getTotalArmorValue() * MathHelper.clamp(1.0f - percentage, 0.0f, 1.0f);
-			float oldDamage = CombatRules.getDamageAfterAbsorb(damage, (float)this.getTotalArmorValue(), (float)this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).getAttributeValue());
+			
+//			float oldDamage = CombatRules.getDamageAfterAbsorb(damage, (float)this.getTotalArmorValue(), (float)this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).getAttributeValue());
+
 //			float resultDamage = CombatRules.getDamageAfterAbsorb(damage, (float)getTotalArmorValue() * 1.0f - percentage, (float)getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).getAttributeValue());
 //			Log.info("Armor value: " + oldArmor + " Reduced Armor value: " + resultArmor);
 //			Log.info("Full damage: " + damage + " Reduced damage without AP: " + oldDamage + " With AP(" + (percentage * 100.0f) +"%): " + resultDamage);

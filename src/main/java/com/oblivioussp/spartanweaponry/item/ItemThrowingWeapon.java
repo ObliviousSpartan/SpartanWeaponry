@@ -58,6 +58,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+@SuppressWarnings("deprecation")
 public class ItemThrowingWeapon extends Item implements IWeaponPropertyContainer<ItemThrowingWeapon>
 {
 	protected float attackDamage = 1.0f;
@@ -150,9 +151,9 @@ public class ItemThrowingWeapon extends Item implements IWeaponPropertyContainer
     {
 		ItemStack stack = playerIn.getHeldItem(hand);
 		if(stack.hasTagCompound() && stack.getTagCompound().getInteger(NBT_AMMO_USED) == getMaxAmmo(stack))
-			return new ActionResult(EnumActionResult.FAIL, stack);
+			return new ActionResult<>(EnumActionResult.FAIL, stack);
     	playerIn.setActiveHand(hand);
-        return new ActionResult(EnumActionResult.SUCCESS, stack);
+        return new ActionResult<>(EnumActionResult.SUCCESS, stack);
     }
 	
 	/**
@@ -639,7 +640,7 @@ public class ItemThrowingWeapon extends Item implements IWeaponPropertyContainer
 	@Override
 	public List<WeaponProperty> getAllWeaponProperties() 
 	{
-		return new ArrayList(properties);
+		return new ArrayList<>(properties);
 	}
 
 	@Override

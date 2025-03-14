@@ -3,7 +3,6 @@ package com.oblivioussp.spartanweaponry.enchantment;
 import com.oblivioussp.spartanweaponry.init.EnchantmentRegistrySW;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentThrowingHydrodynamic extends EnchantmentSW

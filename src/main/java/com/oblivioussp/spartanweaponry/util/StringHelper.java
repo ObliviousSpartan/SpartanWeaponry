@@ -4,6 +4,7 @@ import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 
 import net.minecraft.util.text.translation.I18n;
 
+@SuppressWarnings("deprecation")
 public class StringHelper
 {
 	/**

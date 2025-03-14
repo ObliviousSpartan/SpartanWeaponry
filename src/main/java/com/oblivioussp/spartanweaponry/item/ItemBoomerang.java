@@ -42,7 +42,6 @@ public class ItemBoomerang extends ItemThrowingWeapon
 	 * @deprecated This old constructor is only here for compatibility reasons. Update your addon mods instead of using this method.
 	 */
 	@Deprecated
-	@SuppressWarnings("unused")
 	public ItemBoomerang(String unlocName, String externalModId, ToolMaterialEx material, float weaponDamage) 
 	{
 		this(unlocName, externalModId, material);

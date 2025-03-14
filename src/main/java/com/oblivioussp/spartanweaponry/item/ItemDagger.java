@@ -3,7 +3,6 @@ package com.oblivioussp.spartanweaponry.item;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
-import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -29,7 +28,6 @@ public class ItemDagger extends ItemWeaponBase
 	 * @deprecated This old constructor is only here for compatibility reasons. Update your addon mods instead of using this method.
 	 */
 	@Deprecated
-	@SuppressWarnings("unused")
 	public ItemDagger(String unlocName, String externalModId, ToolMaterialEx material, float weaponDamage) 
 	{
 		this(unlocName, externalModId, material);

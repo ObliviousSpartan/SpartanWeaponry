@@ -1,6 +1,5 @@
 package com.oblivioussp.spartanweaponry.util;
 
-import java.util.Arrays;
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;

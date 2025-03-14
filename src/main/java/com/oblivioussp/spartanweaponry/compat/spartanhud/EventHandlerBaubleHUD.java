@@ -34,7 +34,7 @@ public class EventHandlerBaubleHUD
 		if(OreDictionarySW.matches(OreDictionarySW.QUIVERS, ev.getItemStack()))
 		{
 			ItemStack quiver = ev.getItemStack();
-			ItemQuiverBase quiverItem = (ItemQuiverBase)ev.getItemStack().getItem();
+//			ItemQuiverBase quiverItem = (ItemQuiverBase)ev.getItemStack().getItem();
 			Minecraft mc = Minecraft.getMinecraft();
 			FontRenderer font = ev.getFontRenderer();
 

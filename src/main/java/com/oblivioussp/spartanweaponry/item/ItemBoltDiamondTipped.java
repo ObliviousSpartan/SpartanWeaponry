@@ -13,6 +13,7 @@ import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
+@SuppressWarnings("deprecation")
 public class ItemBoltDiamondTipped extends ItemBoltTipped 
 {
 	public ItemBoltDiamondTipped(String unlocName) 

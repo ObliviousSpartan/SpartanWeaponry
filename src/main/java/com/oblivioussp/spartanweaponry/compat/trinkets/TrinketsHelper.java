@@ -22,9 +22,9 @@ public class TrinketsHelper
 	{
 		try
 		{
-			final EntityProperties raceProp = Capabilities.getEntityRace(entity);
-			if(raceProp != null)
-				return raceProp.getCurrentRace().getName();
+			final EntityProperties entityProp = Capabilities.getEntityProperties(entity);
+			if(entityProp != null)
+				return entityProp.getCurrentRace().getName();
 		}
 		catch(final Exception e)
 		{

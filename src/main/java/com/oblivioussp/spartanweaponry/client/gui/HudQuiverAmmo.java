@@ -91,7 +91,6 @@ public class HudQuiverAmmo extends HudElement
 		{
 			String inventoryKey = "[" + KeyBinds.KEY_ACCESS_QUIVER.getDisplayName().toUpperCase() + "]";
 			int keyWidth = font.getStringWidth(inventoryKey);
-			VerticalAlignment vert = align.getVertical();
 			HorizontalAlignment horiz = align.getHorizontal();
 			int keyTextXOffset = horiz == HorizontalAlignment.RIGHT && keyWidth > 19 ? -keyWidth + 22 : 			// Prevent overflow into the right side of the screen
 								horiz == HorizontalAlignment.LEFT && keyWidth > 19 && offsetX < 19 ? 0: 			// Prevent overflow into the left side of the screen

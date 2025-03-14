@@ -6,7 +6,6 @@ import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponPropertyExtraDamage;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 import com.oblivioussp.spartanweaponry.util.EntityDamageSourceArmorPiercing;
-import com.oblivioussp.spartanweaponry.util.Log;
 
 import bettercombat.mod.event.RLCombatModifyDamageEvent;
 import bettercombat.mod.event.RLCombatSweepEvent;
@@ -85,7 +84,7 @@ public class EventHandlerRLCombat
 		// Add armour-piercing to applicable weapons
 		if(weaponStack.getItem() instanceof IWeaponPropertyContainer)
 		{
-			IWeaponPropertyContainer weaponItem = ((IWeaponPropertyContainer)weaponStack.getItem());
+			IWeaponPropertyContainer<?> weaponItem = ((IWeaponPropertyContainer<?>)weaponStack.getItem());
 			WeaponProperty armourPiercingProp = weaponItem.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_ARMOUR_PIERCING);
 			if(armourPiercingProp != null)
 			{
@@ -112,7 +111,7 @@ public class EventHandlerRLCombat
 		
 		if(weaponStack.getItem() instanceof IWeaponPropertyContainer)
 		{
-			IWeaponPropertyContainer weaponItem = ((IWeaponPropertyContainer)weaponStack.getItem());
+			IWeaponPropertyContainer<?> weaponItem = ((IWeaponPropertyContainer<?>)weaponStack.getItem());
 			WeaponProperty sweepProp = weaponItem.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_WIDE_SWEEP);
 			if(sweepProp == null)
 			{

@@ -1,8 +1,5 @@
 package com.oblivioussp.spartanweaponry.client.gui;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class AlignmentHelper
 {
 	public enum VerticalAlignment

@@ -30,6 +30,7 @@ import com.oblivioussp.spartanweaponry.util.QuiverHelper.IQuiverInfo;
 import com.oblivioussp.spartanweaponry.util.StringHelper;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.client.settings.KeyBinding;
@@ -175,7 +176,7 @@ public class EventHandlerClient
 			{
 				if(stack.getItem() instanceof IWeaponPropertyContainer)
 				{
-					IWeaponPropertyContainer container = (IWeaponPropertyContainer) stack.getItem();
+					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>) stack.getItem();
 					reachProperty = container.getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_REACH);
 				}
 				
@@ -619,7 +620,7 @@ public class EventHandlerClient
 	        // Render the attack indicator if applicable and if Better Combat Rebirth is not installed
 	        if (mc.gameSettings.attackIndicator == 1 && !ModSpartanWeaponry.isRLCombatLoaded && !ConfigHandler.forceCompatibilityCrosshairs)
 	        {
-	            mc.getTextureManager().bindTexture(mc.ingameGUI.ICONS);
+	            mc.getTextureManager().bindTexture(GuiIngame.ICONS);
 	            GlStateManager.enableAlpha();
 	            float f = player.getCooledAttackStrength(0.0F);
 	            boolean flag = false;

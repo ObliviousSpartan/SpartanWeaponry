@@ -1,8 +1,7 @@
 package com.oblivioussp.spartanweaponry.client.gui;
 
-import com.oblivioussp.spartanweaponry.util.Log;
-
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.math.MathHelper;
 
@@ -57,7 +56,7 @@ public class HudLoadState extends HudElement
 		if(!isLoaded)
 			posY = res.getScaledHeight() - 3 - MathHelper.clamp(MathHelper.floor(16 * loadProgress), 0, 16);
 		if(highlightedSlot != -1 || isOffhand)
-			mc.ingameGUI.drawRect(posX, posY, posX + 16, res.getScaledHeight() - 3, colour);
+			GuiIngame.drawRect(posX, posY, posX + 16, res.getScaledHeight() - 3, colour);
 	}
 
 }

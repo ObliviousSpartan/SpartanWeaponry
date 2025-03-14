@@ -24,6 +24,7 @@ import net.minecraftforge.event.ForgeEventFactory;
 
 public class EntityDynamite extends EntityThrowable
 {
+	@SuppressWarnings("unchecked")
 	private static final Predicate<Entity> VALID_TARGETS = Predicates.and(EntitySelectors.NOT_SPECTATING, EntitySelectors.IS_ALIVE, new Predicate<Entity>() {
 		@Override
 		public boolean apply(Entity input) 

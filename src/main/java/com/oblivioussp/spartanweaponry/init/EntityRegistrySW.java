@@ -26,7 +26,6 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 @EventBusSubscriber(modid = ModSpartanWeaponry.ID)
 public class EntityRegistrySW 
 {
-	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public static void registerEntities(RegistryEvent.Register<EntityEntry> ev)
 	{

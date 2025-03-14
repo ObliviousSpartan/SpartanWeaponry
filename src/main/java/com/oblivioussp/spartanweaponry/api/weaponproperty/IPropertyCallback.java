@@ -39,7 +39,6 @@ public interface IPropertyCallback
 	 * @param victim The Entity being attacked
 	 * @return The damage that will be taken after any necessary modifications.
 	 */
-	@SuppressWarnings("unused")
 	public default float modifyDamageDealt(ToolMaterialEx material, float baseDamage, float initialDamage, DamageSource source, EntityLivingBase attacker, EntityLivingBase victim)
 	{
 		return modifyDamageDealt(material, baseDamage, source, attacker, victim);
@@ -85,6 +84,5 @@ public interface IPropertyCallback
 	 * Allows the item to have Enchantments or other NBT data added to the item. This should be reflected in Creative mode too
 	 * @param stack The item to edit
 	 */
-	@SuppressWarnings("unused")
 	public default void onCreateItem(ToolMaterialEx material, ItemStack stack) {}
 }
