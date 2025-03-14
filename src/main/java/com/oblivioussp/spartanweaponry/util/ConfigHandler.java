@@ -234,7 +234,7 @@ public class ConfigHandler
 	public static float boltDiamondRangeMultiplier = Defaults.BoltDiamondRangeMultiplier;
 	public static float boltDiamondArmorPiercingFactor = Defaults.BoltDiamondArmorPiercingFactor;
 	public static boolean woodenCrossbowOnly = false;
-	public static List<ResourceLocation> enchantmentWhitelistCrossbow = new ArrayList(Defaults.EnchantmentWhitelistCrossbow);
+	public static List<ResourceLocation> enchantmentWhitelistCrossbow = new ArrayList<>(Defaults.EnchantmentWhitelistCrossbow);
 
 	// ---- ---- ---- ---- ---- ---- ---- ----
 	// Throwing Knife
@@ -460,7 +460,7 @@ public class ConfigHandler
 			for(String category : categories)
 			{
 				setCategoryLanguageKey(category);
-				if(category != config.CATEGORY_GENERAL && category != config.CATEGORY_CLIENT)
+				if(category != Configuration.CATEGORY_GENERAL && category != Configuration.CATEGORY_CLIENT)
 					config.setCategoryRequiresMcRestart(category, true);
 			}
 		}

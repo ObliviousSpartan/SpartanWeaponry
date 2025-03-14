@@ -59,17 +59,17 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntityThrowingKnife.class, new RenderFactoryThrowingKnife());
 		RenderingRegistry.registerEntityRenderingHandler(EntityThrowingAxe.class, new RenderFactoryThrowingAxe<EntityThrowingAxe>());
 		RenderingRegistry.registerEntityRenderingHandler(EntityThrownJavelin.class, new RenderFactoryThrownJavelin());
-		RenderingRegistry.registerEntityRenderingHandler(EntityArrowWood.class, new RenderFactoryArrowSW());
-		RenderingRegistry.registerEntityRenderingHandler(EntityArrowIron.class, new RenderFactoryArrowSW());
-		RenderingRegistry.registerEntityRenderingHandler(EntityArrowDiamond.class, new RenderFactoryArrowSW());
-		RenderingRegistry.registerEntityRenderingHandler(EntityArrowExplosive.class, new RenderFactoryArrowSW());
+		RenderingRegistry.registerEntityRenderingHandler(EntityArrowWood.class, new RenderFactoryArrowSW<>());
+		RenderingRegistry.registerEntityRenderingHandler(EntityArrowIron.class, new RenderFactoryArrowSW<>());
+		RenderingRegistry.registerEntityRenderingHandler(EntityArrowDiamond.class, new RenderFactoryArrowSW<>());
+		RenderingRegistry.registerEntityRenderingHandler(EntityArrowExplosive.class, new RenderFactoryArrowSW<>());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBoomerang.class, new RenderFactoryBoomerang());
 		RenderingRegistry.registerEntityRenderingHandler(EntityDynamite.class, new IRenderFactory<EntityDynamite>() {
 
 			@Override
 			public Render<? super EntityDynamite> createRenderFor(RenderManager manager) 
 			{
-				return new RenderSnowball(manager, ItemRegistrySW.dynamite, Minecraft.getMinecraft().getRenderItem());
+				return new RenderSnowball<>(manager, ItemRegistrySW.dynamite, Minecraft.getMinecraft().getRenderItem());
 			}
 			
 		});

@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import mezz.jei.api.ingredients.IIngredients;
-import mezz.jei.api.recipe.BlankRecipeWrapper;
 import mezz.jei.api.recipe.wrapper.IShapedCraftingRecipeWrapper;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -12,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionType;
 import net.minecraft.potion.PotionUtils;
 
-public class TippedProjectileRecipeWrapper extends BlankRecipeWrapper implements IShapedCraftingRecipeWrapper 
+public class TippedProjectileRecipeWrapper implements IShapedCraftingRecipeWrapper 
 {
 	private final List<ItemStack> inputs;
 	private final ItemStack output;

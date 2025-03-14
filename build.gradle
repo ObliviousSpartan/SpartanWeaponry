@@ -15,6 +15,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 minecraft {
     mappings channel: mappings_channel, version: mappings_version
 	
+    accessTransformer = files('src/main/resources/jei_at.cfg')
+    
     runs {
         client {
             jvmArg "-Dfml.coreMods.load=${mixin_loader_class}"
@@ -25,6 +27,7 @@ minecraft {
 
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+			environment 'MC_VERSION', "${minecraft_version}"
         }
 
         server {
@@ -36,6 +39,7 @@ minecraft {
 
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+			environment 'MC_VERSION', "${minecraft_version}"
         }
     }
 }
@@ -83,7 +87,9 @@ processResources {
     ]
 
     inputs.properties replaceProperties
-
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
+	exclude 'jei_at.cfg'
+    
     filesMatching('mcmod.info') {
         expand replaceProperties
     }

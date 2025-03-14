@@ -13,7 +13,6 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.advancements.ICriterionInstance;
 import net.minecraft.advancements.ICriterionTrigger;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.critereon.AbstractCriterionInstance;
@@ -22,7 +21,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 
-public class AdvancementTrigger implements ICriterionTrigger 
+@SuppressWarnings("deprecation")
+public class AdvancementTrigger implements ICriterionTrigger<AdvancementTrigger.Instance> 
 {
 	public static final AdvancementTrigger CRAFT_ITEM = new AdvancementTrigger("craft_item");
 	
@@ -51,7 +51,7 @@ public class AdvancementTrigger implements ICriterionTrigger
 	}
 
 	@Override
-	public void addListener(PlayerAdvancements playerAdvancementsIn, Listener listener) 
+	public void addListener(PlayerAdvancements playerAdvancementsIn, Listener<AdvancementTrigger.Instance> listener) 
 	{
 		Listeners triggerListeners = listeners.get(playerAdvancementsIn);
 		
@@ -65,7 +65,7 @@ public class AdvancementTrigger implements ICriterionTrigger
 	}
 
 	@Override
-	public void removeListener(PlayerAdvancements playerAdvancementsIn, Listener listener) 
+	public void removeListener(PlayerAdvancements playerAdvancementsIn, Listener<AdvancementTrigger.Instance> listener) 
 	{
 		Listeners triggerListeners = listeners.get(playerAdvancementsIn);
 		
@@ -88,7 +88,7 @@ public class AdvancementTrigger implements ICriterionTrigger
 	}
 
 	@Override
-	public ICriterionInstance deserializeInstance(JsonObject json, JsonDeserializationContext context) 
+	public AdvancementTrigger.Instance deserializeInstance(JsonObject json, JsonDeserializationContext context) 
 	{
 		String type = json.get("className").getAsString();
 		return new Instance(getId(), type);
@@ -129,7 +129,7 @@ public class AdvancementTrigger implements ICriterionTrigger
 	protected static class Listeners
 	{
 		private final PlayerAdvancements playerAdvancements;
-		private final Set<ICriterionTrigger.Listener> listeners = Sets.newHashSet();
+		private final Set<ICriterionTrigger.Listener<?>> listeners = Sets.newHashSet();
 		
 		public Listeners(PlayerAdvancements advancements)
 		{
@@ -141,27 +141,26 @@ public class AdvancementTrigger implements ICriterionTrigger
 			return listeners.isEmpty();
 		}
 		
-		public void add(ICriterionTrigger.Listener listener)
+		public void add(ICriterionTrigger.Listener<?> listener)
 		{
 			listeners.add(listener);
 		}
 		
-		public void remove(ICriterionTrigger.Listener listener)
+		public void remove(ICriterionTrigger.Listener<?> listener)
 		{
 			this.listeners.remove(listener);
 		}
 		
-		@SuppressWarnings("unused")
 		public void trigger(EntityPlayerMP player, Item item)
 		{
-			List<ICriterionTrigger.Listener> list = null;
+			List<ICriterionTrigger.Listener<?>> list = null;
 			
-			for(ICriterionTrigger.Listener listener : listeners)
+			for(ICriterionTrigger.Listener<?> listener : listeners)
 			{
 				if(((Instance) listener.getCriterionInstance()).test(item))
 				{
 					if(list == null)
-						list = new ArrayList<ICriterionTrigger.Listener>();
+						list = new ArrayList<ICriterionTrigger.Listener<?>>();
 					
 					list.add(listener);
 				}
@@ -169,7 +168,7 @@ public class AdvancementTrigger implements ICriterionTrigger
 			
 			if(list != null)
 			{
-				for(ICriterionTrigger.Listener listener : list)
+				for(ICriterionTrigger.Listener<?> listener : list)
 				{
 					listener.grantCriterion(playerAdvancements);
 				}

@@ -4,11 +4,9 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
-import com.oblivioussp.spartanweaponry.util.StringHelper;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,9 +18,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -54,7 +50,6 @@ public class ItemParryingDagger extends ItemWeaponBase implements IBlockingWeapo
 	 * @deprecated This old constructor is only here for compatibility reasons. Update your addon mods instead of using this method.
 	 */
 	@Deprecated
-	@SuppressWarnings("unused")
 	public ItemParryingDagger(String unlocName, String externalModId, ToolMaterialEx material, float weaponDamage) 
 	{
 		this(unlocName, externalModId, material);

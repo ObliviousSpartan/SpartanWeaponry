@@ -1,6 +1,5 @@
 package com.oblivioussp.spartanweaponry.enchantment;
 
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentCrossbowRapidLoad extends EnchantmentSW

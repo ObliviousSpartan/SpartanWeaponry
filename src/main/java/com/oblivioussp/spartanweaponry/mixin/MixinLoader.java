@@ -5,8 +5,6 @@ import java.util.Map;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.Mixins;
 
-import com.oblivioussp.spartanweaponry.util.Log;
-
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")

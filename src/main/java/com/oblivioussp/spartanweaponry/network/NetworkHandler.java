@@ -31,17 +31,17 @@ public class NetworkHandler
 		return id;
 	}
 
-	public static void sendPacketToAll(PacketBase packet)
+	public static void sendPacketToAll(PacketBase<?> packet)
 	{
 		instance.sendToAll(packet);
 	}
 
-	public static void sendPacketTo(PacketBase packet, EntityPlayerMP player)
+	public static void sendPacketTo(PacketBase<?> packet, EntityPlayerMP player)
 	{
 		instance.sendTo(packet, player);
 	}
 
-	public static void sendPacketToAllAround(PacketBase packet, TargetPoint point)
+	public static void sendPacketToAllAround(PacketBase<?> packet, TargetPoint point)
 	{
 		instance.sendToAllAround(packet, point);
 	}
@@ -51,12 +51,12 @@ public class NetworkHandler
 		instance.sendToAllAround(packet, new TargetPoint(world.provider.getDimension(), packet.pos.getX(), packet.pos.getY(), packet.pos.getZ(), 64.0));
 	}*/
 
-	public static void sendPacketToDimension(PacketBase packet, int dimensionId)
+	public static void sendPacketToDimension(PacketBase<?> packet, int dimensionId)
 	{
 		instance.sendToDimension(packet, dimensionId);
 	}
 
-	public static void sendPacketToServer(PacketBase packet)
+	public static void sendPacketToServer(PacketBase<?> packet)
 	{
 		instance.sendToServer(packet);
 	}

@@ -44,6 +44,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.oredict.OreDictionary;
 
+@SuppressWarnings("deprecation")
 public class ItemLongbow extends ItemBow implements IHudQuiverDisplay
 {
 	
@@ -325,7 +326,7 @@ public class ItemLongbow extends ItemBow implements IHudQuiverDisplay
 
         if (!playerIn.capabilities.isCreativeMode && !flag)
         {
-            return flag ? new ActionResult(EnumActionResult.PASS, bow) : new ActionResult(EnumActionResult.FAIL, bow);
+            return flag ? new ActionResult<>(EnumActionResult.PASS, bow) : new ActionResult<>(EnumActionResult.FAIL, bow);
         }
         
         playerIn.setActiveHand(handIn);

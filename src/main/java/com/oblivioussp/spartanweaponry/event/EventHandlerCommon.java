@@ -7,7 +7,6 @@ import java.util.Random;
 
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.IWeaponPropertyContainer;
-import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.IPropertyCallback;
 import com.oblivioussp.spartanweaponry.api.weaponproperty.WeaponProperty;
 import com.oblivioussp.spartanweaponry.entity.projectile.EntityThrownWeapon;
@@ -20,7 +19,6 @@ import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 import com.oblivioussp.spartanweaponry.util.Log;
 import com.oblivioussp.spartanweaponry.util.QuiverHelper;
 import com.oblivioussp.spartanweaponry.util.QuiverHelper.IQuiverInfo;
-import com.oblivioussp.spartanweaponry.util.WeaponHelper;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -33,7 +31,6 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.SPacketEntityVelocity;
-import net.minecraft.stats.StatList;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
@@ -99,7 +96,7 @@ public class EventHandlerCommon
 			{
 				if(stack.getItem() instanceof IWeaponPropertyContainer)
 				{
-					IWeaponPropertyContainer container = (IWeaponPropertyContainer)stack.getItem();
+					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>)stack.getItem();
 					float directDamage = container.getDirectAttackDamage();
 					
 					List<WeaponProperty> props = container.getAllWeaponProperties();
@@ -128,7 +125,7 @@ public class EventHandlerCommon
 			{
 				if(victimStack.getItem() instanceof IWeaponPropertyContainer)
 				{
-					IWeaponPropertyContainer container = (IWeaponPropertyContainer)victimStack.getItem();
+					IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>)victimStack.getItem();
 					List<WeaponProperty> props = container.getAllWeaponProperties();
 					for(WeaponProperty prop : props)
 					{

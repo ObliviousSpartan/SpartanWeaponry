@@ -33,7 +33,7 @@ public class CapabilityProviderQuiver implements ICapabilitySerializable<NBTTagC
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) 
 	{
 		if(hasCapability(capability, facing))
-			return (T) handler;
+			return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(handler);
 		return null;
 	}
 

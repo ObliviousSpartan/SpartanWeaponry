@@ -72,7 +72,7 @@ public class PacketLongReachAttack extends PacketBase<PacketLongReachAttack>
 		{
 			//ILongReachWeapon longReachItem = (ILongReachWeapon) weapon.getItem();
 			// Get the first instance of the reach property; ignore the others.
-			WeaponProperty reachProp = ((IWeaponPropertyContainer)weapon.getItem()).getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_REACH);
+			WeaponProperty reachProp = ((IWeaponPropertyContainer<?>)weapon.getItem()).getFirstWeaponPropertyWithType(WeaponProperties.PROPERTY_TYPE_REACH);
 			
 			if(reachProp != null)
 			{

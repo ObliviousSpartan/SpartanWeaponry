@@ -54,6 +54,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+@SuppressWarnings("deprecation")
 public class ItemSwordBase extends ItemSword implements IWeaponPropertyContainer<ItemSwordBase>
 {
 	protected float attackDamage = 1.0f;
@@ -295,7 +296,7 @@ public class ItemSwordBase extends ItemSword implements IWeaponPropertyContainer
 		{
 			ItemStack stack = playerIn.getHeldItem(hand);
 	        playerIn.setActiveHand(hand);
-	        return new ActionResult(EnumActionResult.SUCCESS, stack);
+	        return new ActionResult<>(EnumActionResult.SUCCESS, stack);
 		}
 		return super.onItemRightClick(worldIn, playerIn, hand);
 	}

@@ -10,6 +10,7 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SuppressWarnings("deprecation")
 public class WeaponProperty 
 {
 	/**
@@ -120,7 +121,6 @@ public class WeaponProperty
 		}
     }
 	
-	@SuppressWarnings("unused")
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipTitle(ItemStack stack, List<String> tooltip)
 	{
@@ -131,7 +131,6 @@ public class WeaponProperty
 			tooltip.add(getQuality().getFormatting() + "- " + SpartanWeaponryAPI.internalHandler.translateFormattedString(type, "tooltip", modId, I18n.translateToLocal("enchantment.level." + level)));
 	}
 	
-	@SuppressWarnings("unused")
 	@SideOnly(Side.CLIENT)
 	protected void addTooltipDescription(ItemStack stack, List<String> tooltip)
 	{

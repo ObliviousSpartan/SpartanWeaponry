@@ -12,7 +12,6 @@ import com.oblivioussp.spartanweaponry.init.SoundRegistry;
 import com.oblivioussp.spartanweaponry.item.ItemThrowingWeapon;
 import com.oblivioussp.spartanweaponry.mixin.IEntityArrowAccessor;
 import com.oblivioussp.spartanweaponry.util.DamageSourcesSW;
-import com.oblivioussp.spartanweaponry.util.Log;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
@@ -44,7 +43,6 @@ import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.common.registry.IThrowableEntity;
 
@@ -172,7 +170,7 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
             
             if(weapon.getItem() instanceof IWeaponPropertyContainer && entity instanceof EntityLivingBase && shootingEntity instanceof EntityLivingBase && !entity.isEntityEqual(shootingEntity))
             {
-            	IWeaponPropertyContainer<Item> container = (IWeaponPropertyContainer)weapon.getItem();
+            	IWeaponPropertyContainer<?> container = (IWeaponPropertyContainer<?>)weapon.getItem();
             	float damageDirect = container.getDirectAttackDamage();
             	ToolMaterialEx materialEx = container.getMaterialEx();
             	List<WeaponProperty> properties = container.getAllWeaponProperties();
@@ -642,13 +640,13 @@ public class EntityThrownWeapon extends EntityArrow implements IThrowableEntity,
             rotationPitch = prevRotationPitch + (rotationPitch - prevRotationPitch) * 0.2F;
             rotationYaw = prevRotationYaw + (rotationYaw - prevRotationYaw) * 0.2F;
             float f1 = 0.99F;
-            float f2 = 0.05F;
+            //float f2 = 0.05F;
 
             if (isInWater())
             {
                 for (int i = 0; i < 4; ++i)
                 {
-                    float f3 = 0.25F;
+                    //float f3 = 0.25F;
                     world.spawnParticle(EnumParticleTypes.WATER_BUBBLE, posX - motionX * 0.25D, posY - motionY * 0.25D, posZ - motionZ * 0.25D, motionX, motionY, motionZ);
                 }
 

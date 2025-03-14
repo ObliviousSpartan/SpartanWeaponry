@@ -7,9 +7,6 @@ import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.init.OreDictionarySW;
 import com.oblivioussp.spartanweaponry.item.ItemBolt;
 import com.oblivioussp.spartanweaponry.item.ItemCrossbow;
-import com.oblivioussp.spartanweaponry.item.ItemQuiverArrow;
-import com.oblivioussp.spartanweaponry.item.ItemQuiverBase;
-import com.oblivioussp.spartanweaponry.item.ItemQuiverBolt;
 
 import baubles.api.BaublesApi;
 import net.minecraft.entity.player.EntityPlayer;

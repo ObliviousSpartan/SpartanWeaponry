@@ -432,7 +432,7 @@ public class APIInternalMethodHandler implements IInternalMethodHandler
 	@Override
 	public void registerColourHandler(Item item, ToolMaterialEx material) 
 	{
-		ModSpartanWeaponry.instance.proxy.addColourHandler(item, material);
+		ModSpartanWeaponry.proxy.addColourHandler(item, material);
 	}
 
 	@Override

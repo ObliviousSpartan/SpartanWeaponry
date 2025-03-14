@@ -5,7 +5,6 @@ import net.minecraft.util.math.BlockPos;
 
 public class ExplosionHelper
 {
-	@SuppressWarnings("unused")
 	public static void explode(Entity explosive, Entity exploder, BlockPos blockPos)
 	{
 		if(!explosive.world.isRemote)

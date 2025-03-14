@@ -47,6 +47,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+@SuppressWarnings("deprecation")
 public class ItemCrossbow extends ItemSW implements /*IHudQuiverDisplay,*/ IHudLoadState
 {
 	protected ToolMaterialEx material;
@@ -487,9 +488,9 @@ public class ItemCrossbow extends ItemSW implements /*IHudQuiverDisplay,*/ IHudL
         if(playerIn.capabilities.isCreativeMode || NBTHelper.getBoolean(stack, NBT_IS_LOADED) || flag  || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0)
         {
 	        playerIn.setActiveHand(handIn);
-	        return new ActionResult(EnumActionResult.SUCCESS, stack);
+	        return new ActionResult<>(EnumActionResult.SUCCESS, stack);
         }
-        return !flag ? new ActionResult(EnumActionResult.FAIL, stack) : new ActionResult(EnumActionResult.PASS, stack);
+        return !flag ? new ActionResult<>(EnumActionResult.FAIL, stack) : new ActionResult<>(EnumActionResult.PASS, stack);
     }
 	
     @Override
@@ -513,7 +514,7 @@ public class ItemCrossbow extends ItemSW implements /*IHudQuiverDisplay,*/ IHudL
     	return super.getIsRepairable(toRepair, repair);
     }
     
-    @Override
+	@Override
     public String getItemStackDisplayName(ItemStack stack)
     {
 		if(displayName != null)
