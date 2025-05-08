@@ -9,7 +9,6 @@ import com.oblivioussp.spartanweaponry.api.IWeaponTraitContainer;
 import com.oblivioussp.spartanweaponry.api.WeaponTraits;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.init.ModDamageTypes;
-import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -25,7 +24,7 @@ public class PlayerMixin
 	@Redirect(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/enchantment/EnchantmentHelper;getSweepingDamageRatio(Lnet/minecraft/world/entity/LivingEntity;)F"))
 	private float getSweepingDamageRatio(LivingEntity entityIn)
 	{
-		Log.debug("Intercepted EnchantmentHelper.getSweepingDamageRatio() method!");
+//		Log.debug("Intercepted EnchantmentHelper.getSweepingDamageRatio() method!");
 		ItemStack weaponStack = entityIn.getMainHandItem();
 		if(weaponStack.getItem() instanceof IWeaponTraitContainer<?> container)
 		{
@@ -35,7 +34,7 @@ public class PlayerMixin
 				float damage = (float)entityIn.getAttributeValue(Attributes.ATTACK_DAMAGE);
 				float resultDamage = damage * sweepTrait.getMagnitude();
 				float result = ((resultDamage - 1.0f) / resultDamage) * sweepTrait.getMagnitude();;
-				Log.debug("Base damage: " + damage + " * Magnitude: " + sweepTrait.getMagnitude() + " = Result damage: " + resultDamage + " - Overridden sweep damage ratio to " + result);
+//				Log.debug("Base damage: " + damage + " * Magnitude: " + sweepTrait.getMagnitude() + " = Result damage: " + resultDamage + " - Overridden sweep damage ratio to " + result);
 				return result;
 			}
 		}
@@ -47,7 +46,7 @@ public class PlayerMixin
 	@ModifyExpressionValue(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSources;playerAttack(Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/damagesource/DamageSource;"))
 	private DamageSource damagePlayerAttack(DamageSource originalSource, Entity targetIn)
 	{
-		Log.debug("Intercepted DamageSource.playerAttack() method!");
+//		Log.debug("Intercepted DamageSource.playerAttack() method!");
 		Player playerIn = ((Player)originalSource.getEntity());
 		ItemStack weaponStack = playerIn.getMainHandItem();
 		if(weaponStack.getItem() instanceof IWeaponTraitContainer<?> container)
@@ -55,7 +54,7 @@ public class PlayerMixin
 			WeaponTrait armorPiercingTrait = container.getFirstWeaponTraitWithType(WeaponTraits.TYPE_ARMOUR_PIERCING);
 			if(armorPiercingTrait != null)
 			{
-				Log.debug("Set damage type to Armor Piercing");
+//				Log.debug("Set damage type to Armor Piercing");
 //				float armorPiercingPercentage = armorPiercingTrait.getMagnitude() / 100.0f;
 				return /*ModList.get().isLoaded("footwork") ? FootworkHybridDamageSource.create(playerIn, armorPiercingPercentage, originalSource) :*/
 					ModDamageTypes.armorPiercingMelee(playerIn);

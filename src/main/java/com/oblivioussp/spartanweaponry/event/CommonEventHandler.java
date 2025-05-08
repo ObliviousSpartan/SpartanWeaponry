@@ -98,7 +98,7 @@ public class CommonEventHandler
 		
 		// Debug crap (code doesn't seem to be called anymore, even in an IDE)
 //		if(SharedConstants.IS_RUNNING_IN_IDE)
-//			Log.info("Damage: Entity: " + target.getDisplayName().getContents() + " Armour value: " + target.getArmorValue() + " Damage value: " + dmgDealt + " Source: " + src.msgId);			
+//			Log.info("Damage: Entity: " + target.getDisplayName().getString() + " - Armour value: " + target.getArmorValue() + " - Damage value: " + dmgDealt + " - Source: " + source.getMsgId());			
 		
 		
 		if(dmgDealt == 0.0f || source.is(DamageTypeTags.IS_PROJECTILE) || source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION) || /*src.isMagic() ||*/
@@ -144,7 +144,7 @@ public class CommonEventHandler
 				{
 					float dmgUnmodified = dmgDealt;
 					dmgDealt = oilHandler.useEffect(dmgDealt, level, target, attacker, attackerStack);
-					if(dmgDealt != dmgUnmodified)
+					if(dmgDealt != dmgUnmodified || oilHandler.getPotion().isPresent())
 						doOilDamageParticles = true;
 				}
 			}
@@ -161,19 +161,19 @@ public class CommonEventHandler
 			
 			if(dmgDealt != ev.getAmount())
 			{
-				if(!level.isClientSide) 
-				{
-					// Emit particles when damage has been enhanced or mitigated, depending on what has happened
-					if(doTraitDamageParticles && dmgDealt > ev.getAmount())
-						((ServerLevel)level).sendParticles(ModParticles.DAMAGE_BOOSTED.get(), target.getX(), target.getY() + (target.getBbHeight() / 2.0f), target.getZ(), 8, 0.2d, 0.2d, 0.2d, 0.5d);
-					else if(dmgDealt < ev.getAmount())
-						((ServerLevel)level).sendParticles(ModParticles.DAMAGE_REDUCED.get(), target.getX(), target.getY() + (target.getBbHeight() / 2.0f), target.getZ(), 8, 0.2d, 0.2d, 0.2d, 0.5d);
-					if(doOilDamageParticles)
-						((ServerLevel)level).sendParticles(ModParticles.OIL_DAMAGE_BOOSTED.get(), target.getX(), target.getY() + (target.getBbHeight() / 2.0f), target.getZ(), 8, 0.2d, 0.2d, 0.2d, 0.5d);
-				}
-				
 				//Log.info(String.format("Changed damage dealt! %f -> %f", ev.getAmount(), dmgDealt));
 				ev.setAmount(dmgDealt);
+			}
+			
+			if(!level.isClientSide) 
+			{
+				// Emit particles when damage has been enhanced or mitigated, depending on what has happened
+				if(doTraitDamageParticles && dmgDealt > ev.getAmount())
+					((ServerLevel)level).sendParticles(ModParticles.DAMAGE_BOOSTED.get(), target.getX(), target.getY() + (target.getBbHeight() / 2.0f), target.getZ(), 8, 0.2d, 0.2d, 0.2d, 0.5d);
+				else if(dmgDealt < ev.getAmount())
+					((ServerLevel)level).sendParticles(ModParticles.DAMAGE_REDUCED.get(), target.getX(), target.getY() + (target.getBbHeight() / 2.0f), target.getZ(), 8, 0.2d, 0.2d, 0.2d, 0.5d);
+				if(doOilDamageParticles)
+					((ServerLevel)level).sendParticles(ModParticles.OIL_DAMAGE_BOOSTED.get(), target.getX(), target.getY() + (target.getBbHeight() / 2.0f), target.getZ(), 8, 0.2d, 0.2d, 0.2d, 0.5d);
 			}
 		}
 	}

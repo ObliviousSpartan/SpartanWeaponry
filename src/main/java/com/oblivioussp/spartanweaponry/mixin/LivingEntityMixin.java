@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.oblivioussp.spartanweaponry.api.tags.ModDamageTypeTags;
 import com.oblivioussp.spartanweaponry.util.Config;
-import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
@@ -29,13 +28,13 @@ public class LivingEntityMixin extends EntityMixin
 		{
 			hurtArmor(source, damage);
 			float percentage = Config.INSTANCE.armorPiercePercentage.get().floatValue();
-			Log.debug("Found armor piercing damage source! Reducing armor value of target by " + (percentage) + "%");
+//			Log.debug("Found armor piercing damage source! Reducing armor value of target by " + (percentage) + "%");
 			float toughness = (float)getAttributeValue(Attributes.ARMOR_TOUGHNESS);
 			float armorPiercingDamage = damage * (percentage / 100.0f);			// Damage which ignores armor completely
 			float regularDamage = damage - armorPiercingDamage;					// Damage which is absorbed by armor as normal
 			float reducedDamage = CombatRules.getDamageAfterAbsorb(regularDamage, (float)getArmorValue(), toughness);
 			float resultDamage = armorPiercingDamage + reducedDamage;
-			Log.debug("Full damage: " + damage + " Armor value: " + (float)getArmorValue() + " Damage ignoring armor (" + (percentage) + "% damage): " + armorPiercingDamage + " Damage not ignoring armor: " + regularDamage + " Reduced Damage: " + reducedDamage + " Result Damage: " + resultDamage);
+//			Log.debug("Full damage: " + damage + " Armor value: " + (float)getArmorValue() + " Damage ignoring armor (" + (percentage) + "% damage): " + armorPiercingDamage + " Damage not ignoring armor: " + regularDamage + " Reduced Damage: " + reducedDamage + " Result Damage: " + resultDamage);
 			callback.setReturnValue(resultDamage);
 		}
 	}
