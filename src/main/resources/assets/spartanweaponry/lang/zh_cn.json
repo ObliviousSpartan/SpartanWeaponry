@@ -1,12 +1,12 @@
 {
-	// Item Groups (Creative Tabs)
+	// 创造模式物品栏列表
 	"itemGroup.spartanweaponry.basic": "斯巴达武器:原版材料",
 	"itemGroup.spartanweaponry.modded": "斯巴达武器:模组材料",
 	"itemGroup.spartanweaponry.arrows_bolts": "斯巴达武器:箭与弩箭",
 
-	// Items
+	// 物品
 	
-	// Handles/Poles
+	// 手柄与长手柄
 	"item.spartanweaponry.simple_handle": "简易手柄",
 	"item.spartanweaponry.handle": "手柄",
 	"item.spartanweaponry.simple_pole": "简易长手柄",
@@ -36,7 +36,7 @@
 	"item.spartanweaponry.custom_dagger": "%s 匕首",
 	
 	// 格挡匕首
-    "item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
+        "item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
 	"item.spartanweaponry.stone_parrying_dagger": "石格挡匕首",
 	"item.spartanweaponry.copper_parrying_dagger": "铜格挡匕首",
 	"item.spartanweaponry.iron_parrying_dagger": "铁格挡匕首",
@@ -732,16 +732,16 @@
 	"item.spartanweaponry.proj_tipped.effect.strong_soulsteal": "强效灵魂窃取%s",
 	"item.spartanweaponry.proj_tipped.effect.speed_iii": "速度%s",
 	"item.spartanweaponry.proj_tipped.effect.deepsight": "渊视%s",
-    "item.spartanweaponry.proj_tipped.effect.long_deepsight": "长效渊视%s",
-    "item.spartanweaponry.proj_tipped.effect.magnetizing": "磁化%s",
-    "item.spartanweaponry.proj_tipped.effect.long_magnetizing": "长效磁化%s",
-    "item.spartanweaponry.proj_tipped.effect.sugar_rush": "甜蜜冲刺%s",
-    "item.spartanweaponry.proj_tipped.effect.long_sugar_rush": "持久甜蜜冲刺%s",
-    "item.spartanweaponry.proj_tipped.effect.spectral_potion": "发光%s",
+        "item.spartanweaponry.proj_tipped.effect.long_deepsight": "长效渊视%s",
+        "item.spartanweaponry.proj_tipped.effect.magnetizing": "磁化%s",
+        "item.spartanweaponry.proj_tipped.effect.long_magnetizing": "长效磁化%s",
+        "item.spartanweaponry.proj_tipped.effect.sugar_rush": "甜蜜冲刺%s",
+        "item.spartanweaponry.proj_tipped.effect.long_sugar_rush": "持久甜蜜冲刺%s",
+        "item.spartanweaponry.proj_tipped.effect.spectral_potion": "发光%s",
 	"item.spartanweaponry.proj_tipped.effect.potion_of_tenacity": "坚韧%s",
 	"item.spartanweaponry.proj_tipped.effect.bug_pheromones": "招风引蝶%s",
-    "item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
-    "item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
+        "item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
+        "item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
 
 
 	// Stalwart Dungeons
@@ -856,26 +856,26 @@
 
 	// Jerotes Village
 	"item.spartanweaponry.proj_tipped.effect.wilderness_giant_poison": "荒野巨人毒酿%s",
-    "item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
-    "item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
-    "item.spartanweaponry.proj_tipped.effect.corrosive": "腐蚀%s",
-    "item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
-    "item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
-    "item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
+        "item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
+        "item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
+        "item.spartanweaponry.proj_tipped.effect.corrosive": "腐蚀%s",
+        "item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
+        "item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
+        "item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
 
     //传说生存
 	"item.spartanweaponry.proj_tipped.effect.temperature_immunity": "恒温%s",
-    "item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
+        "item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
 	"item.spartanweaponry.proj_tipped.effect.hydration_fill": "解渴%s",
-    "item.spartanweaponry.proj_tipped.effect.hydration_fill_long": "持久解渴%s",
-    "item.spartanweaponry.proj_tipped.effect.heat_immunity": "抗暑%s",
-    "item.spartanweaponry.proj_tipped.effect.heat_immunity_long": "持久抗暑%s",
-    "item.spartanweaponry.proj_tipped.effect.heat_resistance_long": "耐暑%s",
-    "item.spartanweaponry.proj_tipped.effect.cold_immunity": "御寒%s",
-    "item.spartanweaponry.proj_tipped.effect.cold_immunity_long": "持久御寒%s",
-    "item.spartanweaponry.proj_tipped.effect.cold_resistance_long": "耐寒%s",
-    "item.spartanweaponry.proj_tipped.effect.thirst": "干渴%s",
-    "item.spartanweaponry.proj_tipped.effect.thirst_long": "持久干渴%s",
+        "item.spartanweaponry.proj_tipped.effect.hydration_fill_long": "持久解渴%s",
+        "item.spartanweaponry.proj_tipped.effect.heat_immunity": "抗暑%s",
+        "item.spartanweaponry.proj_tipped.effect.heat_immunity_long": "持久抗暑%s",
+        "item.spartanweaponry.proj_tipped.effect.heat_resistance_long": "耐暑%s",
+        "item.spartanweaponry.proj_tipped.effect.cold_immunity": "御寒%s",
+        "item.spartanweaponry.proj_tipped.effect.cold_immunity_long": "持久御寒%s",
+        "item.spartanweaponry.proj_tipped.effect.cold_resistance_long": "耐寒%s",
+        "item.spartanweaponry.proj_tipped.effect.thirst": "干渴%s",
+        "item.spartanweaponry.proj_tipped.effect.thirst_long": "持久干渴%s",
 	
 	// 箭袋
 	"item.spartanweaponry.small_arrow_quiver": "小型箭袋",
