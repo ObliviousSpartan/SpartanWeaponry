@@ -1,4 +1,6 @@
 {
+	// 重新编排json文件顺序，与英文版的保持一致
+	// Format the json file to keep pace with the English file.
 	// 创造模式物品栏列表
 	"itemGroup.spartanweaponry.basic": "斯巴达武器:原版材料",
 	"itemGroup.spartanweaponry.modded": "斯巴达武器:模组材料",
@@ -533,7 +535,7 @@
 	"item.spartanweaponry.diamond_arrow": "钻石箭",
 	"item.spartanweaponry.netherite_arrow": "下界合金箭",
 	"item.spartanweaponry.explosive_arrow": "爆炸箭",
-	// NOTE: The following are not implemented! These might not remain.
+	// 注意：以下材料未实现！它们不一定会保留。
 	"item.spartanweaponry.tin_arrow": "锡箭",
 	"item.spartanweaponry.bronze_arrow": "青铜箭",
 	"item.spartanweaponry.steel_arrow": "钢箭",
@@ -573,8 +575,8 @@
 	"item.spartanweaponry.proj_tipped.effect.luck": "幸运%s",
 	"item.spartanweaponry.proj_tipped.effect.turtle_master": "神龟%s",
 	"item.spartanweaponry.proj_tipped.effect.slow_falling": "缓降%s",
-    "item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
-    "item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
+        "item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
+        "item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
 
 	// 夸克
 	"item.spartanweaponry.proj_tipped.effect.quark.resilience": "稳定%s",
@@ -604,7 +606,7 @@
 	"item.spartanweaponry.proj_tipped.effect.grounding": "接地%s",
 	
 	// 碧海新生
-    "item.spartanweaponry.proj_tipped.effect.insomnia": "失眠%s",
+        "item.spartanweaponry.proj_tipped.effect.insomnia": "失眠%s",
 	"item.spartanweaponry.proj_tipped.effect.insomnia_strong": "强效失眠%s",
 	"item.spartanweaponry.proj_tipped.effect.restfulness": "宁静%s",
 	"item.spartanweaponry.proj_tipped.effect.restfulness_strong": "强效宁静%s",
@@ -638,13 +640,13 @@
 	"item.spartanweaponry.proj_tipped.effect.shielding_potion_long": "长效护盾%s",
 	"item.spartanweaponry.proj_tipped.effect.shielding_potion_strong": "强效护盾%s",
 	
-	// Ars Elemental
+	// 元素魔艺
 	"item.spartanweaponry.proj_tipped.effect.enderference_potion": "末影干扰%s",
 	"item.spartanweaponry.proj_tipped.effect.enderference_potion_long": "持久末影干扰%s",
 	"item.spartanweaponry.proj_tipped.effect.shock_potion": "静电电荷%s",
 	"item.spartanweaponry.proj_tipped.effect.shock_potion_long": "持久静电电荷%s",
 	
-	// Potions Master
+	// 魔药大师
 	"item.spartanweaponry.proj_tipped.effect.coal_sight": "煤炭视野%s",
 	"item.spartanweaponry.proj_tipped.effect.iron_sight": "铁视野%s",
 	"item.spartanweaponry.proj_tipped.effect.redstone_sight": "红石视野%s",
@@ -671,7 +673,7 @@
 	"item.spartanweaponry.proj_tipped.effect.unobtainium_sight": "难得素视野%s",
 	"item.spartanweaponry.proj_tipped.effect.bismuth_sight": "铋视野%s",
 	
-	// Eidolon
+	// 幻梦
 	"item.spartanweaponry.proj_tipped.effect.chilled": "冷静%s",
 	"item.spartanweaponry.proj_tipped.effect.long_chilled": "持久冷静%s",
 	"item.spartanweaponry.proj_tipped.effect.anchored": "锚定%s",
@@ -688,7 +690,7 @@
 	"item.spartanweaponry.proj_tipped.effect.long_vulnerable": "持久易伤%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_vulnerable": "强效易伤%s",
 	
-	// The Abyss
+	// 深渊
 	"item.spartanweaponry.proj_tipped.effect.abyspower": "深渊之力%s",
 	"item.spartanweaponry.proj_tipped.effect.fear": "恐惧%s",
 	"item.spartanweaponry.proj_tipped.effect.ghostvision": "幽灵视野%s",
@@ -715,7 +717,7 @@
 	"item.spartanweaponry.proj_tipped.effect.thorns_long": "长效荆棘%s",
 	"item.spartanweaponry.proj_tipped.effect.thorns_strong": "超级荆棘%s",
 	
-	// Alex's Mobs
+	// Alex的生物
 	"item.spartanweaponry.proj_tipped.effect.bug_pheremones": "信息素%s",
 	"item.spartanweaponry.proj_tipped.effect.long_bug_pheremones": "持久信息素%s",
 	"item.spartanweaponry.proj_tipped.effect.clinging": "黏附%s",
@@ -743,20 +745,19 @@
         "item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
         "item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
 
-
-	// Stalwart Dungeons
+	// 坚固地牢
 	"item.spartanweaponry.proj_tipped.effect.burning": "燃烧%s",
 	"item.spartanweaponry.proj_tipped.effect.spore": "孢子%s",
 	
-	// Survive
+	// 生存要素
 	"item.spartanweaponry.proj_tipped.effect.cold_resistance": "保暖%s",
 	"item.spartanweaponry.proj_tipped.effect.heat_resistance": "清凉%s",
 	
-	// BetterEnd
+	// 更好的末地
 	"item.spartanweaponry.proj_tipped.effect.end_veil": "末地面纱%s",
 	"item.spartanweaponry.proj_tipped.effect.long_end_veil": "长效末地面纱%s",
 	
-	// Nether Agriculture
+	// 下界农业
 	"item.spartanweaponry.proj_tipped.effect.flight": "飞行%s",
 	"item.spartanweaponry.proj_tipped.effect.long_flight": "长效飞行%s",
 	"item.spartanweaponry.proj_tipped.effect.warp": "扭曲%s",
@@ -764,7 +765,7 @@
 	"item.spartanweaponry.proj_tipped.effect.strong_warp": "强效扭曲%s",
 	"item.spartanweaponry.proj_tipped.effect.long_strong_warp": "长效扭曲%s",
 	
-	// Infernal Expansion
+	// 地狱扩展
 	"item.spartanweaponry.proj_tipped.effect.infection": "感染%s",
 	"item.spartanweaponry.proj_tipped.effect.luminous": "发光%s",
 	
@@ -778,29 +779,30 @@
 	"item.spartanweaponry.proj_tipped.effect.long_unluck": "持久厄运%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_unluck": "强效厄运%s",
 	
-	// Omnis
+	// 灾厄村民拓
 	"item.spartanweaponry.proj_tipped.effect.magic_proficiency": "魔法熟练%s",
 	"item.spartanweaponry.proj_tipped.effect.long_magic_proficiency": "持久魔法熟练%s ",
 	"item.spartanweaponry.proj_tipped.effect.strong_magic_proficiency": "强效魔法熟练%s",
 	
-	// Greek Fantasy
+	// 希腊幻想
 	"item.spartanweaponry.proj_tipped.effect.mirror": "镜像%s",
 	"item.spartanweaponry.proj_tipped.effect.swine": "疫猪%s",
 	
-	// Dungeons Gear
+	// 地下城装备
 	"item.spartanweaponry.proj_tipped.effect.oakwood_brew": "木甲%s",
 	"item.spartanweaponry.proj_tipped.effect.shadow_brew": "暗影%s",
 	
-	// Nourished End
+	// 末地启明
 	"item.spartanweaponry.proj_tipped.effect.pastey": "糊状%s",
 	
-	// Mowzie's Mobs
+	// Mowzie的生物
 	"item.spartanweaponry.proj_tipped.effect.poison_resist": "中毒抗性%s",
 	"item.spartanweaponry.proj_tipped.effect.long_poison_resist": "长效中毒抗性%s",
 
-	// Desolation
+	// 荒芜
 	"item.spartanweaponry.proj_tipped.effect.potion_of_cinder_soul": "余烬灵魂%s",
 	"item.spartanweaponry.proj_tipped.effect.chemical_x": "突变%s",
+	
 	// Atmospheric
 	"item.spartanweaponry.proj_tipped.effect.relief": "缓解%s",
 	"item.spartanweaponry.proj_tipped.effect.relief_long": "持久缓解%s",
@@ -809,14 +811,14 @@
 	"item.spartanweaponry.proj_tipped.effect.worsening_long": "持久恶化%s",
 	"item.spartanweaponry.proj_tipped.effect.worsening_strong": "强效恶化%s",
 	
-	// Environmental
+	// 自然环境
 	"item.spartanweaponry.proj_tipped.effect.vitality": "活力%s",
 	"item.spartanweaponry.proj_tipped.effect.vitality_strong": "高级活力%s",
 	
 	// Nether Exoticism
 	"item.spartanweaponry.proj_tipped.effect.wither_cure": "凋零治愈%s",
 	
-	// Corail Tombstone
+	// Corail的墓碑
 	"item.spartanweaponry.proj_tipped.effect.earthly_garden": "尘世花原%s",
 	"item.spartanweaponry.proj_tipped.effect.bait": "诱饵%s",
 	"item.spartanweaponry.proj_tipped.effect.frostbite": "冻伤%s",
@@ -824,37 +826,37 @@
 	"item.spartanweaponry.proj_tipped.effect.discretion": "谨慎%s",
 	"item.spartanweaponry.proj_tipped.effect.restoration": "回复%s",
 	
-	// Apotheosis
+	// 神化
 	"item.spartanweaponry.proj_tipped.effect.grievous": "禁疗%s",
 	"item.spartanweaponry.proj_tipped.effect.flying": "飞行%s",
 	
-	// The Undergarden
+	// 深暗之园
 	"item.spartanweaponry.proj_tipped.effect.brittleness": "脆弱%s",
 	"item.spartanweaponry.proj_tipped.effect.featherweight": "轻如羽毛%s",
 	"item.spartanweaponry.proj_tipped.effect.virulent_resistance": "毒素抗性%s",
 	"item.spartanweaponry.proj_tipped.effect.glowing": "发光%s",
 	"item.spartanweaponry.proj_tipped.effect.long_glowing": "长效发光%s",
 
-	// Naturalist (Glowing is already defined above)
+	// 自然主义
 	"item.spartanweaponry.proj_tipped.effect.forest_dasher": "急迫%s",
 	
-	// Deeper and Darker
+	// 幽邃黑暗
 	"item.spartanweaponry.proj_tipped.effect.sculk_affinity": "幽匿亲和%s",
 	"item.spartanweaponry.proj_tipped.effect.long_sculk_affinity": "持久幽匿亲和%s",
 	
-	// Iron's Spells and Spellbooks
+	// Iron的法术与魔法书
 	"item.spartanweaponry.proj_tipped.effect.mana": "法力%s",
 	
-	// Railcraft Reborn
+	// 铁路重生 (Railcraft Reborn)
 	"item.spartanweaponry.proj_tipped.effect.creosote": "木馏油%s",
 
-	// Goety
+	// 诡厄巫法
 	"item.spartanweaponry.proj_tipped.effect.climbing": "攀爬%s",
 	"item.spartanweaponry.proj_tipped.effect.big_witch_heal": "大治愈%s",
 	"item.spartanweaponry.proj_tipped.effect.big_witch_hurt": "强效伤害%s",
 	"item.spartanweaponry.proj_tipped.effect.frenzy_potion": "狂乱%s",
 
-	// Jerotes Village
+	// Jerotes村庄
 	"item.spartanweaponry.proj_tipped.effect.wilderness_giant_poison": "荒野巨人毒酿%s",
         "item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
         "item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
@@ -863,7 +865,7 @@
         "item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
         "item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
 
-    //传说生存
+       // 传说生存
 	"item.spartanweaponry.proj_tipped.effect.temperature_immunity": "恒温%s",
         "item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
 	"item.spartanweaponry.proj_tipped.effect.hydration_fill": "解渴%s",
@@ -953,7 +955,7 @@
 	"enchantment.spartanweaponry.razors_edge.desc": "增加该投掷武器的伤害",
 	"enchantment.spartanweaponry.incendiary": "纵火",
 	"enchantment.spartanweaponry.incendiary.desc": "给该投掷武器注入火焰，击中目标会着火",
-	"enchantment.spartanweaponry.lucky_throw": "幸运一掷",
+	"enchantment.spartanweaponry.lucky_throw": "夺取掷器",
 	"enchantment.spartanweaponry.lucky_throw.desc": "增加使用投掷武器击败怪物时战利品的掉落率",
 	"enchantment.spartanweaponry.hydrodynamic": "水力驱动",
 	"enchantment.spartanweaponry.hydrodynamic.desc": "允许投掷武器在水下使用",
