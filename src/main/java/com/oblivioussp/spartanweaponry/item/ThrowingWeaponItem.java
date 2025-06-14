@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.ImmutableList;
@@ -15,6 +16,7 @@ import com.oblivioussp.spartanweaponry.api.IWeaponTraitContainer;
 import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 import com.oblivioussp.spartanweaponry.api.WeaponTraits;
+import com.oblivioussp.spartanweaponry.api.trait.IGenericTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.IThrowingTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.client.ClientHelper;
@@ -118,11 +120,8 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 		mapBuilder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", (double)attackSpeed - 4.0d, AttributeModifier.Operation.ADDITION));
 		
 		// Add melee attributes from Weapon Traits
-		if(traits != null)
-			traits.forEach((trait) ->
-			{
-				trait.getMeleeCallback().ifPresent((callback) -> callback.onModifyAttributesMelee(mapBuilder));
-			});
+//		if(traits != null)
+			traits.forEach((trait) -> getGenericCallback(trait).ifPresent((callback) -> callback.onModifyAttributes(mapBuilder)));
 		
 		modifiers = mapBuilder.build();
 
@@ -147,7 +146,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 			
 			if(traits != null)
 			{
-				traits.forEach((trait) -> trait.getMeleeCallback().ifPresent((callback) -> callback.onItemUpdate(material, stack, level, living, itemSlot, isSelected)));
+				traits.forEach((trait) -> getGenericCallback(trait).ifPresent((callback) -> callback.onItemUpdate(material, stack, level, living, itemSlot, isSelected)));
 			}
 		}
     }
@@ -243,9 +242,9 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 			archetype.addTraitsToTooltip(stack, tooltip, isShiftPressed);
 			
 	    	material.addTraitsToTooltip(stack, archetype.getType(), tooltip, isShiftPressed);
+			tooltip.add(Component.empty());
 		}
 
-		tooltip.add(Component.empty());
 		super.appendHoverText(stack, levelIn, tooltip, flagIn);
 	}
 
@@ -363,7 +362,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	@Override
 	public void onCraftedBy(ItemStack stack, Level levelIn, Player playerIn) 
 	{
-		traits.forEach((trait) -> trait.getMeleeCallback().ifPresent((callback) -> callback.onCreateItem(material, stack)));
+		traits.forEach((trait) -> getGenericCallback(trait).ifPresent((callback) -> callback.onCreateItem(material, stack)));
 		
 		initNBT(stack, true);
 	}
@@ -388,6 +387,20 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 		// Allow Loyalty enchantments to work on Throwing Weapons
 		return super.canApplyAtEnchantingTable(stack, enchantment) || enchantment == Enchantments.LOYALTY;
 	}
+    
+    @Override
+    public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) 
+    {
+    	int damage = amount;
+    	for(WeaponTrait trait : traits)
+    	{
+    		if(trait.getGenericCallback().isPresent())
+    			damage = trait.getGenericCallback().get().onDamageItem(stack, entity, damage);
+    		if(damage <= 0)
+    			break;
+    	}
+    	return Math.max(0, damage);
+    }
 	
 	// IWeaponTraitContainer
 
@@ -461,6 +474,11 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 	public void setChargeTicks(int chargeTicks)
 	{
 		maxChargeTicks = chargeTicks;
+	}
+	
+	private Optional<IGenericTraitCallback> getGenericCallback(WeaponTrait trait)
+	{
+		return trait.getMeleeCallback().isPresent() ? Optional.of(trait.getMeleeCallback().get()) : trait.getGenericCallback().isPresent() ? trait.getGenericCallback() : Optional.empty();
 	}
 	
 	public void updateFromConfig(float baseDamage, float damageMultiplier, double speed, int chargeTicks)

@@ -11,7 +11,10 @@
 		"PlayerMixin",
 		"MobMixin",
 		"AbstractSkeletonMixin",
-		"ZombieMixin"
+		"ZombieMixin",
+		"PiglinMixin",
+		"PiglinBruteMixin",
+		"WitherSkeletonMixin"
 	],
 	"client": [ 
 		"ItemModelGeneratorMixin"

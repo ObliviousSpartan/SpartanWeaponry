@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.oblivioussp.spartanweaponry.capability.IQuiverItemHandler;
 import com.oblivioussp.spartanweaponry.init.ModCapabilities;
 import com.oblivioussp.spartanweaponry.item.QuiverBaseItem;
-import com.oblivioussp.spartanweaponry.util.Log;
 import com.oblivioussp.spartanweaponry.util.QuiverHelper;
 
 import net.minecraft.sounds.SoundEvents;
@@ -37,7 +36,7 @@ public abstract class AbstractArrowMixin extends ProjectileMixin
 		Level level = level();
 		if(!level.isClientSide && (inGround || isNoPhysics()) && shakeTime <= 0)
 		{
-			Log.debug("Player collision with arrow entity intercepted!");
+//			Log.debug("Player collision with arrow entity intercepted!");
 //			boolean pickupItem = pickup == Pickup.ALLOWED || pickup == Pickup.CREATIVE_ONLY && entityIn.abilities.isCreativeMode || getNoClip() && getShooter().getUniqueID() == entityIn.getUniqueID();
 			
 			if(pickup == Pickup.ALLOWED)
@@ -77,7 +76,7 @@ public abstract class AbstractArrowMixin extends ProjectileMixin
 						}
 						if(arrowStack.isEmpty())
 						{
-							Log.debug("Picked up arrow on the ground and placed it in the quiver!");
+//							Log.debug("Picked up arrow on the ground and placed it in the quiver!");
 							Entity thisEntity = level.getEntity(getId());
 							entityIn.take(thisEntity, 1);
 							discard();

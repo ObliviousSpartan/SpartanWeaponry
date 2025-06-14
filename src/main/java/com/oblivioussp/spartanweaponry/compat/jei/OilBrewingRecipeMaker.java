@@ -9,6 +9,7 @@ import com.oblivioussp.spartanweaponry.init.ModItems;
 import com.oblivioussp.spartanweaponry.init.ModOilRecipes;
 import com.oblivioussp.spartanweaponry.item.crafting.OilBrewingRecipe;
 import com.oblivioussp.spartanweaponry.item.crafting.OilBrewingRecipe.OilMix;
+import com.oblivioussp.spartanweaponry.util.Config;
 import com.oblivioussp.spartanweaponry.util.OilHelper;
 
 import mezz.jei.api.recipe.vanilla.IJeiBrewingRecipe;
@@ -26,7 +27,7 @@ public class OilBrewingRecipeMaker
 	{
 		List<IJeiBrewingRecipe> recipes = new ArrayList<>();
 		
-		if(ModOilRecipes.oilRecipes != null)
+		if(!Config.INSTANCE.disableOilRecipes.get() && ModOilRecipes.oilRecipes != null)
 		{
 			List<OilMix> mixes = OilBrewingRecipe.getValidMixes();
 			
@@ -39,7 +40,7 @@ public class OilBrewingRecipeMaker
 			}
 		}
 		
-		if(ModOilRecipes.potionToOilRecipes != null)
+		if(!Config.INSTANCE.disableOilRecipes.get() && ModOilRecipes.potionToOilRecipes != null)
 		{
 			for(Potion potion : ForgeRegistries.POTIONS)
 			{

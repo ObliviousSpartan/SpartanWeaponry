@@ -206,6 +206,10 @@ public class Defaults
 	public static final float zombieWithMeleeSpawnChanceHard = 0.25f;
 	public static final float skeletonWithLongbowSpawnChanceNormal = 0.05f;
 	public static final float skeletonWithLongbowSpawnChanceHard = 0.25f;
+	public static final float piglinWithMeleeSpawnChanceNormal = 0.05f;
+	public static final float piglinWithMeleeSpawnChanceHard = 0.25f;
+	public static final float witherSkeletonWithMeleeSpawnChanceNormal = 0.05f;
+	public static final float witherSkeletonWithMeleeSpawnChanceHard = 0.25f;
 	
 	// General Options
 	public static final boolean EnableExperimentalWeapons = false;

@@ -2,16 +2,20 @@ package com.oblivioussp.spartanweaponry.item;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.IReloadable;
 import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 import com.oblivioussp.spartanweaponry.api.tags.ModItemTags;
+import com.oblivioussp.spartanweaponry.api.trait.IGenericTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.IRangedTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.client.ClientHelper;
@@ -35,7 +39,10 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.CrossbowItem;
@@ -64,6 +71,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 	
 	protected final WeaponType type = WeaponType.RANGED;
 	protected List<WeaponTrait> rangedTraits;
+	protected Multimap<Attribute, AttributeModifier> modifiers;
 	
 	public static final String NBT_CHARGED = "Charged";
 	public static final String NBT_PROJECTILE = "Projectile";
@@ -99,6 +107,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 		loadTicks = Defaults.CrossbowTicksToLoad;
 		aimTicks = Defaults.CrossbowInaccuracyTicks;
 		rangedTraits = material.getBonusTraits(type);
+		ImmutableMultimap.Builder<Attribute, AttributeModifier> mapBuilder = ImmutableMultimap.builder();
 		for(WeaponTrait trait : rangedTraits)
 		{
 			Optional<IRangedTraitCallback> opt = trait.getRangedCallback();
@@ -108,8 +117,17 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 				loadTicks = callback.modifyHeavyCrossbowLoadTime(material, loadTicks);
 				aimTicks = callback.modifyHeavyCrossbowAimTime(material, aimTicks);
 			}
+			Optional<IGenericTraitCallback> generic = trait.getGenericCallback();
+			generic.ifPresent((callback) -> callback.onModifyAttributes(mapBuilder));
 		}
+		modifiers = mapBuilder.build();
 	}
+	
+	@Override
+	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack)
+    {
+		return modifiers != null && equipmentSlot == EquipmentSlot.MAINHAND ? modifiers : super.getAttributeModifiers(equipmentSlot, stack);
+    }
 	
 	@Override
 	public int getMaxDamage(ItemStack stack) 
@@ -332,6 +350,20 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
     {
     	return this.material.getRepairIngredient().test(repair);
     }
+    
+    @Override
+    public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) 
+    {
+    	int damage = amount;
+    	for(WeaponTrait trait : rangedTraits)
+    	{
+    		if(trait.getGenericCallback().isPresent())
+    			damage = trait.getGenericCallback().get().onDamageItem(stack, entity, damage);
+    		if(damage <= 0)
+    			break;
+    	}
+    	return Math.max(0, damage);
+    }
 
 	@Override
 	public Component getName(ItemStack stack) 
@@ -378,12 +410,9 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".showing_details").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
 			else
 				tooltip.add(Component.translatable(String.format("tooltip.%s.traits", ModSpartanWeaponry.ID), Component.translatable("tooltip." + ModSpartanWeaponry.ID + ".show_details", ChatFormatting.DARK_AQUA.toString() + "SHIFT").withStyle(ChatFormatting.DARK_GRAY)).withStyle(ChatFormatting.GOLD));
-
-//			if(!rangedTraits.isEmpty())
-//				tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
-
-//			rangedTraits.forEach((trait) -> trait.addTooltip(stack, tooltip, isShiftPressed));
-			material.addTraitsToTooltip(stack, type, tooltip, isShiftPressed);
+			tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
+			
+			rangedTraits.forEach((trait) -> trait.addTooltip(stack, tooltip, isShiftPressed));
         	tooltip.add(Component.empty());
     	}
     	

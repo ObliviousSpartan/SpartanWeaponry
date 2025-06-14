@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.fml.ModList;
 
 @JeiPlugin
 public class SpartanWeaponryPlugin implements IModPlugin
@@ -26,14 +27,15 @@ public class SpartanWeaponryPlugin implements IModPlugin
 
 	public ResourceLocation getPluginUid()
 	{ 
-		return this.PLUGIN_UID;
+		return PLUGIN_UID;
 	}
   
 	public void registerItemSubtypes(ISubtypeRegistration subtypeRegistry)
 	{
+		if(ModList.get().isLoaded("emi")) return;
 		Log.info("JEI Plugin is Registering subtypes");
 		
-		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_WOODEN_ARROW.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
+/*		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_WOODEN_ARROW.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_COPPER_ARROW.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_IRON_ARROW.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_DIAMOND_ARROW.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
@@ -41,12 +43,15 @@ public class SpartanWeaponryPlugin implements IModPlugin
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_BOLT.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_COPPER_BOLT.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_DIAMOND_BOLT.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
-		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_NETHERITE_BOLT.get(), TippedProjectileSubtypeInterpreter.INSTANCE);
+		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.TIPPED_NETHERITE_BOLT.get(), TippedProjectileSubtypeInterpreter.INSTANCE);*/
 		subtypeRegistry.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.WEAPON_OIL.get(), WeaponOilSubtypeInterpreter.INSTANCE);
 	}
 
 	public void registerRecipes(IRecipeRegistration reg)
 	{
+		// Does EMI already cover this?
+//		if(ModList.get().isLoaded("emi")) return;
+		
 		reg.addRecipes(RecipeTypes.CRAFTING, TippedProjectileRecipeMaker.getRecipes(ModItems.BOLT.get(), ModItems.TIPPED_BOLT.get()));
 		
 		if (!Config.INSTANCE.disableNewArrowRecipes.get())
@@ -73,7 +78,8 @@ public class SpartanWeaponryPlugin implements IModPlugin
 				reg.addRecipes(RecipeTypes.CRAFTING, TippedProjectileRecipeMaker.getRecipes(ModItems.NETHERITE_ARROW.get(), ModItems.TIPPED_NETHERITE_ARROW.get())); 
 		}
 		
-		reg.addRecipes(RecipeTypes.BREWING, OilBrewingRecipeMaker.getRecipes(reg.getVanillaRecipeFactory()));
+//		if(!ModList.get().isLoaded("emi"))
+			reg.addRecipes(RecipeTypes.BREWING, OilBrewingRecipeMaker.getRecipes(reg.getVanillaRecipeFactory()));
 	}
 	
 	@Override

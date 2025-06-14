@@ -322,11 +322,15 @@ public class WeaponMaterial implements Tier, IReloadable
 	{
 		if(hasAnyBonusTraits(type))
 		{
+			tooltip.add(Component.empty());
     		tooltip.add(Component.translatable(String.format("tooltip.%s.trait.material_bonus", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.AQUA));
 			traits.forEach((trait) -> trait.addTooltip(stack, tooltip, isShiftPressed, WeaponTrait.InvalidReason.NONE));
 		}
 		if(invalidTraits.isPresent())
+		{
+			tooltip.add(Component.empty());
 			invalidTraits.get().forEach((traitPair) -> traitPair.getLeft().addTooltip(stack, tooltip, isShiftPressed, traitPair.getRight()));
+		}
 	}
 
 	@Deprecated(since = "3.1.1", forRemoval = true)

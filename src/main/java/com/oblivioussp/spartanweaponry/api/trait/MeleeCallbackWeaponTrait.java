@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 /**
- * Default Weapon Property class with melee callback methods. Extend this if you want a weapon trait with custom behaviour.
+ * Default Weapon Property class with melee callback methods. Extend this if you want a melee weapon trait with custom behaviour.
  * @author ObliviousSpartan
  *
  */
@@ -20,6 +20,12 @@ public class MeleeCallbackWeaponTrait extends WeaponTrait implements IMeleeTrait
 	{
 		super(typeIn, modIdIn, qualityIn);
 		isMelee = true;
+	}
+	
+	@Override
+		public Optional<IGenericTraitCallback> getGenericCallback() 
+	{
+		return Optional.of(this);
 	}
 
 	@Override
