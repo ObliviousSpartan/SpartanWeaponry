@@ -34,7 +34,7 @@ public class ModWeaponTraitTagsProvider extends IntrinsicHolderTagsProvider<Weap
 	{
 		tag(ModWeaponTraitTags.DAGGER).add(WeaponTraits.THROWABLE.get(), WeaponTraits.DAMAGE_BONUS_BACKSTAB.get());
 		tag(ModWeaponTraitTags.PARRYING_DAGGER).add(WeaponTraits.BLOCK_MELEE.get());
-		tag(ModWeaponTraitTags.LONGSWORD).add(WeaponTraits.TWO_HANDED_1.get());
+		tag(ModWeaponTraitTags.LONGSWORD).add(WeaponTraits.TWO_HANDED_1.get(), WeaponTraits.SWEEP_1.get());
 		tag(ModWeaponTraitTags.KATANA).add(WeaponTraits.TWO_HANDED_1.get(), WeaponTraits.DAMAGE_BONUS_CHEST.get(), WeaponTraits.SWEEP_1.get());
 		tag(ModWeaponTraitTags.SABER).add(WeaponTraits.DAMAGE_ABSORB.get(), WeaponTraits.DAMAGE_BONUS_CHEST.get(), WeaponTraits.SWEEP_1.get());
 		tag(ModWeaponTraitTags.RAPIER).add(WeaponTraits.DAMAGE_ABSORB.get(), WeaponTraits.DAMAGE_BONUS_UNARMOURED.get());

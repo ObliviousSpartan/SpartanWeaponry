@@ -41,7 +41,7 @@ public class TippedProjectileRecipeMaker
 						projIngredient, potionIngredient, projIngredient, 
 						projIngredient, projIngredient, projIngredient});
 				
-        		ResourceLocation recipeResLoc = new ResourceLocation("spartanweaponry", "tipped_projectile." + ForgeRegistries.ITEMS.getKey(outputStack.getItem()).getPath() + potionType.getName(".effect."));
+        		ResourceLocation recipeResLoc = new ResourceLocation("spartanweaponry", "/tipped_projectile." + ForgeRegistries.ITEMS.getKey(outputStack.getItem()).getPath() + potionType.getName(".effect."));
         		ShapedRecipe recipe = new ShapedRecipe(recipeResLoc, recipeGroup, CraftingBookCategory.MISC, 3, 3, recipeIngredients, outputStack);
         		list.add(recipe);
       		} 

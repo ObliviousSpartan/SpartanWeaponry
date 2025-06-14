@@ -358,10 +358,10 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
     {
     	for(WeaponTrait trait : traits)
     	{
-    		if(trait.isEnchantmentCompatible(enchantment))
-    			return true;
-    		else if(trait.isEnchantmentIncompatible(enchantment))
+    		if(trait.isEnchantmentIncompatible(enchantment))
     			return false;
+    		else if(trait.isEnchantmentCompatible(enchantment))
+    			return true;
     	}
     	// Sweeping Edge is incompatible with most weapons unless they have the Sweep I trait
         return enchantment != Enchantments.SWEEPING_EDGE && super.canApplyAtEnchantingTable(stack, enchantment);
