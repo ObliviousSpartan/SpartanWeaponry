@@ -950,7 +950,7 @@
 	"entity.spartanweaponry.boomerang": "回力镖",
 	
 	// 附魔
-	// update the an enchantment name make it more easy to understand in Chinese, and more fit to the original translation.
+	// update the an enchantment name make it more easy to understand in Chinese.
 	"enchantment.spartanweaponry.propel": "推进",
 	"enchantment.spartanweaponry.propel.desc": "扩大该武器的投掷范围",
 	"enchantment.spartanweaponry.razors_edge": "锐掷",
