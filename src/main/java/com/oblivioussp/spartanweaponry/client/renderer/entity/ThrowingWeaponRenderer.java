@@ -59,13 +59,11 @@ public class ThrowingWeaponRenderer<T extends ThrowingWeaponEntity> extends Enti
 	{
 		return TextureAtlas.LOCATION_BLOCKS;
 	}
-
 	
 	protected void doRenderTransformations(T entity, float partialTicks, PoseStack matrixStack)
 	{
 		matrixStack.scale(2.0f, 2.0f, 2.0f);
 		matrixStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 90.0f));
 		matrixStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.xRotO, entity.getXRot()) - 45.0f));
-
 	}
 }

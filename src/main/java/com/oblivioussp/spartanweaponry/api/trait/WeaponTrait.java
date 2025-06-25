@@ -220,6 +220,15 @@ public class WeaponTrait
 		isAction = isActionIn;
 		return this;
 	}
+
+	/**
+	 * Retrieves the Weapon Trait's generic callback, if it exists. Use this method instead of using the "instanceof" check
+	 * @return The callback, wrapped in an {@link Optional} if it exists; an empty {@link Optional} otherwise.
+	 */
+	public Optional<IGenericTraitCallback> getGenericCallback()
+	{
+		return Optional.empty();
+	}
 	
 	/**
 	 * Retrieves the Weapon Trait's Melee callback, if it exists. Use this method instead of using the "instanceof" check

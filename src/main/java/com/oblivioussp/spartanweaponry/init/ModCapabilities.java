@@ -2,7 +2,6 @@ package com.oblivioussp.spartanweaponry.init;
 
 import com.oblivioussp.spartanweaponry.capability.IOilHandler;
 import com.oblivioussp.spartanweaponry.capability.IQuiverItemHandler;
-import com.oblivioussp.spartanweaponry.util.Log;
 
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -20,6 +19,6 @@ public class ModCapabilities
 		ev.register(IOilHandler.class);
 		ev.register(IQuiverItemHandler.class);
 //		ev.register(IWeaponTraitContainer.class);
-		Log.debug("Registered oil capability!");
+//		Log.debug("Registered oil capability!");
 	}
 }

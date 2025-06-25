@@ -135,4 +135,7 @@ public class ModItemTags
 	
 	public static final TagKey<Item> ZOMBIE_SPAWN_WEAPONS = ItemTags.create(new ResourceLocation(SpartanWeaponryAPI.MOD_ID + ":zombie_spawn_weapons"));
 	public static final TagKey<Item> SKELETON_SPAWN_LONGBOWS = ItemTags.create(new ResourceLocation(SpartanWeaponryAPI.MOD_ID + ":skeleton_spawn_longbows"));
+	public static final TagKey<Item> PIGLIN_SPAWN_WEAPONS = ItemTags.create(new ResourceLocation(SpartanWeaponryAPI.MOD_ID + ":piglin_spawn_weapons"));
+	public static final TagKey<Item> PIGLIN_BRUTE_SPAWN_WEAPONS = ItemTags.create(new ResourceLocation(SpartanWeaponryAPI.MOD_ID + ":piglin_brute_spawn_weapons"));
+	public static final TagKey<Item> WITHER_SKELETON_SPAWN_WEAPONS = ItemTags.create(new ResourceLocation(SpartanWeaponryAPI.MOD_ID + ":wither_skeleton_spawn_weapons"));
 }

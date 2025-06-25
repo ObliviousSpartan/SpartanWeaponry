@@ -2,13 +2,17 @@ package com.oblivioussp.spartanweaponry.item;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
 
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import com.oblivioussp.spartanweaponry.api.IReloadable;
 import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
+import com.oblivioussp.spartanweaponry.api.trait.IGenericTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.IRangedTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.client.ClientHelper;
@@ -22,7 +26,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ArrowItem;
@@ -38,7 +45,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITagManager;
 
-public class LongbowItem extends BowItem implements IReloadable/*implements IHudQuiverDisplay*/
+public class LongbowItem extends BowItem implements IReloadable
 {
 	protected WeaponMaterial material;
 	protected float drawTime = 1.25f;
@@ -50,6 +57,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
 	
 	protected final WeaponType type = WeaponType.RANGED;
 	protected List<WeaponTrait> rangedTraits;
+	protected Multimap<Attribute, AttributeModifier> modifiers;
 	
 	public LongbowItem(Item.Properties prop, WeaponMaterial material)
 	{
@@ -75,6 +83,8 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
 	{
 		drawTime = 1.25f;
 		rangedTraits = material.getBonusTraits(type);
+
+		ImmutableMultimap.Builder<Attribute, AttributeModifier> mapBuilder = ImmutableMultimap.builder();
 		for(WeaponTrait trait : rangedTraits)
 		{
 			Optional<IRangedTraitCallback> opt = trait.getRangedCallback();
@@ -82,8 +92,17 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
 			{
 				drawTime = opt.get().modifyLongbowDrawTime(material, drawTime);
 			}
+			Optional<IGenericTraitCallback> generic = trait.getGenericCallback();
+			generic.ifPresent((callback) -> callback.onModifyAttributes(mapBuilder));
 		}
+		modifiers = mapBuilder.build();
 	}
+	
+	@Override
+	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot, ItemStack stack)
+    {
+		return modifiers != null && equipmentSlot == EquipmentSlot.MAINHAND ? modifiers : super.getAttributeModifiers(equipmentSlot, stack);
+    }
 	
 	/**
      * Called when the player stops using an Item (stops holding the right mouse button).
@@ -121,7 +140,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
                     	for(WeaponTrait trait : rangedTraits)
                     		trait.getRangedCallback().ifPresent((callback) -> callback.onProjectileSpawn(material, entityarrow));
                         
-                        if (f == maxVelocity)
+                        if (f >= maxVelocity)
                             entityarrow.setCritArrow(true);
 
                         int j = stack.getEnchantmentLevel(Enchantments.POWER_ARROWS);
@@ -188,6 +207,20 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
 	{
 		return material.getRepairIngredient().test(repair);
 	}
+    
+    @Override
+    public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) 
+    {
+    	int damage = amount;
+    	for(WeaponTrait trait : rangedTraits)
+    	{
+    		if(trait.getGenericCallback().isPresent())
+    			damage = trait.getGenericCallback().get().onDamageItem(stack, entity, damage);
+    		if(damage <= 0)
+    			break;
+    	}
+    	return Math.max(0, damage);
+    }
 
 	@Override
 	public Component getName(ItemStack stack) 
@@ -246,7 +279,7 @@ public class LongbowItem extends BowItem implements IReloadable/*implements IHud
     	tooltip.add(Component.empty());
     	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.ammo.type", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.ammo.arrow", ModSpartanWeaponry.ID)).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
     	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.longbow.draw_length", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.longbow.draw_length.value", ModSpartanWeaponry.ID), drawTime).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
-    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.longbow.speed_multiplier", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.longbow.draw_length.value", ModSpartanWeaponry.ID), maxVelocity).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
+    	tooltip.add(Component.translatable(String.format("tooltip.%s.modifiers.longbow.speed_multiplier", ModSpartanWeaponry.ID), Component.translatable(String.format("tooltip.%s.modifiers.longbow.speed_multiplier.value", ModSpartanWeaponry.ID), maxVelocity).withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_AQUA));
     	tooltip.add(Component.empty());
     }
 	

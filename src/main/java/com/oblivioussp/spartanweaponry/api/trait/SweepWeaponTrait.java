@@ -23,7 +23,7 @@ public class SweepWeaponTrait extends WeaponTraitWithMagnitude
 	@Override
 	protected void addTooltipDescription(ItemStack stack, List<Component> tooltip)
 	{
-		if(level == 1.0f)
+		if(level == 1)
 			tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.fixed.desc", SpartanWeaponryAPI.MOD_ID, this.type), magnitude * 100.0f).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
 		else
 			tooltip.add(tooltipIndent().append(Component.translatable(String.format("tooltip.%s.trait.%s.desc", modId, this.type), magnitude * 100.0f).withStyle(WeaponTrait.DESCRIPTION_FORMAT)));
@@ -32,7 +32,7 @@ public class SweepWeaponTrait extends WeaponTraitWithMagnitude
 	@Override
 	public boolean isEnchantmentCompatible(Enchantment enchantIn) 
 	{
-		return magnitude == 1.0f && enchantIn == Enchantments.SWEEPING_EDGE;
+		return level == 1 && enchantIn == Enchantments.SWEEPING_EDGE;
 	}
 	
 	@Override

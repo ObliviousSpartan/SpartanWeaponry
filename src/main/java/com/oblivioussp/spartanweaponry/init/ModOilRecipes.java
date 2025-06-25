@@ -3,6 +3,7 @@ package com.oblivioussp.spartanweaponry.init;
 import com.oblivioussp.spartanweaponry.api.OilEffects;
 import com.oblivioussp.spartanweaponry.item.crafting.OilBrewingRecipe;
 import com.oblivioussp.spartanweaponry.item.crafting.PotionToOilBrewingRecipe;
+import com.oblivioussp.spartanweaponry.util.Config;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -15,7 +16,19 @@ public class ModOilRecipes
 	
 	public static void initOilRecipes()
 	{
+		oilRecipes = new OilBrewingRecipe();
+		BrewingRecipeRegistry.addRecipe(oilRecipes);
+		
+		potionToOilRecipes = new PotionToOilBrewingRecipe();
+		BrewingRecipeRegistry.addRecipe(potionToOilRecipes);
+	}
+	
+	public static void loadOilMixes()
+	{
 		OilBrewingRecipe.clearMixes();
+		if(Config.INSTANCE.disableOilRecipes.get())
+			return;
+		
 		OilBrewingRecipe.addBaseOilMix(Ingredient.of(Items.GLISTERING_MELON_SLICE), OilEffects.UNDEAD.get());
 		OilBrewingRecipe.addOilMix(OilEffects.UNDEAD.get(), Ingredient.of(Items.GOLDEN_APPLE), OilEffects.UNDEAD_STRONG.get());
 		
@@ -44,11 +57,5 @@ public class ModOilRecipes
 		OilBrewingRecipe.addBaseOilMix(Ingredient.of(Items.WITHER_ROSE), OilEffects.WITHER.get());
 		OilBrewingRecipe.addOilMix(OilEffects.WITHER.get(), Ingredient.of(Items.WITHER_SKELETON_SKULL), OilEffects.WITHER_STRONG.get());
 		OilBrewingRecipe.addOilMix(OilEffects.WITHER.get(), Ingredient.of(Items.BONE), OilEffects.WITHER_LONG.get());
-		
-		oilRecipes = new OilBrewingRecipe();
-		BrewingRecipeRegistry.addRecipe(oilRecipes);
-		
-		potionToOilRecipes = new PotionToOilBrewingRecipe();
-		BrewingRecipeRegistry.addRecipe(potionToOilRecipes);
 	}
 }

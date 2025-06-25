@@ -19,6 +19,8 @@ import net.minecraftforge.registries.RegistryManager;
 public class WeaponOilSubtypeInterpreter implements IIngredientSubtypeInterpreter<ItemStack>
 {
 	public static final WeaponOilSubtypeInterpreter INSTANCE = new WeaponOilSubtypeInterpreter();
+	
+	private WeaponOilSubtypeInterpreter() {}
 
 	@Override
 	public String apply(ItemStack itemStack, UidContext context)

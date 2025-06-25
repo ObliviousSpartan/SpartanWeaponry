@@ -139,6 +139,10 @@ repositories {
 	maven {
 		url = "https://maven.theillusivec4.top/"
 	}
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
 	maven {
 		name = "CurseMaven"
 		url = "https://cursemaven.com/"
@@ -189,6 +193,10 @@ dependencies {
     
 //    implementation fg.deobf("curse.maven:silent-lib-242998:4585754")
 //    implementation fg.deobf("curse.maven:silent-gear-297039:5199286")
+
+    // Import EMI (what acronym? Even More Items?)
+//    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}:api")
+//    runtimeOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
 }
 
 mixin {

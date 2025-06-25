@@ -114,6 +114,7 @@ public class ModSoundDefinitionsProvider extends SoundDefinitionsProvider
 					Sound.sound(new ResourceLocation("random/explode2"), SoundType.SOUND),
 					Sound.sound(new ResourceLocation("random/explode3"), SoundType.SOUND),
 					Sound.sound(new ResourceLocation("random/explode4"), SoundType.SOUND)));
+		
 	}
 
 	@Override

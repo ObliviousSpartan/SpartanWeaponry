@@ -169,8 +169,12 @@ public class ModItemTagsProvider extends ItemTagsProvider
 
 		tag(ModItemTags.ZOMBIE_SPAWN_WEAPONS).add(ModItems.DAGGERS.iron.get(), ModItems.LONGSWORDS.iron.get(), ModItems.KATANAS.iron.get(), ModItems.SABERS.iron.get(), ModItems.RAPIERS.iron.get(),
 			ModItems.GREATSWORDS.iron.get(), ModItems.BATTLE_HAMMERS.iron.get(), ModItems.WARHAMMERS.iron.get(), ModItems.BATTLEAXES.iron.get(), ModItems.FLANGED_MACES.iron.get());
-		
 		tag(ModItemTags.SKELETON_SPAWN_LONGBOWS).add(ModItems.LONGBOWS.wood.get(), ModItems.LONGBOWS.leather.get(), ModItems.LONGBOWS.iron.get());
+		tag(ModItemTags.PIGLIN_SPAWN_WEAPONS).add(ModItems.DAGGERS.gold.get(), ModItems.LONGSWORDS.gold.get(), ModItems.KATANAS.gold.get(), ModItems.SABERS.gold.get(), ModItems.RAPIERS.gold.get(),
+				ModItems.GREATSWORDS.gold.get(), ModItems.BATTLE_HAMMERS.gold.get(), ModItems.WARHAMMERS.gold.get(), ModItems.FLANGED_MACES.gold.get());
+		tag(ModItemTags.PIGLIN_BRUTE_SPAWN_WEAPONS).add(ModItems.HALBERDS.gold.get(), ModItems.BATTLEAXES.gold.get());
+		tag(ModItemTags.WITHER_SKELETON_SPAWN_WEAPONS).add(ModItems.DAGGERS.stone.get(), ModItems.LONGSWORDS.stone.get(), ModItems.KATANAS.stone.get(), ModItems.SABERS.stone.get(), ModItems.RAPIERS.stone.get(),
+				ModItems.GREATSWORDS.stone.get(), ModItems.BATTLE_HAMMERS.stone.get(), ModItems.WARHAMMERS.stone.get(), ModItems.BATTLEAXES.stone.get(), ModItems.FLANGED_MACES.stone.get());
 		
 		// Empty material tags to add modded material support
 		tag(ModItemTags.COPPER_INGOT);

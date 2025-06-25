@@ -48,7 +48,17 @@ public class PotionOilEffect extends OilEffect
 		{
 			potion = PotionUtils.getPotion(oilTag);
 			potion.getEffects().forEach((effect) -> {
-				targetEntityIn.addEffect(new MobEffectInstance(effect.getEffect(), Mth.floor(effect.getDuration() * Config.INSTANCE.potionOilDurationModifier.get()), effect.getAmplifier()), userEntityIn);
+				if(effect.getEffect().isInstantenous())
+				{
+					// Temporarily bypass hurt time
+					int targetHurtTime = targetEntityIn.hurtTime;
+					targetEntityIn.hurtTime = 0;
+					effect.getEffect().applyInstantenousEffect(userEntityIn, userEntityIn, targetEntityIn, effect.getAmplifier(), 1.0d);
+					// Restore hurt time
+					targetEntityIn.hurtTime = targetHurtTime;
+				}
+				else
+					targetEntityIn.addEffect(new MobEffectInstance(effect.getEffect(), Mth.floor(effect.getDuration() * Config.INSTANCE.potionOilDurationModifier.get()), effect.getAmplifier()), userEntityIn);
 			});
 		}
 		return super.onUse(baseDamageIn, levelIn, targetEntityIn, userEntityIn, oilStackIn);

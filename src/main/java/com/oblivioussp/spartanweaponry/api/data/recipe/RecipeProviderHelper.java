@@ -18,6 +18,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.registries.ForgeRegistries;
 
 /**
@@ -52,8 +53,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeDagger(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("#").pattern("|").group("spartanweaponry:dagger").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.DAGGER))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeDagger(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+	
+	/**
+	 * Constructs a Shaped Crafting recipe using the Dagger pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Dagger item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeDagger(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("#").pattern("|").
+			group("spartanweaponry:dagger").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.DAGGER))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 	
 	/**
@@ -66,8 +85,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeParryingDagger(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" #").pattern("#|").group("spartanweaponry:parrying_dagger").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.PARRYING_DAGGER))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeParryingDagger(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+	
+	/**
+	 * Constructs a Shaped Crafting recipe using the Parrying Dagger pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Parrying Dagger item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeParryingDagger(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" #").pattern("#|").
+			group("spartanweaponry:parrying_dagger").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.PARRYING_DAGGER))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -80,8 +117,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeLongsword(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" # ").pattern(" # ").pattern("#|#").group("spartanweaponry:longsword").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.LONGSWORD))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeLongsword(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Longsword pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Longsword item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeLongsword(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" # ").pattern(" # ").pattern("#|#").
+			group("spartanweaponry:longsword").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.LONGSWORD))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -94,8 +149,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeKatana(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("  #").pattern(" # ").pattern("|  ").group("spartanweaponry:katana").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.KATANA))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeKatana(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Katana pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Katana item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeKatana(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("  #").pattern(" # ").pattern("|  ").
+			group("spartanweaponry:katana").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.KATANA))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -108,8 +181,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeSaber(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" #").pattern(" #").pattern("#|").group("spartanweaponry:saber").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.SABER))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeSaber(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Saber pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Saber item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeSaber(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" #").pattern(" #").pattern("#|").
+			group("spartanweaponry:saber").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.SABER))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -122,8 +213,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeRapier(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("  #").pattern("## ").pattern("|# ").group("spartanweaponry:rapier").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.RAPIER))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeRapier(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Rapier pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Rapier item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeRapier(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("  #").pattern("## ").pattern("|# ").
+			group("spartanweaponry:rapier").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.RAPIER))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -136,8 +245,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeGreatsword(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" # ").pattern("###").pattern("#|#").group("spartanweaponry:greatsword").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.GREATSWORD))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeGreatsword(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Greatsword pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Greatsword item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeGreatsword(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" # ").pattern("###").pattern("#|#").
+			group("spartanweaponry:greatsword").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.GREATSWORD))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -150,8 +277,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeBattleHammer(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("###").pattern("###").pattern(" | ").group("spartanweaponry:battle_hammer").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.BATTLE_HAMMER))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeBattleHammer(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Battle Hammer pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Battle Hammer item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeBattleHammer(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("###").pattern("###").pattern(" | ").
+			group("spartanweaponry:battle_hammer").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.BATTLE_HAMMER))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -164,8 +309,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeWarhammer(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" #").pattern("##").pattern(" |").group("spartanweaponry:warhammer").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.WARHAMMER))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeWarhammer(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Warhammer pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Warhammer item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeWarhammer(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern(" #").pattern("##").pattern(" |").
+			group("spartanweaponry:warhammer").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.WARHAMMER))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -178,8 +341,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeSpear(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("#").pattern("/").group("spartanweaponry:spear").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.SPEAR))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeSpear(consumer, pole, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Spear pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Spear item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeSpear(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("#").pattern("/").
+			group("spartanweaponry:spear").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.SPEAR))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -192,8 +373,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeHalberd(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern(" #").pattern("##").pattern("#/").group("spartanweaponry:halberd").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.HALBERD))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeHalberd(consumer, pole, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Halberd pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Halberd item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeHalberd(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern(" #").pattern("##").pattern("#/").
+			group("spartanweaponry:halberd").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.HALBERD))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -206,8 +405,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipePike(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("#").pattern("/").pattern("/").group("spartanweaponry:pike").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.PIKE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipePike(consumer, pole, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Pike pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Pike item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipePike(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("#").pattern("/").pattern("/").
+			group("spartanweaponry:pike").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.PIKE))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -221,8 +438,27 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeLance(Consumer<FinishedRecipe> consumer, ItemLike handle, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', pole).pattern("  #").pattern("#/ ").pattern("|# ").group("spartanweaponry:lance").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.LANCE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeLance(consumer, handle, pole, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Lance pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Lance item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeLance(Consumer<FinishedRecipe> consumer, ItemLike handle, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', pole).pattern("  #").pattern("#/ ").pattern("|# ").
+			group("spartanweaponry:lance").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.LANCE))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -235,10 +471,32 @@ public class RecipeProviderHelper
 	 * @param result The resulting Longbow item
 	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
 	 */
-	public static void recipeLongbow(Consumer<FinishedRecipe> consumer, TagKey<Item> stick, TagKey<Item> string, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
+	public static void recipeLongbow(Consumer<FinishedRecipe> consumer, TagKey<Item> stick, TagKey<Item> string, ItemLike handle, TagKey<Item> material, ItemLike result, 
+			String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', stick).define('~', string).pattern("|/#").pattern("/ ~").pattern("#~~").group("spartanweaponry:longbow").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.LONGBOW))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeLongbow(consumer, Ingredient.of(stick), Ingredient.of(string), handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Longbow pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param stick The item used for the stick
+	 * @param string The item used for the string
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Longbow item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeLongbow(Consumer<FinishedRecipe> consumer, Ingredient stick, Ingredient string, ItemLike handle, TagKey<Item> material, ItemLike result, 
+			String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', stick).define('~', string).
+			pattern("|/#").pattern("/ ~").pattern("#~~").group("spartanweaponry:longbow").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.LONGBOW))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -251,10 +509,32 @@ public class RecipeProviderHelper
 	 * @param result The resulting Heavy Crossbow item
 	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
 	 */
-	public static void recipeHeavyCrossbow(Consumer<FinishedRecipe> consumer, TagKey<Item> planks, ItemLike bow, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
+	public static void recipeHeavyCrossbow(Consumer<FinishedRecipe> consumer, TagKey<Item> planks, ItemLike bow, ItemLike handle, TagKey<Item> material, ItemLike result, 
+			String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('P', planks).define('D', bow).define('H', Items.TRIPWIRE_HOOK).pattern("#D#").pattern("PHP").pattern(" | ").group("spartanweaponry:heavy_crossbow").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.HEAVY_CROSSBOW))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeHeavyCrossbow(consumer, Ingredient.of(planks), bow, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Heavy Crossbow pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param planks The item used for the planks
+	 * @param bow The item used for the bow
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Heavy Crossbow item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeHeavyCrossbow(Consumer<FinishedRecipe> consumer, Ingredient planks, ItemLike bow, ItemLike handle, TagKey<Item> material, ItemLike result, 
+			String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('P', planks).define('D', bow).define('H', Items.TRIPWIRE_HOOK).
+			pattern("#D#").pattern("PHP").pattern(" | ").group("spartanweaponry:heavy_crossbow").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.HEAVY_CROSSBOW))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -267,8 +547,25 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeThrowingKnife(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("|#").group("spartanweaponry:throwing_knife").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.THROWING_KNIFE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeThrowingKnife(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Throwing Knife pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Throwing Knife item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeThrowingKnife(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("|#").group("spartanweaponry:throwing_knife").
+			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.THROWING_KNIFE))).unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -281,8 +578,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeTomahawk(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("|#").pattern(" #").group("spartanweaponry:tomahawk").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.TOMAHAWK))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeTomahawk(consumer, handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Tomahawk pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Tomahawk item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeTomahawk(Consumer<FinishedRecipe> consumer, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).pattern("|#").pattern(" #").
+			group("spartanweaponry:tomahawk").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.TOMAHAWK))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -295,8 +610,25 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeJavelin(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("/#").group("spartanweaponry:javelin").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.JAVELIN))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeJavelin(consumer, pole, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Javelin pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Javelin item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeJavelin(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("/#").group("spartanweaponry:javelin").
+			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.JAVELIN))).unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -309,8 +641,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeBoomerang(Consumer<FinishedRecipe> consumer, TagKey<Item> planks, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('P', planks).pattern("#PP").pattern("P  ").pattern("P  ").group("spartanweaponry:boomerang").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.BOOMERANG))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeBoomerang(consumer, Ingredient.of(planks), material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Boomerang pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param planks The item used for the planks
+	 * @param material The item tag used for the material
+	 * @param result The resulting Boomerang item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeBoomerang(Consumer<FinishedRecipe> consumer, Ingredient planks, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('P', planks).pattern("#PP").pattern("P  ").pattern("P  ").
+			group("spartanweaponry:boomerang").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.BOOMERANG))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -324,8 +674,28 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeBattleaxe(Consumer<FinishedRecipe> consumer, TagKey<Item> stick, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', stick).pattern("###").pattern("#/#").pattern(" | ").group("spartanweaponry:battleaxe").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.BATTLEAXE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeBattleaxe(consumer, Ingredient.of(stick), handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Battleaxe pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param stick The item used for the stick
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Battleaxe item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeBattleaxe(Consumer<FinishedRecipe> consumer, Ingredient stick, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, 
+			String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', stick).
+			pattern("###").pattern("#/#").pattern(" | ").group("spartanweaponry:battleaxe").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.BATTLEAXE))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -339,8 +709,28 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeFlangedMace(Consumer<FinishedRecipe> consumer, TagKey<Item> stick, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', stick).pattern(" ##").pattern(" /#").pattern("|  ").group("spartanweaponry:flanged_mace").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.FLANGED_MACE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeFlangedMace(consumer, Ingredient.of(stick), handle, material, result, hasItemCriterionName, "");
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Flanged Mace pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param stick The item used for the stick
+	 * @param handle The item used for the handle
+	 * @param material The item tag used for the material
+	 * @param result The resulting Flanged Mace item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeFlangedMace(Consumer<FinishedRecipe> consumer, Ingredient stick, ItemLike handle, TagKey<Item> material, ItemLike result, String hasItemCriterionName, 
+			String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('|', handle).define('/', stick).
+			pattern(" ##").pattern(" /#").pattern("|  ").group("spartanweaponry:flanged_mace").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.FLANGED_MACE))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -353,8 +743,25 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeGlaive(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern(" #").pattern(" #").pattern(" /").group("spartanweaponry:glaive").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.GLAIVE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeGlaive(consumer, pole, material, result, hasItemCriterionName);
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Glaive pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Glaive item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeGlaive(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern(" #").pattern(" #").pattern(" /").
+			group("spartanweaponry:glaive").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.GLAIVE))).unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -367,8 +774,26 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeQuarterstaff(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("  #").pattern(" / ").pattern("#  ").group("spartanweaponry:quarterstaff").
-			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.QUARTERSTAFF))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+		recipeQuarterstaff(consumer, pole, material, result, hasItemCriterionName);
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Quarterstaff pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Quarterstaff item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeQuarterstaff(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("  #").pattern(" / ").pattern("#  ").
+			group("spartanweaponry:quarterstaff").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.QUARTERSTAFF))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 
 	/**
@@ -383,6 +808,25 @@ public class RecipeProviderHelper
 	{
 		ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("## ").pattern("  #").pattern(" / ").group("spartanweaponry:scythe").
 			condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.SCYTHE))).unlockedBy(hasItemCriterionName, hasItem(material)).save(consumer);
+	}
+
+	/**
+	 * Constructs a Shaped Crafting recipe using the Scythe pattern
+	 * @param consumer The function used to generate the recipe file
+	 * @param pole The item used for the pole
+	 * @param material The item tag used for the material
+	 * @param result The resulting Scythe item
+	 * @param hasItemCriterionName The name of the unlock criteria for this recipe. The recipe will be "unlocked" when any item in the material tag is in the player's inventory
+	 * @param requiredModId The name of a required mod ID to be present for the recipe to load. Leave as "" to ignore this condition
+	 */
+	public static void recipeScythe(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName, String requiredModId)
+	{
+		ConditionalShapedRecipeBuilder recipe = ConditionalShapedRecipeBuilder.shaped(result).define('#', material).define('/', pole).pattern("## ").pattern("  #").pattern(" / ").
+			group("spartanweaponry:scythe").condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.SCYTHE))).
+			unlockedBy(hasItemCriterionName, hasItem(material));
+		if(!requiredModId.isEmpty())
+			recipe.condition(new ModLoadedCondition(requiredModId));
+		recipe.save(consumer);
 	}
 	
 	/**

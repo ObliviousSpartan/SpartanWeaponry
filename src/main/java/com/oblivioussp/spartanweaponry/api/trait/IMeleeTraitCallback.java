@@ -1,6 +1,7 @@
 package com.oblivioussp.spartanweaponry.api.trait;
 
 import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.ImmutableMultimap.Builder;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 
 import net.minecraft.world.damagesource.DamageSource;
@@ -14,9 +15,8 @@ import net.minecraft.world.level.Level;
 /**
  * Callback class for Melee Weapon Traits; Implement this in your weapon trait class to implement custom behavior for your weapon
  * @author ObliviousSpartan
- *
  */
-public interface IMeleeTraitCallback 
+public interface IMeleeTraitCallback extends IGenericTraitCallback
 {
 	/**
 	 * Change this to customise damage from a weapon with this Weapon Trait when it deals damage
@@ -33,22 +33,6 @@ public interface IMeleeTraitCallback
 	}
 	
 	/**
-	 * Change this to customise damage from a weapon with this Weapon Trait when it deals damage. Can now access inital weapon damage.
-	 * @param material The weapon's material
-	 * @param baseDamage The base damage that should be taken if unmodified
-	 * @param initialDamage The initial damage the weapon would inflict without enchantments/bonuses
-	 * @param source The source of the damage
-	 * @param attacker The attacking Entity
-	 * @param victim The Entity being attacked
-	 * @return The damage that will be taken after any necessary modifications.
-	 */
-	/*@SuppressWarnings("unused")
-	public default float modifyDamageDealt(WeaponMaterial material, float baseDamage, float initialDamage, DamageSource source, LivingEntity attacker, LivingEntity victim)
-	{
-		return modifyDamageDealt(material, baseDamage, source, attacker, victim);
-	}*/
-	
-	/**
 	 * Change this to customise damage taken with this weapon equipped with this Weapon Trait when damage is taken
 	 * @param material The weapon's material
 	 * @param baseDamage The base damage that should be taken if unmodified
@@ -63,6 +47,7 @@ public interface IMeleeTraitCallback
 	}
 	
 	/**
+	 * Use {@linkplain IGenericTraitCallback#onItemUpdate(WeaponMaterial, ItemStack, Level, LivingEntity, int, boolean)} instead!
 	 * Called once every item tick. Use if item behavior needs to be changed on the fly
 	 * @param material The item's material
 	 * @param stack The item
@@ -71,6 +56,7 @@ public interface IMeleeTraitCallback
 	 * @param itemSlot The slot the item is in
 	 * @param isSelected
 	 */
+	@Override
 	public default void onItemUpdate(WeaponMaterial material, ItemStack stack, Level level, LivingEntity entity, int itemSlot, boolean isSelected) {}
 	
 	/**
@@ -84,14 +70,27 @@ public interface IMeleeTraitCallback
 	public default void onHitEntity(WeaponMaterial material, ItemStack stack, LivingEntity target, LivingEntity attacker, Entity projectile) {}
 	
 	/**
+	 * Allows Traits to add Attribute Modifiers for any Weapon. Calls {@linkplain #onModifyAttributesMelee(Builder)} by default
+	 * @param builder The modifier map builder for the item
+	 */
+	@Override
+	default void onModifyAttributes(Builder<Attribute, AttributeModifier> builder) 
+	{
+		onModifyAttributesMelee(builder);
+	}
+	
+	/**
+	 * Use to edit Melee-only attributes! Otherwise use {@linkplain IGenericTraitCallback#onModifyAttributes(ImmutableMultimap.Builder)} instead!<br>
 	 * Allows Traits to add Attribute Modifiers for Melee Weapons
 	 * @param builder The modifier map builder for the item
 	 */
 	public default void onModifyAttributesMelee(ImmutableMultimap.Builder<Attribute, AttributeModifier> builder) {}
 	
 	/**
+	 * Use {@linkplain IGenericTraitCallback#onCreateItem(WeaponMaterial, ItemStack)} instead!
 	 * Allows the item to have Enchantments or other NBT data added to the item. This should be reflected in Creative mode too
 	 * @param stack The item to edit
 	 */
+	@Override
 	public default void onCreateItem(WeaponMaterial material, ItemStack stack) {}
 }

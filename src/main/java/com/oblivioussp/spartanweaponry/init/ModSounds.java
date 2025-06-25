@@ -33,4 +33,5 @@ public class ModSounds
 
 	public static final RegistryObject<SoundEvent> OIL_APPLIED = REGISTRY.register("oil_applied", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(ModSpartanWeaponry.ID, "oil_applied")));
 	public static final RegistryObject<SoundEvent> HAMMER_SLAMS_INTO_GROUND = REGISTRY.register("hammer_slams_into_ground", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(ModSpartanWeaponry.ID, "hammer_slams_into_ground")));
+
 }

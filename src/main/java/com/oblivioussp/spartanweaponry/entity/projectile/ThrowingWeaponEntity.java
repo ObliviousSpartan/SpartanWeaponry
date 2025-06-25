@@ -125,15 +125,16 @@ public class ThrowingWeaponEntity extends AbstractArrow implements IEntityAdditi
 						isReturning = true;
 						setNoGravity(true);
 					}
-					Vec3 distance = new Vec3(thrower.getX() - getX(), thrower.getEyeY() - getY(), thrower.getZ() - getZ());
+//					Vec3 distance = new Vec3(thrower.getX() - getX(), thrower.getEyeY() - getY(), thrower.getZ() - getZ());
+					Vec3 distance = thrower.getEyePosition().subtract(position());
 					setPosRaw(getX(), getY() + distance.y * 0.015 * (double)returnLevel, getZ());
 					if(level.isClientSide)
 					{
 						yOld = getY();
 					}
 					
-					double velocity = 1.0d + 0.25d * (double)returnLevel;
-					setDeltaMovement(getDeltaMovement().scale(0.95).add(distance.normalize().scale(velocity)));
+					double velocity = 0.10d * (double)returnLevel;
+					setDeltaMovement(getDeltaMovement().scale(0.95d).add(distance.normalize().scale(velocity)));
 					
 					if(!playedReturnSound)
 					{
@@ -141,7 +142,7 @@ public class ThrowingWeaponEntity extends AbstractArrow implements IEntityAdditi
 						playedReturnSound = true;
 					}
 				}
-				else if(returnLevel > 0 && !thrower.isAlive())
+				else if(!thrower.isAlive())
 				{
 					setNoPhysics(false);
 					isReturning = false;

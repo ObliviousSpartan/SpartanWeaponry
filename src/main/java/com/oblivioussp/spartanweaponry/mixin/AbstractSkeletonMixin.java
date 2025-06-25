@@ -1,7 +1,5 @@
 package com.oblivioussp.spartanweaponry.mixin;
 
-import java.util.List;
-
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -12,7 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.oblivioussp.spartanweaponry.api.tags.ModItemTags;
 import com.oblivioussp.spartanweaponry.util.Config;
-import com.oblivioussp.spartanweaponry.util.ItemRandomizer;
 
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
@@ -22,12 +19,9 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RangedBowAttackGoal;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.tags.ITag;
 
 @Mixin(AbstractSkeleton.class)
 public class AbstractSkeletonMixin extends MobMixin
@@ -80,7 +74,7 @@ public class AbstractSkeletonMixin extends MobMixin
 	@Inject(at = @At("TAIL"), method = "populateDefaultEquipmentSlots(Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/DifficultyInstance;)V")
 	protected void populateDefaultEquipmentSlots(RandomSource randomIn, DifficultyInstance difficultyIn, CallbackInfo callback)
 	{
-		if(!Config.INSTANCE.disableSpawningSkeletonWithLongbow.get())
+		/*if(!Config.INSTANCE.disableSpawningSkeletonWithLongbow.get())
 		{
 			Level level = level();
 			float rand = random.nextFloat();
@@ -99,6 +93,11 @@ public class AbstractSkeletonMixin extends MobMixin
 					setItemSlot(EquipmentSlot.MAINHAND, weapon);
 				}
 			}
-		}
+		}*/
+
+		attemptReplacingMainHandItemRandom(ModItemTags.SKELETON_SPAWN_LONGBOWS, difficultyIn, 
+				Config.INSTANCE.disableSpawningSkeletonWithLongbow.get(),
+				Config.INSTANCE.skeletonWithLongbowSpawnChanceNormal.get().floatValue(),
+				Config.INSTANCE.skeletonWithLongbowSpawnChanceHard.get().floatValue());
 	}
 }
