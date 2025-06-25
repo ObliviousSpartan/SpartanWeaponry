@@ -576,8 +576,8 @@
 	"item.spartanweaponry.proj_tipped.effect.luck": "幸运%s",
 	"item.spartanweaponry.proj_tipped.effect.turtle_master": "神龟%s",
 	"item.spartanweaponry.proj_tipped.effect.slow_falling": "缓降%s",
-    "item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
-    "item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
+	"item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
+	"item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
 
 	// 夸克 (Quark)
 	"item.spartanweaponry.proj_tipped.effect.quark.resilience": "稳定%s",
@@ -607,7 +607,7 @@
 	"item.spartanweaponry.proj_tipped.effect.grounding": "接地%s",
 	
 	// 碧海新生 (Upgrade Aquatic)
-    "item.spartanweaponry.proj_tipped.effect.insomnia": "失眠%s",
+	"item.spartanweaponry.proj_tipped.effect.insomnia": "失眠%s",
 	"item.spartanweaponry.proj_tipped.effect.insomnia_strong": "强效失眠%s",
 	"item.spartanweaponry.proj_tipped.effect.restfulness": "宁静%s",
 	"item.spartanweaponry.proj_tipped.effect.restfulness_strong": "强效宁静%s",
@@ -735,16 +735,16 @@
 	"item.spartanweaponry.proj_tipped.effect.strong_soulsteal": "强效灵魂窃取%s",
 	"item.spartanweaponry.proj_tipped.effect.speed_iii": "速度%s",
 	"item.spartanweaponry.proj_tipped.effect.deepsight": "渊视%s",
-    "item.spartanweaponry.proj_tipped.effect.long_deepsight": "长效渊视%s",
-    "item.spartanweaponry.proj_tipped.effect.magnetizing": "磁化%s",
-    "item.spartanweaponry.proj_tipped.effect.long_magnetizing": "长效磁化%s",
-    "item.spartanweaponry.proj_tipped.effect.sugar_rush": "甜蜜冲刺%s",
-    "item.spartanweaponry.proj_tipped.effect.long_sugar_rush": "持久甜蜜冲刺%s",
-    "item.spartanweaponry.proj_tipped.effect.spectral_potion": "发光%s",
+	"item.spartanweaponry.proj_tipped.effect.long_deepsight": "长效渊视%s",
+	"item.spartanweaponry.proj_tipped.effect.magnetizing": "磁化%s",
+	"item.spartanweaponry.proj_tipped.effect.long_magnetizing": "长效磁化%s",
+	"item.spartanweaponry.proj_tipped.effect.sugar_rush": "甜蜜冲刺%s",
+	"item.spartanweaponry.proj_tipped.effect.long_sugar_rush": "持久甜蜜冲刺%s",
+	"item.spartanweaponry.proj_tipped.effect.spectral_potion": "发光%s",
 	"item.spartanweaponry.proj_tipped.effect.potion_of_tenacity": "坚韧%s",
 	"item.spartanweaponry.proj_tipped.effect.bug_pheromones": "招风引蝶%s",
-    "item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
-    "item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
+	"item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
+	"item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
 
 	// 坚固地牢 (Stalwart Dungeons)
 	"item.spartanweaponry.proj_tipped.effect.burning": "燃烧%s",
@@ -859,26 +859,26 @@
 
 	// Jerotes村庄 (Jerotes Village)
 	"item.spartanweaponry.proj_tipped.effect.wilderness_giant_poison": "荒野巨人毒酿%s",
-    "item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
-    "item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
-    "item.spartanweaponry.proj_tipped.effect.corrosive": "腐蚀%s",
-    "item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
-    "item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
-    "item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
+	"item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
+	"item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
+	"item.spartanweaponry.proj_tipped.effect.corrosive": "腐蚀%s",
+	"item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
+	"item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
+	"item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
 
-    // 传说生存 (Legendary Survival Overhaul)
+	// 传说生存 (Legendary Survival Overhaul)
 	"item.spartanweaponry.proj_tipped.effect.temperature_immunity": "恒温%s",
-    "item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
+	"item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
 	"item.spartanweaponry.proj_tipped.effect.hydration_fill": "解渴%s",
-    "item.spartanweaponry.proj_tipped.effect.hydration_fill_long": "持久解渴%s",
-    "item.spartanweaponry.proj_tipped.effect.heat_immunity": "抗暑%s",
-    "item.spartanweaponry.proj_tipped.effect.heat_immunity_long": "持久抗暑%s",
-    "item.spartanweaponry.proj_tipped.effect.heat_resistance_long": "耐暑%s",
-    "item.spartanweaponry.proj_tipped.effect.cold_immunity": "御寒%s",
-    "item.spartanweaponry.proj_tipped.effect.cold_immunity_long": "持久御寒%s",
-    "item.spartanweaponry.proj_tipped.effect.cold_resistance_long": "耐寒%s",
-    "item.spartanweaponry.proj_tipped.effect.thirst": "干渴%s",
-    "item.spartanweaponry.proj_tipped.effect.thirst_long": "持久干渴%s",
+	"item.spartanweaponry.proj_tipped.effect.hydration_fill_long": "持久解渴%s",
+	"item.spartanweaponry.proj_tipped.effect.heat_immunity": "抗暑%s",
+	"item.spartanweaponry.proj_tipped.effect.heat_immunity_long": "持久抗暑%s",
+	"item.spartanweaponry.proj_tipped.effect.heat_resistance_long": "耐暑%s",
+	"item.spartanweaponry.proj_tipped.effect.cold_immunity": "御寒%s",
+	"item.spartanweaponry.proj_tipped.effect.cold_immunity_long": "持久御寒%s",
+	"item.spartanweaponry.proj_tipped.effect.cold_resistance_long": "耐寒%s",
+	"item.spartanweaponry.proj_tipped.effect.thirst": "干渴%s",
+	"item.spartanweaponry.proj_tipped.effect.thirst_long": "持久干渴%s",
 	
 	// 箭袋
 	"item.spartanweaponry.small_arrow_quiver": "小型箭袋",
@@ -1286,7 +1286,7 @@
 	"advancement.spartanweaponry.return_kill.title": "当心飞回来的回力镖!",
 	"advancement.spartanweaponry.return_kill.desc": "当回力镖朝你飞回来时，用它击杀一个怪物",
 	
-	// 音效标题
+	// 音效字幕
 	"subtitle.spartanweaponry.thrown_weapon_throw": "投掷武器",
 	"subtitle.spartanweaponry.thrown_weapon_hit_mob": "击中目标",
 	"subtitle.spartanweaponry.thrown_weapon_hit_ground": "武器击中地面",
