@@ -38,7 +38,7 @@
 	"item.spartanweaponry.custom_dagger": "%s 匕首",
 	
 	// 格挡匕首
-        "item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
+		"item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
 	"item.spartanweaponry.stone_parrying_dagger": "石格挡匕首",
 	"item.spartanweaponry.copper_parrying_dagger": "铜格挡匕首",
 	"item.spartanweaponry.iron_parrying_dagger": "铁格挡匕首",
@@ -577,7 +577,7 @@
 	"item.spartanweaponry.proj_tipped.effect.slow_falling": "缓降%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
 	"item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
-	
+
 	// Add the original name of the mods to make the mods easier to find.
 	// 夸克 (Quark)
 	"item.spartanweaponry.proj_tipped.effect.quark.resilience": "稳定%s",
@@ -865,7 +865,7 @@
 	"item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
 	"item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
-	
+
 	// 传说生存 (Legendary Survival Overhaul)
 	"item.spartanweaponry.proj_tipped.effect.temperature_immunity": "恒温%s",
 	"item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
@@ -950,14 +950,14 @@
 	"entity.spartanweaponry.boomerang": "回力镖",
 	
 	// 附魔
-	// update the an enchantment name make it more easy to understand in Chinese.
+	// update the some enchantment names make it more easy to understand in Chinese, and some of them might be more fit to the original meaning.
 	"enchantment.spartanweaponry.propel": "推进",
 	"enchantment.spartanweaponry.propel.desc": "扩大该武器的投掷范围",
 	"enchantment.spartanweaponry.razors_edge": "锐掷",
 	"enchantment.spartanweaponry.razors_edge.desc": "增加该投掷武器的伤害",
 	"enchantment.spartanweaponry.incendiary": "纵火",
 	"enchantment.spartanweaponry.incendiary.desc": "给该投掷武器注入火焰，击中目标会着火",
-	"enchantment.spartanweaponry.lucky_throw": "连投带抢",
+	"enchantment.spartanweaponry.lucky_throw": "连投带拿",
 	"enchantment.spartanweaponry.lucky_throw.desc": "增加使用投掷武器击败怪物时战利品的掉落率",
 	"enchantment.spartanweaponry.hydrodynamic": "水力驱动",
 	"enchantment.spartanweaponry.hydrodynamic.desc": "允许投掷武器在水下使用",
@@ -965,7 +965,7 @@
 	"enchantment.spartanweaponry.supercharge.desc": "每级减少投掷武器的充能时间约20%",
 	"enchantment.spartanweaponry.expanse": "备弹",
 	"enchantment.spartanweaponry.expanse.desc": "每级增加投掷武器的最大弹药容量25%或一发，取较大者",
-	"enchantment.spartanweaponry.sharpshooter": "神枪手",
+	"enchantment.spartanweaponry.sharpshooter": "神射手",
 	"enchantment.spartanweaponry.sharpshooter.desc": "每级减少重弩的瞄准时间0.1秒",
 	"enchantment.spartanweaponry.collectorang": "镖集",
 	"enchantment.spartanweaponry.collectorang.desc": "每级使回力镖能够捡起地面上一组物品或经验球。",
@@ -1000,12 +1000,12 @@
 	"tooltip.spartanweaponry.trait.material_bonus": "材料加成：",
 	"tooltip.spartanweaponry.trait.invalid.archetype_tag": "错误：找不到 %s 武器类型标签：“%s”",
 	"tooltip.spartanweaponry.trait.invalid.material_tag": "错误：找不到 %s 材料特性标签：“%s”",
-	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每个武器不能使用多个动作特征",
-	"tooltip.spartanweaponry.trait.invalid.material_action_trait": "错误：该动作特征不能应用于材料",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_melee": "错误：近战词条不使用于此类武器",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_ranged": "错误：远程属性不使用于此类武器",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_throwing": "错误：投掷属性不使用于此类武器",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_supported": "错误：非法的属性使用于于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每个武器不能使用多个动作词条属性",
+	"tooltip.spartanweaponry.trait.invalid.material_action_trait": "错误：该动作词条属性不适用于此类材料",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_melee": "错误：近战属性不适用于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_ranged": "错误：远程属性不适用于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_throwing": "错误：投掷属性不适用于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_supported": "错误：不支持的属性不适用于此类武器",
 	
 	"tooltip.spartanweaponry.trait.type.melee": "近战",
 	"tooltip.spartanweaponry.trait.type.ranged": "远程",
