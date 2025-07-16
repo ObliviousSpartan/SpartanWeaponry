@@ -38,7 +38,7 @@
 	"item.spartanweaponry.custom_dagger": "%s 匕首",
 	
 	// 格挡匕首
-        "item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
+		"item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
 	"item.spartanweaponry.stone_parrying_dagger": "石格挡匕首",
 	"item.spartanweaponry.copper_parrying_dagger": "铜格挡匕首",
 	"item.spartanweaponry.iron_parrying_dagger": "铁格挡匕首",
@@ -553,7 +553,7 @@
 	"item.spartanweaponry.diamond_bolt": "钻石弩箭",
 	"item.spartanweaponry.netherite_bolt": "下界合金弩箭",
 	
-	// 喷溅
+	// 喷溅效果
 	// 原版
 	"item.spartanweaponry.proj_tipped": "顶端%s",
 	"item.spartanweaponry.proj_tipped.effect.empty": "药水箭头%s",
@@ -575,22 +575,23 @@
 	"item.spartanweaponry.proj_tipped.effect.luck": "幸运%s",
 	"item.spartanweaponry.proj_tipped.effect.turtle_master": "神龟%s",
 	"item.spartanweaponry.proj_tipped.effect.slow_falling": "缓降%s",
-        "item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
-        "item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
+	"item.spartanweaponry.proj_tipped.effect.strong_hunger": "超级饥饿%s",
+	"item.spartanweaponry.proj_tipped.effect.dolphins_grace": "海豚的恩惠%s",
 
-	// 夸克
+	// Add the original name of the mods to make the mods easier to find.
+	// 夸克 (Quark)
 	"item.spartanweaponry.proj_tipped.effect.quark.resilience": "稳定%s",
 	"item.spartanweaponry.proj_tipped.effect.quark.resistance": "坚韧%s",
 	"item.spartanweaponry.proj_tipped.effect.quark.danger_sight": "预知%s",
 	
-	// 循环
+	// 循环 (Cyclic)
 	"item.spartanweaponry.proj_tipped.effect.cyclic_haste": "急迫%s",
 	"item.spartanweaponry.proj_tipped.effect.cyclic_strong_haste": "急迫II%s",
 	"item.spartanweaponry.proj_tipped.effect.cyclic_stun": "麻痹%s",
 	"item.spartanweaponry.proj_tipped.effect.cyclic_swimspeed": "速泳%s",
 	"item.spartanweaponry.proj_tipped.effect.cyclic_absorption": "伤害吸收%s",
 	
-	// 神化
+	// 神化 (Apotheosis)
 	"item.spartanweaponry.proj_tipped.effect.haste": "急迫%s",
 	"item.spartanweaponry.proj_tipped.effect.long_haste": "长效急迫%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_haste": "强效急迫%s",
@@ -601,12 +602,12 @@
 	"item.spartanweaponry.proj_tipped.effect.sundering": "割裂%s",
 	"item.spartanweaponry.proj_tipped.effect.knowledge": "学识%s",
 	
-	// 寂静宝石 3
+	// 寂静宝石 3 (Silent Gems 3)
 	"item.spartanweaponry.proj_tipped.effect.insulating": "绝缘%s",
 	"item.spartanweaponry.proj_tipped.effect.grounding": "接地%s",
 	
-	// 碧海新生
-        "item.spartanweaponry.proj_tipped.effect.insomnia": "失眠%s",
+	// 碧海新生 (Upgrade Aquatic)
+	"item.spartanweaponry.proj_tipped.effect.insomnia": "失眠%s",
 	"item.spartanweaponry.proj_tipped.effect.insomnia_strong": "强效失眠%s",
 	"item.spartanweaponry.proj_tipped.effect.restfulness": "宁静%s",
 	"item.spartanweaponry.proj_tipped.effect.restfulness_strong": "强效宁静%s",
@@ -617,10 +618,10 @@
 	"item.spartanweaponry.proj_tipped.effect.vibing_strong": "强效振奋%s",
 	"item.spartanweaponry.proj_tipped.effect.vibing_long": "长效振奋%s",
 	
-	// 秋原
+	// 秋原 (Autumnity)
 	"item.spartanweaponry.proj_tipped.effect.extension": "扩展%s",
 	
-	// 新生魔艺
+	// 新生魔艺 (Ars Nouveau)
 	"item.spartanweaponry.proj_tipped.effect.mana_regen_potion": "魔力恢复%s",
 	"item.spartanweaponry.proj_tipped.effect.mana_regen_potion_long": "长效魔力恢复%s",
 	"item.spartanweaponry.proj_tipped.effect.mana_regen_potion_strong": "强效魔力恢复%s",
@@ -640,13 +641,13 @@
 	"item.spartanweaponry.proj_tipped.effect.shielding_potion_long": "长效护盾%s",
 	"item.spartanweaponry.proj_tipped.effect.shielding_potion_strong": "强效护盾%s",
 	
-	// 元素魔艺
+	// 元素魔艺 (Ars Elemental)
 	"item.spartanweaponry.proj_tipped.effect.enderference_potion": "末影干扰%s",
 	"item.spartanweaponry.proj_tipped.effect.enderference_potion_long": "持久末影干扰%s",
 	"item.spartanweaponry.proj_tipped.effect.shock_potion": "静电电荷%s",
 	"item.spartanweaponry.proj_tipped.effect.shock_potion_long": "持久静电电荷%s",
 	
-	// 魔药大师
+	// 魔药大师 (Potions Master)
 	"item.spartanweaponry.proj_tipped.effect.coal_sight": "煤炭视野%s",
 	"item.spartanweaponry.proj_tipped.effect.iron_sight": "铁视野%s",
 	"item.spartanweaponry.proj_tipped.effect.redstone_sight": "红石视野%s",
@@ -673,7 +674,7 @@
 	"item.spartanweaponry.proj_tipped.effect.unobtainium_sight": "难得素视野%s",
 	"item.spartanweaponry.proj_tipped.effect.bismuth_sight": "铋视野%s",
 	
-	// 幻梦
+	// 幻梦 (Eidolon)
 	"item.spartanweaponry.proj_tipped.effect.chilled": "冷静%s",
 	"item.spartanweaponry.proj_tipped.effect.long_chilled": "持久冷静%s",
 	"item.spartanweaponry.proj_tipped.effect.anchored": "锚定%s",
@@ -690,20 +691,20 @@
 	"item.spartanweaponry.proj_tipped.effect.long_vulnerable": "持久易伤%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_vulnerable": "强效易伤%s",
 	
-	// 深渊
+	// 深渊 (The Abyss)
 	"item.spartanweaponry.proj_tipped.effect.abyspower": "深渊之力%s",
 	"item.spartanweaponry.proj_tipped.effect.fear": "恐惧%s",
 	"item.spartanweaponry.proj_tipped.effect.ghostvision": "幽灵视野%s",
 	"item.spartanweaponry.proj_tipped.effect.node_potion": "节点%s",
 	"item.spartanweaponry.proj_tipped.effect.time_stop_potion_effect": "咋瓦鲁多%s",
 	
-	// Wilds
+	// *No Translation* Wilds
 	"item.spartanweaponry.proj_tipped.effect.bane_potion": "毒油%s",
 	"item.spartanweaponry.proj_tipped.effect.knockback_potion": "击退%s",
 	"item.spartanweaponry.proj_tipped.effect.nausea_potion": "恶心%s",
 	"item.spartanweaponry.proj_tipped.effect.noisy_potion": "嘈杂%s",
 	
-	// Astemir's Forest Craft
+	// *No Translation* Astemir's Forest Craft
 	"item.spartanweaponry.proj_tipped.effect.bat_vision": "蝙蝠视野%s",
 	"item.spartanweaponry.proj_tipped.effect.bat_vision_long": "长效蝙蝠视野%s",
 	"item.spartanweaponry.proj_tipped.effect.broken_armor": "破甲%s",
@@ -717,7 +718,7 @@
 	"item.spartanweaponry.proj_tipped.effect.thorns_long": "长效荆棘%s",
 	"item.spartanweaponry.proj_tipped.effect.thorns_strong": "超级荆棘%s",
 	
-	// Alex的生物
+	// Alex的生物 (Alex's Mobs)
 	"item.spartanweaponry.proj_tipped.effect.bug_pheremones": "信息素%s",
 	"item.spartanweaponry.proj_tipped.effect.long_bug_pheremones": "持久信息素%s",
 	"item.spartanweaponry.proj_tipped.effect.clinging": "黏附%s",
@@ -734,30 +735,30 @@
 	"item.spartanweaponry.proj_tipped.effect.strong_soulsteal": "强效灵魂窃取%s",
 	"item.spartanweaponry.proj_tipped.effect.speed_iii": "速度%s",
 	"item.spartanweaponry.proj_tipped.effect.deepsight": "渊视%s",
-        "item.spartanweaponry.proj_tipped.effect.long_deepsight": "长效渊视%s",
-        "item.spartanweaponry.proj_tipped.effect.magnetizing": "磁化%s",
-        "item.spartanweaponry.proj_tipped.effect.long_magnetizing": "长效磁化%s",
-        "item.spartanweaponry.proj_tipped.effect.sugar_rush": "甜蜜冲刺%s",
-        "item.spartanweaponry.proj_tipped.effect.long_sugar_rush": "持久甜蜜冲刺%s",
-        "item.spartanweaponry.proj_tipped.effect.spectral_potion": "发光%s",
+	"item.spartanweaponry.proj_tipped.effect.long_deepsight": "长效渊视%s",
+	"item.spartanweaponry.proj_tipped.effect.magnetizing": "磁化%s",
+	"item.spartanweaponry.proj_tipped.effect.long_magnetizing": "长效磁化%s",
+	"item.spartanweaponry.proj_tipped.effect.sugar_rush": "甜蜜冲刺%s",
+	"item.spartanweaponry.proj_tipped.effect.long_sugar_rush": "持久甜蜜冲刺%s",
+	"item.spartanweaponry.proj_tipped.effect.spectral_potion": "发光%s",
 	"item.spartanweaponry.proj_tipped.effect.potion_of_tenacity": "坚韧%s",
 	"item.spartanweaponry.proj_tipped.effect.bug_pheromones": "招风引蝶%s",
-        "item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
-        "item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
+	"item.spartanweaponry.proj_tipped.effect.long_bug_pheromones": "长效招风引蝶%s",
+	"item.spartanweaponry.proj_tipped.effect.reaching": "长臂%s",
 
-	// 坚固地牢
+	// 坚固地牢 (Stalwart Dungeons)
 	"item.spartanweaponry.proj_tipped.effect.burning": "燃烧%s",
 	"item.spartanweaponry.proj_tipped.effect.spore": "孢子%s",
 	
-	// 生存要素
+	// 生存要素 (Survive)
 	"item.spartanweaponry.proj_tipped.effect.cold_resistance": "保暖%s",
 	"item.spartanweaponry.proj_tipped.effect.heat_resistance": "清凉%s",
 	
-	// 更好的末地
+	// 更好的末地 (BetterEnd)
 	"item.spartanweaponry.proj_tipped.effect.end_veil": "末地面纱%s",
 	"item.spartanweaponry.proj_tipped.effect.long_end_veil": "长效末地面纱%s",
 	
-	// 下界农业
+	// 下界农业 (Nether Agriculture)
 	"item.spartanweaponry.proj_tipped.effect.flight": "飞行%s",
 	"item.spartanweaponry.proj_tipped.effect.long_flight": "长效飞行%s",
 	"item.spartanweaponry.proj_tipped.effect.warp": "扭曲%s",
@@ -765,45 +766,45 @@
 	"item.spartanweaponry.proj_tipped.effect.strong_warp": "强效扭曲%s",
 	"item.spartanweaponry.proj_tipped.effect.long_strong_warp": "长效扭曲%s",
 	
-	// 地狱扩展
+	// 地狱扩展 (Infernal Expansion)
 	"item.spartanweaponry.proj_tipped.effect.infection": "感染%s",
 	"item.spartanweaponry.proj_tipped.effect.luminous": "发光%s",
 	
-	// Lostsould
+	// *No Translation* Lostsould
 	"item.spartanweaponry.proj_tipped.effect.lightflight": "灵魂%s",
 	
-	// Buzzier Bees
+	// *No Translation* Buzzier Bees
 	"item.spartanweaponry.proj_tipped.effect.long_luck": "幸运%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_luck": "高级幸运%s",
 	"item.spartanweaponry.proj_tipped.effect.unluck": "厄运%s",
 	"item.spartanweaponry.proj_tipped.effect.long_unluck": "持久厄运%s",
 	"item.spartanweaponry.proj_tipped.effect.strong_unluck": "强效厄运%s",
 	
-	// 灾厄村民拓展
+	// 灾厄村民拓展 (Omnis)
 	"item.spartanweaponry.proj_tipped.effect.magic_proficiency": "魔法熟练%s",
 	"item.spartanweaponry.proj_tipped.effect.long_magic_proficiency": "持久魔法熟练%s ",
 	"item.spartanweaponry.proj_tipped.effect.strong_magic_proficiency": "强效魔法熟练%s",
 	
-	// 希腊幻想
+	// 希腊幻想 (Greek Fantasy)
 	"item.spartanweaponry.proj_tipped.effect.mirror": "镜像%s",
 	"item.spartanweaponry.proj_tipped.effect.swine": "疫猪%s",
 	
-	// 地下城装备
+	// 地下城装备 (Dungeons Gear)
 	"item.spartanweaponry.proj_tipped.effect.oakwood_brew": "木甲%s",
 	"item.spartanweaponry.proj_tipped.effect.shadow_brew": "暗影%s",
 	
-	// 末地启明
+	// 末地启明 (Nourished End)
 	"item.spartanweaponry.proj_tipped.effect.pastey": "糊状%s",
 	
-	// Mowzie的生物
+	// Mowzie的生物 (Mowzie's Mobs)
 	"item.spartanweaponry.proj_tipped.effect.poison_resist": "中毒抗性%s",
 	"item.spartanweaponry.proj_tipped.effect.long_poison_resist": "长效中毒抗性%s",
 
-	// 荒芜
+	// 荒芜 (Desolation)
 	"item.spartanweaponry.proj_tipped.effect.potion_of_cinder_soul": "余烬灵魂%s",
 	"item.spartanweaponry.proj_tipped.effect.chemical_x": "突变%s",
 	
-	// Atmospheric
+	// *No Translation* Atmospheric
 	"item.spartanweaponry.proj_tipped.effect.relief": "缓解%s",
 	"item.spartanweaponry.proj_tipped.effect.relief_long": "持久缓解%s",
 	"item.spartanweaponry.proj_tipped.effect.relief_strong": "强效缓解%s",
@@ -811,14 +812,14 @@
 	"item.spartanweaponry.proj_tipped.effect.worsening_long": "持久恶化%s",
 	"item.spartanweaponry.proj_tipped.effect.worsening_strong": "强效恶化%s",
 	
-	// 自然环境
+	// 自然环境 (Environmental)
 	"item.spartanweaponry.proj_tipped.effect.vitality": "活力%s",
 	"item.spartanweaponry.proj_tipped.effect.vitality_strong": "高级活力%s",
 	
-	// Nether Exoticism
+	// *No Translation* Nether Exoticism
 	"item.spartanweaponry.proj_tipped.effect.wither_cure": "凋零治愈%s",
 	
-	// Corail的墓碑
+	// Corail的墓碑 (Corail Tombstone)
 	"item.spartanweaponry.proj_tipped.effect.earthly_garden": "尘世花原%s",
 	"item.spartanweaponry.proj_tipped.effect.bait": "诱饵%s",
 	"item.spartanweaponry.proj_tipped.effect.frostbite": "冻伤%s",
@@ -826,58 +827,58 @@
 	"item.spartanweaponry.proj_tipped.effect.discretion": "谨慎%s",
 	"item.spartanweaponry.proj_tipped.effect.restoration": "回复%s",
 	
-	// 神化
+	// 神化 (Apotheosis)
 	"item.spartanweaponry.proj_tipped.effect.grievous": "禁疗%s",
 	"item.spartanweaponry.proj_tipped.effect.flying": "飞行%s",
 	
-	// 深暗之园
+	// 深暗之园 (The Undergarden)
 	"item.spartanweaponry.proj_tipped.effect.brittleness": "脆弱%s",
 	"item.spartanweaponry.proj_tipped.effect.featherweight": "轻如羽毛%s",
 	"item.spartanweaponry.proj_tipped.effect.virulent_resistance": "毒素抗性%s",
 	"item.spartanweaponry.proj_tipped.effect.glowing": "发光%s",
 	"item.spartanweaponry.proj_tipped.effect.long_glowing": "长效发光%s",
 
-	// 自然主义
+	// 自然主义 (Naturalist)
 	"item.spartanweaponry.proj_tipped.effect.forest_dasher": "急迫%s",
 	
-	// 幽邃黑暗
+	// 幽邃黑暗 (Deeper and Darker)
 	"item.spartanweaponry.proj_tipped.effect.sculk_affinity": "幽匿亲和%s",
 	"item.spartanweaponry.proj_tipped.effect.long_sculk_affinity": "持久幽匿亲和%s",
 	
-	// Iron的法术与魔法书
+	// Iron的法术与魔法书 (Iron's Spells and Spellbooks)
 	"item.spartanweaponry.proj_tipped.effect.mana": "法力%s",
 	
 	// 铁路重生 (Railcraft Reborn)
 	"item.spartanweaponry.proj_tipped.effect.creosote": "木馏油%s",
 
-	// 诡厄巫法
+	// 诡厄巫法 (Goety)
 	"item.spartanweaponry.proj_tipped.effect.climbing": "攀爬%s",
 	"item.spartanweaponry.proj_tipped.effect.big_witch_heal": "大治愈%s",
 	"item.spartanweaponry.proj_tipped.effect.big_witch_hurt": "强效伤害%s",
 	"item.spartanweaponry.proj_tipped.effect.frenzy_potion": "狂乱%s",
 
-	// Jerotes村庄
+	// Jerotes村庄 (Jerotes Village)
 	"item.spartanweaponry.proj_tipped.effect.wilderness_giant_poison": "荒野巨人毒酿%s",
-        "item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
-        "item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
-        "item.spartanweaponry.proj_tipped.effect.corrosive": "腐蚀%s",
-        "item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
-        "item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
-        "item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
+	"item.spartanweaponry.proj_tipped.effect.long_wilderness_giant_poison": "长效荒野巨人毒酿%s",
+	"item.spartanweaponry.proj_tipped.effect.strong_wilderness_giant_poison": "强效荒野巨人毒酿%s",
+	"item.spartanweaponry.proj_tipped.effect.corrosive": "腐蚀%s",
+	"item.spartanweaponry.proj_tipped.effect.long_corrosive": "长效腐蚀%s",
+	"item.spartanweaponry.proj_tipped.effect.strong_corrosive": "强效腐蚀%s",
+	"item.spartanweaponry.proj_tipped.effect.carved_villager_arrow": "铜刻村民箭%s",
 
-       // 传说生存
+	// 传说生存 (Legendary Survival Overhaul)
 	"item.spartanweaponry.proj_tipped.effect.temperature_immunity": "恒温%s",
-        "item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
+	"item.spartanweaponry.proj_tipped.effect.temperature_immunity_long": "持久恒温%s",
 	"item.spartanweaponry.proj_tipped.effect.hydration_fill": "解渴%s",
-        "item.spartanweaponry.proj_tipped.effect.hydration_fill_long": "持久解渴%s",
-        "item.spartanweaponry.proj_tipped.effect.heat_immunity": "抗暑%s",
-        "item.spartanweaponry.proj_tipped.effect.heat_immunity_long": "持久抗暑%s",
-        "item.spartanweaponry.proj_tipped.effect.heat_resistance_long": "耐暑%s",
-        "item.spartanweaponry.proj_tipped.effect.cold_immunity": "御寒%s",
-        "item.spartanweaponry.proj_tipped.effect.cold_immunity_long": "持久御寒%s",
-        "item.spartanweaponry.proj_tipped.effect.cold_resistance_long": "耐寒%s",
-        "item.spartanweaponry.proj_tipped.effect.thirst": "干渴%s",
-        "item.spartanweaponry.proj_tipped.effect.thirst_long": "持久干渴%s",
+	"item.spartanweaponry.proj_tipped.effect.hydration_fill_long": "持久解渴%s",
+	"item.spartanweaponry.proj_tipped.effect.heat_immunity": "抗暑%s",
+	"item.spartanweaponry.proj_tipped.effect.heat_immunity_long": "持久抗暑%s",
+	"item.spartanweaponry.proj_tipped.effect.heat_resistance_long": "耐暑%s",
+	"item.spartanweaponry.proj_tipped.effect.cold_immunity": "御寒%s",
+	"item.spartanweaponry.proj_tipped.effect.cold_immunity_long": "持久御寒%s",
+	"item.spartanweaponry.proj_tipped.effect.cold_resistance_long": "耐寒%s",
+	"item.spartanweaponry.proj_tipped.effect.thirst": "干渴%s",
+	"item.spartanweaponry.proj_tipped.effect.thirst_long": "持久干渴%s",
 	
 	// 箭袋
 	"item.spartanweaponry.small_arrow_quiver": "小型箭袋",
@@ -949,13 +950,14 @@
 	"entity.spartanweaponry.boomerang": "回力镖",
 	
 	// 附魔
+	// update the some enchantment names make it more easy to understand in Chinese, and some of them might be more fit to the original meaning.
 	"enchantment.spartanweaponry.propel": "推进",
 	"enchantment.spartanweaponry.propel.desc": "扩大该武器的投掷范围",
 	"enchantment.spartanweaponry.razors_edge": "锐掷",
 	"enchantment.spartanweaponry.razors_edge.desc": "增加该投掷武器的伤害",
 	"enchantment.spartanweaponry.incendiary": "纵火",
 	"enchantment.spartanweaponry.incendiary.desc": "给该投掷武器注入火焰，击中目标会着火",
-	"enchantment.spartanweaponry.lucky_throw": "夺取掷器",
+	"enchantment.spartanweaponry.lucky_throw": "连投带拿",
 	"enchantment.spartanweaponry.lucky_throw.desc": "增加使用投掷武器击败怪物时战利品的掉落率",
 	"enchantment.spartanweaponry.hydrodynamic": "水力驱动",
 	"enchantment.spartanweaponry.hydrodynamic.desc": "允许投掷武器在水下使用",
@@ -963,7 +965,7 @@
 	"enchantment.spartanweaponry.supercharge.desc": "每级减少投掷武器的充能时间约20%",
 	"enchantment.spartanweaponry.expanse": "备弹",
 	"enchantment.spartanweaponry.expanse.desc": "每级增加投掷武器的最大弹药容量25%或一发，取较大者",
-	"enchantment.spartanweaponry.sharpshooter": "神枪手",
+	"enchantment.spartanweaponry.sharpshooter": "神射手",
 	"enchantment.spartanweaponry.sharpshooter.desc": "每级减少重弩的瞄准时间0.1秒",
 	"enchantment.spartanweaponry.collectorang": "镖集",
 	"enchantment.spartanweaponry.collectorang.desc": "每级使回力镖能够捡起地面上一组物品或经验球。",
@@ -996,14 +998,14 @@
 	"tooltip.spartanweaponry.show_details": "[按 %s 显示详情]",
 	"tooltip.spartanweaponry.showing_details": "[详情]",
 	"tooltip.spartanweaponry.trait.material_bonus": "材料加成：",
-	"tooltip.spartanweaponry.trait.invalid.archetype_tag": "ERROR: Couldn't find %s archetype Weapon Trait tag \"%s\"",
-	"tooltip.spartanweaponry.trait.invalid.material_tag": "ERROR: Couldn't find %s 材料 Weapon Trait tag \"%s\"",
-	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "ERROR: Cannot use more than one action trait per weapon",
-	"tooltip.spartanweaponry.trait.invalid.material_action_trait": "ERROR: Action traits cannot be applied to 材料",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_melee": "ERROR: Melee Trait cannot be applied with this weapon",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_ranged": "ERROR: Ranged Trait cannot be applied with this weapon",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_throwing": "ERROR: Throwing Trait cannot be applied with this weapon",
-	"tooltip.spartanweaponry.trait.invalid.weapon_not_supported": "ERROR: Invalid Trait cannot be applied with this weapon",
+	"tooltip.spartanweaponry.trait.invalid.archetype_tag": "错误：找不到 %s 武器类型标签：“%s”",
+	"tooltip.spartanweaponry.trait.invalid.material_tag": "错误：找不到 %s 材料特性标签：“%s”",
+	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每个武器不能使用多个动作词条属性",
+	"tooltip.spartanweaponry.trait.invalid.material_action_trait": "错误：该动作词条属性不适用于此类材料",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_melee": "错误：近战属性不适用于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_ranged": "错误：远程属性不适用于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_throwing": "错误：投掷属性不适用于此类武器",
+	"tooltip.spartanweaponry.trait.invalid.weapon_not_supported": "错误：不支持的属性不适用于此类武器",
 	
 	"tooltip.spartanweaponry.trait.type.melee": "近战",
 	"tooltip.spartanweaponry.trait.type.ranged": "远程",
@@ -1067,7 +1069,7 @@
 	"tooltip.spartanweaponry.trait.hammer_slam": "锤击",
 	"tooltip.spartanweaponry.trait.hammer_slam.desc": "以武器伤害的一半攻击小范围内所有敌人",
 	
-	// Descriptions	
+	// 描述
 	"tooltip.spartanweaponry.simple_handle.desc": "一种基础的手柄，足够用于制作基本武器。在木棍上放一些草即可制作",
 	"tooltip.spartanweaponry.handle.desc": "用于大多数武器的高品质手柄",
 	"tooltip.spartanweaponry.simple_pole.desc": "一种基础的杆，足够用于制作基本长柄武器",
@@ -1189,7 +1191,7 @@
 	"command.spartanweaponry.apply_oil.error.no_item": "无法应用油；玩家'%s'没有手持物品",
 	"command.spartanweaponry.apply_oil.error.incompatible_item": "无法将油应用到物品'%s'；不兼容的物品不属于'spartanweaponry:oilable_weapons'标签",
 	
-	// 信息 (覆盖层与聊天)
+	// 信息（覆盖层与聊天）
 	"message.spartanweaponry.ammo_collect_toggle": "弹药收集：%s",
 	"message.spartanweaponry.quiver_not_found": "未找到箭袋！",
 	"message.spartanweaponry.oil_applied": "已在您的%s上应用%s",
@@ -1212,17 +1214,18 @@
 	"dev.spartanweaponry.wip": "目前正在进行中（WIP）",
 	
 	// 进度
+	// Update some names to refer some Chinese allusions
 	"advancement.spartanweaponry.root.title": "斯巴达武器",
-	"advancement.spartanweaponry.root.desc": "武器无穷！",
+	"advancement.spartanweaponry.root.desc": "其乐武穷！",
 	"advancement.spartanweaponry.craft_dagger.title": "盗贼最好的朋友",
 	"advancement.spartanweaponry.craft_dagger.desc": "获得一把匕首",
-	"advancement.spartanweaponry.craft_parrying_dagger.title": "老派的防御",
+	"advancement.spartanweaponry.craft_parrying_dagger.title": "老派防御",
 	"advancement.spartanweaponry.craft_parrying_dagger.desc": "获得一个格挡匕首",
 	"advancement.spartanweaponry.craft_longsword.title": "更大的刀刃",
 	"advancement.spartanweaponry.craft_longsword.desc": "获得一把长剑",
 	"advancement.spartanweaponry.craft_katana.title": "武士的刀",
 	"advancement.spartanweaponry.craft_katana.desc": "获得一把太刀",
-	"advancement.spartanweaponry.craft_saber.title": "冒险家",
+	"advancement.spartanweaponry.craft_saber.title": "咖喱棒",
 	"advancement.spartanweaponry.craft_saber.desc": "获得一把军刀",
 	"advancement.spartanweaponry.craft_rapier.title": "准备战斗！",
 	"advancement.spartanweaponry.craft_rapier.desc": "获得一把迅捷剑",
@@ -1236,7 +1239,7 @@
 	"advancement.spartanweaponry.craft_battle_hammer.desc": "获得一把锤子",
 	"advancement.spartanweaponry.craft_warhammer.title": "钝器伤害",
 	"advancement.spartanweaponry.craft_warhammer.desc": "获得一把战锤",
-	"advancement.spartanweaponry.craft_spear.title": "枪尖处",
+	"advancement.spartanweaponry.craft_spear.title": "戳啦，极霸矛嘛",
 	"advancement.spartanweaponry.craft_spear.desc": "获得一根矛",
 	"advancement.spartanweaponry.craft_halberd.title": "戟兵",
 	"advancement.spartanweaponry.craft_halberd.desc": "获得一把战戟",
@@ -1254,7 +1257,7 @@
 	"advancement.spartanweaponry.craft_tomahawk.desc": "获得一个印第安战斧",
 	"advancement.spartanweaponry.craft_javelin.title": "不是奥运会类型",
 	"advancement.spartanweaponry.craft_javelin.desc": "获得一根标枪",
-	"advancement.spartanweaponry.craft_boomerang.title": "它会回来吗？",
+	"advancement.spartanweaponry.craft_boomerang.title": "童年的回旋镖，会飞回到我手里吗？",
 	"advancement.spartanweaponry.craft_boomerang.desc": "获得一个回力镖",
 	"advancement.spartanweaponry.craft_battleaxe.title": "......以及我的战斧！",
 	"advancement.spartanweaponry.craft_battleaxe.desc": "获得一把战斧",
@@ -1273,9 +1276,9 @@
 	"advancement.spartanweaponry.craft_scythe.title": "收割你所种植的",
 	"advancement.spartanweaponry.craft_scythe.desc": "获得一把镰刀",
 	"advancement.spartanweaponry.collect_heads.title": "斩断他们的头颅！",
-	"advancement.spartanweaponry.collect_heads.desc": "使用镰刀收集除了玩家和末影龙头颅以外的所有头颅和骷髅",
-	"advancement.spartanweaponry.upgrade_netherite.title": "残骸升级",
-	"advancement.spartanweaponry.upgrade_netherite.desc": "将任何钻石武器升级为其下界合金等效武器",
+	"advancement.spartanweaponry.collect_heads.desc": "收集除了玩家和末影龙头颅以外的所有头颅和骷髅",
+	"advancement.spartanweaponry.upgrade_netherite.title": "残骸裹器",
+	"advancement.spartanweaponry.upgrade_netherite.desc": "将任何钻石武器升级为其下界合金等级武器",
 	"advancement.spartanweaponry.brew_oil.title": "白狼炼金术",
 	"advancement.spartanweaponry.brew_oil.desc": "酿造一种油以增强武器伤害",
 	// 待新版本引入
@@ -1284,7 +1287,7 @@
 	"advancement.spartanweaponry.return_kill.title": "当心飞回来的回力镖!",
 	"advancement.spartanweaponry.return_kill.desc": "当回力镖朝你飞回来时，用它击杀一个怪物",
 	
-	// 副标题
+	// 音效字幕
 	"subtitle.spartanweaponry.thrown_weapon_throw": "投掷武器",
 	"subtitle.spartanweaponry.thrown_weapon_hit_mob": "击中目标",
 	"subtitle.spartanweaponry.thrown_weapon_hit_ground": "武器击中地面",
