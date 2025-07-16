@@ -311,6 +311,13 @@ public class WeaponHelper
                             }
                         }
 
+                        if(weaponItem.hasWeaponProperty(WeaponProperties.QUICK_STRIKE))
+                        {
+                            double hurtResistModifier = targetEntity instanceof EntityLivingBase ? (((EntityLivingBase)targetEntity).maxHurtResistantTime / 20.0d) : 1.0d;
+                            targetEntity.hurtResistantTime = Math.min(targetEntity.hurtResistantTime, (int)(hurtResistModifier * ConfigHandler.quickStrikeHurtResistTicks));
+                            // TODO: Make a hurt resistance event to post here
+                        }
+
                         player.addExhaustion(0.3F);
                     }
                     else
@@ -321,13 +328,6 @@ public class WeaponHelper
                         {
                             targetEntity.extinguish();
                         }
-                    }
-                    
-                    if(weaponItem.hasWeaponProperty(WeaponProperties.QUICK_STRIKE))
-                    {
-                    	double hurtResistModifier = targetEntity instanceof EntityLivingBase ? (((EntityLivingBase)targetEntity).maxHurtResistantTime / 20.0d) : 1.0d;
-                        targetEntity.hurtResistantTime = Math.min(targetEntity.hurtResistantTime, (int)(hurtResistModifier * ConfigHandler.quickStrikeHurtResistTicks));
-                        // TODO: Make an hurt resistance event to post here
                     }
                 }
             }
