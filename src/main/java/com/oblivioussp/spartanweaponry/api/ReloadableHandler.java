@@ -10,15 +10,26 @@ import java.util.List;
  */
 public class ReloadableHandler
 {
-	private static List<IReloadable> reloadList = new ArrayList<IReloadable>(768);
+	private static List<WeaponMaterial> materialReloadList = new ArrayList<>(100);
+	private static List<IReloadable> itemReloadList = new ArrayList<>(768);
 	
-	public static void addToReloadList(IReloadable item)
+	public static void addToMaterialReloadList(WeaponMaterial material)
 	{
-		reloadList.add(item);
+		materialReloadList.add(material);
 	}
 	
-	public static List<IReloadable> getReloadList() 
+	public static void addToItemReloadList(IReloadable item)
 	{
-		return reloadList;
+		itemReloadList.add(item);
+	}
+	
+	public static List<WeaponMaterial> getMaterialReloadList()
+	{
+		return materialReloadList;
+	}
+	
+	public static List<IReloadable> getItemReloadList() 
+	{
+		return itemReloadList;
 	}
 }

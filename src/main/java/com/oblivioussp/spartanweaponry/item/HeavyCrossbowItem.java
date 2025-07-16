@@ -88,7 +88,7 @@ public class HeavyCrossbowItem extends CrossbowItem implements IReloadable, IHud
 		if(FMLEnvironment.dist.isClient())
 			ClientHelper.registerHeavyCrossbowPropertyOverrides(this);
 		
-		ReloadableHandler.addToReloadList(this);
+		ReloadableHandler.addToItemReloadList(this);
 	}
 
 	public HeavyCrossbowItem(Item.Properties prop, WeaponMaterial material, String customDisplayName)

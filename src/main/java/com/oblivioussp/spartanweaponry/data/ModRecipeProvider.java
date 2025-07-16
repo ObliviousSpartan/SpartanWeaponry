@@ -331,7 +331,14 @@ public class ModRecipeProvider extends RecipeProvider
 //		ConditionalShapedRecipeBuilder.shaped(ModItems.HUGE_QUIVER_UPGRADE_KIT.get()).define('L', leather).define('#', netherite).pattern("L L").pattern(" # ").unlockedBy("has_netherite_ingot", hasItem(netherite)).condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.QUIVER))).save(recipeFunc);
 		
 		ConditionalShapedRecipeBuilder.shaped(ModItems.DYNAMITE.get(), 2).define('~', string).define('#', ModItems.EXPLOSIVE_CHARGE.get()).pattern("  ~").pattern(" # ").pattern("#  ").unlockedBy("has_explosive_charge", hasItem(ModItems.EXPLOSIVE_CHARGE.get())).condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.EXPLOSIVES))).save(recipeFunc);
-	
+		
+		// Mob heads recipes
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BLAZE_POWDER, 4).requires(Ingredient.of(ModItems.BLAZE_HEAD.get())).unlockedBy("has_blaze_head", hasItem(ModItems.BLAZE_HEAD.get())).save(recipeFunc, ModSpartanWeaponry.ID + ":" + ForgeRegistries.ITEMS.getKey(Items.BLAZE_POWDER).getPath() + "_from_blaze_head");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ENDER_PEARL, 2).requires(Ingredient.of(ModItems.ENDERMAN_HEAD.get())).unlockedBy("has_enderman_head", hasItem(ModItems.ENDERMAN_HEAD.get())).save(recipeFunc, ModSpartanWeaponry.ID + ":" + ForgeRegistries.ITEMS.getKey(Items.ENDER_PEARL).getPath() + "_from_enderman_head");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SPIDER_EYE, 4).requires(Ingredient.of(ModItems.SPIDER_HEAD.get(), ModItems.CAVE_SPIDER_HEAD.get())).unlockedBy("has_spider_head", hasItem(ModItems.SPIDER_HEAD.get(), ModItems.CAVE_SPIDER_HEAD.get())).save(recipeFunc, ModSpartanWeaponry.ID + ":" + ForgeRegistries.ITEMS.getKey(Items.SPIDER_EYE).getPath() + "_from_spider_head");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ROTTEN_FLESH, 4).requires(Ingredient.of(ModItems.ZOMBIFIED_PIGLIN_HEAD.get(), ModItems.HUSK_HEAD.get(), ModItems.DROWNED_HEAD.get())).unlockedBy("has_zombified_piglin_head", hasItem(ModItems.ZOMBIFIED_PIGLIN_HEAD.get(), ModItems.HUSK_HEAD.get(), ModItems.DROWNED_HEAD.get())).save(recipeFunc, ModSpartanWeaponry.ID + ":" + ForgeRegistries.ITEMS.getKey(Items.ROTTEN_FLESH).getPath() + "_from_zombie_variants_head");
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 4).requires(Ingredient.of(ModItems.STRAY_SKULL.get())).unlockedBy("has_stray_skull", hasItem(ModItems.STRAY_SKULL.get())).save(recipeFunc, ModSpartanWeaponry.ID + ":" + ForgeRegistries.ITEMS.getKey(Items.BONE_MEAL).getPath() + "_from_stray_skull");		
+		
 		ItemStack weaponOilBase = OilHelper.makeOilStack(OilEffects.NONE.get());
 		ConditionalShapelessRecipeBuilder.shapeless(weaponOilBase, 3).requires(ModItems.GREASE_BALL.get()).requires(Items.GLASS_BOTTLE, 3).unlockedBy("has_greaseball", hasItem(ModItems.GREASE_BALL.get())).condition(new TypeDisabledCondition(Collections.singletonList(TypeDisabledCondition.OIL))).save(recipeFunc, ForgeRegistries.ITEMS.getKey(weaponOilBase.getItem()) + "_base");
 
@@ -647,9 +654,9 @@ public class ModRecipeProvider extends RecipeProvider
 		return makeInventoryTrigger(ItemPredicate.Builder.item().of(tag).build());
 	}
 	
-	private InventoryChangeTrigger.TriggerInstance hasItem(ItemLike item)
+	private InventoryChangeTrigger.TriggerInstance hasItem(ItemLike... items)
 	{
-		return makeInventoryTrigger(ItemPredicate.Builder.item().of(item).build());
+		return makeInventoryTrigger(ItemPredicate.Builder.item().of(items).build());
 	}
 	
 	private InventoryChangeTrigger.TriggerInstance makeInventoryTrigger(ItemPredicate... predicates)

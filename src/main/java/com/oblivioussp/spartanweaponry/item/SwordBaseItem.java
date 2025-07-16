@@ -79,7 +79,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		archetype = archetypeIn;
 		setAttackDamageAndSpeed(weaponBaseDamage, weaponDamageMultiplier, weaponSpeed);
 		
-		ReloadableHandler.addToReloadList(this);
+		ReloadableHandler.addToItemReloadList(this);
 		
 		if(FMLEnvironment.dist.isClient())
 			ClientHelper.registerMeleeWeaponPropertyOverrides(this);
@@ -99,6 +99,7 @@ public class SwordBaseItem extends SwordItem implements IWeaponTraitContainer<Sw
 		
 		ImmutableList.Builder<WeaponTrait> builder = ImmutableList.builder();
 
+//		Log.info("'" + ForgeRegistries.ITEMS.getKey(this).toString() +  "' -> Material: " + (material != null ? material : "NULL!"));
 		builder.addAll(archetype.getTraits());
 		builder.addAll(material.getBonusTraits(archetype.getType()));
 		traits = builder.build();

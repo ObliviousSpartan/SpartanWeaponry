@@ -13,7 +13,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.oblivioussp.spartanweaponry.api.IReloadable;
-import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.WeaponTraits;
 import com.oblivioussp.spartanweaponry.api.tags.ModWeaponTraitTags;
@@ -88,6 +87,9 @@ public class WeaponArchetype implements IReloadable
 	public static final WeaponArchetype SCYTHE = new WeaponArchetype("Scythe", false, ModWeaponTraitTags.SCYTHE, WeaponType.MELEE, 
 			() -> Config.INSTANCE.scythes.speed.get(), () -> Config.INSTANCE.scythes.baseDamage.get().floatValue(), () -> Config.INSTANCE.scythes.damageMultipler.get().floatValue());
 	
+	public static final List<WeaponArchetype> ALL_ARCHETYPES = ImmutableList.of(DAGGER, PARRYING_DAGGER, LONGSWORD, KATANA, SABER, RAPIER, GREATSWORD, CLUB, CESTUS, BATTLE_HAMMER, WARHAMMER,
+			SPEAR, HALBERD, PIKE, LANCE, THROWING_KNIFE, TOMAHAWK, JAVELIN, BOOMERANG, BATTLEAXE, FLANGED_MACE, GLAIVE, QUARTERSTAFF, SCYTHE);
+	
 	protected final String name;
 	protected final TagKey<WeaponTrait> traitsTag;
 	protected boolean isValidTag = true;
@@ -114,7 +116,7 @@ public class WeaponArchetype implements IReloadable
 		speedValue = speedValueIn;
 		baseDamage = baseDamageIn;
 		damageMultiplier = damageMultiplierIn;
-		ReloadableHandler.addToReloadList(this);
+//		ReloadableHandler.addToItemReloadList(this);
 	}
 	
 	public WeaponArchetype(String nameIn, boolean isBladedIn, TagKey<WeaponTrait> traitsTagIn, WeaponType typeIn, Supplier<Double> speedValueIn, Supplier<Float> baseDamageIn, 

@@ -4,8 +4,11 @@ import java.util.List;
 
 import com.oblivioussp.spartanweaponry.api.IReloadable;
 import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
+import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
+import com.oblivioussp.spartanweaponry.client.OilCoatingColours;
 import com.oblivioussp.spartanweaponry.init.ModOilRecipes;
 import com.oblivioussp.spartanweaponry.util.Log;
+import com.oblivioussp.spartanweaponry.util.WeaponArchetype;
 
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -18,11 +21,17 @@ public class ReloadResourceEventHandler
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public static void onUpdateTags(TagsUpdatedEvent ev)
 	{
-		List<IReloadable> reloadList = ReloadableHandler.getReloadList();
+		List<WeaponMaterial> materialReloadList = ReloadableHandler.getMaterialReloadList();
+		List<IReloadable> itemReloadList = ReloadableHandler.getItemReloadList();
 		
-		Log.debug("Initaliasing reloadables for " + reloadList.size() + " values");
+		Log.debug("Initaliasing reloadables for " + materialReloadList.size() + " materials, " + WeaponArchetype.ALL_ARCHETYPES.size() + " archetypes and " + itemReloadList.size() + " items");
 		long start = System.nanoTime();
-		reloadList.forEach((item) -> item.reload());
+		// Enforce an order of materials being reloaded first to ensure that items can fetch the appropriate traits from their materials
+		// to prevent NullPointerExceptions!
+		OilCoatingColours.reload();
+		materialReloadList.forEach((material) -> material.reload());
+		WeaponArchetype.ALL_ARCHETYPES.forEach((archetype) -> archetype.reload());
+		itemReloadList.forEach((item) -> item.reload());
 		long end = System.nanoTime();
 		double milliseconds = (end-start) / 1000000.0d;
 		ModOilRecipes.loadOilMixes();

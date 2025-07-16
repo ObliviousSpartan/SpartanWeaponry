@@ -1,7 +1,5 @@
 package com.oblivioussp.spartanweaponry.client;
 
-import com.oblivioussp.spartanweaponry.api.IReloadable;
-import com.oblivioussp.spartanweaponry.api.ReloadableHandler;
 import com.oblivioussp.spartanweaponry.api.tags.ModItemTags;
 import com.oblivioussp.spartanweaponry.capability.IOilHandler;
 import com.oblivioussp.spartanweaponry.init.ModCapabilities;
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
 
-public class OilCoatingColours implements IReloadable
+public class OilCoatingColours
 {
 	public static final ItemColor OIL_COATED_WEAPON = (stack, idx) -> 
 	{
@@ -28,15 +26,9 @@ public class OilCoatingColours implements IReloadable
 		}
 		return 0;
 	};
-	
-	public static void init()
-	{
-		ReloadableHandler.addToReloadList(new OilCoatingColours());
-	}
 
 	@SuppressWarnings("deprecation")
-	@Override
-	public void reload() 
+	public static void reload() 
 	{
 		if(FMLEnvironment.dist == Dist.CLIENT)
 		{

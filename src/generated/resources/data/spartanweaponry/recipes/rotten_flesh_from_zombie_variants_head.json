@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "spartanweaponry:zombified_piglin_head"
+      },
+      {
+        "item": "spartanweaponry:husk_head"
+      },
+      {
+        "item": "spartanweaponry:drowned_head"
+      }
+    ]
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:rotten_flesh"
+  }
+}

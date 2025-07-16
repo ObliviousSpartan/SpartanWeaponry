@@ -96,7 +96,7 @@ public class ThrowingWeaponItem extends Item implements IWeaponTraitContainer<Th
 			ClientHelper.registerThrowingWeaponPropertyOverrides(this);
 		
 		archetype = archetypeIn;
-		ReloadableHandler.addToReloadList(this);
+		ReloadableHandler.addToItemReloadList(this);
 	}
 	
 	public ThrowingWeaponItem(Item.Properties prop, WeaponMaterial material, WeaponArchetype archetypeIn, float weaponBaseDamage, float weaponDamageMultiplier, float weaponSpeed, int maxAmmoCapacity, int chargeTicks, String customDisplayNameIn)

@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spider_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "spartanweaponry:spider_head",
+              "spartanweaponry:cave_spider_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spartanweaponry:spider_eye_from_spider_head"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_spider_head",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spartanweaponry:spider_eye_from_spider_head"
+    ]
+  },
+  "sends_telemetry_event": false
+}

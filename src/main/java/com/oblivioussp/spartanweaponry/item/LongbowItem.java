@@ -68,7 +68,7 @@ public class LongbowItem extends BowItem implements IReloadable
 		if(FMLEnvironment.dist.isClient())
 			ClientHelper.registerLongbowPropertyOverrides(this);
 		
-		ReloadableHandler.addToReloadList(this);
+		ReloadableHandler.addToItemReloadList(this);
 	}
 	
 	public LongbowItem(Item.Properties prop, WeaponMaterial material, String customDisplayName)
