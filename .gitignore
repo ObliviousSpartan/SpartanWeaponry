@@ -34,3 +34,5 @@ minecraft
 
 externalmods/
 libs/
+
+src/generated/resources/.cache/
