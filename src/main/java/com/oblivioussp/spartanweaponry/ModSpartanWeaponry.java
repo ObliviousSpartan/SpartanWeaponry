@@ -37,7 +37,7 @@ public class ModSpartanWeaponry
 	public static final String ID = "spartanweaponry";
 	public static final String Name = "Spartan Weaponry";
 //	public static final String Version = "@VERSION@";		// For some reason, version replacement won't work on the base mod file, so it was moved to the Defaults class
-	public static final String Dependencies = "after:xat@[0.31,);after:bettercombatmod@[2.0.5,);";
+	public static final String Dependencies = "after:xat@[0.31,);after:bettercombatmod@[2.0.5,);after:somanyenchantments@[1.0.0,)";
 	public static final String McVersion = "[1.12.2]";
 	public static final String ConfigVersion = "2.0";
 

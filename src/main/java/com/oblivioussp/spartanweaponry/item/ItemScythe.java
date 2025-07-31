@@ -4,7 +4,7 @@ import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.api.WeaponProperties;
 import com.oblivioussp.spartanweaponry.util.ConfigHandler;
 
-public class ItemScythe extends ItemSwordBase
+public class ItemScythe extends ItemWeaponBase
 {
 	public ItemScythe(String unlocName, ToolMaterialEx material)
 	{
