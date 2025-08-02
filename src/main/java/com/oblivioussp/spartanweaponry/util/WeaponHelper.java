@@ -183,7 +183,7 @@ public class WeaponHelper
                         	AxisAlignedBB sweepBox = targetEntity.getEntityBoundingBox().grow(1.0D, 0.25D, 1.0D);
                         	
                         	if(sweepProp.getType() == WeaponProperties.PROPERTY_TYPE_WIDE_SWEEP)
-                        		sweepBox.grow(ConfigHandler.wideSweepAdditionalRange);
+                        		sweepBox = sweepBox.grow(ConfigHandler.wideSweepAdditionalRange);
                         	
                             for (EntityLivingBase entitylivingbase : player.world.getEntitiesWithinAABB(EntityLivingBase.class, sweepBox))
                             {
