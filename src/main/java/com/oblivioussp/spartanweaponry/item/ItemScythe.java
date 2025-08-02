@@ -27,27 +27,4 @@ public class ItemScythe extends ItemWeaponBase
 	{
 		this(unlocName, externalModId, material);
 	}
-
-	
-	/**
-	 * Called when the player Left Clicks (attacks) an entity.
-	 * Processed before damage is done, if return value is true further processing is canceled
-	 * and the entity is not attacked.
-	 *
-	 * @param stack The Item being used
-	 * @param player The player that is attacking
-	 * @param entity The entity being attacked
-	 * @return True to cancel the rest of the interaction.
-	 */
-	@Override
-	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity targetEntity)
-	{
-		return ModSpartanWeaponry.isRLCombatLoaded ? false : WeaponHelper.inflictAttackDamage(this, stack, player, targetEntity, WeaponProperties.WIDE_SWEEP.getMagnitude());
-	}
-
-	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment)
-	{
-		return enchantment != Enchantments.SWEEPING && super.canApplyAtEnchantingTable(stack, enchantment);
-	}
 }
