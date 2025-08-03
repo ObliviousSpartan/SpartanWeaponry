@@ -189,7 +189,7 @@ dependencies {
 //    implementation fg.deobf("curse.maven:footwork-api-608407:5259234")
 //    implementation fg.deobf("curse.maven:attributizer-838573:4844296")
 //    implementation fg.deobf("curse.maven:project-war-dance-446004:5259302")
-    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:5419215")
+    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6784150")
     
 //    implementation fg.deobf("curse.maven:silent-lib-242998:4585754")
 //    implementation fg.deobf("curse.maven:silent-gear-297039:5199286")

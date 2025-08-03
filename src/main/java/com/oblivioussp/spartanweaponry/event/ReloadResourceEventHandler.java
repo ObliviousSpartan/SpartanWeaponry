@@ -10,9 +10,11 @@ import com.oblivioussp.spartanweaponry.init.ModOilRecipes;
 import com.oblivioussp.spartanweaponry.util.Log;
 import com.oblivioussp.spartanweaponry.util.WeaponArchetype;
 
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
@@ -28,7 +30,7 @@ public class ReloadResourceEventHandler
 		long start = System.nanoTime();
 		// Enforce an order of materials being reloaded first to ensure that items can fetch the appropriate traits from their materials
 		// to prevent NullPointerExceptions!
-		OilCoatingColours.reload();
+		DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> OilCoatingColours::reload);
 		materialReloadList.forEach((material) -> material.reload());
 		WeaponArchetype.ALL_ARCHETYPES.forEach((archetype) -> archetype.reload());
 		itemReloadList.forEach((item) -> item.reload());
