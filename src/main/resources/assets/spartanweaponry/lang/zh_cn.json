@@ -1,8 +1,8 @@
 {
 	// 重新编排json文件顺序，与英文版的保持一致
 	// Format the json file to keep pace with the English file.
-	// 创造模式物品栏列表
 	// Update some translations, some of them inspired from a wiki user called 'DarkHomo114514' in mcmod.cn
+	// 创造模式物品栏列表
 	"itemGroup.spartanweaponry.basic": "斯巴达武器:原版材料",
 	"itemGroup.spartanweaponry.modded": "斯巴达武器:模组材料",
 	"itemGroup.spartanweaponry.arrows_bolts": "斯巴达武器:箭与弩箭",
