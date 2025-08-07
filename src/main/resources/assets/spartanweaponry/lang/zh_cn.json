@@ -1003,7 +1003,7 @@
 	"tooltip.spartanweaponry.trait.material_bonus": "材料加成：",
 	"tooltip.spartanweaponry.trait.invalid.archetype_tag": "错误：“%s” 武器类型标签：“%s” 未找到",
 	"tooltip.spartanweaponry.trait.invalid.material_tag": "错误：“%s” 材料特性标签：“%s” 未找到",
-	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每件武器不能使用多个动作词条属性",
+	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每种武器不能使用多个动作词条属性",
 	"tooltip.spartanweaponry.trait.invalid.material_action_trait": "错误：该动作词条属性不适用于此类材料",
 	"tooltip.spartanweaponry.trait.invalid.weapon_not_melee": "错误：近战属性不适用于此类武器",
 	"tooltip.spartanweaponry.trait.invalid.weapon_not_ranged": "错误：远程属性不适用于此类武器",
