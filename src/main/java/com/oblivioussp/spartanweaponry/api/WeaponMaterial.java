@@ -70,10 +70,10 @@ public class WeaponMaterial implements Tier, IReloadable
 	private boolean useCustomDisplayName = false;
 	private Function<String, String> translationFunc = null;
 
-	protected List<WeaponTrait> traits;				// *ALL* traits		 TODO: Does this still need to be cached?
-	protected List<WeaponTrait> meleeTraits;		// Melee-only traits
-	protected List<WeaponTrait> rangedTraits;		// Ranged-only traits
-	protected List<WeaponTrait> throwingTraits;		// Throwing-only traits
+	protected List<WeaponTrait> traits = ImmutableList.of();				// *ALL* traits		 TODO: Does this still need to be cached?
+	protected List<WeaponTrait> meleeTraits = ImmutableList.of();			// Melee-only traits
+	protected List<WeaponTrait> rangedTraits = ImmutableList.of();			// Ranged-only traits
+	protected List<WeaponTrait> throwingTraits = ImmutableList.of();		// Throwing-only traits
 	protected final TagKey<WeaponTrait> traitsTag;
 	protected boolean isValidTag;
 	protected Optional<List<Pair<WeaponTrait, WeaponTrait.InvalidReason>>> invalidTraits = Optional.empty();
@@ -94,7 +94,7 @@ public class WeaponMaterial implements Tier, IReloadable
 		repairMaterial = new LazyLoadedValue<Ingredient>(() -> Ingredient.of(repairTagIn));
 		traitsTag = traitsTagIn;
 		
-		ReloadableHandler.addToReloadList(this);
+		ReloadableHandler.addToMaterialReloadList(this);
 	}
 	
 	public WeaponMaterial(String unlocName, String modIdIn, int maxUses, float efficiency, float baseDamage, int enchantability, TagKey<Item> tag, TagKey<WeaponTrait> traitsTagIn)

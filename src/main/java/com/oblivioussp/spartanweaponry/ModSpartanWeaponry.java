@@ -8,7 +8,6 @@ import com.oblivioussp.spartanweaponry.api.trait.MeleeBlockWeaponTrait;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.capability.OilItemCapabilityHandler;
 import com.oblivioussp.spartanweaponry.client.ClientHelper;
-import com.oblivioussp.spartanweaponry.client.OilCoatingColours;
 import com.oblivioussp.spartanweaponry.init.ModBlockEntities;
 import com.oblivioussp.spartanweaponry.init.ModBlocks;
 import com.oblivioussp.spartanweaponry.init.ModCapabilities;
@@ -112,7 +111,6 @@ public class ModSpartanWeaponry
         Log.info("Setting up Client for " + NAME + "!");
         ev.enqueueWork(() -> 
         {
-        	OilCoatingColours.init();
             ClientHelper.registerCurioRenders();
             ClientHelper.registerSkullTextures();
             ClientHelper.registerScreens();
