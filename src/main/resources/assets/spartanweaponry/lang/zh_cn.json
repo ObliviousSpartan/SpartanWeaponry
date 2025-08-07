@@ -2,6 +2,7 @@
 	// 重新编排json文件顺序，与英文版的保持一致
 	// Format the json file to keep pace with the English file.
 	// 创造模式物品栏列表
+	// Update some translations, some of them inspired from a wiki user called 'DarkHomo114514' in mcmod.cn
 	"itemGroup.spartanweaponry.basic": "斯巴达武器:原版材料",
 	"itemGroup.spartanweaponry.modded": "斯巴达武器:模组材料",
 	"itemGroup.spartanweaponry.arrows_bolts": "斯巴达武器:箭与弩箭",
@@ -957,7 +958,8 @@
 	"enchantment.spartanweaponry.razors_edge.desc": "增加该投掷武器的伤害",
 	"enchantment.spartanweaponry.incendiary": "纵火",
 	"enchantment.spartanweaponry.incendiary.desc": "给该投掷武器注入火焰，击中目标会着火",
-	"enchantment.spartanweaponry.lucky_throw": "连投带拿",
+	// fix this name of this enchantment for my wrong typing before commiting.
+	"enchantment.spartanweaponry.lucky_throw": "连投带抢",
 	"enchantment.spartanweaponry.lucky_throw.desc": "增加使用投掷武器击败怪物时战利品的掉落率",
 	"enchantment.spartanweaponry.hydrodynamic": "水力驱动",
 	"enchantment.spartanweaponry.hydrodynamic.desc": "允许投掷武器在水下使用",
@@ -998,9 +1000,9 @@
 	"tooltip.spartanweaponry.show_details": "[按 %s 显示详情]",
 	"tooltip.spartanweaponry.showing_details": "[详情]",
 	"tooltip.spartanweaponry.trait.material_bonus": "材料加成：",
-	"tooltip.spartanweaponry.trait.invalid.archetype_tag": "错误：找不到 %s 武器类型标签：“%s”",
-	"tooltip.spartanweaponry.trait.invalid.material_tag": "错误：找不到 %s 材料特性标签：“%s”",
-	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每个武器不能使用多个动作词条属性",
+	"tooltip.spartanweaponry.trait.invalid.archetype_tag": "错误：“%s” 武器类型标签：“%s” 未找到",
+	"tooltip.spartanweaponry.trait.invalid.material_tag": "错误：“%s” 材料特性标签：“%s” 未找到",
+	"tooltip.spartanweaponry.trait.invalid.multiple_action_traits": "错误：每件武器不能使用多个动作词条属性",
 	"tooltip.spartanweaponry.trait.invalid.material_action_trait": "错误：该动作词条属性不适用于此类材料",
 	"tooltip.spartanweaponry.trait.invalid.weapon_not_melee": "错误：近战属性不适用于此类武器",
 	"tooltip.spartanweaponry.trait.invalid.weapon_not_ranged": "错误：远程属性不适用于此类武器",
