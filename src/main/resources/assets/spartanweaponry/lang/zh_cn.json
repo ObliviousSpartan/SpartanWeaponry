@@ -39,7 +39,7 @@
 	"item.spartanweaponry.custom_dagger": "%s 匕首",
 	
 	// 格挡匕首
-		"item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
+	"item.spartanweaponry.wooden_parrying_dagger": "木格挡匕首",
 	"item.spartanweaponry.stone_parrying_dagger": "石格挡匕首",
 	"item.spartanweaponry.copper_parrying_dagger": "铜格挡匕首",
 	"item.spartanweaponry.iron_parrying_dagger": "铁格挡匕首",
@@ -958,12 +958,13 @@
 	"enchantment.spartanweaponry.razors_edge.desc": "增加该投掷武器的伤害",
 	"enchantment.spartanweaponry.incendiary": "纵火",
 	"enchantment.spartanweaponry.incendiary.desc": "给该投掷武器注入火焰，击中目标会着火",
-	// fix this name of this enchantment for my wrong typing before commiting.
+	// Fix this translation of the enchantment for my wrong typing before commiting.
 	"enchantment.spartanweaponry.lucky_throw": "连投带抢",
-	"enchantment.spartanweaponry.lucky_throw.desc": "增加使用投掷武器击败怪物时战利品的掉落率",
+	"enchantment.spartanweaponry.lucky_throw.desc": "增加使用投掷武器击败怪物时的战利品掉落",
 	"enchantment.spartanweaponry.hydrodynamic": "水力驱动",
 	"enchantment.spartanweaponry.hydrodynamic.desc": "允许投掷武器在水下使用",
-	"enchantment.spartanweaponry.supercharge": "快速充能",
+	// Update this translation of the enchantment to differ from a vanilla Crossbow enchantment, this translation also from DarkHomo114514
+	"enchantment.spartanweaponry.supercharge": "超频",
 	"enchantment.spartanweaponry.supercharge.desc": "每级减少投掷武器的充能时间约20%",
 	"enchantment.spartanweaponry.expanse": "备弹",
 	"enchantment.spartanweaponry.expanse.desc": "每级增加投掷武器的最大弹药容量25%或一发，取较大者",
