@@ -168,9 +168,10 @@
 	"item.spartanweaponry.cestus": "拳套",
 	"item.spartanweaponry.studded_cestus": "镶钉拳套",
 	
-	// 木棒
-	"item.spartanweaponry.wooden_club": "木棒",
-	"item.spartanweaponry.studded_club": "镶钉木棒",
+	// 棍棒
+	// Rename the wepaon name to differ the stick item in Minecraft
+	"item.spartanweaponry.wooden_club": "棍棒",
+	"item.spartanweaponry.studded_club": "镶钉棍棒",
 	
 	// 锤
 	"item.spartanweaponry.wooden_battle_hammer": "木锤",
@@ -403,26 +404,27 @@
 	"item.spartanweaponry.aluminum_javelin": "铝标枪",
 	"item.spartanweaponry.custom_javelin": "%s标枪",
 	
-	// 回力镖
-	"item.spartanweaponry.wooden_boomerang": "木回力镖",
-	"item.spartanweaponry.stone_boomerang": "石回力镖",
-	"item.spartanweaponry.copper_boomerang": "铜回力镖",
-	"item.spartanweaponry.iron_boomerang": "铁回力镖",
-	"item.spartanweaponry.golden_boomerang": "金回力镖",
-	"item.spartanweaponry.diamond_boomerang": "钻石回力镖",
-	"item.spartanweaponry.netherite_boomerang": "下界合金回力镖",
-	"item.spartanweaponry.tin_boomerang": "锡回力镖",
-	"item.spartanweaponry.bronze_boomerang": "青铜回力镖",
-	"item.spartanweaponry.steel_boomerang": "钢回力镖",
-	"item.spartanweaponry.silver_boomerang": "银回力镖",
-	"item.spartanweaponry.electrum_boomerang": "琥珀金回力镖",
-	"item.spartanweaponry.lead_boomerang": "铅回力镖",
-	"item.spartanweaponry.nickel_boomerang": "镍回力镖",
-	"item.spartanweaponry.invar_boomerang": "殷钢回力镖",
-	"item.spartanweaponry.constantan_boomerang": "康铜回力镖",
-	"item.spartanweaponry.platinum_boomerang": "铂回力镖",
-	"item.spartanweaponry.aluminum_boomerang": "铝回力镖",
-	"item.spartanweaponry.custom_boomerang": "%s回力镖",
+	// 回旋镖
+	// Rename these weapons to make them more official
+	"item.spartanweaponry.wooden_boomerang": "木回旋镖",
+	"item.spartanweaponry.stone_boomerang": "石回旋镖",
+	"item.spartanweaponry.copper_boomerang": "铜回旋镖",
+	"item.spartanweaponry.iron_boomerang": "铁回旋镖",
+	"item.spartanweaponry.golden_boomerang": "金回旋镖",
+	"item.spartanweaponry.diamond_boomerang": "钻石回旋镖",
+	"item.spartanweaponry.netherite_boomerang": "下界合金回旋镖",
+	"item.spartanweaponry.tin_boomerang": "锡回旋镖",
+	"item.spartanweaponry.bronze_boomerang": "青铜回旋镖",
+	"item.spartanweaponry.steel_boomerang": "钢回旋镖",
+	"item.spartanweaponry.silver_boomerang": "银回旋镖",
+	"item.spartanweaponry.electrum_boomerang": "琥珀金回旋镖",
+	"item.spartanweaponry.lead_boomerang": "铅回旋镖",
+	"item.spartanweaponry.nickel_boomerang": "镍回旋镖",
+	"item.spartanweaponry.invar_boomerang": "殷钢回旋镖",
+	"item.spartanweaponry.constantan_boomerang": "康铜回旋镖",
+	"item.spartanweaponry.platinum_boomerang": "铂回旋镖",
+	"item.spartanweaponry.aluminum_boomerang": "铝回旋镖",
+	"item.spartanweaponry.custom_boomerang": "%s回旋镖",
 	
 	// 战斧
 	"item.spartanweaponry.wooden_battleaxe": "木战斧",
@@ -948,7 +950,7 @@
 	"entity.spartanweaponry.throwing_knife": "飞刀",
 	"entity.spartanweaponry.tomahawk": "印第安战斧",
 	"entity.spartanweaponry.javelin": "标枪",
-	"entity.spartanweaponry.boomerang": "回力镖",
+	"entity.spartanweaponry.boomerang": "回旋镖",
 	
 	// 附魔
 	// update the some enchantment names make it more easy to understand in Chinese, and some of them might be more fit to the original meaning.
@@ -971,7 +973,7 @@
 	"enchantment.spartanweaponry.sharpshooter": "神射手",
 	"enchantment.spartanweaponry.sharpshooter.desc": "每级减少重弩的瞄准时间0.1秒",
 	"enchantment.spartanweaponry.collectorang": "镖集",
-	"enchantment.spartanweaponry.collectorang.desc": "每级使回力镖能够捡起地面上一组物品或经验球。",
+	"enchantment.spartanweaponry.collectorang.desc": "每级使回旋镖能够捡起地面上一组物品或经验球。",
 	
 	// 工具提示
 	// 材料名字
@@ -1217,7 +1219,7 @@
 	"dev.spartanweaponry.wip": "目前正在进行中（WIP）",
 	
 	// 进度
-	// Update some names to refer some Chinese allusions
+	// Update some advancement names to refer some Chinese allusions
 	"advancement.spartanweaponry.root.title": "斯巴达武器",
 	"advancement.spartanweaponry.root.desc": "其乐武穷！",
 	"advancement.spartanweaponry.craft_dagger.title": "盗贼最好的朋友",
@@ -1226,7 +1228,7 @@
 	"advancement.spartanweaponry.craft_parrying_dagger.desc": "获得一个格挡匕首",
 	"advancement.spartanweaponry.craft_longsword.title": "更大的刀刃",
 	"advancement.spartanweaponry.craft_longsword.desc": "获得一把长剑",
-	"advancement.spartanweaponry.craft_katana.title": "武士的刀",
+	"advancement.spartanweaponry.craft_katana.title": "武士对决",
 	"advancement.spartanweaponry.craft_katana.desc": "获得一把太刀",
 	"advancement.spartanweaponry.craft_saber.title": "咖喱棒",
 	"advancement.spartanweaponry.craft_saber.desc": "获得一把军刀",
@@ -1236,11 +1238,11 @@
 	"advancement.spartanweaponry.craft_greatsword.desc": "获得一把大剑",
 	"advancement.spartanweaponry.craft_cestus.title": "徒手搏斗",
 	"advancement.spartanweaponry.craft_cestus.desc": "获得一只拳套",
-	"advancement.spartanweaponry.craft_club.title": "去泡夜总会",
+	"advancement.spartanweaponry.craft_club.title": "一秒六棍的夜总会无限制格斗大赛",
 	"advancement.spartanweaponry.craft_club.desc": "获得一根棍棒",
 	"advancement.spartanweaponry.craft_battle_hammer.title": "锤击时间！",
 	"advancement.spartanweaponry.craft_battle_hammer.desc": "获得一把锤子",
-	"advancement.spartanweaponry.craft_warhammer.title": "钝器伤害",
+	"advancement.spartanweaponry.craft_warhammer.title": "40K的伤害",
 	"advancement.spartanweaponry.craft_warhammer.desc": "获得一把战锤",
 	"advancement.spartanweaponry.craft_spear.title": "戳啦，极霸矛嘛",
 	"advancement.spartanweaponry.craft_spear.desc": "获得一根矛",
@@ -1261,7 +1263,7 @@
 	"advancement.spartanweaponry.craft_javelin.title": "不是奥运会类型",
 	"advancement.spartanweaponry.craft_javelin.desc": "获得一根标枪",
 	"advancement.spartanweaponry.craft_boomerang.title": "童年的回旋镖，会飞回到我手里吗？",
-	"advancement.spartanweaponry.craft_boomerang.desc": "获得一个回力镖",
+	"advancement.spartanweaponry.craft_boomerang.desc": "获得一个回旋镖",
 	"advancement.spartanweaponry.craft_battleaxe.title": "......以及我的战斧！",
 	"advancement.spartanweaponry.craft_battleaxe.desc": "获得一把战斧",
 	"advancement.spartanweaponry.craft_flanged_mace.title": "粉碎和猛击！",
@@ -1286,9 +1288,9 @@
 	"advancement.spartanweaponry.brew_oil.desc": "酿造一种油以增强武器伤害",
 	// 待新版本引入
 	"advancement.spartanweaponry.bounce_kill.title": "四处弹跳!",
-	"advancement.spartanweaponry.bounce_kill.desc": "利用附近的物体表面弹起回力镖后击杀一个怪物",
-	"advancement.spartanweaponry.return_kill.title": "当心飞回来的回力镖!",
-	"advancement.spartanweaponry.return_kill.desc": "当回力镖朝你飞回来时，用它击杀一个怪物",
+	"advancement.spartanweaponry.bounce_kill.desc": "利用附近的物体表面弹起回旋镖后击杀一个怪物",
+	"advancement.spartanweaponry.return_kill.title": "当心飞回来的回旋镖!",
+	"advancement.spartanweaponry.return_kill.desc": "当回旋镖朝你飞回来时，用它击杀一个怪物",
 	
 	// 音效字幕
 	"subtitle.spartanweaponry.thrown_weapon_throw": "投掷武器",
@@ -1303,11 +1305,11 @@
 	"subtitle.spartanweaponry.javelin_throw": "投掷标枪",
 	"subtitle.spartanweaponry.javelin_hit_mob": "标枪击中怪物",
 	"subtitle.spartanweaponry.javelin_hit_ground": "标枪击中地面",
-	"subtitle.spartanweaponry.boomerang_throw": "投掷回力镖",
-	"subtitle.spartanweaponry.boomerang_fly": "回力镖飞行",
-	"subtitle.spartanweaponry.boomerang_bounce": "反弹回力镖",
-	"subtitle.spartanweaponry.boomerang_hit_mob": "回力镖击中怪物",
-	"subtitle.spartanweaponry.boomerang_hit_ground": "回力镖击中地面",
+	"subtitle.spartanweaponry.boomerang_throw": "投掷回旋镖",
+	"subtitle.spartanweaponry.boomerang_fly": "回旋镖飞行",
+	"subtitle.spartanweaponry.boomerang_bounce": "反弹回旋镖",
+	"subtitle.spartanweaponry.boomerang_hit_mob": "回旋镖击中怪物",
+	"subtitle.spartanweaponry.boomerang_hit_ground": "回旋镖击中地面",
 	"subtitle.spartanweaponry.throwing_weapon_loyalty_return": "拾取投掷武器",
 	"subtitle.spartanweaponry.oil_applied": "涂在武器上的油",
 	"subtitle.spartanweaponry.hammer_slams_into_ground": "锤子猛砸向地面"
