@@ -973,7 +973,7 @@
 	"enchantment.spartanweaponry.sharpshooter": "神射手",
 	"enchantment.spartanweaponry.sharpshooter.desc": "每级减少重弩的瞄准时间0.1秒",
 	"enchantment.spartanweaponry.collectorang": "镖集",
-	"enchantment.spartanweaponry.collectorang.desc": "每级使回旋镖能够捡起地面上一组物品或经验球。",
+	"enchantment.spartanweaponry.collectorang.desc": "每级使回旋镖能够捡起地面上的一组物品或经验球。",
 	
 	// 工具提示
 	// 材料名字
@@ -1294,24 +1294,25 @@
 	"advancement.spartanweaponry.return_kill.desc": "当回旋镖朝你飞回来时，用它击杀一个怪物",
 	
 	// 音效字幕
-	"subtitle.spartanweaponry.thrown_weapon_throw": "投掷武器",
-	"subtitle.spartanweaponry.thrown_weapon_hit_mob": "击中目标",
-	"subtitle.spartanweaponry.thrown_weapon_hit_ground": "武器击中地面",
-	"subtitle.spartanweaponry.throwing_knife_throw": "投掷飞刀",
-	"subtitle.spartanweaponry.throwing_knife_hit_mob": "飞刀击中怪物",
-	"subtitle.spartanweaponry.throwing_knife_hit_ground": "飞刀击中地面",
-	"subtitle.spartanweaponry.tomahawk_throw": "投掷战斧",
-	"subtitle.spartanweaponry.tomahawk_hit_mob": "战斧击中怪物",
-	"subtitle.spartanweaponry.tomahawk_hit_ground": "战斧击中地面",
-	"subtitle.spartanweaponry.javelin_throw": "投掷标枪",
-	"subtitle.spartanweaponry.javelin_hit_mob": "标枪击中怪物",
-	"subtitle.spartanweaponry.javelin_hit_ground": "标枪击中地面",
-	"subtitle.spartanweaponry.boomerang_throw": "投掷回旋镖",
-	"subtitle.spartanweaponry.boomerang_fly": "回旋镖飞行",
-	"subtitle.spartanweaponry.boomerang_bounce": "反弹回旋镖",
-	"subtitle.spartanweaponry.boomerang_hit_mob": "回旋镖击中怪物",
-	"subtitle.spartanweaponry.boomerang_hit_ground": "回旋镖击中地面",
-	"subtitle.spartanweaponry.throwing_weapon_loyalty_return": "拾取投掷武器",
-	"subtitle.spartanweaponry.oil_applied": "涂在武器上的油",
-	"subtitle.spartanweaponry.hammer_slams_into_ground": "锤子猛砸向地面"
+	// Reformat sound subtitles to make them more vanilla.
+	"subtitle.spartanweaponry.thrown_weapon_throw": "投掷武器：投出",
+	"subtitle.spartanweaponry.thrown_weapon_hit_mob": "投掷武器：击中目标",
+	"subtitle.spartanweaponry.thrown_weapon_hit_ground": "投掷武器：击中地面",
+	"subtitle.spartanweaponry.throwing_knife_throw": "飞刀：投出",
+	"subtitle.spartanweaponry.throwing_knife_hit_mob": "飞刀：击中目标",
+	"subtitle.spartanweaponry.throwing_knife_hit_ground": "飞刀：击中地面",
+	"subtitle.spartanweaponry.tomahawk_throw": "印第安战斧：投出",
+	"subtitle.spartanweaponry.tomahawk_hit_mob": "印第安战斧：击中目标",
+	"subtitle.spartanweaponry.tomahawk_hit_ground": "印第安战斧：击中地面",
+	"subtitle.spartanweaponry.javelin_throw": "标枪：投出",
+	"subtitle.spartanweaponry.javelin_hit_mob": "标枪：击中目标",
+	"subtitle.spartanweaponry.javelin_hit_ground": "标枪：击中地面",
+	"subtitle.spartanweaponry.boomerang_throw": "投掷回旋镖：投出",
+	"subtitle.spartanweaponry.boomerang_fly": "回旋镖：飞行",
+	"subtitle.spartanweaponry.boomerang_bounce": "回旋镖：反弹",
+	"subtitle.spartanweaponry.boomerang_hit_mob": "回旋镖：击中目标",
+	"subtitle.spartanweaponry.boomerang_hit_ground": "回旋镖：击中地面",
+	"subtitle.spartanweaponry.throwing_weapon_loyalty_return": "投掷武器：拾取",
+	"subtitle.spartanweaponry.oil_applied": "油：涂抹于武器上",
+	"subtitle.spartanweaponry.hammer_slams_into_ground": "锤子：向地面猛砸"
 }
