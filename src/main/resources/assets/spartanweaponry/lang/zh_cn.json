@@ -404,8 +404,8 @@
 	"item.spartanweaponry.aluminum_javelin": "铝标枪",
 	"item.spartanweaponry.custom_javelin": "%s标枪",
 	
-	// 回旋镖
 	// Rename boomerang-typed weapons to the more official names.
+	// 回旋镖
 	"item.spartanweaponry.wooden_boomerang": "木回旋镖",
 	"item.spartanweaponry.stone_boomerang": "石回旋镖",
 	"item.spartanweaponry.copper_boomerang": "铜回旋镖",
