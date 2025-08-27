@@ -1127,7 +1127,8 @@
 	"tooltip.spartanweaponry.modifiers.longbow.draw_length": "拉弓时间：%s",
 	"tooltip.spartanweaponry.modifiers.longbow.draw_length.value": "2",
 	"tooltip.spartanweaponry.modifiers.longbow.speed_multiplier": "箭速：%s",
-	"tooltip.spartanweaponry.modifiers.longbow.speed_multiplier.value": "x2f",
+	// Fix the error that the value of long bow speed multiplier doesn't show correctly.
+	"tooltip.spartanweaponry.modifiers.longbow.speed_multiplier.value": "x%.2f",
 	"tooltip.spartanweaponry.modifiers.heavy_crossbow.load_time": "装填时间：%s",
 	"tooltip.spartanweaponry.modifiers.heavy_crossbow.load_time.value": "2",
 	"tooltip.spartanweaponry.modifiers.heavy_crossbow.aim_time": "瞄准时间：%s",
