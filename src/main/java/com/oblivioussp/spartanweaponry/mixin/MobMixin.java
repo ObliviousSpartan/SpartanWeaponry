@@ -16,7 +16,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.GoalSelector;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
 
@@ -48,14 +47,11 @@ public class MobMixin extends LivingEntityMixin
 			
 			if(rand > 1 - chance)
 			{
-				Level level = level();
 				ITag<Item> tag = ForgeRegistries.ITEMS.tags().getTag(itemTagIn);
 				if(!tag.isEmpty())
 				{
-					ItemStack weapon = ItemStack.EMPTY;
 					List<Item> possibleWeapons = tag.stream().toList();
-					weapon = ItemRandomizer.generate(level, possibleWeapons);
-					setItemSlot(EquipmentSlot.MAINHAND, weapon);
+					setItemSlot(EquipmentSlot.MAINHAND, ItemRandomizer.generate(random, possibleWeapons));
 				}
 			}
 		}
