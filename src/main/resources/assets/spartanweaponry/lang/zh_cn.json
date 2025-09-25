@@ -1,7 +1,7 @@
 {
 	// 重新编排json文件顺序，与英文版的保持一致
 	// Format the json file to keep pace with the English file.
-	// Update some translations, some of them inspired from a wiki user called 'DarkHomo114514' in mcmod.cn
+	// Update some translations and add some missing translations, some of them came or was inspired from a wiki user called 'DarkHomo114514' in mcmod.cn
 	// 创造模式物品栏列表
 	"itemGroup.spartanweaponry.basic": "斯巴达武器:原版材料",
 	"itemGroup.spartanweaponry.modded": "斯巴达武器:模组材料",
@@ -887,6 +887,7 @@
 	"item.spartanweaponry.small_arrow_quiver": "小型箭袋",
 	"item.spartanweaponry.medium_arrow_quiver": "中型箭袋",
 	"item.spartanweaponry.large_arrow_quiver": "大型箭袋",
+	"item.spartanweaponry.huge_arrow_quiver": "巨型箭袋",
 	"item.spartanweaponry.quiver_compartment": "箭筒",
 	"item.spartanweaponry.medium_quiver_brace": "中型箭袋支架",
 	"item.spartanweaponry.large_quiver_brace": "大型箭袋支架",
@@ -927,6 +928,17 @@
 	"item.spartanweaponry.weapon_oil.wither_long": "持久凋零油",
 	"item.spartanweaponry.weapon_oil.wither_strong": "强效凋零油",
 	"item.spartanweaponry.weapon_oil.potion": "油",
+	
+    "item.spartanweaponry.parrying_dagger": "格挡匕首",
+    "item.spartanweaponry.silent_gear_parrying_dagger": "格挡匕首",
+    "item.spartanweaponry.silent_gear_parrying_dagger.nameProper": "%s格挡匕首",
+    "item.spartanweaponry.blueprint.parrying_dagger.desc": "老派防御",
+	
+    "part.spartanweaponry.parrying_dagger_blade": "格挡匕首刀刃",
+    "item.spartanweaponry.parrying_dagger_blade": "复合格挡匕首刀刃",
+    "item.spartanweaponry.parrying_dagger_blade.nameProper": "%s格挡匕首刀刃",
+	
+    "gearType.silentgear.parrying_dagger": "格挡匕首",
 	
 	// 方块（方块！！！？？？）
 	"block.spartanweaponry.blaze_head": "烈焰人的头",
@@ -1065,6 +1077,8 @@
 	"tooltip.spartanweaponry.trait.quick_strike.desc": "忽略受击抵抗时间进行暴雨般的连续攻击",
 	"tooltip.spartanweaponry.trait.fireproof": "防火",
 	"tooltip.spartanweaponry.trait.fireproof.desc": "在火中或岩浆中不会被摧毁",
+	"tooltip.spartanweaponry.trait.lightweight": "轻量%s",
+    "tooltip.spartanweaponry.trait.lightweight.desc": "提升攻击速度、远程拉弓速度、装填时间及投掷充能速度",
 	"tooltip.spartanweaponry.trait.heavy": "沉重",
 	"tooltip.spartanweaponry.trait.heavy.desc": "降低攻击速度、远程拉弓速度、装填时间和投掷充能时间",
 	"tooltip.spartanweaponry.trait.decapitate": "斩首",
@@ -1145,6 +1159,10 @@
 	"tooltip.spartanweaponry.medium_quiver_brace.desc": "在锻造台中将小箭袋升级为中箭袋",
 	"tooltip.spartanweaponry.large_quiver_brace.desc": "在锻造台中用于将中型箭袋升级为大型箭袋",
 	"tooltip.spartanweaponry.huge_quiver_brace.desc": "在锻造台中用于将中型箭袋升级为巨型箭袋",
+	"tooltip.spartanweaponry.quiver_compartment.applies_to": "适用于：箭袋与弩箭袋",
+	"tooltip.spartanweaponry.quiver_compartment.ingredients": "所需材料：下一级箭袋支架",
+	"tooltip.spartanweaponry.quiver_compartment.base_slot_description": "基础槽位说明：箭袋槽位",
+	"tooltip.spartanweaponry.quiver_compartment.additonal_slot_description": "附加槽位说明：箭袋支架槽位",
 	"tooltip.spartanweaponry.quiver_compartment.upgrade_description": "箭袋容量升级",
 	
 	"tooltip.spartanweaponry.throwable.ammo": "弹药：%s",
