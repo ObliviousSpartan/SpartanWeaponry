@@ -743,7 +743,7 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeGlaive(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		recipeGlaive(consumer, pole, material, result, hasItemCriterionName);
+		recipeGlaive(consumer, pole, material, result, hasItemCriterionName, "");
 	}
 
 	/**
@@ -774,7 +774,7 @@ public class RecipeProviderHelper
 	 */
 	public static void recipeQuarterstaff(Consumer<FinishedRecipe> consumer, ItemLike pole, TagKey<Item> material, ItemLike result, String hasItemCriterionName)
 	{
-		recipeQuarterstaff(consumer, pole, material, result, hasItemCriterionName);
+		recipeQuarterstaff(consumer, pole, material, result, hasItemCriterionName, "");
 	}
 
 	/**
