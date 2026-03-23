@@ -558,8 +558,8 @@
 	
 	// 喷溅效果
 	// 原版
-	"item.spartanweaponry.proj_tipped": "顶端%s",
-	"item.spartanweaponry.proj_tipped.effect.empty": "药水箭头%s",
+	"item.spartanweaponry.proj_tipped": "药水效果%s",
+	"item.spartanweaponry.proj_tipped.effect.empty": "不可合成的%s",
 	"item.spartanweaponry.proj_tipped.effect.water": "喷溅%s",
 	"item.spartanweaponry.proj_tipped.effect.night_vision": "夜视%s",
 	"item.spartanweaponry.proj_tipped.effect.invisibility": "隐身%s",
