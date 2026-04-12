@@ -1147,7 +1147,8 @@
 	"tooltip.spartanweaponry.modifiers.heavy_crossbow.aim_time": "瞄准时间：%s",
 	"tooltip.spartanweaponry.modifiers.heavy_crossbow.aim_time.value": "2",
 	"tooltip.spartanweaponry.modifiers.projectile.base_damage": "基础伤害：%s",
-	"tooltip.spartanweaponry.modifiers.projectile.base_damage.value": "2",
+	// Fix the error that the value of long bow speed multiplier doesn't show correctly.
+	"tooltip.spartanweaponry.modifiers.projectile.base_damage.value": "%.2f",
 	"tooltip.spartanweaponry.modifiers.projectile.range": "射程：%s",
 	"tooltip.spartanweaponry.modifiers.projectile.range.value": "2",
 	"tooltip.spartanweaponry.modifiers.projectile.armor_piercing_factor": "穿甲：%s",
