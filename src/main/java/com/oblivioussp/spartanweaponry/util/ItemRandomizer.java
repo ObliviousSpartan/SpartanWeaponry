@@ -11,7 +11,7 @@ public class ItemRandomizer
 {
 	public static ItemStack generate(Level level, List<Item> items)
 	{
-		float weaponRand = level.random.nextFloat();
+		float weaponRand = level.getRandom().nextFloat();
 		float divider = 1.0f / items.size();
 		int idx = Mth.floor(weaponRand / divider);
 		idx = idx > items.size() - 1 ? items.size() - 1 : idx;
