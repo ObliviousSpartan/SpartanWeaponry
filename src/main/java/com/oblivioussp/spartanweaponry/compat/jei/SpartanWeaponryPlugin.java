@@ -1,6 +1,7 @@
 package com.oblivioussp.spartanweaponry.compat.jei;
 
 import java.util.Arrays;
+import java.util.List;
 
 import com.oblivioussp.spartanweaponry.api.tags.ModItemTags;
 import com.oblivioussp.spartanweaponry.init.ModItems;
@@ -17,6 +18,7 @@ import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.fml.ModList;
 
@@ -180,6 +182,9 @@ public class SpartanWeaponryPlugin implements IModPlugin
 	
 	private void removeItemTagFromJEI(IJeiRuntime jeiRuntime, TagKey<Item> tag)
 	{
-		jeiRuntime.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, Arrays.asList(Ingredient.of(tag).getItems()));		
+		// JEI throws on an empty list (e.g. a weapon type with every material disabled), which would stop every later tag from being hidden too
+		List<ItemStack> stacks = Arrays.asList(Ingredient.of(tag).getItems());
+		if(!stacks.isEmpty())
+			jeiRuntime.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, stacks);
 	}
 }
